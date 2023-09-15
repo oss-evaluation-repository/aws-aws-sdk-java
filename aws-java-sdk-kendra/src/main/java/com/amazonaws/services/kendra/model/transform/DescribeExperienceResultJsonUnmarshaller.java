@@ -43,56 +43,75 @@ public class DescribeExperienceResultJsonUnmarshaller implements Unmarshaller<De
             return describeExperienceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setIndexId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Endpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setEndpoints(new ListUnmarshaller<ExperienceEndpoint>(ExperienceEndpointJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setConfiguration(ExperienceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExperienceResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

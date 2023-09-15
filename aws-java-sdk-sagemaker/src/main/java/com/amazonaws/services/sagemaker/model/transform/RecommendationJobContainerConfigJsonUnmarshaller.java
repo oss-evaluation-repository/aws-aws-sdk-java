@@ -43,54 +43,72 @@ public class RecommendationJobContainerConfigJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobContainerConfig.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Task", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobContainerConfig.setTask(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Framework", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobContainerConfig.setFramework(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameworkVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobContainerConfig.setFrameworkVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PayloadConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobContainerConfig.setPayloadConfig(RecommendationJobPayloadConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NearestModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobContainerConfig.setNearestModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedInstanceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobContainerConfig.setSupportedInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataInputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobContainerConfig.setDataInputConfig(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedEndpointType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobContainerConfig.setSupportedEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedResponseMIMETypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobContainerConfig.setSupportedResponseMIMETypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

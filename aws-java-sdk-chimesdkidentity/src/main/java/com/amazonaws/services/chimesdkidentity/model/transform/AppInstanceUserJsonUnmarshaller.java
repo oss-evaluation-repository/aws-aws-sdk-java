@@ -43,34 +43,48 @@ public class AppInstanceUserJsonUnmarshaller implements Unmarshaller<AppInstance
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppInstanceUserArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUser.setAppInstanceUserArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUser.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUser.setMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUser.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUser.setLastUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExpirationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUser.setExpirationSettings(ExpirationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

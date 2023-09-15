@@ -43,34 +43,48 @@ public class EdgeDeploymentStatusJsonUnmarshaller implements Unmarshaller<EdgeDe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StageStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentStatus.setStageStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeDeploymentSuccessInStage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentStatus.setEdgeDeploymentSuccessInStage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeDeploymentPendingInStage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentStatus.setEdgeDeploymentPendingInStage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeDeploymentFailedInStage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentStatus.setEdgeDeploymentFailedInStage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeDeploymentStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentStatus.setEdgeDeploymentStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeDeploymentStageStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentStatus.setEdgeDeploymentStageStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

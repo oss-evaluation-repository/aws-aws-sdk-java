@@ -43,22 +43,33 @@ public class QueryStatusJsonUnmarshaller implements Unmarshaller<QueryStatus, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProgressPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStatus.setProgressPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CumulativeBytesScanned", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStatus.setCumulativeBytesScanned(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CumulativeBytesMetered", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStatus.setCumulativeBytesMetered(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

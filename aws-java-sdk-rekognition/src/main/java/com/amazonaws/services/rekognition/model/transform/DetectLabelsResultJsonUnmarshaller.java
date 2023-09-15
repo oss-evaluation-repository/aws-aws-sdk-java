@@ -43,28 +43,40 @@ public class DetectLabelsResultJsonUnmarshaller implements Unmarshaller<DetectLa
             return detectLabelsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Labels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsResult.setLabels(new ListUnmarshaller<Label>(LabelJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OrientationCorrection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsResult.setOrientationCorrection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsResult.setLabelModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsResult.setImageProperties(DetectLabelsImagePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

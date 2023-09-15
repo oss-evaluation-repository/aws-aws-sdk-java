@@ -44,35 +44,48 @@ public class DescribeAccessControlConfigurationResultJsonUnmarshaller implements
             return describeAccessControlConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessControlConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessControlConfigurationResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessControlConfigurationResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessControlList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessControlConfigurationResult.setAccessControlList(new ListUnmarshaller<Principal>(PrincipalJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HierarchicalAccessControlList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessControlConfigurationResult.setHierarchicalAccessControlList(new ListUnmarshaller<HierarchicalPrincipal>(
                             HierarchicalPrincipalJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

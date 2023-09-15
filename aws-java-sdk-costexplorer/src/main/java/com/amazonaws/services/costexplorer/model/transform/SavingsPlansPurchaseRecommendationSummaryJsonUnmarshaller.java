@@ -44,55 +44,74 @@ public class SavingsPlansPurchaseRecommendationSummaryJsonUnmarshaller implement
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EstimatedROI", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setEstimatedROI(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedTotalCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setEstimatedTotalCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentOnDemandSpend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setCurrentOnDemandSpend(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedSavingsAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setEstimatedSavingsAmount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalRecommendationCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setTotalRecommendationCount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DailyCommitmentToPurchase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setDailyCommitmentToPurchase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HourlyCommitmentToPurchase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setHourlyCommitmentToPurchase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedSavingsPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setEstimatedSavingsPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedMonthlySavingsAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setEstimatedMonthlySavingsAmount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedOnDemandCostWithCurrentCommitment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setEstimatedOnDemandCostWithCurrentCommitment(context.getUnmarshaller(String.class).unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

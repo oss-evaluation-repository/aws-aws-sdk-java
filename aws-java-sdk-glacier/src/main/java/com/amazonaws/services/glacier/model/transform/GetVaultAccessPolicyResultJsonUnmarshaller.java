@@ -43,9 +43,13 @@ public class GetVaultAccessPolicyResultJsonUnmarshaller implements Unmarshaller<
             return getVaultAccessPolicyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getVaultAccessPolicyResult.setPolicy(VaultAccessPolicyJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

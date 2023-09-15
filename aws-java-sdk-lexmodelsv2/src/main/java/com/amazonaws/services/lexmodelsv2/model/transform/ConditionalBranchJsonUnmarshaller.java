@@ -43,26 +43,38 @@ public class ConditionalBranchJsonUnmarshaller implements Unmarshaller<Condition
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditionalBranch.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("condition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditionalBranch.setCondition(ConditionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditionalBranch.setNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("response", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditionalBranch.setResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class StreamInfoJsonUnmarshaller implements Unmarshaller<StreamInfo, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setStreamARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setMediaType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataRetentionInHours", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setDataRetentionInHours(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

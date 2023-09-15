@@ -43,48 +43,65 @@ public class ProactiveInsightSummaryJsonUnmarshaller implements Unmarshaller<Pro
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveInsightSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveInsightSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveInsightSummary.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveInsightSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InsightTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveInsightSummary.setInsightTimeRange(InsightTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PredictionTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveInsightSummary.setPredictionTimeRange(PredictionTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceCollection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveInsightSummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceCollection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveInsightSummary.setServiceCollection(ServiceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssociatedResourceArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveInsightSummary.setAssociatedResourceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

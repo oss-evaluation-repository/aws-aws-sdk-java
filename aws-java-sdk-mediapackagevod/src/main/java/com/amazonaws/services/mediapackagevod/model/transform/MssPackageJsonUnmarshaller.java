@@ -43,24 +43,35 @@ public class MssPackageJsonUnmarshaller implements Unmarshaller<MssPackage, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mssPackage.setEncryption(MssEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mssManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mssPackage.setMssManifests(new ListUnmarshaller<MssManifest>(MssManifestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mssPackage.setSegmentDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

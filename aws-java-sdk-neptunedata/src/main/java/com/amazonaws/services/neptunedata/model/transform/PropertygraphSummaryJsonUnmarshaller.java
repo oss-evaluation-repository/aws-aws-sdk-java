@@ -44,48 +44,61 @@ public class PropertygraphSummaryJsonUnmarshaller implements Unmarshaller<Proper
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("numNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setNumNodes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("numEdges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setNumEdges(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("numNodeLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setNumNodeLabels(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("numEdgeLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setNumEdgeLabels(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("nodeLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setNodeLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("edgeLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setEdgeLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("numNodeProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setNumNodeProperties(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("numEdgeProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setNumEdgeProperties(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("nodeProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setNodeProperties(new ListUnmarshaller<java.util.Map<String, Long>>(new MapUnmarshaller<String, Long>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(Long.class)))
@@ -93,6 +106,7 @@ public class PropertygraphSummaryJsonUnmarshaller implements Unmarshaller<Proper
                     .unmarshall(context));
                 }
                 if (context.testExpression("edgeProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setEdgeProperties(new ListUnmarshaller<java.util.Map<String, Long>>(new MapUnmarshaller<String, Long>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(Long.class)))
@@ -100,24 +114,32 @@ public class PropertygraphSummaryJsonUnmarshaller implements Unmarshaller<Proper
                     .unmarshall(context));
                 }
                 if (context.testExpression("totalNodePropertyValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setTotalNodePropertyValues(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalEdgePropertyValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setTotalEdgePropertyValues(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("nodeStructures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setNodeStructures(new ListUnmarshaller<NodeStructure>(NodeStructureJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("edgeStructures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertygraphSummary.setEdgeStructures(new ListUnmarshaller<EdgeStructure>(EdgeStructureJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

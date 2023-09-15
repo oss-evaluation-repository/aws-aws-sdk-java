@@ -43,22 +43,29 @@ public class GetSnapshotsResultJsonUnmarshaller implements Unmarshaller<GetSnaps
             return getSnapshotsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SnapShotTimeFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSnapshotsResult.setSnapShotTimeFilter(TimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SnapshotsDataHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSnapshotsResult.setSnapshotsDataHeader(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SnapshotsData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSnapshotsResult.setSnapshotsData(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -68,8 +75,13 @@ public class GetSnapshotsResultJsonUnmarshaller implements Unmarshaller<GetSnaps
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSnapshotsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

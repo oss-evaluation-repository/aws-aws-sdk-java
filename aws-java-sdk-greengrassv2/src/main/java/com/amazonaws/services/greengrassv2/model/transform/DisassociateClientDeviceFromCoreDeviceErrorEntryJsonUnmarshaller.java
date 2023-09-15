@@ -44,22 +44,33 @@ public class DisassociateClientDeviceFromCoreDeviceErrorEntryJsonUnmarshaller im
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("thingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disassociateClientDeviceFromCoreDeviceErrorEntry.setThingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("code", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disassociateClientDeviceFromCoreDeviceErrorEntry.setCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disassociateClientDeviceFromCoreDeviceErrorEntry.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

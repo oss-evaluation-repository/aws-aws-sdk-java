@@ -43,78 +43,103 @@ public class Mpeg2SettingsJsonUnmarshaller implements Unmarshaller<Mpeg2Settings
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("afdSignaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setAfdSignaling(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("colorMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setColorMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("colorSpace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setColorSpace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("displayAspectRatio", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setDisplayAspectRatio(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setFilterSettings(Mpeg2FilterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fixedAfd", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setFixedAfd(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setFramerateDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setFramerateNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopClosedCadence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setGopClosedCadence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopNumBFrames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setGopNumBFrames(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setGopSize(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("gopSizeUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setGopSizeUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setScanType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subgopLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setSubgopLength(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timecodeInsertion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setTimecodeInsertion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timecodeBurninSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setTimecodeBurninSettings(TimecodeBurninSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

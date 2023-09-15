@@ -44,20 +44,30 @@ public class AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessPointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails.setAccessPointId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Iam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails.setIam(context.getUnmarshaller(String.class)
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

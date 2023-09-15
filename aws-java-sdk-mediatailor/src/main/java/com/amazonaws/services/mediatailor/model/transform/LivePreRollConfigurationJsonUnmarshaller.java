@@ -43,18 +43,28 @@ public class LivePreRollConfigurationJsonUnmarshaller implements Unmarshaller<Li
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AdDecisionServerUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     livePreRollConfiguration.setAdDecisionServerUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     livePreRollConfiguration.setMaxDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

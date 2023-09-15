@@ -43,26 +43,38 @@ public class TableDataImportJobMetadataJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("submitter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDataImportJobMetadata.setSubmitter(ImportJobSubmitterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("submitTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDataImportJobMetadata.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("importOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDataImportJobMetadata.setImportOptions(ImportOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDataImportJobMetadata.setDataSource(ImportDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

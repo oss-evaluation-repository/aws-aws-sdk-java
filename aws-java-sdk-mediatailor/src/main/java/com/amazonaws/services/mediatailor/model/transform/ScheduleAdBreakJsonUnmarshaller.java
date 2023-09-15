@@ -43,26 +43,38 @@ public class ScheduleAdBreakJsonUnmarshaller implements Unmarshaller<ScheduleAdB
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApproximateDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleAdBreak.setApproximateDurationSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ApproximateStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleAdBreak.setApproximateStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SourceLocationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleAdBreak.setSourceLocationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VodSourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleAdBreak.setVodSourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

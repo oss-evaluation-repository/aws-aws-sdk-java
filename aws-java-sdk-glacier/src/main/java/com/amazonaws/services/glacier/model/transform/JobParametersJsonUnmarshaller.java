@@ -43,50 +43,68 @@ public class JobParametersJsonUnmarshaller implements Unmarshaller<JobParameters
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobParameters.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobParameters.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ArchiveId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobParameters.setArchiveId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobParameters.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SNSTopic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobParameters.setSNSTopic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetrievalByteRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobParameters.setRetrievalByteRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobParameters.setTier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InventoryRetrievalParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobParameters.setInventoryRetrievalParameters(InventoryRetrievalJobInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SelectParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobParameters.setSelectParameters(SelectParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OutputLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobParameters.setOutputLocation(OutputLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

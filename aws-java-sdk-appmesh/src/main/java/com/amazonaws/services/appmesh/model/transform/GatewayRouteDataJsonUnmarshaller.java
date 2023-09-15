@@ -43,34 +43,48 @@ public class GatewayRouteDataJsonUnmarshaller implements Unmarshaller<GatewayRou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("gatewayRouteName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayRouteData.setGatewayRouteName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("meshName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayRouteData.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayRouteData.setMetadata(ResourceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("spec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayRouteData.setSpec(GatewayRouteSpecJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayRouteData.setStatus(GatewayRouteStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("virtualGatewayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayRouteData.setVirtualGatewayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

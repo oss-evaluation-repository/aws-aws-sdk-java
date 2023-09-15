@@ -43,12 +43,17 @@ public class ListDeliverabilityTestReportsResultJsonUnmarshaller implements Unma
             return listDeliverabilityTestReportsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeliverabilityTestReports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listDeliverabilityTestReportsResult.setDeliverabilityTestReports(new ListUnmarshaller<DeliverabilityTestReport>(
                             DeliverabilityTestReportJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListDeliverabilityTestReportsResultJsonUnmarshaller implements Unma
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listDeliverabilityTestReportsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

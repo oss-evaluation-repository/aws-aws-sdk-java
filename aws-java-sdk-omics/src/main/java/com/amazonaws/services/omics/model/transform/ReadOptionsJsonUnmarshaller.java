@@ -43,46 +43,63 @@ public class ReadOptionsJsonUnmarshaller implements Unmarshaller<ReadOptions, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     readOptions.setSep(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encoding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     readOptions.setEncoding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("quote", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     readOptions.setQuote(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("quoteAll", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     readOptions.setQuoteAll(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("escape", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     readOptions.setEscape(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("escapeQuotes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     readOptions.setEscapeQuotes(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     readOptions.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("header", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     readOptions.setHeader(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("lineSep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     readOptions.setLineSep(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

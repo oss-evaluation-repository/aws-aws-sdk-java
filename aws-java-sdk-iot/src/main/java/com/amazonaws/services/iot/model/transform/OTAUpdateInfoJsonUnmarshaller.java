@@ -43,81 +43,105 @@ public class OTAUpdateInfoJsonUnmarshaller implements Unmarshaller<OTAUpdateInfo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("otaUpdateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setOtaUpdateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("otaUpdateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setOtaUpdateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("protocols", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("awsJobExecutionsRolloutConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("awsJobPresignedUrlConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setAwsJobPresignedUrlConfig(AwsJobPresignedUrlConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("targetSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setTargetSelection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("otaUpdateFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setOtaUpdateFiles(new ListUnmarshaller<OTAUpdateFile>(OTAUpdateFileJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("otaUpdateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setOtaUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsIotJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setAwsIotJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsIotJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setAwsIotJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setErrorInfo(ErrorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("additionalParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateInfo.setAdditionalParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

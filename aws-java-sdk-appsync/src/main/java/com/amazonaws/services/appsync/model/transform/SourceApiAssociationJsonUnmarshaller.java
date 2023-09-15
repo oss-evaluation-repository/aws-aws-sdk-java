@@ -43,54 +43,73 @@ public class SourceApiAssociationJsonUnmarshaller implements Unmarshaller<Source
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("associationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceApiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setSourceApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceApiArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setSourceApiArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergedApiArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setMergedApiArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergedApiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setMergedApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceApiAssociationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setSourceApiAssociationConfig(SourceApiAssociationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceApiAssociationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setSourceApiAssociationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceApiAssociationStatusDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setSourceApiAssociationStatusDetail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastSuccessfulMergeDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociation.setLastSuccessfulMergeDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

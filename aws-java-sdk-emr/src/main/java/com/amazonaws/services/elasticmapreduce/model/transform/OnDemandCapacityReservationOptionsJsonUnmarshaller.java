@@ -43,22 +43,33 @@ public class OnDemandCapacityReservationOptionsJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UsageStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     onDemandCapacityReservationOptions.setUsageStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CapacityReservationPreference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     onDemandCapacityReservationOptions.setCapacityReservationPreference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CapacityReservationResourceGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     onDemandCapacityReservationOptions.setCapacityReservationResourceGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

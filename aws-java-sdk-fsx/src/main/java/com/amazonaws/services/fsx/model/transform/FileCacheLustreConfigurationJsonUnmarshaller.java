@@ -43,35 +43,49 @@ public class FileCacheLustreConfigurationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PerUnitStorageThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCacheLustreConfiguration.setPerUnitStorageThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCacheLustreConfiguration.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MountName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCacheLustreConfiguration.setMountName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCacheLustreConfiguration.setWeeklyMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetadataConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCacheLustreConfiguration.setMetadataConfiguration(FileCacheLustreMetadataConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("LogConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCacheLustreConfiguration.setLogConfiguration(LustreLogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class EffectivePolicyJsonUnmarshaller implements Unmarshaller<EffectivePo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PolicyContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectivePolicy.setPolicyContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectivePolicy.setLastUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TargetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectivePolicy.setTargetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectivePolicy.setPolicyType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

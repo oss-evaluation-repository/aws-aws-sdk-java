@@ -44,37 +44,51 @@ public class AssetBundleImportJobDataSourceOverrideParametersJsonUnmarshaller im
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobDataSourceOverrideParameters.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobDataSourceOverrideParameters.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSourceParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobDataSourceOverrideParameters.setDataSourceParameters(DataSourceParametersJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("VpcConnectionProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobDataSourceOverrideParameters.setVpcConnectionProperties(VpcConnectionPropertiesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("SslProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobDataSourceOverrideParameters.setSslProperties(SslPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Credentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobDataSourceOverrideParameters.setCredentials(AssetBundleImportJobDataSourceCredentialsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

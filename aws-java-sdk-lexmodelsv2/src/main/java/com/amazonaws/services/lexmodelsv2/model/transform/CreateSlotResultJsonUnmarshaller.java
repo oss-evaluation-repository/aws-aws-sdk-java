@@ -43,62 +43,83 @@ public class CreateSlotResultJsonUnmarshaller implements Unmarshaller<CreateSlot
             return createSlotResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("slotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setSlotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setSlotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setSlotTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("valueElicitationSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setValueElicitationSetting(SlotValueElicitationSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("obfuscationSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setObfuscationSetting(ObfuscationSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setLocaleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("intentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setIntentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("multipleValuesSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setMultipleValuesSetting(MultipleValuesSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("subSlotSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotResult.setSubSlotSetting(SubSlotSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class StoredQueryMetadataJsonUnmarshaller implements Unmarshaller<StoredQ
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QueryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storedQueryMetadata.setQueryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storedQueryMetadata.setQueryArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storedQueryMetadata.setQueryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storedQueryMetadata.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,44 +43,59 @@ public class GetNetworkAnalyzerConfigurationResultJsonUnmarshaller implements Un
             return getNetworkAnalyzerConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TraceContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkAnalyzerConfigurationResult.setTraceContent(TraceContentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("WirelessDevices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkAnalyzerConfigurationResult.setWirelessDevices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("WirelessGateways", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkAnalyzerConfigurationResult.setWirelessGateways(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkAnalyzerConfigurationResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkAnalyzerConfigurationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkAnalyzerConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MulticastGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkAnalyzerConfigurationResult.setMulticastGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

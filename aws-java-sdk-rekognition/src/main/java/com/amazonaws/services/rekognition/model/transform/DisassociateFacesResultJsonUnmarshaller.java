@@ -43,18 +43,24 @@ public class DisassociateFacesResultJsonUnmarshaller implements Unmarshaller<Dis
             return disassociateFacesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DisassociatedFaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disassociateFacesResult.setDisassociatedFaces(new ListUnmarshaller<DisassociatedFace>(DisassociatedFaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UnsuccessfulFaceDisassociations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disassociateFacesResult.setUnsuccessfulFaceDisassociations(new ListUnmarshaller<UnsuccessfulFaceDisassociation>(
                             UnsuccessfulFaceDisassociationJsonUnmarshaller.getInstance())
@@ -62,8 +68,13 @@ public class DisassociateFacesResultJsonUnmarshaller implements Unmarshaller<Dis
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disassociateFacesResult.setUserStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,30 @@ public class PolicyInformationJsonUnmarshaller implements Unmarshaller<PolicyInf
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CertPolicyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyInformation.setCertPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyQualifiers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyInformation.setPolicyQualifiers(new ListUnmarshaller<PolicyQualifierInfo>(PolicyQualifierInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

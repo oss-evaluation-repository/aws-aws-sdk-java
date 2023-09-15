@@ -43,26 +43,38 @@ public class CommitTransactionResultJsonUnmarshaller implements Unmarshaller<Com
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TransactionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commitTransactionResult.setTransactionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CommitDigest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commitTransactionResult.setCommitDigest(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("TimingInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commitTransactionResult.setTimingInformation(TimingInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConsumedIOs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commitTransactionResult.setConsumedIOs(IOUsageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

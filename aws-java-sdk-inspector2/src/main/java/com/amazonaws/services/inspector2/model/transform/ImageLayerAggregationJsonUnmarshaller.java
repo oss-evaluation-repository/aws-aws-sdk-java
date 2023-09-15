@@ -43,36 +43,49 @@ public class ImageLayerAggregationJsonUnmarshaller implements Unmarshaller<Image
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("layerHashes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageLayerAggregation.setLayerHashes(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("repositories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageLayerAggregation.setRepositories(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageLayerAggregation.setResourceIds(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sortBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageLayerAggregation.setSortBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sortOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageLayerAggregation.setSortOrder(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

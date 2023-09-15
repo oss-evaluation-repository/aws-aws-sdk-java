@@ -43,17 +43,26 @@ public class DescribeConditionalForwardersResultJsonUnmarshaller implements Unma
             return describeConditionalForwardersResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConditionalForwarders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConditionalForwardersResult.setConditionalForwarders(new ListUnmarshaller<ConditionalForwarder>(
                             ConditionalForwarderJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

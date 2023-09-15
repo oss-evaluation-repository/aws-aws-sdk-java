@@ -43,38 +43,53 @@ public class DatabaseInstanceSoftwareDetailsResponseJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInstanceSoftwareDetailsResponse.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInstanceSoftwareDetailsResponse.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineEdition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInstanceSoftwareDetailsResponse.setEngineEdition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServicePack", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInstanceSoftwareDetailsResponse.setServicePack(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInstanceSoftwareDetailsResponse.setSupportLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OsArchitecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInstanceSoftwareDetailsResponse.setOsArchitecture(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Tooltip", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInstanceSoftwareDetailsResponse.setTooltip(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

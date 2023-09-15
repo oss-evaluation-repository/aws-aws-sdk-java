@@ -44,21 +44,31 @@ public class DescribeMetadataModelExportsAsScriptResultJsonUnmarshaller implemen
             return describeMetadataModelExportsAsScriptResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Marker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetadataModelExportsAsScriptResult.setMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Requests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetadataModelExportsAsScriptResult.setRequests(new ListUnmarshaller<SchemaConversionRequest>(
                             SchemaConversionRequestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

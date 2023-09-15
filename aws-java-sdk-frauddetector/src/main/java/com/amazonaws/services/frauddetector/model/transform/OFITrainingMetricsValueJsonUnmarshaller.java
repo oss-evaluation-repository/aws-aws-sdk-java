@@ -43,20 +43,30 @@ public class OFITrainingMetricsValueJsonUnmarshaller implements Unmarshaller<OFI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("metricDataPoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oFITrainingMetricsValue.setMetricDataPoints(new ListUnmarshaller<OFIMetricDataPoint>(OFIMetricDataPointJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("modelPerformance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oFITrainingMetricsValue.setModelPerformance(OFIModelPerformanceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

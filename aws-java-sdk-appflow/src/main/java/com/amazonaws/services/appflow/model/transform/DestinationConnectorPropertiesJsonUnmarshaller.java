@@ -43,62 +43,83 @@ public class DestinationConnectorPropertiesJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Redshift", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setRedshift(RedshiftDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setS3(S3DestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Salesforce", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setSalesforce(SalesforceDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Snowflake", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setSnowflake(SnowflakeDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventBridge", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setEventBridge(EventBridgeDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LookoutMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setLookoutMetrics(LookoutMetricsDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Upsolver", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setUpsolver(UpsolverDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Honeycode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setHoneycode(HoneycodeDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomerProfiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setCustomerProfiles(CustomerProfilesDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Zendesk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setZendesk(ZendeskDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Marketo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setMarketo(MarketoDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomConnector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setCustomConnector(CustomConnectorDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SAPOData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConnectorProperties.setSAPOData(SAPODataDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

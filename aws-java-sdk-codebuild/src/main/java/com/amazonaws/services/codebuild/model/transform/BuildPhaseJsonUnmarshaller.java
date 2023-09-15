@@ -43,36 +43,50 @@ public class BuildPhaseJsonUnmarshaller implements Unmarshaller<BuildPhase, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("phaseType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildPhase.setPhaseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("phaseStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildPhase.setPhaseStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildPhase.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildPhase.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("durationInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildPhase.setDurationInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("contexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildPhase.setContexts(new ListUnmarshaller<PhaseContext>(PhaseContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

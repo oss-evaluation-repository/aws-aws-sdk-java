@@ -43,86 +43,113 @@ public class ExportDescriptionJsonUnmarshaller implements Unmarshaller<ExportDes
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExportArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setExportArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setExportStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExportManifest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setExportManifest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setExportTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ClientToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setClientToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setS3BucketOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setS3Prefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3SseAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setS3SseAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3SseKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setS3SseKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setExportFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BilledSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setBilledSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ItemCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportDescription.setItemCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

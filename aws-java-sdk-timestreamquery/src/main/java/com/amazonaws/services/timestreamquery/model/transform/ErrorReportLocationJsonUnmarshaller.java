@@ -43,14 +43,23 @@ public class ErrorReportLocationJsonUnmarshaller implements Unmarshaller<ErrorRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3ReportLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     errorReportLocation.setS3ReportLocation(S3ReportLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

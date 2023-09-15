@@ -43,20 +43,30 @@ public class DescribeUpdateDirectoryResultJsonUnmarshaller implements Unmarshall
             return describeUpdateDirectoryResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UpdateActivities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUpdateDirectoryResult.setUpdateActivities(new ListUnmarshaller<UpdateInfoEntry>(UpdateInfoEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUpdateDirectoryResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

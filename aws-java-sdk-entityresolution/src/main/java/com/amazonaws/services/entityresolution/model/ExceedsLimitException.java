@@ -16,13 +16,26 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because it attempted to create resources beyond the current AWS Entity Resolution account
+ * The request was rejected because it attempted to create resources beyond the current Entity Resolution account
  * limits. The error message describes the limit exceeded. <code>HTTP Status Code: 402</code>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExceedsLimitException extends com.amazonaws.services.entityresolution.model.AWSEntityResolutionException {
     private static final long serialVersionUID = 1L;
+
+    /**
+     * <p>
+     * The name of the quota that has been breached.
+     * </p>
+     */
+    private String quotaName;
+    /**
+     * <p>
+     * The current quota value for the customers.
+     * </p>
+     */
+    private Integer quotaValue;
 
     /**
      * Constructs a new ExceedsLimitException with the specified error message.
@@ -32,6 +45,90 @@ public class ExceedsLimitException extends com.amazonaws.services.entityresoluti
      */
     public ExceedsLimitException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * The name of the quota that has been breached.
+     * </p>
+     * 
+     * @param quotaName
+     *        The name of the quota that has been breached.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("quotaName")
+    public void setQuotaName(String quotaName) {
+        this.quotaName = quotaName;
+    }
+
+    /**
+     * <p>
+     * The name of the quota that has been breached.
+     * </p>
+     * 
+     * @return The name of the quota that has been breached.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("quotaName")
+    public String getQuotaName() {
+        return this.quotaName;
+    }
+
+    /**
+     * <p>
+     * The name of the quota that has been breached.
+     * </p>
+     * 
+     * @param quotaName
+     *        The name of the quota that has been breached.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExceedsLimitException withQuotaName(String quotaName) {
+        setQuotaName(quotaName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current quota value for the customers.
+     * </p>
+     * 
+     * @param quotaValue
+     *        The current quota value for the customers.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("quotaValue")
+    public void setQuotaValue(Integer quotaValue) {
+        this.quotaValue = quotaValue;
+    }
+
+    /**
+     * <p>
+     * The current quota value for the customers.
+     * </p>
+     * 
+     * @return The current quota value for the customers.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("quotaValue")
+    public Integer getQuotaValue() {
+        return this.quotaValue;
+    }
+
+    /**
+     * <p>
+     * The current quota value for the customers.
+     * </p>
+     * 
+     * @param quotaValue
+     *        The current quota value for the customers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExceedsLimitException withQuotaValue(Integer quotaValue) {
+        setQuotaValue(quotaValue);
+        return this;
     }
 
 }

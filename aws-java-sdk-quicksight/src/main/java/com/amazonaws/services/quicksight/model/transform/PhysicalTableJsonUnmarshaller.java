@@ -43,22 +43,33 @@ public class PhysicalTableJsonUnmarshaller implements Unmarshaller<PhysicalTable
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RelationalTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalTable.setRelationalTable(RelationalTableJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomSql", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalTable.setCustomSql(CustomSqlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalTable.setS3Source(S3SourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

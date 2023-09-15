@@ -43,26 +43,38 @@ public class SalesforceSourcePropertiesJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("object", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceSourceProperties.setObject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enableDynamicFieldUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceSourceProperties.setEnableDynamicFieldUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("includeDeletedRecords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceSourceProperties.setIncludeDeletedRecords(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("dataTransferApi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceSourceProperties.setDataTransferApi(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

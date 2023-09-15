@@ -43,26 +43,38 @@ public class ColumnStatisticsJsonUnmarshaller implements Unmarshaller<ColumnStat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ColumnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatistics.setColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatistics.setColumnType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnalyzedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatistics.setAnalyzedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StatisticsData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatistics.setStatisticsData(ColumnStatisticsDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

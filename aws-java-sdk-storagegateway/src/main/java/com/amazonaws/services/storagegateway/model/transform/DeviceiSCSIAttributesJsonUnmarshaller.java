@@ -43,26 +43,38 @@ public class DeviceiSCSIAttributesJsonUnmarshaller implements Unmarshaller<Devic
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceiSCSIAttributes.setTargetARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceiSCSIAttributes.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfacePort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceiSCSIAttributes.setNetworkInterfacePort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ChapEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceiSCSIAttributes.setChapEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

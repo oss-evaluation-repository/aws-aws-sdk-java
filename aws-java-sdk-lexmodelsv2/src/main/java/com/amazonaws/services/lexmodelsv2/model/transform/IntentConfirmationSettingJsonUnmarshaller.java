@@ -43,62 +43,83 @@ public class IntentConfirmationSettingJsonUnmarshaller implements Unmarshaller<I
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("promptSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setPromptSpecification(PromptSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("declinationResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setDeclinationResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("active", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("confirmationResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setConfirmationResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("confirmationNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setConfirmationNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("confirmationConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setConfirmationConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("declinationNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setDeclinationNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("declinationConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setDeclinationConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setFailureResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setFailureNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setFailureConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("codeHook", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setCodeHook(DialogCodeHookInvocationSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("elicitationCodeHook", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentConfirmationSetting.setElicitationCodeHook(ElicitationCodeHookInvocationSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

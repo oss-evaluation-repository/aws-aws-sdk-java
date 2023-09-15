@@ -43,34 +43,48 @@ public class TelemetryRecordJsonUnmarshaller implements Unmarshaller<TelemetryRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     telemetryRecord.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SegmentsReceivedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     telemetryRecord.setSegmentsReceivedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentsSentCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     telemetryRecord.setSegmentsSentCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentsSpilloverCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     telemetryRecord.setSegmentsSpilloverCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentsRejectedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     telemetryRecord.setSegmentsRejectedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BackendConnectionErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     telemetryRecord.setBackendConnectionErrors(BackendConnectionErrorsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

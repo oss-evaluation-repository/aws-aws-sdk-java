@@ -43,22 +43,33 @@ public class RejectedLogEventsInfoJsonUnmarshaller implements Unmarshaller<Rejec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tooNewLogEventStartIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rejectedLogEventsInfo.setTooNewLogEventStartIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("tooOldLogEventEndIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rejectedLogEventsInfo.setTooOldLogEventEndIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("expiredLogEventEndIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rejectedLogEventsInfo.setExpiredLogEventEndIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

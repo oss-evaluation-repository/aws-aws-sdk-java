@@ -43,18 +43,28 @@ public class ItemsLimitConfigurationJsonUnmarshaller implements Unmarshaller<Ite
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ItemsLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     itemsLimitConfiguration.setItemsLimit(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("OtherCategories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     itemsLimitConfiguration.setOtherCategories(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

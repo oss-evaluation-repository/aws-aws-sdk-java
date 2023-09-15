@@ -43,34 +43,48 @@ public class NodeInfoJsonUnmarshaller implements Unmarshaller<NodeInfo, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("addedToClusterTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInfo.setAddedToClusterTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("brokerNodeInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInfo.setBrokerNodeInfo(BrokerNodeInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInfo.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nodeARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInfo.setNodeARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nodeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInfo.setNodeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("zookeeperNodeInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInfo.setZookeeperNodeInfo(ZookeeperNodeInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

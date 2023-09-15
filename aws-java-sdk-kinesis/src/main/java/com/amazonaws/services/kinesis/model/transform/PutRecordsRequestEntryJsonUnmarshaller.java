@@ -43,22 +43,33 @@ public class PutRecordsRequestEntryJsonUnmarshaller implements Unmarshaller<PutR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Data", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRecordsRequestEntry.setData(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("ExplicitHashKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRecordsRequestEntry.setExplicitHashKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartitionKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRecordsRequestEntry.setPartitionKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

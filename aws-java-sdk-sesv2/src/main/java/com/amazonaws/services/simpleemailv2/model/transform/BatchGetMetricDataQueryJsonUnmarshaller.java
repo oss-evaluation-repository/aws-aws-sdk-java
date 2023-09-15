@@ -43,35 +43,49 @@ public class BatchGetMetricDataQueryJsonUnmarshaller implements Unmarshaller<Bat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetMetricDataQuery.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetMetricDataQuery.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Metric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetMetricDataQuery.setMetric(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Dimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetMetricDataQuery.setDimensions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("StartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetMetricDataQuery.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetMetricDataQuery.setEndDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

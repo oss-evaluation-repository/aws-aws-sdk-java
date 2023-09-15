@@ -43,25 +43,36 @@ public class FlinkApplicationConfigurationUpdateJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CheckpointConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flinkApplicationConfigurationUpdate.setCheckpointConfigurationUpdate(CheckpointConfigurationUpdateJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("MonitoringConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flinkApplicationConfigurationUpdate.setMonitoringConfigurationUpdate(MonitoringConfigurationUpdateJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ParallelismConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flinkApplicationConfigurationUpdate.setParallelismConfigurationUpdate(ParallelismConfigurationUpdateJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

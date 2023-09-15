@@ -43,34 +43,48 @@ public class DeliverabilityTestReportJsonUnmarshaller implements Unmarshaller<De
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReportId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliverabilityTestReport.setReportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliverabilityTestReport.setReportName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliverabilityTestReport.setSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FromEmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliverabilityTestReport.setFromEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliverabilityTestReport.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeliverabilityTestStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliverabilityTestReport.setDeliverabilityTestStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

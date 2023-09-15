@@ -43,22 +43,33 @@ public class MonitoringConfigurationUpdateJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigurationTypeUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringConfigurationUpdate.setConfigurationTypeUpdate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricsLevelUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringConfigurationUpdate.setMetricsLevelUpdate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogLevelUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringConfigurationUpdate.setLogLevelUpdate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

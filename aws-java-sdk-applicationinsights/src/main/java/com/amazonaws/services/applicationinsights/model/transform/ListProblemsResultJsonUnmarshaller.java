@@ -43,28 +43,40 @@ public class ListProblemsResultJsonUnmarshaller implements Unmarshaller<ListProb
             return listProblemsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProblemList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listProblemsResult.setProblemList(new ListUnmarshaller<Problem>(ProblemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listProblemsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listProblemsResult.setResourceGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listProblemsResult.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

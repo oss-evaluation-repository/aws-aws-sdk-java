@@ -43,20 +43,30 @@ public class ListActionTypesResultJsonUnmarshaller implements Unmarshaller<ListA
             return listActionTypesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listActionTypesResult.setActionTypes(new ListUnmarshaller<ActionType>(ActionTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listActionTypesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

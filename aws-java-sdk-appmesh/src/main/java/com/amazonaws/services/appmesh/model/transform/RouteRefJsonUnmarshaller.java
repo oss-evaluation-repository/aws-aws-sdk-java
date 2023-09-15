@@ -43,46 +43,63 @@ public class RouteRefJsonUnmarshaller implements Unmarshaller<RouteRef, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeRef.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeRef.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeRef.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("meshName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("meshOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeRef.setMeshOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeRef.setRouteName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeRef.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualRouterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeRef.setVirtualRouterName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,55 @@ public class EventDestinationJsonUnmarshaller implements Unmarshaller<EventDesti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestination.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestination.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchingEventTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestination.setMatchingEventTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("KinesisFirehoseDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestination.setKinesisFirehoseDestination(KinesisFirehoseDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestination.setCloudWatchDestination(CloudWatchDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SnsDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestination.setSnsDestination(SnsDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PinpointDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestination.setPinpointDestination(PinpointDestinationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

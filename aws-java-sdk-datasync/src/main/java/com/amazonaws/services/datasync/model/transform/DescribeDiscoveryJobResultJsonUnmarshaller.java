@@ -43,34 +43,48 @@ public class DescribeDiscoveryJobResultJsonUnmarshaller implements Unmarshaller<
             return describeDiscoveryJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorageSystemArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscoveryJobResult.setStorageSystemArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiscoveryJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscoveryJobResult.setDiscoveryJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CollectionDurationMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscoveryJobResult.setCollectionDurationMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscoveryJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscoveryJobResult.setJobStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("JobEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscoveryJobResult.setJobEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

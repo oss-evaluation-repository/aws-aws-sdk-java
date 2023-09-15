@@ -43,18 +43,28 @@ public class AddAttachmentsToSetResultJsonUnmarshaller implements Unmarshaller<A
             return addAttachmentsToSetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attachmentSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addAttachmentsToSetResult.setAttachmentSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expiryTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addAttachmentsToSetResult.setExpiryTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,43 +43,59 @@ public class AssetShallowJsonUnmarshaller implements Unmarshaller<AssetShallow, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetShallow.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetShallow.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetShallow.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("packagingGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetShallow.setPackagingGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetShallow.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetShallow.setSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetShallow.setSourceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetShallow.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

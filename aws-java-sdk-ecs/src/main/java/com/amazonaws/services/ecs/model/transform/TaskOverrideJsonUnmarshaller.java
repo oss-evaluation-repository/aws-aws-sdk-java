@@ -43,22 +43,29 @@ public class TaskOverrideJsonUnmarshaller implements Unmarshaller<TaskOverride, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerOverrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskOverride.setContainerOverrides(new ListUnmarshaller<ContainerOverride>(ContainerOverrideJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskOverride.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inferenceAcceleratorOverrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskOverride.setInferenceAcceleratorOverrides(new ListUnmarshaller<InferenceAcceleratorOverride>(
                             InferenceAcceleratorOverrideJsonUnmarshaller.getInstance())
@@ -66,20 +73,28 @@ public class TaskOverrideJsonUnmarshaller implements Unmarshaller<TaskOverride, 
                     .unmarshall(context));
                 }
                 if (context.testExpression("executionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskOverride.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskOverride.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskOverride.setTaskRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ephemeralStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskOverride.setEphemeralStorage(EphemeralStorageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

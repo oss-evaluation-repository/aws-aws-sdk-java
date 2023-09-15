@@ -43,18 +43,28 @@ public class AccountSharingInfoJsonUnmarshaller implements Unmarshaller<AccountS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSharingInfo.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedDocumentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSharingInfo.setSharedDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

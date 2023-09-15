@@ -43,18 +43,28 @@ public class PipelineInfoJsonUnmarshaller implements Unmarshaller<PipelineInfo, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineConfigurationTimeStamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineInfo.setPipelineConfigurationTimeStamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pipelineType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineInfo.setPipelineType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

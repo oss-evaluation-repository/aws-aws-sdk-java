@@ -43,42 +43,57 @@ public class FieldTypeDetailsJsonUnmarshaller implements Unmarshaller<FieldTypeD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fieldType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldTypeDetails.setFieldType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterOperators", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldTypeDetails.setFilterOperators(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("supportedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldTypeDetails.setSupportedValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("valueRegexPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldTypeDetails.setValueRegexPattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportedDateFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldTypeDetails.setSupportedDateFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fieldValueRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldTypeDetails.setFieldValueRange(RangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fieldLengthRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldTypeDetails.setFieldLengthRange(RangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

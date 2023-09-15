@@ -43,42 +43,58 @@ public class PresetJsonUnmarshaller implements Unmarshaller<Preset, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     preset.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     preset.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     preset.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     preset.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     preset.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     preset.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     preset.setSettings(PresetSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     preset.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

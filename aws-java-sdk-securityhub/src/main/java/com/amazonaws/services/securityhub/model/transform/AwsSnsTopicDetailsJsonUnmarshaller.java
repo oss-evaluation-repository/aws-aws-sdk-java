@@ -43,56 +43,75 @@ public class AwsSnsTopicDetailsJsonUnmarshaller implements Unmarshaller<AwsSnsTo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KmsMasterKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setKmsMasterKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subscription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setSubscription(new ListUnmarshaller<AwsSnsTopicSubscription>(AwsSnsTopicSubscriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TopicName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setTopicName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SqsSuccessFeedbackRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setSqsSuccessFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SqsFailureFeedbackRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setSqsFailureFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationSuccessFeedbackRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setApplicationSuccessFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirehoseSuccessFeedbackRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setFirehoseSuccessFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirehoseFailureFeedbackRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setFirehoseFailureFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HttpSuccessFeedbackRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setHttpSuccessFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HttpFailureFeedbackRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSnsTopicDetails.setHttpFailureFeedbackRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

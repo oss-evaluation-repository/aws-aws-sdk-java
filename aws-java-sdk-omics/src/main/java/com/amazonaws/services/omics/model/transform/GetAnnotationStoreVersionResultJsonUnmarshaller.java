@@ -43,63 +43,84 @@ public class GetAnnotationStoreVersionResultJsonUnmarshaller implements Unmarsha
             return getAnnotationStoreVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("storeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("versionOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setVersionOptions(VersionOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreVersionResult.setVersionSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

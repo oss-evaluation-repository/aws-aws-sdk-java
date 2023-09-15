@@ -43,26 +43,38 @@ public class DestinationBackupJsonUnmarshaller implements Unmarshaller<Destinati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationBackup.setCreateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SourceRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationBackup.setSourceRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceBackup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationBackup.setSourceBackup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceCluster", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationBackup.setSourceCluster(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,9 +43,13 @@ public class DeleteVirtualGatewayResultJsonUnmarshaller implements Unmarshaller<
             return deleteVirtualGatewayResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteVirtualGatewayResult.setVirtualGateway(VirtualGatewayDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

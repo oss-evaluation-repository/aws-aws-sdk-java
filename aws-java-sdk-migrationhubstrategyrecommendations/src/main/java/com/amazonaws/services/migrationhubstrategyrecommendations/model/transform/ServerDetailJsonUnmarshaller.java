@@ -43,42 +43,54 @@ public class ServerDetailJsonUnmarshaller implements Unmarshaller<ServerDetail, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("antipatternReportS3Object", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setAntipatternReportS3Object(S3ObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("antipatternReportStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setAntipatternReportStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("antipatternReportStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setAntipatternReportStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationComponentStrategySummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setApplicationComponentStrategySummary(new ListUnmarshaller<StrategySummary>(StrategySummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("dataCollectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setDataCollectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastAnalyzedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setLastAnalyzedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("listAntipatternSeveritySummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setListAntipatternSeveritySummary(new ListUnmarshaller<AntipatternSeveritySummary>(AntipatternSeveritySummaryJsonUnmarshaller
                             .getInstance())
@@ -86,28 +98,38 @@ public class ServerDetailJsonUnmarshaller implements Unmarshaller<ServerDetail, 
                     .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendationSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setRecommendationSet(RecommendationSetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serverError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setServerError(ServerErrorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serverType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setServerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("systemInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverDetail.setSystemInfo(SystemInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

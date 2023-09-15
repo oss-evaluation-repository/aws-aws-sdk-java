@@ -43,22 +43,33 @@ public class TokenValidityUnitsTypeJsonUnmarshaller implements Unmarshaller<Toke
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenValidityUnitsType.setAccessToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenValidityUnitsType.setIdToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RefreshToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenValidityUnitsType.setRefreshToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

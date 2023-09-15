@@ -43,46 +43,63 @@ public class KPIOptionsJsonUnmarshaller implements Unmarshaller<KPIOptions, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProgressBar", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kPIOptions.setProgressBar(ProgressBarOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TrendArrows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kPIOptions.setTrendArrows(TrendArrowOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SecondaryValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kPIOptions.setSecondaryValue(SecondaryValueOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Comparison", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kPIOptions.setComparison(ComparisonConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PrimaryValueDisplayType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kPIOptions.setPrimaryValueDisplayType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrimaryValueFontConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kPIOptions.setPrimaryValueFontConfiguration(FontConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SecondaryValueFontConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kPIOptions.setSecondaryValueFontConfiguration(FontConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Sparkline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kPIOptions.setSparkline(KPISparklineOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisualLayoutOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kPIOptions.setVisualLayoutOptions(KPIVisualLayoutOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,37 +43,51 @@ public class PutJsonUnmarshaller implements Unmarshaller<Put, JsonUnmarshallerCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Item", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     put.setItem(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     put.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConditionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     put.setConditionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpressionAttributeNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     put.setExpressionAttributeNames(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("ExpressionAttributeValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     put.setExpressionAttributeValues(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class),
                             AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ReturnValuesOnConditionCheckFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     put.setReturnValuesOnConditionCheckFailure(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

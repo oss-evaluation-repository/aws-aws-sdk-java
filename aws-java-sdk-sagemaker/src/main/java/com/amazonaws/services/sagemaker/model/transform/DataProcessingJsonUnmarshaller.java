@@ -43,22 +43,33 @@ public class DataProcessingJsonUnmarshaller implements Unmarshaller<DataProcessi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InputFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProcessing.setInputFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProcessing.setOutputFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JoinSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProcessing.setJoinSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,16 +43,25 @@ public class BatchCreateVariableResultJsonUnmarshaller implements Unmarshaller<B
             return batchCreateVariableResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchCreateVariableResult.setErrors(new ListUnmarshaller<BatchCreateVariableError>(BatchCreateVariableErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

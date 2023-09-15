@@ -43,22 +43,33 @@ public class Mp2SettingsJsonUnmarshaller implements Unmarshaller<Mp2Settings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mp2Settings.setBitrate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("codingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mp2Settings.setCodingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mp2Settings.setSampleRate(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

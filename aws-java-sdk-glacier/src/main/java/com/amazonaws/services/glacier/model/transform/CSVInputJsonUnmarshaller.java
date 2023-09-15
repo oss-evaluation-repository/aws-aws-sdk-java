@@ -43,34 +43,48 @@ public class CSVInputJsonUnmarshaller implements Unmarshaller<CSVInput, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FileHeaderInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cSVInput.setFileHeaderInfo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Comments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cSVInput.setComments(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuoteEscapeCharacter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cSVInput.setQuoteEscapeCharacter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecordDelimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cSVInput.setRecordDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FieldDelimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cSVInput.setFieldDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuoteCharacter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cSVInput.setQuoteCharacter(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

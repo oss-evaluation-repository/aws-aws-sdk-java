@@ -43,46 +43,63 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ownerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setOwnerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setLifecycle(EnvironmentLifecycleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("managedCredentialsStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setManagedCredentialsStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,40 +44,55 @@ public class GetScalingConfigurationRecommendationResultJsonUnmarshaller impleme
             return getScalingConfigurationRecommendationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InferenceRecommendationsJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScalingConfigurationRecommendationResult.setInferenceRecommendationsJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScalingConfigurationRecommendationResult.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScalingConfigurationRecommendationResult.setEndpointName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetCpuUtilizationPerCore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScalingConfigurationRecommendationResult.setTargetCpuUtilizationPerCore(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalingPolicyObjective", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScalingConfigurationRecommendationResult.setScalingPolicyObjective(ScalingPolicyObjectiveJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("Metric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScalingConfigurationRecommendationResult.setMetric(ScalingPolicyMetricJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DynamicScalingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScalingConfigurationRecommendationResult.setDynamicScalingConfiguration(DynamicScalingConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

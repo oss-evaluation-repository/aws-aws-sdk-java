@@ -43,92 +43,119 @@ public class S3CsvSourceJsonUnmarshaller implements Unmarshaller<S3CsvSource, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Paths", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Exclusions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setExclusions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("GroupSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setGroupSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setGroupFiles(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Recurse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setRecurse(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxBand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setMaxBand(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxFilesInBand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setMaxFilesInBand(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setAdditionalOptions(S3DirectSourceAdditionalOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Separator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setSeparator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Escaper", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setEscaper(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuoteChar", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setQuoteChar(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Multiline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setMultiline(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("WithHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setWithHeader(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("WriteHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setWriteHeader(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SkipFirst", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setSkipFirst(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OptimizePerformance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setOptimizePerformance(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputSchemas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3CsvSource.setOutputSchemas(new ListUnmarshaller<GlueSchema>(GlueSchemaJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,28 +43,40 @@ public class CloudTrailDetailsJsonUnmarshaller implements Unmarshaller<CloudTrai
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("trails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudTrailDetails.setTrails(new ListUnmarshaller<Trail>(TrailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("accessRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudTrailDetails.setAccessRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudTrailDetails.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudTrailDetails.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

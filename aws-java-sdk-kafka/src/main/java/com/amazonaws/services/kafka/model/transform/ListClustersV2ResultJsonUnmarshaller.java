@@ -43,20 +43,30 @@ public class ListClustersV2ResultJsonUnmarshaller implements Unmarshaller<ListCl
             return listClustersV2Result;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterInfoList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listClustersV2Result.setClusterInfoList(new ListUnmarshaller<Cluster>(ClusterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listClustersV2Result.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

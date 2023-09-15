@@ -43,56 +43,75 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setBackupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setBackupState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setClusterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setCreateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CopyTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setCopyTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NeverExpires", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setNeverExpires(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setSourceRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceBackup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setSourceBackup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceCluster", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setSourceCluster(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeleteTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setDeleteTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TagList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setTagList(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

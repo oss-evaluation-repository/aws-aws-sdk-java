@@ -43,36 +43,50 @@ public class InsightVisualJsonUnmarshaller implements Unmarshaller<InsightVisual
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VisualId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightVisual.setVisualId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightVisual.setTitle(VisualTitleLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Subtitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightVisual.setSubtitle(VisualSubtitleLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InsightConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightVisual.setInsightConfiguration(InsightConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightVisual.setActions(new ListUnmarshaller<VisualCustomAction>(VisualCustomActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataSetIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightVisual.setDataSetIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

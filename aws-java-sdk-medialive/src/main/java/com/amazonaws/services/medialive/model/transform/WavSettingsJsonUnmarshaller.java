@@ -43,22 +43,33 @@ public class WavSettingsJsonUnmarshaller implements Unmarshaller<WavSettings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bitDepth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wavSettings.setBitDepth(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("codingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wavSettings.setCodingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wavSettings.setSampleRate(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

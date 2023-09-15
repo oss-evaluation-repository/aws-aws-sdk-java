@@ -43,48 +43,65 @@ public class UnlockRuleResultJsonUnmarshaller implements Unmarshaller<UnlockRule
             return unlockRuleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Identifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unlockRuleResult.setIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unlockRuleResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unlockRuleResult.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetentionPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unlockRuleResult.setRetentionPeriod(RetentionPeriodJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unlockRuleResult.setResourceTags(new ListUnmarshaller<ResourceTag>(ResourceTagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unlockRuleResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LockConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unlockRuleResult.setLockConfiguration(LockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LockState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unlockRuleResult.setLockState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LockEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unlockRuleResult.setLockEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

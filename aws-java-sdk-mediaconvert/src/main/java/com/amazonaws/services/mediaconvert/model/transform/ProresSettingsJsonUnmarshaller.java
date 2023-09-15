@@ -43,62 +43,83 @@ public class ProresSettingsJsonUnmarshaller implements Unmarshaller<ProresSettin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("chromaSampling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setChromaSampling(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codecProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setCodecProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setFramerateControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateConversionAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setFramerateConversionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setFramerateDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setFramerateNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("interlaceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setInterlaceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setParControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setParDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setParNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slowPal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setSlowPal(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("telecine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proresSettings.setTelecine(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,102 +43,133 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dynamoDB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setDynamoDB(DynamoDBActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dynamoDBv2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setDynamoDBv2(DynamoDBv2ActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambda", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setLambda(LambdaActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setSns(SnsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sqs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setSqs(SqsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kinesis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setKinesis(KinesisActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("republish", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setRepublish(RepublishActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setS3(S3ActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("firehose", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setFirehose(FirehoseActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cloudwatchMetric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setCloudwatchMetric(CloudwatchMetricActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cloudwatchAlarm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setCloudwatchAlarm(CloudwatchAlarmActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cloudwatchLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setCloudwatchLogs(CloudwatchLogsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("elasticsearch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setElasticsearch(ElasticsearchActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("salesforce", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setSalesforce(SalesforceActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iotAnalytics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setIotAnalytics(IotAnalyticsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iotEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setIotEvents(IotEventsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iotSiteWise", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setIotSiteWise(IotSiteWiseActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("stepFunctions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setStepFunctions(StepFunctionsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timestream", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setTimestream(TimestreamActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("http", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setHttp(HttpActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kafka", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setKafka(KafkaActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("openSearch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setOpenSearch(OpenSearchActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setLocation(LocationActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

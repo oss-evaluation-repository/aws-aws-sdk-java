@@ -43,42 +43,58 @@ public class PostCommentForPullRequestResultJsonUnmarshaller implements Unmarsha
             return postCommentForPullRequestResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCommentForPullRequestResult.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pullRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCommentForPullRequestResult.setPullRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("beforeCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCommentForPullRequestResult.setBeforeCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("afterCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCommentForPullRequestResult.setAfterCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("beforeBlobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCommentForPullRequestResult.setBeforeBlobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("afterBlobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCommentForPullRequestResult.setAfterBlobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCommentForPullRequestResult.setLocation(LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCommentForPullRequestResult.setComment(CommentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

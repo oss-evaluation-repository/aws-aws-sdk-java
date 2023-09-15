@@ -43,50 +43,67 @@ public class DomainJsonUnmarshaller implements Unmarshaller<Domain, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domain.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domain.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domain.setSupportCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domain.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domain.setLocation(ResourceLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domain.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domain.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("domainEntries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domain.setDomainEntries(new ListUnmarshaller<DomainEntry>(DomainEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("registeredDomainDelegationInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domain.setRegisteredDomainDelegationInfo(RegisteredDomainDelegationInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

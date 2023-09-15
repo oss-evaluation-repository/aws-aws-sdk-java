@@ -43,48 +43,65 @@ public class UserSettingsJsonUnmarshaller implements Unmarshaller<UserSettings, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExecutionRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SharingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setSharingSettings(SharingSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JupyterServerAppSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setJupyterServerAppSettings(JupyterServerAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KernelGatewayAppSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setKernelGatewayAppSettings(KernelGatewayAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TensorBoardAppSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setTensorBoardAppSettings(TensorBoardAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RStudioServerProAppSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setRStudioServerProAppSettings(RStudioServerProAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RSessionAppSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setRSessionAppSettings(RSessionAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CanvasAppSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setCanvasAppSettings(CanvasAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

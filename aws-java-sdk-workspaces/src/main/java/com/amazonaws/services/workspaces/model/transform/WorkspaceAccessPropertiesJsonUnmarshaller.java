@@ -43,42 +43,58 @@ public class WorkspaceAccessPropertiesJsonUnmarshaller implements Unmarshaller<W
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceTypeWindows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceAccessProperties.setDeviceTypeWindows(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeOsx", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceAccessProperties.setDeviceTypeOsx(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeWeb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceAccessProperties.setDeviceTypeWeb(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeIos", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceAccessProperties.setDeviceTypeIos(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeAndroid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceAccessProperties.setDeviceTypeAndroid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeChromeOs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceAccessProperties.setDeviceTypeChromeOs(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeZeroClient", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceAccessProperties.setDeviceTypeZeroClient(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeLinux", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceAccessProperties.setDeviceTypeLinux(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

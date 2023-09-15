@@ -43,38 +43,53 @@ public class GlobalConfigurationJsonUnmarshaller implements Unmarshaller<GlobalC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("initialAudioGain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalConfiguration.setInitialAudioGain(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("inputEndAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalConfiguration.setInputEndAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputLossBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalConfiguration.setInputLossBehavior(InputLossBehaviorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("outputLockingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalConfiguration.setOutputLockingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputTimingSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalConfiguration.setOutputTimingSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportLowFramerateInputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalConfiguration.setSupportLowFramerateInputs(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputLockingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalConfiguration.setOutputLockingSettings(OutputLockingSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

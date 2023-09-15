@@ -43,46 +43,62 @@ public class PIIDetectionJsonUnmarshaller implements Unmarshaller<PIIDetection, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pIIDetection.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pIIDetection.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PiiType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pIIDetection.setPiiType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EntityTypesToDetect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pIIDetection.setEntityTypesToDetect(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OutputColumnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pIIDetection.setOutputColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SampleFraction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pIIDetection.setSampleFraction(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ThresholdFraction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pIIDetection.setThresholdFraction(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MaskValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pIIDetection.setMaskValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

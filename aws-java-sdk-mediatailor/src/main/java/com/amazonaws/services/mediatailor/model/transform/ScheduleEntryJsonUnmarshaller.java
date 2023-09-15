@@ -43,52 +43,70 @@ public class ScheduleEntryJsonUnmarshaller implements Unmarshaller<ScheduleEntry
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApproximateDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleEntry.setApproximateDurationSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ApproximateStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleEntry.setApproximateStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleEntry.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleEntry.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LiveSourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleEntry.setLiveSourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProgramName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleEntry.setProgramName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleAdBreaks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleEntry.setScheduleAdBreaks(new ListUnmarshaller<ScheduleAdBreak>(ScheduleAdBreakJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ScheduleEntryType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleEntry.setScheduleEntryType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceLocationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleEntry.setSourceLocationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VodSourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleEntry.setVodSourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

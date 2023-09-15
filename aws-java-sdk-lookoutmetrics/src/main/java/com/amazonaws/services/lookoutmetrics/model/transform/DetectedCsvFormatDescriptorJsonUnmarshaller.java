@@ -43,34 +43,48 @@ public class DetectedCsvFormatDescriptorJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FileCompression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectedCsvFormatDescriptor.setFileCompression(DetectedFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Charset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectedCsvFormatDescriptor.setCharset(DetectedFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ContainsHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectedCsvFormatDescriptor.setContainsHeader(DetectedFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Delimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectedCsvFormatDescriptor.setDelimiter(DetectedFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HeaderList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectedCsvFormatDescriptor.setHeaderList(DetectedFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("QuoteSymbol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectedCsvFormatDescriptor.setQuoteSymbol(DetectedFieldJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

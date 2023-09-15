@@ -43,40 +43,55 @@ public class ListWorkflowStepExecutionsResultJsonUnmarshaller implements Unmarsh
             return listWorkflowStepExecutionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("requestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowStepExecutionsResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("steps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowStepExecutionsResult.setSteps(new ListUnmarshaller<WorkflowStepMetadata>(WorkflowStepMetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("workflowBuildVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowStepExecutionsResult.setWorkflowBuildVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowStepExecutionsResult.setWorkflowExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageBuildVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowStepExecutionsResult.setImageBuildVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowStepExecutionsResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowStepExecutionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

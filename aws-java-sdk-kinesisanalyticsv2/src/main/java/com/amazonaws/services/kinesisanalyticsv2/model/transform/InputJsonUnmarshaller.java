@@ -43,34 +43,48 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NamePrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     input.setNamePrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputProcessingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     input.setInputProcessingConfiguration(InputProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisStreamsInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     input.setKinesisStreamsInput(KinesisStreamsInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisFirehoseInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     input.setKinesisFirehoseInput(KinesisFirehoseInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputParallelism", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     input.setInputParallelism(InputParallelismJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     input.setInputSchema(SourceSchemaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

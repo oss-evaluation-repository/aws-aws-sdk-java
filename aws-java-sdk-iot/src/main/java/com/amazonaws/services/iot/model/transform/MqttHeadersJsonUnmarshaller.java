@@ -43,36 +43,50 @@ public class MqttHeadersJsonUnmarshaller implements Unmarshaller<MqttHeaders, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("payloadFormatIndicator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mqttHeaders.setPayloadFormatIndicator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mqttHeaders.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("responseTopic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mqttHeaders.setResponseTopic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("correlationData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mqttHeaders.setCorrelationData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("messageExpiry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mqttHeaders.setMessageExpiry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mqttHeaders.setUserProperties(new ListUnmarshaller<UserProperty>(UserPropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class SlotValueOverrideJsonUnmarshaller implements Unmarshaller<SlotValue
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("shape", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotValueOverride.setShape(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotValueOverride.setValue(SlotValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("values", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotValueOverride.setValues(new ListUnmarshaller<SlotValueOverride>(SlotValueOverrideJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

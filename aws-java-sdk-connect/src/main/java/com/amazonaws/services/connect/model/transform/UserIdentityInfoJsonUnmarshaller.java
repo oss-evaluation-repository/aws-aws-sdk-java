@@ -43,30 +43,43 @@ public class UserIdentityInfoJsonUnmarshaller implements Unmarshaller<UserIdenti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FirstName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentityInfo.setFirstName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentityInfo.setLastName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Email", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentityInfo.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecondaryEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentityInfo.setSecondaryEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Mobile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentityInfo.setMobile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,55 +43,73 @@ public class CreateSlotTypeVersionResultJsonUnmarshaller implements Unmarshaller
             return createSlotTypeVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotTypeVersionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotTypeVersionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enumerationValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotTypeVersionResult.setEnumerationValues(new ListUnmarshaller<EnumerationValue>(EnumerationValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotTypeVersionResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotTypeVersionResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotTypeVersionResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("checksum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotTypeVersionResult.setChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("valueSelectionStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotTypeVersionResult.setValueSelectionStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parentSlotTypeSignature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotTypeVersionResult.setParentSlotTypeSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotTypeConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSlotTypeVersionResult.setSlotTypeConfigurations(new ListUnmarshaller<SlotTypeConfiguration>(SlotTypeConfigurationJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

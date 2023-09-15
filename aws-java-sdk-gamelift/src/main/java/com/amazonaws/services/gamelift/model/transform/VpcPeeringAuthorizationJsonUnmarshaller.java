@@ -43,30 +43,43 @@ public class VpcPeeringAuthorizationJsonUnmarshaller implements Unmarshaller<Vpc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GameLiftAwsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringAuthorization.setGameLiftAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PeerVpcAwsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringAuthorization.setPeerVpcAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PeerVpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringAuthorization.setPeerVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringAuthorization.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExpirationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringAuthorization.setExpirationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

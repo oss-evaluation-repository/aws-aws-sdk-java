@@ -43,34 +43,48 @@ public class CoreNetworkPolicyVersionJsonUnmarshaller implements Unmarshaller<Co
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CoreNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkPolicyVersion.setCoreNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkPolicyVersion.setPolicyVersionId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Alias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkPolicyVersion.setAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkPolicyVersion.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkPolicyVersion.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ChangeSetState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkPolicyVersion.setChangeSetState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

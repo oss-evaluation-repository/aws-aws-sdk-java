@@ -43,29 +43,40 @@ public class GetEventPredictionResultJsonUnmarshaller implements Unmarshaller<Ge
             return getEventPredictionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("modelScores", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionResult.setModelScores(new ListUnmarshaller<ModelScores>(ModelScoresJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ruleResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionResult.setRuleResults(new ListUnmarshaller<RuleResult>(RuleResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("externalModelOutputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionResult.setExternalModelOutputs(new ListUnmarshaller<ExternalModelOutputs>(ExternalModelOutputsJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

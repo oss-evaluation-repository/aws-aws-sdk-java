@@ -43,34 +43,48 @@ public class MetricSourceJsonUnmarshaller implements Unmarshaller<MetricSource, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3SourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricSource.setS3SourceConfig(S3SourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AppFlowConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricSource.setAppFlowConfig(AppFlowConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricSource.setCloudWatchConfig(CloudWatchConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RDSSourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricSource.setRDSSourceConfig(RDSSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RedshiftSourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricSource.setRedshiftSourceConfig(RedshiftSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AthenaSourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricSource.setAthenaSourceConfig(AthenaSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

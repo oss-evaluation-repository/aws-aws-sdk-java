@@ -43,59 +43,79 @@ public class RemediationConfigurationJsonUnmarshaller implements Unmarshaller<Re
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigRuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setConfigRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setTargetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setTargetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setTargetVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setParameters(new MapUnmarshaller<String, RemediationParameterValue>(context.getUnmarshaller(String.class),
                             RemediationParameterValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Automatic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setAutomatic(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionControls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setExecutionControls(ExecutionControlsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaximumAutomaticAttempts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setMaximumAutomaticAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RetryAttemptSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setRetryAttemptSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByService", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationConfiguration.setCreatedByService(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

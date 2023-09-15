@@ -43,26 +43,38 @@ public class UserPhoneConfigJsonUnmarshaller implements Unmarshaller<UserPhoneCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PhoneType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPhoneConfig.setPhoneType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoAccept", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPhoneConfig.setAutoAccept(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AfterContactWorkTimeLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPhoneConfig.setAfterContactWorkTimeLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DeskPhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPhoneConfig.setDeskPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

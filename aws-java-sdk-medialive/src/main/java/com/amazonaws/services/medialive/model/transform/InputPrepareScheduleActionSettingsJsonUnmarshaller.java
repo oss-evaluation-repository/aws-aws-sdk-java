@@ -43,24 +43,35 @@ public class InputPrepareScheduleActionSettingsJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("inputAttachmentNameReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputPrepareScheduleActionSettings.setInputAttachmentNameReference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputClippingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputPrepareScheduleActionSettings.setInputClippingSettings(InputClippingSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("urlPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputPrepareScheduleActionSettings.setUrlPath(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

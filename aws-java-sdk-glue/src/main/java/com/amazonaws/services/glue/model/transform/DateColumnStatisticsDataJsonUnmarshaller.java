@@ -43,26 +43,38 @@ public class DateColumnStatisticsDataJsonUnmarshaller implements Unmarshaller<Da
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MinimumValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dateColumnStatisticsData.setMinimumValue(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("MaximumValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dateColumnStatisticsData.setMaximumValue(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NumberOfNulls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dateColumnStatisticsData.setNumberOfNulls(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfDistinctValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dateColumnStatisticsData.setNumberOfDistinctValues(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

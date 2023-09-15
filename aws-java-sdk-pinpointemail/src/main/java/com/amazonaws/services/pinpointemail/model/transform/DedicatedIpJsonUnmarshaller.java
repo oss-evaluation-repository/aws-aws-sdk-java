@@ -43,26 +43,38 @@ public class DedicatedIpJsonUnmarshaller implements Unmarshaller<DedicatedIp, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ip", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dedicatedIp.setIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmupStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dedicatedIp.setWarmupStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmupPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dedicatedIp.setWarmupPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PoolName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dedicatedIp.setPoolName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class UserByPermissionGroupJsonUnmarshaller implements Unmarshaller<UserB
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("userId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userByPermissionGroup.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userByPermissionGroup.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("firstName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userByPermissionGroup.setFirstName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userByPermissionGroup.setLastName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("emailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userByPermissionGroup.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userByPermissionGroup.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userByPermissionGroup.setApiAccess(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiAccessPrincipalArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userByPermissionGroup.setApiAccessPrincipalArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("membershipStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userByPermissionGroup.setMembershipStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

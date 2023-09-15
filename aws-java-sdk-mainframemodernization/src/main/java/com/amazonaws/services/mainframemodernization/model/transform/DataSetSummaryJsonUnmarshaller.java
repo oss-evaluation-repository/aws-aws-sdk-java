@@ -43,34 +43,48 @@ public class DataSetSummaryJsonUnmarshaller implements Unmarshaller<DataSetSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setDataSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataSetOrg", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setDataSetOrg(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastReferencedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setLastReferencedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

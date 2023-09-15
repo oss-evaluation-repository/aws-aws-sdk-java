@@ -43,40 +43,55 @@ public class AssessmentRunAgentJsonUnmarshaller implements Unmarshaller<Assessme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunAgent.setAgentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentRunArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunAgent.setAssessmentRunArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentHealth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunAgent.setAgentHealth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentHealthCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunAgent.setAgentHealthCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentHealthDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunAgent.setAgentHealthDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunAgent.setAutoScalingGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("telemetryMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunAgent.setTelemetryMetadata(new ListUnmarshaller<TelemetryMetadata>(TelemetryMetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

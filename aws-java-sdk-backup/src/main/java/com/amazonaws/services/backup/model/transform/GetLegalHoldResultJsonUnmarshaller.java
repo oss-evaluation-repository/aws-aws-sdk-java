@@ -43,50 +43,68 @@ public class GetLegalHoldResultJsonUnmarshaller implements Unmarshaller<GetLegal
             return getLegalHoldResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLegalHoldResult.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLegalHoldResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLegalHoldResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CancelDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLegalHoldResult.setCancelDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LegalHoldId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLegalHoldResult.setLegalHoldId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LegalHoldArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLegalHoldResult.setLegalHoldArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLegalHoldResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CancellationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLegalHoldResult.setCancellationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RetainRecordUntil", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLegalHoldResult.setRetainRecordUntil(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RecoveryPointSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLegalHoldResult.setRecoveryPointSelection(RecoveryPointSelectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class TranslatePinDataResultJsonUnmarshaller implements Unmarshaller<Tran
             return translatePinDataResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     translatePinDataResult.setKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyCheckValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     translatePinDataResult.setKeyCheckValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PinBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     translatePinDataResult.setPinBlock(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

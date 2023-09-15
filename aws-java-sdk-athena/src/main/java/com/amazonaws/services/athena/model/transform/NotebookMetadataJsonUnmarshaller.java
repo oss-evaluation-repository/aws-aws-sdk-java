@@ -43,34 +43,48 @@ public class NotebookMetadataJsonUnmarshaller implements Unmarshaller<NotebookMe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NotebookId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookMetadata.setNotebookId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookMetadata.setWorkGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookMetadata.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookMetadata.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookMetadata.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

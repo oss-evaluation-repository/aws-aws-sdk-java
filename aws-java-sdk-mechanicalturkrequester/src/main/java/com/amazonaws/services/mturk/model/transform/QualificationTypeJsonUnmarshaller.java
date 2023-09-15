@@ -43,62 +43,83 @@ public class QualificationTypeJsonUnmarshaller implements Unmarshaller<Qualifica
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QualificationTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setQualificationTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Keywords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setKeywords(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QualificationTypeStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setQualificationTypeStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Test", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setTest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TestDurationInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setTestDurationInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AnswerKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setAnswerKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetryDelayInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setRetryDelayInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("IsRequestable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setIsRequestable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoGranted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setAutoGranted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoGrantedValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationType.setAutoGrantedValue(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

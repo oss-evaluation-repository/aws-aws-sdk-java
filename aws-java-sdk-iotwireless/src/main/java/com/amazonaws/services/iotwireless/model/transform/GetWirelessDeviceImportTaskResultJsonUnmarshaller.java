@@ -43,54 +43,73 @@ public class GetWirelessDeviceImportTaskResultJsonUnmarshaller implements Unmars
             return getWirelessDeviceImportTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setDestinationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Sidewalk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setSidewalk(SidewalkGetStartImportInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitializedImportedDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setInitializedImportedDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("PendingImportedDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setPendingImportedDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("OnboardedImportedDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setOnboardedImportedDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedImportedDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceImportTaskResult.setFailedImportedDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

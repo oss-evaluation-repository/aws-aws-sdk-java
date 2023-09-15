@@ -43,64 +43,85 @@ public class ExportJobResponseJsonUnmarshaller implements Unmarshaller<ExportJob
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletedPieces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setCompletedPieces(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setCompletionDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setDefinition(ExportJobResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FailedPieces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setFailedPieces(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Failures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setFailures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalFailures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setTotalFailures(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalPieces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setTotalPieces(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalProcessed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setTotalProcessed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobResponse.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

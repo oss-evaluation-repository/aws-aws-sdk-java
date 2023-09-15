@@ -43,18 +43,28 @@ public class LifeCycleLastLaunchJsonUnmarshaller implements Unmarshaller<LifeCyc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("initiated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifeCycleLastLaunch.setInitiated(LifeCycleLastLaunchInitiatedJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifeCycleLastLaunch.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class MigrationSummaryJsonUnmarshaller implements Unmarshaller<MigrationS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("migrationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationSummary.setMigrationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("v1BotName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationSummary.setV1BotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("v1BotVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationSummary.setV1BotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("v1BotLocale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationSummary.setV1BotLocale(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("v2BotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationSummary.setV2BotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("v2BotRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationSummary.setV2BotRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("migrationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationSummary.setMigrationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("migrationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationSummary.setMigrationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("migrationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationSummary.setMigrationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

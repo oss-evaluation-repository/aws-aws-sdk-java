@@ -43,64 +43,85 @@ public class ReactiveAnomalySummaryJsonUnmarshaller implements Unmarshaller<Reac
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnomalyTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setAnomalyTimeRange(AnomalyTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AnomalyReportedTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setAnomalyReportedTimeRange(AnomalyReportedTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SourceDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setSourceDetails(AnomalySourceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssociatedInsightId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setAssociatedInsightId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceCollection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CausalAnomalyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setCausalAnomalyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnomalyResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactiveAnomalySummary.setAnomalyResources(new ListUnmarshaller<AnomalyResource>(AnomalyResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

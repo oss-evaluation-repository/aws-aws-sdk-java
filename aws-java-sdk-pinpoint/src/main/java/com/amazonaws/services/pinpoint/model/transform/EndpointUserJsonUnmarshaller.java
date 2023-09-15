@@ -43,12 +43,17 @@ public class EndpointUserJsonUnmarshaller implements Unmarshaller<EndpointUser, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointUser.setUserAttributes(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -56,8 +61,13 @@ public class EndpointUserJsonUnmarshaller implements Unmarshaller<EndpointUser, 
                     ).unmarshall(context));
                 }
                 if (context.testExpression("UserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointUser.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

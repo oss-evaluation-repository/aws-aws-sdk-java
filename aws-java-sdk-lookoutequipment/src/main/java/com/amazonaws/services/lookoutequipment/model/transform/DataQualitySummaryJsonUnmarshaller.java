@@ -43,30 +43,43 @@ public class DataQualitySummaryJsonUnmarshaller implements Unmarshaller<DataQual
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InsufficientSensorData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualitySummary.setInsufficientSensorData(InsufficientSensorDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MissingSensorData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualitySummary.setMissingSensorData(MissingSensorDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InvalidSensorData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualitySummary.setInvalidSensorData(InvalidSensorDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UnsupportedTimestamps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualitySummary.setUnsupportedTimestamps(UnsupportedTimestampsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DuplicateTimestamps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualitySummary.setDuplicateTimestamps(DuplicateTimestampsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

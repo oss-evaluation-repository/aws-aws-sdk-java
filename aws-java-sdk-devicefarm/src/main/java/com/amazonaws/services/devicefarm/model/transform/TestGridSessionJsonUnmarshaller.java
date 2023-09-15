@@ -43,34 +43,48 @@ public class TestGridSessionJsonUnmarshaller implements Unmarshaller<TestGridSes
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testGridSession.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testGridSession.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testGridSession.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ended", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testGridSession.setEnded(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("billingMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testGridSession.setBillingMinutes(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("seleniumProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testGridSession.setSeleniumProperties(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,43 +43,59 @@ public class RotateChannelCredentialsResultJsonUnmarshaller implements Unmarshal
             return rotateChannelCredentialsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotateChannelCredentialsResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotateChannelCredentialsResult.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotateChannelCredentialsResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("egressAccessLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotateChannelCredentialsResult.setEgressAccessLogs(EgressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hlsIngest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotateChannelCredentialsResult.setHlsIngest(HlsIngestJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotateChannelCredentialsResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ingressAccessLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotateChannelCredentialsResult.setIngressAccessLogs(IngressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotateChannelCredentialsResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

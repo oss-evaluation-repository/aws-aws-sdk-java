@@ -43,26 +43,38 @@ public class SeverityCountsJsonUnmarshaller implements Unmarshaller<SeverityCoun
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("all", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severityCounts.setAll(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("critical", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severityCounts.setCritical(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("high", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severityCounts.setHigh(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("medium", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severityCounts.setMedium(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

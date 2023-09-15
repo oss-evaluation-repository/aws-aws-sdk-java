@@ -44,40 +44,55 @@ public class ApplicationComponentJsonUnmarshaller implements Unmarshaller<Applic
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComponentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationComponent.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComponentRemarks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationComponent.setComponentRemarks(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationComponent.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OsType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationComponent.setOsType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationComponent.setTier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Monitor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationComponent.setMonitor(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DetectedWorkload", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationComponent.setDetectedWorkload(new MapUnmarshaller<String, java.util.Map<String, String>>(context.getUnmarshaller(String.class),
                             new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

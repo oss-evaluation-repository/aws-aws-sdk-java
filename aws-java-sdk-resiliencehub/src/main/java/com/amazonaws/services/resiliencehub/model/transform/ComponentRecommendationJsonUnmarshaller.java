@@ -43,16 +43,22 @@ public class ComponentRecommendationJsonUnmarshaller implements Unmarshaller<Com
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appComponentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentRecommendation.setAppComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configRecommendations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentRecommendation.setConfigRecommendations(new ListUnmarshaller<ConfigRecommendation>(ConfigRecommendationJsonUnmarshaller
                             .getInstance())
@@ -60,8 +66,13 @@ public class ComponentRecommendationJsonUnmarshaller implements Unmarshaller<Com
                     .unmarshall(context));
                 }
                 if (context.testExpression("recommendationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentRecommendation.setRecommendationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

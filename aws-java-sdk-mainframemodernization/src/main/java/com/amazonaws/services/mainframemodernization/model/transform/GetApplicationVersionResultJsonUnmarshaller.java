@@ -43,38 +43,53 @@ public class GetApplicationVersionResultJsonUnmarshaller implements Unmarshaller
             return getApplicationVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationVersionResult.setApplicationVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationVersionResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("definitionContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationVersionResult.setDefinitionContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationVersionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationVersionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationVersionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationVersionResult.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

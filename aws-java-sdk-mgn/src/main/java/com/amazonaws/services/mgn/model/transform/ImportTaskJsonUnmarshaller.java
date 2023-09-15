@@ -43,38 +43,53 @@ public class ImportTaskJsonUnmarshaller implements Unmarshaller<ImportTask, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setCreationDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setEndDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setImportID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("progressPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setProgressPercentage(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("s3BucketSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setS3BucketSource(S3BucketSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("summary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setSummary(ImportTaskSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

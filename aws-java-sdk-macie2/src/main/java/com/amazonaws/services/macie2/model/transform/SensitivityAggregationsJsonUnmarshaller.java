@@ -43,26 +43,38 @@ public class SensitivityAggregationsJsonUnmarshaller implements Unmarshaller<Sen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("classifiableSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensitivityAggregations.setClassifiableSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("publiclyAccessibleCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensitivityAggregations.setPubliclyAccessibleCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensitivityAggregations.setTotalCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensitivityAggregations.setTotalSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

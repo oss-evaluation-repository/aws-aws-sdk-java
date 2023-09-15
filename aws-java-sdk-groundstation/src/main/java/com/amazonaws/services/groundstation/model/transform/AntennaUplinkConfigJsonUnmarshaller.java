@@ -43,22 +43,33 @@ public class AntennaUplinkConfigJsonUnmarshaller implements Unmarshaller<Antenna
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("spectrumConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     antennaUplinkConfig.setSpectrumConfig(UplinkSpectrumConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("targetEirp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     antennaUplinkConfig.setTargetEirp(EirpJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("transmitDisabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     antennaUplinkConfig.setTransmitDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

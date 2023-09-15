@@ -43,26 +43,38 @@ public class HistoricalMetricJsonUnmarshaller implements Unmarshaller<Historical
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historicalMetric.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Threshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historicalMetric.setThreshold(ThresholdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Statistic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historicalMetric.setStatistic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historicalMetric.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

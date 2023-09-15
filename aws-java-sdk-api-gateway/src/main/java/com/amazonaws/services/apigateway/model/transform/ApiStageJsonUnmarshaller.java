@@ -43,23 +43,34 @@ public class ApiStageJsonUnmarshaller implements Unmarshaller<ApiStage, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("apiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiStage.setApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiStage.setStage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("throttle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiStage.setThrottle(new MapUnmarshaller<String, ThrottleSettings>(context.getUnmarshaller(String.class), ThrottleSettingsJsonUnmarshaller
                             .getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

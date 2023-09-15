@@ -44,46 +44,59 @@ public class AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsJsonUnmarshaller 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssociateCarrierIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setAssociateCarrierIpAddress(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociatePublicIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setAssociatePublicIpAddress(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DeleteOnTermination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setDeleteOnTermination(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setDeviceIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Groups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InterfaceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setInterfaceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ipv4PrefixCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setIpv4PrefixCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Ipv4Prefixes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails
                             .setIpv4Prefixes(new ListUnmarshaller<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails>(
@@ -92,10 +105,12 @@ public class AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsJsonUnmarshaller 
                             .unmarshall(context));
                 }
                 if (context.testExpression("Ipv6AddressCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setIpv6AddressCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Ipv6Addresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails
                             .setIpv6Addresses(new ListUnmarshaller<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails>(
@@ -104,10 +119,12 @@ public class AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsJsonUnmarshaller 
                             .unmarshall(context));
                 }
                 if (context.testExpression("Ipv6PrefixCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setIpv6PrefixCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Ipv6Prefixes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails
                             .setIpv6Prefixes(new ListUnmarshaller<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>(
@@ -116,18 +133,22 @@ public class AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsJsonUnmarshaller 
                             .unmarshall(context));
                 }
                 if (context.testExpression("NetworkCardIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setNetworkCardIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setPrivateIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateIpAddresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails
                             .setPrivateIpAddresses(new ListUnmarshaller<AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>(
@@ -136,13 +157,19 @@ public class AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsJsonUnmarshaller 
                             .unmarshall(context));
                 }
                 if (context.testExpression("SecondaryPrivateIpAddressCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setSecondaryPrivateIpAddressCount(context.getUnmarshaller(Integer.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataNetworkInterfaceSetDetails.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

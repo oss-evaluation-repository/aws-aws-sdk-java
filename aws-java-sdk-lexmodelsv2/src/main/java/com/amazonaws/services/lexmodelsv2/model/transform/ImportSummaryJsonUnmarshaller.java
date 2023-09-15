@@ -43,42 +43,58 @@ public class ImportSummaryJsonUnmarshaller implements Unmarshaller<ImportSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("importId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setImportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importedResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setImportedResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importedResourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setImportedResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setImportStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergeStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setMergeStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("importedResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setImportedResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,9 +43,13 @@ public class DeleteSegmentResultJsonUnmarshaller implements Unmarshaller<DeleteS
             return deleteSegmentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteSegmentResult.setSegmentResponse(SegmentResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

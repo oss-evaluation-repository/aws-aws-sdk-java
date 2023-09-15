@@ -43,34 +43,48 @@ public class ThreatIntelIndicatorJsonUnmarshaller implements Unmarshaller<Threat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     threatIntelIndicator.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     threatIntelIndicator.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     threatIntelIndicator.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastObservedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     threatIntelIndicator.setLastObservedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     threatIntelIndicator.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     threatIntelIndicator.setSourceUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

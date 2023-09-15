@@ -43,36 +43,47 @@ public class CloudFormationStackRecordJsonUnmarshaller implements Unmarshaller<C
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationStackRecord.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationStackRecord.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationStackRecord.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationStackRecord.setLocation(ResourceLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationStackRecord.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationStackRecord.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationStackRecord.setSourceInfo(new ListUnmarshaller<CloudFormationStackRecordSourceInfo>(
                             CloudFormationStackRecordSourceInfoJsonUnmarshaller.getInstance())
@@ -80,8 +91,13 @@ public class CloudFormationStackRecordJsonUnmarshaller implements Unmarshaller<C
                     .unmarshall(context));
                 }
                 if (context.testExpression("destinationInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationStackRecord.setDestinationInfo(DestinationInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

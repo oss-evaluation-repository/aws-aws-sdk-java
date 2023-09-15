@@ -43,9 +43,13 @@ public class DescribeGatewayRouteResultJsonUnmarshaller implements Unmarshaller<
             return describeGatewayRouteResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             describeGatewayRouteResult.setGatewayRoute(GatewayRouteDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -43,36 +43,50 @@ public class ListPackageVersionsResultJsonUnmarshaller implements Unmarshaller<L
             return listPackageVersionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("defaultDisplayVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionsResult.setDefaultDisplayVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionsResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionsResult.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("package", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionsResult.setPackage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionsResult.setVersions(new ListUnmarshaller<PackageVersionSummary>(PackageVersionSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

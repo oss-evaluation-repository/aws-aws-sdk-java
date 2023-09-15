@@ -43,40 +43,55 @@ public class ParameterConstraintsJsonUnmarshaller implements Unmarshaller<Parame
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AllowedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterConstraints.setAllowedValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AllowedPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterConstraints.setAllowedPattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConstraintDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterConstraints.setConstraintDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterConstraints.setMaxLength(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterConstraints.setMinLength(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterConstraints.setMaxValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterConstraints.setMinValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,67 +44,88 @@ public class AmazonTranscribeCallAnalyticsProcessorConfigurationJsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setVocabularyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyFilterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setVocabularyFilterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyFilterMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setVocabularyFilterMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setLanguageModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnablePartialResultsStabilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setEnablePartialResultsStabilization(context.getUnmarshaller(Boolean.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("PartialResultsStability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setPartialResultsStability(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentIdentificationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setContentIdentificationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentRedactionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setContentRedactionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PiiEntityTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setPiiEntityTypes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FilterPartialResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setFilterPartialResults(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PostCallAnalyticsSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setPostCallAnalyticsSettings(PostCallAnalyticsSettingsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("CallAnalyticsStreamCategories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonTranscribeCallAnalyticsProcessorConfiguration.setCallAnalyticsStreamCategories(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,53 +43,71 @@ public class BackupRuleInputJsonUnmarshaller implements Unmarshaller<BackupRuleI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupRuleInput.setRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetBackupVaultName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupRuleInput.setTargetBackupVaultName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupRuleInput.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartWindowMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupRuleInput.setStartWindowMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletionWindowMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupRuleInput.setCompletionWindowMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Lifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupRuleInput.setLifecycle(LifecycleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RecoveryPointTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupRuleInput.setRecoveryPointTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("CopyActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupRuleInput.setCopyActions(new ListUnmarshaller<CopyAction>(CopyActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EnableContinuousBackup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupRuleInput.setEnableContinuousBackup(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleExpressionTimezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupRuleInput.setScheduleExpressionTimezone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

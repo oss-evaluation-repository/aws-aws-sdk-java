@@ -43,61 +43,81 @@ public class DescribeNodeFromTemplateJobResultJsonUnmarshaller implements Unmars
             return describeNodeFromTemplateJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setJobTags(new ListUnmarshaller<JobResourceTags>(JobResourceTagsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NodeDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setNodeDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setNodeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputPackageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setOutputPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputPackageVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setOutputPackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setTemplateParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TemplateType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeFromTemplateJobResult.setTemplateType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

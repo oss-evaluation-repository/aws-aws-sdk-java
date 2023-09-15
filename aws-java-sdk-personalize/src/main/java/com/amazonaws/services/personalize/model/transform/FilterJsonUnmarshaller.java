@@ -43,42 +43,58 @@ public class FilterJsonUnmarshaller implements Unmarshaller<Filter, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setFilterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("datasetGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setDatasetGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setFilterExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

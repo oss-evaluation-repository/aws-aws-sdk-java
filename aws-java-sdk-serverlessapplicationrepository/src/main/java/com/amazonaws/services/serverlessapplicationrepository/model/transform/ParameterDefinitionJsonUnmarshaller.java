@@ -43,66 +43,87 @@ public class ParameterDefinitionJsonUnmarshaller implements Unmarshaller<Paramet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("allowedPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setAllowedPattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("allowedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setAllowedValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("constraintDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setConstraintDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maxLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setMaxLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setMaxValue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setMinLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setMinValue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("noEcho", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setNoEcho(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("referencedByResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setReferencedByResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDefinition.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

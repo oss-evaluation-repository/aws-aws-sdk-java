@@ -43,61 +43,80 @@ public class RuleGroupJsonUnmarshaller implements Unmarshaller<RuleGroup, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Capacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setCapacity(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VisibilityConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setVisibilityConfig(VisibilityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LabelNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setLabelNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomResponseBodies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setCustomResponseBodies(new MapUnmarshaller<String, CustomResponseBody>(context.getUnmarshaller(String.class),
                             CustomResponseBodyJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("AvailableLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setAvailableLabels(new ListUnmarshaller<LabelSummary>(LabelSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConsumedLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroup.setConsumedLabels(new ListUnmarshaller<LabelSummary>(LabelSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

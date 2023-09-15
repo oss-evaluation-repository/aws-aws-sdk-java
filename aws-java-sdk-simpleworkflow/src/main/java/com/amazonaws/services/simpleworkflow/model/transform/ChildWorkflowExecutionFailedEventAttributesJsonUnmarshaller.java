@@ -44,34 +44,48 @@ public class ChildWorkflowExecutionFailedEventAttributesJsonUnmarshaller impleme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowExecution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     childWorkflowExecutionFailedEventAttributes.setWorkflowExecution(WorkflowExecutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("workflowType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     childWorkflowExecutionFailedEventAttributes.setWorkflowType(WorkflowTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     childWorkflowExecutionFailedEventAttributes.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("details", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     childWorkflowExecutionFailedEventAttributes.setDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("initiatedEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     childWorkflowExecutionFailedEventAttributes.setInitiatedEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("startedEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     childWorkflowExecutionFailedEventAttributes.setStartedEventId(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class PivotTableFieldOptionsJsonUnmarshaller implements Unmarshaller<Pivo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SelectedFieldOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableFieldOptions.setSelectedFieldOptions(new ListUnmarshaller<PivotTableFieldOption>(PivotTableFieldOptionJsonUnmarshaller
                             .getInstance())
@@ -56,6 +61,7 @@ public class PivotTableFieldOptionsJsonUnmarshaller implements Unmarshaller<Pivo
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataPathOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableFieldOptions.setDataPathOptions(new ListUnmarshaller<PivotTableDataPathOption>(PivotTableDataPathOptionJsonUnmarshaller
                             .getInstance())
@@ -63,11 +69,16 @@ public class PivotTableFieldOptionsJsonUnmarshaller implements Unmarshaller<Pivo
                     .unmarshall(context));
                 }
                 if (context.testExpression("CollapseStateOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableFieldOptions.setCollapseStateOptions(new ListUnmarshaller<PivotTableFieldCollapseStateOption>(
                             PivotTableFieldCollapseStateOptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,16 +43,22 @@ public class DescribeWorkspaceImagePermissionsResultJsonUnmarshaller implements 
             return describeWorkspaceImagePermissionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ImageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorkspaceImagePermissionsResult.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImagePermissions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorkspaceImagePermissionsResult.setImagePermissions(new ListUnmarshaller<ImagePermission>(ImagePermissionJsonUnmarshaller
                             .getInstance())
@@ -60,8 +66,13 @@ public class DescribeWorkspaceImagePermissionsResultJsonUnmarshaller implements 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorkspaceImagePermissionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

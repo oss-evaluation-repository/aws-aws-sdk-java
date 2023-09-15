@@ -43,62 +43,81 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setCopyTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TagsToAdd", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setTagsToAdd(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VariableTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setVariableTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreateRule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setCreateRule(CreateRuleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RetainRule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setRetainRule(RetainRuleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FastRestoreRule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setFastRestoreRule(FastRestoreRuleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CrossRegionCopyRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setCrossRegionCopyRules(new ListUnmarshaller<CrossRegionCopyRule>(CrossRegionCopyRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ShareRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setShareRules(new ListUnmarshaller<ShareRule>(ShareRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DeprecateRule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setDeprecateRule(DeprecateRuleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ArchiveRule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setArchiveRule(ArchiveRuleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

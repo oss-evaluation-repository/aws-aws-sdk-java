@@ -43,20 +43,27 @@ public class SalesforceConfigurationJsonUnmarshaller implements Unmarshaller<Sal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServerUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceConfiguration.setServerUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceConfiguration.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StandardObjectConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceConfiguration.setStandardObjectConfigurations(new ListUnmarshaller<SalesforceStandardObjectConfiguration>(
                             SalesforceStandardObjectConfigurationJsonUnmarshaller.getInstance())
@@ -64,34 +71,44 @@ public class SalesforceConfigurationJsonUnmarshaller implements Unmarshaller<Sal
                     .unmarshall(context));
                 }
                 if (context.testExpression("KnowledgeArticleConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceConfiguration.setKnowledgeArticleConfiguration(SalesforceKnowledgeArticleConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ChatterFeedConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceConfiguration.setChatterFeedConfiguration(SalesforceChatterFeedConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CrawlAttachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceConfiguration.setCrawlAttachments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("StandardObjectAttachmentConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceConfiguration.setStandardObjectAttachmentConfiguration(SalesforceStandardObjectAttachmentConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IncludeAttachmentFilePatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceConfiguration.setIncludeAttachmentFilePatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeAttachmentFilePatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceConfiguration.setExcludeAttachmentFilePatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -45,22 +45,33 @@ public class UpdateDataSourcePermissionsResultJsonUnmarshaller implements Unmars
             return updateDataSourcePermissionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDataSourcePermissionsResult.setDataSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDataSourcePermissionsResult.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDataSourcePermissionsResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class AwsIamUserDetailsJsonUnmarshaller implements Unmarshaller<AwsIamUse
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttachedManagedPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamUserDetails.setAttachedManagedPolicies(new ListUnmarshaller<AwsIamAttachedManagedPolicy>(AwsIamAttachedManagedPolicyJsonUnmarshaller
                             .getInstance())
@@ -56,36 +61,47 @@ public class AwsIamUserDetailsJsonUnmarshaller implements Unmarshaller<AwsIamUse
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamUserDetails.setCreateDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamUserDetails.setGroupList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamUserDetails.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PermissionsBoundary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamUserDetails.setPermissionsBoundary(AwsIamPermissionsBoundaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamUserDetails.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamUserDetails.setUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserPolicyList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamUserDetails.setUserPolicyList(new ListUnmarshaller<AwsIamUserPolicy>(AwsIamUserPolicyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

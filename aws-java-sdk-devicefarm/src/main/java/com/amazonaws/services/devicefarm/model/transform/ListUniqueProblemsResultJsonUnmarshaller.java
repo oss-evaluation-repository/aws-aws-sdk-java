@@ -43,12 +43,17 @@ public class ListUniqueProblemsResultJsonUnmarshaller implements Unmarshaller<Li
             return listUniqueProblemsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("uniqueProblems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listUniqueProblemsResult.setUniqueProblems(new MapUnmarshaller<String, java.util.List<UniqueProblem>>(
                             context.getUnmarshaller(String.class), new ListUnmarshaller<UniqueProblem>(UniqueProblemJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListUniqueProblemsResultJsonUnmarshaller implements Unmarshaller<Li
                     ).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listUniqueProblemsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

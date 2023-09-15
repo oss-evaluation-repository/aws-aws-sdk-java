@@ -43,30 +43,43 @@ public class IngestedEventStatisticsJsonUnmarshaller implements Unmarshaller<Ing
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("numberOfEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestedEventStatistics.setNumberOfEvents(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("eventDataSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestedEventStatistics.setEventDataSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("leastRecentEvent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestedEventStatistics.setLeastRecentEvent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mostRecentEvent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestedEventStatistics.setMostRecentEvent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestedEventStatistics.setLastUpdatedTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

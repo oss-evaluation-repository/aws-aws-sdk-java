@@ -43,22 +43,33 @@ public class DeleteConfigResultJsonUnmarshaller implements Unmarshaller<DeleteCo
             return deleteConfigResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("configArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteConfigResult.setConfigArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteConfigResult.setConfigId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteConfigResult.setConfigType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

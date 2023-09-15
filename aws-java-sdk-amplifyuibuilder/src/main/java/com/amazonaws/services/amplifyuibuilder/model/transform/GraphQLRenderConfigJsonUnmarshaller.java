@@ -43,30 +43,43 @@ public class GraphQLRenderConfigJsonUnmarshaller implements Unmarshaller<GraphQL
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("typesFilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphQLRenderConfig.setTypesFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queriesFilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphQLRenderConfig.setQueriesFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mutationsFilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphQLRenderConfig.setMutationsFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subscriptionsFilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphQLRenderConfig.setSubscriptionsFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fragmentsFilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphQLRenderConfig.setFragmentsFilePath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

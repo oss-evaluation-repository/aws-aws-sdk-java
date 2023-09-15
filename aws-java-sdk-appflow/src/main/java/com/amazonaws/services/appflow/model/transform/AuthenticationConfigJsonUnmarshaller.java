@@ -43,36 +43,50 @@ public class AuthenticationConfigJsonUnmarshaller implements Unmarshaller<Authen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("isBasicAuthSupported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationConfig.setIsBasicAuthSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isApiKeyAuthSupported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationConfig.setIsApiKeyAuthSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isOAuth2Supported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationConfig.setIsOAuth2Supported(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isCustomAuthSupported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationConfig.setIsCustomAuthSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("oAuth2Defaults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationConfig.setOAuth2Defaults(OAuth2DefaultsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("customAuthConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationConfig.setCustomAuthConfigs(new ListUnmarshaller<CustomAuthConfig>(CustomAuthConfigJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

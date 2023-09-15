@@ -44,22 +44,29 @@ public class DescribeNotebookInstanceLifecycleConfigResultJsonUnmarshaller imple
             return describeNotebookInstanceLifecycleConfigResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NotebookInstanceLifecycleConfigArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceLifecycleConfigResult.setNotebookInstanceLifecycleConfigArn(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("NotebookInstanceLifecycleConfigName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceLifecycleConfigResult.setNotebookInstanceLifecycleConfigName(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("OnCreate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceLifecycleConfigResult.setOnCreate(new ListUnmarshaller<NotebookInstanceLifecycleHook>(
                             NotebookInstanceLifecycleHookJsonUnmarshaller.getInstance())
@@ -67,6 +74,7 @@ public class DescribeNotebookInstanceLifecycleConfigResultJsonUnmarshaller imple
                     .unmarshall(context));
                 }
                 if (context.testExpression("OnStart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceLifecycleConfigResult.setOnStart(new ListUnmarshaller<NotebookInstanceLifecycleHook>(
                             NotebookInstanceLifecycleHookJsonUnmarshaller.getInstance())
@@ -74,13 +82,19 @@ public class DescribeNotebookInstanceLifecycleConfigResultJsonUnmarshaller imple
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceLifecycleConfigResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(
                             context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceLifecycleConfigResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

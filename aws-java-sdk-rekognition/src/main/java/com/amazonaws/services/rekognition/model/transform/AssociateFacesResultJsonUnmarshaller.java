@@ -43,18 +43,24 @@ public class AssociateFacesResultJsonUnmarshaller implements Unmarshaller<Associ
             return associateFacesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssociatedFaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateFacesResult.setAssociatedFaces(new ListUnmarshaller<AssociatedFace>(AssociatedFaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UnsuccessfulFaceAssociations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateFacesResult.setUnsuccessfulFaceAssociations(new ListUnmarshaller<UnsuccessfulFaceAssociation>(
                             UnsuccessfulFaceAssociationJsonUnmarshaller.getInstance())
@@ -62,8 +68,13 @@ public class AssociateFacesResultJsonUnmarshaller implements Unmarshaller<Associ
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateFacesResult.setUserStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

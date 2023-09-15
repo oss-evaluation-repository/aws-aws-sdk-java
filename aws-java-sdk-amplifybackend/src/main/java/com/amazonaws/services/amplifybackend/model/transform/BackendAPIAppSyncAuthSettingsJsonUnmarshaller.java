@@ -43,42 +43,58 @@ public class BackendAPIAppSyncAuthSettingsJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cognitoUserPoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIAppSyncAuthSettings.setCognitoUserPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIAppSyncAuthSettings.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expirationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIAppSyncAuthSettings.setExpirationTime(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("openIDAuthTTL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIAppSyncAuthSettings.setOpenIDAuthTTL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("openIDClientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIAppSyncAuthSettings.setOpenIDClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("openIDIatTTL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIAppSyncAuthSettings.setOpenIDIatTTL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("openIDIssueURL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIAppSyncAuthSettings.setOpenIDIssueURL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("openIDProviderName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIAppSyncAuthSettings.setOpenIDProviderName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

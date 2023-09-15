@@ -43,44 +43,60 @@ public class CheckoutLicenseResultJsonUnmarshaller implements Unmarshaller<Check
             return checkoutLicenseResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CheckoutType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutLicenseResult.setCheckoutType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseConsumptionToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutLicenseResult.setLicenseConsumptionToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EntitlementsAllowed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutLicenseResult.setEntitlementsAllowed(new ListUnmarshaller<EntitlementData>(EntitlementDataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SignedToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutLicenseResult.setSignedToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutLicenseResult.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IssuedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutLicenseResult.setIssuedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Expiration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutLicenseResult.setExpiration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutLicenseResult.setLicenseArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

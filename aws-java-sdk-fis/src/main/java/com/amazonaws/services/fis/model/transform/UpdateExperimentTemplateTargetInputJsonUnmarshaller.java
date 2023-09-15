@@ -43,27 +43,35 @@ public class UpdateExperimentTemplateTargetInputJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateExperimentTemplateTargetInput.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateExperimentTemplateTargetInput.setResourceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateExperimentTemplateTargetInput.setResourceTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("filters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateExperimentTemplateTargetInput.setFilters(new ListUnmarshaller<ExperimentTemplateTargetInputFilter>(
                             ExperimentTemplateTargetInputFilterJsonUnmarshaller.getInstance())
@@ -71,13 +79,19 @@ public class UpdateExperimentTemplateTargetInputJsonUnmarshaller implements Unma
                     .unmarshall(context));
                 }
                 if (context.testExpression("selectionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateExperimentTemplateTargetInput.setSelectionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateExperimentTemplateTargetInput.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

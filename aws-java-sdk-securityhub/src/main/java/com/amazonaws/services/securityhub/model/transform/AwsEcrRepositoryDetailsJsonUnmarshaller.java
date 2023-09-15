@@ -43,35 +43,49 @@ public class AwsEcrRepositoryDetailsJsonUnmarshaller implements Unmarshaller<Aws
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrRepositoryDetails.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageScanningConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrRepositoryDetails.setImageScanningConfiguration(AwsEcrRepositoryImageScanningConfigurationDetailsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ImageTagMutability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrRepositoryDetails.setImageTagMutability(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LifecyclePolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrRepositoryDetails.setLifecyclePolicy(AwsEcrRepositoryLifecyclePolicyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RepositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrRepositoryDetails.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RepositoryPolicyText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrRepositoryDetails.setRepositoryPolicyText(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

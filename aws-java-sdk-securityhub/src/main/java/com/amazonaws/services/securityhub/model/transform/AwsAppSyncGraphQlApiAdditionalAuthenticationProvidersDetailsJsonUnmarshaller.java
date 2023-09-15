@@ -44,30 +44,42 @@ public class AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsJsonUnm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AuthenticationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails.setAuthenticationType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("LambdaAuthorizerConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails
                             .setLambdaAuthorizerConfig(AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OpenIdConnectConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails
                             .setOpenIdConnectConfig(AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UserPoolConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails.setUserPoolConfig(AwsAppSyncGraphQlApiUserPoolConfigDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

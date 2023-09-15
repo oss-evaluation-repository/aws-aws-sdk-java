@@ -43,44 +43,58 @@ public class ClassifyDocumentResultJsonUnmarshaller implements Unmarshaller<Clas
             return classifyDocumentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Classes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifyDocumentResult.setClasses(new ListUnmarshaller<DocumentClass>(DocumentClassJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Labels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifyDocumentResult.setLabels(new ListUnmarshaller<DocumentLabel>(DocumentLabelJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DocumentMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifyDocumentResult.setDocumentMetadata(DocumentMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DocumentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifyDocumentResult.setDocumentType(new ListUnmarshaller<DocumentTypeListItem>(DocumentTypeListItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifyDocumentResult.setErrors(new ListUnmarshaller<ErrorsListItem>(ErrorsListItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Warnings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifyDocumentResult.setWarnings(new ListUnmarshaller<WarningsListItem>(WarningsListItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

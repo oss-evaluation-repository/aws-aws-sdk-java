@@ -43,54 +43,73 @@ public class CloudWatchLogsLogStreamJsonUnmarshaller implements Unmarshaller<Clo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LogGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setLogGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatetimeFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setDatetimeFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setTimeZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("File", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setFile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileFingerprintLines", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setFileFingerprintLines(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MultiLineStartPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setMultiLineStartPattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitialPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setInitialPosition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encoding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setEncoding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BufferDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setBufferDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setBatchCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLogsLogStream.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

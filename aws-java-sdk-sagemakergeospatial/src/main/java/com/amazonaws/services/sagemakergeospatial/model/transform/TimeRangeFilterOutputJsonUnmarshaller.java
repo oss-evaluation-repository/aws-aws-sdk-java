@@ -43,18 +43,28 @@ public class TimeRangeFilterOutputJsonUnmarshaller implements Unmarshaller<TimeR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeRangeFilterOutput.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeRangeFilterOutput.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

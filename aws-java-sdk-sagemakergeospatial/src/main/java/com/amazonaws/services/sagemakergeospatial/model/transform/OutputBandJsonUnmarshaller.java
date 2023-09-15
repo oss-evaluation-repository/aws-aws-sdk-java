@@ -43,18 +43,28 @@ public class OutputBandJsonUnmarshaller implements Unmarshaller<OutputBand, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BandName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputBand.setBandName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputDataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputBand.setOutputDataType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

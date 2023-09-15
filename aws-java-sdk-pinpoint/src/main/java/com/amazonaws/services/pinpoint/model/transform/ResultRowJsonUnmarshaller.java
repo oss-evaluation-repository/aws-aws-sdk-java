@@ -43,22 +43,32 @@ public class ResultRowJsonUnmarshaller implements Unmarshaller<ResultRow, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GroupedBys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultRow.setGroupedBys(new ListUnmarshaller<ResultRowValue>(ResultRowValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Values", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultRow.setValues(new ListUnmarshaller<ResultRowValue>(ResultRowValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

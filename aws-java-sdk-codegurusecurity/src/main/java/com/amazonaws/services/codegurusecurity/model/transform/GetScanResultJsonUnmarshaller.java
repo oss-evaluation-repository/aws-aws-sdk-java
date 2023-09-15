@@ -43,42 +43,58 @@ public class GetScanResultJsonUnmarshaller implements Unmarshaller<GetScanResult
             return getScanResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("analysisType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScanResult.setAnalysisType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScanResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("numberOfRevisions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScanResult.setNumberOfRevisions(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("runId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScanResult.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScanResult.setScanName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanNameArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScanResult.setScanNameArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScanResult.setScanState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getScanResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

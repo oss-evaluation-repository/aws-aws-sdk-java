@@ -43,28 +43,40 @@ public class ProxyJsonUnmarshaller implements Unmarshaller<Proxy, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DefaultSessionExpiryMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxy.setDefaultSessionExpiryMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Disabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxy.setDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("FallBackPhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxy.setFallBackPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumberCountries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxy.setPhoneNumberCountries(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

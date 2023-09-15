@@ -43,62 +43,83 @@ public class UserImportJobTypeJsonUnmarshaller implements Unmarshaller<UserImpor
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserPoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setUserPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreSignedUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setPreSignedUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setCompletionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLogsRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setCloudWatchLogsRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImportedUsers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setImportedUsers(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SkippedUsers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setSkippedUsers(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedUsers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setFailedUsers(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletionMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userImportJobType.setCompletionMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

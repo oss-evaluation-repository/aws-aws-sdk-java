@@ -43,62 +43,82 @@ public class ProfileDetailJsonUnmarshaller implements Unmarshaller<ProfileDetail
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("createdBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("durationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("managedPolicyArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setManagedPolicyArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("profileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("profileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requireInstanceProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setRequireInstanceProperties(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setRoleArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sessionPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setSessionPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileDetail.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

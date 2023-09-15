@@ -43,18 +43,28 @@ public class UpdateJobQueueResultJsonUnmarshaller implements Unmarshaller<Update
             return updateJobQueueResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobQueueName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateJobQueueResult.setJobQueueName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobQueueArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateJobQueueResult.setJobQueueArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

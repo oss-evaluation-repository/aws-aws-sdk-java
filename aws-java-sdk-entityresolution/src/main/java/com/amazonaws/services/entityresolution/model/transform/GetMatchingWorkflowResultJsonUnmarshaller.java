@@ -43,59 +43,78 @@ public class GetMatchingWorkflowResultJsonUnmarshaller implements Unmarshaller<G
             return getMatchingWorkflowResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("incrementalRunConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setIncrementalRunConfig(IncrementalRunConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputSourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setInputSourceConfig(new ListUnmarshaller<InputSource>(InputSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("outputSourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setOutputSourceConfig(new ListUnmarshaller<OutputSource>(OutputSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resolutionTechniques", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setResolutionTechniques(ResolutionTechniquesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("workflowArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setWorkflowArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("workflowName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMatchingWorkflowResult.setWorkflowName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

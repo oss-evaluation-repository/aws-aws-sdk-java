@@ -43,26 +43,38 @@ public class ImportDatasetResultJsonUnmarshaller implements Unmarshaller<ImportD
             return importDatasetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatasetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importDatasetResult.setDatasetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importDatasetResult.setDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importDatasetResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importDatasetResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class WarningsListItemJsonUnmarshaller implements Unmarshaller<WarningsLi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Page", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     warningsListItem.setPage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WarnCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     warningsListItem.setWarnCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WarnMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     warningsListItem.setWarnMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class AccessLogSubscriptionSummaryJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessLogSubscriptionSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessLogSubscriptionSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("destinationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessLogSubscriptionSummary.setDestinationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessLogSubscriptionSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessLogSubscriptionSummary.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("resourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessLogSubscriptionSummary.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessLogSubscriptionSummary.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

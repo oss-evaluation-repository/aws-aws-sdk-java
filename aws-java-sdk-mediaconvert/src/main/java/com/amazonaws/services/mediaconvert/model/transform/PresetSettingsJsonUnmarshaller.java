@@ -43,18 +43,24 @@ public class PresetSettingsJsonUnmarshaller implements Unmarshaller<PresetSettin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetSettings.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("captionDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetSettings
                             .setCaptionDescriptions(new ListUnmarshaller<CaptionDescriptionPreset>(CaptionDescriptionPresetJsonUnmarshaller.getInstance())
@@ -62,12 +68,18 @@ public class PresetSettingsJsonUnmarshaller implements Unmarshaller<PresetSettin
                             .unmarshall(context));
                 }
                 if (context.testExpression("containerSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetSettings.setContainerSettings(ContainerSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("videoDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetSettings.setVideoDescription(VideoDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

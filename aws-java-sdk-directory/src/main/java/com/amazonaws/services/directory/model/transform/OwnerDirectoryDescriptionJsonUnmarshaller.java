@@ -43,36 +43,50 @@ public class OwnerDirectoryDescriptionJsonUnmarshaller implements Unmarshaller<O
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ownerDirectoryDescription.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ownerDirectoryDescription.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsIpAddrs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ownerDirectoryDescription.setDnsIpAddrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ownerDirectoryDescription.setVpcSettings(DirectoryVpcSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RadiusSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ownerDirectoryDescription.setRadiusSettings(RadiusSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RadiusStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ownerDirectoryDescription.setRadiusStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

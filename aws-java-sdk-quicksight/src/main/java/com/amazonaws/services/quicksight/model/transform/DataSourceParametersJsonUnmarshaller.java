@@ -43,102 +43,133 @@ public class DataSourceParametersJsonUnmarshaller implements Unmarshaller<DataSo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AmazonElasticsearchParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setAmazonElasticsearchParameters(AmazonElasticsearchParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AthenaParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setAthenaParameters(AthenaParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AuroraParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setAuroraParameters(AuroraParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AuroraPostgreSqlParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setAuroraPostgreSqlParameters(AuroraPostgreSqlParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AwsIotAnalyticsParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setAwsIotAnalyticsParameters(AwsIotAnalyticsParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JiraParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setJiraParameters(JiraParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MariaDbParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setMariaDbParameters(MariaDbParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MySqlParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setMySqlParameters(MySqlParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OracleParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setOracleParameters(OracleParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PostgreSqlParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setPostgreSqlParameters(PostgreSqlParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PrestoParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setPrestoParameters(PrestoParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RdsParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setRdsParameters(RdsParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RedshiftParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setRedshiftParameters(RedshiftParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setS3Parameters(S3ParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceNowParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setServiceNowParameters(ServiceNowParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SnowflakeParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setSnowflakeParameters(SnowflakeParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SparkParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setSparkParameters(SparkParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SqlServerParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setSqlServerParameters(SqlServerParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TeradataParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setTeradataParameters(TeradataParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TwitterParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setTwitterParameters(TwitterParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AmazonOpenSearchParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setAmazonOpenSearchParameters(AmazonOpenSearchParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExasolParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setExasolParameters(ExasolParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DatabricksParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceParameters.setDatabricksParameters(DatabricksParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

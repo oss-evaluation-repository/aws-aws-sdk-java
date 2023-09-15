@@ -43,22 +43,33 @@ public class UserPausedDetailsJsonUnmarshaller implements Unmarshaller<UserPause
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobExpiresAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPausedDetails.setJobExpiresAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("jobImminentExpirationHealthEventArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPausedDetails.setJobImminentExpirationHealthEventArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobPausedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPausedDetails.setJobPausedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

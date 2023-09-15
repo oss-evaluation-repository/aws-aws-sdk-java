@@ -43,20 +43,30 @@ public class FailureSummaryJsonUnmarshaller implements Unmarshaller<FailureSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("totalFailureCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     failureSummary.setTotalFailureCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     failureSummary.setFailures(new ListUnmarshaller<WorldFailure>(WorldFailureJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

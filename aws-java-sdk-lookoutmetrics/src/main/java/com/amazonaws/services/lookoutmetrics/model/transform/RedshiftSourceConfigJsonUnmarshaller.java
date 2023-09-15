@@ -43,42 +43,58 @@ public class RedshiftSourceConfigJsonUnmarshaller implements Unmarshaller<Redshi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClusterIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSourceConfig.setClusterIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseHost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSourceConfig.setDatabaseHost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabasePort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSourceConfig.setDatabasePort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretManagerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSourceConfig.setSecretManagerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSourceConfig.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSourceConfig.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSourceConfig.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSourceConfig.setVpcConfiguration(VpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

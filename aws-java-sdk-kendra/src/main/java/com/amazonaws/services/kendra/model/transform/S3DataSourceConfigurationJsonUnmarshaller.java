@@ -43,42 +43,56 @@ public class S3DataSourceConfigurationJsonUnmarshaller implements Unmarshaller<S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSourceConfiguration.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InclusionPrefixes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSourceConfiguration.setInclusionPrefixes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSourceConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSourceConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DocumentsMetadataConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSourceConfiguration.setDocumentsMetadataConfiguration(DocumentsMetadataConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("AccessControlListConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSourceConfiguration.setAccessControlListConfiguration(AccessControlListConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class RegisteredDomainDelegationInfoJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("nameServersUpdateState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     registeredDomainDelegationInfo.setNameServersUpdateState(NameServersUpdateStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("r53HostedZoneDeletionState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     registeredDomainDelegationInfo.setR53HostedZoneDeletionState(R53HostedZoneDeletionStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

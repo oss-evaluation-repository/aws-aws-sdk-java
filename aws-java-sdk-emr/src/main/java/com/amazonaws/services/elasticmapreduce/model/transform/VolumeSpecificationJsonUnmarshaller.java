@@ -43,26 +43,38 @@ public class VolumeSpecificationJsonUnmarshaller implements Unmarshaller<VolumeS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeSpecification.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Iops", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeSpecification.setIops(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeInGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeSpecification.setSizeInGB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Throughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeSpecification.setThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

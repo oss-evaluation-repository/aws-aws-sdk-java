@@ -43,22 +43,33 @@ public class Ibm3624RandomPinJsonUnmarshaller implements Unmarshaller<Ibm3624Ran
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DecimalizationTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ibm3624RandomPin.setDecimalizationTable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PinValidationData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ibm3624RandomPin.setPinValidationData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PinValidationDataPadCharacter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ibm3624RandomPin.setPinValidationDataPadCharacter(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

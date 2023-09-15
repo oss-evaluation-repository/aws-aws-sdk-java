@@ -43,22 +43,33 @@ public class RelatedItemJsonUnmarshaller implements Unmarshaller<RelatedItem, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("generatedId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relatedItem.setGeneratedId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relatedItem.setIdentifier(ItemIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relatedItem.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

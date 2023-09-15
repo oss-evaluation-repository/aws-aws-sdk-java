@@ -43,24 +43,35 @@ public class HttpMatchJsonUnmarshaller implements Unmarshaller<HttpMatch, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("headerMatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpMatch.setHeaderMatches(new ListUnmarshaller<HeaderMatch>(HeaderMatchJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("method", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpMatch.setMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pathMatch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpMatch.setPathMatch(PathMatchJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

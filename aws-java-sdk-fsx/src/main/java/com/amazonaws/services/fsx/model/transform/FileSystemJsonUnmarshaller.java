@@ -43,102 +43,131 @@ public class FileSystemJsonUnmarshaller implements Unmarshaller<FileSystem, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setFileSystemType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Lifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setLifecycle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setFailureDetails(FileSystemFailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StorageCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setStorageCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setNetworkInterfaceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DNSName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setDNSName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setResourceARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("WindowsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setWindowsConfiguration(WindowsFileSystemConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LustreConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setLustreConfiguration(LustreFileSystemConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdministrativeActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setAdministrativeActions(new ListUnmarshaller<AdministrativeAction>(AdministrativeActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OntapConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setOntapConfiguration(OntapFileSystemConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FileSystemTypeVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setFileSystemTypeVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpenZFSConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystem.setOpenZFSConfiguration(OpenZFSFileSystemConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

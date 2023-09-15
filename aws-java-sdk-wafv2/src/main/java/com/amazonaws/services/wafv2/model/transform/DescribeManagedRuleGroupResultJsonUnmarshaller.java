@@ -43,44 +43,59 @@ public class DescribeManagedRuleGroupResultJsonUnmarshaller implements Unmarshal
             return describeManagedRuleGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VersionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedRuleGroupResult.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnsTopicArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedRuleGroupResult.setSnsTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Capacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedRuleGroupResult.setCapacity(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedRuleGroupResult.setRules(new ListUnmarshaller<RuleSummary>(RuleSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LabelNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedRuleGroupResult.setLabelNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailableLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedRuleGroupResult.setAvailableLabels(new ListUnmarshaller<LabelSummary>(LabelSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConsumedLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedRuleGroupResult.setConsumedLabels(new ListUnmarshaller<LabelSummary>(LabelSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class InvitationJsonUnmarshaller implements Unmarshaller<Invitation, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     invitation.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("invitationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     invitation.setInvitationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("invitedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     invitation.setInvitedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("relationshipStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     invitation.setRelationshipStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

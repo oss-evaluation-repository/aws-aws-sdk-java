@@ -43,26 +43,38 @@ public class DownlinkQueueMessageJsonUnmarshaller implements Unmarshaller<Downli
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MessageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     downlinkQueueMessage.setMessageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransmitMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     downlinkQueueMessage.setTransmitMode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ReceivedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     downlinkQueueMessage.setReceivedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoRaWAN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     downlinkQueueMessage.setLoRaWAN(LoRaWANSendDataToDeviceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

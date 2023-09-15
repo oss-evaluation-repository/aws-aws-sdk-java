@@ -43,64 +43,85 @@ public class DataSourceJsonUnmarshaller implements Unmarshaller<DataSource, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataSourceParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setDataSourceParameters(DataSourceParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AlternateDataSourceParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setAlternateDataSourceParameters(new ListUnmarshaller<DataSourceParameters>(DataSourceParametersJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcConnectionProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setVpcConnectionProperties(VpcConnectionPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SslProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setSslProperties(SslPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ErrorInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setErrorInfo(DataSourceErrorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

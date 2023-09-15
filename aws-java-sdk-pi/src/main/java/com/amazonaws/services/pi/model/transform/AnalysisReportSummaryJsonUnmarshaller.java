@@ -43,36 +43,50 @@ public class AnalysisReportSummaryJsonUnmarshaller implements Unmarshaller<Analy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AnalysisReportId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReportSummary.setAnalysisReportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReportSummary.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReportSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReportSummary.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReportSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReportSummary.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

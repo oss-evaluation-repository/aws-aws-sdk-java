@@ -43,112 +43,142 @@ public class AwsRdsDbSnapshotDetailsJsonUnmarshaller implements Unmarshaller<Aws
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DbSnapshotIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setDbSnapshotIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbInstanceIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setDbInstanceIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotCreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setSnapshotCreateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllocatedStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setAllocatedStorage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setInstanceCreateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterUsername", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setMasterUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setLicenseModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setSnapshotType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Iops", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setIops(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OptionGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setOptionGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PercentProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setPercentProgress(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setSourceRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceDbSnapshotIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setSourceDbSnapshotIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TdeCredentialArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setTdeCredentialArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamDatabaseAuthenticationEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setIamDatabaseAuthenticationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ProcessorFeatures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setProcessorFeatures(new ListUnmarshaller<AwsRdsDbProcessorFeature>(AwsRdsDbProcessorFeatureJsonUnmarshaller
                             .getInstance())
@@ -156,8 +186,13 @@ public class AwsRdsDbSnapshotDetailsJsonUnmarshaller implements Unmarshaller<Aws
                     .unmarshall(context));
                 }
                 if (context.testExpression("DbiResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSnapshotDetails.setDbiResourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

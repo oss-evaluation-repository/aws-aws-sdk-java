@@ -43,21 +43,31 @@ public class ListAgentStatusesResultJsonUnmarshaller implements Unmarshaller<Lis
             return listAgentStatusesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAgentStatusesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgentStatusSummaryList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAgentStatusesResult
                             .setAgentStatusSummaryList(new ListUnmarshaller<AgentStatusSummary>(AgentStatusSummaryJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

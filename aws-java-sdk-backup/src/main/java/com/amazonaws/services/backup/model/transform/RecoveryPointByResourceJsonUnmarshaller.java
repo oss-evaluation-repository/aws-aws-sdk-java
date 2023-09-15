@@ -43,50 +43,68 @@ public class RecoveryPointByResourceJsonUnmarshaller implements Unmarshaller<Rec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RecoveryPointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointByResource.setRecoveryPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointByResource.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointByResource.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointByResource.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointByResource.setEncryptionKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointByResource.setBackupSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupVaultName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointByResource.setBackupVaultName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsParent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointByResource.setIsParent(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ParentRecoveryPointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointByResource.setParentRecoveryPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointByResource.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

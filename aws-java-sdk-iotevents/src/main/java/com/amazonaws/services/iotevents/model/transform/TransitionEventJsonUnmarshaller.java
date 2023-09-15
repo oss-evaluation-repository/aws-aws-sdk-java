@@ -43,28 +43,40 @@ public class TransitionEventJsonUnmarshaller implements Unmarshaller<TransitionE
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transitionEvent.setEventName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("condition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transitionEvent.setCondition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transitionEvent.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transitionEvent.setNextState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

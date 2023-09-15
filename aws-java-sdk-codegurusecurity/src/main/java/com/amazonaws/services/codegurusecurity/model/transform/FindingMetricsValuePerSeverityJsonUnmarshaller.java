@@ -43,30 +43,43 @@ public class FindingMetricsValuePerSeverityJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("critical", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingMetricsValuePerSeverity.setCritical(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("high", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingMetricsValuePerSeverity.setHigh(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("info", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingMetricsValuePerSeverity.setInfo(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("low", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingMetricsValuePerSeverity.setLow(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("medium", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingMetricsValuePerSeverity.setMedium(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

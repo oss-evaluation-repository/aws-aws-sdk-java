@@ -43,38 +43,53 @@ public class ResourceMetadataJsonUnmarshaller implements Unmarshaller<ResourceMe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginalName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setOriginalName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setOwner(UserMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ParentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setParentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

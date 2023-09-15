@@ -43,18 +43,28 @@ public class S3DataRepositoryConfigurationJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutoImportPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataRepositoryConfiguration.setAutoImportPolicy(AutoImportPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoExportPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataRepositoryConfiguration.setAutoExportPolicy(AutoExportPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

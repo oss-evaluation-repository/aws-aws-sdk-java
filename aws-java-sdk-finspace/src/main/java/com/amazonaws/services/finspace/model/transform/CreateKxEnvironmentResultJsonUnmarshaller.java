@@ -43,38 +43,53 @@ public class CreateKxEnvironmentResultJsonUnmarshaller implements Unmarshaller<C
             return createKxEnvironmentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createKxEnvironmentResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createKxEnvironmentResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createKxEnvironmentResult.setEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createKxEnvironmentResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createKxEnvironmentResult.setEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createKxEnvironmentResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createKxEnvironmentResult.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

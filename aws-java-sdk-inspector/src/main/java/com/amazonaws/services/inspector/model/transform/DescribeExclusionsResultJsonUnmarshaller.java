@@ -43,20 +43,30 @@ public class DescribeExclusionsResultJsonUnmarshaller implements Unmarshaller<De
             return describeExclusionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("exclusions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExclusionsResult.setExclusions(new MapUnmarshaller<String, Exclusion>(context.getUnmarshaller(String.class),
                             ExclusionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("failedItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExclusionsResult.setFailedItems(new MapUnmarshaller<String, FailedItemDetails>(context.getUnmarshaller(String.class),
                             FailedItemDetailsJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

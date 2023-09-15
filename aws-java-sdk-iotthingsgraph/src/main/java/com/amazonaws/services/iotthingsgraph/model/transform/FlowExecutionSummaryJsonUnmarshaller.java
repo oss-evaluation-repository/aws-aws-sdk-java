@@ -43,34 +43,48 @@ public class FlowExecutionSummaryJsonUnmarshaller implements Unmarshaller<FlowEx
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("flowExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowExecutionSummary.setFlowExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowExecutionSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("systemInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowExecutionSummary.setSystemInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("flowTemplateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowExecutionSummary.setFlowTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowExecutionSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowExecutionSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

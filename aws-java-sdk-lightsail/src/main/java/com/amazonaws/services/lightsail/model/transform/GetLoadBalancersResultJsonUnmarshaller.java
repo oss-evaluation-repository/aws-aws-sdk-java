@@ -43,20 +43,30 @@ public class GetLoadBalancersResultJsonUnmarshaller implements Unmarshaller<GetL
             return getLoadBalancersResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("loadBalancers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLoadBalancersResult.setLoadBalancers(new ListUnmarshaller<LoadBalancer>(LoadBalancerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLoadBalancersResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

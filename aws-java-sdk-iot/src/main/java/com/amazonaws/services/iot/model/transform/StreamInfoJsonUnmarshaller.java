@@ -43,44 +43,60 @@ public class StreamInfoJsonUnmarshaller implements Unmarshaller<StreamInfo, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("streamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setStreamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setStreamVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("files", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setFiles(new ListUnmarshaller<StreamFile>(StreamFileJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamInfo.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

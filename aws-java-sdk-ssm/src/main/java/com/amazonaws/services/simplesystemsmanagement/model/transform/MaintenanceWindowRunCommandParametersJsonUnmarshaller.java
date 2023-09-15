@@ -43,44 +43,57 @@ public class MaintenanceWindowRunCommandParametersJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchOutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setCloudWatchOutputConfig(CloudWatchOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DocumentHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setDocumentHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentHashType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setDocumentHashType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setNotificationConfig(NotificationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OutputS3BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setOutputS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputS3KeyPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setOutputS3KeyPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -88,12 +101,18 @@ public class MaintenanceWindowRunCommandParametersJsonUnmarshaller implements Un
                     ).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setServiceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

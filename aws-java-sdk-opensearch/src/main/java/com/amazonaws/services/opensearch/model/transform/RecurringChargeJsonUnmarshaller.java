@@ -43,18 +43,28 @@ public class RecurringChargeJsonUnmarshaller implements Unmarshaller<RecurringCh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RecurringChargeAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recurringCharge.setRecurringChargeAmount(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("RecurringChargeFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recurringCharge.setRecurringChargeFrequency(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

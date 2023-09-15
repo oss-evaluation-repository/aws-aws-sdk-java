@@ -43,68 +43,90 @@ public class ContentDataJsonUnmarshaller implements Unmarshaller<ContentData, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("contentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setContentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setContentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("knowledgeBaseArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setKnowledgeBaseArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("knowledgeBaseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setKnowledgeBaseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("linkOutUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setLinkOutUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setMetadata(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("urlExpiry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contentData.setUrlExpiry(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

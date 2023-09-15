@@ -43,26 +43,38 @@ public class CreatePolicyResultJsonUnmarshaller implements Unmarshaller<CreatePo
             return createPolicyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPolicyResult.setPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPolicyResult.setPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyDocument", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPolicyResult.setPolicyDocument(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPolicyResult.setPolicyVersionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

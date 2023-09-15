@@ -43,26 +43,38 @@ public class ConditionBasedCollectionSchemeJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("expression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditionBasedCollectionScheme.setExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minimumTriggerIntervalMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditionBasedCollectionScheme.setMinimumTriggerIntervalMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("triggerMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditionBasedCollectionScheme.setTriggerMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("conditionLanguageVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditionBasedCollectionScheme.setConditionLanguageVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,67 @@ public class ScheduleRunConfigurationJsonUnmarshaller implements Unmarshaller<Sc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("extraDataPackageArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleRunConfiguration.setExtraDataPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleRunConfiguration.setNetworkProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("locale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleRunConfiguration.setLocale(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleRunConfiguration.setLocation(LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vpceConfigurationArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleRunConfiguration.setVpceConfigurationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("customerArtifactPaths", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleRunConfiguration.setCustomerArtifactPaths(CustomerArtifactPathsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("radios", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleRunConfiguration.setRadios(RadiosJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("auxiliaryApps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleRunConfiguration.setAuxiliaryApps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("billingMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleRunConfiguration.setBillingMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

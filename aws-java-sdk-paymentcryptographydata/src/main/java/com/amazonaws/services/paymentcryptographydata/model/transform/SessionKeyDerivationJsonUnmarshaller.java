@@ -43,30 +43,43 @@ public class SessionKeyDerivationJsonUnmarshaller implements Unmarshaller<Sessio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Amex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionKeyDerivation.setAmex(SessionKeyAmexJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Emv2000", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionKeyDerivation.setEmv2000(SessionKeyEmv2000JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EmvCommon", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionKeyDerivation.setEmvCommon(SessionKeyEmvCommonJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Mastercard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionKeyDerivation.setMastercard(SessionKeyMastercardJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Visa", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionKeyDerivation.setVisa(SessionKeyVisaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

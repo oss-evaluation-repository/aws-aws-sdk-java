@@ -43,38 +43,53 @@ public class GetWirelessGatewayResultJsonUnmarshaller implements Unmarshaller<Ge
             return getWirelessGatewayResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoRaWAN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayResult.setLoRaWAN(LoRaWANGatewayJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayResult.setThingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThingArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayResult.setThingArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

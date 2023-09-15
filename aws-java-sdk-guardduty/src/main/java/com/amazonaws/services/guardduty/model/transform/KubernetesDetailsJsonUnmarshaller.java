@@ -43,18 +43,28 @@ public class KubernetesDetailsJsonUnmarshaller implements Unmarshaller<Kubernete
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("kubernetesUserDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kubernetesDetails.setKubernetesUserDetails(KubernetesUserDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kubernetesWorkloadDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kubernetesDetails.setKubernetesWorkloadDetails(KubernetesWorkloadDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

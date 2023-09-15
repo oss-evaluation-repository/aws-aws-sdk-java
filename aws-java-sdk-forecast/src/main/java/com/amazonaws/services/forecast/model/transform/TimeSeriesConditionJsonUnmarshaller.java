@@ -43,22 +43,33 @@ public class TimeSeriesConditionJsonUnmarshaller implements Unmarshaller<TimeSer
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesCondition.setAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesCondition.setAttributeValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Condition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesCondition.setCondition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

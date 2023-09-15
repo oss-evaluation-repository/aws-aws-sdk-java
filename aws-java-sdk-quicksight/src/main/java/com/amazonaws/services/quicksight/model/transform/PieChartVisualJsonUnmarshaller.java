@@ -43,38 +43,52 @@ public class PieChartVisualJsonUnmarshaller implements Unmarshaller<PieChartVisu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VisualId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartVisual.setVisualId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartVisual.setTitle(VisualTitleLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Subtitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartVisual.setSubtitle(VisualSubtitleLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChartConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartVisual.setChartConfiguration(PieChartConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartVisual.setActions(new ListUnmarshaller<VisualCustomAction>(VisualCustomActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ColumnHierarchies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartVisual.setColumnHierarchies(new ListUnmarshaller<ColumnHierarchy>(ColumnHierarchyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

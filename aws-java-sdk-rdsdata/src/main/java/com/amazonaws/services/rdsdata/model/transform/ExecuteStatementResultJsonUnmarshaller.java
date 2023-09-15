@@ -43,12 +43,17 @@ public class ExecuteStatementResultJsonUnmarshaller implements Unmarshaller<Exec
             return executeStatementResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("records", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executeStatementResult.setRecords(new ListUnmarshaller<java.util.List<Field>>(new ListUnmarshaller<Field>(FieldJsonUnmarshaller
                             .getInstance())
@@ -58,24 +63,32 @@ public class ExecuteStatementResultJsonUnmarshaller implements Unmarshaller<Exec
                     .unmarshall(context));
                 }
                 if (context.testExpression("columnMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executeStatementResult.setColumnMetadata(new ListUnmarshaller<ColumnMetadata>(ColumnMetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("numberOfRecordsUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executeStatementResult.setNumberOfRecordsUpdated(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("generatedFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executeStatementResult.setGeneratedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("formattedRecords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executeStatementResult.setFormattedRecords(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

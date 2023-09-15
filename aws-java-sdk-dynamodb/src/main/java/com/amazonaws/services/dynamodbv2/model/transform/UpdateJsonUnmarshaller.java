@@ -43,41 +43,56 @@ public class UpdateJsonUnmarshaller implements Unmarshaller<Update, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     update.setKey(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class), AttributeValueJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("UpdateExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     update.setUpdateExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     update.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConditionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     update.setConditionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpressionAttributeNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     update.setExpressionAttributeNames(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("ExpressionAttributeValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     update.setExpressionAttributeValues(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class),
                             AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ReturnValuesOnConditionCheckFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     update.setReturnValuesOnConditionCheckFailure(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

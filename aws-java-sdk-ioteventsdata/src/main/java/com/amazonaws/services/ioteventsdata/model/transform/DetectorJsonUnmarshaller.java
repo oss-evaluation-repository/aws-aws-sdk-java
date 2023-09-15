@@ -43,34 +43,48 @@ public class DetectorJsonUnmarshaller implements Unmarshaller<Detector, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("detectorModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detector.setDetectorModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("keyValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detector.setKeyValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detector.setDetectorModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detector.setState(DetectorStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detector.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detector.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

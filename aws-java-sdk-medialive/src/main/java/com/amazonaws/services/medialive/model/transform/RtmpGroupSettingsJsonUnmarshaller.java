@@ -43,44 +43,60 @@ public class RtmpGroupSettingsJsonUnmarshaller implements Unmarshaller<RtmpGroup
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adMarkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rtmpGroupSettings.setAdMarkers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("authenticationScheme", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rtmpGroupSettings.setAuthenticationScheme(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheFullBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rtmpGroupSettings.setCacheFullBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rtmpGroupSettings.setCacheLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("captionData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rtmpGroupSettings.setCaptionData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputLossAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rtmpGroupSettings.setInputLossAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("restartDelay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rtmpGroupSettings.setRestartDelay(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("includeFillerNalUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rtmpGroupSettings.setIncludeFillerNalUnits(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,41 +43,55 @@ public class ImportResourcesToDraftAppVersionResultJsonUnmarshaller implements U
             return importResourcesToDraftAppVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importResourcesToDraftAppVersionResult.setAppArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importResourcesToDraftAppVersionResult.setAppVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eksSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importResourcesToDraftAppVersionResult.setEksSources(new ListUnmarshaller<EksSource>(EksSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sourceArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importResourcesToDraftAppVersionResult.setSourceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importResourcesToDraftAppVersionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("terraformSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importResourcesToDraftAppVersionResult.setTerraformSources(new ListUnmarshaller<TerraformSource>(TerraformSourceJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

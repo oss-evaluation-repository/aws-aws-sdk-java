@@ -43,76 +43,100 @@ public class MemberDetailJsonUnmarshaller implements Unmarshaller<MemberDetail, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GraphArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setGraphArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setMasterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdministratorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setAdministratorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisabledReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setDisabledReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InvitedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setInvitedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("VolumeUsageInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setVolumeUsageInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeUsageUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setVolumeUsageUpdatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("PercentOfGraphUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setPercentOfGraphUtilization(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("PercentOfGraphUtilizationUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setPercentOfGraphUtilizationUpdatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("InvitationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setInvitationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeUsageByDatasourcePackage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setVolumeUsageByDatasourcePackage(new MapUnmarshaller<String, DatasourcePackageUsageInfo>(context
                             .getUnmarshaller(String.class), DatasourcePackageUsageInfoJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("DatasourcePackageIngestStates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     memberDetail.setDatasourcePackageIngestStates(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

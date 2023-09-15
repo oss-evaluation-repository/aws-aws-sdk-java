@@ -43,25 +43,33 @@ public class TestInvokeMethodResultJsonUnmarshaller implements Unmarshaller<Test
             return testInvokeMethodResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeMethodResult.setStatus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("body", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeMethodResult.setBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("headers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeMethodResult.setHeaders(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("multiValueHeaders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeMethodResult.setMultiValueHeaders(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -69,12 +77,18 @@ public class TestInvokeMethodResultJsonUnmarshaller implements Unmarshaller<Test
                     ).unmarshall(context));
                 }
                 if (context.testExpression("log", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeMethodResult.setLog(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeMethodResult.setLatency(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

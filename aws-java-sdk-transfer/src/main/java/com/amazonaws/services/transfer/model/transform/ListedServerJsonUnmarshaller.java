@@ -43,42 +43,58 @@ public class ListedServerJsonUnmarshaller implements Unmarshaller<ListedServer, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedServer.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedServer.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityProviderType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedServer.setIdentityProviderType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedServer.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoggingRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedServer.setLoggingRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedServer.setServerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedServer.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedServer.setUserCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

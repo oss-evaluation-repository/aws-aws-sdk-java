@@ -43,262 +43,312 @@ public class FilterCriteriaJsonUnmarshaller implements Unmarshaller<FilterCriter
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("awsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setAwsAccountId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("codeVulnerabilityDetectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setCodeVulnerabilityDetectorName(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("codeVulnerabilityDetectorTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setCodeVulnerabilityDetectorTags(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("codeVulnerabilityFilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setCodeVulnerabilityFilePath(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("componentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setComponentId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("componentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setComponentType(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ec2InstanceImageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setEc2InstanceImageId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ec2InstanceSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setEc2InstanceSubnetId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ec2InstanceVpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setEc2InstanceVpcId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ecrImageArchitecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setEcrImageArchitecture(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ecrImageHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setEcrImageHash(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ecrImagePushedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setEcrImagePushedAt(new ListUnmarshaller<DateFilter>(DateFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ecrImageRegistry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setEcrImageRegistry(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ecrImageRepositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setEcrImageRepositoryName(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ecrImageTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setEcrImageTags(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("epssScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setEpssScore(new ListUnmarshaller<NumberFilter>(NumberFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("exploitAvailable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setExploitAvailable(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("findingArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setFindingArn(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("findingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setFindingStatus(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("findingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setFindingType(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("firstObservedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setFirstObservedAt(new ListUnmarshaller<DateFilter>(DateFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("fixAvailable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setFixAvailable(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("inspectorScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setInspectorScore(new ListUnmarshaller<NumberFilter>(NumberFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setLambdaFunctionExecutionRoleArn(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionLastModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setLambdaFunctionLastModifiedAt(new ListUnmarshaller<DateFilter>(DateFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionLayers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setLambdaFunctionLayers(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setLambdaFunctionName(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionRuntime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setLambdaFunctionRuntime(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastObservedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setLastObservedAt(new ListUnmarshaller<DateFilter>(DateFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("networkProtocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setNetworkProtocol(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("portRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setPortRange(new ListUnmarshaller<PortRangeFilter>(PortRangeFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("relatedVulnerabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setRelatedVulnerabilities(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setResourceId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setResourceTags(new ListUnmarshaller<MapFilter>(MapFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setResourceType(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setSeverity(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setTitle(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setUpdatedAt(new ListUnmarshaller<DateFilter>(DateFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("vendorSeverity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setVendorSeverity(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("vulnerabilityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setVulnerabilityId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("vulnerabilitySource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setVulnerabilitySource(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("vulnerablePackages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterCriteria.setVulnerablePackages(new ListUnmarshaller<PackageFilter>(PackageFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

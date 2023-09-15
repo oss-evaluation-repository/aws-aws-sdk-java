@@ -43,20 +43,30 @@ public class EventCategoryGroupJsonUnmarshaller implements Unmarshaller<EventCat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventCategoryGroup.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventCategories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventCategoryGroup.setEventCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

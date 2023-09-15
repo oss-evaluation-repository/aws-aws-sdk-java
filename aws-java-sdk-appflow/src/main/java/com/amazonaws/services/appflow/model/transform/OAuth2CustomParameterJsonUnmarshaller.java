@@ -43,40 +43,55 @@ public class OAuth2CustomParameterJsonUnmarshaller implements Unmarshaller<OAuth
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2CustomParameter.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2CustomParameter.setIsRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2CustomParameter.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2CustomParameter.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isSensitiveField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2CustomParameter.setIsSensitiveField(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorSuppliedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2CustomParameter.setConnectorSuppliedValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2CustomParameter.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

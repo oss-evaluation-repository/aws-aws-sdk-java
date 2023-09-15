@@ -43,56 +43,74 @@ public class AnswerSummaryJsonUnmarshaller implements Unmarshaller<AnswerSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QuestionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answerSummary.setQuestionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PillarId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answerSummary.setPillarId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuestionTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answerSummary.setQuestionTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Choices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answerSummary.setChoices(new ListUnmarshaller<Choice>(ChoiceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SelectedChoices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answerSummary.setSelectedChoices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ChoiceAnswerSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answerSummary.setChoiceAnswerSummaries(new ListUnmarshaller<ChoiceAnswerSummary>(ChoiceAnswerSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IsApplicable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answerSummary.setIsApplicable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Risk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answerSummary.setRisk(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answerSummary.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuestionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answerSummary.setQuestionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,86 +43,113 @@ public class DocumentClassifierPropertiesJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentClassifierArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setDocumentClassifierArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setTrainingStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setTrainingEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setInputDataConfig(DocumentClassifierInputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setOutputDataConfig(DocumentClassifierOutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ClassifierMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setClassifierMetadata(ClassifierMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Mode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setModelKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setSourceModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FlywheelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierProperties.setFlywheelArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

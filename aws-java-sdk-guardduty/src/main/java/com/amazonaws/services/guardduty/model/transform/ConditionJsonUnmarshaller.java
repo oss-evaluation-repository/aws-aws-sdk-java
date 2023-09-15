@@ -43,66 +43,86 @@ public class ConditionJsonUnmarshaller implements Unmarshaller<Condition, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eq", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("neq", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("gt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setGt(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gte", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setGte(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("lt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setLt(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("lte", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setLte(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("equals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setEquals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("notEquals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setNotEquals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("greaterThan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setGreaterThan(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("greaterThanOrEqual", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setGreaterThanOrEqual(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lessThan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setLessThan(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lessThanOrEqual", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     condition.setLessThanOrEqual(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

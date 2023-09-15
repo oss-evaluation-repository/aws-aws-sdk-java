@@ -43,40 +43,55 @@ public class InstanceInfoJsonUnmarshaller implements Unmarshaller<InstanceInfo, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("instanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInfo.setInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iamSessionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInfo.setIamSessionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iamUserArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInfo.setIamUserArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInfo.setInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("registerTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInfo.setRegisterTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deregisterTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInfo.setDeregisterTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

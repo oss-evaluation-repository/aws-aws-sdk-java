@@ -43,70 +43,93 @@ public class DeploymentSummaryJsonUnmarshaller implements Unmarshaller<Deploymen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("completedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("componentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deploymentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastAttemptedDeploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setLastAttemptedDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setLastModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastSucceededDeploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setLastSucceededDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceInstanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setServiceInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetResourceCreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setTargetResourceCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("targetResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setTargetResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

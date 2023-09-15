@@ -43,42 +43,58 @@ public class CacheSettingsJsonUnmarshaller implements Unmarshaller<CacheSettings
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("defaultTTL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cacheSettings.setDefaultTTL(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("minimumTTL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cacheSettings.setMinimumTTL(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("maximumTTL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cacheSettings.setMaximumTTL(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("allowedHTTPMethods", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cacheSettings.setAllowedHTTPMethods(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cachedHTTPMethods", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cacheSettings.setCachedHTTPMethods(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("forwardedCookies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cacheSettings.setForwardedCookies(CookieObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("forwardedHeaders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cacheSettings.setForwardedHeaders(HeaderObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("forwardedQueryStrings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cacheSettings.setForwardedQueryStrings(QueryStringObjectJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class AbpV10XJsonUnmarshaller implements Unmarshaller<AbpV10X, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DevAddr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     abpV10X.setDevAddr(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     abpV10X.setSessionKeys(SessionKeysAbpV10XJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FCntStart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     abpV10X.setFCntStart(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

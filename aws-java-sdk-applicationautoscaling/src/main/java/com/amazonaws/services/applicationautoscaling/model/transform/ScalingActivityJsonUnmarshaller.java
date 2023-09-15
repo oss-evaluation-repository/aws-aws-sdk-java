@@ -43,60 +43,80 @@ public class ScalingActivityJsonUnmarshaller implements Unmarshaller<ScalingActi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ActivityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setActivityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setServiceNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalableDimension", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setScalableDimension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Cause", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setCause(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StatusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Details", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotScaledReasons", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingActivity.setNotScaledReasons(new ListUnmarshaller<NotScaledReason>(NotScaledReasonJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

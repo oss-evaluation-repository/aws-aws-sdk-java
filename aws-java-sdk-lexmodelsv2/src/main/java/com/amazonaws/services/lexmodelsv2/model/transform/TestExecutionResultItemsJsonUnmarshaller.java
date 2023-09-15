@@ -43,32 +43,45 @@ public class TestExecutionResultItemsJsonUnmarshaller implements Unmarshaller<Te
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("overallTestResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testExecutionResultItems.setOverallTestResults(OverallTestResultsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("conversationLevelTestResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testExecutionResultItems.setConversationLevelTestResults(ConversationLevelTestResultsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("intentClassificationTestResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testExecutionResultItems.setIntentClassificationTestResults(IntentClassificationTestResultsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("intentLevelSlotResolutionTestResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testExecutionResultItems.setIntentLevelSlotResolutionTestResults(IntentLevelSlotResolutionTestResultsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("utteranceLevelTestResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testExecutionResultItems.setUtteranceLevelTestResults(UtteranceLevelTestResultsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

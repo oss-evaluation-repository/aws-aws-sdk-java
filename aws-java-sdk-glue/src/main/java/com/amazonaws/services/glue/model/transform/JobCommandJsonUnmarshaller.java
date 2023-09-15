@@ -43,26 +43,38 @@ public class JobCommandJsonUnmarshaller implements Unmarshaller<JobCommand, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobCommand.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScriptLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobCommand.setScriptLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PythonVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobCommand.setPythonVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Runtime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobCommand.setRuntime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

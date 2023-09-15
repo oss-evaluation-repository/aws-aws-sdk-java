@@ -43,34 +43,48 @@ public class AppInputSourceJsonUnmarshaller implements Unmarshaller<AppInputSour
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eksSourceClusterNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInputSource.setEksSourceClusterNamespace(EksSourceClusterNamespaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("importType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInputSource.setImportType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInputSource.setResourceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInputSource.setSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInputSource.setSourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("terraformSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInputSource.setTerraformSource(TerraformSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

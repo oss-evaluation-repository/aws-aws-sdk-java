@@ -43,18 +43,28 @@ public class RetryPolicyJsonUnmarshaller implements Unmarshaller<RetryPolicy, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MaximumEventAgeInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     retryPolicy.setMaximumEventAgeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumRetryAttempts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     retryPolicy.setMaximumRetryAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

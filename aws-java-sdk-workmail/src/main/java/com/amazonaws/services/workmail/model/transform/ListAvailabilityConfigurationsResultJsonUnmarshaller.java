@@ -43,12 +43,17 @@ public class ListAvailabilityConfigurationsResultJsonUnmarshaller implements Unm
             return listAvailabilityConfigurationsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AvailabilityConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAvailabilityConfigurationsResult.setAvailabilityConfigurations(new ListUnmarshaller<AvailabilityConfiguration>(
                             AvailabilityConfigurationJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListAvailabilityConfigurationsResultJsonUnmarshaller implements Unm
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAvailabilityConfigurationsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

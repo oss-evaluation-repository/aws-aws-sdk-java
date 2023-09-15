@@ -43,103 +43,133 @@ public class OpsItemJsonUnmarshaller implements Unmarshaller<OpsItem, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpsItemType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setOpsItemType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setLastModifiedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Notifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setNotifications(new ListUnmarshaller<OpsItemNotification>(OpsItemNotificationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RelatedOpsItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setRelatedOpsItems(new ListUnmarshaller<RelatedOpsItem>(RelatedOpsItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpsItemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setOpsItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperationalData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setOperationalData(new MapUnmarshaller<String, OpsItemDataValue>(context.getUnmarshaller(String.class),
                             OpsItemDataValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ActualStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setActualStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ActualEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setActualEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PlannedStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setPlannedStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PlannedEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setPlannedEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OpsItemArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItem.setOpsItemArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class GetDataQualityRulesetResultJsonUnmarshaller implements Unmarshaller
             return getDataQualityRulesetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRulesetResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRulesetResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ruleset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRulesetResult.setRuleset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRulesetResult.setTargetTable(DataQualityTargetTableJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRulesetResult.setCreatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRulesetResult.setLastModifiedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RecommendationRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRulesetResult.setRecommendationRunId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

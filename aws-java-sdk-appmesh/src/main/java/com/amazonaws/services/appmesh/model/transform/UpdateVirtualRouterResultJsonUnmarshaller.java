@@ -43,9 +43,13 @@ public class UpdateVirtualRouterResultJsonUnmarshaller implements Unmarshaller<U
             return updateVirtualRouterResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateVirtualRouterResult.setVirtualRouter(VirtualRouterDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

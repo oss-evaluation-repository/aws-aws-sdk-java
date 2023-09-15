@@ -43,48 +43,65 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventValue(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("itemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setProperties(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(context));
                 }
                 if (context.testExpression("sentAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setSentAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("recommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("impression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setImpression(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("metricAttribution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setMetricAttribution(MetricAttributionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

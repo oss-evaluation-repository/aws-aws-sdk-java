@@ -43,30 +43,43 @@ public class RevisionJsonUnmarshaller implements Unmarshaller<Revision, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("branch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revision.setBranch(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("directory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revision.setDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revision.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revision.setRepositoryProvider(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sha", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revision.setSha(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,66 +43,88 @@ public class ServiceInstanceSummaryJsonUnmarshaller implements Unmarshaller<Serv
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deploymentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setDeploymentStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastAttemptedDeploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setLastAttemptedDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastDeploymentAttemptedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setLastDeploymentAttemptedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastDeploymentSucceededAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setLastDeploymentSucceededAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastSucceededDeploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setLastSucceededDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateMajorVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setTemplateMajorVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateMinorVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setTemplateMinorVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceInstanceSummary.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

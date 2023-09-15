@@ -43,34 +43,48 @@ public class ReplicationConfigurationReplicatedDiskJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationReplicatedDisk.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iops", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationReplicatedDisk.setIops(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("isBootDisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationReplicatedDisk.setIsBootDisk(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("optimizedStagingDiskType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationReplicatedDisk.setOptimizedStagingDiskType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stagingDiskType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationReplicatedDisk.setStagingDiskType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("throughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationReplicatedDisk.setThroughput(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class HlsBasicPutSettingsJsonUnmarshaller implements Unmarshaller<HlsBasi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectionRetryInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsBasicPutSettings.setConnectionRetryInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("filecacheDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsBasicPutSettings.setFilecacheDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsBasicPutSettings.setNumRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("restartDelay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsBasicPutSettings.setRestartDelay(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

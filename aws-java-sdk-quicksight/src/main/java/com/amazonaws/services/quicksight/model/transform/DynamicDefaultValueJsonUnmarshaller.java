@@ -43,22 +43,33 @@ public class DynamicDefaultValueJsonUnmarshaller implements Unmarshaller<Dynamic
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserNameColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicDefaultValue.setUserNameColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GroupNameColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicDefaultValue.setGroupNameColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultValueColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicDefaultValue.setDefaultValueColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

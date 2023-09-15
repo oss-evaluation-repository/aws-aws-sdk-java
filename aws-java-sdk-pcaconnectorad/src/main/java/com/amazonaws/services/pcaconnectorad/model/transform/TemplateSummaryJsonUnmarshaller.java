@@ -43,50 +43,68 @@ public class TemplateSummaryJsonUnmarshaller implements Unmarshaller<TemplateSum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSummary.setConnectorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSummary.setDefinition(TemplateDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSummary.setObjectIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicySchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSummary.setPolicySchema(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Revision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSummary.setRevision(TemplateRevisionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

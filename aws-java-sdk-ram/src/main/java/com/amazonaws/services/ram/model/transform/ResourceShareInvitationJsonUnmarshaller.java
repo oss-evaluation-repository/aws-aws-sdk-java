@@ -43,40 +43,52 @@ public class ResourceShareInvitationJsonUnmarshaller implements Unmarshaller<Res
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceShareInvitationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareInvitation.setResourceShareInvitationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceShareName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareInvitation.setResourceShareName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceShareArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareInvitation.setResourceShareArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("senderAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareInvitation.setSenderAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("receiverAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareInvitation.setReceiverAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("invitationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareInvitation.setInvitationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareInvitation.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceShareAssociations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareInvitation.setResourceShareAssociations(new ListUnmarshaller<ResourceShareAssociation>(
                             ResourceShareAssociationJsonUnmarshaller.getInstance())
@@ -84,8 +96,13 @@ public class ResourceShareInvitationJsonUnmarshaller implements Unmarshaller<Res
                     .unmarshall(context));
                 }
                 if (context.testExpression("receiverArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareInvitation.setReceiverArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

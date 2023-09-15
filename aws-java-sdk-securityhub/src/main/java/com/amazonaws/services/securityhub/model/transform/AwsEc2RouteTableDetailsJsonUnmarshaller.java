@@ -43,22 +43,29 @@ public class AwsEc2RouteTableDetailsJsonUnmarshaller implements Unmarshaller<Aws
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssociationSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2RouteTableDetails.setAssociationSet(new ListUnmarshaller<AssociationSetDetails>(AssociationSetDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2RouteTableDetails.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PropagatingVgwSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2RouteTableDetails.setPropagatingVgwSet(new ListUnmarshaller<PropagatingVgwSetDetails>(PropagatingVgwSetDetailsJsonUnmarshaller
                             .getInstance())
@@ -66,18 +73,25 @@ public class AwsEc2RouteTableDetailsJsonUnmarshaller implements Unmarshaller<Aws
                     .unmarshall(context));
                 }
                 if (context.testExpression("RouteTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2RouteTableDetails.setRouteTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RouteSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2RouteTableDetails.setRouteSet(new ListUnmarshaller<RouteSetDetails>(RouteSetDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2RouteTableDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

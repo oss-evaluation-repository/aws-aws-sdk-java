@@ -43,82 +43,107 @@ public class FaceDetailJsonUnmarshaller implements Unmarshaller<FaceDetail, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BoundingBox", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setBoundingBox(BoundingBoxJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AgeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setAgeRange(AgeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Smile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setSmile(SmileJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Eyeglasses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setEyeglasses(EyeglassesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Sunglasses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setSunglasses(SunglassesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Gender", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setGender(GenderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Beard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setBeard(BeardJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Mustache", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setMustache(MustacheJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EyesOpen", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setEyesOpen(EyeOpenJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MouthOpen", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setMouthOpen(MouthOpenJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Emotions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setEmotions(new ListUnmarshaller<Emotion>(EmotionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Landmarks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setLandmarks(new ListUnmarshaller<Landmark>(LandmarkJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Pose", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setPose(PoseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Quality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setQuality(ImageQualityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Confidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("FaceOccluded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setFaceOccluded(FaceOccludedJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EyeDirection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     faceDetail.setEyeDirection(EyeDirectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

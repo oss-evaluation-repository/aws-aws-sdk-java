@@ -43,22 +43,33 @@ public class ComponentRunWithJsonUnmarshaller implements Unmarshaller<ComponentR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("posixUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentRunWith.setPosixUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("systemResourceLimits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentRunWith.setSystemResourceLimits(SystemResourceLimitsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("windowsUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentRunWith.setWindowsUser(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,47 +43,64 @@ public class AlertSummaryJsonUnmarshaller implements Unmarshaller<AlertSummary, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AlertArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alertSummary.setAlertArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnomalyDetectorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alertSummary.setAnomalyDetectorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlertName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alertSummary.setAlertName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlertSensitivityThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alertSummary.setAlertSensitivityThreshold(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AlertType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alertSummary.setAlertType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlertStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alertSummary.setAlertStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alertSummary.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alertSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alertSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

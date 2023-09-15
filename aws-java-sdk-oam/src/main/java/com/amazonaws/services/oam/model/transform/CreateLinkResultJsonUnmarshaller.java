@@ -43,41 +43,56 @@ public class CreateLinkResultJsonUnmarshaller implements Unmarshaller<CreateLink
             return createLinkResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLinkResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLinkResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLinkResult.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLinkResult.setLabelTemplate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLinkResult.setResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SinkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLinkResult.setSinkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLinkResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

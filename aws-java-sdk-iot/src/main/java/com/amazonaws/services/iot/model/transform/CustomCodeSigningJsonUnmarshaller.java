@@ -43,26 +43,38 @@ public class CustomCodeSigningJsonUnmarshaller implements Unmarshaller<CustomCod
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("signature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customCodeSigning.setSignature(CodeSigningSignatureJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("certificateChain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customCodeSigning.setCertificateChain(CodeSigningCertificateChainJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hashAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customCodeSigning.setHashAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("signatureAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customCodeSigning.setSignatureAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,34 +44,48 @@ public class PipeSourceManagedStreamingKafkaParametersJsonUnmarshaller implement
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BatchSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceManagedStreamingKafkaParameters.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConsumerGroupID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceManagedStreamingKafkaParameters.setConsumerGroupID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Credentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceManagedStreamingKafkaParameters.setCredentials(MSKAccessCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaximumBatchingWindowInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceManagedStreamingKafkaParameters.setMaximumBatchingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StartingPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceManagedStreamingKafkaParameters.setStartingPosition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceManagedStreamingKafkaParameters.setTopicName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

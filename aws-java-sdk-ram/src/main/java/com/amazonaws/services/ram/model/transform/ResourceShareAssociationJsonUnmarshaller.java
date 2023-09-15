@@ -43,46 +43,63 @@ public class ResourceShareAssociationJsonUnmarshaller implements Unmarshaller<Re
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceShareArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareAssociation.setResourceShareArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceShareName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareAssociation.setResourceShareName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associatedEntity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareAssociation.setAssociatedEntity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareAssociation.setAssociationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareAssociation.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareAssociation.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareAssociation.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareAssociation.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("external", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceShareAssociation.setExternal(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

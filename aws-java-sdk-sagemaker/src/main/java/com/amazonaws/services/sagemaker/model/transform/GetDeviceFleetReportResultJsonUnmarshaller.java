@@ -43,46 +43,62 @@ public class GetDeviceFleetReportResultJsonUnmarshaller implements Unmarshaller<
             return getDeviceFleetReportResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceFleetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeviceFleetReportResult.setDeviceFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceFleetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeviceFleetReportResult.setDeviceFleetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeviceFleetReportResult.setOutputConfig(EdgeOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeviceFleetReportResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportGenerated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeviceFleetReportResult.setReportGenerated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeviceStats", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeviceFleetReportResult.setDeviceStats(DeviceStatsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AgentVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeviceFleetReportResult.setAgentVersions(new ListUnmarshaller<AgentVersion>(AgentVersionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ModelStats", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeviceFleetReportResult.setModelStats(new ListUnmarshaller<EdgeModelStat>(EdgeModelStatJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

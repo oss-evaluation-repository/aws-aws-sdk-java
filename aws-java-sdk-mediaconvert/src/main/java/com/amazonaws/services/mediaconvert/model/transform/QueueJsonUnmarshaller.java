@@ -43,54 +43,73 @@ public class QueueJsonUnmarshaller implements Unmarshaller<Queue, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pricingPlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("progressingJobsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setProgressingJobsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("reservationPlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setReservationPlan(ReservationPlanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("submittedJobsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setSubmittedJobsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queue.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

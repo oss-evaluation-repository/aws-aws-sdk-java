@@ -43,51 +43,69 @@ public class LifecyclePolicyJsonUnmarshaller implements Unmarshaller<LifecyclePo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PolicyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifecyclePolicy.setPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifecyclePolicy.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifecyclePolicy.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifecyclePolicy.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifecyclePolicy.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifecyclePolicy.setDateCreated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("DateModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifecyclePolicy.setDateModified(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("PolicyDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifecyclePolicy.setPolicyDetails(PolicyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifecyclePolicy.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("PolicyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lifecyclePolicy.setPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,70 +43,91 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setReferenceId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Names", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Root", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setRoot(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Edges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setEdges(new ListUnmarshaller<Edge>(EdgeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SummaryStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setSummaryStatistics(ServiceStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DurationHistogram", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setDurationHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResponseTimeHistogram", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setResponseTimeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,64 @@ public class GraphqlApiJsonUnmarshaller implements Unmarshaller<GraphqlApi, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authenticationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setLogConfig(LogConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("userPoolConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setUserPoolConfig(UserPoolConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("openIDConnectConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setOpenIDConnectConfig(OpenIDConnectConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uris", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setUris(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("additionalAuthenticationProviders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setAdditionalAuthenticationProviders(new ListUnmarshaller<AdditionalAuthenticationProvider>(
                             AdditionalAuthenticationProviderJsonUnmarshaller.getInstance())
@@ -94,41 +108,54 @@ public class GraphqlApiJsonUnmarshaller implements Unmarshaller<GraphqlApi, Json
                     .unmarshall(context));
                 }
                 if (context.testExpression("xrayEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setXrayEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("wafWebAclArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setWafWebAclArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lambdaAuthorizerConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setLambdaAuthorizerConfig(LambdaAuthorizerConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setDns(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("visibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setApiType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergedApiExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setMergedApiExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ownerContact", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     graphqlApi.setOwnerContact(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

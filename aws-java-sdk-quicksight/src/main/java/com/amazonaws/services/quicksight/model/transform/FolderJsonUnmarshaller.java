@@ -43,44 +43,60 @@ public class FolderJsonUnmarshaller implements Unmarshaller<Folder, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FolderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folder.setFolderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folder.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folder.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FolderType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folder.setFolderType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FolderPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folder.setFolderPath(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folder.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folder.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SharingModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folder.setSharingModel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

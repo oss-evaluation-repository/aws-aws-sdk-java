@@ -43,58 +43,78 @@ public class JobRunSummaryJsonUnmarshaller implements Unmarshaller<JobRunSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("executionRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setStateDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("releaseLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setReleaseLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRunSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

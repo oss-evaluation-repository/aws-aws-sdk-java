@@ -43,32 +43,45 @@ public class ManagedJobTemplateSummaryJsonUnmarshaller implements Unmarshaller<M
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("templateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedJobTemplateSummary.setTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedJobTemplateSummary.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedJobTemplateSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedJobTemplateSummary.setEnvironments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("templateVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedJobTemplateSummary.setTemplateVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

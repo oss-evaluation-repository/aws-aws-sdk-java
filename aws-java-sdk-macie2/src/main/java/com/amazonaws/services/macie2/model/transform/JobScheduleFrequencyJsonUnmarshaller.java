@@ -43,22 +43,33 @@ public class JobScheduleFrequencyJsonUnmarshaller implements Unmarshaller<JobSch
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dailySchedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobScheduleFrequency.setDailySchedule(DailyScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("monthlySchedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobScheduleFrequency.setMonthlySchedule(MonthlyScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("weeklySchedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobScheduleFrequency.setWeeklySchedule(WeeklyScheduleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

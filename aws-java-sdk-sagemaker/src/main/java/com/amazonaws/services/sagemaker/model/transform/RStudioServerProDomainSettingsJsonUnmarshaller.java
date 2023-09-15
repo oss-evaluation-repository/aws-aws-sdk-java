@@ -43,26 +43,38 @@ public class RStudioServerProDomainSettingsJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rStudioServerProDomainSettings.setDomainExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RStudioConnectUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rStudioServerProDomainSettings.setRStudioConnectUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RStudioPackageManagerUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rStudioServerProDomainSettings.setRStudioPackageManagerUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultResourceSpec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rStudioServerProDomainSettings.setDefaultResourceSpec(ResourceSpecJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

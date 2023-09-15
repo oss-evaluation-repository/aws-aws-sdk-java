@@ -43,28 +43,40 @@ public class ValidateE911AddressResultJsonUnmarshaller implements Unmarshaller<V
             return validateE911AddressResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ValidationResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validateE911AddressResult.setValidationResult(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AddressExternalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validateE911AddressResult.setAddressExternalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Address", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validateE911AddressResult.setAddress(AddressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CandidateAddressList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validateE911AddressResult.setCandidateAddressList(new ListUnmarshaller<CandidateAddress>(CandidateAddressJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,55 @@ public class CapacityProviderJsonUnmarshaller implements Unmarshaller<CapacityPr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("capacityProviderArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityProvider.setCapacityProviderArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityProvider.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityProvider.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroupProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityProvider.setAutoScalingGroupProvider(AutoScalingGroupProviderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("updateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityProvider.setUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updateStatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityProvider.setUpdateStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityProvider.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

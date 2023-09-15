@@ -43,20 +43,30 @@ public class GetReportGroupTrendResultJsonUnmarshaller implements Unmarshaller<G
             return getReportGroupTrendResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("stats", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReportGroupTrendResult.setStats(ReportGroupTrendStatsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rawData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReportGroupTrendResult.setRawData(new ListUnmarshaller<ReportWithRawData>(ReportWithRawDataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

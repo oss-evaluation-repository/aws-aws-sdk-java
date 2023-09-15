@@ -43,22 +43,33 @@ public class ManagementPreferenceJsonUnmarshaller implements Unmarshaller<Manage
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("awsManagedResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managementPreference.setAwsManagedResources(AwsManagedResourcesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("noPreference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managementPreference.setNoPreference(NoManagementPreferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("selfManageResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managementPreference.setSelfManageResources(SelfManageResourcesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

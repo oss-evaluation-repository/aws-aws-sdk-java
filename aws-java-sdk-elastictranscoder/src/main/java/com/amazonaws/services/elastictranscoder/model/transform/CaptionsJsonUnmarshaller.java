@@ -43,26 +43,37 @@ public class CaptionsJsonUnmarshaller implements Unmarshaller<Captions, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MergePolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captions.setMergePolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CaptionSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captions.setCaptionSources(new ListUnmarshaller<CaptionSource>(CaptionSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CaptionFormats", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captions.setCaptionFormats(new ListUnmarshaller<CaptionFormat>(CaptionFormatJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class GetLensReviewResultJsonUnmarshaller implements Unmarshaller<GetLens
             return getLensReviewResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkloadId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLensReviewResult.setWorkloadId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MilestoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLensReviewResult.setMilestoneNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LensReview", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLensReviewResult.setLensReview(LensReviewJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class SchemaConfigurationJsonUnmarshaller implements Unmarshaller<SchemaC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConfiguration.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CatalogId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConfiguration.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConfiguration.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConfiguration.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConfiguration.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConfiguration.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class FunctionConfigurationJsonUnmarshaller implements Unmarshaller<Funct
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EncodingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionConfiguration.setEncodingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionConfiguration.setEnvironment(FunctionConfigurationEnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExecArgs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionConfiguration.setExecArgs(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Executable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionConfiguration.setExecutable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MemorySize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionConfiguration.setMemorySize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Pinned", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionConfiguration.setPinned(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Timeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionConfiguration.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FunctionRuntimeOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionConfiguration.setFunctionRuntimeOverride(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

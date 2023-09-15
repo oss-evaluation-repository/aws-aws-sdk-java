@@ -43,32 +43,45 @@ public class OutputGroupJsonUnmarshaller implements Unmarshaller<OutputGroup, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("automatedEncodingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroup.setAutomatedEncodingSettings(AutomatedEncodingSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("customName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroup.setCustomName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroup.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroup.setOutputGroupSettings(OutputGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("outputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroup.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

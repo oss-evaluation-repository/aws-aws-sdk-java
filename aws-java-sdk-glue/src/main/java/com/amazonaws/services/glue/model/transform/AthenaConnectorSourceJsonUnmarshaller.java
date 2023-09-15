@@ -43,40 +43,55 @@ public class AthenaConnectorSourceJsonUnmarshaller implements Unmarshaller<Athen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaConnectorSource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaConnectorSource.setConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaConnectorSource.setConnectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaConnectorSource.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaConnectorSource.setConnectionTable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaConnectorSource.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputSchemas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaConnectorSource.setOutputSchemas(new ListUnmarshaller<GlueSchema>(GlueSchemaJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

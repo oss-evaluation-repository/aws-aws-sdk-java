@@ -43,33 +43,46 @@ public class VisualCustomActionJsonUnmarshaller implements Unmarshaller<VisualCu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CustomActionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     visualCustomAction.setCustomActionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     visualCustomAction.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     visualCustomAction.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Trigger", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     visualCustomAction.setTrigger(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ActionOperations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     visualCustomAction.setActionOperations(new ListUnmarshaller<VisualCustomActionOperation>(VisualCustomActionOperationJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

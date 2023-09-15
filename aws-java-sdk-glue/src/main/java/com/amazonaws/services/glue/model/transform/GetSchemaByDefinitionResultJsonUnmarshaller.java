@@ -43,30 +43,43 @@ public class GetSchemaByDefinitionResultJsonUnmarshaller implements Unmarshaller
             return getSchemaByDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaByDefinitionResult.setSchemaVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaByDefinitionResult.setSchemaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaByDefinitionResult.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaByDefinitionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaByDefinitionResult.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

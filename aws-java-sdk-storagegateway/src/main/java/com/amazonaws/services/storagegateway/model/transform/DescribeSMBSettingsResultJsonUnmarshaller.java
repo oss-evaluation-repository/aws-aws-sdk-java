@@ -43,38 +43,53 @@ public class DescribeSMBSettingsResultJsonUnmarshaller implements Unmarshaller<D
             return describeSMBSettingsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSMBSettingsResult.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSMBSettingsResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ActiveDirectoryStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSMBSettingsResult.setActiveDirectoryStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SMBGuestPasswordSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSMBSettingsResult.setSMBGuestPasswordSet(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SMBSecurityStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSMBSettingsResult.setSMBSecurityStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSharesVisible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSMBSettingsResult.setFileSharesVisible(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SMBLocalGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSMBSettingsResult.setSMBLocalGroups(SMBLocalGroupsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

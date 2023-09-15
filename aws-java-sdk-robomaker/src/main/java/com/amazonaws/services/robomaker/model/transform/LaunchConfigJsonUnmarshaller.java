@@ -43,37 +43,51 @@ public class LaunchConfigJsonUnmarshaller implements Unmarshaller<LaunchConfig, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("packageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchConfig.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchFile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchConfig.setLaunchFile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchConfig.setEnvironmentVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("portForwardingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchConfig.setPortForwardingConfig(PortForwardingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("streamUI", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchConfig.setStreamUI(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchConfig.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

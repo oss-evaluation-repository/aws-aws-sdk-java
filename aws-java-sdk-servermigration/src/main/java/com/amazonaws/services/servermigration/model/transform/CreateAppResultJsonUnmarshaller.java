@@ -43,26 +43,37 @@ public class CreateAppResultJsonUnmarshaller implements Unmarshaller<CreateAppRe
             return createAppResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAppResult.setAppSummary(AppSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serverGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAppResult.setServerGroups(new ListUnmarshaller<ServerGroup>(ServerGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAppResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

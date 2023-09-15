@@ -43,32 +43,45 @@ public class UsageRecordJsonUnmarshaller implements Unmarshaller<UsageRecord, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageRecord.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CustomerIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageRecord.setCustomerIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Dimension", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageRecord.setDimension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Quantity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageRecord.setQuantity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UsageAllocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageRecord.setUsageAllocations(new ListUnmarshaller<UsageAllocation>(UsageAllocationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

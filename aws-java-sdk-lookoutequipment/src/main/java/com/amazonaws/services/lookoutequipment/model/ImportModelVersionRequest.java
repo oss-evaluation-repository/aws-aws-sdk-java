@@ -72,6 +72,30 @@ public class ImportModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Indicates how to import the accumulated inference data when a model version is imported. The possible values are
+     * as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NO_IMPORT – Don't import the data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String inferenceDataImportStrategy;
 
     /**
      * <p>
@@ -431,6 +455,209 @@ public class ImportModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Indicates how to import the accumulated inference data when a model version is imported. The possible values are
+     * as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NO_IMPORT – Don't import the data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param inferenceDataImportStrategy
+     *        Indicates how to import the accumulated inference data when a model version is imported. The possible
+     *        values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        NO_IMPORT – Don't import the data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target
+     *        model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
+     *        </p>
+     *        </li>
+     * @see InferenceDataImportStrategy
+     */
+
+    public void setInferenceDataImportStrategy(String inferenceDataImportStrategy) {
+        this.inferenceDataImportStrategy = inferenceDataImportStrategy;
+    }
+
+    /**
+     * <p>
+     * Indicates how to import the accumulated inference data when a model version is imported. The possible values are
+     * as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NO_IMPORT – Don't import the data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates how to import the accumulated inference data when a model version is imported. The possible
+     *         values are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         NO_IMPORT – Don't import the data.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target
+     *         model.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
+     *         </p>
+     *         </li>
+     * @see InferenceDataImportStrategy
+     */
+
+    public String getInferenceDataImportStrategy() {
+        return this.inferenceDataImportStrategy;
+    }
+
+    /**
+     * <p>
+     * Indicates how to import the accumulated inference data when a model version is imported. The possible values are
+     * as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NO_IMPORT – Don't import the data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param inferenceDataImportStrategy
+     *        Indicates how to import the accumulated inference data when a model version is imported. The possible
+     *        values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        NO_IMPORT – Don't import the data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target
+     *        model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InferenceDataImportStrategy
+     */
+
+    public ImportModelVersionRequest withInferenceDataImportStrategy(String inferenceDataImportStrategy) {
+        setInferenceDataImportStrategy(inferenceDataImportStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates how to import the accumulated inference data when a model version is imported. The possible values are
+     * as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NO_IMPORT – Don't import the data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param inferenceDataImportStrategy
+     *        Indicates how to import the accumulated inference data when a model version is imported. The possible
+     *        values are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        NO_IMPORT – Don't import the data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target
+     *        model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InferenceDataImportStrategy
+     */
+
+    public ImportModelVersionRequest withInferenceDataImportStrategy(InferenceDataImportStrategy inferenceDataImportStrategy) {
+        this.inferenceDataImportStrategy = inferenceDataImportStrategy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -457,7 +684,9 @@ public class ImportModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getServerSideKmsKeyId() != null)
             sb.append("ServerSideKmsKeyId: ").append(getServerSideKmsKeyId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getInferenceDataImportStrategy() != null)
+            sb.append("InferenceDataImportStrategy: ").append(getInferenceDataImportStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -504,6 +733,10 @@ public class ImportModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getInferenceDataImportStrategy() == null ^ this.getInferenceDataImportStrategy() == null)
+            return false;
+        if (other.getInferenceDataImportStrategy() != null && other.getInferenceDataImportStrategy().equals(this.getInferenceDataImportStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -520,6 +753,7 @@ public class ImportModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getServerSideKmsKeyId() == null) ? 0 : getServerSideKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getInferenceDataImportStrategy() == null) ? 0 : getInferenceDataImportStrategy().hashCode());
         return hashCode;
     }
 

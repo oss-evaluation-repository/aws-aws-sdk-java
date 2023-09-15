@@ -43,40 +43,54 @@ public class BrokerInstanceOptionJsonUnmarshaller implements Unmarshaller<Broker
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("availabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerInstanceOption.setAvailabilityZones(new ListUnmarshaller<AvailabilityZone>(AvailabilityZoneJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("engineType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerInstanceOption.setEngineType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerInstanceOption.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerInstanceOption.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportedDeploymentModes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerInstanceOption.setSupportedDeploymentModes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("supportedEngineVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerInstanceOption.setSupportedEngineVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

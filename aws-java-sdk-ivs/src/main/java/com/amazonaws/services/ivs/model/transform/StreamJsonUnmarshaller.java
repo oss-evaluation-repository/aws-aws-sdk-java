@@ -43,38 +43,53 @@ public class StreamJsonUnmarshaller implements Unmarshaller<Stream, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stream.setChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("health", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stream.setHealth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("playbackUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stream.setPlaybackUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stream.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stream.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stream.setStreamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("viewerCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stream.setViewerCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class UpdateRuleResultJsonUnmarshaller implements Unmarshaller<UpdateRule
             return updateRuleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRuleResult.setAction(RuleActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRuleResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRuleResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isDefault", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRuleResult.setIsDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("match", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRuleResult.setMatch(RuleMatchJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRuleResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRuleResult.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

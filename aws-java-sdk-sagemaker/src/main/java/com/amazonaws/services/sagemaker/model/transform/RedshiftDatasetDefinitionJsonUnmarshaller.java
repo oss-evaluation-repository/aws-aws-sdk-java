@@ -43,46 +43,63 @@ public class RedshiftDatasetDefinitionJsonUnmarshaller implements Unmarshaller<R
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClusterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDatasetDefinition.setClusterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Database", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDatasetDefinition.setDatabase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDatasetDefinition.setDbUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDatasetDefinition.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDatasetDefinition.setClusterRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDatasetDefinition.setOutputS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDatasetDefinition.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDatasetDefinition.setOutputFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputCompression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDatasetDefinition.setOutputCompression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

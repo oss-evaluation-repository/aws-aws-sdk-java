@@ -43,26 +43,38 @@ public class AwsEcsServiceLoadBalancersDetailsJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContainerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsServiceLoadBalancersDetails.setContainerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContainerPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsServiceLoadBalancersDetails.setContainerPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LoadBalancerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsServiceLoadBalancersDetails.setLoadBalancerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsServiceLoadBalancersDetails.setTargetGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

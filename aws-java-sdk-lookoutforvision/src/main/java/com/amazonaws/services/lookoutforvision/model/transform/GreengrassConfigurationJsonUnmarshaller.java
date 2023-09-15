@@ -43,44 +43,60 @@ public class GreengrassConfigurationJsonUnmarshaller implements Unmarshaller<Gre
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CompilerOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassConfiguration.setCompilerOptions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetDevice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassConfiguration.setTargetDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetPlatform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassConfiguration.setTargetPlatform(TargetPlatformJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3OutputLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassConfiguration.setS3OutputLocation(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ComponentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassConfiguration.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComponentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassConfiguration.setComponentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComponentDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassConfiguration.setComponentDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassConfiguration.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

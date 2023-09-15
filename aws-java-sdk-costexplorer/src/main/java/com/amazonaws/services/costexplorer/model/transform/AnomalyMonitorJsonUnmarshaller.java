@@ -43,46 +43,63 @@ public class AnomalyMonitorJsonUnmarshaller implements Unmarshaller<AnomalyMonit
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyMonitor.setMonitorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyMonitor.setMonitorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyMonitor.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyMonitor.setLastUpdatedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyMonitor.setLastEvaluatedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyMonitor.setMonitorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitorDimension", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyMonitor.setMonitorDimension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitorSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyMonitor.setMonitorSpecification(ExpressionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DimensionalValueCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyMonitor.setDimensionalValueCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

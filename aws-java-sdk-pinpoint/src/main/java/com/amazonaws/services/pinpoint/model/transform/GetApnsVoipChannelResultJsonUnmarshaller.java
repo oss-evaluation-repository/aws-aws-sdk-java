@@ -43,9 +43,13 @@ public class GetApnsVoipChannelResultJsonUnmarshaller implements Unmarshaller<Ge
             return getApnsVoipChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getApnsVoipChannelResult.setAPNSVoipChannelResponse(APNSVoipChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -43,40 +43,55 @@ public class SuiteDefinitionConfigurationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("suiteDefinitionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionConfiguration.setSuiteDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("devices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionConfiguration.setDevices(new ListUnmarshaller<DeviceUnderTest>(DeviceUnderTestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("intendedForQualification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionConfiguration.setIntendedForQualification(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isLongDurationTest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionConfiguration.setIsLongDurationTest(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("rootGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionConfiguration.setRootGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("devicePermissionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionConfiguration.setDevicePermissionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionConfiguration.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

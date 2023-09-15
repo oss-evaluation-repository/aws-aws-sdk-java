@@ -43,42 +43,58 @@ public class HeatMapConfigurationJsonUnmarshaller implements Unmarshaller<HeatMa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     heatMapConfiguration.setFieldWells(HeatMapFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SortConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     heatMapConfiguration.setSortConfiguration(HeatMapSortConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RowLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     heatMapConfiguration.setRowLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColumnLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     heatMapConfiguration.setColumnLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColorScale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     heatMapConfiguration.setColorScale(ColorScaleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Legend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     heatMapConfiguration.setLegend(LegendOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     heatMapConfiguration.setDataLabels(DataLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tooltip", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     heatMapConfiguration.setTooltip(TooltipOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

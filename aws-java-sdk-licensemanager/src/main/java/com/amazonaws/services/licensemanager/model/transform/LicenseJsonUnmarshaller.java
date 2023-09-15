@@ -43,70 +43,92 @@ public class LicenseJsonUnmarshaller implements Unmarshaller<License, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LicenseArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setLicenseArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setLicenseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setProductName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductSKU", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setProductSKU(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Issuer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setIssuer(IssuerDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HomeRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setHomeRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Validity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setValidity(DatetimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Beneficiary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setBeneficiary(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Entitlements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setEntitlements(new ListUnmarshaller<Entitlement>(EntitlementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConsumptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setConsumptionConfiguration(ConsumptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LicenseMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setLicenseMetadata(new ListUnmarshaller<Metadata>(MetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setCreateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     license.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

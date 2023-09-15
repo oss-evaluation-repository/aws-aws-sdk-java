@@ -43,26 +43,38 @@ public class TrustedAdvisorResourcesSummaryJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourcesProcessed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustedAdvisorResourcesSummary.setResourcesProcessed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("resourcesFlagged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustedAdvisorResourcesSummary.setResourcesFlagged(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("resourcesIgnored", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustedAdvisorResourcesSummary.setResourcesIgnored(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("resourcesSuppressed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustedAdvisorResourcesSummary.setResourcesSuppressed(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

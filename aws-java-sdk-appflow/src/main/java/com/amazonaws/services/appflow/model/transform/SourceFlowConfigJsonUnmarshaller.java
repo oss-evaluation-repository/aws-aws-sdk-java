@@ -43,30 +43,43 @@ public class SourceFlowConfigJsonUnmarshaller implements Unmarshaller<SourceFlow
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceFlowConfig.setConnectorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceFlowConfig.setApiVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceFlowConfig.setConnectorProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceConnectorProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceFlowConfig.setSourceConnectorProperties(SourceConnectorPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("incrementalPullConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceFlowConfig.setIncrementalPullConfig(IncrementalPullConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

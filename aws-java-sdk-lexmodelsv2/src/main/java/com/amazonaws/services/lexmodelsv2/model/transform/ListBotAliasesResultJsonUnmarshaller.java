@@ -43,24 +43,35 @@ public class ListBotAliasesResultJsonUnmarshaller implements Unmarshaller<ListBo
             return listBotAliasesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botAliasSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listBotAliasesResult.setBotAliasSummaries(new ListUnmarshaller<BotAliasSummary>(BotAliasSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listBotAliasesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listBotAliasesResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

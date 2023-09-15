@@ -43,12 +43,17 @@ public class ListModelCardVersionsResultJsonUnmarshaller implements Unmarshaller
             return listModelCardVersionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelCardVersionSummaryList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listModelCardVersionsResult.setModelCardVersionSummaryList(new ListUnmarshaller<ModelCardVersionSummary>(
                             ModelCardVersionSummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListModelCardVersionsResultJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listModelCardVersionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

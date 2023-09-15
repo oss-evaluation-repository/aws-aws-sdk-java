@@ -43,30 +43,43 @@ public class BuildBotLocaleResultJsonUnmarshaller implements Unmarshaller<BuildB
             return buildBotLocaleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildBotLocaleResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildBotLocaleResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildBotLocaleResult.setLocaleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botLocaleStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildBotLocaleResult.setBotLocaleStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastBuildSubmittedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildBotLocaleResult.setLastBuildSubmittedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

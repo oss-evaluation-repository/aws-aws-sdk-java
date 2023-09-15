@@ -43,47 +43,64 @@ public class PushNotificationTemplateRequestJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ADM", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushNotificationTemplateRequest.setADM(AndroidPushNotificationTemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("APNS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushNotificationTemplateRequest.setAPNS(APNSPushNotificationTemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Baidu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushNotificationTemplateRequest.setBaidu(AndroidPushNotificationTemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Default", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushNotificationTemplateRequest.setDefault(DefaultPushNotificationTemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushNotificationTemplateRequest.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GCM", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushNotificationTemplateRequest.setGCM(AndroidPushNotificationTemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RecommenderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushNotificationTemplateRequest.setRecommenderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushNotificationTemplateRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TemplateDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushNotificationTemplateRequest.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

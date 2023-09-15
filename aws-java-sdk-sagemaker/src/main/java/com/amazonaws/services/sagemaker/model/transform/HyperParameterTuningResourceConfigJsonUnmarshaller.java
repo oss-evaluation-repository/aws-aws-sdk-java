@@ -43,37 +43,51 @@ public class HyperParameterTuningResourceConfigJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningResourceConfig.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningResourceConfig.setInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningResourceConfig.setVolumeSizeInGB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningResourceConfig.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllocationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningResourceConfig.setAllocationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningResourceConfig.setInstanceConfigs(new ListUnmarshaller<HyperParameterTuningInstanceConfig>(
                             HyperParameterTuningInstanceConfigJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

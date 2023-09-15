@@ -43,39 +43,54 @@ public class GetEventStreamResultJsonUnmarshaller implements Unmarshaller<GetEve
             return getEventStreamResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventStreamResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventStreamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventStreamResult.setEventStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventStreamResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventStreamResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StoppedSince", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventStreamResult.setStoppedSince(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DestinationDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventStreamResult.setDestinationDetails(EventStreamDestinationDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventStreamResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

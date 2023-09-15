@@ -43,56 +43,75 @@ public class LinkJsonUnmarshaller implements Unmarshaller<Link, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LinkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setLinkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LinkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setLinkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlobalNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setGlobalNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SiteId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setSiteId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Bandwidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setBandwidth(BandwidthJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Provider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setProvider(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     link.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,43 @@ public class AutomaticTapeCreationRuleJsonUnmarshaller implements Unmarshaller<A
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TapeBarcodePrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automaticTapeCreationRule.setTapeBarcodePrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automaticTapeCreationRule.setPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TapeSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automaticTapeCreationRule.setTapeSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumNumTapes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automaticTapeCreationRule.setMinimumNumTapes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Worm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automaticTapeCreationRule.setWorm(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

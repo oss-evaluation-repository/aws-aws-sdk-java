@@ -43,22 +43,33 @@ public class BucketLevelPermissionsJsonUnmarshaller implements Unmarshaller<Buck
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessControlList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketLevelPermissions.setAccessControlList(AccessControlListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("blockPublicAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketLevelPermissions.setBlockPublicAccess(BlockPublicAccessJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("bucketPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketLevelPermissions.setBucketPolicy(BucketPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

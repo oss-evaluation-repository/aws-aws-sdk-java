@@ -44,31 +44,44 @@ public class UpdatePipeSourceSelfManagedKafkaParametersJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BatchSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceSelfManagedKafkaParameters.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Credentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceSelfManagedKafkaParameters.setCredentials(SelfManagedKafkaAccessConfigurationCredentialsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("MaximumBatchingWindowInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceSelfManagedKafkaParameters.setMaximumBatchingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerRootCaCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceSelfManagedKafkaParameters.setServerRootCaCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Vpc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceSelfManagedKafkaParameters.setVpc(SelfManagedKafkaAccessConfigurationVpcJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

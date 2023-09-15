@@ -43,46 +43,63 @@ public class VpcIngressConnectionJsonUnmarshaller implements Unmarshaller<VpcIng
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VpcIngressConnectionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcIngressConnection.setVpcIngressConnectionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcIngressConnectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcIngressConnection.setVpcIngressConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcIngressConnection.setServiceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcIngressConnection.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcIngressConnection.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcIngressConnection.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IngressVpcConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcIngressConnection.setIngressVpcConfiguration(IngressVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcIngressConnection.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcIngressConnection.setDeletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

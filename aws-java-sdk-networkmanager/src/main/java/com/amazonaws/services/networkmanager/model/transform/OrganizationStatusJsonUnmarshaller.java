@@ -43,28 +43,40 @@ public class OrganizationStatusJsonUnmarshaller implements Unmarshaller<Organiza
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OrganizationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationStatus.setOrganizationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationAwsServiceAccessStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationStatus.setOrganizationAwsServiceAccessStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SLRDeploymentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationStatus.setSLRDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountStatusList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationStatus.setAccountStatusList(new ListUnmarshaller<AccountStatus>(AccountStatusJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

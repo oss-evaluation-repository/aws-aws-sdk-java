@@ -43,43 +43,58 @@ public class SemanticTypeJsonUnmarshaller implements Unmarshaller<SemanticType, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     semanticType.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     semanticType.setSubTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TypeParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     semanticType.setTypeParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TruthyCellValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     semanticType.setTruthyCellValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TruthyCellValueSynonyms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     semanticType.setTruthyCellValueSynonyms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FalseyCellValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     semanticType.setFalseyCellValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FalseyCellValueSynonyms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     semanticType.setFalseyCellValueSynonyms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

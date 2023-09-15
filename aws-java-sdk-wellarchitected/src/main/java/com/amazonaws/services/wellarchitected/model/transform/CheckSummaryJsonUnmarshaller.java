@@ -43,55 +43,74 @@ public class CheckSummaryJsonUnmarshaller implements Unmarshaller<CheckSummary, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Provider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setProvider(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LensArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setLensArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PillarId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setPillarId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuestionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setQuestionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChoiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setChoiceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkSummary.setAccountSummary(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -30,12 +30,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 class FleetStarted {
 
-    static class IsRUNNINGMatcher extends WaiterAcceptor<DescribeFleetsResult> {
+    static class IsACTIVEMatcher extends WaiterAcceptor<DescribeFleetsResult> {
         private static final JsonNode expectedResult;
 
         static {
             try {
-                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"RUNNING\"");
+                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"ACTIVE\"");
             } catch (IOException ioe) {
                 throw new RuntimeException(ioe);
             }
@@ -69,12 +69,12 @@ class FleetStarted {
         }
     }
 
-    static class IsSTOPPINGMatcher extends WaiterAcceptor<DescribeFleetsResult> {
+    static class IsPENDING_DEACTIVATEMatcher extends WaiterAcceptor<DescribeFleetsResult> {
         private static final JsonNode expectedResult;
 
         static {
             try {
-                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"STOPPING\"");
+                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"PENDING_DEACTIVATE\"");
             } catch (IOException ioe) {
                 throw new RuntimeException(ioe);
             }
@@ -108,12 +108,12 @@ class FleetStarted {
         }
     }
 
-    static class IsSTOPPEDMatcher extends WaiterAcceptor<DescribeFleetsResult> {
+    static class IsINACTIVEMatcher extends WaiterAcceptor<DescribeFleetsResult> {
         private static final JsonNode expectedResult;
 
         static {
             try {
-                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"STOPPED\"");
+                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"INACTIVE\"");
             } catch (IOException ioe) {
                 throw new RuntimeException(ioe);
             }

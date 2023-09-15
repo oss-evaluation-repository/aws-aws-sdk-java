@@ -43,30 +43,43 @@ public class ComputeLimitsJsonUnmarshaller implements Unmarshaller<ComputeLimits
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UnitType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeLimits.setUnitType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeLimits.setMinimumCapacityUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeLimits.setMaximumCapacityUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumOnDemandCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeLimits.setMaximumOnDemandCapacityUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumCoreCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeLimits.setMaximumCoreCapacityUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

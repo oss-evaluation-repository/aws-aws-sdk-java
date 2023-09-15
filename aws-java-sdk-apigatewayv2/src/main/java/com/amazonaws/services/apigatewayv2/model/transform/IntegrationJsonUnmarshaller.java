@@ -44,94 +44,122 @@ public class IntegrationJsonUnmarshaller implements Unmarshaller<Integration, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("apiGatewayManaged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contentHandlingStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setContentHandlingStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("credentialsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setCredentialsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("integrationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setIntegrationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("integrationMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setIntegrationMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("integrationResponseSelectionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setIntegrationResponseSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("integrationSubtype", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setIntegrationSubtype(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("integrationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setIntegrationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("integrationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setIntegrationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("passthroughBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setPassthroughBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("payloadFormatVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setPayloadFormatVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requestParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setRequestParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("requestTemplates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setRequestTemplates(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("responseParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setResponseParameters(new MapUnmarshaller<String, java.util.Map<String, String>>(context.getUnmarshaller(String.class),
                             new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
                             .unmarshall(context));
                 }
                 if (context.testExpression("templateSelectionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setTemplateSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeoutInMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setTimeoutInMillis(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("tlsConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integration.setTlsConfig(TlsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

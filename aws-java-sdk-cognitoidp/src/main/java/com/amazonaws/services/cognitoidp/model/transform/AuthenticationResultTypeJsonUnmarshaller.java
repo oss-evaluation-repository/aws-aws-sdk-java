@@ -43,34 +43,48 @@ public class AuthenticationResultTypeJsonUnmarshaller implements Unmarshaller<Au
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResultType.setAccessToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpiresIn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResultType.setExpiresIn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TokenType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResultType.setTokenType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RefreshToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResultType.setRefreshToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResultType.setIdToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NewDeviceMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResultType.setNewDeviceMetadata(NewDeviceMetadataTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

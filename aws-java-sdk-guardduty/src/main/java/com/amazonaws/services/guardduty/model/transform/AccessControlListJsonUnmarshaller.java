@@ -43,18 +43,28 @@ public class AccessControlListJsonUnmarshaller implements Unmarshaller<AccessCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("allowsPublicReadAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlList.setAllowsPublicReadAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("allowsPublicWriteAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlList.setAllowsPublicWriteAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

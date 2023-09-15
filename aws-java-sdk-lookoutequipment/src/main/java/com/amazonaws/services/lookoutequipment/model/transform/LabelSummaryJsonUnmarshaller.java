@@ -43,46 +43,63 @@ public class LabelSummaryJsonUnmarshaller implements Unmarshaller<LabelSummary, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LabelGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelSummary.setLabelGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelSummary.setLabelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelSummary.setLabelGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelSummary.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Rating", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelSummary.setRating(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FaultCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelSummary.setFaultCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Equipment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelSummary.setEquipment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

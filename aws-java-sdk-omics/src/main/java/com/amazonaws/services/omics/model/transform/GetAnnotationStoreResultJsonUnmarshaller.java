@@ -43,71 +43,94 @@ public class GetAnnotationStoreResultJsonUnmarshaller implements Unmarshaller<Ge
             return getAnnotationStoreResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setReference(ReferenceItemJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setStoreArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sseConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setSseConfig(SseConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("storeOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setStoreOptions(StoreOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("storeFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setStoreFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storeSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setStoreSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("numVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAnnotationStoreResult.setNumVersions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

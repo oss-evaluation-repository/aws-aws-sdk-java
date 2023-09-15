@@ -43,58 +43,78 @@ public class DescribePatchGroupStateResultJsonUnmarshaller implements Unmarshall
             return describePatchGroupStateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Instances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstances(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithInstalledPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithInstalledPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithInstalledOtherPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithInstalledOtherPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithInstalledPendingRebootPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithInstalledPendingRebootPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithInstalledRejectedPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithInstalledRejectedPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithMissingPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithMissingPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithFailedPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithFailedPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithNotApplicablePatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithNotApplicablePatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithUnreportedNotApplicablePatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithUnreportedNotApplicablePatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithCriticalNonCompliantPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithCriticalNonCompliantPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithSecurityNonCompliantPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithSecurityNonCompliantPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesWithOtherNonCompliantPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithOtherNonCompliantPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,55 @@ public class DecisionTaskJsonUnmarshaller implements Unmarshaller<DecisionTask, 
             return decisionTask;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decisionTask.setTaskToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startedEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decisionTask.setStartedEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("workflowExecution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decisionTask.setWorkflowExecution(WorkflowExecutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("workflowType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decisionTask.setWorkflowType(WorkflowTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("events", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decisionTask.setEvents(new ListUnmarshaller<HistoryEvent>(HistoryEventJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decisionTask.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("previousStartedEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decisionTask.setPreviousStartedEventId(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

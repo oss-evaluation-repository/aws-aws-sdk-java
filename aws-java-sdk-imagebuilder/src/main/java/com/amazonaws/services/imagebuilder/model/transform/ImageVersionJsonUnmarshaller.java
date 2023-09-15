@@ -43,50 +43,68 @@ public class ImageVersionJsonUnmarshaller implements Unmarshaller<ImageVersion, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageVersion.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageVersion.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageVersion.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageVersion.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageVersion.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("osVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageVersion.setOsVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageVersion.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageVersion.setDateCreated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("buildType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageVersion.setBuildType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageVersion.setImageSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

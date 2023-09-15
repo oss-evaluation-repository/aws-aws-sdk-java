@@ -48,24 +48,35 @@ public class AssessmentRunInProgressExceptionUnmarshaller extends EnhancedJsonEr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assessmentRunArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunInProgressException.setAssessmentRunArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("assessmentRunArnsTruncated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunInProgressException.setAssessmentRunArnsTruncated(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("canRetry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunInProgressException.setCanRetry(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

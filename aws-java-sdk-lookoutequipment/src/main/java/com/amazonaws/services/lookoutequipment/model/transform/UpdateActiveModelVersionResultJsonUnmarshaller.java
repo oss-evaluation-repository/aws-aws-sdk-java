@@ -43,34 +43,48 @@ public class UpdateActiveModelVersionResultJsonUnmarshaller implements Unmarshal
             return updateActiveModelVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateActiveModelVersionResult.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateActiveModelVersionResult.setModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentActiveVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateActiveModelVersionResult.setCurrentActiveVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("PreviousActiveVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateActiveModelVersionResult.setPreviousActiveVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentActiveVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateActiveModelVersionResult.setCurrentActiveVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreviousActiveVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateActiveModelVersionResult.setPreviousActiveVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

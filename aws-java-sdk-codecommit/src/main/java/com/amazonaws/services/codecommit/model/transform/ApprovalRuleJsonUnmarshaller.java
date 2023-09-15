@@ -43,42 +43,58 @@ public class ApprovalRuleJsonUnmarshaller implements Unmarshaller<ApprovalRule, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("approvalRuleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     approvalRule.setApprovalRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("approvalRuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     approvalRule.setApprovalRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("approvalRuleContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     approvalRule.setApprovalRuleContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ruleContentSha256", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     approvalRule.setRuleContentSha256(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     approvalRule.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     approvalRule.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     approvalRule.setLastModifiedUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("originApprovalRuleTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     approvalRule.setOriginApprovalRuleTemplate(OriginApprovalRuleTemplateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

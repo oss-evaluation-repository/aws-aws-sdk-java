@@ -43,18 +43,28 @@ public class RescoreResultItemJsonUnmarshaller implements Unmarshaller<RescoreRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rescoreResultItem.setDocumentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rescoreResultItem.setScore(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

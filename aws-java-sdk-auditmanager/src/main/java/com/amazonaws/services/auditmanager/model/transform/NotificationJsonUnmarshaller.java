@@ -43,42 +43,58 @@ public class NotificationJsonUnmarshaller implements Unmarshaller<Notification, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setAssessmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setAssessmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("controlSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setControlSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("controlSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setControlSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setEventTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

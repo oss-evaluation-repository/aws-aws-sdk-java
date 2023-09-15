@@ -43,26 +43,38 @@ public class DeveloperInfoJsonUnmarshaller implements Unmarshaller<DeveloperInfo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeveloperName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     developerInfo.setDeveloperName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivacyPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     developerInfo.setPrivacyPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Email", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     developerInfo.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     developerInfo.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

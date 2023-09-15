@@ -43,43 +43,59 @@ public class GetSubscriptionDefinitionResultJsonUnmarshaller implements Unmarsha
             return getSubscriptionDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSubscriptionDefinitionResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSubscriptionDefinitionResult.setCreationTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSubscriptionDefinitionResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSubscriptionDefinitionResult.setLastUpdatedTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSubscriptionDefinitionResult.setLatestVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSubscriptionDefinitionResult.setLatestVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSubscriptionDefinitionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSubscriptionDefinitionResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

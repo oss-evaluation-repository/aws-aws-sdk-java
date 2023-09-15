@@ -43,22 +43,33 @@ public class S3ImportSourceJsonUnmarshaller implements Unmarshaller<S3ImportSour
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3LocationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ImportSource.setS3LocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ImportSource.setS3BucketRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ImportSource.setS3BucketAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

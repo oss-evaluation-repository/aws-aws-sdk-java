@@ -43,76 +43,98 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StorageConnectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setStorageConnectors(new ListUnmarshaller<StorageConnector>(StorageConnectorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RedirectURL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setRedirectURL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeedbackURL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setFeedbackURL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setStackErrors(new ListUnmarshaller<StackError>(StackErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setUserSettings(new ListUnmarshaller<UserSetting>(UserSettingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setApplicationSettings(ApplicationSettingsResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AccessEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setAccessEndpoints(new ListUnmarshaller<AccessEndpoint>(AccessEndpointJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EmbedHostDomains", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setEmbedHostDomains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StreamingExperienceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setStreamingExperienceSettings(StreamingExperienceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

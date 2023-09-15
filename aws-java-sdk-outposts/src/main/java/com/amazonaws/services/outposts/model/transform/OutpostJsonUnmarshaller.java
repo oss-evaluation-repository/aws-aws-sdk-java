@@ -43,59 +43,79 @@ public class OutpostJsonUnmarshaller implements Unmarshaller<Outpost, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OutpostId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setOutpostId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutpostArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setOutpostArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SiteId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setSiteId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LifeCycleStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setLifeCycleStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setAvailabilityZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("SiteArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setSiteArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedHardwareType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outpost.setSupportedHardwareType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

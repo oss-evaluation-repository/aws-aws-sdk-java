@@ -43,26 +43,38 @@ public class BlockPublicAccessJsonUnmarshaller implements Unmarshaller<BlockPubl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("blockPublicAcls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blockPublicAccess.setBlockPublicAcls(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("blockPublicPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blockPublicAccess.setBlockPublicPolicy(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ignorePublicAcls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blockPublicAccess.setIgnorePublicAcls(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("restrictPublicBuckets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blockPublicAccess.setRestrictPublicBuckets(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,55 +43,74 @@ public class MultipartReadSetUploadListItemJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sequenceStoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setSequenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uploadId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setUploadId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceFileType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setSourceFileType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subjectId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setSubjectId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("generatedFrom", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setGeneratedFrom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("referenceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multipartReadSetUploadListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

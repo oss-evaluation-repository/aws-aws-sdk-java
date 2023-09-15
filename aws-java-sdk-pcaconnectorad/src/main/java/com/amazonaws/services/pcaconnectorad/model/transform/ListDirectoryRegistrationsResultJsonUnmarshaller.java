@@ -43,12 +43,17 @@ public class ListDirectoryRegistrationsResultJsonUnmarshaller implements Unmarsh
             return listDirectoryRegistrationsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryRegistrations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listDirectoryRegistrationsResult.setDirectoryRegistrations(new ListUnmarshaller<DirectoryRegistrationSummary>(
                             DirectoryRegistrationSummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListDirectoryRegistrationsResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listDirectoryRegistrationsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

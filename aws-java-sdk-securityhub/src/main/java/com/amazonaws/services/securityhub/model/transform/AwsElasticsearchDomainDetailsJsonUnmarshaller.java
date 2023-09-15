@@ -43,69 +43,90 @@ public class AwsElasticsearchDomainDetailsJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setAccessPolicies(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainEndpointOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setDomainEndpointOptions(AwsElasticsearchDomainDomainEndpointOptionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("DomainId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setDomainId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Endpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Endpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setEndpoints(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("ElasticsearchVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setElasticsearchVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ElasticsearchClusterConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setElasticsearchClusterConfig(AwsElasticsearchDomainElasticsearchClusterConfigDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EncryptionAtRestOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setEncryptionAtRestOptions(AwsElasticsearchDomainEncryptionAtRestOptionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("LogPublishingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setLogPublishingOptions(AwsElasticsearchDomainLogPublishingOptionsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("NodeToNodeEncryptionOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setNodeToNodeEncryptionOptions(AwsElasticsearchDomainNodeToNodeEncryptionOptionsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceSoftwareOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setServiceSoftwareOptions(AwsElasticsearchDomainServiceSoftwareOptionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("VPCOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainDetails.setVPCOptions(AwsElasticsearchDomainVPCOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,24 @@ public class AwsElbLoadBalancerDetailsJsonUnmarshaller implements Unmarshaller<A
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BackendServerDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setBackendServerDescriptions(new ListUnmarshaller<AwsElbLoadBalancerBackendServerDescription>(
                             AwsElbLoadBalancerBackendServerDescriptionJsonUnmarshaller.getInstance())
@@ -62,26 +68,32 @@ public class AwsElbLoadBalancerDetailsJsonUnmarshaller implements Unmarshaller<A
                     .unmarshall(context));
                 }
                 if (context.testExpression("CanonicalHostedZoneName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setCanonicalHostedZoneName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CanonicalHostedZoneNameID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setCanonicalHostedZoneNameID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthCheck", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setHealthCheck(AwsElbLoadBalancerHealthCheckJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Instances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setInstances(new ListUnmarshaller<AwsElbLoadBalancerInstance>(AwsElbLoadBalancerInstanceJsonUnmarshaller
                             .getInstance())
@@ -89,6 +101,7 @@ public class AwsElbLoadBalancerDetailsJsonUnmarshaller implements Unmarshaller<A
                     .unmarshall(context));
                 }
                 if (context.testExpression("ListenerDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setListenerDescriptions(new ListUnmarshaller<AwsElbLoadBalancerListenerDescription>(
                             AwsElbLoadBalancerListenerDescriptionJsonUnmarshaller.getInstance())
@@ -96,40 +109,52 @@ public class AwsElbLoadBalancerDetailsJsonUnmarshaller implements Unmarshaller<A
                     .unmarshall(context));
                 }
                 if (context.testExpression("LoadBalancerAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setLoadBalancerAttributes(AwsElbLoadBalancerAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LoadBalancerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setLoadBalancerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Policies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setPolicies(AwsElbLoadBalancerPoliciesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Scheme", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setScheme(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SourceSecurityGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setSourceSecurityGroup(AwsElbLoadBalancerSourceSecurityGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Subnets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

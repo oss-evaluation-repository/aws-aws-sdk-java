@@ -43,26 +43,38 @@ public class AppVersionSummaryJsonUnmarshaller implements Unmarshaller<AppVersio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appVersionSummary.setAppVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appVersionSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("identifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appVersionSummary.setIdentifier(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("versionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appVersionSummary.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

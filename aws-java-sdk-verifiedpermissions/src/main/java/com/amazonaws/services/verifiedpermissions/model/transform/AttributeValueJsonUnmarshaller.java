@@ -43,37 +43,51 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("boolean", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setBoolean(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("entityIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setEntityIdentifier(EntityIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("long", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setLong(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("string", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("set", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setSet(new ListUnmarshaller<AttributeValue>(AttributeValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("record", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setRecord(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class), AttributeValueJsonUnmarshaller
                             .getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

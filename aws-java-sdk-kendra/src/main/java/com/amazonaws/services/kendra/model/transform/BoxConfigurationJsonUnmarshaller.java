@@ -43,36 +43,47 @@ public class BoxConfigurationJsonUnmarshaller implements Unmarshaller<BoxConfigu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EnterpriseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setEnterpriseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UseChangeLog", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setUseChangeLog(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlComments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setCrawlComments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlTasks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setCrawlTasks(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlWebLinks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setCrawlWebLinks(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("FileFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setFileFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
@@ -80,6 +91,7 @@ public class BoxConfigurationJsonUnmarshaller implements Unmarshaller<BoxConfigu
                     .unmarshall(context));
                 }
                 if (context.testExpression("TaskFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setTaskFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
@@ -87,6 +99,7 @@ public class BoxConfigurationJsonUnmarshaller implements Unmarshaller<BoxConfigu
                     .unmarshall(context));
                 }
                 if (context.testExpression("CommentFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setCommentFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
@@ -94,6 +107,7 @@ public class BoxConfigurationJsonUnmarshaller implements Unmarshaller<BoxConfigu
                     .unmarshall(context));
                 }
                 if (context.testExpression("WebLinkFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setWebLinkFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
@@ -101,20 +115,27 @@ public class BoxConfigurationJsonUnmarshaller implements Unmarshaller<BoxConfigu
                     .unmarshall(context));
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxConfiguration.setVpcConfiguration(DataSourceVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

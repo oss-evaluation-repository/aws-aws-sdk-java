@@ -43,24 +43,35 @@ public class ListImagePipelineImagesResultJsonUnmarshaller implements Unmarshall
             return listImagePipelineImagesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("requestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listImagePipelineImagesResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSummaryList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listImagePipelineImagesResult.setImageSummaryList(new ListUnmarshaller<ImageSummary>(ImageSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listImagePipelineImagesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

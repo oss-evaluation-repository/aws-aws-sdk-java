@@ -43,30 +43,43 @@ public class GetMinuteUsageResultJsonUnmarshaller implements Unmarshaller<GetMin
             return getMinuteUsageResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("estimatedMinutesRemaining", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMinuteUsageResult.setEstimatedMinutesRemaining(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("isReservedMinutesCustomer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMinuteUsageResult.setIsReservedMinutesCustomer(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("totalReservedMinuteAllocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMinuteUsageResult.setTotalReservedMinuteAllocation(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalScheduledMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMinuteUsageResult.setTotalScheduledMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("upcomingMinutesScheduled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMinuteUsageResult.setUpcomingMinutesScheduled(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

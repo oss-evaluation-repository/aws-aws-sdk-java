@@ -43,39 +43,54 @@ public class WorkspaceDescriptionJsonUnmarshaller implements Unmarshaller<Worksp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workspaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setStatus(WorkspaceStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("prometheusEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setPrometheusEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

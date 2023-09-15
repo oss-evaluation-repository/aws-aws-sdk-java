@@ -43,18 +43,28 @@ public class ItemizedMetricStatsJsonUnmarshaller implements Unmarshaller<Itemize
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     itemizedMetricStats.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OccurrenceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     itemizedMetricStats.setOccurrenceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

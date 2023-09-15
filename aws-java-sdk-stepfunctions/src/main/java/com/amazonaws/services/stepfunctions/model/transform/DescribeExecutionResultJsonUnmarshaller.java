@@ -43,74 +43,98 @@ public class DescribeExecutionResultJsonUnmarshaller implements Unmarshaller<Des
             return describeExecutionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("executionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setExecutionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateMachineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setStateMachineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setStopDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setInputDetails(CloudWatchEventsExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("output", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setOutput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setOutputDetails(CloudWatchEventsExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("traceHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setTraceHeader(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mapRunArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setMapRunArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cause", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setCause(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateMachineVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setStateMachineVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateMachineAliasArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExecutionResult.setStateMachineAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

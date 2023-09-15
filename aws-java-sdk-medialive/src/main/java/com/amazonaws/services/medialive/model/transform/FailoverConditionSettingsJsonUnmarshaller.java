@@ -43,22 +43,33 @@ public class FailoverConditionSettingsJsonUnmarshaller implements Unmarshaller<F
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioSilenceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     failoverConditionSettings.setAudioSilenceSettings(AudioSilenceFailoverSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputLossSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     failoverConditionSettings.setInputLossSettings(InputLossFailoverSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("videoBlackSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     failoverConditionSettings.setVideoBlackSettings(VideoBlackFailoverSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

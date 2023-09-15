@@ -43,66 +43,88 @@ public class DescribeNodeResultJsonUnmarshaller implements Unmarshaller<Describe
             return describeNodeResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setAssetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeInterface", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setNodeInterface(NodeInterfaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OwnerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setPackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PatchVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNodeResult.setPatchVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class PostLaunchActionsStatusJsonUnmarshaller implements Unmarshaller<Pos
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("postLaunchActionsLaunchStatusList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postLaunchActionsStatus.setPostLaunchActionsLaunchStatusList(new ListUnmarshaller<JobPostLaunchActionsLaunchStatus>(
                             JobPostLaunchActionsLaunchStatusJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class PostLaunchActionsStatusJsonUnmarshaller implements Unmarshaller<Pos
                     .unmarshall(context));
                 }
                 if (context.testExpression("ssmAgentDiscoveryDatetime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postLaunchActionsStatus.setSsmAgentDiscoveryDatetime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

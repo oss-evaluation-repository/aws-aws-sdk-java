@@ -43,54 +43,72 @@ public class EndpointGroupJsonUnmarshaller implements Unmarshaller<EndpointGroup
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndpointGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointGroup.setEndpointGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointGroupRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointGroup.setEndpointGroupRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointGroup.setEndpointDescriptions(new ListUnmarshaller<EndpointDescription>(EndpointDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TrafficDialPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointGroup.setTrafficDialPercentage(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthCheckPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointGroup.setHealthCheckPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthCheckProtocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointGroup.setHealthCheckProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthCheckPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointGroup.setHealthCheckPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthCheckIntervalSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointGroup.setHealthCheckIntervalSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ThresholdCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointGroup.setThresholdCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PortOverrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointGroup.setPortOverrides(new ListUnmarshaller<PortOverride>(PortOverrideJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

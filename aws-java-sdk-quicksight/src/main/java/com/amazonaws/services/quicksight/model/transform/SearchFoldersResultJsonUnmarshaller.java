@@ -45,24 +45,35 @@ public class SearchFoldersResultJsonUnmarshaller implements Unmarshaller<SearchF
             return searchFoldersResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FolderSummaryList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchFoldersResult.setFolderSummaryList(new ListUnmarshaller<FolderSummary>(FolderSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchFoldersResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchFoldersResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

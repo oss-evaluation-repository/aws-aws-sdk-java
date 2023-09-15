@@ -43,22 +43,33 @@ public class LatencyJsonUnmarshaller implements Unmarshaller<Latency, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Read", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     latency.setRead(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Write", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     latency.setWrite(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Other", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     latency.setOther(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

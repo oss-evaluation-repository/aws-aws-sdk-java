@@ -43,50 +43,68 @@ public class CaptionDestinationSettingsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("burninDestinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDestinationSettings.setBurninDestinationSettings(BurninDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("destinationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDestinationSettings.setDestinationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dvbSubDestinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDestinationSettings.setDvbSubDestinationSettings(DvbSubDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("embeddedDestinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDestinationSettings.setEmbeddedDestinationSettings(EmbeddedDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imscDestinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDestinationSettings.setImscDestinationSettings(ImscDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sccDestinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDestinationSettings.setSccDestinationSettings(SccDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("srtDestinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDestinationSettings.setSrtDestinationSettings(SrtDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("teletextDestinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDestinationSettings.setTeletextDestinationSettings(TeletextDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ttmlDestinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDestinationSettings.setTtmlDestinationSettings(TtmlDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("webvttDestinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDestinationSettings.setWebvttDestinationSettings(WebvttDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,35 +43,49 @@ public class BehaviorModelTrainingSummaryJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("securityProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorModelTrainingSummary.setSecurityProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("behaviorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorModelTrainingSummary.setBehaviorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trainingDataCollectionStartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorModelTrainingSummary.setTrainingDataCollectionStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp")
                             .unmarshall(context));
                 }
                 if (context.testExpression("modelStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorModelTrainingSummary.setModelStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datapointsCollectionPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorModelTrainingSummary.setDatapointsCollectionPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModelRefreshDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorModelTrainingSummary.setLastModelRefreshDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

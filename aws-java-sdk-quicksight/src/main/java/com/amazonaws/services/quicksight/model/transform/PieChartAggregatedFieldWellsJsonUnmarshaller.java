@@ -43,28 +43,39 @@ public class PieChartAggregatedFieldWellsJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartAggregatedFieldWells.setCategory(new ListUnmarshaller<DimensionField>(DimensionFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Values", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartAggregatedFieldWells.setValues(new ListUnmarshaller<MeasureField>(MeasureFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SmallMultiples", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartAggregatedFieldWells.setSmallMultiples(new ListUnmarshaller<DimensionField>(DimensionFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

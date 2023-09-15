@@ -43,26 +43,38 @@ public class FsxProtocolSmbJsonUnmarshaller implements Unmarshaller<FsxProtocolS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fsxProtocolSmb.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MountOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fsxProtocolSmb.setMountOptions(SmbMountOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fsxProtocolSmb.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("User", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fsxProtocolSmb.setUser(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class Oauth2CredentialJsonUnmarshaller implements Unmarshaller<Oauth2Cred
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oauth2Credential.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientSecret", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oauth2Credential.setClientSecret(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

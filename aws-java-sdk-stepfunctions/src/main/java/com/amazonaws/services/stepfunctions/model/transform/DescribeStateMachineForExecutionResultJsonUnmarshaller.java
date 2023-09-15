@@ -43,50 +43,68 @@ public class DescribeStateMachineForExecutionResultJsonUnmarshaller implements U
             return describeStateMachineForExecutionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("stateMachineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineForExecutionResult.setStateMachineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineForExecutionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineForExecutionResult.setDefinition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineForExecutionResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineForExecutionResult.setUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("loggingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineForExecutionResult.setLoggingConfiguration(LoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tracingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineForExecutionResult.setTracingConfiguration(TracingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mapRunArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineForExecutionResult.setMapRunArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineForExecutionResult.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineForExecutionResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

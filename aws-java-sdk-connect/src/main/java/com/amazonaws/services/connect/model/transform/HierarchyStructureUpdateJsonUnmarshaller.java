@@ -43,30 +43,43 @@ public class HierarchyStructureUpdateJsonUnmarshaller implements Unmarshaller<Hi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LevelOne", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hierarchyStructureUpdate.setLevelOne(HierarchyLevelUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LevelTwo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hierarchyStructureUpdate.setLevelTwo(HierarchyLevelUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LevelThree", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hierarchyStructureUpdate.setLevelThree(HierarchyLevelUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LevelFour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hierarchyStructureUpdate.setLevelFour(HierarchyLevelUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LevelFive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hierarchyStructureUpdate.setLevelFive(HierarchyLevelUpdateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

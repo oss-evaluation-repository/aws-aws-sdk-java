@@ -44,26 +44,37 @@ public class TsvVersionOptionsJsonUnmarshaller implements Unmarshaller<TsvVersio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("annotationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tsvVersionOptions.setAnnotationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("formatToHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tsvVersionOptions.setFormatToHeader(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("schema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tsvVersionOptions.setSchema(new ListUnmarshaller<java.util.Map<String, String>>(new MapUnmarshaller<String, String>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

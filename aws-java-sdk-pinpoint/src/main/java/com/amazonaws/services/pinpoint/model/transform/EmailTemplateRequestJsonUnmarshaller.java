@@ -43,39 +43,54 @@ public class EmailTemplateRequestJsonUnmarshaller implements Unmarshaller<EmailT
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateRequest.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HtmlPart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateRequest.setHtmlPart(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommenderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateRequest.setRecommenderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateRequest.setSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TemplateDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateRequest.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TextPart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateRequest.setTextPart(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

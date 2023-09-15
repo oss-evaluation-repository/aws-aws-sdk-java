@@ -45,26 +45,38 @@ public class CreateTopicResultJsonUnmarshaller implements Unmarshaller<CreateTop
             return createTopicResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTopicResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTopicResult.setTopicId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RefreshArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTopicResult.setRefreshArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTopicResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

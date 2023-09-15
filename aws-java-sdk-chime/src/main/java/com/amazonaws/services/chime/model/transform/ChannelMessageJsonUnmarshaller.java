@@ -43,54 +43,73 @@ public class ChannelMessageJsonUnmarshaller implements Unmarshaller<ChannelMessa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChannelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setMessageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastEditedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setLastEditedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setLastUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Sender", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setSender(IdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Redacted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setRedacted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Persistence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelMessage.setPersistence(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

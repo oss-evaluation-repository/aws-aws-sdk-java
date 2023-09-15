@@ -43,26 +43,38 @@ public class GsmNmrObjJsonUnmarshaller implements Unmarshaller<GsmNmrObj, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Bsic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmNmrObj.setBsic(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Bcch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmNmrObj.setBcch(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RxLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmNmrObj.setRxLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("GlobalIdentity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmNmrObj.setGlobalIdentity(GlobalIdentityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,42 @@ public class HadoopJarStepConfigJsonUnmarshaller implements Unmarshaller<HadoopJ
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hadoopJarStepConfig.setProperties(new ListUnmarshaller<KeyValue>(KeyValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Jar", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hadoopJarStepConfig.setJar(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MainClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hadoopJarStepConfig.setMainClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Args", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hadoopJarStepConfig.setArgs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

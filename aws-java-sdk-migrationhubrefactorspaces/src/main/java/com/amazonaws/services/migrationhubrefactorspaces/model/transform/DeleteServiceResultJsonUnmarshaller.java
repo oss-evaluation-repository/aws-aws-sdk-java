@@ -43,38 +43,53 @@ public class DeleteServiceResultJsonUnmarshaller implements Unmarshaller<DeleteS
             return deleteServiceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteServiceResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteServiceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteServiceResult.setEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteServiceResult.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteServiceResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteServiceResult.setServiceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteServiceResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

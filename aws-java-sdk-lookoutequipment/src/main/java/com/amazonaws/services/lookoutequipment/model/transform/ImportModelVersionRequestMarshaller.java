@@ -47,6 +47,8 @@ public class ImportModelVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerSideKmsKeyId").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> INFERENCEDATAIMPORTSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InferenceDataImportStrategy").build();
 
     private static final ImportModelVersionRequestMarshaller instance = new ImportModelVersionRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class ImportModelVersionRequestMarshaller {
             protocolMarshaller.marshall(importModelVersionRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(importModelVersionRequest.getServerSideKmsKeyId(), SERVERSIDEKMSKEYID_BINDING);
             protocolMarshaller.marshall(importModelVersionRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(importModelVersionRequest.getInferenceDataImportStrategy(), INFERENCEDATAIMPORTSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

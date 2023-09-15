@@ -43,26 +43,34 @@ public class ModelDashboardModelJsonUnmarshaller implements Unmarshaller<ModelDa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardModel.setModel(ModelJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Endpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardModel.setEndpoints(new ListUnmarshaller<ModelDashboardEndpoint>(ModelDashboardEndpointJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastBatchTransformJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardModel.setLastBatchTransformJob(TransformJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MonitoringSchedules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardModel.setMonitoringSchedules(new ListUnmarshaller<ModelDashboardMonitoringSchedule>(
                             ModelDashboardMonitoringScheduleJsonUnmarshaller.getInstance())
@@ -70,8 +78,13 @@ public class ModelDashboardModelJsonUnmarshaller implements Unmarshaller<ModelDa
                     .unmarshall(context));
                 }
                 if (context.testExpression("ModelCard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardModel.setModelCard(ModelDashboardModelCardJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

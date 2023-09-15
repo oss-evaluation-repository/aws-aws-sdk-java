@@ -43,22 +43,33 @@ public class SqsActionJsonUnmarshaller implements Unmarshaller<SqsAction, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("queueUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sqsAction.setQueueUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("useBase64", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sqsAction.setUseBase64(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("payload", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sqsAction.setPayload(PayloadJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

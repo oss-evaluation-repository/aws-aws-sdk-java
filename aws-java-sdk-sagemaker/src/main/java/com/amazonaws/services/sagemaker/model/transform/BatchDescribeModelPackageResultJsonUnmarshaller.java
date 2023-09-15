@@ -43,20 +43,30 @@ public class BatchDescribeModelPackageResultJsonUnmarshaller implements Unmarsha
             return batchDescribeModelPackageResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelPackageSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeModelPackageResult.setModelPackageSummaries(new MapUnmarshaller<String, BatchDescribeModelPackageSummary>(context
                             .getUnmarshaller(String.class), BatchDescribeModelPackageSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("BatchDescribeModelPackageErrorMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeModelPackageResult.setBatchDescribeModelPackageErrorMap(new MapUnmarshaller<String, BatchDescribeModelPackageError>(context
                             .getUnmarshaller(String.class), BatchDescribeModelPackageErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,32 @@ public class QueryResultItemJsonUnmarshaller implements Unmarshaller<QueryResult
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setAdditionalAttributes(new ListUnmarshaller<AdditionalResultAttribute>(AdditionalResultAttributeJsonUnmarshaller
                             .getInstance())
@@ -68,38 +76,50 @@ public class QueryResultItemJsonUnmarshaller implements Unmarshaller<QueryResult
                     .unmarshall(context));
                 }
                 if (context.testExpression("DocumentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setDocumentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setDocumentTitle(TextWithHighlightsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DocumentExcerpt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setDocumentExcerpt(TextWithHighlightsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DocumentURI", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setDocumentURI(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setDocumentAttributes(new ListUnmarshaller<DocumentAttribute>(DocumentAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ScoreAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setScoreAttributes(ScoreAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FeedbackToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setFeedbackToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableExcerpt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResultItem.setTableExcerpt(TableExcerptJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

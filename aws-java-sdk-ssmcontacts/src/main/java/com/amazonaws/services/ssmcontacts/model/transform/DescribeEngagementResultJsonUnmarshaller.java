@@ -43,50 +43,68 @@ public class DescribeEngagementResultJsonUnmarshaller implements Unmarshaller<De
             return describeEngagementResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContactArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEngagementResult.setContactArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngagementArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEngagementResult.setEngagementArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Sender", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEngagementResult.setSender(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEngagementResult.setSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEngagementResult.setContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicSubject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEngagementResult.setPublicSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEngagementResult.setPublicContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IncidentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEngagementResult.setIncidentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEngagementResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StopTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEngagementResult.setStopTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

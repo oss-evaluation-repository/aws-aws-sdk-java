@@ -43,25 +43,36 @@ public class PutRecordBatchResultJsonUnmarshaller implements Unmarshaller<PutRec
             return putRecordBatchResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FailedPutCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRecordBatchResult.setFailedPutCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRecordBatchResult.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestResponses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRecordBatchResult.setRequestResponses(new ListUnmarshaller<PutRecordBatchResponseEntry>(PutRecordBatchResponseEntryJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

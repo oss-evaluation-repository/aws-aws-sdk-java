@@ -43,30 +43,43 @@ public class AwsAmazonMqBrokerLogsDetailsJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Audit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLogsDetails.setAudit(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("General", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLogsDetails.setGeneral(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AuditLogGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLogsDetails.setAuditLogGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GeneralLogGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLogsDetails.setGeneralLogGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Pending", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLogsDetails.setPending(AwsAmazonMqBrokerLogsPendingDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

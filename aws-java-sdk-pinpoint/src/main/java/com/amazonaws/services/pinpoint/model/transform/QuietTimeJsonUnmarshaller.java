@@ -43,18 +43,28 @@ public class QuietTimeJsonUnmarshaller implements Unmarshaller<QuietTime, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("End", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quietTime.setEnd(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Start", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quietTime.setStart(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

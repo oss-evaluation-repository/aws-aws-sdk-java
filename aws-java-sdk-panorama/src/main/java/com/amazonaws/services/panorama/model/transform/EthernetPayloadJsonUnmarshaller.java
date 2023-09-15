@@ -43,18 +43,28 @@ public class EthernetPayloadJsonUnmarshaller implements Unmarshaller<EthernetPay
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConnectionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ethernetPayload.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StaticIpConnectionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ethernetPayload.setStaticIpConnectionInfo(StaticIpConnectionInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

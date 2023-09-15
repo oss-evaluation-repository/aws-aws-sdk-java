@@ -43,9 +43,13 @@ public class CreateMeshResultJsonUnmarshaller implements Unmarshaller<CreateMesh
             return createMeshResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             createMeshResult.setMesh(MeshDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

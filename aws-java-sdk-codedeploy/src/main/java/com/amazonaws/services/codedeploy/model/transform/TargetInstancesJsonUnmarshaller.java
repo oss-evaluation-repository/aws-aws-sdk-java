@@ -43,26 +43,37 @@ public class TargetInstancesJsonUnmarshaller implements Unmarshaller<TargetInsta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tagFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetInstances.setTagFilters(new ListUnmarshaller<EC2TagFilter>(EC2TagFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetInstances.setAutoScalingGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ec2TagSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetInstances.setEc2TagSet(EC2TagSetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

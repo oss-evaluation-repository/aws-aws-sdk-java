@@ -43,17 +43,26 @@ public class ListAutomaticTapeCreationPoliciesResultJsonUnmarshaller implements 
             return listAutomaticTapeCreationPoliciesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutomaticTapeCreationPolicyInfos", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAutomaticTapeCreationPoliciesResult.setAutomaticTapeCreationPolicyInfos(new ListUnmarshaller<AutomaticTapeCreationPolicyInfo>(
                             AutomaticTapeCreationPolicyInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

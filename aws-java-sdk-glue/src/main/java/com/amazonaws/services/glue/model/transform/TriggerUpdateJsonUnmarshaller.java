@@ -43,36 +43,50 @@ public class TriggerUpdateJsonUnmarshaller implements Unmarshaller<TriggerUpdate
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     triggerUpdate.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     triggerUpdate.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     triggerUpdate.setSchedule(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     triggerUpdate.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Predicate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     triggerUpdate.setPredicate(PredicateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventBatchingCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     triggerUpdate.setEventBatchingCondition(EventBatchingConditionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

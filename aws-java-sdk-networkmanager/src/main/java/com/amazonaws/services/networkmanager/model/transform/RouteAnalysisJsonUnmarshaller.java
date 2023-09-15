@@ -43,54 +43,73 @@ public class RouteAnalysisJsonUnmarshaller implements Unmarshaller<RouteAnalysis
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GlobalNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setGlobalNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setOwnerAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RouteAnalysisId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setRouteAnalysisId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setSource(RouteAnalysisEndpointOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setDestination(RouteAnalysisEndpointOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IncludeReturnPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setIncludeReturnPath(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UseMiddleboxes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setUseMiddleboxes(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ForwardPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setForwardPath(RouteAnalysisPathJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReturnPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysis.setReturnPath(RouteAnalysisPathJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,22 +44,33 @@ public class AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsJsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Days", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails.setDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Mode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails.setMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Years", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails.setYears(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,43 +43,59 @@ public class AffectedEntityJsonUnmarshaller implements Unmarshaller<AffectedEnti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("entityArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     affectedEntity.setEntityArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     affectedEntity.setEventArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entityValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     affectedEntity.setEntityValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entityUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     affectedEntity.setEntityUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     affectedEntity.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     affectedEntity.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("statusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     affectedEntity.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     affectedEntity.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

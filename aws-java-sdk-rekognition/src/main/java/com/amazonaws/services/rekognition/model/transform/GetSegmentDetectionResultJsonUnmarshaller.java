@@ -43,58 +43,76 @@ public class GetSegmentDetectionResultJsonUnmarshaller implements Unmarshaller<G
             return getSegmentDetectionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSegmentDetectionResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSegmentDetectionResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VideoMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSegmentDetectionResult.setVideoMetadata(new ListUnmarshaller<VideoMetadata>(VideoMetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AudioMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSegmentDetectionResult.setAudioMetadata(new ListUnmarshaller<AudioMetadata>(AudioMetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSegmentDetectionResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Segments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSegmentDetectionResult.setSegments(new ListUnmarshaller<SegmentDetection>(SegmentDetectionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SelectedSegmentTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSegmentDetectionResult.setSelectedSegmentTypes(new ListUnmarshaller<SegmentTypeInfo>(SegmentTypeInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSegmentDetectionResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Video", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSegmentDetectionResult.setVideo(VideoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobTag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSegmentDetectionResult.setJobTag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class DatasetExportJobJsonUnmarshaller implements Unmarshaller<DatasetExp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetExportJob.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetExportJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetExportJob.setDatasetExportJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetExportJob.setDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ingestionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetExportJob.setIngestionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetExportJob.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetExportJob.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetExportJob.setJobOutput(DatasetExportJobOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetExportJob.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetExportJob.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetExportJob.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

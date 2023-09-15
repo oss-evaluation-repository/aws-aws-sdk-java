@@ -43,22 +43,33 @@ public class AutoAdjustDataJsonUnmarshaller implements Unmarshaller<AutoAdjustDa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutoAdjustType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoAdjustData.setAutoAdjustType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HistoricalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoAdjustData.setHistoricalOptions(HistoricalOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastAutoAdjustTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoAdjustData.setLastAutoAdjustTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

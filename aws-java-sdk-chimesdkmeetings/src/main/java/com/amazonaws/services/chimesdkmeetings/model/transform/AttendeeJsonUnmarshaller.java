@@ -43,26 +43,38 @@ public class AttendeeJsonUnmarshaller implements Unmarshaller<Attendee, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExternalUserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attendee.setExternalUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttendeeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attendee.setAttendeeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JoinToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attendee.setJoinToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Capabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attendee.setCapabilities(AttendeeCapabilitiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

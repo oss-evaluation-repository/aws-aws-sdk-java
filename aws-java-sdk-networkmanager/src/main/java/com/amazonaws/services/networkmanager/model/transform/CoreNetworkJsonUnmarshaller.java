@@ -43,52 +43,69 @@ public class CoreNetworkJsonUnmarshaller implements Unmarshaller<CoreNetwork, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GlobalNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetwork.setGlobalNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CoreNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetwork.setCoreNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CoreNetworkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetwork.setCoreNetworkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetwork.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetwork.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetwork.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Segments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetwork.setSegments(new ListUnmarshaller<CoreNetworkSegment>(CoreNetworkSegmentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Edges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetwork.setEdges(new ListUnmarshaller<CoreNetworkEdge>(CoreNetworkEdgeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetwork.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class AwsS3AccountPublicAccessBlockDetailsJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BlockPublicAcls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3AccountPublicAccessBlockDetails.setBlockPublicAcls(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("BlockPublicPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3AccountPublicAccessBlockDetails.setBlockPublicPolicy(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IgnorePublicAcls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3AccountPublicAccessBlockDetails.setIgnorePublicAcls(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RestrictPublicBuckets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3AccountPublicAccessBlockDetails.setRestrictPublicBuckets(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

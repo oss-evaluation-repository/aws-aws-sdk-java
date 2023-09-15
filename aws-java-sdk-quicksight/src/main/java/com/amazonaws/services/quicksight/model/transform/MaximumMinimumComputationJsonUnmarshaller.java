@@ -43,30 +43,43 @@ public class MaximumMinimumComputationJsonUnmarshaller implements Unmarshaller<M
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComputationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maximumMinimumComputation.setComputationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maximumMinimumComputation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Time", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maximumMinimumComputation.setTime(DimensionFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maximumMinimumComputation.setValue(MeasureFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maximumMinimumComputation.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

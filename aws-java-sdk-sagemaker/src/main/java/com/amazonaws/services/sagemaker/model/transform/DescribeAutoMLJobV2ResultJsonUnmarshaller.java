@@ -43,20 +43,27 @@ public class DescribeAutoMLJobV2ResultJsonUnmarshaller implements Unmarshaller<D
             return describeAutoMLJobV2Result;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutoMLJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setAutoMLJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setAutoMLJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobInputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result
                             .setAutoMLJobInputDataConfig(new ListUnmarshaller<AutoMLJobChannel>(AutoMLJobChannelJsonUnmarshaller.getInstance())
@@ -64,38 +71,47 @@ public class DescribeAutoMLJobV2ResultJsonUnmarshaller implements Unmarshaller<D
                             .unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setOutputDataConfig(AutoMLOutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobObjective", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setAutoMLJobObjective(AutoMLJobObjectiveJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoMLProblemTypeConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setAutoMLProblemTypeConfig(AutoMLProblemTypeConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartialFailureReasons", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setPartialFailureReasons(new ListUnmarshaller<AutoMLPartialFailureReason>(
                             AutoMLPartialFailureReasonJsonUnmarshaller.getInstance())
@@ -103,44 +119,58 @@ public class DescribeAutoMLJobV2ResultJsonUnmarshaller implements Unmarshaller<D
                     .unmarshall(context));
                 }
                 if (context.testExpression("BestCandidate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setBestCandidate(AutoMLCandidateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setAutoMLJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobSecondaryStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setAutoMLJobSecondaryStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelDeployConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setModelDeployConfig(ModelDeployConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelDeployResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setModelDeployResult(ModelDeployResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataSplitConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setDataSplitConfig(AutoMLDataSplitConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SecurityConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setSecurityConfig(AutoMLSecurityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setAutoMLJobArtifacts(AutoMLJobArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResolvedAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setResolvedAttributes(AutoMLResolvedAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoMLProblemTypeConfigName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobV2Result.setAutoMLProblemTypeConfigName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

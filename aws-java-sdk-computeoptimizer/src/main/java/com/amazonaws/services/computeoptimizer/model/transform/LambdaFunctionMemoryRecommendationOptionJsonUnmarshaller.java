@@ -44,20 +44,27 @@ public class LambdaFunctionMemoryRecommendationOptionJsonUnmarshaller implements
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("rank", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionMemoryRecommendationOption.setRank(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("memorySize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionMemoryRecommendationOption.setMemorySize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("projectedUtilizationMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionMemoryRecommendationOption.setProjectedUtilizationMetrics(new ListUnmarshaller<LambdaFunctionMemoryProjectedMetric>(
                             LambdaFunctionMemoryProjectedMetricJsonUnmarshaller.getInstance())
@@ -65,8 +72,13 @@ public class LambdaFunctionMemoryRecommendationOptionJsonUnmarshaller implements
                     .unmarshall(context));
                 }
                 if (context.testExpression("savingsOpportunity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionMemoryRecommendationOption.setSavingsOpportunity(SavingsOpportunityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,58 +43,78 @@ public class GetBatchJobExecutionResultJsonUnmarshaller implements Unmarshaller<
             return getBatchJobExecutionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("batchJobIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setBatchJobIdentifier(BatchJobIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("executionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setJobUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("returnCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setReturnCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchJobExecutionResult.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

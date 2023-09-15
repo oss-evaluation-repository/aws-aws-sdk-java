@@ -43,26 +43,38 @@ public class PutAutoScalingPolicyResultJsonUnmarshaller implements Unmarshaller<
             return putAutoScalingPolicyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClusterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putAutoScalingPolicyResult.setClusterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putAutoScalingPolicyResult.setInstanceGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoScalingPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putAutoScalingPolicyResult.setAutoScalingPolicy(AutoScalingPolicyDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ClusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putAutoScalingPolicyResult.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

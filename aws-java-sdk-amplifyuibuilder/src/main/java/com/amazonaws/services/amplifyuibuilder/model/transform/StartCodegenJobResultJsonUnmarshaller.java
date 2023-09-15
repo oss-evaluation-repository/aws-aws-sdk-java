@@ -43,9 +43,13 @@ public class StartCodegenJobResultJsonUnmarshaller implements Unmarshaller<Start
             return startCodegenJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             startCodegenJobResult.setEntity(CodegenJobJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

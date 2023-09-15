@@ -43,75 +43,98 @@ public class WindowsFileSystemConfigurationJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ActiveDirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setActiveDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelfManagedActiveDirectoryConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeploymentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RemoteAdministrationEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setRemoteAdministrationEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreferredSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setPreferredSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreferredFileServerIp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setPreferredFileServerIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThroughputCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setThroughputCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaintenanceOperationsInProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setMaintenanceOperationsInProgress(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setWeeklyMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DailyAutomaticBackupStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setDailyAutomaticBackupStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutomaticBackupRetentionDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyTagsToBackups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Aliases", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setAliases(new ListUnmarshaller<Alias>(AliasJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AuditLogConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setAuditLogConfiguration(WindowsAuditLogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DiskIopsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     windowsFileSystemConfiguration.setDiskIopsConfiguration(DiskIopsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

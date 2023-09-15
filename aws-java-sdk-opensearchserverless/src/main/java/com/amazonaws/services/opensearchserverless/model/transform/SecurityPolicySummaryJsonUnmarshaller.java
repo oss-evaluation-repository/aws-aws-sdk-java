@@ -43,34 +43,48 @@ public class SecurityPolicySummaryJsonUnmarshaller implements Unmarshaller<Secur
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityPolicySummary.setCreatedDate(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityPolicySummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityPolicySummary.setLastModifiedDate(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityPolicySummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityPolicySummary.setPolicyVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityPolicySummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

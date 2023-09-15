@@ -43,30 +43,43 @@ public class PutFunctionEventInvokeConfigResultJsonUnmarshaller implements Unmar
             return putFunctionEventInvokeConfigResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LastModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putFunctionEventInvokeConfigResult.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FunctionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putFunctionEventInvokeConfigResult.setFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumRetryAttempts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putFunctionEventInvokeConfigResult.setMaximumRetryAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumEventAgeInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putFunctionEventInvokeConfigResult.setMaximumEventAgeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putFunctionEventInvokeConfigResult.setDestinationConfig(DestinationConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

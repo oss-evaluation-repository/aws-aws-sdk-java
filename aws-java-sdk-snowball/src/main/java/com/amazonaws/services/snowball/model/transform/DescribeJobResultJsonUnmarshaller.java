@@ -43,20 +43,30 @@ public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJ
             return describeJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobResult.setJobMetadata(JobMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SubJobMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobResult.setSubJobMetadata(new ListUnmarshaller<JobMetadata>(JobMetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

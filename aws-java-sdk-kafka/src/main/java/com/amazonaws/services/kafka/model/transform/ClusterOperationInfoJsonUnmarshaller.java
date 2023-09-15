@@ -43,60 +43,80 @@ public class ClusterOperationInfoJsonUnmarshaller implements Unmarshaller<Cluste
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clientRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setClientRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("errorInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setErrorInfo(ErrorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("operationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setOperationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setOperationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationSteps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setOperationSteps(new ListUnmarshaller<ClusterOperationStep>(ClusterOperationStepJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("operationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setOperationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceClusterInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setSourceClusterInfo(MutableClusterInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("targetClusterInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setTargetClusterInfo(MutableClusterInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vpcConnectionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationInfo.setVpcConnectionInfo(VpcConnectionInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,68 +43,90 @@ public class RuleGroupResponseJsonUnmarshaller implements Unmarshaller<RuleGroup
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RuleGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setRuleGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setRuleGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setRuleGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Capacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleGroupStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setRuleGroupStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConsumedCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setConsumedCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfAssociations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setNumberOfAssociations(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SourceMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setSourceMetadata(SourceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SnsTopic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setSnsTopic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupResponse.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

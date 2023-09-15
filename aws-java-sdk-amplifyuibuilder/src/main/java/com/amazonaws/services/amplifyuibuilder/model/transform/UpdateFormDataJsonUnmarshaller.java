@@ -43,48 +43,65 @@ public class UpdateFormDataJsonUnmarshaller implements Unmarshaller<UpdateFormDa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFormData.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFormData.setDataType(FormDataTypeConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("formActionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFormData.setFormActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFormData.setFields(new MapUnmarshaller<String, FieldConfig>(context.getUnmarshaller(String.class), FieldConfigJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("style", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFormData.setStyle(FormStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sectionalElements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFormData.setSectionalElements(new MapUnmarshaller<String, SectionalElement>(context.getUnmarshaller(String.class),
                             SectionalElementJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("schemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFormData.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cta", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFormData.setCta(FormCTAJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("labelDecorator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFormData.setLabelDecorator(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

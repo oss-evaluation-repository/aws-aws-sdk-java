@@ -43,56 +43,75 @@ public class TopicFilterJsonUnmarshaller implements Unmarshaller<TopicFilter, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilterDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setFilterDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FilterClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setFilterClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FilterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setFilterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FilterSynonyms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setFilterSynonyms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OperandFieldName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setOperandFieldName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FilterType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setFilterType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CategoryFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setCategoryFilter(TopicCategoryFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NumericEqualityFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setNumericEqualityFilter(TopicNumericEqualityFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NumericRangeFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setNumericRangeFilter(TopicNumericRangeFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DateRangeFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setDateRangeFilter(TopicDateRangeFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RelativeDateFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicFilter.setRelativeDateFilter(TopicRelativeDateFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

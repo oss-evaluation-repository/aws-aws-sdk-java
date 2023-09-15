@@ -43,22 +43,33 @@ public class GetServiceInstanceSyncStatusResultJsonUnmarshaller implements Unmar
             return getServiceInstanceSyncStatusResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("desiredState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceInstanceSyncStatusResult.setDesiredState(RevisionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("latestSuccessfulSync", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceInstanceSyncStatusResult.setLatestSuccessfulSync(ResourceSyncAttemptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("latestSync", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceInstanceSyncStatusResult.setLatestSync(ResourceSyncAttemptJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

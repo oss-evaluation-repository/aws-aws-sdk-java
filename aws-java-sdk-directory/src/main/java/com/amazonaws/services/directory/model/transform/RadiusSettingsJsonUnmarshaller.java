@@ -43,44 +43,60 @@ public class RadiusSettingsJsonUnmarshaller implements Unmarshaller<RadiusSettin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RadiusServers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radiusSettings.setRadiusServers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RadiusPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radiusSettings.setRadiusPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RadiusTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radiusSettings.setRadiusTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RadiusRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radiusSettings.setRadiusRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedSecret", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radiusSettings.setSharedSecret(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationProtocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radiusSettings.setAuthenticationProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radiusSettings.setDisplayLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UseSameUsername", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radiusSettings.setUseSameUsername(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

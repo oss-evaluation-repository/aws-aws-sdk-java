@@ -43,9 +43,13 @@ public class DeleteApnsVoipSandboxChannelResultJsonUnmarshaller implements Unmar
             return deleteApnsVoipSandboxChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteApnsVoipSandboxChannelResult.setAPNSVoipSandboxChannelResponse(APNSVoipSandboxChannelResponseJsonUnmarshaller.getInstance().unmarshall(
                     context));

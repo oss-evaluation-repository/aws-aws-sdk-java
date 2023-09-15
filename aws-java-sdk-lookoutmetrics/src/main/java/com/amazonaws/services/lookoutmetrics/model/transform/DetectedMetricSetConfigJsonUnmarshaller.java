@@ -43,22 +43,33 @@ public class DetectedMetricSetConfigJsonUnmarshaller implements Unmarshaller<Det
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Offset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectedMetricSetConfig.setOffset(DetectedFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MetricSetFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectedMetricSetConfig.setMetricSetFrequency(DetectedFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MetricSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectedMetricSetConfig.setMetricSource(DetectedMetricSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

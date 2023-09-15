@@ -43,44 +43,57 @@ public class DescribeWhatIfForecastResultJsonUnmarshaller implements Unmarshalle
             return describeWhatIfForecastResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WhatIfForecastName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setWhatIfForecastName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WhatIfForecastArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setWhatIfForecastArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WhatIfAnalysisArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setWhatIfAnalysisArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TimeSeriesTransformations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setTimeSeriesTransformations(new ListUnmarshaller<TimeSeriesTransformation>(
                             TimeSeriesTransformationJsonUnmarshaller.getInstance())
@@ -88,15 +101,21 @@ public class DescribeWhatIfForecastResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("TimeSeriesReplacementsDataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setTimeSeriesReplacementsDataSource(TimeSeriesReplacementsDataSourceJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ForecastTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastResult.setForecastTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,50 @@ public class GetMaintenanceWindowExecutionResultJsonUnmarshaller implements Unma
             return getMaintenanceWindowExecutionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WindowExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMaintenanceWindowExecutionResult.setWindowExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMaintenanceWindowExecutionResult.setTaskIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMaintenanceWindowExecutionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMaintenanceWindowExecutionResult.setStatusDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMaintenanceWindowExecutionResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMaintenanceWindowExecutionResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

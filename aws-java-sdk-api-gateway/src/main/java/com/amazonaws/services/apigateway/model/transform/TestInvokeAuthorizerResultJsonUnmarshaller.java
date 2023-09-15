@@ -43,32 +43,42 @@ public class TestInvokeAuthorizerResultJsonUnmarshaller implements Unmarshaller<
             return testInvokeAuthorizerResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clientStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeAuthorizerResult.setClientStatus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("log", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeAuthorizerResult.setLog(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeAuthorizerResult.setLatency(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("principalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeAuthorizerResult.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeAuthorizerResult.setPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeAuthorizerResult.setAuthorization(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -76,9 +86,14 @@ public class TestInvokeAuthorizerResultJsonUnmarshaller implements Unmarshaller<
                     ).unmarshall(context));
                 }
                 if (context.testExpression("claims", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testInvokeAuthorizerResult.setClaims(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

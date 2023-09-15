@@ -43,22 +43,33 @@ public class CompositedVideoArtifactsConfigurationJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Layout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compositedVideoArtifactsConfiguration.setLayout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Resolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compositedVideoArtifactsConfiguration.setResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GridViewConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compositedVideoArtifactsConfiguration.setGridViewConfiguration(GridViewConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,50 @@ public class SidewalkListDeviceJsonUnmarshaller implements Unmarshaller<Sidewalk
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AmazonId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkListDevice.setAmazonId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SidewalkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkListDevice.setSidewalkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SidewalkManufacturingSn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkListDevice.setSidewalkManufacturingSn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceCertificates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkListDevice.setDeviceCertificates(new ListUnmarshaller<CertificateList>(CertificateListJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DeviceProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkListDevice.setDeviceProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkListDevice.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

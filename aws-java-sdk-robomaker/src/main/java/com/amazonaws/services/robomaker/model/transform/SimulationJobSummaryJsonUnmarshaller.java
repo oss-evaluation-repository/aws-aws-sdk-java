@@ -43,48 +43,64 @@ public class SimulationJobSummaryJsonUnmarshaller implements Unmarshaller<Simula
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationJobSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationJobSummary.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationJobSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationJobSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("simulationApplicationNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationJobSummary.setSimulationApplicationNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("robotApplicationNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationJobSummary.setRobotApplicationNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("dataSourceNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationJobSummary.setDataSourceNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("computeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationJobSummary.setComputeType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

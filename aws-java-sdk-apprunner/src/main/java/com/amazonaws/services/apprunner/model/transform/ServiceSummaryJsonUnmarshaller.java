@@ -43,38 +43,53 @@ public class ServiceSummaryJsonUnmarshaller implements Unmarshaller<ServiceSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSummary.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSummary.setServiceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSummary.setServiceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSummary.setServiceUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

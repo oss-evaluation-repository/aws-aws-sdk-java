@@ -43,26 +43,38 @@ public class ReferenceLineJsonUnmarshaller implements Unmarshaller<ReferenceLine
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLine.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLine.setDataConfiguration(ReferenceLineDataConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StyleConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLine.setStyleConfiguration(ReferenceLineStyleConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LabelConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLine.setLabelConfiguration(ReferenceLineLabelConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

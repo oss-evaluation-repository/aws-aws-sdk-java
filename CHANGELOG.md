@@ -1,3 +1,24 @@
+# __1.12.551__ __2023-09-14__
+## __AWS CloudFormation__
+  - ### Features
+    - Documentation updates for AWS CloudFormation
+
+## __AWS EntityResolution__
+  - ### Features
+    - Changed "ResolutionTechniques" and "MappedInputFields" in workflow and schema mapping operations to be required fields.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fix an issue where the SDK can fail to unmarshal JSON responses containing unknown members in some situations.
+
+## __Amazon AppStream__
+  - ### Features
+    - This release introduces multi-session fleets, allowing customers to provision more than one user session on a single fleet instance.
+
+## __Amazon Lookout for Equipment__
+  - ### Features
+    - This release adds APIs for the new scheduled retraining feature.
+
 # __1.12.550__ __2023-09-13__
 ## __AWS Cloud9__
   - ### Features

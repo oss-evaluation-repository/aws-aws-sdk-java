@@ -43,38 +43,53 @@ public class DatastorePropertiesJsonUnmarshaller implements Unmarshaller<Datasto
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("datastoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setDatastoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datastoreName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setDatastoreName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datastoreStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setDatastoreStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datastoreArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setDatastoreArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

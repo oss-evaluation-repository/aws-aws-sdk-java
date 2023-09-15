@@ -43,30 +43,43 @@ public class AccountLimitJsonUnmarshaller implements Unmarshaller<AccountLimit, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TotalCodeSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountLimit.setTotalCodeSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeSizeUnzipped", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountLimit.setCodeSizeUnzipped(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeSizeZipped", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountLimit.setCodeSizeZipped(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ConcurrentExecutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountLimit.setConcurrentExecutions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UnreservedConcurrentExecutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountLimit.setUnreservedConcurrentExecutions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

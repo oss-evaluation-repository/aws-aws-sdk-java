@@ -43,34 +43,47 @@ public class AwsElbLoadBalancerAttributesJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessLog", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerAttributes.setAccessLog(AwsElbLoadBalancerAccessLogJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConnectionDraining", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerAttributes.setConnectionDraining(AwsElbLoadBalancerConnectionDrainingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConnectionSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerAttributes.setConnectionSettings(AwsElbLoadBalancerConnectionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CrossZoneLoadBalancing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerAttributes.setCrossZoneLoadBalancing(AwsElbLoadBalancerCrossZoneLoadBalancingJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("AdditionalAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerAttributes.setAdditionalAttributes(new ListUnmarshaller<AwsElbLoadBalancerAdditionalAttribute>(
                             AwsElbLoadBalancerAdditionalAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

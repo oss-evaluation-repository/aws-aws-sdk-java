@@ -43,38 +43,53 @@ public class AppDetailsJsonUnmarshaller implements Unmarshaller<AppDetails, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appDetails.setDomainId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appDetails.setUserProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appDetails.setAppType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appDetails.setAppName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appDetails.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SpaceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appDetails.setSpaceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

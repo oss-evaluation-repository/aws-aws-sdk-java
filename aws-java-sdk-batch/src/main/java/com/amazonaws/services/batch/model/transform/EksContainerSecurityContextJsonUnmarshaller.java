@@ -43,30 +43,43 @@ public class EksContainerSecurityContextJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("runAsUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainerSecurityContext.setRunAsUser(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("runAsGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainerSecurityContext.setRunAsGroup(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("privileged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainerSecurityContext.setPrivileged(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("readOnlyRootFilesystem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainerSecurityContext.setReadOnlyRootFilesystem(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("runAsNonRoot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainerSecurityContext.setRunAsNonRoot(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

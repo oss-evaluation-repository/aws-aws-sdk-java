@@ -43,40 +43,55 @@ public class FraudDetectionResultJsonUnmarshaller implements Unmarshaller<FraudD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AudioAggregationEndedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fraudDetectionResult.setAudioAggregationEndedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AudioAggregationStartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fraudDetectionResult.setAudioAggregationStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fraudDetectionResult.setConfiguration(FraudDetectionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Decision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fraudDetectionResult.setDecision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FraudDetectionResultId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fraudDetectionResult.setFraudDetectionResultId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Reasons", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fraudDetectionResult.setReasons(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RiskDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fraudDetectionResult.setRiskDetails(FraudRiskDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

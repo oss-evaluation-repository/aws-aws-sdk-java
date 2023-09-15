@@ -43,36 +43,50 @@ public class FlowDefinitionJsonUnmarshaller implements Unmarshaller<FlowDefiniti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FlowName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setFlowName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setKmsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceFlowConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setSourceFlowConfig(SourceFlowConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tasks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setTasks(new ListUnmarshaller<Task>(TaskJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TriggerConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setTriggerConfig(TriggerConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

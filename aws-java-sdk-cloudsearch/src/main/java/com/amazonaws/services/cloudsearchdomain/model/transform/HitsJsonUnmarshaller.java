@@ -43,28 +43,40 @@ public class HitsJsonUnmarshaller implements Unmarshaller<Hits, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("found", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hits.setFound(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("start", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hits.setStart(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("cursor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hits.setCursor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hits.setHit(new ListUnmarshaller<Hit>(HitJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

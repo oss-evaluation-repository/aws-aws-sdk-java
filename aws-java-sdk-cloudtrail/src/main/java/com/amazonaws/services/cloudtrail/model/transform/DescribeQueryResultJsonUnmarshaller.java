@@ -43,38 +43,53 @@ public class DescribeQueryResultJsonUnmarshaller implements Unmarshaller<Describ
             return describeQueryResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QueryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQueryResult.setQueryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQueryResult.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQueryResult.setQueryStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQueryResult.setQueryStatistics(QueryStatisticsForDescribeQueryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQueryResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQueryResult.setDeliveryS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQueryResult.setDeliveryStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

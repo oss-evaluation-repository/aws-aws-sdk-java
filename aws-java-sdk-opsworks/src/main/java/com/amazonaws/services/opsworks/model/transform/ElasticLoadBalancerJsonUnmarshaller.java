@@ -43,52 +43,69 @@ public class ElasticLoadBalancerJsonUnmarshaller implements Unmarshaller<Elastic
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ElasticLoadBalancerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticLoadBalancer.setElasticLoadBalancerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticLoadBalancer.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticLoadBalancer.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticLoadBalancer.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LayerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticLoadBalancer.setLayerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticLoadBalancer.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticLoadBalancer.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticLoadBalancer.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticLoadBalancer.setEc2InstanceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

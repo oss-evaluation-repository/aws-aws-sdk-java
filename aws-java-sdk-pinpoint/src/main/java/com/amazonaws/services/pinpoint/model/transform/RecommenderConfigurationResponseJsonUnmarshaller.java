@@ -43,59 +43,79 @@ public class RecommenderConfigurationResponseJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationProviderIdType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setRecommendationProviderIdType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationProviderRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setRecommendationProviderRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationProviderUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setRecommendationProviderUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationTransformerUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setRecommendationTransformerUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationsDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setRecommendationsDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationsPerMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommenderConfigurationResponse.setRecommendationsPerMessage(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

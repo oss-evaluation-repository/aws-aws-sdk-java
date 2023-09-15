@@ -43,34 +43,48 @@ public class AppInstanceUserEndpointSummaryJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppInstanceUserArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpointSummary.setAppInstanceUserArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpointSummary.setEndpointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpointSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpointSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowMessages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpointSummary.setAllowMessages(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpointSummary.setEndpointState(EndpointStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class MonitoringDatasetFormatJsonUnmarshaller implements Unmarshaller<Mon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Csv", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringDatasetFormat.setCsv(MonitoringCsvDatasetFormatJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Json", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringDatasetFormat.setJson(MonitoringJsonDatasetFormatJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Parquet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringDatasetFormat.setParquet(MonitoringParquetDatasetFormatJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

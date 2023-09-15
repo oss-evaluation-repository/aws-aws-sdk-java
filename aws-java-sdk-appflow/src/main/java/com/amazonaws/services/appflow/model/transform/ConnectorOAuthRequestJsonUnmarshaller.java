@@ -43,18 +43,28 @@ public class ConnectorOAuthRequestJsonUnmarshaller implements Unmarshaller<Conne
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOAuthRequest.setAuthCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("redirectUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOAuthRequest.setRedirectUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

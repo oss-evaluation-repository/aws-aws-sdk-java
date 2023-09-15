@@ -43,59 +43,79 @@ public class SamplingRuleUpdateJsonUnmarshaller implements Unmarshaller<Sampling
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setRuleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setResourceARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FixedRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setFixedRate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ReservoirSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setReservoirSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Host", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setHost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setServiceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HTTPMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setHTTPMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("URLPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setURLPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRuleUpdate.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

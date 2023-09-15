@@ -43,30 +43,43 @@ public class InboundConnectionJsonUnmarshaller implements Unmarshaller<InboundCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocalDomainInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inboundConnection.setLocalDomainInfo(DomainInformationContainerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RemoteDomainInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inboundConnection.setRemoteDomainInfo(DomainInformationContainerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inboundConnection.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inboundConnection.setConnectionStatus(InboundConnectionStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConnectionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inboundConnection.setConnectionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class AppInstanceUserEndpointJsonUnmarshaller implements Unmarshaller<App
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppInstanceUserArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpoint.setAppInstanceUserArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpoint.setEndpointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpoint.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpoint.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpoint.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpoint.setEndpointAttributes(EndpointAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpoint.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpoint.setLastUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AllowMessages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpoint.setAllowMessages(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appInstanceUserEndpoint.setEndpointState(EndpointStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class AggregationResponseJsonUnmarshaller implements Unmarshaller<Aggrega
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setAccountAggregation(AccountAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("amiAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setAmiAggregation(AmiAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("awsEcrContainerAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setAwsEcrContainerAggregation(AwsEcrContainerAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ec2InstanceAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setEc2InstanceAggregation(Ec2InstanceAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("findingTypeAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setFindingTypeAggregation(FindingTypeAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageLayerAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setImageLayerAggregation(ImageLayerAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setLambdaFunctionAggregation(LambdaFunctionAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambdaLayerAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setLambdaLayerAggregation(LambdaLayerAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("packageAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setPackageAggregation(PackageAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("repositoryAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setRepositoryAggregation(RepositoryAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("titleAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationResponse.setTitleAggregation(TitleAggregationResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class ProfileSummaryJsonUnmarshaller implements Unmarshaller<ProfileSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileSummary.setProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileSummary.setProfileVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileSummary.setProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileSummary.setProfileDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileSummary.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profileSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

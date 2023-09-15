@@ -43,34 +43,48 @@ public class ListEventsFiltersJsonUnmarshaller implements Unmarshaller<ListEvent
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InsightId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEventsFilters.setInsightId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEventsFilters.setEventTimeRange(EventTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEventsFilters.setEventClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEventsFilters.setEventSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEventsFilters.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceCollection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEventsFilters.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

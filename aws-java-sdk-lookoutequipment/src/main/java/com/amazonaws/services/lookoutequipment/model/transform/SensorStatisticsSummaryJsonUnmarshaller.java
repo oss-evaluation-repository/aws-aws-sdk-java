@@ -43,62 +43,83 @@ public class SensorStatisticsSummaryJsonUnmarshaller implements Unmarshaller<Sen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComponentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SensorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setSensorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataExists", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setDataExists(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MissingValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setMissingValues(CountPercentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InvalidValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setInvalidValues(CountPercentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InvalidDateEntries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setInvalidDateEntries(CountPercentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DuplicateTimestamps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setDuplicateTimestamps(CountPercentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CategoricalValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setCategoricalValues(CategoricalValuesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MultipleOperatingModes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setMultipleOperatingModes(MultipleOperatingModesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LargeTimestampGaps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setLargeTimestampGaps(LargeTimestampGapsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MonotonicValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setMonotonicValues(MonotonicValuesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setDataStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sensorStatisticsSummary.setDataEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

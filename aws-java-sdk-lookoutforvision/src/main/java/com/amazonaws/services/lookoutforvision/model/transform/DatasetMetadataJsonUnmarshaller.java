@@ -43,26 +43,38 @@ public class DatasetMetadataJsonUnmarshaller implements Unmarshaller<DatasetMeta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatasetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setDatasetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

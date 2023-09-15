@@ -43,22 +43,33 @@ public class GetApplicationRevisionResultJsonUnmarshaller implements Unmarshalle
             return getApplicationRevisionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationRevisionResult.setApplicationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationRevisionResult.setRevision(RevisionLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("revisionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationRevisionResult.setRevisionInfo(GenericRevisionInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

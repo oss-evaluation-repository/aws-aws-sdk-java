@@ -43,26 +43,38 @@ public class BucketStatisticsBySensitivityJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("classificationError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketStatisticsBySensitivity.setClassificationError(SensitivityAggregationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("notClassified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketStatisticsBySensitivity.setNotClassified(SensitivityAggregationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("notSensitive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketStatisticsBySensitivity.setNotSensitive(SensitivityAggregationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sensitive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketStatisticsBySensitivity.setSensitive(SensitivityAggregationsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

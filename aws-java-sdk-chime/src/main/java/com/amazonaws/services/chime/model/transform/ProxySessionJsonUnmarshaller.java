@@ -43,66 +43,87 @@ public class ProxySessionJsonUnmarshaller implements Unmarshaller<ProxySession, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VoiceConnectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setVoiceConnectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProxySessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setProxySessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpiryMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setExpiryMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Capabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("EndedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setEndedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("Participants", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setParticipants(new ListUnmarshaller<Participant>(ParticipantJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NumberSelectionBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setNumberSelectionBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GeoMatchLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setGeoMatchLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GeoMatchParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proxySession.setGeoMatchParams(GeoMatchParamsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

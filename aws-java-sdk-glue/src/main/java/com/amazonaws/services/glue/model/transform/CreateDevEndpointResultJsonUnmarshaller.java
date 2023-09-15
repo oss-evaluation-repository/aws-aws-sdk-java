@@ -43,89 +43,116 @@ public class CreateDevEndpointResultJsonUnmarshaller implements Unmarshaller<Cre
             return createDevEndpointResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndpointName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setEndpointName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("YarnEndpointAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setYarnEndpointAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ZeppelinRemoteSparkInterpreterPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setZeppelinRemoteSparkInterpreterPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setNumberOfNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setWorkerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlueVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfWorkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setNumberOfWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExtraPythonLibsS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setExtraPythonLibsS3Path(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExtraJarsS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setExtraJarsS3Path(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setSecurityConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Arguments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDevEndpointResult.setArguments(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

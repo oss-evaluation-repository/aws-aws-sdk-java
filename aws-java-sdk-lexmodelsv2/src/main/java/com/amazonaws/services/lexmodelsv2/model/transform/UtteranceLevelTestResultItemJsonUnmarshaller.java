@@ -43,22 +43,33 @@ public class UtteranceLevelTestResultItemJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("recordNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     utteranceLevelTestResultItem.setRecordNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("conversationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     utteranceLevelTestResultItem.setConversationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("turnResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     utteranceLevelTestResultItem.setTurnResult(TestSetTurnResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,27 @@ public class UpdateVodSourceResultJsonUnmarshaller implements Unmarshaller<Updat
             return updateVodSourceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVodSourceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVodSourceResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("HttpPackageConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVodSourceResult.setHttpPackageConfigurations(new ListUnmarshaller<HttpPackageConfiguration>(HttpPackageConfigurationJsonUnmarshaller
                             .getInstance())
@@ -64,21 +71,29 @@ public class UpdateVodSourceResultJsonUnmarshaller implements Unmarshaller<Updat
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVodSourceResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SourceLocationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVodSourceResult.setSourceLocationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVodSourceResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("VodSourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVodSourceResult.setVodSourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

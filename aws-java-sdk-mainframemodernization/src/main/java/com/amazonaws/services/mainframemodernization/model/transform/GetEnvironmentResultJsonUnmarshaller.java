@@ -43,86 +43,109 @@ public class GetEnvironmentResultJsonUnmarshaller implements Unmarshaller<GetEnv
             return getEnvironmentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actualCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setActualCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engineType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setEngineType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("highAvailabilityConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setHighAvailabilityConfig(HighAvailabilityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loadBalancerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setLoadBalancerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingMaintenance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setPendingMaintenance(PendingMaintenanceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("preferredMaintenanceWindow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setPreferredMaintenanceWindow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("publiclyAccessible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setPubliclyAccessible(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storageConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult
                             .setStorageConfigurations(new ListUnmarshaller<StorageConfiguration>(StorageConfigurationJsonUnmarshaller.getInstance())
@@ -130,19 +153,26 @@ public class GetEnvironmentResultJsonUnmarshaller implements Unmarshaller<GetEnv
                             .unmarshall(context));
                 }
                 if (context.testExpression("subnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("vpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEnvironmentResult.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

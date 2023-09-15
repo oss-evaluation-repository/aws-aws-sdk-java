@@ -43,60 +43,80 @@ public class ResourceSharePermissionSummaryJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setDefaultVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("isResourceTypeDefault", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setIsResourceTypeDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("permissionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setPermissionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("featureSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setFeatureSet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceSharePermissionSummary.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

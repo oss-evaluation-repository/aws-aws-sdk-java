@@ -43,38 +43,53 @@ public class ExplainabilityExportSummaryJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExplainabilityExportArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     explainabilityExportSummary.setExplainabilityExportArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExplainabilityExportName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     explainabilityExportSummary.setExplainabilityExportName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     explainabilityExportSummary.setDestination(DataDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     explainabilityExportSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     explainabilityExportSummary.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     explainabilityExportSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     explainabilityExportSummary.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

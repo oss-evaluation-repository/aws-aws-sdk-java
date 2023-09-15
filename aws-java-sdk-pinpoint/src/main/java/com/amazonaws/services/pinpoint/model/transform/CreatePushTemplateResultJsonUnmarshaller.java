@@ -43,9 +43,13 @@ public class CreatePushTemplateResultJsonUnmarshaller implements Unmarshaller<Cr
             return createPushTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             createPushTemplateResult.setCreateTemplateMessageBody(CreateTemplateMessageBodyJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

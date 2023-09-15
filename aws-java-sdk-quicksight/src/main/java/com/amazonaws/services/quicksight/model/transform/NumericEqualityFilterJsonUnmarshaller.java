@@ -43,42 +43,58 @@ public class NumericEqualityFilterJsonUnmarshaller implements Unmarshaller<Numer
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericEqualityFilter.setFilterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericEqualityFilter.setColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericEqualityFilter.setValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectAllOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericEqualityFilter.setSelectAllOptions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchOperator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericEqualityFilter.setMatchOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AggregationFunction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericEqualityFilter.setAggregationFunction(AggregationFunctionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericEqualityFilter.setParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NullOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericEqualityFilter.setNullOption(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class FileInformationJsonUnmarshaller implements Unmarshaller<FileInforma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("totalParts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileInformation.setTotalParts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("partSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileInformation.setPartSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("contentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileInformation.setContentLength(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

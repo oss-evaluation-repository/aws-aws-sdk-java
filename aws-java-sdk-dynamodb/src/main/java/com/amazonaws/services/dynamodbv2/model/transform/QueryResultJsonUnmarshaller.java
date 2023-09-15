@@ -44,12 +44,17 @@ public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, Js
             return queryResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Items", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setItems(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(new MapUnmarshaller<String, AttributeValue>(context
                             .getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance()))
@@ -57,21 +62,29 @@ public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, Js
                     .unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ScannedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setScannedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setLastEvaluatedKey(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class),
                             AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ConsumedCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setConsumedCapacity(ConsumedCapacityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

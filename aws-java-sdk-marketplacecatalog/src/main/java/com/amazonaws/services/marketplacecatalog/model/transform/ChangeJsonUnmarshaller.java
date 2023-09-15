@@ -43,32 +43,45 @@ public class ChangeJsonUnmarshaller implements Unmarshaller<Change, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChangeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     change.setChangeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Entity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     change.setEntity(EntityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EntityTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     change.setEntityTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Details", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     change.setDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChangeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     change.setChangeName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

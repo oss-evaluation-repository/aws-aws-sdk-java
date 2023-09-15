@@ -43,62 +43,83 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("setVariable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setSetVariable(SetVariableActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setSns(SNSTopicPublishActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iotTopicPublish", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setIotTopicPublish(IotTopicPublishActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("setTimer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setSetTimer(SetTimerActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("clearTimer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setClearTimer(ClearTimerActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resetTimer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setResetTimer(ResetTimerActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambda", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setLambda(LambdaActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iotEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setIotEvents(IotEventsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sqs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setSqs(SqsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("firehose", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setFirehose(FirehoseActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dynamoDB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setDynamoDB(DynamoDBActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dynamoDBv2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setDynamoDBv2(DynamoDBv2ActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iotSiteWise", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setIotSiteWise(IotSiteWiseActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

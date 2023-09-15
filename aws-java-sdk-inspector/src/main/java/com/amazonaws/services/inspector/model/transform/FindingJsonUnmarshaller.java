@@ -43,86 +43,112 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("schemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setSchemaVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("service", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setService(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setServiceAttributes(InspectorServiceAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("assetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setAssetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setAssetAttributes(AssetAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setRecommendation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numericSeverity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setNumericSeverity(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("confidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setConfidence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("indicatorOfCompromise", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setIndicatorOfCompromise(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("userAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setUserAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

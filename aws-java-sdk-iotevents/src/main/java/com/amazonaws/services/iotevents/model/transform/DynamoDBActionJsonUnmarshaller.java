@@ -43,50 +43,68 @@ public class DynamoDBActionJsonUnmarshaller implements Unmarshaller<DynamoDBActi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("hashKeyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamoDBAction.setHashKeyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hashKeyField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamoDBAction.setHashKeyField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hashKeyValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamoDBAction.setHashKeyValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rangeKeyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamoDBAction.setRangeKeyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rangeKeyField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamoDBAction.setRangeKeyField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rangeKeyValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamoDBAction.setRangeKeyValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamoDBAction.setOperation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("payloadField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamoDBAction.setPayloadField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamoDBAction.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("payload", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamoDBAction.setPayload(PayloadJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

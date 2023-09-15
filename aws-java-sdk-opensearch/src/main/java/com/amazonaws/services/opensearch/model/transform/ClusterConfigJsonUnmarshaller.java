@@ -43,58 +43,78 @@ public class ClusterConfigJsonUnmarshaller implements Unmarshaller<ClusterConfig
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setDedicatedMasterEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ZoneAwarenessEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setZoneAwarenessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ZoneAwarenessConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setZoneAwarenessConfig(ZoneAwarenessConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setDedicatedMasterType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setDedicatedMasterCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setWarmEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setWarmType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setWarmCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ColdStorageOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setColdStorageOptions(ColdStorageOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MultiAZWithStandbyEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfig.setMultiAZWithStandbyEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

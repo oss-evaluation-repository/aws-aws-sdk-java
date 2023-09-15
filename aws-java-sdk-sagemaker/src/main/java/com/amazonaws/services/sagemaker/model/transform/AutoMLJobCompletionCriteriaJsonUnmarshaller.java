@@ -43,22 +43,33 @@ public class AutoMLJobCompletionCriteriaJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MaxCandidates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLJobCompletionCriteria.setMaxCandidates(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxRuntimePerTrainingJobInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLJobCompletionCriteria.setMaxRuntimePerTrainingJobInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxAutoMLJobRuntimeInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLJobCompletionCriteria.setMaxAutoMLJobRuntimeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

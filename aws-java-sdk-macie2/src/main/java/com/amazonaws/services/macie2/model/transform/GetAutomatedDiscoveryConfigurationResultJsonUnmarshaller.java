@@ -44,34 +44,48 @@ public class GetAutomatedDiscoveryConfigurationResultJsonUnmarshaller implements
             return getAutomatedDiscoveryConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("classificationScopeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAutomatedDiscoveryConfigurationResult.setClassificationScopeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("disabledAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAutomatedDiscoveryConfigurationResult.setDisabledAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("firstEnabledAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAutomatedDiscoveryConfigurationResult.setFirstEnabledAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAutomatedDiscoveryConfigurationResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("sensitivityInspectionTemplateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAutomatedDiscoveryConfigurationResult.setSensitivityInspectionTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAutomatedDiscoveryConfigurationResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

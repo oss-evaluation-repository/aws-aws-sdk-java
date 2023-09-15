@@ -43,26 +43,38 @@ public class CategoricalDimensionFieldJsonUnmarshaller implements Unmarshaller<C
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     categoricalDimensionField.setFieldId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     categoricalDimensionField.setColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HierarchyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     categoricalDimensionField.setHierarchyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FormatConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     categoricalDimensionField.setFormatConfiguration(StringFormatConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

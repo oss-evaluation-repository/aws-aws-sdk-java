@@ -43,18 +43,28 @@ public class FileLocationJsonUnmarshaller implements Unmarshaller<FileLocation, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3FileLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileLocation.setS3FileLocation(S3FileLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EfsFileLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileLocation.setEfsFileLocation(EfsFileLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

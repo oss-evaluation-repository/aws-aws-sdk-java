@@ -43,22 +43,33 @@ public class TrailInfoJsonUnmarshaller implements Unmarshaller<TrailInfo, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrailARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trailInfo.setTrailARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trailInfo.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HomeRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trailInfo.setHomeRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

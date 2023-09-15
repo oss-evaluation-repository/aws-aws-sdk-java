@@ -43,22 +43,33 @@ public class DatasetActionJsonUnmarshaller implements Unmarshaller<DatasetAction
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetAction.setActionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queryAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetAction.setQueryAction(SqlQueryDatasetActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("containerAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetAction.setContainerAction(ContainerDatasetActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

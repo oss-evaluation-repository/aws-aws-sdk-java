@@ -43,20 +43,30 @@ public class ExportMetadataModelAssessmentResultJsonUnmarshaller implements Unma
             return exportMetadataModelAssessmentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PdfReport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportMetadataModelAssessmentResult
                             .setPdfReport(ExportMetadataModelAssessmentResultEntryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CsvReport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportMetadataModelAssessmentResult
                             .setCsvReport(ExportMetadataModelAssessmentResultEntryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,45 +43,61 @@ public class UpdateChannelResultJsonUnmarshaller implements Unmarshaller<UpdateC
             return updateChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setChannelGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IngestEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setIngestEndpoints(new ListUnmarshaller<IngestEndpoint>(IngestEndpointJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

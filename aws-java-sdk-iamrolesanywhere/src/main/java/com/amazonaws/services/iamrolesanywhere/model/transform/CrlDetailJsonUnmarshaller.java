@@ -43,42 +43,58 @@ public class CrlDetailJsonUnmarshaller implements Unmarshaller<CrlDetail, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crlDetail.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("crlArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crlDetail.setCrlArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("crlData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crlDetail.setCrlData(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("crlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crlDetail.setCrlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crlDetail.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crlDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trustAnchorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crlDetail.setTrustAnchorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crlDetail.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

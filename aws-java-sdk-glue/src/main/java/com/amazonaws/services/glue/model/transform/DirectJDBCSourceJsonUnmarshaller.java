@@ -43,34 +43,48 @@ public class DirectJDBCSourceJsonUnmarshaller implements Unmarshaller<DirectJDBC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directJDBCSource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Database", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directJDBCSource.setDatabase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Table", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directJDBCSource.setTable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directJDBCSource.setConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directJDBCSource.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RedshiftTmpDir", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directJDBCSource.setRedshiftTmpDir(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

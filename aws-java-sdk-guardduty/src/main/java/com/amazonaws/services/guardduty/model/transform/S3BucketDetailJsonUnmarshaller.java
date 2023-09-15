@@ -43,44 +43,60 @@ public class S3BucketDetailJsonUnmarshaller implements Unmarshaller<S3BucketDeta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketDetail.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketDetail.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketDetail.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketDetail.setOwner(OwnerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketDetail.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("defaultServerSideEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketDetail.setDefaultServerSideEncryption(DefaultServerSideEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("publicAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketDetail.setPublicAccess(PublicAccessJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

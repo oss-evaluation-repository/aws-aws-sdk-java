@@ -43,58 +43,78 @@ public class NetworkProfileJsonUnmarshaller implements Unmarshaller<NetworkProfi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uplinkBandwidthBits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setUplinkBandwidthBits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("downlinkBandwidthBits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setDownlinkBandwidthBits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("uplinkDelayMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setUplinkDelayMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("downlinkDelayMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setDownlinkDelayMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("uplinkJitterMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setUplinkJitterMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("downlinkJitterMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setDownlinkJitterMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("uplinkLossPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setUplinkLossPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("downlinkLossPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setDownlinkLossPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

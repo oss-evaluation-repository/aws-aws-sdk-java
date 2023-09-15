@@ -43,42 +43,58 @@ public class TableCellStyleJsonUnmarshaller implements Unmarshaller<TableCellSty
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Visibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCellStyle.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FontConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCellStyle.setFontConfiguration(FontConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TextWrap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCellStyle.setTextWrap(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HorizontalTextAlignment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCellStyle.setHorizontalTextAlignment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VerticalTextAlignment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCellStyle.setVerticalTextAlignment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackgroundColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCellStyle.setBackgroundColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Height", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCellStyle.setHeight(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Border", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCellStyle.setBorder(GlobalTableBorderOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

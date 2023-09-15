@@ -43,38 +43,53 @@ public class UpdateCustomLineItemResultJsonUnmarshaller implements Unmarshaller<
             return updateCustomLineItemResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCustomLineItemResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BillingGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCustomLineItemResult.setBillingGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCustomLineItemResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCustomLineItemResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChargeDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCustomLineItemResult.setChargeDetails(ListCustomLineItemChargeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCustomLineItemResult.setLastModifiedTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCustomLineItemResult.setAssociationSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

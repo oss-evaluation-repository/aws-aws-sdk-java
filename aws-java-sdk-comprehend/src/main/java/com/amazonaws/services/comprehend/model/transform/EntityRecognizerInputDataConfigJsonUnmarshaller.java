@@ -43,39 +43,53 @@ public class EntityRecognizerInputDataConfigJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerInputDataConfig.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EntityTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerInputDataConfig.setEntityTypes(new ListUnmarshaller<EntityTypesListItem>(EntityTypesListItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Documents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerInputDataConfig.setDocuments(EntityRecognizerDocumentsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Annotations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerInputDataConfig.setAnnotations(EntityRecognizerAnnotationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EntityList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerInputDataConfig.setEntityList(EntityRecognizerEntityListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AugmentedManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerInputDataConfig.setAugmentedManifests(new ListUnmarshaller<AugmentedManifestsListItem>(
                             AugmentedManifestsListItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

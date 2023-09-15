@@ -45,40 +45,55 @@ public class DescribeTemplateDefinitionResultJsonUnmarshaller implements Unmarsh
             return describeTemplateDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTemplateDefinitionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTemplateDefinitionResult.setTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTemplateDefinitionResult.setErrors(new ListUnmarshaller<TemplateError>(TemplateErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTemplateDefinitionResult.setResourceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThemeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTemplateDefinitionResult.setThemeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTemplateDefinitionResult.setDefinition(TemplateVersionDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTemplateDefinitionResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

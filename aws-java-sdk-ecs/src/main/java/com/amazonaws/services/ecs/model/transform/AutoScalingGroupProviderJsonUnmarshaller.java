@@ -43,22 +43,33 @@ public class AutoScalingGroupProviderJsonUnmarshaller implements Unmarshaller<Au
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("autoScalingGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupProvider.setAutoScalingGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("managedScaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupProvider.setManagedScaling(ManagedScalingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("managedTerminationProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupProvider.setManagedTerminationProtection(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

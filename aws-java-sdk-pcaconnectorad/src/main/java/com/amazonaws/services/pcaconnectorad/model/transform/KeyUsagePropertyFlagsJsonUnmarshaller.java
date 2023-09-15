@@ -43,22 +43,33 @@ public class KeyUsagePropertyFlagsJsonUnmarshaller implements Unmarshaller<KeyUs
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Decrypt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsagePropertyFlags.setDecrypt(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyAgreement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsagePropertyFlags.setKeyAgreement(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Sign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsagePropertyFlags.setSign(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,9 +43,13 @@ public class UpdateTemplateActiveVersionResultJsonUnmarshaller implements Unmars
             return updateTemplateActiveVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateTemplateActiveVersionResult.setMessageBody(MessageBodyJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

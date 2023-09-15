@@ -43,22 +43,33 @@ public class CreateAssetModelResultJsonUnmarshaller implements Unmarshaller<Crea
             return createAssetModelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assetModelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssetModelResult.setAssetModelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssetModelResult.setAssetModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetModelStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssetModelResult.setAssetModelStatus(AssetModelStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

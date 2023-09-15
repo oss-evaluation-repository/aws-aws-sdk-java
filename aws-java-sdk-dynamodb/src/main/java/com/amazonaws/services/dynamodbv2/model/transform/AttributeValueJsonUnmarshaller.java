@@ -43,59 +43,77 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setS(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("N", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("B", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setB(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("SS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setSS(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setNS(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setBS(new ListUnmarshaller<java.nio.ByteBuffer>(context.getUnmarshaller(java.nio.ByteBuffer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("M", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setM(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class), AttributeValueJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("L", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setL(new ListUnmarshaller<AttributeValue>(AttributeValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NULL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setNULL(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("BOOL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setBOOL(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

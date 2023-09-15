@@ -43,26 +43,38 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("plainTextMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setPlainTextMessage(PlainTextMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("customPayload", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setCustomPayload(CustomPayloadJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ssmlMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setSsmlMessage(SSMLMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageResponseCard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setImageResponseCard(ImageResponseCardJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,70 +43,93 @@ public class GetEvaluationResultJsonUnmarshaller implements Unmarshaller<GetEval
             return getEvaluationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EvaluationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setEvaluationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MLModelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setMLModelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationDataSourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setEvaluationDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputDataLocationS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setInputDataLocationS3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setCreatedByIamUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PerformanceMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setPerformanceMetrics(PerformanceMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setLogUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setComputeTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FinishedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEvaluationResult.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,78 +43,99 @@ public class ContainerServiceJsonUnmarshaller implements Unmarshaller<ContainerS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setContainerServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setLocation(ResourceLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("power", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setPower(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("powerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setPowerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setStateDetail(ContainerServiceStateDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setScale(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("currentDeployment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setCurrentDeployment(ContainerServiceDeploymentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nextDeployment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setNextDeployment(ContainerServiceDeploymentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("isDisabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setIsDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("principalArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setPrincipalArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("privateDomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setPrivateDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("publicDomainNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setPublicDomainNames(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -122,12 +143,18 @@ public class ContainerServiceJsonUnmarshaller implements Unmarshaller<ContainerS
                     ).unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("privateRegistryAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerService.setPrivateRegistryAccess(PrivateRegistryAccessJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

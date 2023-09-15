@@ -43,40 +43,55 @@ public class TargetInstanceJsonUnmarshaller implements Unmarshaller<TargetInstan
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EstimatedMonthlyCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetInstance.setEstimatedMonthlyCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedMonthlySavings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetInstance.setEstimatedMonthlySavings(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetInstance.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultTargetInstance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetInstance.setDefaultTargetInstance(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetInstance.setResourceDetails(ResourceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExpectedResourceUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetInstance.setExpectedResourceUtilization(ResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PlatformDifferences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetInstance.setPlatformDifferences(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class TrialSummaryJsonUnmarshaller implements Unmarshaller<TrialSummary, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrialArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialSummary.setTrialArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrialName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialSummary.setTrialName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialSummary.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrialSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialSummary.setTrialSource(TrialSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

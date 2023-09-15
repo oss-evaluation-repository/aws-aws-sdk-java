@@ -43,9 +43,13 @@ public class PutEventStreamResultJsonUnmarshaller implements Unmarshaller<PutEve
             return putEventStreamResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             putEventStreamResult.setEventStream(EventStreamJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

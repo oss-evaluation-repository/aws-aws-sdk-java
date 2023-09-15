@@ -43,22 +43,32 @@ public class BatchDeleteImageResultJsonUnmarshaller implements Unmarshaller<Batc
             return batchDeleteImageResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteImageResult.setImageIds(new ListUnmarshaller<ImageIdentifier>(ImageIdentifierJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteImageResult.setFailures(new ListUnmarshaller<ImageFailure>(ImageFailureJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

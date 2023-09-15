@@ -43,22 +43,33 @@ public class ParameterInlinePolicyJsonUnmarshaller implements Unmarshaller<Param
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PolicyText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterInlinePolicy.setPolicyText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterInlinePolicy.setPolicyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterInlinePolicy.setPolicyStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

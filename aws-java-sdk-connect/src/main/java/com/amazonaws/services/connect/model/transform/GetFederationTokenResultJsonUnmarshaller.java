@@ -43,26 +43,38 @@ public class GetFederationTokenResultJsonUnmarshaller implements Unmarshaller<Ge
             return getFederationTokenResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Credentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFederationTokenResult.setCredentials(CredentialsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SignInUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFederationTokenResult.setSignInUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFederationTokenResult.setUserArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFederationTokenResult.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

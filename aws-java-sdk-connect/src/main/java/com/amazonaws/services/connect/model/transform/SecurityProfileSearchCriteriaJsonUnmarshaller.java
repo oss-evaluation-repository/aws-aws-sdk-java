@@ -43,12 +43,17 @@ public class SecurityProfileSearchCriteriaJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OrConditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityProfileSearchCriteria.setOrConditions(new ListUnmarshaller<SecurityProfileSearchCriteria>(
                             SecurityProfileSearchCriteriaJsonUnmarshaller.getInstance())
@@ -56,6 +61,7 @@ public class SecurityProfileSearchCriteriaJsonUnmarshaller implements Unmarshall
                     .unmarshall(context));
                 }
                 if (context.testExpression("AndConditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityProfileSearchCriteria.setAndConditions(new ListUnmarshaller<SecurityProfileSearchCriteria>(
                             SecurityProfileSearchCriteriaJsonUnmarshaller.getInstance())
@@ -63,8 +69,13 @@ public class SecurityProfileSearchCriteriaJsonUnmarshaller implements Unmarshall
                     .unmarshall(context));
                 }
                 if (context.testExpression("StringCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityProfileSearchCriteria.setStringCondition(StringConditionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

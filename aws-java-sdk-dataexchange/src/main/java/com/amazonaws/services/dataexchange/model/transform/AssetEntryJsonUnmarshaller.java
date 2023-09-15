@@ -43,50 +43,68 @@ public class AssetEntryJsonUnmarshaller implements Unmarshaller<AssetEntry, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetEntry.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssetDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetEntry.setAssetDetails(AssetDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetEntry.setAssetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetEntry.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("DataSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetEntry.setDataSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetEntry.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetEntry.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RevisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetEntry.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetEntry.setSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetEntry.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

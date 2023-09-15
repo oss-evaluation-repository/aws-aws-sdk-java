@@ -43,50 +43,68 @@ public class GetDatasetResultJsonUnmarshaller implements Unmarshaller<GetDataset
             return getDatasetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("datasetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetResult.setDatasetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetResult.setDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetResult.setDatasetTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kind", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetResult.setKind(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetResult.setDatasetDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetResult.setCreateTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetResult.setLastModifiedTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("schemaDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetResult.setSchemaDefinition(SchemaUnionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("alias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetResult.setAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

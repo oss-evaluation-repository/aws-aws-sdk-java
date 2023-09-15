@@ -43,42 +43,58 @@ public class Xavc4kProfileSettingsJsonUnmarshaller implements Unmarshaller<Xavc4
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bitrateClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xavc4kProfileSettings.setBitrateClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codecProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xavc4kProfileSettings.setCodecProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("flickerAdaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xavc4kProfileSettings.setFlickerAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gopBReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xavc4kProfileSettings.setGopBReference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gopClosedCadence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xavc4kProfileSettings.setGopClosedCadence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hrdBufferSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xavc4kProfileSettings.setHrdBufferSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("qualityTuningLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xavc4kProfileSettings.setQualityTuningLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xavc4kProfileSettings.setSlices(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

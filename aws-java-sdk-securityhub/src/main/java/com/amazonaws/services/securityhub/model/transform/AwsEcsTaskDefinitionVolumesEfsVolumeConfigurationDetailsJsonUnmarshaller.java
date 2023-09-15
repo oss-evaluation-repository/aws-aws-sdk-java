@@ -44,33 +44,46 @@ public class AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsJsonUnmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AuthorizationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails
                             .setAuthorizationConfig(AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("FilesystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails.setFilesystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RootDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails.setRootDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransitEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails.setTransitEncryption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransitEncryptionPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails.setTransitEncryptionPort(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

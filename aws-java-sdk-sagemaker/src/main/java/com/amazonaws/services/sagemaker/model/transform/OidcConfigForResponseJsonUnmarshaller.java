@@ -43,38 +43,53 @@ public class OidcConfigForResponseJsonUnmarshaller implements Unmarshaller<OidcC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfigForResponse.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Issuer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfigForResponse.setIssuer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthorizationEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfigForResponse.setAuthorizationEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TokenEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfigForResponse.setTokenEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserInfoEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfigForResponse.setUserInfoEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogoutEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfigForResponse.setLogoutEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JwksUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfigForResponse.setJwksUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

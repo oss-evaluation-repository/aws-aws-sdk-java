@@ -43,35 +43,49 @@ public class UpgradeDomainResultJsonUnmarshaller implements Unmarshaller<Upgrade
             return upgradeDomainResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UpgradeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upgradeDomainResult.setUpgradeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upgradeDomainResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upgradeDomainResult.setTargetVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PerformCheckOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upgradeDomainResult.setPerformCheckOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AdvancedOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upgradeDomainResult.setAdvancedOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("ChangeProgressDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upgradeDomainResult.setChangeProgressDetails(ChangeProgressDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class S3DataSpecJsonUnmarshaller implements Unmarshaller<S3DataSpec, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataLocationS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSpec.setDataLocationS3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRearrangement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSpec.setDataRearrangement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSpec.setDataSchema(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchemaLocationS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSpec.setDataSchemaLocationS3(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

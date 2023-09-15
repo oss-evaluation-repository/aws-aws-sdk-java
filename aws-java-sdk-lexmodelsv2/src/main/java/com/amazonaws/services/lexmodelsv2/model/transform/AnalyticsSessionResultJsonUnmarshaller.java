@@ -43,18 +43,24 @@ public class AnalyticsSessionResultJsonUnmarshaller implements Unmarshaller<Anal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("binKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analyticsSessionResult.setBinKeys(new ListUnmarshaller<AnalyticsBinKey>(AnalyticsBinKeyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("groupByKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analyticsSessionResult.setGroupByKeys(new ListUnmarshaller<AnalyticsSessionGroupByKey>(AnalyticsSessionGroupByKeyJsonUnmarshaller
                             .getInstance())
@@ -62,11 +68,16 @@ public class AnalyticsSessionResultJsonUnmarshaller implements Unmarshaller<Anal
                     .unmarshall(context));
                 }
                 if (context.testExpression("metricsResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analyticsSessionResult.setMetricsResults(new ListUnmarshaller<AnalyticsSessionMetricResult>(AnalyticsSessionMetricResultJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,43 @@ public class ExecutionConfigurationJsonUnmarshaller implements Unmarshaller<Exec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobTimeoutMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionConfiguration.setJobTimeoutMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("accountsCleanup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionConfiguration.setAccountsCleanup(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("appPackagesCleanup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionConfiguration.setAppPackagesCleanup(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("videoCapture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionConfiguration.setVideoCapture(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("skipAppResign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionConfiguration.setSkipAppResign(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

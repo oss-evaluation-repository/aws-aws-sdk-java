@@ -43,124 +43,160 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AirflowConfigurationOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setAirflowConfigurationOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("AirflowVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setAirflowVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DagS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setDagS3Path(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setEnvironmentClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setKmsKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setLastUpdate(LastUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LoggingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setLoggingConfiguration(LoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaxWorkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setMaxWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinWorkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setMinWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PluginsS3ObjectVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setPluginsS3ObjectVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PluginsS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setPluginsS3Path(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequirementsS3ObjectVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setRequirementsS3ObjectVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequirementsS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setRequirementsS3Path(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Schedulers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setSchedulers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setServiceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceBucketArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setSourceBucketArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartupScriptS3ObjectVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setStartupScriptS3ObjectVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartupScriptS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setStartupScriptS3Path(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("WebserverAccessMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setWebserverAccessMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WebserverUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setWebserverUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WeeklyMaintenanceWindowStart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setWeeklyMaintenanceWindowStart(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

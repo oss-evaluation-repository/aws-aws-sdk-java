@@ -43,30 +43,39 @@ public class ExperimentTemplateJsonUnmarshaller implements Unmarshaller<Experime
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentTemplate.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentTemplate.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentTemplate.setTargets(new MapUnmarshaller<String, ExperimentTemplateTarget>(context.getUnmarshaller(String.class),
                             ExperimentTemplateTargetJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentTemplate.setActions(new MapUnmarshaller<String, ExperimentTemplateAction>(context.getUnmarshaller(String.class),
                             ExperimentTemplateActionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("stopConditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentTemplate.setStopConditions(new ListUnmarshaller<ExperimentTemplateStopCondition>(ExperimentTemplateStopConditionJsonUnmarshaller
                             .getInstance())
@@ -74,26 +83,35 @@ public class ExperimentTemplateJsonUnmarshaller implements Unmarshaller<Experime
                     .unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentTemplate.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentTemplate.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentTemplate.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentTemplate
                             .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("logConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentTemplate.setLogConfiguration(ExperimentTemplateLogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

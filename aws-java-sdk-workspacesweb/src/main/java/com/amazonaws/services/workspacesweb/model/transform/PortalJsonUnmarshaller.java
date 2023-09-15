@@ -43,70 +43,93 @@ public class PortalJsonUnmarshaller implements Unmarshaller<Portal, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authenticationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("browserSettingsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setBrowserSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("browserType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setBrowserType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("displayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipAccessSettingsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setIpAccessSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkSettingsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setNetworkSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setPortalArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setPortalEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setPortalStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rendererType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setRendererType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trustStoreArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setTrustStoreArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userAccessLoggingSettingsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setUserAccessLoggingSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userSettingsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portal.setUserSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

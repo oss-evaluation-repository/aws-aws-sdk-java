@@ -43,34 +43,48 @@ public class GetFunctionDefinitionVersionResultJsonUnmarshaller implements Unmar
             return getFunctionDefinitionVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFunctionDefinitionVersionResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFunctionDefinitionVersionResult.setCreationTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFunctionDefinitionVersionResult.setDefinition(FunctionDefinitionVersionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFunctionDefinitionVersionResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFunctionDefinitionVersionResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFunctionDefinitionVersionResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

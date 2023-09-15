@@ -43,22 +43,33 @@ public class ProtectedTaskJsonUnmarshaller implements Unmarshaller<ProtectedTask
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedTask.setTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protectionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedTask.setProtectionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("expirationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedTask.setExpirationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,9 +43,13 @@ public class GetJourneyExecutionMetricsResultJsonUnmarshaller implements Unmarsh
             return getJourneyExecutionMetricsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getJourneyExecutionMetricsResult.setJourneyExecutionMetricsResponse(JourneyExecutionMetricsResponseJsonUnmarshaller.getInstance().unmarshall(
                     context));

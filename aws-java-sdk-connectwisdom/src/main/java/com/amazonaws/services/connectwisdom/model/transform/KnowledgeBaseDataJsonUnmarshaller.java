@@ -43,55 +43,74 @@ public class KnowledgeBaseDataJsonUnmarshaller implements Unmarshaller<Knowledge
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("knowledgeBaseArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setKnowledgeBaseArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("knowledgeBaseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setKnowledgeBaseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("knowledgeBaseType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setKnowledgeBaseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastContentModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setLastContentModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("renderingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setRenderingConfiguration(RenderingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serverSideEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setServerSideEncryptionConfiguration(ServerSideEncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setSourceConfiguration(SourceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseData.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

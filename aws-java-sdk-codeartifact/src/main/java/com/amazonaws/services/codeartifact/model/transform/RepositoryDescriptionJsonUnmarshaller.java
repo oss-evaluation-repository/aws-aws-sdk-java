@@ -43,42 +43,54 @@ public class RepositoryDescriptionJsonUnmarshaller implements Unmarshaller<Repos
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("administratorAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryDescription.setAdministratorAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryDescription.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryDescription.setDomainOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryDescription.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryDescription.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("upstreams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryDescription.setUpstreams(new ListUnmarshaller<UpstreamRepositoryInfo>(UpstreamRepositoryInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("externalConnections", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryDescription.setExternalConnections(new ListUnmarshaller<RepositoryExternalConnectionInfo>(
                             RepositoryExternalConnectionInfoJsonUnmarshaller.getInstance())
@@ -86,8 +98,13 @@ public class RepositoryDescriptionJsonUnmarshaller implements Unmarshaller<Repos
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryDescription.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

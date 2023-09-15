@@ -43,49 +43,66 @@ public class GlobalSecondaryIndexDescriptionJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalSecondaryIndexDescription.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalSecondaryIndexDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Projection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalSecondaryIndexDescription.setProjection(ProjectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IndexStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalSecondaryIndexDescription.setIndexStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Backfilling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalSecondaryIndexDescription.setBackfilling(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalSecondaryIndexDescription
                             .setProvisionedThroughput(ProvisionedThroughputDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IndexSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalSecondaryIndexDescription.setIndexSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ItemCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalSecondaryIndexDescription.setItemCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalSecondaryIndexDescription.setIndexArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

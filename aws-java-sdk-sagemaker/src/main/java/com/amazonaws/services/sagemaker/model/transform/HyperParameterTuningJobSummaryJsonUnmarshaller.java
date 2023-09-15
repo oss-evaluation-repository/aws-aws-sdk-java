@@ -43,50 +43,68 @@ public class HyperParameterTuningJobSummaryJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HyperParameterTuningJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSummary.setHyperParameterTuningJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSummary.setHyperParameterTuningJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSummary.setHyperParameterTuningJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Strategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSummary.setStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSummary.setHyperParameterTuningEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobStatusCounters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSummary.setTrainingJobStatusCounters(TrainingJobStatusCountersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ObjectiveStatusCounters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSummary.setObjectiveStatusCounters(ObjectiveStatusCountersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceLimits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSummary.setResourceLimits(ResourceLimitsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

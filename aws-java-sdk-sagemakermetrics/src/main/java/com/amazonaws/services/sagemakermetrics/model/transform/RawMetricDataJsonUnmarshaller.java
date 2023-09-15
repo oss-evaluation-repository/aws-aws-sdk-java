@@ -43,26 +43,38 @@ public class RawMetricDataJsonUnmarshaller implements Unmarshaller<RawMetricData
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rawMetricData.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rawMetricData.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Step", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rawMetricData.setStep(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rawMetricData.setValue(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

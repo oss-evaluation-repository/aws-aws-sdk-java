@@ -43,34 +43,48 @@ public class AccessPolicySummaryJsonUnmarshaller implements Unmarshaller<AccessP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPolicySummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPolicySummary.setIdentity(IdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPolicySummary.setResource(ResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("permission", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPolicySummary.setPermission(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPolicySummary.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPolicySummary.setLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

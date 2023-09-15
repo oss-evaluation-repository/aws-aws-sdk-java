@@ -43,54 +43,73 @@ public class WirelessDeviceImportTaskJsonUnmarshaller implements Unmarshaller<Wi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setDestinationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Sidewalk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setSidewalk(SidewalkGetStartImportInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitializedImportedDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setInitializedImportedDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("PendingImportedDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setPendingImportedDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("OnboardedImportedDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setOnboardedImportedDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedImportedDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessDeviceImportTask.setFailedImportedDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

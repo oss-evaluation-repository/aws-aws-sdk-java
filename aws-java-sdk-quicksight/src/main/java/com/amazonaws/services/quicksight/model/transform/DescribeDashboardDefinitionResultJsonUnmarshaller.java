@@ -45,44 +45,60 @@ public class DescribeDashboardDefinitionResultJsonUnmarshaller implements Unmars
             return describeDashboardDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DashboardId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardDefinitionResult.setDashboardId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardDefinitionResult.setErrors(new ListUnmarshaller<DashboardError>(DashboardErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardDefinitionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardDefinitionResult.setResourceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThemeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardDefinitionResult.setThemeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardDefinitionResult.setDefinition(DashboardVersionDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardDefinitionResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DashboardPublishOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardDefinitionResult.setDashboardPublishOptions(DashboardPublishOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

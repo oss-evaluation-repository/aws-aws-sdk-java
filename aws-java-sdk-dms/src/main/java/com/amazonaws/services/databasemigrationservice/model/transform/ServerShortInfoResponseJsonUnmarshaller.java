@@ -43,22 +43,33 @@ public class ServerShortInfoResponseJsonUnmarshaller implements Unmarshaller<Ser
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverShortInfoResponse.setServerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverShortInfoResponse.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverShortInfoResponse.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

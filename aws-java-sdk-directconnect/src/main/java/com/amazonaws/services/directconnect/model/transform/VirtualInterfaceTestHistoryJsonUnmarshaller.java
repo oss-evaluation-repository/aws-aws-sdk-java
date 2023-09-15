@@ -43,44 +43,60 @@ public class VirtualInterfaceTestHistoryJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("testId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualInterfaceTestHistory.setTestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualInterfaceTestHistory.setVirtualInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bgpPeers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualInterfaceTestHistory.setBgpPeers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualInterfaceTestHistory.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ownerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualInterfaceTestHistory.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testDurationInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualInterfaceTestHistory.setTestDurationInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualInterfaceTestHistory.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualInterfaceTestHistory.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

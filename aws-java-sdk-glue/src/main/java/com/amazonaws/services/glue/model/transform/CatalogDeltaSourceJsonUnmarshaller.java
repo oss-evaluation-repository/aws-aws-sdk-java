@@ -43,33 +43,46 @@ public class CatalogDeltaSourceJsonUnmarshaller implements Unmarshaller<CatalogD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogDeltaSource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Database", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogDeltaSource.setDatabase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Table", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogDeltaSource.setTable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalDeltaOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogDeltaSource.setAdditionalDeltaOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("OutputSchemas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogDeltaSource.setOutputSchemas(new ListUnmarshaller<GlueSchema>(GlueSchemaJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

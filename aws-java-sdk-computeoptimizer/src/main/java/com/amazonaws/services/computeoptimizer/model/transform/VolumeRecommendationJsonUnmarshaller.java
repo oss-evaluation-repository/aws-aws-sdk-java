@@ -43,38 +43,49 @@ public class VolumeRecommendationJsonUnmarshaller implements Unmarshaller<Volume
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("volumeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendation.setVolumeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendation.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("currentConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendation.setCurrentConfiguration(VolumeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("finding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendation.setFinding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("utilizationMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendation.setUtilizationMetrics(new ListUnmarshaller<EBSUtilizationMetric>(EBSUtilizationMetricJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lookBackPeriodInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendation.setLookBackPeriodInDays(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeRecommendationOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendation.setVolumeRecommendationOptions(new ListUnmarshaller<VolumeRecommendationOption>(
                             VolumeRecommendationOptionJsonUnmarshaller.getInstance())
@@ -82,18 +93,25 @@ public class VolumeRecommendationJsonUnmarshaller implements Unmarshaller<Volume
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastRefreshTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendation.setLastRefreshTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("currentPerformanceRisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendation.setCurrentPerformanceRisk(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendation.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

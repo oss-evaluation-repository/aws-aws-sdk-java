@@ -43,75 +43,97 @@ public class DecisionJsonUnmarshaller implements Unmarshaller<Decision, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("decisionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setDecisionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scheduleActivityTaskDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setScheduleActivityTaskDecisionAttributes(ScheduleActivityTaskDecisionAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("requestCancelActivityTaskDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setRequestCancelActivityTaskDecisionAttributes(RequestCancelActivityTaskDecisionAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("completeWorkflowExecutionDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setCompleteWorkflowExecutionDecisionAttributes(CompleteWorkflowExecutionDecisionAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("failWorkflowExecutionDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setFailWorkflowExecutionDecisionAttributes(FailWorkflowExecutionDecisionAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("cancelWorkflowExecutionDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setCancelWorkflowExecutionDecisionAttributes(CancelWorkflowExecutionDecisionAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("continueAsNewWorkflowExecutionDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setContinueAsNewWorkflowExecutionDecisionAttributes(ContinueAsNewWorkflowExecutionDecisionAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("recordMarkerDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setRecordMarkerDecisionAttributes(RecordMarkerDecisionAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startTimerDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setStartTimerDecisionAttributes(StartTimerDecisionAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cancelTimerDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setCancelTimerDecisionAttributes(CancelTimerDecisionAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("signalExternalWorkflowExecutionDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setSignalExternalWorkflowExecutionDecisionAttributes(SignalExternalWorkflowExecutionDecisionAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("requestCancelExternalWorkflowExecutionDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setRequestCancelExternalWorkflowExecutionDecisionAttributes(RequestCancelExternalWorkflowExecutionDecisionAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startChildWorkflowExecutionDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setStartChildWorkflowExecutionDecisionAttributes(StartChildWorkflowExecutionDecisionAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("scheduleLambdaFunctionDecisionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decision.setScheduleLambdaFunctionDecisionAttributes(ScheduleLambdaFunctionDecisionAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

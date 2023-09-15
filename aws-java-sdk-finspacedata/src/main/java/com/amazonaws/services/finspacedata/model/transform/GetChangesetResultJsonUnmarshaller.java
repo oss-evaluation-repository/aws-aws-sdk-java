@@ -43,64 +43,85 @@ public class GetChangesetResultJsonUnmarshaller implements Unmarshaller<GetChang
             return getChangesetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("changesetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setChangesetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("changesetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setChangesetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setDatasetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("changeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setChangeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setSourceParams(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("formatParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setFormatParams(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setCreateTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setErrorInfo(ChangesetErrorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activeUntilTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setActiveUntilTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("activeFromTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setActiveFromTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("updatesChangesetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setUpdatesChangesetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedByChangesetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getChangesetResult.setUpdatedByChangesetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

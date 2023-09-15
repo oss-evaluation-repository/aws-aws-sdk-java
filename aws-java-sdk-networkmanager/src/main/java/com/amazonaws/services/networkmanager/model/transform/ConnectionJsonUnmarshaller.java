@@ -43,56 +43,75 @@ public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setConnectionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlobalNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setGlobalNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectedDeviceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setConnectedDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LinkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setLinkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectedLinkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setConnectedLinkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

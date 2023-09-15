@@ -43,38 +43,53 @@ public class VideoMetadataJsonUnmarshaller implements Unmarshaller<VideoMetadata
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Codec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoMetadata.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DurationMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoMetadata.setDurationMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoMetadata.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoMetadata.setFrameRate(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameHeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoMetadata.setFrameHeight(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameWidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoMetadata.setFrameWidth(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ColorRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoMetadata.setColorRange(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

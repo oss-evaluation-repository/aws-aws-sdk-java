@@ -43,50 +43,68 @@ public class KinesisSettingsJsonUnmarshaller implements Unmarshaller<KinesisSett
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisSettings.setStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessageFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisSettings.setMessageFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisSettings.setServiceAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeTransactionDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisSettings.setIncludeTransactionDetails(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludePartitionValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisSettings.setIncludePartitionValue(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PartitionIncludeSchemaTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisSettings.setPartitionIncludeSchemaTable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeTableAlterOperations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisSettings.setIncludeTableAlterOperations(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeControlDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisSettings.setIncludeControlDetails(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeNullAndEmpty", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisSettings.setIncludeNullAndEmpty(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NoHexPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisSettings.setNoHexPrefix(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

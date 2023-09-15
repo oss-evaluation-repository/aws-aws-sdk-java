@@ -44,38 +44,53 @@ public class AwsElasticsearchDomainServiceSoftwareOptionsJsonUnmarshaller implem
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutomatedUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainServiceSoftwareOptions.setAutomatedUpdateDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Cancellable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainServiceSoftwareOptions.setCancellable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainServiceSoftwareOptions.setCurrentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainServiceSoftwareOptions.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NewVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainServiceSoftwareOptions.setNewVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateAvailable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainServiceSoftwareOptions.setUpdateAvailable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainServiceSoftwareOptions.setUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

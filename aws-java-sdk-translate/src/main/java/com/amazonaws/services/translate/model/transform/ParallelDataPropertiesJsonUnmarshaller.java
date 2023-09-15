@@ -43,80 +43,105 @@ public class ParallelDataPropertiesJsonUnmarshaller implements Unmarshaller<Para
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceLanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setSourceLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetLanguageCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setTargetLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ParallelDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setParallelDataConfig(ParallelDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImportedDataSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setImportedDataSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ImportedRecordCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setImportedRecordCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedRecordCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setFailedRecordCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SkippedRecordCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setSkippedRecordCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setEncryptionKey(EncryptionKeyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestUpdateAttemptStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setLatestUpdateAttemptStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestUpdateAttemptAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelDataProperties.setLatestUpdateAttemptAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

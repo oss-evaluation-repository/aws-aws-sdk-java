@@ -43,24 +43,35 @@ public class DescribeAccountAuditConfigurationResultJsonUnmarshaller implements 
             return describeAccountAuditConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountAuditConfigurationResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("auditNotificationTargetConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountAuditConfigurationResult.setAuditNotificationTargetConfigurations(new MapUnmarshaller<String, AuditNotificationTarget>(
                             context.getUnmarshaller(String.class), AuditNotificationTargetJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("auditCheckConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountAuditConfigurationResult.setAuditCheckConfigurations(new MapUnmarshaller<String, AuditCheckConfiguration>(context
                             .getUnmarshaller(String.class), AuditCheckConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

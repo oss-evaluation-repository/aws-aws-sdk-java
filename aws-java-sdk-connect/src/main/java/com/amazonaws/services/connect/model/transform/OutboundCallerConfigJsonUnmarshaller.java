@@ -43,22 +43,33 @@ public class OutboundCallerConfigJsonUnmarshaller implements Unmarshaller<Outbou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OutboundCallerIdName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundCallerConfig.setOutboundCallerIdName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutboundCallerIdNumberId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundCallerConfig.setOutboundCallerIdNumberId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutboundFlowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundCallerConfig.setOutboundFlowId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class RegisterClientResultJsonUnmarshaller implements Unmarshaller<Regist
             return registerClientResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     registerClientResult.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientSecret", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     registerClientResult.setClientSecret(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientIdIssuedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     registerClientResult.setClientIdIssuedAt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("clientSecretExpiresAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     registerClientResult.setClientSecretExpiresAt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizationEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     registerClientResult.setAuthorizationEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tokenEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     registerClientResult.setTokenEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

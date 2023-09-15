@@ -43,38 +43,53 @@ public class LogAnomalyClassJsonUnmarshaller implements Unmarshaller<LogAnomalyC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LogStreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logAnomalyClass.setLogStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogAnomalyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logAnomalyClass.setLogAnomalyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogAnomalyToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logAnomalyClass.setLogAnomalyToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logAnomalyClass.setLogEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Explanation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logAnomalyClass.setExplanation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfLogLinesOccurrences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logAnomalyClass.setNumberOfLogLinesOccurrences(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LogEventTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logAnomalyClass.setLogEventTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

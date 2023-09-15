@@ -43,22 +43,33 @@ public class ColumnSortJsonUnmarshaller implements Unmarshaller<ColumnSort, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SortBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnSort.setSortBy(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Direction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnSort.setDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AggregationFunction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnSort.setAggregationFunction(AggregationFunctionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

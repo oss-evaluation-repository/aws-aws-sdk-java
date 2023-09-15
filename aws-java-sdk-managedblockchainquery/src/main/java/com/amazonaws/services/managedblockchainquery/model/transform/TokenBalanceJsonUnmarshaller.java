@@ -43,30 +43,43 @@ public class TokenBalanceJsonUnmarshaller implements Unmarshaller<TokenBalance, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ownerIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenBalance.setOwnerIdentifier(OwnerIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tokenIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenBalance.setTokenIdentifier(TokenIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("balance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenBalance.setBalance(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("atBlockchainInstant", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenBalance.setAtBlockchainInstant(BlockchainInstantJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenBalance.setLastUpdatedTime(BlockchainInstantJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

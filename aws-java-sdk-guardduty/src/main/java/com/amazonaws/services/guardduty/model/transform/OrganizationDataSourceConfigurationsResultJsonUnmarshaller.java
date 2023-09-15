@@ -44,25 +44,36 @@ public class OrganizationDataSourceConfigurationsResultJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("s3Logs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationDataSourceConfigurationsResult.setS3Logs(OrganizationS3LogsConfigurationResultJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("kubernetes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationDataSourceConfigurationsResult.setKubernetes(OrganizationKubernetesConfigurationResultJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("malwareProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationDataSourceConfigurationsResult.setMalwareProtection(OrganizationMalwareProtectionConfigurationResultJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

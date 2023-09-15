@@ -43,24 +43,35 @@ public class ListResourcesResultJsonUnmarshaller implements Unmarshaller<ListRes
             return listResourcesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResourcesResult.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResourcesResult.setResourceDescriptions(new ListUnmarshaller<ResourceDescription>(ResourceDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResourcesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

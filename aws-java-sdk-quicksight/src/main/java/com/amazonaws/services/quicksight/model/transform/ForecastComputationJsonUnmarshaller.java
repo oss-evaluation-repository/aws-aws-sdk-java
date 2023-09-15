@@ -43,54 +43,73 @@ public class ForecastComputationJsonUnmarshaller implements Unmarshaller<Forecas
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComputationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setComputationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Time", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setTime(DimensionFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setValue(MeasureFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PeriodsForward", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setPeriodsForward(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PeriodsBackward", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setPeriodsBackward(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UpperBoundary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setUpperBoundary(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("LowerBoundary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setLowerBoundary(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictionInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setPredictionInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Seasonality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setSeasonality(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomSeasonalityValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastComputation.setCustomSeasonalityValue(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

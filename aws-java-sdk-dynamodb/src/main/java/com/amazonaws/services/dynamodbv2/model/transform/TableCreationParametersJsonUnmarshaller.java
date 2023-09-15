@@ -43,16 +43,22 @@ public class TableCreationParametersJsonUnmarshaller implements Unmarshaller<Tab
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCreationParameters.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCreationParameters
                             .setAttributeDefinitions(new ListUnmarshaller<AttributeDefinition>(AttributeDefinitionJsonUnmarshaller.getInstance())
@@ -60,29 +66,38 @@ public class TableCreationParametersJsonUnmarshaller implements Unmarshaller<Tab
                             .unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCreationParameters.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BillingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCreationParameters.setBillingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCreationParameters.setProvisionedThroughput(ProvisionedThroughputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SSESpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCreationParameters.setSSESpecification(SSESpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableCreationParameters.setGlobalSecondaryIndexes(new ListUnmarshaller<GlobalSecondaryIndex>(GlobalSecondaryIndexJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

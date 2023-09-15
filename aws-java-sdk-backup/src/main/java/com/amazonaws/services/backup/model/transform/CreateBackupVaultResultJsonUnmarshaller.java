@@ -43,22 +43,33 @@ public class CreateBackupVaultResultJsonUnmarshaller implements Unmarshaller<Cre
             return createBackupVaultResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupVaultName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackupVaultResult.setBackupVaultName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupVaultArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackupVaultResult.setBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackupVaultResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

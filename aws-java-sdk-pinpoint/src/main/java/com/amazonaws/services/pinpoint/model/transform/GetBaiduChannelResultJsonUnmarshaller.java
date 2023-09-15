@@ -43,9 +43,13 @@ public class GetBaiduChannelResultJsonUnmarshaller implements Unmarshaller<GetBa
             return getBaiduChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getBaiduChannelResult.setBaiduChannelResponse(BaiduChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

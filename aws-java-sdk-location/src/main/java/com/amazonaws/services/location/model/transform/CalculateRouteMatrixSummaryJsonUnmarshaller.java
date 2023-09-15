@@ -43,26 +43,38 @@ public class CalculateRouteMatrixSummaryJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculateRouteMatrixSummary.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DistanceUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculateRouteMatrixSummary.setDistanceUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculateRouteMatrixSummary.setErrorCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RouteCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculateRouteMatrixSummary.setRouteCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

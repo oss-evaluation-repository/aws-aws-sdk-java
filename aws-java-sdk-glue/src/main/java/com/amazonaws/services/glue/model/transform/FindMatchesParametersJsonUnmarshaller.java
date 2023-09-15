@@ -43,26 +43,38 @@ public class FindMatchesParametersJsonUnmarshaller implements Unmarshaller<FindM
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PrimaryKeyColumnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findMatchesParameters.setPrimaryKeyColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrecisionRecallTradeoff", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findMatchesParameters.setPrecisionRecallTradeoff(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("AccuracyCostTradeoff", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findMatchesParameters.setAccuracyCostTradeoff(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("EnforceProvidedLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findMatchesParameters.setEnforceProvidedLabels(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

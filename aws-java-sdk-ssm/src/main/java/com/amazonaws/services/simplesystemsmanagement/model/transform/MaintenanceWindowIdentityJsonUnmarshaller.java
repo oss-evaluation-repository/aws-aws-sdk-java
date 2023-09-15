@@ -43,58 +43,78 @@ public class MaintenanceWindowIdentityJsonUnmarshaller implements Unmarshaller<M
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WindowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setWindowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Cutoff", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setCutoff(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setSchedule(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleTimezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setScheduleTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setScheduleOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setEndDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setStartDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextExecutionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowIdentity.setNextExecutionTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

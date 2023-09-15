@@ -43,34 +43,48 @@ public class ChannelListConfigurationJsonUnmarshaller implements Unmarshaller<Ch
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelListConfiguration.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelListConfiguration.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelListConfiguration.setChannelGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelListConfiguration.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelListConfiguration.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channelListConfiguration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

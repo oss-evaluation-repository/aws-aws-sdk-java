@@ -43,94 +43,123 @@ public class GlacierJobDescriptionJsonUnmarshaller implements Unmarshaller<Glaci
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setJobDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ArchiveId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setArchiveId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VaultARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setVaultARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Completed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setCompleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ArchiveSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setArchiveSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("InventorySizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setInventorySizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SNSTopic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setSNSTopic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setCompletionDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SHA256TreeHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setSHA256TreeHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ArchiveSHA256TreeHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setArchiveSHA256TreeHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetrievalByteRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setRetrievalByteRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setTier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InventoryRetrievalParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setInventoryRetrievalParameters(InventoryRetrievalJobDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobOutputPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setJobOutputPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setSelectParameters(SelectParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OutputLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     glacierJobDescription.setOutputLocation(OutputLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

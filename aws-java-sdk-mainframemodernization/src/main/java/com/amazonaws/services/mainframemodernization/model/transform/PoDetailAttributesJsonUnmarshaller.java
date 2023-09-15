@@ -43,18 +43,28 @@ public class PoDetailAttributesJsonUnmarshaller implements Unmarshaller<PoDetail
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("encoding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     poDetailAttributes.setEncoding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     poDetailAttributes.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

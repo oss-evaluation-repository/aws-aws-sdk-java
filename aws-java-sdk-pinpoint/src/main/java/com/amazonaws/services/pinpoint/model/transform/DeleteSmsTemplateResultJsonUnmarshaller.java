@@ -43,9 +43,13 @@ public class DeleteSmsTemplateResultJsonUnmarshaller implements Unmarshaller<Del
             return deleteSmsTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteSmsTemplateResult.setMessageBody(MessageBodyJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -43,66 +43,88 @@ public class Av1SettingsJsonUnmarshaller implements Unmarshaller<Av1Settings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bitDepth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setBitDepth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filmGrainSynthesis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setFilmGrainSynthesis(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setFramerateControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateConversionAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setFramerateConversionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setFramerateDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setFramerateNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setGopSize(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("maxBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setMaxBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberBFramesBetweenReferenceFrames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setNumberBFramesBetweenReferenceFrames(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("qvbrSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setQvbrSettings(Av1QvbrSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rateControlMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setRateControlMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setSlices(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("spatialAdaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     av1Settings.setSpatialAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

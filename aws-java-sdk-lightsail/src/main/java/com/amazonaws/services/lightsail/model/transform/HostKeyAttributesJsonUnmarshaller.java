@@ -43,38 +43,53 @@ public class HostKeyAttributesJsonUnmarshaller implements Unmarshaller<HostKeyAt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("algorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hostKeyAttributes.setAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("publicKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hostKeyAttributes.setPublicKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("witnessedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hostKeyAttributes.setWitnessedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("fingerprintSHA1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hostKeyAttributes.setFingerprintSHA1(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fingerprintSHA256", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hostKeyAttributes.setFingerprintSHA256(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("notValidBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hostKeyAttributes.setNotValidBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("notValidAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hostKeyAttributes.setNotValidAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

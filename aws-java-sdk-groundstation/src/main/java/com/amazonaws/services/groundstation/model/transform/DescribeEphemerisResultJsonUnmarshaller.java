@@ -43,51 +43,69 @@ public class DescribeEphemerisResultJsonUnmarshaller implements Unmarshaller<Des
             return describeEphemerisResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEphemerisResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEphemerisResult.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ephemerisId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEphemerisResult.setEphemerisId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("invalidReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEphemerisResult.setInvalidReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEphemerisResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEphemerisResult.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("satelliteId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEphemerisResult.setSatelliteId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEphemerisResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suppliedData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEphemerisResult.setSuppliedData(EphemerisTypeDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEphemerisResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class GetConnectionResultJsonUnmarshaller implements Unmarshaller<GetConn
             return getConnectionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConnectionResult.setConnectedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("identity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConnectionResult.setIdentity(IdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastActiveAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConnectionResult.setLastActiveAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

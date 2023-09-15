@@ -43,64 +43,85 @@ public class PipelineJsonUnmarshaller implements Unmarshaller<Pipeline, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PipelineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setPipelineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setPipelineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setPipelineDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setPipelineDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setPipelineStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastRunTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setLastRunTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setCreatedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setLastModifiedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ParallelismConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setParallelismConfiguration(ParallelismConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

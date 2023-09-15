@@ -43,30 +43,43 @@ public class ConnectionConfigurationJsonUnmarshaller implements Unmarshaller<Con
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatabaseHost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionConfiguration.setDatabaseHost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabasePort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionConfiguration.setDatabasePort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionConfiguration.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionConfiguration.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionConfiguration.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

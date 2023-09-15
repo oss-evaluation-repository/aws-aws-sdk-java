@@ -43,34 +43,43 @@ public class RecurrenceSettingsJsonUnmarshaller implements Unmarshaller<Recurren
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonthlySettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recurrenceSettings.setMonthlySettings(new ListUnmarshaller<MonthlySetting>(MonthlySettingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("WeeklySettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recurrenceSettings.setWeeklySettings(new ListUnmarshaller<WeeklySetting>(WeeklySettingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DailySettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recurrenceSettings.setDailySettings(new ListUnmarshaller<HandOffTime>(HandOffTimeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NumberOfOnCalls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recurrenceSettings.setNumberOfOnCalls(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ShiftCoverages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recurrenceSettings.setShiftCoverages(new MapUnmarshaller<String, java.util.List<CoverageTime>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<CoverageTime>(CoverageTimeJsonUnmarshaller.getInstance())
@@ -78,8 +87,13 @@ public class RecurrenceSettingsJsonUnmarshaller implements Unmarshaller<Recurren
                     ).unmarshall(context));
                 }
                 if (context.testExpression("RecurrenceMultiplier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recurrenceSettings.setRecurrenceMultiplier(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

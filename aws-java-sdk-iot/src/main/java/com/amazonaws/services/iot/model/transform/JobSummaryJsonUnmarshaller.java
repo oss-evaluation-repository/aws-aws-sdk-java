@@ -43,46 +43,63 @@ public class JobSummaryJsonUnmarshaller implements Unmarshaller<JobSummary, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setThingGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setTargetSelection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("isConcurrent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setIsConcurrent(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>
+ * An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ResolutionTechniques"
@@ -30,7 +30,7 @@ public class ResolutionTechniques implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>
+     * The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.
      * </p>
      */
     private String resolutionType;
@@ -44,11 +44,12 @@ public class ResolutionTechniques implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>
+     * The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.
      * </p>
      * 
      * @param resolutionType
-     *        There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>
+     *        The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and
+     *        <code>ML_MATCHING</code>.
      * @see ResolutionType
      */
 
@@ -58,10 +59,11 @@ public class ResolutionTechniques implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>
+     * The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.
      * </p>
      * 
-     * @return There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>
+     * @return The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and
+     *         <code>ML_MATCHING</code>.
      * @see ResolutionType
      */
 
@@ -71,11 +73,12 @@ public class ResolutionTechniques implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>
+     * The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.
      * </p>
      * 
      * @param resolutionType
-     *        There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>
+     *        The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and
+     *        <code>ML_MATCHING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolutionType
      */
@@ -87,11 +90,12 @@ public class ResolutionTechniques implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>
+     * The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.
      * </p>
      * 
      * @param resolutionType
-     *        There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>
+     *        The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and
+     *        <code>ML_MATCHING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolutionType
      */

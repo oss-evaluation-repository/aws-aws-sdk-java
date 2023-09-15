@@ -43,25 +43,36 @@ public class GetImpersonationRoleEffectResultJsonUnmarshaller implements Unmarsh
             return getImpersonationRoleEffectResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImpersonationRoleEffectResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Effect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImpersonationRoleEffectResult.setEffect(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchedRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImpersonationRoleEffectResult.setMatchedRules(new ListUnmarshaller<ImpersonationMatchedRule>(ImpersonationMatchedRuleJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

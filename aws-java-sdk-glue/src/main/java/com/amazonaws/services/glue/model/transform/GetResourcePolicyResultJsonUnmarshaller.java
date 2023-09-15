@@ -43,26 +43,38 @@ public class GetResourcePolicyResultJsonUnmarshaller implements Unmarshaller<Get
             return getResourcePolicyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PolicyInJson", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourcePolicyResult.setPolicyInJson(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourcePolicyResult.setPolicyHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourcePolicyResult.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourcePolicyResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

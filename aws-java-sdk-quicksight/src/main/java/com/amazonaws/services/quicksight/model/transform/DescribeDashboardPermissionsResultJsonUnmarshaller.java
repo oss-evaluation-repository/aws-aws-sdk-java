@@ -45,20 +45,27 @@ public class DescribeDashboardPermissionsResultJsonUnmarshaller implements Unmar
             return describeDashboardPermissionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DashboardId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardPermissionsResult.setDashboardId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DashboardArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardPermissionsResult.setDashboardArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Permissions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardPermissionsResult
                             .setPermissions(new ListUnmarshaller<ResourcePermission>(ResourcePermissionJsonUnmarshaller.getInstance())
@@ -66,12 +73,18 @@ public class DescribeDashboardPermissionsResultJsonUnmarshaller implements Unmar
                             .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardPermissionsResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LinkSharingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardPermissionsResult.setLinkSharingConfiguration(LinkSharingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

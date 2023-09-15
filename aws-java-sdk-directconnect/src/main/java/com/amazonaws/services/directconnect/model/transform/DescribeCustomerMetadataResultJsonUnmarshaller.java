@@ -43,20 +43,30 @@ public class DescribeCustomerMetadataResultJsonUnmarshaller implements Unmarshal
             return describeCustomerMetadataResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agreements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCustomerMetadataResult.setAgreements(new ListUnmarshaller<CustomerAgreement>(CustomerAgreementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nniPartnerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCustomerMetadataResult.setNniPartnerType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

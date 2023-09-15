@@ -43,34 +43,46 @@ public class InclusionProtectionGroupFiltersJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProtectionGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inclusionProtectionGroupFilters.setProtectionGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Patterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inclusionProtectionGroupFilters.setPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inclusionProtectionGroupFilters.setResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Aggregations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inclusionProtectionGroupFilters.setAggregations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

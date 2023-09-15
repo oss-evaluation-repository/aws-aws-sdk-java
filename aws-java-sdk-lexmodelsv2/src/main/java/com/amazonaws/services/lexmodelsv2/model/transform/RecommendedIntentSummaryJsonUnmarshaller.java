@@ -43,22 +43,33 @@ public class RecommendedIntentSummaryJsonUnmarshaller implements Unmarshaller<Re
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("intentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendedIntentSummary.setIntentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("intentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendedIntentSummary.setIntentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleUtterancesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendedIntentSummary.setSampleUtterancesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

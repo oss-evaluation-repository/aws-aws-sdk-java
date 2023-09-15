@@ -43,12 +43,17 @@ public class ControlPlaneTagFilterJsonUnmarshaller implements Unmarshaller<Contr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OrConditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlPlaneTagFilter.setOrConditions(new ListUnmarshaller<java.util.List<TagCondition>>(new ListUnmarshaller<TagCondition>(
                             TagConditionJsonUnmarshaller.getInstance())
@@ -58,14 +63,20 @@ public class ControlPlaneTagFilterJsonUnmarshaller implements Unmarshaller<Contr
                     .unmarshall(context));
                 }
                 if (context.testExpression("AndConditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlPlaneTagFilter.setAndConditions(new ListUnmarshaller<TagCondition>(TagConditionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TagCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlPlaneTagFilter.setTagCondition(TagConditionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

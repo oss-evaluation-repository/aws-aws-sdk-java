@@ -43,60 +43,80 @@ public class NetAppONTAPClusterJsonUnmarshaller implements Unmarshaller<NetAppON
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CifsShareCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setCifsShareCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NfsExportedVolumes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setNfsExportedVolumes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxP95Performance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setMaxP95Performance(MaxP95PerformanceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ClusterBlockStorageSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setClusterBlockStorageSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterBlockStorageUsed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setClusterBlockStorageUsed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterBlockStorageLogicalUsed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setClusterBlockStorageLogicalUsed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Recommendations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setRecommendations(new ListUnmarshaller<Recommendation>(RecommendationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RecommendationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setRecommendationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LunCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setLunCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterCloudStorageUsed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPCluster.setClusterCloudStorageUsed(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

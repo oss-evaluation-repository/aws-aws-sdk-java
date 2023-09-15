@@ -43,34 +43,48 @@ public class RouteDataJsonUnmarshaller implements Unmarshaller<RouteData, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("meshName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeData.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeData.setMetadata(ResourceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("routeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeData.setRouteName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("spec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeData.setSpec(RouteSpecJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeData.setStatus(RouteStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("virtualRouterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeData.setVirtualRouterName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

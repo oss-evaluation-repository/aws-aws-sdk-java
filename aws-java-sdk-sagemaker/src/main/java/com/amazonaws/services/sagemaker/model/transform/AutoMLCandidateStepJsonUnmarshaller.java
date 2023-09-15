@@ -43,22 +43,33 @@ public class AutoMLCandidateStepJsonUnmarshaller implements Unmarshaller<AutoMLC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CandidateStepType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidateStep.setCandidateStepType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CandidateStepArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidateStep.setCandidateStepArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CandidateStepName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidateStep.setCandidateStepName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

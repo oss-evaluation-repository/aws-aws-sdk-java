@@ -43,38 +43,53 @@ public class ModelMetadataJsonUnmarshaller implements Unmarshaller<ModelMetadata
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetadata.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetadata.setModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetadata.setModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetadata.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetadata.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Performance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetadata.setPerformance(ModelPerformanceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class ListAnomalyDetectorsResultJsonUnmarshaller implements Unmarshaller<
             return listAnomalyDetectorsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AnomalyDetectorSummaryList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAnomalyDetectorsResult.setAnomalyDetectorSummaryList(new ListUnmarshaller<AnomalyDetectorSummary>(
                             AnomalyDetectorSummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListAnomalyDetectorsResultJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAnomalyDetectorsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

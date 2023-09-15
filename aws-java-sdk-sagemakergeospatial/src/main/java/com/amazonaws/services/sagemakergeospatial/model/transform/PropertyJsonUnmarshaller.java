@@ -43,34 +43,48 @@ public class PropertyJsonUnmarshaller implements Unmarshaller<Property, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EoCloudCover", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setEoCloudCover(EoCloudCoverInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LandsatCloudCoverLand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setLandsatCloudCoverLand(LandsatCloudCoverLandInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setPlatform(PlatformInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ViewOffNadir", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setViewOffNadir(ViewOffNadirInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ViewSunAzimuth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setViewSunAzimuth(ViewSunAzimuthInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ViewSunElevation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setViewSunElevation(ViewSunElevationInputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

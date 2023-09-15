@@ -43,9 +43,13 @@ public class CreateJourneyResultJsonUnmarshaller implements Unmarshaller<CreateJ
             return createJourneyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             createJourneyResult.setJourneyResponse(JourneyResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

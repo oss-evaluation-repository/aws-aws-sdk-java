@@ -44,22 +44,33 @@ public class DescribeWebsiteCertificateAuthorityResultJsonUnmarshaller implement
             return describeWebsiteCertificateAuthorityResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Certificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWebsiteCertificateAuthorityResult.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWebsiteCertificateAuthorityResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWebsiteCertificateAuthorityResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

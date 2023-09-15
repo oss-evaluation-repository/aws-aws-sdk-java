@@ -43,12 +43,17 @@ public class CreateWorkspacesResultJsonUnmarshaller implements Unmarshaller<Crea
             return createWorkspacesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FailedRequests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createWorkspacesResult.setFailedRequests(new ListUnmarshaller<FailedCreateWorkspaceRequest>(FailedCreateWorkspaceRequestJsonUnmarshaller
                             .getInstance())
@@ -56,10 +61,15 @@ public class CreateWorkspacesResultJsonUnmarshaller implements Unmarshaller<Crea
                     .unmarshall(context));
                 }
                 if (context.testExpression("PendingRequests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createWorkspacesResult.setPendingRequests(new ListUnmarshaller<Workspace>(WorkspaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

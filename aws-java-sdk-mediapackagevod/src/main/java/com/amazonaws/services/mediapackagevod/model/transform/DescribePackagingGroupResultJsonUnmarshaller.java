@@ -43,43 +43,59 @@ public class DescribePackagingGroupResultJsonUnmarshaller implements Unmarshalle
             return describePackagingGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("approximateAssetCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePackagingGroupResult.setApproximateAssetCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePackagingGroupResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePackagingGroupResult.setAuthorization(AuthorizationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePackagingGroupResult.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePackagingGroupResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("egressAccessLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePackagingGroupResult.setEgressAccessLogs(EgressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePackagingGroupResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePackagingGroupResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

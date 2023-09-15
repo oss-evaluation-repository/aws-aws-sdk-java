@@ -43,26 +43,38 @@ public class SidewalkDeviceMetadataJsonUnmarshaller implements Unmarshaller<Side
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Rssi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDeviceMetadata.setRssi(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BatteryLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDeviceMetadata.setBatteryLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Event", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDeviceMetadata.setEvent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDeviceMetadata.setDeviceState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

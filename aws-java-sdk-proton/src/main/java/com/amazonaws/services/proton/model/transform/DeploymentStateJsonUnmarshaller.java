@@ -43,26 +43,38 @@ public class DeploymentStateJsonUnmarshaller implements Unmarshaller<DeploymentS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("component", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentState.setComponent(ComponentStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentState.setEnvironment(EnvironmentStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serviceInstance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentState.setServiceInstance(ServiceInstanceStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("servicePipeline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentState.setServicePipeline(ServicePipelineStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class ObdSignalJsonUnmarshaller implements Unmarshaller<ObdSignal, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pidResponseLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     obdSignal.setPidResponseLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     obdSignal.setServiceMode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     obdSignal.setPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("scaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     obdSignal.setScaling(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("offset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     obdSignal.setOffset(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("startByte", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     obdSignal.setStartByte(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("byteLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     obdSignal.setByteLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("bitRightShift", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     obdSignal.setBitRightShift(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("bitMaskLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     obdSignal.setBitMaskLength(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

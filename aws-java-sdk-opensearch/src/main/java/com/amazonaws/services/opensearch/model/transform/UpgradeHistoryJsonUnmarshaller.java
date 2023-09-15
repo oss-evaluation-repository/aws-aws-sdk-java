@@ -43,28 +43,40 @@ public class UpgradeHistoryJsonUnmarshaller implements Unmarshaller<UpgradeHisto
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UpgradeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upgradeHistory.setUpgradeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upgradeHistory.setStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpgradeStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upgradeHistory.setUpgradeStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StepsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upgradeHistory.setStepsList(new ListUnmarshaller<UpgradeStepItem>(UpgradeStepItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

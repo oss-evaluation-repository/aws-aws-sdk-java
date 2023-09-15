@@ -43,34 +43,48 @@ public class ParameterJsonUnmarshaller implements Unmarshaller<Parameter, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setAllowedValues(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumEngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setMinimumEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

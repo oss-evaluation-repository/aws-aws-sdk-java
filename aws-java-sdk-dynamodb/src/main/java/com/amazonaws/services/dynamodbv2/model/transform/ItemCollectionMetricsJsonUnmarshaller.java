@@ -43,21 +43,31 @@ public class ItemCollectionMetricsJsonUnmarshaller implements Unmarshaller<ItemC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ItemCollectionKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     itemCollectionMetrics.setItemCollectionKey(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class),
                             AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("SizeEstimateRangeGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     itemCollectionMetrics.setSizeEstimateRangeGB(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

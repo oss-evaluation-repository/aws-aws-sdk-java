@@ -43,54 +43,73 @@ public class SubStatementDataJsonUnmarshaller implements Unmarshaller<SubStateme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setDuration(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HasResultSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setHasResultSet(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RedshiftQueryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setRedshiftQueryId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultRows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setResultRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setResultSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subStatementData.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,44 @@ public class TimestreamConfigurationJsonUnmarshaller implements Unmarshaller<Tim
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamConfiguration.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamConfiguration.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamConfiguration.setTimeColumn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DimensionMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamConfiguration.setDimensionMappings(new ListUnmarshaller<DimensionMapping>(DimensionMappingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MultiMeasureMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamConfiguration.setMultiMeasureMappings(MultiMeasureMappingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MixedMeasureMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamConfiguration
                             .setMixedMeasureMappings(new ListUnmarshaller<MixedMeasureMapping>(MixedMeasureMappingJsonUnmarshaller.getInstance())
@@ -78,8 +88,13 @@ public class TimestreamConfigurationJsonUnmarshaller implements Unmarshaller<Tim
                             .unmarshall(context));
                 }
                 if (context.testExpression("MeasureNameColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamConfiguration.setMeasureNameColumn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

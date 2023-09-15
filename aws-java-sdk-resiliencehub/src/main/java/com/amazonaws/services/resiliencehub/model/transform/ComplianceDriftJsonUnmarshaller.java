@@ -43,52 +43,70 @@ public class ComplianceDriftJsonUnmarshaller implements Unmarshaller<ComplianceD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actualReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     complianceDrift.setActualReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actualValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     complianceDrift.setActualValue(new MapUnmarshaller<String, DisruptionCompliance>(context.getUnmarshaller(String.class),
                             DisruptionComplianceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("appId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     complianceDrift.setAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     complianceDrift.setAppVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("diffType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     complianceDrift.setDiffType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("driftType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     complianceDrift.setDriftType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     complianceDrift.setEntityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entityType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     complianceDrift.setEntityType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expectedReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     complianceDrift.setExpectedReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expectedValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     complianceDrift.setExpectedValue(new MapUnmarshaller<String, DisruptionCompliance>(context.getUnmarshaller(String.class),
                             DisruptionComplianceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

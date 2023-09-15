@@ -43,39 +43,54 @@ public class AnomalyDetectorSummaryJsonUnmarshaller implements Unmarshaller<Anom
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AnomalyDetectorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyDetectorSummary.setAnomalyDetectorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnomalyDetectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyDetectorSummary.setAnomalyDetectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnomalyDetectorDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyDetectorSummary.setAnomalyDetectorDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyDetectorSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyDetectorSummary.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyDetectorSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyDetectorSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

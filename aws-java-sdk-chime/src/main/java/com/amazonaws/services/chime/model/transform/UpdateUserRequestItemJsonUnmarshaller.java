@@ -43,26 +43,38 @@ public class UpdateUserRequestItemJsonUnmarshaller implements Unmarshaller<Updat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateUserRequestItem.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateUserRequestItem.setLicenseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateUserRequestItem.setUserType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlexaForBusinessMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateUserRequestItem.setAlexaForBusinessMetadata(AlexaForBusinessMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

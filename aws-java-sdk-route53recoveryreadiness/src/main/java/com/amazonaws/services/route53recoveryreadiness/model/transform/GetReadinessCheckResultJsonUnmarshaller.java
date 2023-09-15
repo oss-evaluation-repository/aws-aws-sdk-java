@@ -43,27 +43,39 @@ public class GetReadinessCheckResultJsonUnmarshaller implements Unmarshaller<Get
             return getReadinessCheckResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("readinessCheckArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadinessCheckResult.setReadinessCheckArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("readinessCheckName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadinessCheckResult.setReadinessCheckName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadinessCheckResult.setResourceSet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadinessCheckResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

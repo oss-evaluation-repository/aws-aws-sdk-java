@@ -43,50 +43,68 @@ public class MediaCapturePipelineJsonUnmarshaller implements Unmarshaller<MediaC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MediaPipelineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaCapturePipeline.setMediaPipelineId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaPipelineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaCapturePipeline.setMediaPipelineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaCapturePipeline.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaCapturePipeline.setSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaCapturePipeline.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SinkType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaCapturePipeline.setSinkType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SinkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaCapturePipeline.setSinkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaCapturePipeline.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaCapturePipeline.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ChimeSdkMeetingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaCapturePipeline.setChimeSdkMeetingConfiguration(ChimeSdkMeetingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

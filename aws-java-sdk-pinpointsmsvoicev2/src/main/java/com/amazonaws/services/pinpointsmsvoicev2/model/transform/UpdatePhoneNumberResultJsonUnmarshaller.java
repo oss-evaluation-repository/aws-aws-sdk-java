@@ -43,72 +43,95 @@ public class UpdatePhoneNumberResultJsonUnmarshaller implements Unmarshaller<Upd
             return updatePhoneNumberResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PhoneNumberArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setPhoneNumberArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumberId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setPhoneNumberId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsoCountryCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setIsoCountryCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setMessageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberCapabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setNumberCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NumberType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setNumberType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonthlyLeasingPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setMonthlyLeasingPrice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TwoWayEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setTwoWayEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TwoWayChannelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setTwoWayChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelfManagedOptOutsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setSelfManagedOptOutsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OptOutListName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setOptOutListName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeletionProtectionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setDeletionProtectionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePhoneNumberResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

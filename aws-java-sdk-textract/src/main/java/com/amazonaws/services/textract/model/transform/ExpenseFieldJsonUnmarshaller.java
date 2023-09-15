@@ -43,36 +43,50 @@ public class ExpenseFieldJsonUnmarshaller implements Unmarshaller<ExpenseField, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expenseField.setType(ExpenseTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LabelDetection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expenseField.setLabelDetection(ExpenseDetectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ValueDetection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expenseField.setValueDetection(ExpenseDetectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PageNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expenseField.setPageNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Currency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expenseField.setCurrency(ExpenseCurrencyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GroupProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expenseField.setGroupProperties(new ListUnmarshaller<ExpenseGroupProperty>(ExpenseGroupPropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

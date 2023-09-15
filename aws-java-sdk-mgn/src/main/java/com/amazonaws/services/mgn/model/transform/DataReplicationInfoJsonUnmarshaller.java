@@ -43,41 +43,56 @@ public class DataReplicationInfoJsonUnmarshaller implements Unmarshaller<DataRep
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataReplicationError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfo.setDataReplicationError(DataReplicationErrorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dataReplicationInitiation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfo.setDataReplicationInitiation(DataReplicationInitiationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dataReplicationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfo.setDataReplicationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("etaDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfo.setEtaDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lagDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfo.setLagDuration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastSnapshotDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfo.setLastSnapshotDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicatedDisks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfo.setReplicatedDisks(new ListUnmarshaller<DataReplicationInfoReplicatedDisk>(
                             DataReplicationInfoReplicatedDiskJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

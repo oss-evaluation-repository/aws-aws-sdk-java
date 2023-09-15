@@ -43,50 +43,68 @@ public class ColorCorrectorJsonUnmarshaller implements Unmarshaller<ColorCorrect
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("brightness", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     colorCorrector.setBrightness(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("clipLimits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     colorCorrector.setClipLimits(ClipLimitsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("colorSpaceConversion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     colorCorrector.setColorSpaceConversion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contrast", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     colorCorrector.setContrast(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hdr10Metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     colorCorrector.setHdr10Metadata(Hdr10MetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hdrToSdrToneMapper", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     colorCorrector.setHdrToSdrToneMapper(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     colorCorrector.setHue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleRangeConversion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     colorCorrector.setSampleRangeConversion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("saturation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     colorCorrector.setSaturation(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("sdrReferenceWhiteLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     colorCorrector.setSdrReferenceWhiteLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

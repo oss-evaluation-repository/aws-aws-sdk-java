@@ -43,76 +43,100 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setDetectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setDetectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setDetectorTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("generatorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setGeneratorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remediation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setRemediation(RemediationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setResource(ResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ruleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("vulnerability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     finding.setVulnerability(VulnerabilityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

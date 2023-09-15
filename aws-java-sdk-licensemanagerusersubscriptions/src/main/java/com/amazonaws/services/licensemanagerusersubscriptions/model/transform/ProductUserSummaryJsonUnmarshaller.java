@@ -43,42 +43,58 @@ public class ProductUserSummaryJsonUnmarshaller implements Unmarshaller<ProductU
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productUserSummary.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productUserSummary.setIdentityProvider(IdentityProviderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Product", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productUserSummary.setProduct(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productUserSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productUserSummary.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionEndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productUserSummary.setSubscriptionEndDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionStartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productUserSummary.setSubscriptionStartDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productUserSummary.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class DQResultsPublishingOptionsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EvaluationContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dQResultsPublishingOptions.setEvaluationContext(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultsS3Prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dQResultsPublishingOptions.setResultsS3Prefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchMetricsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dQResultsPublishingOptions.setCloudWatchMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultsPublishingEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dQResultsPublishingOptions.setResultsPublishingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

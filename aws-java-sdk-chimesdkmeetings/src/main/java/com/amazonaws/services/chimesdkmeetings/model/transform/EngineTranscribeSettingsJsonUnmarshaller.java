@@ -43,74 +43,98 @@ public class EngineTranscribeSettingsJsonUnmarshaller implements Unmarshaller<En
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyFilterMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setVocabularyFilterMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyFilterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setVocabularyFilterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setVocabularyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnablePartialResultsStabilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setEnablePartialResultsStabilization(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PartialResultsStability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setPartialResultsStability(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentIdentificationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setContentIdentificationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentRedactionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setContentRedactionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PiiEntityTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setPiiEntityTypes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setLanguageModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentifyLanguage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setIdentifyLanguage(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setLanguageOptions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreferredLanguage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setPreferredLanguage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setVocabularyNames(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyFilterNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineTranscribeSettings.setVocabularyFilterNames(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

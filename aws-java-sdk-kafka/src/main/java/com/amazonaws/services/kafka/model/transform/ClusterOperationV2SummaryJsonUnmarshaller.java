@@ -43,38 +43,53 @@ public class ClusterOperationV2SummaryJsonUnmarshaller implements Unmarshaller<C
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2Summary.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2Summary.setClusterType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2Summary.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2Summary.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("operationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2Summary.setOperationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2Summary.setOperationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2Summary.setOperationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

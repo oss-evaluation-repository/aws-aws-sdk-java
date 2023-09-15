@@ -43,34 +43,44 @@ public class DescribeAssetModelResultJsonUnmarshaller implements Unmarshaller<De
             return describeAssetModelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assetModelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetModelResult.setAssetModelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetModelResult.setAssetModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetModelResult.setAssetModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetModelDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetModelResult.setAssetModelDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetModelProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetModelResult.setAssetModelProperties(new ListUnmarshaller<AssetModelProperty>(AssetModelPropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("assetModelHierarchies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetModelResult.setAssetModelHierarchies(new ListUnmarshaller<AssetModelHierarchy>(AssetModelHierarchyJsonUnmarshaller
                             .getInstance())
@@ -78,6 +88,7 @@ public class DescribeAssetModelResultJsonUnmarshaller implements Unmarshaller<De
                     .unmarshall(context));
                 }
                 if (context.testExpression("assetModelCompositeModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetModelResult.setAssetModelCompositeModels(new ListUnmarshaller<AssetModelCompositeModel>(
                             AssetModelCompositeModelJsonUnmarshaller.getInstance())
@@ -85,16 +96,23 @@ public class DescribeAssetModelResultJsonUnmarshaller implements Unmarshaller<De
                     .unmarshall(context));
                 }
                 if (context.testExpression("assetModelCreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetModelResult.setAssetModelCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("assetModelLastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetModelResult.setAssetModelLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("assetModelStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetModelResult.setAssetModelStatus(AssetModelStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,55 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CompressionFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setCompressionFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartitionColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setPartitionColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setLocation(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Overwrite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setOverwrite(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("FormatOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setFormatOptions(OutputFormatOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaxOutputFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setMaxOutputFiles(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

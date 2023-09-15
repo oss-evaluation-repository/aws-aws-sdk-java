@@ -43,57 +43,76 @@ public class CreateSimulationApplicationResultJsonUnmarshaller implements Unmars
             return createSimulationApplicationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("simulationSoftwareSuite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setSimulationSoftwareSuite(SimulationSoftwareSuiteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("robotSoftwareSuite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setRobotSoftwareSuite(RobotSoftwareSuiteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("renderingEngine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setRenderingEngine(RenderingEngineJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("revisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSimulationApplicationResult.setEnvironment(EnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

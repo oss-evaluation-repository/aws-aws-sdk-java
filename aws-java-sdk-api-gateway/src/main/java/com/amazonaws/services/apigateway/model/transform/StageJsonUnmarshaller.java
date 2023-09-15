@@ -43,81 +43,106 @@ public class StageJsonUnmarshaller implements Unmarshaller<Stage, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientCertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setClientCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setStageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setCacheClusterEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setCacheClusterSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setCacheClusterStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("methodSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setMethodSettings(new MapUnmarshaller<String, MethodSetting>(context.getUnmarshaller(String.class), MethodSettingJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("variables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("documentationVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setDocumentationVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessLogSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setAccessLogSettings(AccessLogSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("canarySettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setCanarySettings(CanarySettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tracingEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setTracingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("webAclArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setWebAclArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

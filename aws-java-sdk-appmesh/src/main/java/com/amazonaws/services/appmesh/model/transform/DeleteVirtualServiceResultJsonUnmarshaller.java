@@ -43,9 +43,13 @@ public class DeleteVirtualServiceResultJsonUnmarshaller implements Unmarshaller<
             return deleteVirtualServiceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteVirtualServiceResult.setVirtualService(VirtualServiceDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

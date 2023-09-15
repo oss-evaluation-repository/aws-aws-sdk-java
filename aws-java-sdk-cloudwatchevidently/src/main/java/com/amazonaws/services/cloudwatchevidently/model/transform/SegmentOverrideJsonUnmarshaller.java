@@ -43,23 +43,34 @@ public class SegmentOverrideJsonUnmarshaller implements Unmarshaller<SegmentOver
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("evaluationOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentOverride.setEvaluationOrder(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("segment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentOverride.setSegment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("weights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentOverride.setWeights(new MapUnmarshaller<String, Long>(context.getUnmarshaller(String.class), context.getUnmarshaller(Long.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

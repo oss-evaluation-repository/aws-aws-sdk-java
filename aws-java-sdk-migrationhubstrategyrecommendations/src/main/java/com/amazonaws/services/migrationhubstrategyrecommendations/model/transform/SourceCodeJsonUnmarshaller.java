@@ -43,26 +43,38 @@ public class SourceCodeJsonUnmarshaller implements Unmarshaller<SourceCode, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceCode.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("projectName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceCode.setProjectName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceCode.setSourceVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceCode.setVersionControl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class ParameterDropDownControlJsonUnmarshaller implements Unmarshaller<Pa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ParameterControlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDropDownControl.setParameterControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDropDownControl.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDropDownControl.setSourceParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDropDownControl.setDisplayOptions(DropDownControlDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDropDownControl.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectableValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDropDownControl.setSelectableValues(ParameterSelectableValuesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CascadingControlConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterDropDownControl.setCascadingControlConfiguration(CascadingControlConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

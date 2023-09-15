@@ -43,33 +43,46 @@ public class ResourceDataContainerJsonUnmarshaller implements Unmarshaller<Resou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocalDeviceResourceData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataContainer.setLocalDeviceResourceData(LocalDeviceResourceDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LocalVolumeResourceData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataContainer.setLocalVolumeResourceData(LocalVolumeResourceDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3MachineLearningModelResourceData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataContainer.setS3MachineLearningModelResourceData(S3MachineLearningModelResourceDataJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("SageMakerMachineLearningModelResourceData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataContainer.setSageMakerMachineLearningModelResourceData(SageMakerMachineLearningModelResourceDataJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerSecretResourceData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataContainer.setSecretsManagerSecretResourceData(SecretsManagerSecretResourceDataJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class AudioParametersJsonUnmarshaller implements Unmarshaller<AudioParame
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Codec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioParameters.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SampleRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioParameters.setSampleRate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BitRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioParameters.setBitRate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Channels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioParameters.setChannels(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AudioPackingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioParameters.setAudioPackingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodecOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioParameters.setCodecOptions(AudioCodecOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

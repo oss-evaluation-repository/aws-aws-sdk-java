@@ -43,32 +43,42 @@ public class ReplicationInstanceJsonUnmarshaller implements Unmarshaller<Replica
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplicationInstanceIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setReplicationInstanceIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setReplicationInstanceClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setReplicationInstanceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllocatedStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setAllocatedStorage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setInstanceCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("VpcSecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setVpcSecurityGroups(new ListUnmarshaller<VpcSecurityGroupMembership>(VpcSecurityGroupMembershipJsonUnmarshaller
                             .getInstance())
@@ -76,86 +86,109 @@ public class ReplicationInstanceJsonUnmarshaller implements Unmarshaller<Replica
                     .unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationSubnetGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setReplicationSubnetGroup(ReplicationSubnetGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PreferredMaintenanceWindow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setPreferredMaintenanceWindow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PendingModifiedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setPendingModifiedValues(ReplicationPendingModifiedValuesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MultiAZ", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setMultiAZ(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMinorVersionUpgrade", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setAutoMinorVersionUpgrade(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setReplicationInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstancePublicIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setReplicationInstancePublicIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstancePrivateIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setReplicationInstancePrivateIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstancePublicIpAddresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setReplicationInstancePublicIpAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstancePrivateIpAddresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setReplicationInstancePrivateIpAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceIpv6Addresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setReplicationInstanceIpv6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PubliclyAccessible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setPubliclyAccessible(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SecondaryAvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setSecondaryAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FreeUntil", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setFreeUntil(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DnsNameServers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setDnsNameServers(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstance.setNetworkType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

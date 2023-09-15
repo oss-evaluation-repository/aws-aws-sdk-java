@@ -43,50 +43,68 @@ public class DescribeTrialResultJsonUnmarshaller implements Unmarshaller<Describ
             return describeTrialResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrialName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialResult.setTrialName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrialArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialResult.setTrialArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExperimentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialResult.setExperimentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialResult.setSource(TrialSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialResult.setCreatedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialResult.setLastModifiedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MetadataProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialResult.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

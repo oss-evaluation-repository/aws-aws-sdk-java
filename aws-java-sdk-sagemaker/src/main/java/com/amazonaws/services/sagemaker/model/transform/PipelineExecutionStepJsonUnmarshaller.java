@@ -43,54 +43,73 @@ public class PipelineExecutionStepJsonUnmarshaller implements Unmarshaller<Pipel
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StepName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setStepName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StepDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setStepDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StepDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setStepDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StepStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setStepStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheHitResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setCacheHitResult(CacheHitResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AttemptCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setAttemptCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setMetadata(PipelineExecutionStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SelectiveExecutionResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStep.setSelectiveExecutionResult(SelectiveExecutionResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

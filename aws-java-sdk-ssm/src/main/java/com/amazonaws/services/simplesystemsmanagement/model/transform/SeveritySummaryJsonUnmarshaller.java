@@ -43,34 +43,48 @@ public class SeveritySummaryJsonUnmarshaller implements Unmarshaller<SeveritySum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CriticalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severitySummary.setCriticalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("HighCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severitySummary.setHighCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MediumCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severitySummary.setMediumCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LowCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severitySummary.setLowCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InformationalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severitySummary.setInformationalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UnspecifiedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severitySummary.setUnspecifiedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

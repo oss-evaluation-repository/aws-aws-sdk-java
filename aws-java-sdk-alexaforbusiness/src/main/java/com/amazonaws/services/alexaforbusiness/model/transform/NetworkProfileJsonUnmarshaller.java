@@ -43,52 +43,70 @@ public class NetworkProfileJsonUnmarshaller implements Unmarshaller<NetworkProfi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NetworkProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setNetworkProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setNetworkProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ssid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setSsid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setSecurityType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EapMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setEapMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setCurrentPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setNextPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateAuthorityArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setCertificateAuthorityArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustAnchors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkProfile.setTrustAnchors(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

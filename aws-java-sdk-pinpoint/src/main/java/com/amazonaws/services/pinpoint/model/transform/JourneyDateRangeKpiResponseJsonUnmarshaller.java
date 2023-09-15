@@ -43,38 +43,53 @@ public class JourneyDateRangeKpiResponseJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyDateRangeKpiResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyDateRangeKpiResponse.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("JourneyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyDateRangeKpiResponse.setJourneyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KpiName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyDateRangeKpiResponse.setKpiName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KpiResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyDateRangeKpiResponse.setKpiResult(BaseKpiResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyDateRangeKpiResponse.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyDateRangeKpiResponse.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

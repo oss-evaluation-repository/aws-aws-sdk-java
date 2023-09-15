@@ -43,18 +43,28 @@ public class ValidationConfigurationJsonUnmarshaller implements Unmarshaller<Val
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RulesetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validationConfiguration.setRulesetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidationMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validationConfiguration.setValidationMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

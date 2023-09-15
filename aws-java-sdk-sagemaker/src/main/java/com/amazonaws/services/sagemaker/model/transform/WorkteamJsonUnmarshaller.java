@@ -43,54 +43,72 @@ public class WorkteamJsonUnmarshaller implements Unmarshaller<Workteam, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkteamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workteam.setWorkteamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MemberDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workteam.setMemberDefinitions(new ListUnmarshaller<MemberDefinition>(MemberDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("WorkteamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workteam.setWorkteamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkforceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workteam.setWorkforceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductListingIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workteam.setProductListingIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workteam.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workteam.setSubDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workteam.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workteam.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotificationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workteam.setNotificationConfiguration(NotificationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

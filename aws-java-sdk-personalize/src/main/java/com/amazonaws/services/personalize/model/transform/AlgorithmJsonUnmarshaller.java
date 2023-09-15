@@ -43,52 +43,70 @@ public class AlgorithmJsonUnmarshaller implements Unmarshaller<Algorithm, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithm.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("algorithmArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithm.setAlgorithmArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("algorithmImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithm.setAlgorithmImage(AlgorithmImageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("defaultHyperParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithm.setDefaultHyperParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("defaultHyperParameterRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithm.setDefaultHyperParameterRanges(DefaultHyperParameterRangesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("defaultResourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithm.setDefaultResourceConfig(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("trainingInputMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithm.setTrainingInputMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithm.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithm.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithm.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class KeyModesOfUseJsonUnmarshaller implements Unmarshaller<KeyModesOfUse
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Decrypt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyModesOfUse.setDecrypt(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DeriveKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyModesOfUse.setDeriveKey(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Encrypt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyModesOfUse.setEncrypt(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Generate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyModesOfUse.setGenerate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NoRestrictions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyModesOfUse.setNoRestrictions(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Sign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyModesOfUse.setSign(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Unwrap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyModesOfUse.setUnwrap(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Verify", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyModesOfUse.setVerify(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Wrap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyModesOfUse.setWrap(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

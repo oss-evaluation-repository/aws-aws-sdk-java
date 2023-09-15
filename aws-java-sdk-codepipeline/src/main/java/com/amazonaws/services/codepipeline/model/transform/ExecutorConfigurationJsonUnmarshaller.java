@@ -43,18 +43,28 @@ public class ExecutorConfigurationJsonUnmarshaller implements Unmarshaller<Execu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lambdaExecutorConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executorConfiguration.setLambdaExecutorConfiguration(LambdaExecutorConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobWorkerExecutorConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executorConfiguration.setJobWorkerExecutorConfiguration(JobWorkerExecutorConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

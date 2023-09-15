@@ -43,34 +43,48 @@ public class EdgeModelStatJsonUnmarshaller implements Unmarshaller<EdgeModelStat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeModelStat.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeModelStat.setModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OfflineDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeModelStat.setOfflineDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectedDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeModelStat.setConnectedDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ActiveDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeModelStat.setActiveDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SamplingDeviceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeModelStat.setSamplingDeviceCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,116 +43,150 @@ public class BucketMetadataJsonUnmarshaller implements Unmarshaller<BucketMetada
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("allowsUnencryptedObjectUploads", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setAllowsUnencryptedObjectUploads(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setBucketArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketCreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setBucketCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("bucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("classifiableObjectCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setClassifiableObjectCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("classifiableSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setClassifiableSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("errorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setJobDetails(JobDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastAutomatedDiscoveryTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setLastAutomatedDiscoveryTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("objectCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setObjectCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("objectCountByEncryptionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setObjectCountByEncryptionType(ObjectCountByEncryptionTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("publicAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setPublicAccess(BucketPublicAccessJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicationDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setReplicationDetails(ReplicationDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sensitivityScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setSensitivityScore(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("serverSideEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setServerSideEncryption(BucketServerSideEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sharedAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setSharedAccess(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("sizeInBytesCompressed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setSizeInBytesCompressed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setTags(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("unclassifiableObjectCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setUnclassifiableObjectCount(ObjectLevelStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("unclassifiableObjectSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setUnclassifiableObjectSizeInBytes(ObjectLevelStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("versioning", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bucketMetadata.setVersioning(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

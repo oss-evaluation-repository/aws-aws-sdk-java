@@ -43,38 +43,53 @@ public class JobErrorJsonUnmarshaller implements Unmarshaller<JobError, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Code", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobError.setCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Details", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobError.setDetails(DetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LimitName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobError.setLimitName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LimitValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobError.setLimitValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobError.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobError.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobError.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

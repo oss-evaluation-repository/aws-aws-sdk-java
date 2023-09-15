@@ -43,48 +43,65 @@ public class JobSummaryJsonUnmarshaller implements Unmarshaller<JobSummary, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bucketCriteria", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setBucketCriteria(S3BucketCriteriaForJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("bucketDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setBucketDefinitions(new ListUnmarshaller<S3BucketDefinitionForJob>(S3BucketDefinitionForJobJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastRunErrorStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setLastRunErrorStatus(LastRunErrorStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userPausedDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSummary.setUserPausedDetails(UserPausedDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

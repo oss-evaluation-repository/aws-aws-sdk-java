@@ -43,74 +43,98 @@ public class DescribeImageVersionResultJsonUnmarshaller implements Unmarshaller<
             return describeImageVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BaseImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setBaseImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContainerImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setContainerImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setImageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setImageVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageVersionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setImageVersionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VendorGuidance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setVendorGuidance(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MLFramework", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setMLFramework(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProgrammingLang", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setProgrammingLang(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Processor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setProcessor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Horovod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setHorovod(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ReleaseNotes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageVersionResult.setReleaseNotes(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

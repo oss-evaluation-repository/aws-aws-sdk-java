@@ -43,22 +43,33 @@ public class TargetAddressJsonUnmarshaller implements Unmarshaller<TargetAddress
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ip", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetAddress.setIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetAddress.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Ipv6", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetAddress.setIpv6(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

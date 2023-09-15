@@ -44,34 +44,44 @@ public class RDFGraphSummaryJsonUnmarshaller implements Unmarshaller<RDFGraphSum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("numDistinctSubjects", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDFGraphSummary.setNumDistinctSubjects(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("numDistinctPredicates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDFGraphSummary.setNumDistinctPredicates(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("numQuads", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDFGraphSummary.setNumQuads(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("numClasses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDFGraphSummary.setNumClasses(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("classes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDFGraphSummary.setClasses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("predicates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDFGraphSummary.setPredicates(new ListUnmarshaller<java.util.Map<String, Long>>(new MapUnmarshaller<String, Long>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(Long.class)))
@@ -79,10 +89,15 @@ public class RDFGraphSummaryJsonUnmarshaller implements Unmarshaller<RDFGraphSum
                     .unmarshall(context));
                 }
                 if (context.testExpression("subjectStructures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDFGraphSummary.setSubjectStructures(new ListUnmarshaller<SubjectStructure>(SubjectStructureJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

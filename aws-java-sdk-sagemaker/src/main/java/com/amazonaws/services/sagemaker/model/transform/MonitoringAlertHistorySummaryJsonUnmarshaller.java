@@ -43,26 +43,38 @@ public class MonitoringAlertHistorySummaryJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitoringScheduleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertHistorySummary.setMonitoringScheduleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringAlertName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertHistorySummary.setMonitoringAlertName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertHistorySummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AlertStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertHistorySummary.setAlertStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

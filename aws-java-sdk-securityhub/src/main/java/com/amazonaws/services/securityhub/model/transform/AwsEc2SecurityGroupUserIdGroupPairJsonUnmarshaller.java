@@ -43,34 +43,48 @@ public class AwsEc2SecurityGroupUserIdGroupPairJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupUserIdGroupPair.setGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupUserIdGroupPair.setGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PeeringStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupUserIdGroupPair.setPeeringStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupUserIdGroupPair.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupUserIdGroupPair.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcPeeringConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupUserIdGroupPair.setVpcPeeringConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

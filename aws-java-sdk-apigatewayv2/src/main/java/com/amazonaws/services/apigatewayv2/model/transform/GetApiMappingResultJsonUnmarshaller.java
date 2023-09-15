@@ -43,26 +43,38 @@ public class GetApiMappingResultJsonUnmarshaller implements Unmarshaller<GetApiM
             return getApiMappingResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("apiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiMappingResult.setApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiMappingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiMappingResult.setApiMappingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiMappingKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiMappingResult.setApiMappingKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiMappingResult.setStage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

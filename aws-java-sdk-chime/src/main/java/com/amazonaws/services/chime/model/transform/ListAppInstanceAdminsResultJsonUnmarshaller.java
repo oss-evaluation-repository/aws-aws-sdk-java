@@ -43,16 +43,22 @@ public class ListAppInstanceAdminsResultJsonUnmarshaller implements Unmarshaller
             return listAppInstanceAdminsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppInstanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAppInstanceAdminsResult.setAppInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppInstanceAdmins", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAppInstanceAdminsResult.setAppInstanceAdmins(new ListUnmarshaller<AppInstanceAdminSummary>(AppInstanceAdminSummaryJsonUnmarshaller
                             .getInstance())
@@ -60,8 +66,13 @@ public class ListAppInstanceAdminsResultJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAppInstanceAdminsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

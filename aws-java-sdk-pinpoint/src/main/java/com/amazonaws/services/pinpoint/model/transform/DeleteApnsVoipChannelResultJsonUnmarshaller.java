@@ -43,9 +43,13 @@ public class DeleteApnsVoipChannelResultJsonUnmarshaller implements Unmarshaller
             return deleteApnsVoipChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteApnsVoipChannelResult.setAPNSVoipChannelResponse(APNSVoipChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -43,30 +43,43 @@ public class StopBotRecommendationResultJsonUnmarshaller implements Unmarshaller
             return stopBotRecommendationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stopBotRecommendationResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stopBotRecommendationResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stopBotRecommendationResult.setLocaleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botRecommendationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stopBotRecommendationResult.setBotRecommendationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botRecommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stopBotRecommendationResult.setBotRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

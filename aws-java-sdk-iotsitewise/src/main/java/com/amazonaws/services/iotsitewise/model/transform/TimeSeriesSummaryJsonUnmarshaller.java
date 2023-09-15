@@ -43,46 +43,63 @@ public class TimeSeriesSummaryJsonUnmarshaller implements Unmarshaller<TimeSerie
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesSummary.setAssetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("propertyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesSummary.setPropertyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesSummary.setAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeSeriesId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesSummary.setTimeSeriesId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesSummary.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataTypeSpec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesSummary.setDataTypeSpec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeSeriesCreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesSummary.setTimeSeriesCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("timeSeriesLastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesSummary.setTimeSeriesLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("timeSeriesArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesSummary.setTimeSeriesArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

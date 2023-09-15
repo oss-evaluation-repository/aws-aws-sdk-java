@@ -43,26 +43,38 @@ public class FileSystemSizeJsonUnmarshaller implements Unmarshaller<FileSystemSi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemSize.setValue(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemSize.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ValueInIA", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemSize.setValueInIA(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ValueInStandard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemSize.setValueInStandard(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

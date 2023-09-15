@@ -43,38 +43,53 @@ public class ValidationOutputJsonUnmarshaller implements Unmarshaller<Validation
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("validationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validationOutput.setValidationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validationOutput.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validationOutput.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validationOutput.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latestValidationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validationOutput.setLatestValidationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("appValidationOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validationOutput.setAppValidationOutput(AppValidationOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serverValidationOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validationOutput.setServerValidationOutput(ServerValidationOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

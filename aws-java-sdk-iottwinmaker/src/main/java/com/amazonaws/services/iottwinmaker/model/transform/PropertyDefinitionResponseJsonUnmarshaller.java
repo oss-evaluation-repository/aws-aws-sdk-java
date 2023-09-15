@@ -43,55 +43,74 @@ public class PropertyDefinitionResponseJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setDataType(DataTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("isTimeSeries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setIsTimeSeries(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isRequiredInEntity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setIsRequiredInEntity(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isExternalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setIsExternalId(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isStoredExternally", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setIsStoredExternally(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isImported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setIsImported(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isFinal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setIsFinal(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isInherited", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setIsInherited(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setDefaultValue(DataValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setConfiguration(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("displayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionResponse.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

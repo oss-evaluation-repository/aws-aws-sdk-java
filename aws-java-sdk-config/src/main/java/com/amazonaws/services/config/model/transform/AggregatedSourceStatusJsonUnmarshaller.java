@@ -43,38 +43,53 @@ public class AggregatedSourceStatusJsonUnmarshaller implements Unmarshaller<Aggr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregatedSourceStatus.setSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregatedSourceStatus.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AwsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregatedSourceStatus.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregatedSourceStatus.setLastUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregatedSourceStatus.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregatedSourceStatus.setLastErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregatedSourceStatus.setLastErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

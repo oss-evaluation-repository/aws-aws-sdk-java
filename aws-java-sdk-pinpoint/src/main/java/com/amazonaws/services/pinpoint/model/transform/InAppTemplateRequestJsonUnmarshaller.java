@@ -43,34 +43,47 @@ public class InAppTemplateRequestJsonUnmarshaller implements Unmarshaller<InAppT
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppTemplateRequest.setContent(new ListUnmarshaller<InAppMessageContent>(InAppMessageContentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CustomConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppTemplateRequest.setCustomConfig(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Layout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppTemplateRequest.setLayout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppTemplateRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TemplateDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppTemplateRequest.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

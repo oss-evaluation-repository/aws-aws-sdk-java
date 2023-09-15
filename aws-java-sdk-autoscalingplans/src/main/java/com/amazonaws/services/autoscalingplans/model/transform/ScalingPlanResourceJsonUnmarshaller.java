@@ -43,44 +43,60 @@ public class ScalingPlanResourceJsonUnmarshaller implements Unmarshaller<Scaling
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ScalingPlanName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlanResource.setScalingPlanName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalingPlanVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlanResource.setScalingPlanVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlanResource.setServiceNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlanResource.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalableDimension", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlanResource.setScalableDimension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalingPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlanResource.setScalingPolicies(new ListUnmarshaller<ScalingPolicy>(ScalingPolicyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ScalingStatusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlanResource.setScalingStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalingStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlanResource.setScalingStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

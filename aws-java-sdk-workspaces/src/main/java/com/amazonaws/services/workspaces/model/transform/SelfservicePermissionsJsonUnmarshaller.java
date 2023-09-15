@@ -43,30 +43,43 @@ public class SelfservicePermissionsJsonUnmarshaller implements Unmarshaller<Self
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RestartWorkspace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfservicePermissions.setRestartWorkspace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IncreaseVolumeSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfservicePermissions.setIncreaseVolumeSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChangeComputeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfservicePermissions.setChangeComputeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SwitchRunningMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfservicePermissions.setSwitchRunningMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RebuildWorkspace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfservicePermissions.setRebuildWorkspace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

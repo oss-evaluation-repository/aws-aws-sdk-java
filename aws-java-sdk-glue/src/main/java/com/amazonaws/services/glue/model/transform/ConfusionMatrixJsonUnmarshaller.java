@@ -43,26 +43,38 @@ public class ConfusionMatrixJsonUnmarshaller implements Unmarshaller<ConfusionMa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NumTruePositives", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     confusionMatrix.setNumTruePositives(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumFalsePositives", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     confusionMatrix.setNumFalsePositives(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumTrueNegatives", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     confusionMatrix.setNumTrueNegatives(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumFalseNegatives", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     confusionMatrix.setNumFalseNegatives(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

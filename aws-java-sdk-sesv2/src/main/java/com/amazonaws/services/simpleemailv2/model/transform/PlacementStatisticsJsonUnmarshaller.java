@@ -43,30 +43,43 @@ public class PlacementStatisticsJsonUnmarshaller implements Unmarshaller<Placeme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InboxPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     placementStatistics.setInboxPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("SpamPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     placementStatistics.setSpamPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MissingPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     placementStatistics.setMissingPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("SpfPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     placementStatistics.setSpfPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("DkimPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     placementStatistics.setDkimPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

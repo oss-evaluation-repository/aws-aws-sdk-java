@@ -43,22 +43,33 @@ public class SSESpecificationJsonUnmarshaller implements Unmarshaller<SSESpecifi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sSESpecification.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SSEType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sSESpecification.setSSEType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KMSMasterKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sSESpecification.setKMSMasterKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

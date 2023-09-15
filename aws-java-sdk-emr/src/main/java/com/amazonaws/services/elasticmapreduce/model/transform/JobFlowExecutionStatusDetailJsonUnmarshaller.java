@@ -43,34 +43,48 @@ public class JobFlowExecutionStatusDetailJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowExecutionStatusDetail.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowExecutionStatusDetail.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowExecutionStatusDetail.setStartDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReadyDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowExecutionStatusDetail.setReadyDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowExecutionStatusDetail.setEndDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastStateChangeReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowExecutionStatusDetail.setLastStateChangeReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

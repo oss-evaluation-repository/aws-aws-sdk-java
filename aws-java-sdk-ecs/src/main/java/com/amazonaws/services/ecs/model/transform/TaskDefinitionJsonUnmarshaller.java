@@ -43,58 +43,73 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setTaskDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setContainerDefinitions(new ListUnmarshaller<ContainerDefinition>(ContainerDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("family", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setTaskRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setNetworkMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setRevision(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("volumes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requiresAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setRequiresAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("placementConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setPlacementConstraints(new ListUnmarshaller<TaskDefinitionPlacementConstraint>(
                             TaskDefinitionPlacementConstraintJsonUnmarshaller.getInstance())
@@ -102,62 +117,79 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                     .unmarshall(context));
                 }
                 if (context.testExpression("compatibilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("runtimePlatform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setRuntimePlatform(RuntimePlatformJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("requiresCompatibilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setRequiresCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inferenceAccelerators", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setInferenceAccelerators(new ListUnmarshaller<InferenceAccelerator>(InferenceAcceleratorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("pidMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setPidMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipcMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setIpcMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("proxyConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setProxyConfiguration(ProxyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("registeredAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setRegisteredAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deregisteredAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setDeregisteredAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("registeredBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setRegisteredBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ephemeralStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskDefinition.setEphemeralStorage(EphemeralStorageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

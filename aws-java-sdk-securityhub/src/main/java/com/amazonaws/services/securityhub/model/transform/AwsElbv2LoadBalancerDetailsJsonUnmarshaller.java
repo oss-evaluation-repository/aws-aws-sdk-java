@@ -43,61 +43,80 @@ public class AwsElbv2LoadBalancerDetailsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setAvailabilityZones(new ListUnmarshaller<AvailabilityZone>(AvailabilityZoneJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CanonicalHostedZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setCanonicalHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DNSName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setDNSName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddressType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Scheme", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setScheme(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setState(LoadBalancerStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoadBalancerAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setLoadBalancerAttributes(new ListUnmarshaller<AwsElbv2LoadBalancerAttribute>(
                             AwsElbv2LoadBalancerAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,50 @@ public class GetSimilarProfilesResultJsonUnmarshaller implements Unmarshaller<Ge
             return getSimilarProfilesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProfileIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSimilarProfilesResult.setProfileIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MatchId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSimilarProfilesResult.setMatchId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSimilarProfilesResult.setMatchType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSimilarProfilesResult.setRuleLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfidenceScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSimilarProfilesResult.setConfidenceScore(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSimilarProfilesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

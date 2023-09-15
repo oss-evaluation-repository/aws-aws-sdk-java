@@ -43,38 +43,52 @@ public class ComboChartVisualJsonUnmarshaller implements Unmarshaller<ComboChart
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VisualId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comboChartVisual.setVisualId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comboChartVisual.setTitle(VisualTitleLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Subtitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comboChartVisual.setSubtitle(VisualSubtitleLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChartConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comboChartVisual.setChartConfiguration(ComboChartConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comboChartVisual.setActions(new ListUnmarshaller<VisualCustomAction>(VisualCustomActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ColumnHierarchies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comboChartVisual.setColumnHierarchies(new ListUnmarshaller<ColumnHierarchy>(ColumnHierarchyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

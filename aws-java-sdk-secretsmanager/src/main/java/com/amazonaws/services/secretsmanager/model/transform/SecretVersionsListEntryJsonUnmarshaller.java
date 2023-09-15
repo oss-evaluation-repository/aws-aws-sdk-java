@@ -43,34 +43,47 @@ public class SecretVersionsListEntryJsonUnmarshaller implements Unmarshaller<Sec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretVersionsListEntry.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionStages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretVersionsListEntry.setVersionStages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastAccessedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretVersionsListEntry.setLastAccessedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretVersionsListEntry.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretVersionsListEntry.setKmsKeyIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

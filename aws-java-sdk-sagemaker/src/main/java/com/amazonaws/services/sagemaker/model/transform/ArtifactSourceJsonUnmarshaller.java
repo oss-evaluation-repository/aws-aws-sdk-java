@@ -43,20 +43,30 @@ public class ArtifactSourceJsonUnmarshaller implements Unmarshaller<ArtifactSour
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactSource.setSourceUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactSource.setSourceTypes(new ListUnmarshaller<ArtifactSourceType>(ArtifactSourceTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

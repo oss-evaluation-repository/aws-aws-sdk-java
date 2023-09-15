@@ -43,40 +43,52 @@ public class JobQueueDetailJsonUnmarshaller implements Unmarshaller<JobQueueDeta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobQueueName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobQueueDetail.setJobQueueName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobQueueArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobQueueDetail.setJobQueueArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobQueueDetail.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("schedulingPolicyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobQueueDetail.setSchedulingPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobQueueDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobQueueDetail.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobQueueDetail.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("computeEnvironmentOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobQueueDetail.setComputeEnvironmentOrder(new ListUnmarshaller<ComputeEnvironmentOrder>(ComputeEnvironmentOrderJsonUnmarshaller
                             .getInstance())
@@ -84,9 +96,14 @@ public class JobQueueDetailJsonUnmarshaller implements Unmarshaller<JobQueueDeta
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobQueueDetail.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

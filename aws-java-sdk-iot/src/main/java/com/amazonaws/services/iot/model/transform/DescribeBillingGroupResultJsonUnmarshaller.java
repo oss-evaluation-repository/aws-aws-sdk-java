@@ -43,34 +43,48 @@ public class DescribeBillingGroupResultJsonUnmarshaller implements Unmarshaller<
             return describeBillingGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("billingGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBillingGroupResult.setBillingGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("billingGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBillingGroupResult.setBillingGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("billingGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBillingGroupResult.setBillingGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBillingGroupResult.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("billingGroupProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBillingGroupResult.setBillingGroupProperties(BillingGroupPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("billingGroupMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBillingGroupResult.setBillingGroupMetadata(BillingGroupMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

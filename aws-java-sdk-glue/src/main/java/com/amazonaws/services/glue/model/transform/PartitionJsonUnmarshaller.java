@@ -43,49 +43,66 @@ public class PartitionJsonUnmarshaller implements Unmarshaller<Partition, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Values", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     partition.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     partition.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     partition.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     partition.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastAccessTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     partition.setLastAccessTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StorageDescriptor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     partition.setStorageDescriptor(StorageDescriptorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     partition.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("LastAnalyzedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     partition.setLastAnalyzedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CatalogId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     partition.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

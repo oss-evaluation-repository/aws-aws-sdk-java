@@ -43,42 +43,57 @@ public class GetLendingAnalysisResultJsonUnmarshaller implements Unmarshaller<Ge
             return getLendingAnalysisResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLendingAnalysisResult.setDocumentMetadata(DocumentMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLendingAnalysisResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLendingAnalysisResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Results", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLendingAnalysisResult.setResults(new ListUnmarshaller<LendingResult>(LendingResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Warnings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLendingAnalysisResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLendingAnalysisResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnalyzeLendingModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLendingAnalysisResult.setAnalyzeLendingModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

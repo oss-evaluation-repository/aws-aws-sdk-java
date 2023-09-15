@@ -43,34 +43,48 @@ public class ReactStartCodegenJobDataJsonUnmarshaller implements Unmarshaller<Re
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("module", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactStartCodegenJobData.setModule(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactStartCodegenJobData.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("script", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactStartCodegenJobData.setScript(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("renderTypeDeclarations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactStartCodegenJobData.setRenderTypeDeclarations(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("inlineSourceMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactStartCodegenJobData.setInlineSourceMap(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("apiConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactStartCodegenJobData.setApiConfiguration(ApiConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

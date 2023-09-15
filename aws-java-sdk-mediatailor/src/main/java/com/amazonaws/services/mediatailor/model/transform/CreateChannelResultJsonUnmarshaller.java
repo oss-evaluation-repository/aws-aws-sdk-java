@@ -43,53 +43,71 @@ public class CreateChannelResultJsonUnmarshaller implements Unmarshaller<CreateC
             return createChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createChannelResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createChannelResult.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createChannelResult.setChannelState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createChannelResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FillerSlate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createChannelResult.setFillerSlate(SlateSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createChannelResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Outputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createChannelResult.setOutputs(new ListUnmarshaller<ResponseOutputItem>(ResponseOutputItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PlaybackMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createChannelResult.setPlaybackMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createChannelResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Tier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createChannelResult.setTier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

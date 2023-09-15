@@ -43,55 +43,74 @@ public class LaunchActionJsonUnmarshaller implements Unmarshaller<LaunchAction, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setActionCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setActionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setActionVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("active", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("optional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setOptional(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("order", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setOrder(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setParameters(new MapUnmarshaller<String, LaunchActionParameter>(context.getUnmarshaller(String.class),
                             LaunchActionParameterJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchAction.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

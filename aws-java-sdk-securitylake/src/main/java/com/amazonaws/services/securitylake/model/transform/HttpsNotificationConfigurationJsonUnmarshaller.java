@@ -43,30 +43,43 @@ public class HttpsNotificationConfigurationJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authorizationApiKeyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpsNotificationConfiguration.setAuthorizationApiKeyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizationApiKeyValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpsNotificationConfiguration.setAuthorizationApiKeyValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpsNotificationConfiguration.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("httpMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpsNotificationConfiguration.setHttpMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpsNotificationConfiguration.setTargetRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

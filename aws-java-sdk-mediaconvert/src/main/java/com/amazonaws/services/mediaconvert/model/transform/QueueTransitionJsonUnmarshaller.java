@@ -43,22 +43,33 @@ public class QueueTransitionJsonUnmarshaller implements Unmarshaller<QueueTransi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("destinationQueue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queueTransition.setDestinationQueue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceQueue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queueTransition.setSourceQueue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queueTransition.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,25 +43,36 @@ public class InputSessionStateSpecificationJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sessionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSessionStateSpecification.setSessionAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("activeContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSessionStateSpecification.setActiveContexts(new ListUnmarshaller<ActiveContext>(ActiveContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("runtimeHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSessionStateSpecification.setRuntimeHints(RuntimeHintsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

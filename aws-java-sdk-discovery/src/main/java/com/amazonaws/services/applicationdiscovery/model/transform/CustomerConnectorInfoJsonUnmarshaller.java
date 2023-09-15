@@ -43,38 +43,53 @@ public class CustomerConnectorInfoJsonUnmarshaller implements Unmarshaller<Custo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeConnectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerConnectorInfo.setActiveConnectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("healthyConnectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerConnectorInfo.setHealthyConnectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("blackListedConnectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerConnectorInfo.setBlackListedConnectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shutdownConnectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerConnectorInfo.setShutdownConnectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("unhealthyConnectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerConnectorInfo.setUnhealthyConnectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalConnectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerConnectorInfo.setTotalConnectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("unknownConnectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerConnectorInfo.setUnknownConnectors(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

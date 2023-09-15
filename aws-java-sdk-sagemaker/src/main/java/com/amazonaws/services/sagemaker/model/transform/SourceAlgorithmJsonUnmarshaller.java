@@ -43,18 +43,28 @@ public class SourceAlgorithmJsonUnmarshaller implements Unmarshaller<SourceAlgor
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelDataUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceAlgorithm.setModelDataUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlgorithmName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceAlgorithm.setAlgorithmName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

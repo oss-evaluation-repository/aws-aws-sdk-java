@@ -43,67 +43,89 @@ public class DescribeDataIngestionJobResultJsonUnmarshaller implements Unmarshal
             return describeDataIngestionJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IngestionInputConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult
                             .setIngestionInputConfiguration(IngestionInputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setFailedReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataQualitySummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setDataQualitySummary(DataQualitySummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IngestedFilesSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setIngestedFilesSummary(IngestedFilesSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StatusDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setStatusDetail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IngestedDataSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setIngestedDataSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DataStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setDataStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setDataEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SourceDatasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataIngestionJobResult.setSourceDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

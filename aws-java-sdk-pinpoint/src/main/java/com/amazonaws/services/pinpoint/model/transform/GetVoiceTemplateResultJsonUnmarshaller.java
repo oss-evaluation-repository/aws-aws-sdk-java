@@ -43,9 +43,13 @@ public class GetVoiceTemplateResultJsonUnmarshaller implements Unmarshaller<GetV
             return getVoiceTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getVoiceTemplateResult.setVoiceTemplateResponse(VoiceTemplateResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

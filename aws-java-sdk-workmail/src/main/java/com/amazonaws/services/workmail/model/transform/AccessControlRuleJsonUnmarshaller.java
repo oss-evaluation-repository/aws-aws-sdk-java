@@ -43,78 +43,99 @@ public class AccessControlRuleJsonUnmarshaller implements Unmarshaller<AccessCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Effect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setEffect(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setIpRanges(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotIpRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setNotIpRanges(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setNotActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setUserIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotUserIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setNotUserIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setDateCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DateModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setDateModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ImpersonationRoleIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setImpersonationRoleIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotImpersonationRoleIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlRule.setNotImpersonationRoleIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class RunConfigurationJsonUnmarshaller implements Unmarshaller<RunConfigu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FlinkRunConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runConfiguration.setFlinkRunConfiguration(FlinkRunConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SqlRunConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runConfiguration.setSqlRunConfigurations(new ListUnmarshaller<SqlRunConfiguration>(SqlRunConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationRestoreConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runConfiguration.setApplicationRestoreConfiguration(ApplicationRestoreConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

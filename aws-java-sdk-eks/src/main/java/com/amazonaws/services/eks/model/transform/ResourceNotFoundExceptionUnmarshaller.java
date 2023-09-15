@@ -48,26 +48,38 @@ public class ResourceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceNotFoundException.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nodegroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceNotFoundException.setNodegroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fargateProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceNotFoundException.setFargateProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("addonName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceNotFoundException.setAddonName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class GetBandwidthRateLimitScheduleResultJsonUnmarshaller implements Unma
             return getBandwidthRateLimitScheduleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BandwidthRateLimitIntervals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBandwidthRateLimitScheduleResult.setBandwidthRateLimitIntervals(new ListUnmarshaller<BandwidthRateLimitInterval>(
                             BandwidthRateLimitIntervalJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class GetBandwidthRateLimitScheduleResultJsonUnmarshaller implements Unma
                     .unmarshall(context));
                 }
                 if (context.testExpression("GatewayArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBandwidthRateLimitScheduleResult.setGatewayArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

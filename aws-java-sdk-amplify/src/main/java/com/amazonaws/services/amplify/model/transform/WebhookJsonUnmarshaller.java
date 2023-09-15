@@ -43,38 +43,53 @@ public class WebhookJsonUnmarshaller implements Unmarshaller<Webhook, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("webhookArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setWebhookArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("webhookId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setWebhookId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("webhookUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setWebhookUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("branchName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setBranchName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,30 @@ public class StartRemediationExecutionResultJsonUnmarshaller implements Unmarsha
             return startRemediationExecutionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FailureMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startRemediationExecutionResult.setFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startRemediationExecutionResult.setFailedItems(new ListUnmarshaller<ResourceKey>(ResourceKeyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,56 +43,75 @@ public class GrantJsonUnmarshaller implements Unmarshaller<Grant, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GrantArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setGrantArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GrantName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setGrantName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setParentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setLicenseArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GranteePrincipalArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setGranteePrincipalArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HomeRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setHomeRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GrantStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setGrantStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GrantedOperations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setGrantedOperations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Options", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grant.setOptions(OptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

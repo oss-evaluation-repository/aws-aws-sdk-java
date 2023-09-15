@@ -43,50 +43,68 @@ public class UpdateTestSetResultJsonUnmarshaller implements Unmarshaller<UpdateT
             return updateTestSetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("testSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTestSetResult.setTestSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTestSetResult.setTestSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTestSetResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTestSetResult.setModality(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTestSetResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTestSetResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numTurns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTestSetResult.setNumTurns(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("storageLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTestSetResult.setStorageLocation(TestSetStorageLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTestSetResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTestSetResult.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,55 @@ public class PhoneNumberOrderJsonUnmarshaller implements Unmarshaller<PhoneNumbe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PhoneNumberOrderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberOrder.setPhoneNumberOrderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberOrder.setProductType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberOrder.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrderType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberOrder.setOrderType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrderedPhoneNumbers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberOrder.setOrderedPhoneNumbers(new ListUnmarshaller<OrderedPhoneNumber>(OrderedPhoneNumberJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberOrder.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberOrder.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

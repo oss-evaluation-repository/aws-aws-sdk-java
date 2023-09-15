@@ -43,9 +43,13 @@ public class DeleteAppResultJsonUnmarshaller implements Unmarshaller<DeleteAppRe
             return deleteAppResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteAppResult.setApplicationResponse(ApplicationResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

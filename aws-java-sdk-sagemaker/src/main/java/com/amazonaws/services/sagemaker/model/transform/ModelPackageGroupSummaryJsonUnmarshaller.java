@@ -43,30 +43,43 @@ public class ModelPackageGroupSummaryJsonUnmarshaller implements Unmarshaller<Mo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelPackageGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageGroupSummary.setModelPackageGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageGroupSummary.setModelPackageGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageGroupDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageGroupSummary.setModelPackageGroupDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageGroupSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageGroupStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageGroupSummary.setModelPackageGroupStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

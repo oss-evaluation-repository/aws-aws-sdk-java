@@ -43,20 +43,30 @@ public class DetectLabelsImageBackgroundJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Quality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsImageBackground.setQuality(DetectLabelsImageQualityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DominantColors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsImageBackground.setDominantColors(new ListUnmarshaller<DominantColor>(DominantColorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

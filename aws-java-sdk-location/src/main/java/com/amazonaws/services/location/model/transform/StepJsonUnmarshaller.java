@@ -43,34 +43,47 @@ public class StepJsonUnmarshaller implements Unmarshaller<Step, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Distance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setDistance(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("DurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setDurationSeconds(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("EndPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setEndPosition(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("GeometryOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setGeometryOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StartPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setStartPosition(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

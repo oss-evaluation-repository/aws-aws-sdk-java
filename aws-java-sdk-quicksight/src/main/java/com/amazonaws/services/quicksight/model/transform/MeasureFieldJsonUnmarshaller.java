@@ -43,26 +43,38 @@ public class MeasureFieldJsonUnmarshaller implements Unmarshaller<MeasureField, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NumericalMeasureField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     measureField.setNumericalMeasureField(NumericalMeasureFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CategoricalMeasureField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     measureField.setCategoricalMeasureField(CategoricalMeasureFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DateMeasureField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     measureField.setDateMeasureField(DateMeasureFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CalculatedMeasureField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     measureField.setCalculatedMeasureField(CalculatedMeasureFieldJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

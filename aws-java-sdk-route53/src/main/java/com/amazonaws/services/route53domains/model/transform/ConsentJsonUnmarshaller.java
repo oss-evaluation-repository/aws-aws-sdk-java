@@ -43,18 +43,28 @@ public class ConsentJsonUnmarshaller implements Unmarshaller<Consent, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MaxPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consent.setMaxPrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Currency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consent.setCurrency(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class CloudFormationHealthJsonUnmarshaller implements Unmarshaller<CloudF
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationHealth.setStackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Insight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationHealth.setInsight(InsightHealthJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AnalyzedResourceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudFormationHealth.setAnalyzedResourceCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

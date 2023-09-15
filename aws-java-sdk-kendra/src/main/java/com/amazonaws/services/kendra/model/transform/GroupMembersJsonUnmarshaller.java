@@ -43,26 +43,37 @@ public class GroupMembersJsonUnmarshaller implements Unmarshaller<GroupMembers, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MemberGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupMembers.setMemberGroups(new ListUnmarshaller<MemberGroup>(MemberGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MemberUsers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupMembers.setMemberUsers(new ListUnmarshaller<MemberUser>(MemberUserJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("S3PathforGroupMembers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupMembers.setS3PathforGroupMembers(S3PathJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

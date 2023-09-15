@@ -43,86 +43,113 @@ public class MsSmoothGroupSettingsJsonUnmarshaller implements Unmarshaller<MsSmo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("acquisitionPointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setAcquisitionPointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioOnlyTimecodeControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setAudioOnlyTimecodeControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setCertificateMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionRetryInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setConnectionRetryInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setDestination(OutputLocationRefJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("eventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventIdMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setEventIdMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventStopBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setEventStopBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filecacheDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setFilecacheDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fragmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setFragmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("inputLossAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setInputLossAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setNumRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("restartDelay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setRestartDelay(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentationMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setSegmentationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sendDelayMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setSendDelayMs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("sparseTrackType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setSparseTrackType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamManifestBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setStreamManifestBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestampOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setTimestampOffset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestampOffsetMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setTimestampOffsetMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

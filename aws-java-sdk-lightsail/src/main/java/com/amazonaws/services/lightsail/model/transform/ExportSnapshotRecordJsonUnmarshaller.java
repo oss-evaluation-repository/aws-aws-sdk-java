@@ -43,42 +43,58 @@ public class ExportSnapshotRecordJsonUnmarshaller implements Unmarshaller<Export
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecord.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecord.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecord.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecord.setLocation(ResourceLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecord.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecord.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecord.setSourceInfo(ExportSnapshotRecordSourceInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("destinationInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecord.setDestinationInfo(DestinationInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

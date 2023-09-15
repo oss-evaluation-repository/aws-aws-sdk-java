@@ -43,24 +43,35 @@ public class TargetGroupPairInfoJsonUnmarshaller implements Unmarshaller<TargetG
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("targetGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetGroupPairInfo.setTargetGroups(new ListUnmarshaller<TargetGroupInfo>(TargetGroupInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("prodTrafficRoute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetGroupPairInfo.setProdTrafficRoute(TrafficRouteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("testTrafficRoute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetGroupPairInfo.setTestTrafficRoute(TrafficRouteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

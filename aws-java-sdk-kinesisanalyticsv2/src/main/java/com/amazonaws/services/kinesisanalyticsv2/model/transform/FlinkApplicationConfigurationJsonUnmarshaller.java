@@ -43,22 +43,33 @@ public class FlinkApplicationConfigurationJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CheckpointConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flinkApplicationConfiguration.setCheckpointConfiguration(CheckpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MonitoringConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flinkApplicationConfiguration.setMonitoringConfiguration(MonitoringConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ParallelismConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flinkApplicationConfiguration.setParallelismConfiguration(ParallelismConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

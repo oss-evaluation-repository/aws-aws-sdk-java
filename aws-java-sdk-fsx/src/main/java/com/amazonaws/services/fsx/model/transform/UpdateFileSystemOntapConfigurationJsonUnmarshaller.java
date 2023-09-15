@@ -43,46 +43,62 @@ public class UpdateFileSystemOntapConfigurationJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutomaticBackupRetentionDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemOntapConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DailyAutomaticBackupStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemOntapConfiguration.setDailyAutomaticBackupStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FsxAdminPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemOntapConfiguration.setFsxAdminPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemOntapConfiguration.setWeeklyMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiskIopsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemOntapConfiguration.setDiskIopsConfiguration(DiskIopsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ThroughputCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemOntapConfiguration.setThroughputCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AddRouteTableIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemOntapConfiguration.setAddRouteTableIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RemoveRouteTableIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemOntapConfiguration.setRemoveRouteTableIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

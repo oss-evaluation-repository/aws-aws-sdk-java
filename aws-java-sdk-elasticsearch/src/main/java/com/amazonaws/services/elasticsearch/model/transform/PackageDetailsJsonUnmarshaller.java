@@ -43,46 +43,63 @@ public class PackageDetailsJsonUnmarshaller implements Unmarshaller<PackageDetai
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PackageID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDetails.setPackageID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDetails.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDetails.setPackageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDetails.setPackageDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDetails.setPackageStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDetails.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDetails.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AvailablePackageVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDetails.setAvailablePackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDetails.setErrorDetails(ErrorDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

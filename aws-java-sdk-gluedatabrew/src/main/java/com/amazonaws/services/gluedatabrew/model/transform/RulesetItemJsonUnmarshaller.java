@@ -43,55 +43,74 @@ public class RulesetItemJsonUnmarshaller implements Unmarshaller<RulesetItem, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setLastModifiedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setRuleCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("TargetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rulesetItem.setTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

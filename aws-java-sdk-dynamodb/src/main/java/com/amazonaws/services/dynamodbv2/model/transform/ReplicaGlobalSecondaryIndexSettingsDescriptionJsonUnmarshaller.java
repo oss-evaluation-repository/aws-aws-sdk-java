@@ -44,36 +44,50 @@ public class ReplicaGlobalSecondaryIndexSettingsDescriptionJsonUnmarshaller impl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsDescription.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsDescription.setIndexStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedReadCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsDescription.setProvisionedReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedReadCapacityAutoScalingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsDescription.setProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedWriteCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsDescription.setProvisionedWriteCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedWriteCapacityAutoScalingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsDescription
                             .setProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

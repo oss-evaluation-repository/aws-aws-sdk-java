@@ -43,70 +43,92 @@ public class AppBlockBuilderJsonUnmarshaller implements Unmarshaller<AppBlockBui
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableDefaultInternetAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setEnableDefaultInternetAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AppBlockBuilderErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setAppBlockBuilderErrors(new ListUnmarshaller<ResourceError>(ResourceErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StateChangeReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setStateChangeReason(AppBlockBuilderStateChangeReasonJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AccessEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlockBuilder.setAccessEndpoints(new ListUnmarshaller<AccessEndpoint>(AccessEndpointJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

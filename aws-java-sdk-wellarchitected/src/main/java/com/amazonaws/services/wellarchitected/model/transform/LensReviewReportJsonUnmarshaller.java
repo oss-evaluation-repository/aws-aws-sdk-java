@@ -43,22 +43,33 @@ public class LensReviewReportJsonUnmarshaller implements Unmarshaller<LensReview
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LensAlias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReviewReport.setLensAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LensArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReviewReport.setLensArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Base64String", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReviewReport.setBase64String(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,32 @@ public class OperatingSystemJsonUnmarshaller implements Unmarshaller<OperatingSy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     operatingSystem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     operatingSystem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     operatingSystem.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationManagers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     operatingSystem.setConfigurationManagers(new ListUnmarshaller<OperatingSystemConfigurationManager>(
                             OperatingSystemConfigurationManagerJsonUnmarshaller.getInstance())
@@ -68,16 +76,23 @@ public class OperatingSystemJsonUnmarshaller implements Unmarshaller<OperatingSy
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReportedName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     operatingSystem.setReportedName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportedVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     operatingSystem.setReportedVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Supported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     operatingSystem.setSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

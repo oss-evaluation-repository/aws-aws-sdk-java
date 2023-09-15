@@ -43,50 +43,68 @@ public class ProtectedQueryJsonUnmarshaller implements Unmarshaller<ProtectedQue
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedQuery.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("membershipId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedQuery.setMembershipId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("membershipArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedQuery.setMembershipArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedQuery.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("sqlParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedQuery.setSqlParameters(ProtectedQuerySQLParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedQuery.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resultConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedQuery.setResultConfiguration(ProtectedQueryResultConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("statistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedQuery.setStatistics(ProtectedQueryStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("result", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedQuery.setResult(ProtectedQueryResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectedQuery.setError(ProtectedQueryErrorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class PrivateKeyFlagsV4JsonUnmarshaller implements Unmarshaller<PrivateKe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClientVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyFlagsV4.setClientVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportableKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyFlagsV4.setExportableKey(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireAlternateSignatureAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyFlagsV4.setRequireAlternateSignatureAlgorithm(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireSameKeyRenewal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyFlagsV4.setRequireSameKeyRenewal(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("StrongKeyProtectionRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyFlagsV4.setStrongKeyProtectionRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UseLegacyProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyFlagsV4.setUseLegacyProvider(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

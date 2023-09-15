@@ -43,44 +43,60 @@ public class LineItemJsonUnmarshaller implements Unmarshaller<LineItem, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CatalogItemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineItem.setCatalogItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LineItemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineItem.setLineItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Quantity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineItem.setQuantity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShipmentInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineItem.setShipmentInformation(ShipmentInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssetInformationList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineItem.setAssetInformationList(new ListUnmarshaller<LineItemAssetInformation>(LineItemAssetInformationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PreviousLineItemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineItem.setPreviousLineItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreviousOrderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineItem.setPreviousOrderId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class AccountSettingsJsonUnmarshaller implements Unmarshaller<AccountSett
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setAccountName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Edition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setEdition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setDefaultNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setNotificationEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicSharingEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setPublicSharingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TerminationProtectionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setTerminationProtectionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

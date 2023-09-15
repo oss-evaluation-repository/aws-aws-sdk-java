@@ -43,30 +43,43 @@ public class IngestionStatusJsonUnmarshaller implements Unmarshaller<IngestionSt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LatestIngestionSuccessTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestionStatus.setLatestIngestionSuccessTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestIngestionSuccessEventID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestionStatus.setLatestIngestionSuccessEventID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestIngestionErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestionStatus.setLatestIngestionErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestIngestionAttemptTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestionStatus.setLatestIngestionAttemptTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestIngestionAttemptEventID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestionStatus.setLatestIngestionAttemptEventID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,50 @@ public class EvaluateDataQualityJsonUnmarshaller implements Unmarshaller<Evaluat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateDataQuality.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateDataQuality.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Ruleset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateDataQuality.setRuleset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Output", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateDataQuality.setOutput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublishingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateDataQuality.setPublishingOptions(DQResultsPublishingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StopJobOnFailureOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateDataQuality.setStopJobOnFailureOptions(DQStopJobOnFailureOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

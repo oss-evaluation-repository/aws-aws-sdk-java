@@ -43,30 +43,43 @@ public class AwsWafv2RulesDetailsJsonUnmarshaller implements Unmarshaller<AwsWaf
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafv2RulesDetails.setAction(AwsWafv2RulesActionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafv2RulesDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OverrideAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafv2RulesDetails.setOverrideAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafv2RulesDetails.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VisibilityConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafv2RulesDetails.setVisibilityConfig(AwsWafv2VisibilityConfigDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

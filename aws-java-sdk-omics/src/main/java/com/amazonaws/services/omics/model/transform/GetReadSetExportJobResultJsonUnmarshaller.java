@@ -43,44 +43,60 @@ public class GetReadSetExportJobResultJsonUnmarshaller implements Unmarshaller<G
             return getReadSetExportJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadSetExportJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sequenceStoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadSetExportJobResult.setSequenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadSetExportJobResult.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadSetExportJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadSetExportJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadSetExportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("completionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadSetExportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("readSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReadSetExportJobResult.setReadSets(new ListUnmarshaller<ExportReadSetDetail>(ExportReadSetDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class ExportKeyMaterialJsonUnmarshaller implements Unmarshaller<ExportKey
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Tr31KeyBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportKeyMaterial.setTr31KeyBlock(ExportTr31KeyBlockJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tr34KeyBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportKeyMaterial.setTr34KeyBlock(ExportTr34KeyBlockJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

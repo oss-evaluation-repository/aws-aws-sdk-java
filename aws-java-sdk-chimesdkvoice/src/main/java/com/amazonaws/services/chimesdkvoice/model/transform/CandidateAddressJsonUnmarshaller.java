@@ -43,38 +43,53 @@ public class CandidateAddressJsonUnmarshaller implements Unmarshaller<CandidateA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("streetInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     candidateAddress.setStreetInfo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streetNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     candidateAddress.setStreetNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("city", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     candidateAddress.setCity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     candidateAddress.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("postalCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     candidateAddress.setPostalCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("postalCodePlus4", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     candidateAddress.setPostalCodePlus4(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("country", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     candidateAddress.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

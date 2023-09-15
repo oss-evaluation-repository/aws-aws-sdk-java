@@ -43,18 +43,24 @@ public class AssetBundleImportJobOverrideParametersJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceIdOverrideConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobOverrideParameters
                             .setResourceIdOverrideConfiguration(AssetBundleImportJobResourceIdOverrideConfigurationJsonUnmarshaller.getInstance().unmarshall(
                                     context));
                 }
                 if (context.testExpression("VPCConnections", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobOverrideParameters.setVPCConnections(new ListUnmarshaller<AssetBundleImportJobVPCConnectionOverrideParameters>(
                             AssetBundleImportJobVPCConnectionOverrideParametersJsonUnmarshaller.getInstance())
@@ -62,6 +68,7 @@ public class AssetBundleImportJobOverrideParametersJsonUnmarshaller implements U
                     .unmarshall(context));
                 }
                 if (context.testExpression("RefreshSchedules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobOverrideParameters.setRefreshSchedules(new ListUnmarshaller<AssetBundleImportJobRefreshScheduleOverrideParameters>(
                             AssetBundleImportJobRefreshScheduleOverrideParametersJsonUnmarshaller.getInstance())
@@ -69,6 +76,7 @@ public class AssetBundleImportJobOverrideParametersJsonUnmarshaller implements U
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobOverrideParameters.setDataSources(new ListUnmarshaller<AssetBundleImportJobDataSourceOverrideParameters>(
                             AssetBundleImportJobDataSourceOverrideParametersJsonUnmarshaller.getInstance())
@@ -76,6 +84,7 @@ public class AssetBundleImportJobOverrideParametersJsonUnmarshaller implements U
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobOverrideParameters.setDataSets(new ListUnmarshaller<AssetBundleImportJobDataSetOverrideParameters>(
                             AssetBundleImportJobDataSetOverrideParametersJsonUnmarshaller.getInstance())
@@ -83,6 +92,7 @@ public class AssetBundleImportJobOverrideParametersJsonUnmarshaller implements U
                     .unmarshall(context));
                 }
                 if (context.testExpression("Themes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobOverrideParameters.setThemes(new ListUnmarshaller<AssetBundleImportJobThemeOverrideParameters>(
                             AssetBundleImportJobThemeOverrideParametersJsonUnmarshaller.getInstance())
@@ -90,6 +100,7 @@ public class AssetBundleImportJobOverrideParametersJsonUnmarshaller implements U
                     .unmarshall(context));
                 }
                 if (context.testExpression("Analyses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobOverrideParameters.setAnalyses(new ListUnmarshaller<AssetBundleImportJobAnalysisOverrideParameters>(
                             AssetBundleImportJobAnalysisOverrideParametersJsonUnmarshaller.getInstance())
@@ -97,11 +108,16 @@ public class AssetBundleImportJobOverrideParametersJsonUnmarshaller implements U
                     .unmarshall(context));
                 }
                 if (context.testExpression("Dashboards", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetBundleImportJobOverrideParameters.setDashboards(new ListUnmarshaller<AssetBundleImportJobDashboardOverrideParameters>(
                             AssetBundleImportJobDashboardOverrideParametersJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

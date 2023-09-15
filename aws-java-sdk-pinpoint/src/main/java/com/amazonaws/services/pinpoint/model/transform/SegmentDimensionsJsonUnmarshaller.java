@@ -43,37 +43,51 @@ public class SegmentDimensionsJsonUnmarshaller implements Unmarshaller<SegmentDi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDimensions.setAttributes(new MapUnmarshaller<String, AttributeDimension>(context.getUnmarshaller(String.class),
                             AttributeDimensionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Behavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDimensions.setBehavior(SegmentBehaviorsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Demographic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDimensions.setDemographic(SegmentDemographicsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDimensions.setLocation(SegmentLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Metrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDimensions.setMetrics(new MapUnmarshaller<String, MetricDimension>(context.getUnmarshaller(String.class),
                             MetricDimensionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("UserAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDimensions.setUserAttributes(new MapUnmarshaller<String, AttributeDimension>(context.getUnmarshaller(String.class),
                             AttributeDimensionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

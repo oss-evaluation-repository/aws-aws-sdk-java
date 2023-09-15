@@ -43,26 +43,38 @@ public class ResultConfigurationJsonUnmarshaller implements Unmarshaller<ResultC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OutputLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfiguration.setOutputLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfiguration.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExpectedBucketOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfiguration.setExpectedBucketOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AclConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfiguration.setAclConfiguration(AclConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class ListExecutionsResultJsonUnmarshaller implements Unmarshaller<ListEx
             return listExecutionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listExecutionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkflowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listExecutionsResult.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Executions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listExecutionsResult.setExecutions(new ListUnmarshaller<ListedExecution>(ListedExecutionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

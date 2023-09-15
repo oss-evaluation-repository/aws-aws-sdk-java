@@ -43,40 +43,55 @@ public class KubernetesApiCallActionJsonUnmarshaller implements Unmarshaller<Kub
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("requestUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kubernetesApiCallAction.setRequestUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("verb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kubernetesApiCallAction.setVerb(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceIps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kubernetesApiCallAction.setSourceIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("userAgent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kubernetesApiCallAction.setUserAgent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remoteIpDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kubernetesApiCallAction.setRemoteIpDetails(RemoteIpDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("statusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kubernetesApiCallAction.setStatusCode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kubernetesApiCallAction.setParameters(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

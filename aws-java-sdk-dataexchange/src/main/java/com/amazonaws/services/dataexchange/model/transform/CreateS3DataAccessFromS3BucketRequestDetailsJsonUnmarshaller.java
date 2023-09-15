@@ -44,22 +44,33 @@ public class CreateS3DataAccessFromS3BucketRequestDetailsJsonUnmarshaller implem
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssetSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createS3DataAccessFromS3BucketRequestDetails.setAssetSource(S3DataAccessAssetSourceEntryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createS3DataAccessFromS3BucketRequestDetails.setDataSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RevisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createS3DataAccessFromS3BucketRequestDetails.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

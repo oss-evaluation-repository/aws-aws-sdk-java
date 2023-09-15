@@ -43,26 +43,38 @@ public class CheckpointConfigurationUpdateJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigurationTypeUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkpointConfigurationUpdate.setConfigurationTypeUpdate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CheckpointingEnabledUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkpointConfigurationUpdate.setCheckpointingEnabledUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CheckpointIntervalUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkpointConfigurationUpdate.setCheckpointIntervalUpdate(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MinPauseBetweenCheckpointsUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkpointConfigurationUpdate.setMinPauseBetweenCheckpointsUpdate(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,25 +43,36 @@ public class DomainSettingsForUpdateJsonUnmarshaller implements Unmarshaller<Dom
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RStudioServerProDomainSettingsForUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainSettingsForUpdate.setRStudioServerProDomainSettingsForUpdate(RStudioServerProDomainSettingsForUpdateJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleIdentityConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainSettingsForUpdate.setExecutionRoleIdentityConfig(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainSettingsForUpdate.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

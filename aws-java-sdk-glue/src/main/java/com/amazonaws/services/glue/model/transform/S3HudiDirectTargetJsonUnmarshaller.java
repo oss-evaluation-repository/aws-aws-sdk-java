@@ -43,30 +43,39 @@ public class S3HudiDirectTargetJsonUnmarshaller implements Unmarshaller<S3HudiDi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3HudiDirectTarget.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3HudiDirectTarget.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3HudiDirectTarget.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Compression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3HudiDirectTarget.setCompression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartitionKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3HudiDirectTarget.setPartitionKeys(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -76,17 +85,24 @@ public class S3HudiDirectTargetJsonUnmarshaller implements Unmarshaller<S3HudiDi
                     .unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3HudiDirectTarget.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3HudiDirectTarget.setAdditionalOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("SchemaChangePolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3HudiDirectTarget.setSchemaChangePolicy(DirectSchemaChangePolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

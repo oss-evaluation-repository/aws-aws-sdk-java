@@ -44,17 +44,26 @@ public class GetEC2RecommendationProjectedMetricsResultJsonUnmarshaller implemen
             return getEC2RecommendationProjectedMetricsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("recommendedOptionProjectedMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEC2RecommendationProjectedMetricsResult.setRecommendedOptionProjectedMetrics(new ListUnmarshaller<RecommendedOptionProjectedMetric>(
                             RecommendedOptionProjectedMetricJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

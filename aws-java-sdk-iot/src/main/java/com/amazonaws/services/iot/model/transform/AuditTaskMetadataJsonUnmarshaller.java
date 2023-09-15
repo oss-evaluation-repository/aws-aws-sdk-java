@@ -43,22 +43,33 @@ public class AuditTaskMetadataJsonUnmarshaller implements Unmarshaller<AuditTask
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditTaskMetadata.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditTaskMetadata.setTaskStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditTaskMetadata.setTaskType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

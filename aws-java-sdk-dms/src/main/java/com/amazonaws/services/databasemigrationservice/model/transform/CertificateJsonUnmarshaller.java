@@ -43,50 +43,68 @@ public class CertificateJsonUnmarshaller implements Unmarshaller<Certificate, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CertificateIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificate.setCertificateIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateCreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificate.setCertificateCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CertificatePem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificate.setCertificatePem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateWallet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificate.setCertificateWallet(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificate.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificate.setCertificateOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidFromDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificate.setValidFromDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ValidToDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificate.setValidToDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SigningAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificate.setSigningAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificate.setKeyLength(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

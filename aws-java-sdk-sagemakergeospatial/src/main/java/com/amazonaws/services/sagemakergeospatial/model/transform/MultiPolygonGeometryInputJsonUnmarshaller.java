@@ -43,12 +43,17 @@ public class MultiPolygonGeometryInputJsonUnmarshaller implements Unmarshaller<M
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Coordinates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiPolygonGeometryInput.setCoordinates(new ListUnmarshaller<java.util.List<java.util.List<java.util.List<Double>>>>(
                             new ListUnmarshaller<java.util.List<java.util.List<Double>>>(new ListUnmarshaller<java.util.List<Double>>(
@@ -61,6 +66,10 @@ public class MultiPolygonGeometryInputJsonUnmarshaller implements Unmarshaller<M
                     )
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

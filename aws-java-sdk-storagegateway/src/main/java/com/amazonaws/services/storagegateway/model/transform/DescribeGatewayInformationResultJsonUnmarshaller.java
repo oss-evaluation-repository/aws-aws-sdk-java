@@ -43,32 +43,42 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
             return describeGatewayInformationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setGatewayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayTimezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setGatewayTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setGatewayState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayNetworkInterfaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setGatewayNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller
                             .getInstance())
@@ -76,68 +86,87 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("GatewayType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setGatewayType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextUpdateAvailabilityDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setNextUpdateAvailabilityDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastSoftwareUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setLastSoftwareUpdate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setEc2InstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setEc2InstanceRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VPCEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setVPCEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLogGroupARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setCloudWatchLogGroupARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HostEnvironment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setHostEnvironment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SoftwareUpdatesEndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setSoftwareUpdatesEndDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeprecationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setDeprecationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setGatewayCapacity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedGatewayCapacities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setSupportedGatewayCapacities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HostEnvironmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayInformationResult.setHostEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

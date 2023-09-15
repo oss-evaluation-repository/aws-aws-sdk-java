@@ -43,60 +43,76 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttributeDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setAttributeDefinitions(new ListUnmarshaller<AttributeDefinition>(AttributeDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TableStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setTableStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setProvisionedThroughput(ProvisionedThroughputDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TableSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setTableSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ItemCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setItemCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BillingModeSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setBillingModeSummary(BillingModeSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LocalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setLocalSecondaryIndexes(new ListUnmarshaller<LocalSecondaryIndexDescription>(
                             LocalSecondaryIndexDescriptionJsonUnmarshaller.getInstance())
@@ -104,6 +120,7 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                     .unmarshall(context));
                 }
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setGlobalSecondaryIndexes(new ListUnmarshaller<GlobalSecondaryIndexDescription>(
                             GlobalSecondaryIndexDescriptionJsonUnmarshaller.getInstance())
@@ -111,46 +128,60 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                     .unmarshall(context));
                 }
                 if (context.testExpression("StreamSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setStreamSpecification(StreamSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LatestStreamLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setLatestStreamLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestStreamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setLatestStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlobalTableVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setGlobalTableVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Replicas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setReplicas(new ListUnmarshaller<ReplicaDescription>(ReplicaDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RestoreSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setRestoreSummary(RestoreSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SSEDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setSSEDescription(SSEDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ArchivalSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setArchivalSummary(ArchivalSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TableClassSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setTableClassSummary(TableClassSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeletionProtectionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableDescription.setDeletionProtectionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

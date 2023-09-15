@@ -43,44 +43,60 @@ public class DocumentMetadataJsonUnmarshaller implements Unmarshaller<DocumentMe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentMetadata.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentMetadata.setCreatorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParentFolderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentMetadata.setParentFolderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentMetadata.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentMetadata.setModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestVersionMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentMetadata.setLatestVersionMetadata(DocumentVersionMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentMetadata.setResourceState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Labels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentMetadata.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

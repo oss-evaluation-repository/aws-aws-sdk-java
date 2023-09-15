@@ -43,34 +43,48 @@ public class EsamJsonUnmarshaller implements Unmarshaller<Esam, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("acquisitionPointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     esam.setAcquisitionPointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("adAvailOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     esam.setAdAvailOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("passwordParam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     esam.setPasswordParam(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("poisEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     esam.setPoisEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     esam.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("zoneIdentity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     esam.setZoneIdentity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class ListForecastExportJobsResultJsonUnmarshaller implements Unmarshalle
             return listForecastExportJobsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ForecastExportJobs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listForecastExportJobsResult.setForecastExportJobs(new ListUnmarshaller<ForecastExportJobSummary>(ForecastExportJobSummaryJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListForecastExportJobsResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listForecastExportJobsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

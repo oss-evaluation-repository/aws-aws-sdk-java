@@ -43,22 +43,33 @@ public class ColumnDefinitionJsonUnmarshaller implements Unmarshaller<ColumnDefi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnDefinition.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("columnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnDefinition.setColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("columnDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnDefinition.setColumnDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

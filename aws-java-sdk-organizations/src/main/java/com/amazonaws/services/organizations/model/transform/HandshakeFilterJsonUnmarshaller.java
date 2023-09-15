@@ -43,18 +43,28 @@ public class HandshakeFilterJsonUnmarshaller implements Unmarshaller<HandshakeFi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ActionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     handshakeFilter.setActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParentHandshakeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     handshakeFilter.setParentHandshakeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

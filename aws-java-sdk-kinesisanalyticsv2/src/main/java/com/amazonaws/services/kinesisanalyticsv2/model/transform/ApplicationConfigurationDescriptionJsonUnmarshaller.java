@@ -43,43 +43,54 @@ public class ApplicationConfigurationDescriptionJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SqlApplicationConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationDescription.setSqlApplicationConfigurationDescription(SqlApplicationConfigurationDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ApplicationCodeConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationDescription.setApplicationCodeConfigurationDescription(ApplicationCodeConfigurationDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RunConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationDescription.setRunConfigurationDescription(RunConfigurationDescriptionJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("FlinkApplicationConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationDescription.setFlinkApplicationConfigurationDescription(FlinkApplicationConfigurationDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentPropertyDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationDescription.setEnvironmentPropertyDescriptions(EnvironmentPropertyDescriptionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationSnapshotConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationDescription
                             .setApplicationSnapshotConfigurationDescription(ApplicationSnapshotConfigurationDescriptionJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfigurationDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationDescription.setVpcConfigurationDescriptions(new ListUnmarshaller<VpcConfigurationDescription>(
                             VpcConfigurationDescriptionJsonUnmarshaller.getInstance())
@@ -87,10 +98,15 @@ public class ApplicationConfigurationDescriptionJsonUnmarshaller implements Unma
                     .unmarshall(context));
                 }
                 if (context.testExpression("ZeppelinApplicationConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationDescription
                             .setZeppelinApplicationConfigurationDescription(ZeppelinApplicationConfigurationDescriptionJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

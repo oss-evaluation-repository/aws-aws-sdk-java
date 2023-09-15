@@ -43,22 +43,33 @@ public class HopDestinationJsonUnmarshaller implements Unmarshaller<HopDestinati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hopDestination.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("queue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hopDestination.setQueue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("waitMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hopDestination.setWaitMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

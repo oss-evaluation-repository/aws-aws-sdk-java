@@ -43,46 +43,63 @@ public class PanelConfigurationJsonUnmarshaller implements Unmarshaller<PanelCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     panelConfiguration.setTitle(PanelTitleOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BorderVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     panelConfiguration.setBorderVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BorderThickness", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     panelConfiguration.setBorderThickness(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BorderStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     panelConfiguration.setBorderStyle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BorderColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     panelConfiguration.setBorderColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GutterVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     panelConfiguration.setGutterVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GutterSpacing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     panelConfiguration.setGutterSpacing(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackgroundVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     panelConfiguration.setBackgroundVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackgroundColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     panelConfiguration.setBackgroundColor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

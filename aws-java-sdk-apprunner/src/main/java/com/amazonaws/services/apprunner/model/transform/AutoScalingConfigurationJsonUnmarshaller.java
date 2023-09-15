@@ -43,50 +43,68 @@ public class AutoScalingConfigurationJsonUnmarshaller implements Unmarshaller<Au
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutoScalingConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setAutoScalingConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoScalingConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setAutoScalingConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoScalingConfigurationRevision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setAutoScalingConfigurationRevision(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Latest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setLatest(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxConcurrency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setMaxConcurrency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setMinSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setMaxSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setDeletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

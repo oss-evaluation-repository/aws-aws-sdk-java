@@ -44,12 +44,17 @@ public class BatchGetMemberEc2DeepInspectionStatusResultJsonUnmarshaller impleme
             return batchGetMemberEc2DeepInspectionStatusResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetMemberEc2DeepInspectionStatusResult.setAccountIds(new ListUnmarshaller<MemberAccountEc2DeepInspectionStatusState>(
                             MemberAccountEc2DeepInspectionStatusStateJsonUnmarshaller.getInstance())
@@ -57,11 +62,16 @@ public class BatchGetMemberEc2DeepInspectionStatusResultJsonUnmarshaller impleme
                     .unmarshall(context));
                 }
                 if (context.testExpression("failedAccountIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetMemberEc2DeepInspectionStatusResult.setFailedAccountIds(new ListUnmarshaller<FailedMemberAccountEc2DeepInspectionStatusState>(
                             FailedMemberAccountEc2DeepInspectionStatusStateJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

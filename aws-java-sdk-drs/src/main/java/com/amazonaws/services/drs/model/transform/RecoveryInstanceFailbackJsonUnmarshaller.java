@@ -43,50 +43,68 @@ public class RecoveryInstanceFailbackJsonUnmarshaller implements Unmarshaller<Re
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentLastSeenByServiceDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceFailback.setAgentLastSeenByServiceDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("elapsedReplicationDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceFailback.setElapsedReplicationDuration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failbackClientID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceFailback.setFailbackClientID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failbackClientLastSeenByServiceDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceFailback.setFailbackClientLastSeenByServiceDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failbackInitiationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceFailback.setFailbackInitiationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failbackJobID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceFailback.setFailbackJobID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failbackLaunchType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceFailback.setFailbackLaunchType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failbackToOriginalServer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceFailback.setFailbackToOriginalServer(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("firstByteDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceFailback.setFirstByteDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceFailback.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,68 +43,90 @@ public class BatchReadSuccessfulResponseJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ListObjectAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setListObjectAttributes(BatchListObjectAttributesResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ListObjectChildren", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setListObjectChildren(BatchListObjectChildrenResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GetObjectInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setGetObjectInformation(BatchGetObjectInformationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GetObjectAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setGetObjectAttributes(BatchGetObjectAttributesResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ListAttachedIndices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setListAttachedIndices(BatchListAttachedIndicesResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ListObjectParentPaths", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setListObjectParentPaths(BatchListObjectParentPathsResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ListObjectPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setListObjectPolicies(BatchListObjectPoliciesResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ListPolicyAttachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setListPolicyAttachments(BatchListPolicyAttachmentsResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LookupPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setLookupPolicy(BatchLookupPolicyResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ListIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setListIndex(BatchListIndexResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ListOutgoingTypedLinks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse
                             .setListOutgoingTypedLinks(BatchListOutgoingTypedLinksResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ListIncomingTypedLinks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse
                             .setListIncomingTypedLinks(BatchListIncomingTypedLinksResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GetLinkAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setGetLinkAttributes(BatchGetLinkAttributesResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ListObjectParents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchReadSuccessfulResponse.setListObjectParents(BatchListObjectParentsResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,56 +43,75 @@ public class UpdateAuthorizerResultJsonUnmarshaller implements Unmarshaller<Upda
             return updateAuthorizerResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authorizerCredentialsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerCredentialsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerPayloadFormatVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerPayloadFormatVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerResultTtlInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerResultTtlInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enableSimpleResponses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setEnableSimpleResponses(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("identitySource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setIdentitySource(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("identityValidationExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setIdentityValidationExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jwtConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setJwtConfiguration(JWTConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,55 @@ public class GetUploadStatusResultJsonUnmarshaller implements Unmarshaller<GetUp
             return getUploadStatusResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("uploadId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUploadStatusResult.setUploadId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uploadStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUploadStatusResult.setUploadStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUploadStatusResult.setNamespaceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUploadStatusResult.setNamespaceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaceVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUploadStatusResult.setNamespaceVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUploadStatusResult.setFailureReason(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUploadStatusResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

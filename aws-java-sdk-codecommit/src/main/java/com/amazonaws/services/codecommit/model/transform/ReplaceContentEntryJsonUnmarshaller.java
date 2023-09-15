@@ -43,26 +43,38 @@ public class ReplaceContentEntryJsonUnmarshaller implements Unmarshaller<Replace
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replaceContentEntry.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replacementType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replaceContentEntry.setReplacementType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replaceContentEntry.setContent(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("fileMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replaceContentEntry.setFileMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

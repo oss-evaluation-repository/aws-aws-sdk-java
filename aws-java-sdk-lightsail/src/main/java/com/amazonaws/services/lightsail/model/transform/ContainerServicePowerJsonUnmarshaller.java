@@ -43,34 +43,48 @@ public class ContainerServicePowerJsonUnmarshaller implements Unmarshaller<Conta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("powerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServicePower.setPowerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("price", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServicePower.setPrice(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("cpuCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServicePower.setCpuCount(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("ramSizeInGb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServicePower.setRamSizeInGb(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServicePower.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isActive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServicePower.setIsActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

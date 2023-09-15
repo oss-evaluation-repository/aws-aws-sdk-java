@@ -43,26 +43,38 @@ public class CollectorHealthCheckJsonUnmarshaller implements Unmarshaller<Collec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CollectorStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorHealthCheck.setCollectorStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocalCollectorS3Access", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorHealthCheck.setLocalCollectorS3Access(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("WebCollectorS3Access", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorHealthCheck.setWebCollectorS3Access(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("WebCollectorGrantedRoleBasedAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorHealthCheck.setWebCollectorGrantedRoleBasedAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

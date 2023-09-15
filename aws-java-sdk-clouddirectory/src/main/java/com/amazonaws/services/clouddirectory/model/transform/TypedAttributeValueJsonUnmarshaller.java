@@ -43,30 +43,43 @@ public class TypedAttributeValueJsonUnmarshaller implements Unmarshaller<TypedAt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StringValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedAttributeValue.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BinaryValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedAttributeValue.setBinaryValue(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("BooleanValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedAttributeValue.setBooleanValue(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedAttributeValue.setNumberValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatetimeValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedAttributeValue.setDatetimeValue(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

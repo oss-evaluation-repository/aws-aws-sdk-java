@@ -43,44 +43,60 @@ public class TranscriptJsonUnmarshaller implements Unmarshaller<Transcript, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transcript.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParticipantId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transcript.setParticipantId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParticipantRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transcript.setParticipantRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transcript.setContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BeginOffsetMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transcript.setBeginOffsetMillis(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndOffsetMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transcript.setEndOffsetMillis(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Sentiment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transcript.setSentiment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IssuesDetected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transcript.setIssuesDetected(new ListUnmarshaller<IssueDetected>(IssueDetectedJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

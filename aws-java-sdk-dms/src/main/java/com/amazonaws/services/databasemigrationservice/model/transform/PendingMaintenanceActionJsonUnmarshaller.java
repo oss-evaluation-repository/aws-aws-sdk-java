@@ -43,34 +43,48 @@ public class PendingMaintenanceActionJsonUnmarshaller implements Unmarshaller<Pe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pendingMaintenanceAction.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoAppliedAfterDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pendingMaintenanceAction.setAutoAppliedAfterDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ForcedApplyDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pendingMaintenanceAction.setForcedApplyDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OptInStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pendingMaintenanceAction.setOptInStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentApplyDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pendingMaintenanceAction.setCurrentApplyDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pendingMaintenanceAction.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

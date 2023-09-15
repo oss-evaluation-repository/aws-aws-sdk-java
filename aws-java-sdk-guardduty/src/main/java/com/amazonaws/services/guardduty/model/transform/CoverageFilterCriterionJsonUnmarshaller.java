@@ -43,18 +43,28 @@ public class CoverageFilterCriterionJsonUnmarshaller implements Unmarshaller<Cov
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("criterionKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriterion.setCriterionKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriterion.setFilterCondition(CoverageFilterConditionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

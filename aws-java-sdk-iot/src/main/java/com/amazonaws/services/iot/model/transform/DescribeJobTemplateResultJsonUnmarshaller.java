@@ -43,66 +43,87 @@ public class DescribeJobTemplateResultJsonUnmarshaller implements Unmarshaller<D
             return describeJobTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobTemplateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setJobTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobTemplateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setJobTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("documentSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setDocumentSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("document", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setDocument(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("presignedUrlConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setPresignedUrlConfig(PresignedUrlConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobExecutionsRolloutConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setJobExecutionsRolloutConfig(JobExecutionsRolloutConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("abortConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setAbortConfig(AbortConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeoutConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setTimeoutConfig(TimeoutConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobExecutionsRetryConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setJobExecutionsRetryConfig(JobExecutionsRetryConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("maintenanceWindows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setMaintenanceWindows(new ListUnmarshaller<MaintenanceWindow>(MaintenanceWindowJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("destinationPackageVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobTemplateResult.setDestinationPackageVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

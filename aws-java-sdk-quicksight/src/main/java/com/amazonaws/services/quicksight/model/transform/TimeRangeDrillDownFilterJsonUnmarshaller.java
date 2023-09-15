@@ -43,26 +43,38 @@ public class TimeRangeDrillDownFilterJsonUnmarshaller implements Unmarshaller<Ti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeRangeDrillDownFilter.setColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RangeMinimum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeRangeDrillDownFilter.setRangeMinimum(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RangeMaximum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeRangeDrillDownFilter.setRangeMaximum(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TimeGranularity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeRangeDrillDownFilter.setTimeGranularity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

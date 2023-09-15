@@ -43,27 +43,39 @@ public class DialogCodeHookInvocationSettingJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("enableCodeHookInvocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dialogCodeHookInvocationSetting.setEnableCodeHookInvocation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("active", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dialogCodeHookInvocationSetting.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("invocationLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dialogCodeHookInvocationSetting.setInvocationLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("postCodeHookSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dialogCodeHookInvocationSetting.setPostCodeHookSpecification(PostDialogCodeHookInvocationSpecificationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

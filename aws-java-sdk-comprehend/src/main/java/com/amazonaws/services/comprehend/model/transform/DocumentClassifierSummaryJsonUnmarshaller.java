@@ -43,30 +43,43 @@ public class DocumentClassifierSummaryJsonUnmarshaller implements Unmarshaller<D
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentClassifierName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierSummary.setDocumentClassifierName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierSummary.setNumberOfVersions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestVersionCreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierSummary.setLatestVersionCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestVersionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierSummary.setLatestVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestVersionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierSummary.setLatestVersionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

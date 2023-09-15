@@ -43,22 +43,33 @@ public class BrokerEBSVolumeInfoJsonUnmarshaller implements Unmarshaller<BrokerE
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("kafkaBrokerNodeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerEBSVolumeInfo.setKafkaBrokerNodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("provisionedThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerEBSVolumeInfo.setProvisionedThroughput(ProvisionedThroughputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("volumeSizeGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerEBSVolumeInfo.setVolumeSizeGB(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

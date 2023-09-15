@@ -43,46 +43,63 @@ public class AutomationRulesMetadataJsonUnmarshaller implements Unmarshaller<Aut
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RuleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesMetadata.setRuleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesMetadata.setRuleStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesMetadata.setRuleOrder(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesMetadata.setRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesMetadata.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsTerminal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesMetadata.setIsTerminal(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesMetadata.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesMetadata.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesMetadata.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

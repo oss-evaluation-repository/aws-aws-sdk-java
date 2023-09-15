@@ -45,30 +45,43 @@ public class UpdateVPCConnectionResultJsonUnmarshaller implements Unmarshaller<U
             return updateVPCConnectionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVPCConnectionResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VPCConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVPCConnectionResult.setVPCConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVPCConnectionResult.setUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVPCConnectionResult.setAvailabilityStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVPCConnectionResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

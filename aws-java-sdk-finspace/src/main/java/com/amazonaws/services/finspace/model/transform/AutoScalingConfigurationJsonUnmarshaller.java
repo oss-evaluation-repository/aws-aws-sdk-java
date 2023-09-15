@@ -43,34 +43,48 @@ public class AutoScalingConfigurationJsonUnmarshaller implements Unmarshaller<Au
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("minNodeCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setMinNodeCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxNodeCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setMaxNodeCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingMetric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setAutoScalingMetric(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricTarget", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setMetricTarget(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("scaleInCooldownSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setScaleInCooldownSeconds(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("scaleOutCooldownSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingConfiguration.setScaleOutCooldownSeconds(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class CustomLogSourceConfigurationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("crawlerConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLogSourceConfiguration.setCrawlerConfiguration(CustomLogSourceCrawlerConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("providerIdentity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLogSourceConfiguration.setProviderIdentity(AwsIdentityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

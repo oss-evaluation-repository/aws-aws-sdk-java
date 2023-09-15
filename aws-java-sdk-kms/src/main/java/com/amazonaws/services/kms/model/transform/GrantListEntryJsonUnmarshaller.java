@@ -43,48 +43,65 @@ public class GrantListEntryJsonUnmarshaller implements Unmarshaller<GrantListEnt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grantListEntry.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GrantId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grantListEntry.setGrantId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grantListEntry.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grantListEntry.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("GranteePrincipal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grantListEntry.setGranteePrincipal(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetiringPrincipal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grantListEntry.setRetiringPrincipal(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IssuingAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grantListEntry.setIssuingAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Operations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grantListEntry.setOperations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Constraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grantListEntry.setConstraints(GrantConstraintsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

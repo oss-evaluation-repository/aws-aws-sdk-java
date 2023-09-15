@@ -43,54 +43,72 @@ public class UpdateCsvClassifierRequestJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCsvClassifierRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Delimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCsvClassifierRequest.setDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuoteSymbol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCsvClassifierRequest.setQuoteSymbol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContainsHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCsvClassifierRequest.setContainsHeader(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Header", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCsvClassifierRequest.setHeader(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DisableValueTrimming", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCsvClassifierRequest.setDisableValueTrimming(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowSingleColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCsvClassifierRequest.setAllowSingleColumn(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomDatatypeConfigured", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCsvClassifierRequest.setCustomDatatypeConfigured(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomDatatypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCsvClassifierRequest.setCustomDatatypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Serde", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCsvClassifierRequest.setSerde(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

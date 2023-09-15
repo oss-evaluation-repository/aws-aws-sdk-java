@@ -43,26 +43,37 @@ public class PredefinedHierarchyJsonUnmarshaller implements Unmarshaller<Predefi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HierarchyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     predefinedHierarchy.setHierarchyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Columns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     predefinedHierarchy.setColumns(new ListUnmarshaller<ColumnIdentifier>(ColumnIdentifierJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DrillDownFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     predefinedHierarchy.setDrillDownFilters(new ListUnmarshaller<DrillDownFilter>(DrillDownFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

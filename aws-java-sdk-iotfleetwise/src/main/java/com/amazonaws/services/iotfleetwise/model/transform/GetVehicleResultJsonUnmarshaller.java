@@ -43,39 +43,54 @@ public class GetVehicleResultJsonUnmarshaller implements Unmarshaller<GetVehicle
             return getVehicleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("vehicleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getVehicleResult.setVehicleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getVehicleResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modelManifestArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getVehicleResult.setModelManifestArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("decoderManifestArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getVehicleResult.setDecoderManifestArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getVehicleResult.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getVehicleResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getVehicleResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

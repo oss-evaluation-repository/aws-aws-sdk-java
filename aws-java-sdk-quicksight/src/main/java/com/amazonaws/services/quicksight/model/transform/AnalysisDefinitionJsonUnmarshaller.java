@@ -43,12 +43,17 @@ public class AnalysisDefinitionJsonUnmarshaller implements Unmarshaller<Analysis
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSetIdentifierDeclarations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisDefinition.setDataSetIdentifierDeclarations(new ListUnmarshaller<DataSetIdentifierDeclaration>(
                             DataSetIdentifierDeclarationJsonUnmarshaller.getInstance())
@@ -56,38 +61,48 @@ public class AnalysisDefinitionJsonUnmarshaller implements Unmarshaller<Analysis
                     .unmarshall(context));
                 }
                 if (context.testExpression("Sheets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisDefinition.setSheets(new ListUnmarshaller<SheetDefinition>(SheetDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CalculatedFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisDefinition.setCalculatedFields(new ListUnmarshaller<CalculatedField>(CalculatedFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ParameterDeclarations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisDefinition.setParameterDeclarations(new ListUnmarshaller<ParameterDeclaration>(ParameterDeclarationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FilterGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisDefinition.setFilterGroups(new ListUnmarshaller<FilterGroup>(FilterGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ColumnConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisDefinition.setColumnConfigurations(new ListUnmarshaller<ColumnConfiguration>(ColumnConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AnalysisDefaults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisDefinition.setAnalysisDefaults(AnalysisDefaultsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

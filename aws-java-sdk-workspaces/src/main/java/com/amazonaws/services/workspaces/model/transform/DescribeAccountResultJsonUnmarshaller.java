@@ -43,18 +43,28 @@ public class DescribeAccountResultJsonUnmarshaller implements Unmarshaller<Descr
             return describeAccountResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DedicatedTenancySupport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountResult.setDedicatedTenancySupport(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DedicatedTenancyManagementCidrRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountResult.setDedicatedTenancyManagementCidrRange(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

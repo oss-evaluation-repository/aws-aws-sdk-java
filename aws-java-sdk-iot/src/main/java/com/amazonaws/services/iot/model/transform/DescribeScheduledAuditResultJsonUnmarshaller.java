@@ -43,36 +43,50 @@ public class DescribeScheduledAuditResultJsonUnmarshaller implements Unmarshalle
             return describeScheduledAuditResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("frequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeScheduledAuditResult.setFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dayOfMonth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeScheduledAuditResult.setDayOfMonth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dayOfWeek", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeScheduledAuditResult.setDayOfWeek(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetCheckNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeScheduledAuditResult.setTargetCheckNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("scheduledAuditName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeScheduledAuditResult.setScheduledAuditName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scheduledAuditArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeScheduledAuditResult.setScheduledAuditArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

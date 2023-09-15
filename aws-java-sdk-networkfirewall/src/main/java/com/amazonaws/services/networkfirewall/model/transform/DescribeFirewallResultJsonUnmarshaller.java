@@ -43,22 +43,33 @@ public class DescribeFirewallResultJsonUnmarshaller implements Unmarshaller<Desc
             return describeFirewallResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UpdateToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFirewallResult.setUpdateToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Firewall", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFirewallResult.setFirewall(FirewallJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FirewallStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFirewallResult.setFirewallStatus(FirewallStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,32 +43,42 @@ public class GetInsightImpactGraphResultJsonUnmarshaller implements Unmarshaller
             return getInsightImpactGraphResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InsightId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getInsightImpactGraphResult.setInsightId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getInsightImpactGraphResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getInsightImpactGraphResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ServiceGraphStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getInsightImpactGraphResult.setServiceGraphStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ServiceGraphEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getInsightImpactGraphResult.setServiceGraphEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Services", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getInsightImpactGraphResult.setServices(new ListUnmarshaller<InsightImpactGraphService>(InsightImpactGraphServiceJsonUnmarshaller
                             .getInstance())
@@ -76,8 +86,13 @@ public class GetInsightImpactGraphResultJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getInsightImpactGraphResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

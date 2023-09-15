@@ -43,40 +43,55 @@ public class EvaluatedRuleJsonUnmarshaller implements Unmarshaller<EvaluatedRule
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ruleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluatedRule.setRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ruleVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluatedRule.setRuleVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluatedRule.setExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expressionWithValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluatedRule.setExpressionWithValues(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outcomes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluatedRule.setOutcomes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("evaluated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluatedRule.setEvaluated(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("matched", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluatedRule.setMatched(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,52 +43,70 @@ public class InstanceAccessDetailsJsonUnmarshaller implements Unmarshaller<Insta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("certKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAccessDetails.setCertKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expiresAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAccessDetails.setExpiresAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ipAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAccessDetails.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAccessDetails.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("passwordData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAccessDetails.setPasswordData(PasswordDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("privateKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAccessDetails.setPrivateKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAccessDetails.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAccessDetails.setInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAccessDetails.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAccessDetails.setHostKeys(new ListUnmarshaller<HostKeyAttributes>(HostKeyAttributesJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,35 +43,49 @@ public class GetSolNetworkOperationTaskDetailsJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationTaskDetails.setTaskContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("taskEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationTaskDetails.setTaskEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("taskErrorDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationTaskDetails.setTaskErrorDetails(ErrorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("taskName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationTaskDetails.setTaskName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationTaskDetails.setTaskStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("taskStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationTaskDetails.setTaskStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

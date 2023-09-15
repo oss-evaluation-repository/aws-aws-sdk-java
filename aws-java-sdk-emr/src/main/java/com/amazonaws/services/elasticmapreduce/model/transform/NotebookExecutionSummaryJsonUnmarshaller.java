@@ -43,42 +43,58 @@ public class NotebookExecutionSummaryJsonUnmarshaller implements Unmarshaller<No
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NotebookExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookExecutionSummary.setNotebookExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EditorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookExecutionSummary.setEditorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotebookExecutionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookExecutionSummary.setNotebookExecutionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookExecutionSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookExecutionSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookExecutionSummary.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotebookS3Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookExecutionSummary.setNotebookS3Location(NotebookS3LocationForOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExecutionEngineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookExecutionSummary.setExecutionEngineId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

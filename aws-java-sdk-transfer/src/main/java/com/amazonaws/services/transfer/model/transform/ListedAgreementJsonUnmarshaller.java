@@ -43,38 +43,53 @@ public class ListedAgreementJsonUnmarshaller implements Unmarshaller<ListedAgree
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedAgreement.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgreementId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedAgreement.setAgreementId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedAgreement.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedAgreement.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedAgreement.setServerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocalProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedAgreement.setLocalProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartnerProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listedAgreement.setPartnerProfileId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

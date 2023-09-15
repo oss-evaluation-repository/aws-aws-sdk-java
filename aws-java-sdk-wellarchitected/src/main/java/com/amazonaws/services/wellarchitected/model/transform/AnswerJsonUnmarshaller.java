@@ -43,72 +43,94 @@ public class AnswerJsonUnmarshaller implements Unmarshaller<Answer, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QuestionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setQuestionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PillarId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setPillarId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuestionTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setQuestionTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuestionDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setQuestionDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImprovementPlanUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setImprovementPlanUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HelpfulResourceUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setHelpfulResourceUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HelpfulResourceDisplayText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setHelpfulResourceDisplayText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Choices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setChoices(new ListUnmarshaller<Choice>(ChoiceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SelectedChoices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setSelectedChoices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ChoiceAnswers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setChoiceAnswers(new ListUnmarshaller<ChoiceAnswer>(ChoiceAnswerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IsApplicable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setIsApplicable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Risk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setRisk(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Notes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setNotes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     answer.setReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

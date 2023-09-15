@@ -43,92 +43,118 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerInstanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setContainerInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ec2InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setEc2InstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("capacityProviderName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setCapacityProviderName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("versionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setVersionInfo(VersionInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("remainingResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setRemainingResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("registeredResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setRegisteredResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentConnected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setAgentConnected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("runningTasksCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setRunningTasksCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingTasksCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setPendingTasksCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("agentUpdateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setAgentUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("registeredAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setRegisteredAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("attachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setAttachments(new ListUnmarshaller<Attachment>(AttachmentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("healthStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerInstance.setHealthStatus(ContainerInstanceHealthStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

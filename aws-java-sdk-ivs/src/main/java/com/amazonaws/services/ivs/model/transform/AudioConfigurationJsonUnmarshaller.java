@@ -43,26 +43,38 @@ public class AudioConfigurationJsonUnmarshaller implements Unmarshaller<AudioCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioConfiguration.setChannels(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("codec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioConfiguration.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioConfiguration.setSampleRate(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("targetBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioConfiguration.setTargetBitrate(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

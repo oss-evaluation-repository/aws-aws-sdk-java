@@ -43,12 +43,17 @@ public class BatchStopJobRunResultJsonUnmarshaller implements Unmarshaller<Batch
             return batchStopJobRunResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SuccessfulSubmissions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchStopJobRunResult.setSuccessfulSubmissions(new ListUnmarshaller<BatchStopJobRunSuccessfulSubmission>(
                             BatchStopJobRunSuccessfulSubmissionJsonUnmarshaller.getInstance())
@@ -56,10 +61,15 @@ public class BatchStopJobRunResultJsonUnmarshaller implements Unmarshaller<Batch
                     .unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchStopJobRunResult.setErrors(new ListUnmarshaller<BatchStopJobRunError>(BatchStopJobRunErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

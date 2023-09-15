@@ -44,34 +44,47 @@ public class GetEventConfigurationByResourceTypesResultJsonUnmarshaller implemen
             return getEventConfigurationByResourceTypesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceRegistrationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventConfigurationByResourceTypesResult.setDeviceRegistrationState(DeviceRegistrationStateResourceTypeEventConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Proximity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventConfigurationByResourceTypesResult.setProximity(ProximityResourceTypeEventConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("Join", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventConfigurationByResourceTypesResult.setJoin(JoinResourceTypeEventConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConnectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventConfigurationByResourceTypesResult.setConnectionStatus(ConnectionStatusResourceTypeEventConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("MessageDeliveryStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventConfigurationByResourceTypesResult.setMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

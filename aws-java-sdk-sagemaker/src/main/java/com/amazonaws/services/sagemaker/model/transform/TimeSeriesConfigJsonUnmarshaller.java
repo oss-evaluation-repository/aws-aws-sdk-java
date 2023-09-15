@@ -43,28 +43,40 @@ public class TimeSeriesConfigJsonUnmarshaller implements Unmarshaller<TimeSeries
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetAttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesConfig.setTargetAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimestampAttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesConfig.setTimestampAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ItemIdentifierAttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesConfig.setItemIdentifierAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupingAttributeNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesConfig.setGroupingAttributeNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

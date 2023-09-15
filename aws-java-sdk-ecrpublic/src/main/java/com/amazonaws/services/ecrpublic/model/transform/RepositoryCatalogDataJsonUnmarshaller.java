@@ -43,42 +43,57 @@ public class RepositoryCatalogDataJsonUnmarshaller implements Unmarshaller<Repos
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogData.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("architectures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogData.setArchitectures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("operatingSystems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogData.setOperatingSystems(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("logoUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogData.setLogoUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("aboutText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogData.setAboutText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usageText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogData.setUsageText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("marketplaceCertified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogData.setMarketplaceCertified(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

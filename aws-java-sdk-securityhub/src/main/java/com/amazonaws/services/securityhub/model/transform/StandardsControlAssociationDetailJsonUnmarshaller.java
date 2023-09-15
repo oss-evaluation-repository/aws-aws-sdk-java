@@ -43,54 +43,72 @@ public class StandardsControlAssociationDetailJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StandardsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControlAssociationDetail.setStandardsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityControlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControlAssociationDetail.setSecurityControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityControlArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControlAssociationDetail.setSecurityControlArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControlAssociationDetail.setAssociationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RelatedRequirements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControlAssociationDetail.setRelatedRequirements(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControlAssociationDetail.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControlAssociationDetail.setUpdatedReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StandardsControlTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControlAssociationDetail.setStandardsControlTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StandardsControlDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControlAssociationDetail.setStandardsControlDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StandardsControlArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControlAssociationDetail.setStandardsControlArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

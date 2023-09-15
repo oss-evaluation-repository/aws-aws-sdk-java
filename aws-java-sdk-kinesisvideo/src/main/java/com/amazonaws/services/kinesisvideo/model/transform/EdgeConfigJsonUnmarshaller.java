@@ -43,26 +43,38 @@ public class EdgeConfigJsonUnmarshaller implements Unmarshaller<EdgeConfig, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HubDeviceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeConfig.setHubDeviceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecorderConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeConfig.setRecorderConfig(RecorderConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UploaderConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeConfig.setUploaderConfig(UploaderConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeletionConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeConfig.setDeletionConfig(DeletionConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

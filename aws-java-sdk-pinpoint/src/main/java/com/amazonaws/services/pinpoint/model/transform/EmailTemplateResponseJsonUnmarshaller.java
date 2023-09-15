@@ -43,63 +43,84 @@ public class EmailTemplateResponseJsonUnmarshaller implements Unmarshaller<Email
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HtmlPart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setHtmlPart(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommenderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setRecommenderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TemplateDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setTemplateType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TextPart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setTextPart(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailTemplateResponse.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

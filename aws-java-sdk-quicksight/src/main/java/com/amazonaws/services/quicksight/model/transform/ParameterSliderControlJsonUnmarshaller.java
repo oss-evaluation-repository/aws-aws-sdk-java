@@ -43,38 +43,53 @@ public class ParameterSliderControlJsonUnmarshaller implements Unmarshaller<Para
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ParameterControlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterSliderControl.setParameterControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterSliderControl.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterSliderControl.setSourceParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterSliderControl.setDisplayOptions(SliderControlDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaximumValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterSliderControl.setMaximumValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterSliderControl.setMinimumValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("StepSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterSliderControl.setStepSize(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

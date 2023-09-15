@@ -43,26 +43,38 @@ public class ConsumerJsonUnmarshaller implements Unmarshaller<Consumer, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConsumerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumer.setConsumerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConsumerARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumer.setConsumerARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConsumerStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumer.setConsumerStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConsumerCreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumer.setConsumerCreationTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

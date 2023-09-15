@@ -43,38 +43,53 @@ public class HlsSettingsJsonUnmarshaller implements Unmarshaller<HlsSettings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setAudioGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioOnlyContainer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setAudioOnlyContainer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioRenditionSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setAudioRenditionSets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioTrackType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setAudioTrackType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("descriptiveVideoServiceFlag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setDescriptiveVideoServiceFlag(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iFrameOnlyManifest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setIFrameOnlyManifest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentModifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setSegmentModifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

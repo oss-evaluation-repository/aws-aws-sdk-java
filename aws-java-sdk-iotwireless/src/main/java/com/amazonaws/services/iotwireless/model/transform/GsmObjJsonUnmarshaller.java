@@ -43,44 +43,60 @@ public class GsmObjJsonUnmarshaller implements Unmarshaller<GsmObj, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Mcc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmObj.setMcc(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Mnc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmObj.setMnc(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Lac", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmObj.setLac(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("GeranCid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmObj.setGeranCid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("GsmLocalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmObj.setGsmLocalId(GsmLocalIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GsmTimingAdvance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmObj.setGsmTimingAdvance(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RxLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmObj.setRxLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("GsmNmr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gsmObj.setGsmNmr(new ListUnmarshaller<GsmNmrObj>(GsmNmrObjJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

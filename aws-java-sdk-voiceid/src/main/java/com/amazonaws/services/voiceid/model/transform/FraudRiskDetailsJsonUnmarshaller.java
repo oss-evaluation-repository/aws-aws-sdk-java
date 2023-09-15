@@ -43,18 +43,28 @@ public class FraudRiskDetailsJsonUnmarshaller implements Unmarshaller<FraudRiskD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KnownFraudsterRisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fraudRiskDetails.setKnownFraudsterRisk(KnownFraudsterRiskJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VoiceSpoofingRisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fraudRiskDetails.setVoiceSpoofingRisk(VoiceSpoofingRiskJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

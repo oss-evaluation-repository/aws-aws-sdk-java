@@ -43,38 +43,53 @@ public class AgentContactReferenceJsonUnmarshaller implements Unmarshaller<Agent
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentContactReference.setContactId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Channel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentContactReference.setChannel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitiationMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentContactReference.setInitiationMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgentContactState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentContactReference.setAgentContactState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateStartTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentContactReference.setStateStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ConnectedToAgentTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentContactReference.setConnectedToAgentTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Queue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentContactReference.setQueue(QueueReferenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

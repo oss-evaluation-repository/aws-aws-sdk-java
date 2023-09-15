@@ -43,25 +43,36 @@ public class ActionExecutionOutputJsonUnmarshaller implements Unmarshaller<Actio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("outputArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionExecutionOutput.setOutputArtifacts(new ListUnmarshaller<ArtifactDetail>(ArtifactDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("executionResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionExecutionOutput.setExecutionResult(ActionExecutionResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("outputVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionExecutionOutput.setOutputVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

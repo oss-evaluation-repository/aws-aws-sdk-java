@@ -44,56 +44,75 @@ public class WorkflowExecutionContinuedAsNewEventAttributesJsonUnmarshaller impl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("input", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("decisionTaskCompletedEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setDecisionTaskCompletedEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("newExecutionRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setNewExecutionRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionStartToCloseTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setExecutionStartToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("taskPriority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setTaskPriority(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskStartToCloseTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setTaskStartToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("childPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setChildPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tagList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setTagList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("workflowType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setWorkflowType(WorkflowTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambdaRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setLambdaRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

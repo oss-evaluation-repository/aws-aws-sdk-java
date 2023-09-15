@@ -43,12 +43,17 @@ public class GetSavingsPlansUtilizationResultJsonUnmarshaller implements Unmarsh
             return getSavingsPlansUtilizationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SavingsPlansUtilizationsByTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSavingsPlansUtilizationResult.setSavingsPlansUtilizationsByTime(new ListUnmarshaller<SavingsPlansUtilizationByTime>(
                             SavingsPlansUtilizationByTimeJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class GetSavingsPlansUtilizationResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("Total", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSavingsPlansUtilizationResult.setTotal(SavingsPlansUtilizationAggregatesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

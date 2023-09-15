@@ -43,79 +43,104 @@ public class CanaryJsonUnmarshaller implements Unmarshaller<Canary, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Code", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setCode(CanaryCodeOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setSchedule(CanaryScheduleOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RunConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setRunConfig(CanaryRunConfigOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SuccessRetentionPeriodInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setSuccessRetentionPeriodInDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureRetentionPeriodInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setFailureRetentionPeriodInDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setStatus(CanaryStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Timeline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setTimeline(CanaryTimelineJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ArtifactS3Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setArtifactS3Location(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setEngineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuntimeVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setRuntimeVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setVpcConfig(VpcConfigOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisualReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setVisualReference(VisualReferenceOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("ArtifactConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canary.setArtifactConfig(ArtifactConfigOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

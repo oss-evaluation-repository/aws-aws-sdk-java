@@ -43,87 +43,114 @@ public class ClusterInfoJsonUnmarshaller implements Unmarshaller<ClusterInfo, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeOperationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setActiveOperationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("brokerNodeGroupInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setBrokerNodeGroupInfo(BrokerNodeGroupInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("clientAuthentication", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setClientAuthentication(ClientAuthenticationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("clusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("currentBrokerSoftwareInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setCurrentBrokerSoftwareInfo(BrokerSoftwareInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("currentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setCurrentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setEncryptionInfo(EncryptionInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("enhancedMonitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setEnhancedMonitoring(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("openMonitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setOpenMonitoring(OpenMonitoringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("loggingInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setLoggingInfo(LoggingInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("numberOfBrokerNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setNumberOfBrokerNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setStateInfo(StateInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("zookeeperConnectString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setZookeeperConnectString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("zookeeperConnectStringTls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setZookeeperConnectStringTls(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storageMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterInfo.setStorageMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

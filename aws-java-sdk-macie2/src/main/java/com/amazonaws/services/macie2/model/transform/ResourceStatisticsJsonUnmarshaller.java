@@ -43,46 +43,63 @@ public class ResourceStatisticsJsonUnmarshaller implements Unmarshaller<Resource
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("totalBytesClassified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceStatistics.setTotalBytesClassified(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalDetections", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceStatistics.setTotalDetections(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalDetectionsSuppressed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceStatistics.setTotalDetectionsSuppressed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalItemsClassified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceStatistics.setTotalItemsClassified(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalItemsSensitive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceStatistics.setTotalItemsSensitive(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalItemsSkipped", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceStatistics.setTotalItemsSkipped(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalItemsSkippedInvalidEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceStatistics.setTotalItemsSkippedInvalidEncryption(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalItemsSkippedInvalidKms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceStatistics.setTotalItemsSkippedInvalidKms(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalItemsSkippedPermissionDenied", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceStatistics.setTotalItemsSkippedPermissionDenied(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

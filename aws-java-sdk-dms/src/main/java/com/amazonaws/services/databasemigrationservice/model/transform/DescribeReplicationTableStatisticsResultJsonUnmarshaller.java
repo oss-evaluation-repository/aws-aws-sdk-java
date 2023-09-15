@@ -44,25 +44,36 @@ public class DescribeReplicationTableStatisticsResultJsonUnmarshaller implements
             return describeReplicationTableStatisticsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplicationConfigArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplicationTableStatisticsResult.setReplicationConfigArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplicationTableStatisticsResult.setMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationTableStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplicationTableStatisticsResult.setReplicationTableStatistics(new ListUnmarshaller<TableStatistics>(
                             TableStatisticsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

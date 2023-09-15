@@ -43,50 +43,68 @@ public class DocumentVersionInfoJsonUnmarshaller implements Unmarshaller<Documen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionInfo.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionInfo.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionInfo.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionInfo.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionInfo.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IsDefaultVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionInfo.setIsDefaultVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionInfo.setDocumentFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionInfo.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionInfo.setStatusInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReviewStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionInfo.setReviewStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

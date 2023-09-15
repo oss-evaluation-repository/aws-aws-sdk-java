@@ -43,36 +43,50 @@ public class PivotTableVisualJsonUnmarshaller implements Unmarshaller<PivotTable
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VisualId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableVisual.setVisualId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableVisual.setTitle(VisualTitleLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Subtitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableVisual.setSubtitle(VisualSubtitleLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChartConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableVisual.setChartConfiguration(PivotTableConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConditionalFormatting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableVisual.setConditionalFormatting(PivotTableConditionalFormattingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableVisual.setActions(new ListUnmarshaller<VisualCustomAction>(VisualCustomActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

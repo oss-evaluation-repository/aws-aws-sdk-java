@@ -43,30 +43,43 @@ public class GaugeChartOptionsJsonUnmarshaller implements Unmarshaller<GaugeChar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PrimaryValueDisplayType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gaugeChartOptions.setPrimaryValueDisplayType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Comparison", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gaugeChartOptions.setComparison(ComparisonConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ArcAxis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gaugeChartOptions.setArcAxis(ArcAxisConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Arc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gaugeChartOptions.setArc(ArcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PrimaryValueFontConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gaugeChartOptions.setPrimaryValueFontConfiguration(FontConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

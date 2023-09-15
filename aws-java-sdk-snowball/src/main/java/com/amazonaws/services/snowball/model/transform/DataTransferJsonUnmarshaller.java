@@ -43,26 +43,38 @@ public class DataTransferJsonUnmarshaller implements Unmarshaller<DataTransfer, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BytesTransferred", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataTransfer.setBytesTransferred(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectsTransferred", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataTransfer.setObjectsTransferred(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataTransfer.setTotalBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalObjects", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataTransfer.setTotalObjects(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

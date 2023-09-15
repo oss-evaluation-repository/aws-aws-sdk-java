@@ -43,42 +43,58 @@ public class ConfigurationRecorderStatusJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationRecorderStatus.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationRecorderStatus.setLastStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastStopTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationRecorderStatus.setLastStopTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("recording", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationRecorderStatus.setRecording(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationRecorderStatus.setLastStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationRecorderStatus.setLastErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationRecorderStatus.setLastErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatusChangeTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationRecorderStatus.setLastStatusChangeTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

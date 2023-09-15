@@ -43,62 +43,83 @@ public class BatchImportJsonUnmarshaller implements Unmarshaller<BatchImport, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("completionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setCompletionTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setInputPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setOutputPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iamRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("processedRecordsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setProcessedRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("failedRecordsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setFailedRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalRecordsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImport.setTotalRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

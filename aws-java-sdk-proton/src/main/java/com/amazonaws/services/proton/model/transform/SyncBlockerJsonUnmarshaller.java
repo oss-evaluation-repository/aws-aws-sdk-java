@@ -43,44 +43,60 @@ public class SyncBlockerJsonUnmarshaller implements Unmarshaller<SyncBlocker, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("contexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncBlocker.setContexts(new ListUnmarshaller<SyncBlockerContext>(SyncBlockerContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncBlocker.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncBlocker.setCreatedReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncBlocker.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resolvedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncBlocker.setResolvedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("resolvedReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncBlocker.setResolvedReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncBlocker.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncBlocker.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

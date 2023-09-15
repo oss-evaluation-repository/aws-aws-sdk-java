@@ -44,25 +44,36 @@ public class AnonymousUserEmbeddingExperienceConfigurationJsonUnmarshaller imple
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Dashboard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anonymousUserEmbeddingExperienceConfiguration.setDashboard(AnonymousUserDashboardEmbeddingConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("DashboardVisual", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anonymousUserEmbeddingExperienceConfiguration.setDashboardVisual(AnonymousUserDashboardVisualEmbeddingConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("QSearchBar", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anonymousUserEmbeddingExperienceConfiguration.setQSearchBar(AnonymousUserQSearchBarEmbeddingConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

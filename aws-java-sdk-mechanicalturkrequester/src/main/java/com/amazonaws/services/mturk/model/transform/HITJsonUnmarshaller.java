@@ -43,96 +43,125 @@ public class HITJsonUnmarshaller implements Unmarshaller<HIT, JsonUnmarshallerCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HITId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setHITId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HITTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setHITTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HITGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setHITGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HITLayoutId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setHITLayoutId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Question", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setQuestion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Keywords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setKeywords(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HITStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setHITStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxAssignments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setMaxAssignments(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Reward", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setReward(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoApprovalDelayInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setAutoApprovalDelayInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Expiration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setExpiration(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AssignmentDurationInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setAssignmentDurationInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("RequesterAnnotation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setRequesterAnnotation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QualificationRequirements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setQualificationRequirements(new ListUnmarshaller<QualificationRequirement>(QualificationRequirementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HITReviewStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setHITReviewStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfAssignmentsPending", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setNumberOfAssignmentsPending(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfAssignmentsAvailable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setNumberOfAssignmentsAvailable(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfAssignmentsCompleted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hIT.setNumberOfAssignmentsCompleted(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,65 +43,86 @@ public class TableInputJsonUnmarshaller implements Unmarshaller<TableInput, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastAccessTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setLastAccessTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastAnalyzedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setLastAnalyzedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Retention", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setRetention(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageDescriptor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setStorageDescriptor(StorageDescriptorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PartitionKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setPartitionKeys(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ViewOriginalText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setViewOriginalText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ViewExpandedText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setViewExpandedText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setTableType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("TargetTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableInput.setTargetTable(TableIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

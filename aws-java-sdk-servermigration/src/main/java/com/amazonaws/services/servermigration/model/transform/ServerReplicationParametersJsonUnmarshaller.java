@@ -43,38 +43,53 @@ public class ServerReplicationParametersJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("seedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverReplicationParameters.setSeedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("frequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverReplicationParameters.setFrequency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("runOnce", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverReplicationParameters.setRunOnce(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("licenseType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverReplicationParameters.setLicenseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfRecentAmisToKeep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverReplicationParameters.setNumberOfRecentAmisToKeep(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverReplicationParameters.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverReplicationParameters.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

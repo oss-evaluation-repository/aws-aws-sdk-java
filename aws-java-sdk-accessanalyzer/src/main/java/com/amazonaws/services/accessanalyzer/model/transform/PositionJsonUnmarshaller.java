@@ -43,22 +43,33 @@ public class PositionJsonUnmarshaller implements Unmarshaller<Position, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("line", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     position.setLine(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     position.setColumn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("offset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     position.setOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

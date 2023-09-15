@@ -43,56 +43,75 @@ public class DescribeDeviceResultJsonUnmarshaller implements Unmarshaller<Descri
             return describeDeviceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setDeviceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceFleetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setDeviceFleetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IotThingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setIotThingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setRegistrationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestHeartbeat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setLatestHeartbeat(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Models", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setModels(new ListUnmarshaller<EdgeModel>(EdgeModelJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MaxModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setMaxModels(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setAgentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

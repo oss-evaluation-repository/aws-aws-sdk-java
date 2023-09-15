@@ -43,54 +43,73 @@ public class ShareInvitationSummaryJsonUnmarshaller implements Unmarshaller<Shar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ShareInvitationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setShareInvitationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setSharedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedWith", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setSharedWith(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PermissionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setPermissionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShareResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setShareResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setWorkloadName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setWorkloadId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LensName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setLensName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LensArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setLensArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitationSummary.setProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

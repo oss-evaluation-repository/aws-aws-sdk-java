@@ -43,24 +43,35 @@ public class SnapshotFileSheetSelectionJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SheetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotFileSheetSelection.setSheetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectionScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotFileSheetSelection.setSelectionScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VisualIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotFileSheetSelection.setVisualIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

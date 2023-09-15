@@ -43,9 +43,13 @@ public class UpdateSmsChannelResultJsonUnmarshaller implements Unmarshaller<Upda
             return updateSmsChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateSmsChannelResult.setSMSChannelResponse(SMSChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

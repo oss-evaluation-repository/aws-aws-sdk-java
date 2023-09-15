@@ -43,25 +43,36 @@ public class SidewalkGetDeviceProfileJsonUnmarshaller implements Unmarshaller<Si
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationServerPublicKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkGetDeviceProfile.setApplicationServerPublicKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QualificationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkGetDeviceProfile.setQualificationStatus(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DakCertificateMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkGetDeviceProfile.setDakCertificateMetadata(new ListUnmarshaller<DakCertificateMetadata>(DakCertificateMetadataJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

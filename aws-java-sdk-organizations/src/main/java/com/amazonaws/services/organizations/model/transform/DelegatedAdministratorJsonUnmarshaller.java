@@ -43,42 +43,58 @@ public class DelegatedAdministratorJsonUnmarshaller implements Unmarshaller<Dele
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delegatedAdministrator.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delegatedAdministrator.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Email", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delegatedAdministrator.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delegatedAdministrator.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delegatedAdministrator.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JoinedMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delegatedAdministrator.setJoinedMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JoinedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delegatedAdministrator.setJoinedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DelegationEnabledDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delegatedAdministrator.setDelegationEnabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

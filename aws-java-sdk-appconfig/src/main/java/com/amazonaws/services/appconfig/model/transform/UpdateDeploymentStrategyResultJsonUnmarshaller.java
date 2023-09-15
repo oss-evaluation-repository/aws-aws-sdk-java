@@ -43,42 +43,58 @@ public class UpdateDeploymentStrategyResultJsonUnmarshaller implements Unmarshal
             return updateDeploymentStrategyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDeploymentStrategyResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDeploymentStrategyResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDeploymentStrategyResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentDurationInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDeploymentStrategyResult.setDeploymentDurationInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("GrowthType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDeploymentStrategyResult.setGrowthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GrowthFactor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDeploymentStrategyResult.setGrowthFactor(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("FinalBakeTimeInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDeploymentStrategyResult.setFinalBakeTimeInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicateTo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDeploymentStrategyResult.setReplicateTo(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

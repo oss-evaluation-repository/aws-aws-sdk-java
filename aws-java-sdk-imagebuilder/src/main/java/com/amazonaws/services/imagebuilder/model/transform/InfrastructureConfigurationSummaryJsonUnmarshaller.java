@@ -43,50 +43,67 @@ public class InfrastructureConfigurationSummaryJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     infrastructureConfigurationSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     infrastructureConfigurationSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     infrastructureConfigurationSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     infrastructureConfigurationSummary.setDateCreated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dateUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     infrastructureConfigurationSummary.setDateUpdated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     infrastructureConfigurationSummary.setResourceTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     infrastructureConfigurationSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("instanceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     infrastructureConfigurationSummary.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("instanceProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     infrastructureConfigurationSummary.setInstanceProfileName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

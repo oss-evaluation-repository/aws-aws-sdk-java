@@ -44,45 +44,57 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesDetailsJsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AbortIncompleteMultipartUpload", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails
                             .setAbortIncompleteMultipartUpload(AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExpirationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails.setExpirationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpirationInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails.setExpirationInDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpiredObjectDeleteMarker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails
                             .setExpiredObjectDeleteMarker(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Filter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails.setFilter(AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails.setID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NoncurrentVersionExpirationInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails.setNoncurrentVersionExpirationInDays(context.getUnmarshaller(Integer.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("NoncurrentVersionTransitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails
                             .setNoncurrentVersionTransitions(new ListUnmarshaller<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails>(
@@ -91,20 +103,27 @@ public class AwsS3BucketBucketLifecycleConfigurationRulesDetailsJsonUnmarshaller
                             .unmarshall(context));
                 }
                 if (context.testExpression("Prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Transitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketBucketLifecycleConfigurationRulesDetails
                             .setTransitions(new ListUnmarshaller<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails>(
                                     AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

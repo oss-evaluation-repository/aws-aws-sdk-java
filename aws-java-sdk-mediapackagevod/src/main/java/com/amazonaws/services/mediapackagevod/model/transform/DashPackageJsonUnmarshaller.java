@@ -43,42 +43,57 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dashManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPackage.setDashManifests(new ListUnmarshaller<DashManifest>(DashManifestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPackage.setEncryption(DashEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("includeEncoderConfigurationInSegments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPackage.setIncludeEncoderConfigurationInSegments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("includeIframeOnlyStream", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPackage.setIncludeIframeOnlyStream(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("periodTriggers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPackage.setSegmentDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentTemplateFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPackage.setSegmentTemplateFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

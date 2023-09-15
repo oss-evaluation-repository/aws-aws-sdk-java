@@ -43,34 +43,48 @@ public class NetworkACLEntryJsonUnmarshaller implements Unmarshaller<NetworkACLE
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ruleNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkACLEntry.setRuleNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkACLEntry.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ruleAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkACLEntry.setRuleAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkACLEntry.setPortRange(PortRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("icmpTypeCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkACLEntry.setIcmpTypeCode(IcmpTypeCodeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkACLEntry.setCidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

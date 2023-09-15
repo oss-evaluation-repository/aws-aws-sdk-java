@@ -43,22 +43,29 @@ public class StartMultiplexResultJsonUnmarshaller implements Unmarshaller<StartM
             return startMultiplexResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMultiplexResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("availabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMultiplexResult.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMultiplexResult.setDestinations(new ListUnmarshaller<MultiplexOutputDestination>(MultiplexOutputDestinationJsonUnmarshaller
                             .getInstance())
@@ -66,33 +73,44 @@ public class StartMultiplexResultJsonUnmarshaller implements Unmarshaller<StartM
                     .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMultiplexResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("multiplexSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMultiplexResult.setMultiplexSettings(MultiplexSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMultiplexResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pipelinesRunningCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMultiplexResult.setPipelinesRunningCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("programCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMultiplexResult.setProgramCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMultiplexResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMultiplexResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

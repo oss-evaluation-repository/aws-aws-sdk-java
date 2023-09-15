@@ -43,22 +43,33 @@ public class CreateProvisioningTemplateResultJsonUnmarshaller implements Unmarsh
             return createProvisioningTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("templateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createProvisioningTemplateResult.setTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createProvisioningTemplateResult.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createProvisioningTemplateResult.setDefaultVersionId(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

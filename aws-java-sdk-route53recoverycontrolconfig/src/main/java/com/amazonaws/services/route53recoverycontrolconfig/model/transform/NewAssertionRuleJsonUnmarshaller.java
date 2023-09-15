@@ -43,32 +43,45 @@ public class NewAssertionRuleJsonUnmarshaller implements Unmarshaller<NewAsserti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssertedControls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newAssertionRule.setAssertedControls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ControlPanelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newAssertionRule.setControlPanelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newAssertionRule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newAssertionRule.setRuleConfig(RuleConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("WaitPeriodMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newAssertionRule.setWaitPeriodMs(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

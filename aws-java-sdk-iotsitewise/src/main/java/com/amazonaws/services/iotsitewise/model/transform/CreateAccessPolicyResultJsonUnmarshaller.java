@@ -43,18 +43,28 @@ public class CreateAccessPolicyResultJsonUnmarshaller implements Unmarshaller<Cr
             return createAccessPolicyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessPolicyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAccessPolicyResult.setAccessPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessPolicyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAccessPolicyResult.setAccessPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

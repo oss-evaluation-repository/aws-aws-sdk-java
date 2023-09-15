@@ -43,26 +43,38 @@ public class ModelMetricsJsonUnmarshaller implements Unmarshaller<ModelMetrics, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelQuality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetrics.setModelQuality(ModelQualityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelDataQuality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetrics.setModelDataQuality(ModelDataQualityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Bias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetrics.setBias(BiasJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Explainability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelMetrics.setExplainability(ExplainabilityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

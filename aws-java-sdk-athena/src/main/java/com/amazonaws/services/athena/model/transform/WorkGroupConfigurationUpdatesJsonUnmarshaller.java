@@ -43,59 +43,79 @@ public class WorkGroupConfigurationUpdatesJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EnforceWorkGroupConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setEnforceWorkGroupConfiguration(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultConfigurationUpdates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setResultConfigurationUpdates(ResultConfigurationUpdatesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PublishCloudWatchMetricsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setPublishCloudWatchMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("BytesScannedCutoffPerQuery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setBytesScannedCutoffPerQuery(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("RemoveBytesScannedCutoffPerQuery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setRemoveBytesScannedCutoffPerQuery(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequesterPaysEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setRequesterPaysEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setEngineVersion(EngineVersionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RemoveCustomerContentEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setRemoveCustomerContentEncryptionConfiguration(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setAdditionalConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomerContentEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EnableMinimumEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfigurationUpdates.setEnableMinimumEncryptionConfiguration(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

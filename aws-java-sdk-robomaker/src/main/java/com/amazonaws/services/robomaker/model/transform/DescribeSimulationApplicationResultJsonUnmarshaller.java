@@ -43,61 +43,81 @@ public class DescribeSimulationApplicationResultJsonUnmarshaller implements Unma
             return describeSimulationApplicationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("simulationSoftwareSuite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setSimulationSoftwareSuite(SimulationSoftwareSuiteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("robotSoftwareSuite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setRobotSoftwareSuite(RobotSoftwareSuiteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("renderingEngine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setRenderingEngine(RenderingEngineJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("revisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setEnvironment(EnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageDigest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSimulationApplicationResult.setImageDigest(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

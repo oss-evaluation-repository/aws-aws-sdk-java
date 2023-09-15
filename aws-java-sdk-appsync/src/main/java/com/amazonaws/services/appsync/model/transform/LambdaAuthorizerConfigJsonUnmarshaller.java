@@ -43,22 +43,33 @@ public class LambdaAuthorizerConfigJsonUnmarshaller implements Unmarshaller<Lamb
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authorizerResultTtlInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaAuthorizerConfig.setAuthorizerResultTtlInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaAuthorizerConfig.setAuthorizerUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identityValidationExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaAuthorizerConfig.setIdentityValidationExpression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

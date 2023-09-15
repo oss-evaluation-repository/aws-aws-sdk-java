@@ -43,50 +43,68 @@ public class DICOMImportJobPropertiesJsonUnmarshaller implements Unmarshaller<DI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMImportJobProperties.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMImportJobProperties.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMImportJobProperties.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datastoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMImportJobProperties.setDatastoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMImportJobProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMImportJobProperties.setEndedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("submittedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMImportJobProperties.setSubmittedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("inputS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMImportJobProperties.setInputS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMImportJobProperties.setOutputS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMImportJobProperties.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

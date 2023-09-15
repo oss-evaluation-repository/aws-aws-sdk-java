@@ -43,42 +43,57 @@ public class ViolationDetailJsonUnmarshaller implements Unmarshaller<ViolationDe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PolicyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     violationDetail.setPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MemberAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     violationDetail.setMemberAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     violationDetail.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     violationDetail.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceViolations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     violationDetail.setResourceViolations(new ListUnmarshaller<ResourceViolation>(ResourceViolationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     violationDetail.setResourceTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     violationDetail.setResourceDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class AccessControlEntryJsonUnmarshaller implements Unmarshaller<AccessCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessRights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlEntry.setAccessRights(AccessRightsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlEntry.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("GroupDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlEntry.setGroupDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupSecurityIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlEntry.setGroupSecurityIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlEntry.setTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessControlEntry.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

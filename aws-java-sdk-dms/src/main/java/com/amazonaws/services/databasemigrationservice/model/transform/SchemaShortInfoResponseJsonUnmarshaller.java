@@ -43,30 +43,43 @@ public class SchemaShortInfoResponseJsonUnmarshaller implements Unmarshaller<Sch
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaShortInfoResponse.setSchemaId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaShortInfoResponse.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaShortInfoResponse.setDatabaseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaShortInfoResponse.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaShortInfoResponse.setDatabaseIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

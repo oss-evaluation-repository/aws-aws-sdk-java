@@ -43,22 +43,33 @@ public class BrokerSoftwareInfoJsonUnmarshaller implements Unmarshaller<BrokerSo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("configurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSoftwareInfo.setConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationRevision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSoftwareInfo.setConfigurationRevision(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("kafkaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSoftwareInfo.setKafkaVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

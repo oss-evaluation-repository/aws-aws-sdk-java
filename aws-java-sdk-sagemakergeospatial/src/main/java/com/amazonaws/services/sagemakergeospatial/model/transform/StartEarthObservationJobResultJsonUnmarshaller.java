@@ -43,51 +43,69 @@ public class StartEarthObservationJobResultJsonUnmarshaller implements Unmarshal
             return startEarthObservationJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startEarthObservationJobResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startEarthObservationJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("DurationInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startEarthObservationJobResult.setDurationInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startEarthObservationJobResult.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startEarthObservationJobResult.setInputConfig(InputConfigOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startEarthObservationJobResult.setJobConfig(JobConfigInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startEarthObservationJobResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startEarthObservationJobResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startEarthObservationJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startEarthObservationJobResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

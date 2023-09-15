@@ -43,36 +43,46 @@ public class ApplicationConfigurationUpdateJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SqlApplicationConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationUpdate.setSqlApplicationConfigurationUpdate(SqlApplicationConfigurationUpdateJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationCodeConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationUpdate.setApplicationCodeConfigurationUpdate(ApplicationCodeConfigurationUpdateJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("FlinkApplicationConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationUpdate.setFlinkApplicationConfigurationUpdate(FlinkApplicationConfigurationUpdateJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentPropertyUpdates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationUpdate.setEnvironmentPropertyUpdates(EnvironmentPropertyUpdatesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ApplicationSnapshotConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationUpdate.setApplicationSnapshotConfigurationUpdate(ApplicationSnapshotConfigurationUpdateJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VpcConfigurationUpdates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationUpdate.setVpcConfigurationUpdates(new ListUnmarshaller<VpcConfigurationUpdate>(
                             VpcConfigurationUpdateJsonUnmarshaller.getInstance())
@@ -80,9 +90,14 @@ public class ApplicationConfigurationUpdateJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("ZeppelinApplicationConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfigurationUpdate.setZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdateJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

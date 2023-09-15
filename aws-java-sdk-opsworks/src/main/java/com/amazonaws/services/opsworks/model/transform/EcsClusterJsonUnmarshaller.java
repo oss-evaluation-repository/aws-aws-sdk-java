@@ -43,26 +43,38 @@ public class EcsClusterJsonUnmarshaller implements Unmarshaller<EcsCluster, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EcsClusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsCluster.setEcsClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EcsClusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsCluster.setEcsClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsCluster.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegisteredAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsCluster.setRegisteredAt(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,48 +43,65 @@ public class TransformFilterCriteriaJsonUnmarshaller implements Unmarshaller<Tra
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformFilterCriteria.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransformType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformFilterCriteria.setTransformType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformFilterCriteria.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlueVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformFilterCriteria.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformFilterCriteria.setCreatedBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformFilterCriteria.setCreatedAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformFilterCriteria.setLastModifiedBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformFilterCriteria.setLastModifiedAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Schema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformFilterCriteria.setSchema(new ListUnmarshaller<SchemaColumn>(SchemaColumnJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

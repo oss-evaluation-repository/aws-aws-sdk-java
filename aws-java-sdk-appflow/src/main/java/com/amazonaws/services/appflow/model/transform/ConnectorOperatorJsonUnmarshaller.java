@@ -43,78 +43,103 @@ public class ConnectorOperatorJsonUnmarshaller implements Unmarshaller<Connector
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Amplitude", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setAmplitude(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Datadog", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setDatadog(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Dynatrace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setDynatrace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GoogleAnalytics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setGoogleAnalytics(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InforNexus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setInforNexus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Marketo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setMarketo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setS3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Salesforce", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setSalesforce(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceNow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setServiceNow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Singular", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setSingular(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Slack", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setSlack(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Trendmicro", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setTrendmicro(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Veeva", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setVeeva(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Zendesk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setZendesk(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SAPOData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setSAPOData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomConnector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setCustomConnector(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Pardot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setPardot(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

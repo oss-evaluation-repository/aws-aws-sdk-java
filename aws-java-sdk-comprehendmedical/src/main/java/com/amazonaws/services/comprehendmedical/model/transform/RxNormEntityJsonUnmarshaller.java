@@ -43,56 +43,74 @@ public class RxNormEntityJsonUnmarshaller implements Unmarshaller<RxNormEntity, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rxNormEntity.setId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Text", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rxNormEntity.setText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rxNormEntity.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rxNormEntity.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rxNormEntity.setScore(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("BeginOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rxNormEntity.setBeginOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rxNormEntity.setEndOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rxNormEntity.setAttributes(new ListUnmarshaller<RxNormAttribute>(RxNormAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Traits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rxNormEntity.setTraits(new ListUnmarshaller<RxNormTrait>(RxNormTraitJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RxNormConcepts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rxNormEntity.setRxNormConcepts(new ListUnmarshaller<RxNormConcept>(RxNormConceptJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

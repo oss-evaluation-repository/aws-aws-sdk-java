@@ -43,26 +43,38 @@ public class AudioOnlyHlsSettingsJsonUnmarshaller implements Unmarshaller<AudioO
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioOnlyHlsSettings.setAudioGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioOnlyImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioOnlyHlsSettings.setAudioOnlyImage(InputLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("audioTrackType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioOnlyHlsSettings.setAudioTrackType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioOnlyHlsSettings.setSegmentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

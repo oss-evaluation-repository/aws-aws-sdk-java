@@ -43,34 +43,48 @@ public class ModelCardVersionSummaryJsonUnmarshaller implements Unmarshaller<Mod
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelCardName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelCardVersionSummary.setModelCardName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelCardArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelCardVersionSummary.setModelCardArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelCardStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelCardVersionSummary.setModelCardStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelCardVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelCardVersionSummary.setModelCardVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelCardVersionSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelCardVersionSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

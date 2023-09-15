@@ -43,42 +43,57 @@ public class VoiceJsonUnmarshaller implements Unmarshaller<Voice, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Gender", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voice.setGender(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voice.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voice.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voice.setLanguageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voice.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalLanguageCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voice.setAdditionalLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportedEngines", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voice.setSupportedEngines(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

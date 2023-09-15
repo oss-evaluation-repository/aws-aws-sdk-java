@@ -43,29 +43,41 @@ public class SlotJsonUnmarshaller implements Unmarshaller<Slot, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setValue(ValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("shape", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setShape(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("values", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setValues(new ListUnmarshaller<Slot>(SlotJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("subSlots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setSubSlots(new MapUnmarshaller<String, Slot>(context.getUnmarshaller(String.class), SlotJsonUnmarshaller.getInstance())
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

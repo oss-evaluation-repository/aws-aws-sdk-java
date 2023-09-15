@@ -43,43 +43,59 @@ public class ProfilingGroupDescriptionJsonUnmarshaller implements Unmarshaller<P
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentOrchestrationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingGroupDescription.setAgentOrchestrationConfig(AgentOrchestrationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingGroupDescription.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("computePlatform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingGroupDescription.setComputePlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingGroupDescription.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingGroupDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("profilingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingGroupDescription.setProfilingStatus(ProfilingStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingGroupDescription.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingGroupDescription.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

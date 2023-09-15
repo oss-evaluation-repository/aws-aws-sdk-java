@@ -43,23 +43,34 @@ public class DeploymentPoliciesJsonUnmarshaller implements Unmarshaller<Deployme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("failureHandlingPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentPolicies.setFailureHandlingPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentUpdatePolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentPolicies.setComponentUpdatePolicy(DeploymentComponentUpdatePolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configurationValidationPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentPolicies.setConfigurationValidationPolicy(DeploymentConfigurationValidationPolicyJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,47 +43,64 @@ public class GetCalculatedAttributeDefinitionResultJsonUnmarshaller implements U
             return getCalculatedAttributeDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CalculatedAttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculatedAttributeDefinitionResult.setCalculatedAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculatedAttributeDefinitionResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculatedAttributeDefinitionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculatedAttributeDefinitionResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculatedAttributeDefinitionResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Statistic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculatedAttributeDefinitionResult.setStatistic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Conditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculatedAttributeDefinitionResult.setConditions(ConditionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AttributeDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculatedAttributeDefinitionResult.setAttributeDetails(AttributeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculatedAttributeDefinitionResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

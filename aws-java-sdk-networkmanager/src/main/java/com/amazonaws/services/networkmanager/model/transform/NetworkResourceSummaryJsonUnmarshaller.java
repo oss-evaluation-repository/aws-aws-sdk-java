@@ -43,34 +43,48 @@ public class NetworkResourceSummaryJsonUnmarshaller implements Unmarshaller<Netw
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegisteredGatewayArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResourceSummary.setRegisteredGatewayArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResourceSummary.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResourceSummary.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResourceSummary.setDefinition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NameTag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResourceSummary.setNameTag(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsMiddlebox", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResourceSummary.setIsMiddlebox(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

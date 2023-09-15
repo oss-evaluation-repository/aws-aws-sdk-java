@@ -43,28 +43,37 @@ public class OrganizationConformancePackJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OrganizationConformancePackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConformancePack.setOrganizationConformancePackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationConformancePackArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConformancePack.setOrganizationConformancePackArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryS3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConformancePack.setDeliveryS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryS3KeyPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConformancePack.setDeliveryS3KeyPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConformancePackInputParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConformancePack.setConformancePackInputParameters(new ListUnmarshaller<ConformancePackInputParameter>(
                             ConformancePackInputParameterJsonUnmarshaller.getInstance())
@@ -72,14 +81,20 @@ public class OrganizationConformancePackJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExcludedAccounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConformancePack.setExcludedAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConformancePack.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

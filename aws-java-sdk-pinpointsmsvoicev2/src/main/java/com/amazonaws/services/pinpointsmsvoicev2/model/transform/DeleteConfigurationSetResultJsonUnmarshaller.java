@@ -43,36 +43,50 @@ public class DeleteConfigurationSetResultJsonUnmarshaller implements Unmarshalle
             return deleteConfigurationSetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigurationSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteConfigurationSetResult.setConfigurationSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteConfigurationSetResult.setConfigurationSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventDestinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteConfigurationSetResult.setEventDestinations(new ListUnmarshaller<EventDestination>(EventDestinationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DefaultMessageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteConfigurationSetResult.setDefaultMessageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultSenderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteConfigurationSetResult.setDefaultSenderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteConfigurationSetResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

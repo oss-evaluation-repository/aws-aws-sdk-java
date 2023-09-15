@@ -43,40 +43,52 @@ public class AwsEc2VpnConnectionDetailsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VpnConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setVpnConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomerGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setCustomerGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomerGatewayConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setCustomerGatewayConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpnGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setVpnGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VgwTelemetry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setVgwTelemetry(new ListUnmarshaller<AwsEc2VpnConnectionVgwTelemetryDetails>(
                             AwsEc2VpnConnectionVgwTelemetryDetailsJsonUnmarshaller.getInstance())
@@ -84,10 +96,12 @@ public class AwsEc2VpnConnectionDetailsJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("Options", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setOptions(AwsEc2VpnConnectionOptionsDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Routes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setRoutes(new ListUnmarshaller<AwsEc2VpnConnectionRoutesDetails>(
                             AwsEc2VpnConnectionRoutesDetailsJsonUnmarshaller.getInstance())
@@ -95,8 +109,13 @@ public class AwsEc2VpnConnectionDetailsJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("TransitGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionDetails.setTransitGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

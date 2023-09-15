@@ -43,22 +43,33 @@ public class NetworkHeaderJsonUnmarshaller implements Unmarshaller<NetworkHeader
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkHeader.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkHeader.setDestination(NetworkPathComponentDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkHeader.setSource(NetworkPathComponentDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

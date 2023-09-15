@@ -43,24 +43,35 @@ public class LogicalTableJsonUnmarshaller implements Unmarshaller<LogicalTable, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Alias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logicalTable.setAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataTransforms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logicalTable.setDataTransforms(new ListUnmarshaller<TransformOperation>(TransformOperationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logicalTable.setSource(LogicalTableSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

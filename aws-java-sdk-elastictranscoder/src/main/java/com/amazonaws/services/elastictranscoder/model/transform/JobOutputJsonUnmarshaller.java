@@ -43,98 +43,127 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThumbnailPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setThumbnailPattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThumbnailEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setThumbnailEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Rotate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setRotate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PresetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setPresetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setSegmentDuration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setStatusDetail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setDuration(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Width", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setWidth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Height", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setHeight(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setFrameRate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setFileSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DurationMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setDurationMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Watermarks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setWatermarks(new ListUnmarshaller<JobWatermark>(JobWatermarkJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AlbumArt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setAlbumArt(JobAlbumArtJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Composition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setComposition(new ListUnmarshaller<Clip>(ClipJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Captions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setCaptions(CaptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AppliedColorSpaceConversion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobOutput.setAppliedColorSpaceConversion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,35 +43,49 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arguments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setArguments(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Timeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setSecurityConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationProperty", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setNotificationProperty(NotificationPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CrawlerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setCrawlerName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

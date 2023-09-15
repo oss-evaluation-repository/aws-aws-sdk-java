@@ -43,62 +43,82 @@ public class DescribeLocationHdfsResultJsonUnmarshaller implements Unmarshaller<
             return describeLocationHdfsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setLocationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setLocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NameNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setNameNodes(new ListUnmarshaller<HdfsNameNode>(HdfsNameNodeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BlockSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setBlockSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationFactor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setReplicationFactor(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyProviderUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setKmsKeyProviderUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QopConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setQopConfiguration(QopConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SimpleUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setSimpleUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KerberosPrincipal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setKerberosPrincipal(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgentArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationHdfsResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

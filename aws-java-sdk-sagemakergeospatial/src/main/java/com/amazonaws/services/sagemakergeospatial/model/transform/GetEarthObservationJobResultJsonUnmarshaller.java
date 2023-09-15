@@ -43,69 +43,91 @@ public class GetEarthObservationJobResultJsonUnmarshaller implements Unmarshalle
             return getEarthObservationJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("DurationInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setDurationInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setErrorDetails(EarthObservationJobErrorDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportErrorDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setExportErrorDetails(ExportErrorDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExportStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setExportStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setInputConfig(InputConfigOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setJobConfig(JobConfigInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputBands", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setOutputBands(new ListUnmarshaller<OutputBand>(OutputBandJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEarthObservationJobResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

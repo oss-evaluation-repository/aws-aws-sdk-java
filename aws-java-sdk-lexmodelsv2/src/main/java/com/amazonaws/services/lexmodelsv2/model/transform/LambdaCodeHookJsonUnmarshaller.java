@@ -43,18 +43,28 @@ public class LambdaCodeHookJsonUnmarshaller implements Unmarshaller<LambdaCodeHo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lambdaARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaCodeHook.setLambdaARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codeHookInterfaceVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaCodeHook.setCodeHookInterfaceVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

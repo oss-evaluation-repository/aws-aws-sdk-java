@@ -43,26 +43,38 @@ public class SamlConfigOptionsJsonUnmarshaller implements Unmarshaller<SamlConfi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("groupAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samlConfigOptions.setGroupAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samlConfigOptions.setMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sessionTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samlConfigOptions.setSessionTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("userAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samlConfigOptions.setUserAttribute(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

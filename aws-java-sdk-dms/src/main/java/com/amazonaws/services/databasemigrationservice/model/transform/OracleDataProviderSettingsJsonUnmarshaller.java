@@ -43,50 +43,68 @@ public class OracleDataProviderSettingsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oracleDataProviderSettings.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oracleDataProviderSettings.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oracleDataProviderSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SslMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oracleDataProviderSettings.setSslMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oracleDataProviderSettings.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AsmServer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oracleDataProviderSettings.setAsmServer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerOracleAsmSecretId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oracleDataProviderSettings.setSecretsManagerOracleAsmSecretId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerOracleAsmAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oracleDataProviderSettings.setSecretsManagerOracleAsmAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerSecurityDbEncryptionSecretId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oracleDataProviderSettings.setSecretsManagerSecurityDbEncryptionSecretId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerSecurityDbEncryptionAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oracleDataProviderSettings.setSecretsManagerSecurityDbEncryptionAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

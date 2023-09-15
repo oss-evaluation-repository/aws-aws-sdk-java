@@ -43,18 +43,28 @@ public class ConnectivityInfoJsonUnmarshaller implements Unmarshaller<Connectivi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("publicAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectivityInfo.setPublicAccess(PublicAccessJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vpcConnectivity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectivityInfo.setVpcConnectivity(VpcConnectivityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

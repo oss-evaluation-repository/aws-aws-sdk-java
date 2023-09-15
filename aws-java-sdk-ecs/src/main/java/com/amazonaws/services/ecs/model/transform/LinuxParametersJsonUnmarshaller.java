@@ -43,42 +43,57 @@ public class LinuxParametersJsonUnmarshaller implements Unmarshaller<LinuxParame
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("capabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     linuxParameters.setCapabilities(KernelCapabilitiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("devices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     linuxParameters.setDevices(new ListUnmarshaller<Device>(DeviceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("initProcessEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     linuxParameters.setInitProcessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("sharedMemorySize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     linuxParameters.setSharedMemorySize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("tmpfs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     linuxParameters.setTmpfs(new ListUnmarshaller<Tmpfs>(TmpfsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("maxSwap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     linuxParameters.setMaxSwap(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("swappiness", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     linuxParameters.setSwappiness(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class ReservationResourceSpecificationJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channelClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationResourceSpecification.setChannelClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationResourceSpecification.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maximumBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationResourceSpecification.setMaximumBitrate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maximumFramerate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationResourceSpecification.setMaximumFramerate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationResourceSpecification.setResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationResourceSpecification.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("specialFeature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationResourceSpecification.setSpecialFeature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("videoQuality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationResourceSpecification.setVideoQuality(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

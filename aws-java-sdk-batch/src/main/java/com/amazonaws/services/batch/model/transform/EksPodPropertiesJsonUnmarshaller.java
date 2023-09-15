@@ -43,38 +43,52 @@ public class EksPodPropertiesJsonUnmarshaller implements Unmarshaller<EksPodProp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("serviceAccountName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodProperties.setServiceAccountName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostNetwork", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodProperties.setHostNetwork(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("dnsPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodProperties.setDnsPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodProperties.setContainers(new ListUnmarshaller<EksContainer>(EksContainerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("volumes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodProperties.setVolumes(new ListUnmarshaller<EksVolume>(EksVolumeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodProperties.setMetadata(EksMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

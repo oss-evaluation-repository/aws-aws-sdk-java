@@ -43,30 +43,43 @@ public class ImageLayerAggregationResponseJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageLayerAggregationResponse.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("layerHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageLayerAggregationResponse.setLayerHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageLayerAggregationResponse.setRepository(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageLayerAggregationResponse.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("severityCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageLayerAggregationResponse.setSeverityCounts(SeverityCountsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

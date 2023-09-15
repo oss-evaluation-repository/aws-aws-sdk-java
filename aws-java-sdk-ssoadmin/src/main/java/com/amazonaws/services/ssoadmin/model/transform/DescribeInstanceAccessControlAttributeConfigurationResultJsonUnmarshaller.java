@@ -44,24 +44,35 @@ public class DescribeInstanceAccessControlAttributeConfigurationResultJsonUnmars
             return describeInstanceAccessControlAttributeConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceAccessControlAttributeConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInstanceAccessControlAttributeConfigurationResult
                             .setInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInstanceAccessControlAttributeConfigurationResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInstanceAccessControlAttributeConfigurationResult.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

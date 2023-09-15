@@ -43,30 +43,43 @@ public class FirewallDomainListMetadataJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallDomainListMetadata.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallDomainListMetadata.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallDomainListMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatorRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallDomainListMetadata.setCreatorRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ManagedOwnerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallDomainListMetadata.setManagedOwnerName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

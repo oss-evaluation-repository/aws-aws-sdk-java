@@ -43,95 +43,124 @@ public class FieldSourceProfileIdsJsonUnmarshaller implements Unmarshaller<Field
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setAccountNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setAdditionalInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setPartyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BusinessName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setBusinessName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirstName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setFirstName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MiddleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setMiddleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setLastName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BirthDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setBirthDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Gender", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setGender(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MobilePhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setMobilePhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HomePhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setHomePhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BusinessPhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setBusinessPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PersonalEmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setPersonalEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BusinessEmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setBusinessEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Address", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShippingAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setShippingAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MailingAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setMailingAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BillingAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setBillingAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldSourceProfileIds.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

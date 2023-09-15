@@ -43,20 +43,30 @@ public class IntegerDefaultValuesJsonUnmarshaller implements Unmarshaller<Intege
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DynamicValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integerDefaultValues.setDynamicValue(DynamicDefaultValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StaticValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integerDefaultValues.setStaticValues(new ListUnmarshaller<Long>(context.getUnmarshaller(Long.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

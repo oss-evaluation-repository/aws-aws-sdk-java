@@ -43,28 +43,39 @@ public class GetPipelineDefinitionResultJsonUnmarshaller implements Unmarshaller
             return getPipelineDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineObjects", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPipelineDefinitionResult.setPipelineObjects(new ListUnmarshaller<PipelineObject>(PipelineObjectJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("parameterObjects", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPipelineDefinitionResult.setParameterObjects(new ListUnmarshaller<ParameterObject>(ParameterObjectJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("parameterValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPipelineDefinitionResult.setParameterValues(new ListUnmarshaller<ParameterValue>(ParameterValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,67 +43,89 @@ public class ElasticsearchDestinationConfigurationJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setDomainARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setClusterEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexRotationPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setIndexRotationPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BufferingHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setBufferingHints(ElasticsearchBufferingHintsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RetryOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setRetryOptions(ElasticsearchRetryOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3BackupMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setS3BackupMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setS3Configuration(S3DestinationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setVpcConfiguration(VpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DocumentIdOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setDocumentIdOptions(DocumentIdOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

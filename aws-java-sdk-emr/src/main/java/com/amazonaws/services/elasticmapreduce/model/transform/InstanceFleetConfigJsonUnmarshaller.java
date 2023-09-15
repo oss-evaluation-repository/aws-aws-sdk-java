@@ -43,40 +43,55 @@ public class InstanceFleetConfigJsonUnmarshaller implements Unmarshaller<Instanc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetConfig.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceFleetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetConfig.setInstanceFleetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetOnDemandCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetConfig.setTargetOnDemandCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetSpotCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetConfig.setTargetSpotCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceTypeConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetConfig.setInstanceTypeConfigs(new ListUnmarshaller<InstanceTypeConfig>(InstanceTypeConfigJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LaunchSpecifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetConfig.setLaunchSpecifications(InstanceFleetProvisioningSpecificationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResizeSpecifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetConfig.setResizeSpecifications(InstanceFleetResizingSpecificationsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

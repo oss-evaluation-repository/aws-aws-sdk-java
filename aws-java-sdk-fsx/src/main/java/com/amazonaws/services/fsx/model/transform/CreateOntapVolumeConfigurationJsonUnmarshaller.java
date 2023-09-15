@@ -43,50 +43,68 @@ public class CreateOntapVolumeConfigurationJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JunctionPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOntapVolumeConfiguration.setJunctionPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOntapVolumeConfiguration.setSecurityStyle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeInMegabytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOntapVolumeConfiguration.setSizeInMegabytes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageEfficiencyEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOntapVolumeConfiguration.setStorageEfficiencyEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageVirtualMachineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOntapVolumeConfiguration.setStorageVirtualMachineId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TieringPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOntapVolumeConfiguration.setTieringPolicy(TieringPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OntapVolumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOntapVolumeConfiguration.setOntapVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOntapVolumeConfiguration.setSnapshotPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyTagsToBackups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOntapVolumeConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SnaplockConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOntapVolumeConfiguration.setSnaplockConfiguration(CreateSnaplockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class DataSetConfigurationJsonUnmarshaller implements Unmarshaller<DataSe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Placeholder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetConfiguration.setPlaceholder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSetSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetConfiguration.setDataSetSchema(DataSetSchemaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColumnGroupSchemaList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetConfiguration.setColumnGroupSchemaList(new ListUnmarshaller<ColumnGroupSchema>(ColumnGroupSchemaJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class GetComputeAuthTokenResultJsonUnmarshaller implements Unmarshaller<G
             return getComputeAuthTokenResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FleetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getComputeAuthTokenResult.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getComputeAuthTokenResult.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getComputeAuthTokenResult.setComputeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getComputeAuthTokenResult.setComputeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getComputeAuthTokenResult.setAuthToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpirationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getComputeAuthTokenResult.setExpirationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

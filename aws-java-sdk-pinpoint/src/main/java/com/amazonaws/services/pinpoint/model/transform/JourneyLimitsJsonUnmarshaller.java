@@ -43,34 +43,48 @@ public class JourneyLimitsJsonUnmarshaller implements Unmarshaller<JourneyLimits
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DailyCap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyLimits.setDailyCap(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointReentryCap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyLimits.setEndpointReentryCap(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MessagesPerSecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyLimits.setMessagesPerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointReentryInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyLimits.setEndpointReentryInterval(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeframeCap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyLimits.setTimeframeCap(JourneyTimeframeCapJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TotalCap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyLimits.setTotalCap(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

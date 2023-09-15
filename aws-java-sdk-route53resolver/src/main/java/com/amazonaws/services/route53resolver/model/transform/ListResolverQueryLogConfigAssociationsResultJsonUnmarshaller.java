@@ -44,29 +44,41 @@ public class ListResolverQueryLogConfigAssociationsResultJsonUnmarshaller implem
             return listResolverQueryLogConfigAssociationsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResolverQueryLogConfigAssociationsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResolverQueryLogConfigAssociationsResult.setTotalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalFilteredCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResolverQueryLogConfigAssociationsResult.setTotalFilteredCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ResolverQueryLogConfigAssociations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResolverQueryLogConfigAssociationsResult.setResolverQueryLogConfigAssociations(new ListUnmarshaller<ResolverQueryLogConfigAssociation>(
                             ResolverQueryLogConfigAssociationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class GetDatasetContentResultJsonUnmarshaller implements Unmarshaller<Get
             return getDatasetContentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("entries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetContentResult.setEntries(new ListUnmarshaller<DatasetEntry>(DatasetEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetContentResult.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDatasetContentResult.setStatus(DatasetContentStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

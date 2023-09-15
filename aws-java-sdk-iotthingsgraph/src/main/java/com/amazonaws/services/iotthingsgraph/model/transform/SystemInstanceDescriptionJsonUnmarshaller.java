@@ -43,32 +43,42 @@ public class SystemInstanceDescriptionJsonUnmarshaller implements Unmarshaller<S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("summary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInstanceDescription.setSummary(SystemInstanceSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInstanceDescription.setDefinition(DefinitionDocumentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInstanceDescription.setS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInstanceDescription.setMetricsConfiguration(MetricsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("validatedNamespaceVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInstanceDescription.setValidatedNamespaceVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("validatedDependencyRevisions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInstanceDescription.setValidatedDependencyRevisions(new ListUnmarshaller<DependencyRevision>(DependencyRevisionJsonUnmarshaller
                             .getInstance())
@@ -76,8 +86,13 @@ public class SystemInstanceDescriptionJsonUnmarshaller implements Unmarshaller<S
                     .unmarshall(context));
                 }
                 if (context.testExpression("flowActionsRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInstanceDescription.setFlowActionsRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

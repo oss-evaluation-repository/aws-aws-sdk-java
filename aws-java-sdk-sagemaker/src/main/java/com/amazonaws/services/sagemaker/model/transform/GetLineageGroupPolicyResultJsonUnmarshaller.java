@@ -43,18 +43,28 @@ public class GetLineageGroupPolicyResultJsonUnmarshaller implements Unmarshaller
             return getLineageGroupPolicyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LineageGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLineageGroupPolicyResult.setLineageGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourcePolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLineageGroupPolicyResult.setResourcePolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

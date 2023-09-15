@@ -43,44 +43,60 @@ public class EcsClusterDetailsJsonUnmarshaller implements Unmarshaller<EcsCluste
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsClusterDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsClusterDetails.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsClusterDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("activeServicesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsClusterDetails.setActiveServicesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("registeredContainerInstancesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsClusterDetails.setRegisteredContainerInstancesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("runningTasksCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsClusterDetails.setRunningTasksCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsClusterDetails.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("taskDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsClusterDetails.setTaskDetails(EcsTaskDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

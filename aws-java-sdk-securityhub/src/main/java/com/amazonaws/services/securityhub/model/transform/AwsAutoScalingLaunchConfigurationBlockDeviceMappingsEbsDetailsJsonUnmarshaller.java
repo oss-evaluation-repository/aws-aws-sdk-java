@@ -44,35 +44,49 @@ public class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsJsonU
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeleteOnTermination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails.setDeleteOnTermination(context.getUnmarshaller(Boolean.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("Encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Iops", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails.setIops(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails.setSnapshotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails.setVolumeSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

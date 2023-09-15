@@ -43,9 +43,13 @@ public class UpdateCampaignResultJsonUnmarshaller implements Unmarshaller<Update
             return updateCampaignResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateCampaignResult.setCampaignResponse(CampaignResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

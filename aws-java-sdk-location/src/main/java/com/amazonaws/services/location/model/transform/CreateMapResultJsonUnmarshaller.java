@@ -43,22 +43,33 @@ public class CreateMapResultJsonUnmarshaller implements Unmarshaller<CreateMapRe
             return createMapResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createMapResult.setCreateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("MapArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createMapResult.setMapArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MapName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createMapResult.setMapName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

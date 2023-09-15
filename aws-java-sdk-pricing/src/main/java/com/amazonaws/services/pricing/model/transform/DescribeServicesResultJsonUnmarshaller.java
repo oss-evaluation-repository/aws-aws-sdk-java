@@ -43,24 +43,35 @@ public class DescribeServicesResultJsonUnmarshaller implements Unmarshaller<Desc
             return describeServicesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Services", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeServicesResult.setServices(new ListUnmarshaller<Service>(ServiceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FormatVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeServicesResult.setFormatVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeServicesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

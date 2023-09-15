@@ -43,24 +43,35 @@ public class EventDimensionsJsonUnmarshaller implements Unmarshaller<EventDimens
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDimensions.setAttributes(new MapUnmarshaller<String, AttributeDimension>(context.getUnmarshaller(String.class),
                             AttributeDimensionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("EventType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDimensions.setEventType(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Metrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDimensions.setMetrics(new MapUnmarshaller<String, MetricDimension>(context.getUnmarshaller(String.class),
                             MetricDimensionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

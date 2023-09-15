@@ -43,48 +43,63 @@ public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, Js
             return queryResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QueryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setQueryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setResultItems(new ListUnmarshaller<QueryResultItem>(QueryResultItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FacetResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setFacetResults(new ListUnmarshaller<FacetResult>(FacetResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TotalNumberOfResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setTotalNumberOfResults(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Warnings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SpellCorrectedQueries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setSpellCorrectedQueries(new ListUnmarshaller<SpellCorrectedQuery>(SpellCorrectedQueryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FeaturedResultsItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryResult.setFeaturedResultsItems(new ListUnmarshaller<FeaturedResultsItem>(FeaturedResultsItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class BlueprintRunJsonUnmarshaller implements Unmarshaller<BlueprintRun, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BlueprintName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprintRun.setBlueprintName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprintRun.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkflowName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprintRun.setWorkflowName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprintRun.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprintRun.setStartedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprintRun.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprintRun.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RollbackErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprintRun.setRollbackErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprintRun.setParameters(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprintRun.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

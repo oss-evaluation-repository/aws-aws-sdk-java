@@ -43,66 +43,88 @@ public class NumberValidateResponseJsonUnmarshaller implements Unmarshaller<Numb
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Carrier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setCarrier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("City", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setCity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CleansedPhoneNumberE164", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setCleansedPhoneNumberE164(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CleansedPhoneNumberNational", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setCleansedPhoneNumberNational(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Country", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CountryCodeIso2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setCountryCodeIso2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CountryCodeNumeric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setCountryCodeNumeric(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("County", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setCounty(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginalCountryCodeIso2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setOriginalCountryCodeIso2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginalPhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setOriginalPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setPhoneType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneTypeCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setPhoneTypeCode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ZipCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberValidateResponse.setZipCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

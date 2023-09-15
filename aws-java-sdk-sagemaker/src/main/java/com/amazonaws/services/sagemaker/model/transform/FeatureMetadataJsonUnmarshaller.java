@@ -43,44 +43,60 @@ public class FeatureMetadataJsonUnmarshaller implements Unmarshaller<FeatureMeta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FeatureGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featureMetadata.setFeatureGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeatureGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featureMetadata.setFeatureGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeatureName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featureMetadata.setFeatureName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeatureType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featureMetadata.setFeatureType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featureMetadata.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featureMetadata.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featureMetadata.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featureMetadata.setParameters(new ListUnmarshaller<FeatureParameter>(FeatureParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

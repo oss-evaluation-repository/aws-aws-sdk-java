@@ -43,38 +43,49 @@ public class StudioComponentJsonUnmarshaller implements Unmarshaller<StudioCompo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setConfiguration(StudioComponentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("createdBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ec2SecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setEc2SecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("initializationScripts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setInitializationScripts(new ListUnmarshaller<StudioComponentInitializationScript>(
                             StudioComponentInitializationScriptJsonUnmarshaller.getInstance())
@@ -82,59 +93,76 @@ public class StudioComponentJsonUnmarshaller implements Unmarshaller<StudioCompo
                     .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("runtimeRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setRuntimeRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scriptParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setScriptParameters(new ListUnmarshaller<ScriptParameterKeyValue>(ScriptParameterKeyValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("secureInitializationRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setSecureInitializationRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("studioComponentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setStudioComponentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subtype", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setSubtype(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponent.setUpdatedBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

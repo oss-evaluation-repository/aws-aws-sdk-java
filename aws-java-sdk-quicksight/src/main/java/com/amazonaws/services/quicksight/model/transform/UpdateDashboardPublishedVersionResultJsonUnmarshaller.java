@@ -45,22 +45,33 @@ public class UpdateDashboardPublishedVersionResultJsonUnmarshaller implements Un
             return updateDashboardPublishedVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DashboardId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDashboardPublishedVersionResult.setDashboardId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DashboardArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDashboardPublishedVersionResult.setDashboardArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDashboardPublishedVersionResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

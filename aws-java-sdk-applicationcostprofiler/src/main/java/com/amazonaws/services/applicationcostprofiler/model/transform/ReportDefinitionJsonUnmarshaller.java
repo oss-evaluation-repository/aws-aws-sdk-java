@@ -43,38 +43,53 @@ public class ReportDefinitionJsonUnmarshaller implements Unmarshaller<ReportDefi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("reportId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setReportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reportDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setReportDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reportFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setReportFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationS3Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setDestinationS3Location(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

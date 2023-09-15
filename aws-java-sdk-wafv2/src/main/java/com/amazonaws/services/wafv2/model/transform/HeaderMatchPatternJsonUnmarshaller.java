@@ -43,26 +43,37 @@ public class HeaderMatchPatternJsonUnmarshaller implements Unmarshaller<HeaderMa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("All", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     headerMatchPattern.setAll(AllJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IncludedHeaders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     headerMatchPattern.setIncludedHeaders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExcludedHeaders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     headerMatchPattern.setExcludedHeaders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

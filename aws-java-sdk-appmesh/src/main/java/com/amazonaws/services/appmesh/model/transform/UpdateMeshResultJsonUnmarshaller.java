@@ -43,9 +43,13 @@ public class UpdateMeshResultJsonUnmarshaller implements Unmarshaller<UpdateMesh
             return updateMeshResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateMeshResult.setMesh(MeshDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

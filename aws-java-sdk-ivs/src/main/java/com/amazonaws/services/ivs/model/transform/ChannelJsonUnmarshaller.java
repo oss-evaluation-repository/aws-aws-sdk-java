@@ -43,55 +43,74 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorized", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setAuthorized(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ingestEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setIngestEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("insecureIngest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setInsecureIngest(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("latencyMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setLatencyMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("playbackUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setPlaybackUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("preset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setPreset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recordingConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setRecordingConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,52 @@ public class InstanceGroupModifyConfigJsonUnmarshaller implements Unmarshaller<I
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupModifyConfig.setInstanceGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupModifyConfig.setInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EC2InstanceIdsToTerminate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupModifyConfig.setEC2InstanceIdsToTerminate(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ShrinkPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupModifyConfig.setShrinkPolicy(ShrinkPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReconfigurationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupModifyConfig.setReconfigurationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupModifyConfig.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class VerifyMacResultJsonUnmarshaller implements Unmarshaller<VerifyMacRe
             return verifyMacResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verifyMacResult.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MacValid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verifyMacResult.setMacValid(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MacAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verifyMacResult.setMacAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

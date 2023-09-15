@@ -43,38 +43,53 @@ public class SchemaListItemJsonUnmarshaller implements Unmarshaller<SchemaListIt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegistryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaListItem.setRegistryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaListItem.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaListItem.setSchemaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaListItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaListItem.setSchemaStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaListItem.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaListItem.setUpdatedTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class GetImportJobResultJsonUnmarshaller implements Unmarshaller<GetImpor
             return getImportJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImportDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportJobResult.setImportDestination(ImportDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ImportDataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportJobResult.setImportDataSource(ImportDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FailureInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportJobResult.setFailureInfo(FailureInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportJobResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportJobResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportJobResult.setCompletedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProcessedRecordsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportJobResult.setProcessedRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedRecordsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportJobResult.setFailedRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

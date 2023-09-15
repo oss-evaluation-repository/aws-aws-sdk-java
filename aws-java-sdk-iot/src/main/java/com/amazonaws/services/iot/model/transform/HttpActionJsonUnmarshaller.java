@@ -43,28 +43,40 @@ public class HttpActionJsonUnmarshaller implements Unmarshaller<HttpAction, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpAction.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("confirmationUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpAction.setConfirmationUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("headers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpAction.setHeaders(new ListUnmarshaller<HttpActionHeader>(HttpActionHeaderJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("auth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpAction.setAuth(HttpAuthorizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

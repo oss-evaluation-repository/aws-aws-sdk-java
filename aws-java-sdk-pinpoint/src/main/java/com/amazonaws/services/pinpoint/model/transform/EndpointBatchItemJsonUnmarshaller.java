@@ -43,16 +43,22 @@ public class EndpointBatchItemJsonUnmarshaller implements Unmarshaller<EndpointB
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Address", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setAttributes(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -60,45 +66,59 @@ public class EndpointBatchItemJsonUnmarshaller implements Unmarshaller<EndpointB
                     ).unmarshall(context));
                 }
                 if (context.testExpression("ChannelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setChannelType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Demographic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setDemographic(EndpointDemographicJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EffectiveDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setEffectiveDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setEndpointStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setLocation(EndpointLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Metrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setMetrics(new MapUnmarshaller<String, Double>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Double.class)).unmarshall(context));
                 }
                 if (context.testExpression("OptOut", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setOptOut(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("User", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointBatchItem.setUser(EndpointUserJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

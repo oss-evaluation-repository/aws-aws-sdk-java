@@ -43,26 +43,38 @@ public class ConnectClientAddInJsonUnmarshaller implements Unmarshaller<ConnectC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AddInId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectClientAddIn.setAddInId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectClientAddIn.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectClientAddIn.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("URL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectClientAddIn.setURL(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

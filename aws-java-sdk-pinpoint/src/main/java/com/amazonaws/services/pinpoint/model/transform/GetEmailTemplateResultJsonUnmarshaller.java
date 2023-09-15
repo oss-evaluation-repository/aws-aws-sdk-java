@@ -43,9 +43,13 @@ public class GetEmailTemplateResultJsonUnmarshaller implements Unmarshaller<GetE
             return getEmailTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getEmailTemplateResult.setEmailTemplateResponse(EmailTemplateResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

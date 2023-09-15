@@ -43,9 +43,13 @@ public class GetEventStreamResultJsonUnmarshaller implements Unmarshaller<GetEve
             return getEventStreamResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getEventStreamResult.setEventStream(EventStreamJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

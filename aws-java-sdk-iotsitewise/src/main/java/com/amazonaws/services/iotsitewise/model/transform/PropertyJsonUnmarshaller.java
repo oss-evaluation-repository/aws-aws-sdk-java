@@ -43,38 +43,53 @@ public class PropertyJsonUnmarshaller implements Unmarshaller<Property, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("notification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setNotification(PropertyNotificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     property.setType(PropertyTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

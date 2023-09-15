@@ -43,54 +43,73 @@ public class DeploymentSummaryJsonUnmarshaller implements Unmarshaller<Deploymen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeploymentNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setDeploymentNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setConfigurationVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentDurationInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setDeploymentDurationInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("GrowthType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setGrowthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GrowthFactor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setGrowthFactor(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("FinalBakeTimeInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setFinalBakeTimeInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PercentageComplete", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setPercentageComplete(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setStartedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("CompletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentSummary.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class DetectMitigationActionExecutionJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectMitigationActionExecution.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("violationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectMitigationActionExecution.setViolationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectMitigationActionExecution.setActionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectMitigationActionExecution.setThingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionStartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectMitigationActionExecution.setExecutionStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("executionEndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectMitigationActionExecution.setExecutionEndDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectMitigationActionExecution.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectMitigationActionExecution.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectMitigationActionExecution.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

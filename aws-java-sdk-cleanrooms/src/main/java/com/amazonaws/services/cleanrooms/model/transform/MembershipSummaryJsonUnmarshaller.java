@@ -43,56 +43,75 @@ public class MembershipSummaryJsonUnmarshaller implements Unmarshaller<Membershi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setCollaborationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setCollaborationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationCreatorAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setCollaborationCreatorAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationCreatorDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setCollaborationCreatorDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setCollaborationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("memberAbilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membershipSummary.setMemberAbilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

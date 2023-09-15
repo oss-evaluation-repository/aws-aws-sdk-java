@@ -43,12 +43,17 @@ public class ListVariantImportJobsResultJsonUnmarshaller implements Unmarshaller
             return listVariantImportJobsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("variantImportJobs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listVariantImportJobsResult.setVariantImportJobs(new ListUnmarshaller<VariantImportJobItem>(VariantImportJobItemJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListVariantImportJobsResultJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listVariantImportJobsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

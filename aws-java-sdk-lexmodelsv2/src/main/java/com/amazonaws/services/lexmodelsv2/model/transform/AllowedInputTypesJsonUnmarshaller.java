@@ -43,18 +43,28 @@ public class AllowedInputTypesJsonUnmarshaller implements Unmarshaller<AllowedIn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("allowAudioInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     allowedInputTypes.setAllowAudioInput(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("allowDTMFInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     allowedInputTypes.setAllowDTMFInput(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

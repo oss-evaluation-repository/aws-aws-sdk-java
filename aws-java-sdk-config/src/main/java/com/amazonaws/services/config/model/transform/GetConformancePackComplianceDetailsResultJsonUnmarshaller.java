@@ -44,16 +44,22 @@ public class GetConformancePackComplianceDetailsResultJsonUnmarshaller implement
             return getConformancePackComplianceDetailsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConformancePackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConformancePackComplianceDetailsResult.setConformancePackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConformancePackRuleEvaluationResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConformancePackComplianceDetailsResult.setConformancePackRuleEvaluationResults(new ListUnmarshaller<ConformancePackEvaluationResult>(
                             ConformancePackEvaluationResultJsonUnmarshaller.getInstance())
@@ -61,8 +67,13 @@ public class GetConformancePackComplianceDetailsResultJsonUnmarshaller implement
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConformancePackComplianceDetailsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

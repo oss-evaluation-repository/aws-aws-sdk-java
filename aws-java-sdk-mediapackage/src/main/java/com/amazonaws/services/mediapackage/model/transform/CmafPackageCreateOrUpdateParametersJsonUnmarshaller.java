@@ -43,16 +43,22 @@ public class CmafPackageCreateOrUpdateParametersJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafPackageCreateOrUpdateParameters.setEncryption(CmafEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hlsManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafPackageCreateOrUpdateParameters.setHlsManifests(new ListUnmarshaller<HlsManifestCreateOrUpdateParameters>(
                             HlsManifestCreateOrUpdateParametersJsonUnmarshaller.getInstance())
@@ -60,16 +66,23 @@ public class CmafPackageCreateOrUpdateParametersJsonUnmarshaller implements Unma
                     .unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafPackageCreateOrUpdateParameters.setSegmentDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafPackageCreateOrUpdateParameters.setSegmentPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafPackageCreateOrUpdateParameters.setStreamSelection(StreamSelectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

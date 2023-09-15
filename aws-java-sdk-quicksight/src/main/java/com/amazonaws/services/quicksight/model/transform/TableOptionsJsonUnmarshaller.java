@@ -43,26 +43,38 @@ public class TableOptionsJsonUnmarshaller implements Unmarshaller<TableOptions, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Orientation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableOptions.setOrientation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HeaderStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableOptions.setHeaderStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CellStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableOptions.setCellStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RowAlternateColorOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableOptions.setRowAlternateColorOptions(RowAlternateColorOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

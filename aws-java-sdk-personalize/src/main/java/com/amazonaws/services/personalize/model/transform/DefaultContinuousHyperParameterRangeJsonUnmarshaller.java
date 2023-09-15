@@ -43,26 +43,38 @@ public class DefaultContinuousHyperParameterRangeJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultContinuousHyperParameterRange.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultContinuousHyperParameterRange.setMinValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("maxValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultContinuousHyperParameterRange.setMaxValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("isTunable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultContinuousHyperParameterRange.setIsTunable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

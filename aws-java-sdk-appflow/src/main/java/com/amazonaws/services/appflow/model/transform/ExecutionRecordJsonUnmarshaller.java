@@ -43,44 +43,60 @@ public class ExecutionRecordJsonUnmarshaller implements Unmarshaller<ExecutionRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("executionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionRecord.setExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionRecord.setExecutionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionRecord.setExecutionResult(ExecutionResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionRecord.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionRecord.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataPullStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionRecord.setDataPullStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataPullEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionRecord.setDataPullEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("metadataCatalogDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executionRecord.setMetadataCatalogDetails(new ListUnmarshaller<MetadataCatalogDetail>(MetadataCatalogDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

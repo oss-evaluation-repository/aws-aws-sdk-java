@@ -43,30 +43,43 @@ public class VTLDeviceJsonUnmarshaller implements Unmarshaller<VTLDevice, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VTLDeviceARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vTLDevice.setVTLDeviceARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VTLDeviceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vTLDevice.setVTLDeviceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VTLDeviceVendor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vTLDevice.setVTLDeviceVendor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VTLDeviceProductIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vTLDevice.setVTLDeviceProductIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceiSCSIAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vTLDevice.setDeviceiSCSIAttributes(DeviceiSCSIAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

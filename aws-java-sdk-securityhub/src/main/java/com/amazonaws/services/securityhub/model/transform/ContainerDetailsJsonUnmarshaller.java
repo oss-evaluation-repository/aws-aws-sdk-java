@@ -43,40 +43,55 @@ public class ContainerDetailsJsonUnmarshaller implements Unmarshaller<ContainerD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContainerRuntime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDetails.setContainerRuntime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDetails.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDetails.setImageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LaunchedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDetails.setLaunchedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeMounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDetails.setVolumeMounts(new ListUnmarshaller<VolumeMount>(VolumeMountJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Privileged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDetails.setPrivileged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

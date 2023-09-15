@@ -43,100 +43,127 @@ public class ModelPackageJsonUnmarshaller implements Unmarshaller<ModelPackage, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelPackageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setModelPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setModelPackageGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setModelPackageVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setModelPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setModelPackageDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InferenceSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setInferenceSpecification(InferenceSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SourceAlgorithmSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setSourceAlgorithmSpecification(SourceAlgorithmSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ValidationSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setValidationSpecification(ModelPackageValidationSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setModelPackageStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageStatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setModelPackageStatusDetails(ModelPackageStatusDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CertifyForMarketplace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setCertifyForMarketplace(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelApprovalStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setModelApprovalStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setCreatedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MetadataProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setModelMetrics(ModelMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setLastModifiedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ApprovalDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setApprovalDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Task", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setTask(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SamplePayloadUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setSamplePayloadUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalInferenceSpecifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setAdditionalInferenceSpecifications(new ListUnmarshaller<AdditionalInferenceSpecificationDefinition>(
                             AdditionalInferenceSpecificationDefinitionJsonUnmarshaller.getInstance())
@@ -144,19 +171,26 @@ public class ModelPackageJsonUnmarshaller implements Unmarshaller<ModelPackage, 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CustomerMetadataProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setCustomerMetadataProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("DriftCheckBaselines", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackage.setDriftCheckBaselines(DriftCheckBaselinesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

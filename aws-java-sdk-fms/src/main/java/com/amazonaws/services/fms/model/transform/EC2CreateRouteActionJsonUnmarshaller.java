@@ -43,38 +43,53 @@ public class EC2CreateRouteActionJsonUnmarshaller implements Unmarshaller<EC2Cre
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2CreateRouteAction.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationCidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2CreateRouteAction.setDestinationCidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationPrefixListId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2CreateRouteAction.setDestinationPrefixListId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationIpv6CidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2CreateRouteAction.setDestinationIpv6CidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcEndpointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2CreateRouteAction.setVpcEndpointId(ActionTargetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2CreateRouteAction.setGatewayId(ActionTargetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RouteTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2CreateRouteAction.setRouteTableId(ActionTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

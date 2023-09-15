@@ -43,76 +43,99 @@ public class AccessPreviewFindingJsonUnmarshaller implements Unmarshaller<Access
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("existingFindingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setExistingFindingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("existingFindingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setExistingFindingStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("principal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setPrincipal(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setAction(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("condition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setCondition(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("resource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setResource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isPublic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setIsPublic(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("changeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setChangeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceOwnerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setResourceOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPreviewFinding.setSources(new ListUnmarshaller<FindingSource>(FindingSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

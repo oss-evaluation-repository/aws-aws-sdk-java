@@ -43,50 +43,66 @@ public class AttackDetailJsonUnmarshaller implements Unmarshaller<AttackDetail, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attackDetail.setAttackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attackDetail.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attackDetail.setSubResources(new ListUnmarshaller<SubResourceSummary>(SubResourceSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attackDetail.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attackDetail.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AttackCounters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attackDetail.setAttackCounters(new ListUnmarshaller<SummarizedCounter>(SummarizedCounterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AttackProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attackDetail.setAttackProperties(new ListUnmarshaller<AttackProperty>(AttackPropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Mitigations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attackDetail.setMitigations(new ListUnmarshaller<Mitigation>(MitigationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

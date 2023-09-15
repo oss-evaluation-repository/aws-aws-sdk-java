@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects
- * selects a column to be included in the output table, and whether the values of the column should be hashed.
+ * A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and
+ * <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the
+ * values of the column should be hashed.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/OutputAttribute" target="_top">AWS

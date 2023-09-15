@@ -43,26 +43,38 @@ public class EbuTtDDestinationSettingsJsonUnmarshaller implements Unmarshaller<E
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("copyrightHolder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebuTtDDestinationSettings.setCopyrightHolder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fillLineGap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebuTtDDestinationSettings.setFillLineGap(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fontFamily", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebuTtDDestinationSettings.setFontFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("styleControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebuTtDDestinationSettings.setStyleControl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

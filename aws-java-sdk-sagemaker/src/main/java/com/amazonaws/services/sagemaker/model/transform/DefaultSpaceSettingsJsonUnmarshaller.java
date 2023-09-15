@@ -43,28 +43,40 @@ public class DefaultSpaceSettingsJsonUnmarshaller implements Unmarshaller<Defaul
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExecutionRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultSpaceSettings.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultSpaceSettings.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("JupyterServerAppSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultSpaceSettings.setJupyterServerAppSettings(JupyterServerAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KernelGatewayAppSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultSpaceSettings.setKernelGatewayAppSettings(KernelGatewayAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

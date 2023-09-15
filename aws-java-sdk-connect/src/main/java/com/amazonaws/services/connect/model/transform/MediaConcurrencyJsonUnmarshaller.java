@@ -43,22 +43,33 @@ public class MediaConcurrencyJsonUnmarshaller implements Unmarshaller<MediaConcu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Channel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaConcurrency.setChannel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Concurrency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaConcurrency.setConcurrency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CrossChannelBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaConcurrency.setCrossChannelBehavior(CrossChannelBehaviorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

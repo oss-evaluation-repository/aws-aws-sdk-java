@@ -43,20 +43,30 @@ public class GetUsageTotalsResultJsonUnmarshaller implements Unmarshaller<GetUsa
             return getUsageTotalsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("timeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUsageTotalsResult.setTimeRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usageTotals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUsageTotalsResult.setUsageTotals(new ListUnmarshaller<UsageTotal>(UsageTotalJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

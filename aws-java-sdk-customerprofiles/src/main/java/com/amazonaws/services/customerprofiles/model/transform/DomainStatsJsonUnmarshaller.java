@@ -43,26 +43,38 @@ public class DomainStatsJsonUnmarshaller implements Unmarshaller<DomainStats, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProfileCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStats.setProfileCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MeteringProfileCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStats.setMeteringProfileCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStats.setObjectCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStats.setTotalSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

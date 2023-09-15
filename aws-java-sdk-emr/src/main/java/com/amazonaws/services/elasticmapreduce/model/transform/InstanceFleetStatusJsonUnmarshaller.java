@@ -43,22 +43,33 @@ public class InstanceFleetStatusJsonUnmarshaller implements Unmarshaller<Instanc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetStatus.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateChangeReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetStatus.setStateChangeReason(InstanceFleetStateChangeReasonJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Timeline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetStatus.setTimeline(InstanceFleetTimelineJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

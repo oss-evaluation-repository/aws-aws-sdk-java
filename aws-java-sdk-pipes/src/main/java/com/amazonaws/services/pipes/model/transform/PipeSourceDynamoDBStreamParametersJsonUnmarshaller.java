@@ -43,42 +43,58 @@ public class PipeSourceDynamoDBStreamParametersJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BatchSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceDynamoDBStreamParameters.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DeadLetterConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceDynamoDBStreamParameters.setDeadLetterConfig(DeadLetterConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaximumBatchingWindowInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceDynamoDBStreamParameters.setMaximumBatchingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumRecordAgeInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceDynamoDBStreamParameters.setMaximumRecordAgeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumRetryAttempts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceDynamoDBStreamParameters.setMaximumRetryAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OnPartialBatchItemFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceDynamoDBStreamParameters.setOnPartialBatchItemFailure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParallelizationFactor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceDynamoDBStreamParameters.setParallelizationFactor(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StartingPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceDynamoDBStreamParameters.setStartingPosition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

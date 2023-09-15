@@ -43,32 +43,45 @@ public class SalesforceDestinationPropertiesJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("object", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceDestinationProperties.setObject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("idFieldNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceDestinationProperties.setIdFieldNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("errorHandlingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceDestinationProperties.setErrorHandlingConfig(ErrorHandlingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("writeOperationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceDestinationProperties.setWriteOperationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataTransferApi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     salesforceDestinationProperties.setDataTransferApi(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

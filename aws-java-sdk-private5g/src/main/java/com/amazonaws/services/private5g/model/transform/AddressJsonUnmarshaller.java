@@ -43,54 +43,73 @@ public class AddressJsonUnmarshaller implements Unmarshaller<Address, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("city", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setCity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("company", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setCompany(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("country", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("emailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("phoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("postalCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setPostalCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateOrProvince", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setStateOrProvince(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("street1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setStreet1(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("street2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setStreet2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("street3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     address.setStreet3(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class ListEntitledApplicationsResultJsonUnmarshaller implements Unmarshal
             return listEntitledApplicationsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EntitledApplications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEntitledApplicationsResult.setEntitledApplications(new ListUnmarshaller<EntitledApplication>(EntitledApplicationJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListEntitledApplicationsResultJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEntitledApplicationsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

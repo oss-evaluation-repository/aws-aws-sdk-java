@@ -43,18 +43,28 @@ public class DriftCheckExplainabilityJsonUnmarshaller implements Unmarshaller<Dr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Constraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     driftCheckExplainability.setConstraints(MetricsSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConfigFile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     driftCheckExplainability.setConfigFile(FileSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

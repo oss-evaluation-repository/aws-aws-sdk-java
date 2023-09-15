@@ -43,42 +43,58 @@ public class AwsEc2NetworkAclEntryJsonUnmarshaller implements Unmarshaller<AwsEc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclEntry.setCidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Egress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclEntry.setEgress(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IcmpTypeCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclEntry.setIcmpTypeCode(IcmpTypeCodeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Ipv6CidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclEntry.setIpv6CidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PortRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclEntry.setPortRange(PortRangeFromToJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclEntry.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclEntry.setRuleAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclEntry.setRuleNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,55 @@ public class AutoScalingThresholdsJsonUnmarshaller implements Unmarshaller<AutoS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingThresholds.setInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ThresholdsWaitTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingThresholds.setThresholdsWaitTime(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IgnoreMetricsTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingThresholds.setIgnoreMetricsTime(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CpuThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingThresholds.setCpuThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MemoryThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingThresholds.setMemoryThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("LoadThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingThresholds.setLoadThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Alarms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingThresholds.setAlarms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

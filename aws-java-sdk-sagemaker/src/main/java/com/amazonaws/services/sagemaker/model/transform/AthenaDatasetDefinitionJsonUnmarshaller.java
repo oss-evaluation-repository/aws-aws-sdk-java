@@ -43,42 +43,58 @@ public class AthenaDatasetDefinitionJsonUnmarshaller implements Unmarshaller<Ath
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Catalog", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaDatasetDefinition.setCatalog(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Database", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaDatasetDefinition.setDatabase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaDatasetDefinition.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaDatasetDefinition.setWorkGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaDatasetDefinition.setOutputS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaDatasetDefinition.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaDatasetDefinition.setOutputFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputCompression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaDatasetDefinition.setOutputCompression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

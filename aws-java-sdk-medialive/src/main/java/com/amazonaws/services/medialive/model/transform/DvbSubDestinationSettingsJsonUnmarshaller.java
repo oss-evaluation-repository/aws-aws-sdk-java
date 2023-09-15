@@ -43,78 +43,103 @@ public class DvbSubDestinationSettingsJsonUnmarshaller implements Unmarshaller<D
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("alignment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setAlignment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("backgroundColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setBackgroundColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("backgroundOpacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setBackgroundOpacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("font", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setFont(InputLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fontColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setFontColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fontOpacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setFontOpacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fontResolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setFontResolution(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fontSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setFontSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outlineColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setOutlineColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outlineSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setOutlineSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shadowColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setShadowColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("shadowOpacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setShadowOpacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shadowXOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setShadowXOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shadowYOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setShadowYOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("teletextGridControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setTeletextGridControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("xPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setXPosition(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("yPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSubDestinationSettings.setYPosition(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

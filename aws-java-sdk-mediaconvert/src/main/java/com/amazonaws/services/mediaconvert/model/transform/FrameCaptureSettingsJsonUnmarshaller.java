@@ -43,26 +43,38 @@ public class FrameCaptureSettingsJsonUnmarshaller implements Unmarshaller<FrameC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("framerateDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     frameCaptureSettings.setFramerateDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     frameCaptureSettings.setFramerateNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxCaptures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     frameCaptureSettings.setMaxCaptures(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("quality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     frameCaptureSettings.setQuality(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class AwsRedshiftClusterHsmStatusJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HsmClientCertificateIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterHsmStatus.setHsmClientCertificateIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HsmConfigurationIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterHsmStatus.setHsmConfigurationIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterHsmStatus.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,41 +43,55 @@ public class BatchGetFrameMetricDataResultJsonUnmarshaller implements Unmarshall
             return batchGetFrameMetricDataResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetFrameMetricDataResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("endTimes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetFrameMetricDataResult.setEndTimes(new ListUnmarshaller<TimestampStructure>(TimestampStructureJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("frameMetricData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetFrameMetricDataResult.setFrameMetricData(new ListUnmarshaller<FrameMetricDatum>(FrameMetricDatumJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetFrameMetricDataResult.setResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetFrameMetricDataResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("unprocessedEndTimes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetFrameMetricDataResult.setUnprocessedEndTimes(new MapUnmarshaller<String, java.util.List<TimestampStructure>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<TimestampStructure>(TimestampStructureJsonUnmarshaller.getInstance())
 
                     ).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

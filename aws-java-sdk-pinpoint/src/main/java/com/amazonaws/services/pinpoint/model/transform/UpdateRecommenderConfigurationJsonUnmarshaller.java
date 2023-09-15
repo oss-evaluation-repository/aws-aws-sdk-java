@@ -43,47 +43,64 @@ public class UpdateRecommenderConfigurationJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecommenderConfiguration.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecommenderConfiguration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecommenderConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationProviderIdType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecommenderConfiguration.setRecommendationProviderIdType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationProviderRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecommenderConfiguration.setRecommendationProviderRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationProviderUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecommenderConfiguration.setRecommendationProviderUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationTransformerUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecommenderConfiguration.setRecommendationTransformerUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationsDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecommenderConfiguration.setRecommendationsDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationsPerMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecommenderConfiguration.setRecommendationsPerMessage(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,32 +43,41 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adMarkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setAdMarkers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("additionalManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setAdditionalManifests(new ListUnmarshaller<HlsAdditionalManifest>(HlsAdditionalManifestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("audioOnlyHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setAudioOnlyHeader(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("baseUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setBaseUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("captionLanguageMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setCaptionLanguageMappings(new ListUnmarshaller<HlsCaptionLanguageMapping>(HlsCaptionLanguageMappingJsonUnmarshaller
                             .getInstance())
@@ -76,112 +85,143 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                     .unmarshall(context));
                 }
                 if (context.testExpression("captionLanguageSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setCaptionLanguageSetting(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("captionSegmentLengthControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setCaptionSegmentLengthControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientCache", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setClientCache(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codecSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setCodecSpecification(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setDestinationSettings(DestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("directoryStructure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setDirectoryStructure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setEncryption(HlsEncryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageBasedTrickPlay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setImageBasedTrickPlay(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageBasedTrickPlaySettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setImageBasedTrickPlaySettings(HlsImageBasedTrickPlaySettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("manifestCompression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setManifestCompression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("manifestDurationFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setManifestDurationFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minFinalSegmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setMinFinalSegmentLength(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("minSegmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setMinSegmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("outputSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setOutputSelection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("programDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setProgramDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("programDateTimePeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setProgramDateTimePeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("progressiveWriteHlsManifest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setProgressiveWriteHlsManifest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setSegmentControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setSegmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentLengthControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setSegmentLengthControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentsPerSubdirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setSegmentsPerSubdirectory(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("streamInfResolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setStreamInfResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetDurationCompatibilityMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setTargetDurationCompatibilityMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataId3Frame", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setTimedMetadataId3Frame(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataId3Period", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setTimedMetadataId3Period(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("timestampDeltaMilliseconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsGroupSettings.setTimestampDeltaMilliseconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

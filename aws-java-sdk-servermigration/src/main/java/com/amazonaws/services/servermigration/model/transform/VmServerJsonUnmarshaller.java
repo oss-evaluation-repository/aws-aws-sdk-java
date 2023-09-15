@@ -43,30 +43,43 @@ public class VmServerJsonUnmarshaller implements Unmarshaller<VmServer, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("vmServerAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vmServer.setVmServerAddress(VmServerAddressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vmName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vmServer.setVmName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vmManagerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vmServer.setVmManagerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vmManagerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vmServer.setVmManagerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vmPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vmServer.setVmPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

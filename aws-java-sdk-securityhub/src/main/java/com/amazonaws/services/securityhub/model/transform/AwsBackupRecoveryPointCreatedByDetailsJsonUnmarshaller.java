@@ -43,26 +43,38 @@ public class AwsBackupRecoveryPointCreatedByDetailsJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupPlanArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointCreatedByDetails.setBackupPlanArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupPlanId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointCreatedByDetails.setBackupPlanId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupPlanVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointCreatedByDetails.setBackupPlanVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupRuleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointCreatedByDetails.setBackupRuleId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

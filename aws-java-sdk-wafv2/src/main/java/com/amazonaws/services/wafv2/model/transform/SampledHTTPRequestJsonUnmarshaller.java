@@ -43,58 +43,77 @@ public class SampledHTTPRequestJsonUnmarshaller implements Unmarshaller<SampledH
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Request", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setRequest(HTTPRequestJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Weight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setWeight(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleNameWithinRuleGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setRuleNameWithinRuleGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestHeadersInserted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setRequestHeadersInserted(new ListUnmarshaller<HTTPHeader>(HTTPHeaderJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResponseCodeSent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setResponseCodeSent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Labels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setLabels(new ListUnmarshaller<Label>(LabelJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CaptchaResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setCaptchaResponse(CaptchaResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChallengeResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setChallengeResponse(ChallengeResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OverriddenAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sampledHTTPRequest.setOverriddenAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

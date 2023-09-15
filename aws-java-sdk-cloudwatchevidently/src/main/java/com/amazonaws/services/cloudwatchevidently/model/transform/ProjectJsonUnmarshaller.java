@@ -43,67 +43,89 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeExperimentCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setActiveExperimentCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("activeLaunchCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setActiveLaunchCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("appConfigResource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setAppConfigResource(ProjectAppConfigResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataDelivery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setDataDelivery(ProjectDataDeliveryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("experimentCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setExperimentCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("featureCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setFeatureCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("launchCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setLaunchCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     project.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

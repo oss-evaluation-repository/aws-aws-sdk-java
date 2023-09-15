@@ -43,50 +43,68 @@ public class BackupSummaryJsonUnmarshaller implements Unmarshaller<BackupSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSummary.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSummary.setTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSummary.setTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSummary.setBackupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSummary.setBackupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupCreationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSummary.setBackupCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("BackupExpiryDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSummary.setBackupExpiryDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("BackupStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSummary.setBackupStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSummary.setBackupType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSummary.setBackupSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

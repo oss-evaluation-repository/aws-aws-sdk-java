@@ -43,40 +43,55 @@ public class CoreNetworkSummaryJsonUnmarshaller implements Unmarshaller<CoreNetw
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CoreNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkSummary.setCoreNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CoreNetworkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkSummary.setCoreNetworkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlobalNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkSummary.setGlobalNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkSummary.setOwnerAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkSummary.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkSummary.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

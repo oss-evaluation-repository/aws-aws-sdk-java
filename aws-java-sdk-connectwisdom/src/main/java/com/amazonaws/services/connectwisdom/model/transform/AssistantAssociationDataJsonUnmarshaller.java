@@ -43,39 +43,54 @@ public class AssistantAssociationDataJsonUnmarshaller implements Unmarshaller<As
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assistantArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantAssociationData.setAssistantArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assistantAssociationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantAssociationData.setAssistantAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assistantAssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantAssociationData.setAssistantAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assistantId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantAssociationData.setAssistantId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associationData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantAssociationData.setAssociationData(AssistantAssociationOutputDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("associationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantAssociationData.setAssociationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantAssociationData.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

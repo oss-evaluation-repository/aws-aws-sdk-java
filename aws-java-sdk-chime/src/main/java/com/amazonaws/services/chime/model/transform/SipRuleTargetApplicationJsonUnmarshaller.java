@@ -43,22 +43,33 @@ public class SipRuleTargetApplicationJsonUnmarshaller implements Unmarshaller<Si
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SipMediaApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRuleTargetApplication.setSipMediaApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRuleTargetApplication.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AwsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRuleTargetApplication.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,70 +43,93 @@ public class BatchPredictionJsonUnmarshaller implements Unmarshaller<BatchPredic
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("completionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setCompletionTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastHeartbeatTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setLastHeartbeatTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setInputPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setOutputPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setDetectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setDetectorVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iamRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("processedRecordsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setProcessedRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalRecordsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPrediction.setTotalRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

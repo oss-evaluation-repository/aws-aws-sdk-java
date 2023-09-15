@@ -43,60 +43,80 @@ public class GetQuantumTaskResultJsonUnmarshaller implements Unmarshaller<GetQua
             return getQuantumTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("deviceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setDeviceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setDeviceParameters(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE)
                             .unmarshall(context));
                 }
                 if (context.testExpression("endedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setEndedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputS3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setOutputS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputS3Directory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setOutputS3Directory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("quantumTaskArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setQuantumTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("shots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setShots(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getQuantumTaskResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

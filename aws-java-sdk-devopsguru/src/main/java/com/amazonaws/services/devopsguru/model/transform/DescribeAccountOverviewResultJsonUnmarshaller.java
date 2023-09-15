@@ -43,22 +43,33 @@ public class DescribeAccountOverviewResultJsonUnmarshaller implements Unmarshall
             return describeAccountOverviewResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReactiveInsights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountOverviewResult.setReactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ProactiveInsights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountOverviewResult.setProactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MeanTimeToRecoverInMilliseconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountOverviewResult.setMeanTimeToRecoverInMilliseconds(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

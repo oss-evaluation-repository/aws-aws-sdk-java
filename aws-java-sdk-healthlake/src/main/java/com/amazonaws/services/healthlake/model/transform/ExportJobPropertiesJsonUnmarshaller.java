@@ -43,46 +43,63 @@ public class ExportJobPropertiesJsonUnmarshaller implements Unmarshaller<ExportJ
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobProperties.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobProperties.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobProperties.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobProperties.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobProperties.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DatastoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobProperties.setDatastoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobProperties.setOutputDataConfig(OutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobProperties.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,71 +43,94 @@ public class ElasticsearchDomainConfigJsonUnmarshaller implements Unmarshaller<E
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ElasticsearchVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setElasticsearchVersion(ElasticsearchVersionStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ElasticsearchClusterConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setElasticsearchClusterConfig(ElasticsearchClusterConfigStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EBSOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setEBSOptions(EBSOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AccessPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setAccessPolicies(AccessPoliciesStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SnapshotOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setSnapshotOptions(SnapshotOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VPCOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setVPCOptions(VPCDerivedInfoStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CognitoOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setCognitoOptions(CognitoOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EncryptionAtRestOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setEncryptionAtRestOptions(EncryptionAtRestOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NodeToNodeEncryptionOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsStatusJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("AdvancedOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setAdvancedOptions(AdvancedOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LogPublishingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setLogPublishingOptions(LogPublishingOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DomainEndpointOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setDomainEndpointOptions(DomainEndpointOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdvancedSecurityOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setAdvancedSecurityOptions(AdvancedSecurityOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoTuneOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setAutoTuneOptions(AutoTuneOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChangeProgressDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticsearchDomainConfig.setChangeProgressDetails(ChangeProgressDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

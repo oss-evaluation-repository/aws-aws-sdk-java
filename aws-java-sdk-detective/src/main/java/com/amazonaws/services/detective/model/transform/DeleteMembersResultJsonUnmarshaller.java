@@ -43,22 +43,32 @@ public class DeleteMembersResultJsonUnmarshaller implements Unmarshaller<DeleteM
             return deleteMembersResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteMembersResult.setAccountIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedAccounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteMembersResult.setUnprocessedAccounts(new ListUnmarshaller<UnprocessedAccount>(UnprocessedAccountJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

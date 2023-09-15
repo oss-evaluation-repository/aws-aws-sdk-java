@@ -43,42 +43,58 @@ public class InferenceSchedulerSummaryJsonUnmarshaller implements Unmarshaller<I
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inferenceSchedulerSummary.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inferenceSchedulerSummary.setModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InferenceSchedulerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inferenceSchedulerSummary.setInferenceSchedulerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InferenceSchedulerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inferenceSchedulerSummary.setInferenceSchedulerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inferenceSchedulerSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataDelayOffsetInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inferenceSchedulerSummary.setDataDelayOffsetInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DataUploadFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inferenceSchedulerSummary.setDataUploadFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestInferenceResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inferenceSchedulerSummary.setLatestInferenceResult(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

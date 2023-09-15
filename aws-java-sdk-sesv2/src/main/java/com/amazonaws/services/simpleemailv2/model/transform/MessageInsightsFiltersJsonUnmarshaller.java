@@ -43,46 +43,60 @@ public class MessageInsightsFiltersJsonUnmarshaller implements Unmarshaller<Mess
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FromEmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageInsightsFilters.setFromEmailAddress(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageInsightsFilters.setDestination(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Subject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageInsightsFilters.setSubject(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Isp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageInsightsFilters.setIsp(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastDeliveryEvent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageInsightsFilters.setLastDeliveryEvent(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastEngagementEvent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageInsightsFilters.setLastEngagementEvent(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

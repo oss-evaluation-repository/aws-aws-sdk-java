@@ -43,40 +43,55 @@ public class StreamSessionJsonUnmarshaller implements Unmarshaller<StreamSession
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSession.setChannel(ChannelJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSession.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ingestConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSession.setIngestConfiguration(IngestConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("recordingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSession.setRecordingConfiguration(RecordingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSession.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("streamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSession.setStreamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("truncatedEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSession.setTruncatedEvents(new ListUnmarshaller<StreamEvent>(StreamEventJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

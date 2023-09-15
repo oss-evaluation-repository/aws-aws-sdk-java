@@ -43,18 +43,28 @@ public class ValueMappingJsonUnmarshaller implements Unmarshaller<ValueMapping, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("displayValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     valueMapping.setDisplayValue(FormInputValuePropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     valueMapping.setValue(FormInputValuePropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

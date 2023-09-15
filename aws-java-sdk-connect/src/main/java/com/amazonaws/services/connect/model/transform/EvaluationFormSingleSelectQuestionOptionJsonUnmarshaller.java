@@ -44,26 +44,38 @@ public class EvaluationFormSingleSelectQuestionOptionJsonUnmarshaller implements
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RefId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormSingleSelectQuestionOption.setRefId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Text", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormSingleSelectQuestionOption.setText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormSingleSelectQuestionOption.setScore(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AutomaticFail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormSingleSelectQuestionOption.setAutomaticFail(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

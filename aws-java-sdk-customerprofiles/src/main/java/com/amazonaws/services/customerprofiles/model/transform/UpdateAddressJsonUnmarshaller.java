@@ -43,50 +43,68 @@ public class UpdateAddressJsonUnmarshaller implements Unmarshaller<UpdateAddress
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Address1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAddress.setAddress1(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Address2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAddress.setAddress2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Address3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAddress.setAddress3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Address4", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAddress.setAddress4(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("City", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAddress.setCity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("County", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAddress.setCounty(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAddress.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Province", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAddress.setProvince(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Country", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAddress.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PostalCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAddress.setPostalCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class BatchDeleteRumMetricDefinitionsErrorJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteRumMetricDefinitionsError.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteRumMetricDefinitionsError.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricDefinitionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteRumMetricDefinitionsError.setMetricDefinitionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

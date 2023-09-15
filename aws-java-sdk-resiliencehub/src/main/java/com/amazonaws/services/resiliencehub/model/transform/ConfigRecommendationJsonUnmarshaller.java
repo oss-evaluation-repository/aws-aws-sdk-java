@@ -43,54 +43,72 @@ public class ConfigRecommendationJsonUnmarshaller implements Unmarshaller<Config
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appComponentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRecommendation.setAppComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("compliance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRecommendation.setCompliance(new MapUnmarshaller<String, DisruptionCompliance>(context.getUnmarshaller(String.class),
                             DisruptionComplianceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("cost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRecommendation.setCost(CostJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRecommendation.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("haArchitecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRecommendation.setHaArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRecommendation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("optimizationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRecommendation.setOptimizationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendationCompliance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRecommendation.setRecommendationCompliance(new MapUnmarshaller<String, RecommendationDisruptionCompliance>(context
                             .getUnmarshaller(String.class), RecommendationDisruptionComplianceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("referenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRecommendation.setReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suggestedChanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRecommendation.setSuggestedChanges(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

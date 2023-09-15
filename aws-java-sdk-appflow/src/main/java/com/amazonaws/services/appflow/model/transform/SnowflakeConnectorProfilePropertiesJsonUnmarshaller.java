@@ -43,38 +43,53 @@ public class SnowflakeConnectorProfilePropertiesJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("warehouse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snowflakeConnectorProfileProperties.setWarehouse(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snowflakeConnectorProfileProperties.setStage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snowflakeConnectorProfileProperties.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snowflakeConnectorProfileProperties.setBucketPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("privateLinkServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snowflakeConnectorProfileProperties.setPrivateLinkServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snowflakeConnectorProfileProperties.setAccountName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snowflakeConnectorProfileProperties.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

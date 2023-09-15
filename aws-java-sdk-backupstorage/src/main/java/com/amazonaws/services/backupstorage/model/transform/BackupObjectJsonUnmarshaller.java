@@ -43,34 +43,48 @@ public class BackupObjectJsonUnmarshaller implements Unmarshaller<BackupObject, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupObject.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChunksCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupObject.setChunksCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MetadataString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupObject.setMetadataString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectChecksum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupObject.setObjectChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectChecksumAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupObject.setObjectChecksumAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupObject.setObjectToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

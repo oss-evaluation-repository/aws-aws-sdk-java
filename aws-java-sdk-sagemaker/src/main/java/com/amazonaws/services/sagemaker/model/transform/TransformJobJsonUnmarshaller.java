@@ -43,101 +43,131 @@ public class TransformJobJsonUnmarshaller implements Unmarshaller<TransformJob, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TransformJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setTransformJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransformJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setTransformJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransformJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setTransformJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxConcurrentTransforms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setMaxConcurrentTransforms(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelClientConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setModelClientConfig(ModelClientConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaxPayloadInMB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setMaxPayloadInMB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setBatchStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TransformInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setTransformInput(TransformInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TransformOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setTransformOutput(TransformOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TransformResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setTransformResources(TransformResourcesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TransformStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setTransformStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TransformEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setTransformEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LabelingJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setLabelingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setAutoMLJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataProcessing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setDataProcessing(DataProcessingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExperimentConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setExperimentConfig(ExperimentConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataCaptureConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJob.setDataCaptureConfig(BatchDataCaptureConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class DeviceDeploymentSummaryJsonUnmarshaller implements Unmarshaller<Dev
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EdgeDeploymentPlanArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setEdgeDeploymentPlanArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeDeploymentPlanName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setEdgeDeploymentPlanName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setStageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeployedStageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setDeployedStageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceFleetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setDeviceFleetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setDeviceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceDeploymentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setDeviceDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceDeploymentStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setDeviceDeploymentStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceDeploymentSummary.setDeploymentStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

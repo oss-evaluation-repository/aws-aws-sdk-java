@@ -43,41 +43,56 @@ public class UpdateFileSystemWindowsConfigurationJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemWindowsConfiguration.setWeeklyMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DailyAutomaticBackupStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemWindowsConfiguration.setDailyAutomaticBackupStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutomaticBackupRetentionDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemWindowsConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ThroughputCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemWindowsConfiguration.setThroughputCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SelfManagedActiveDirectoryConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemWindowsConfiguration
                             .setSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdatesJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("AuditLogConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemWindowsConfiguration.setAuditLogConfiguration(WindowsAuditLogCreateConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("DiskIopsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFileSystemWindowsConfiguration.setDiskIopsConfiguration(DiskIopsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

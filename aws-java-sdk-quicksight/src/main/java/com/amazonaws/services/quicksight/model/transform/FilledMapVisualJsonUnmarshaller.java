@@ -43,42 +43,57 @@ public class FilledMapVisualJsonUnmarshaller implements Unmarshaller<FilledMapVi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VisualId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filledMapVisual.setVisualId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filledMapVisual.setTitle(VisualTitleLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Subtitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filledMapVisual.setSubtitle(VisualSubtitleLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChartConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filledMapVisual.setChartConfiguration(FilledMapConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConditionalFormatting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filledMapVisual.setConditionalFormatting(FilledMapConditionalFormattingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColumnHierarchies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filledMapVisual.setColumnHierarchies(new ListUnmarshaller<ColumnHierarchy>(ColumnHierarchyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filledMapVisual.setActions(new ListUnmarshaller<VisualCustomAction>(VisualCustomActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

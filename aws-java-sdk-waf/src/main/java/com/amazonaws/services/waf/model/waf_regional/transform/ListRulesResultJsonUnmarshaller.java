@@ -43,20 +43,30 @@ public class ListRulesResultJsonUnmarshaller implements Unmarshaller<ListRulesRe
             return listRulesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextMarker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRulesResult.setNextMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRulesResult.setRules(new ListUnmarshaller<RuleSummary>(RuleSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

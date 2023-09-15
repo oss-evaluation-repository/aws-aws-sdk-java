@@ -43,34 +43,48 @@ public class ProcessingS3InputJsonUnmarshaller implements Unmarshaller<Processin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingS3Input.setS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocalPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingS3Input.setLocalPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingS3Input.setS3DataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3InputMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingS3Input.setS3InputMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DataDistributionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingS3Input.setS3DataDistributionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3CompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingS3Input.setS3CompressionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

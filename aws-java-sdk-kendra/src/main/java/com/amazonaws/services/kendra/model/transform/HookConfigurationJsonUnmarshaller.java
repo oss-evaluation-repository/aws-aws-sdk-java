@@ -43,22 +43,33 @@ public class HookConfigurationJsonUnmarshaller implements Unmarshaller<HookConfi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InvocationCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hookConfiguration.setInvocationCondition(DocumentAttributeConditionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LambdaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hookConfiguration.setLambdaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hookConfiguration.setS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,58 +43,78 @@ public class SpeakerEnrollmentJobJsonUnmarshaller implements Unmarshaller<Speake
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setDomainId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setEndedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EnrollmentConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setEnrollmentConfig(EnrollmentConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FailureDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setFailureDetails(FailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setInputDataConfig(InputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setJobProgress(JobProgressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJob.setOutputDataConfig(OutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

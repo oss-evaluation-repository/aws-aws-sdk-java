@@ -43,24 +43,32 @@ public class DescribeStateMachineAliasResultJsonUnmarshaller implements Unmarsha
             return describeStateMachineAliasResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("stateMachineAliasArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineAliasResult.setStateMachineAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineAliasResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineAliasResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineAliasResult.setRoutingConfiguration(new ListUnmarshaller<RoutingConfigurationListItem>(
                             RoutingConfigurationListItemJsonUnmarshaller.getInstance())
@@ -68,12 +76,18 @@ public class DescribeStateMachineAliasResultJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineAliasResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStateMachineAliasResult.setUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

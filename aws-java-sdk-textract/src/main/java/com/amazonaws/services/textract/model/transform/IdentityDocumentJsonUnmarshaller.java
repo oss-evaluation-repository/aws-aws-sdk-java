@@ -43,26 +43,37 @@ public class IdentityDocumentJsonUnmarshaller implements Unmarshaller<IdentityDo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityDocument.setDocumentIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityDocumentFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityDocument.setIdentityDocumentFields(new ListUnmarshaller<IdentityDocumentField>(IdentityDocumentFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Blocks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityDocument.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

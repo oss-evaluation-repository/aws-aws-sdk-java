@@ -43,25 +43,33 @@ public class SsmAutomationJsonUnmarshaller implements Unmarshaller<SsmAutomation
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("documentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmAutomation.setDocumentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("documentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmAutomation.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dynamicParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmAutomation.setDynamicParameters(new MapUnmarshaller<String, DynamicSsmParameterValue>(context.getUnmarshaller(String.class),
                             DynamicSsmParameterValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmAutomation.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -69,12 +77,18 @@ public class SsmAutomationJsonUnmarshaller implements Unmarshaller<SsmAutomation
                     ).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmAutomation.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmAutomation.setTargetAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

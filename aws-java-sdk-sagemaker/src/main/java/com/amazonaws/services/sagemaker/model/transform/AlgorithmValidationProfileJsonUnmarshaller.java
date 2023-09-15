@@ -43,22 +43,33 @@ public class AlgorithmValidationProfileJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithmValidationProfile.setProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithmValidationProfile.setTrainingJobDefinition(TrainingJobDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TransformJobDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithmValidationProfile.setTransformJobDefinition(TransformJobDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class AuthorizerConfigJsonUnmarshaller implements Unmarshaller<Authorizer
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("defaultAuthorizerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerConfig.setDefaultAuthorizerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("allowAuthorizerOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerConfig.setAllowAuthorizerOverride(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

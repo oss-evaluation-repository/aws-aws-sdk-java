@@ -43,26 +43,38 @@ public class PivotTableTotalOptionsJsonUnmarshaller implements Unmarshaller<Pivo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RowSubtotalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableTotalOptions.setRowSubtotalOptions(SubtotalOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColumnSubtotalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableTotalOptions.setColumnSubtotalOptions(SubtotalOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RowTotalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableTotalOptions.setRowTotalOptions(PivotTotalOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColumnTotalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableTotalOptions.setColumnTotalOptions(PivotTotalOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

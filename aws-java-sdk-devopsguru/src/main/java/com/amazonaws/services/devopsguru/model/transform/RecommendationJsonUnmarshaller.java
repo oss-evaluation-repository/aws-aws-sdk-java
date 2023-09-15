@@ -43,34 +43,44 @@ public class RecommendationJsonUnmarshaller implements Unmarshaller<Recommendati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Link", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setLink(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RelatedEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setRelatedEvents(new ListUnmarshaller<RecommendationRelatedEvent>(RecommendationRelatedEventJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RelatedAnomalies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setRelatedAnomalies(new ListUnmarshaller<RecommendationRelatedAnomaly>(RecommendationRelatedAnomalyJsonUnmarshaller
                             .getInstance())
@@ -78,8 +88,13 @@ public class RecommendationJsonUnmarshaller implements Unmarshaller<Recommendati
                     .unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

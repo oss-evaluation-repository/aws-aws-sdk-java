@@ -43,53 +43,68 @@ public class DeliveryStreamDescriptionJsonUnmarshaller implements Unmarshaller<D
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeliveryStreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setDeliveryStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryStreamARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setDeliveryStreamARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryStreamStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setDeliveryStreamStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setFailureDescription(FailureDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeliveryStreamEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setDeliveryStreamEncryptionConfiguration(DeliveryStreamEncryptionConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("DeliveryStreamType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setDeliveryStreamType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setCreateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setLastUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setSource(SourceDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription
                             .setDestinations(new ListUnmarshaller<DestinationDescription>(DestinationDescriptionJsonUnmarshaller.getInstance())
@@ -97,8 +112,13 @@ public class DeliveryStreamDescriptionJsonUnmarshaller implements Unmarshaller<D
                             .unmarshall(context));
                 }
                 if (context.testExpression("HasMoreDestinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamDescription.setHasMoreDestinations(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

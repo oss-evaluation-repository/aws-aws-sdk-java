@@ -43,46 +43,63 @@ public class DescribeOrganizationResultJsonUnmarshaller implements Unmarshaller<
             return describeOrganizationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OrganizationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationResult.setOrganizationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Alias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationResult.setAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationResult.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationResult.setDirectoryType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultMailDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationResult.setDefaultMailDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationResult.setCompletedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationResult.setARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

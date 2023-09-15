@@ -43,52 +43,70 @@ public class StandardsControlJsonUnmarshaller implements Unmarshaller<StandardsC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StandardsControlArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControl.setStandardsControlArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ControlStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControl.setControlStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisabledReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControl.setDisabledReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ControlStatusUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControl.setControlStatusUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ControlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControl.setControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControl.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControl.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RemediationUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControl.setRemediationUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SeverityRating", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControl.setSeverityRating(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RelatedRequirements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardsControl.setRelatedRequirements(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

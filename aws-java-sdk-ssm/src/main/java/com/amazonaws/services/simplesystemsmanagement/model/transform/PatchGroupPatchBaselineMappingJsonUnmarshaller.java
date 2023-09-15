@@ -43,18 +43,28 @@ public class PatchGroupPatchBaselineMappingJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PatchGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchGroupPatchBaselineMapping.setPatchGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BaselineIdentity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchGroupPatchBaselineMapping.setBaselineIdentity(PatchBaselineIdentityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

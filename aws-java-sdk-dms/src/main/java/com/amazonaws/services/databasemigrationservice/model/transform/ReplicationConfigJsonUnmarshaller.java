@@ -43,54 +43,73 @@ public class ReplicationConfigJsonUnmarshaller implements Unmarshaller<Replicati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplicationConfigIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setReplicationConfigIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationConfigArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setReplicationConfigArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceEndpointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setSourceEndpointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetEndpointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setTargetEndpointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setReplicationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setComputeConfig(ComputeConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReplicationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setReplicationSettings(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupplementalSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setSupplementalSettings(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setTableMappings(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationConfigCreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setReplicationConfigCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReplicationConfigUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfig.setReplicationConfigUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

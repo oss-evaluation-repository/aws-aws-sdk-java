@@ -43,22 +43,32 @@ public class NodeInterfaceJsonUnmarshaller implements Unmarshaller<NodeInterface
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInterface.setInputs(new ListUnmarshaller<NodeInputPort>(NodeInputPortJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Outputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInterface.setOutputs(new ListUnmarshaller<NodeOutputPort>(NodeOutputPortJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

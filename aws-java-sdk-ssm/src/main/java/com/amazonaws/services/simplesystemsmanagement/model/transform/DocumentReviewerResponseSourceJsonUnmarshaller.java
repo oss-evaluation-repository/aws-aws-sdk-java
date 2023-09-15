@@ -43,24 +43,32 @@ public class DocumentReviewerResponseSourceJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentReviewerResponseSource.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentReviewerResponseSource.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReviewStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentReviewerResponseSource.setReviewStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentReviewerResponseSource.setComment(new ListUnmarshaller<DocumentReviewCommentSource>(DocumentReviewCommentSourceJsonUnmarshaller
                             .getInstance())
@@ -68,8 +76,13 @@ public class DocumentReviewerResponseSourceJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("Reviewer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentReviewerResponseSource.setReviewer(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

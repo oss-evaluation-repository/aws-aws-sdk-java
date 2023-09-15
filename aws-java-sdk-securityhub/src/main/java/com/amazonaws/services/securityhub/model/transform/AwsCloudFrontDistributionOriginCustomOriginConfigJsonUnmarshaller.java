@@ -44,35 +44,49 @@ public class AwsCloudFrontDistributionOriginCustomOriginConfigJsonUnmarshaller i
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HttpPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginCustomOriginConfig.setHttpPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("HttpsPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginCustomOriginConfig.setHttpsPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginKeepaliveTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginCustomOriginConfig.setOriginKeepaliveTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginProtocolPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginCustomOriginConfig.setOriginProtocolPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginReadTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginCustomOriginConfig.setOriginReadTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginSslProtocols", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginCustomOriginConfig.setOriginSslProtocols(AwsCloudFrontDistributionOriginSslProtocolsJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

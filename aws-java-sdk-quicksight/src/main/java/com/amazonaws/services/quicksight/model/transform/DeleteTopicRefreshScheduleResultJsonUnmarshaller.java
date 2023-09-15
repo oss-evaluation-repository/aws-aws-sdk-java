@@ -45,26 +45,38 @@ public class DeleteTopicRefreshScheduleResultJsonUnmarshaller implements Unmarsh
             return deleteTopicRefreshScheduleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TopicId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteTopicRefreshScheduleResult.setTopicId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteTopicRefreshScheduleResult.setTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteTopicRefreshScheduleResult.setDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteTopicRefreshScheduleResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

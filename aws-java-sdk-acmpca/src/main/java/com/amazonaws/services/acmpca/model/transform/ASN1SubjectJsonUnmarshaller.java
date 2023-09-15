@@ -43,72 +43,95 @@ public class ASN1SubjectJsonUnmarshaller implements Unmarshaller<ASN1Subject, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Country", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Organization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setOrganization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationalUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setOrganizationalUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DistinguishedNameQualifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setDistinguishedNameQualifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CommonName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setCommonName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SerialNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setSerialNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Locality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setLocality(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Surname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setSurname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GivenName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setGivenName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Initials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setInitials(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Pseudonym", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setPseudonym(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenerationQualifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setGenerationQualifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aSN1Subject.setCustomAttributes(new ListUnmarshaller<CustomAttribute>(CustomAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

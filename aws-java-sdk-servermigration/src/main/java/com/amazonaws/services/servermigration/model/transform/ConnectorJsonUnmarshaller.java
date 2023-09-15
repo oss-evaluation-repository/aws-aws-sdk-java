@@ -43,52 +43,70 @@ public class ConnectorJsonUnmarshaller implements Unmarshaller<Connector, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connector.setConnectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connector.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connector.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("capabilityList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connector.setCapabilityList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("vmManagerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connector.setVmManagerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vmManagerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connector.setVmManagerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vmManagerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connector.setVmManagerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connector.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("macAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connector.setMacAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associatedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connector.setAssociatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

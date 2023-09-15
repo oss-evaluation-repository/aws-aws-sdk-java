@@ -43,20 +43,30 @@ public class TaggedDatabaseJsonUnmarshaller implements Unmarshaller<TaggedDataba
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Database", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taggedDatabase.setDatabase(DatabaseResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LFTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taggedDatabase.setLFTags(new ListUnmarshaller<LFTagPair>(LFTagPairJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

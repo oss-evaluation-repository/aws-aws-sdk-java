@@ -43,40 +43,54 @@ public class DescribedWorkflowJsonUnmarshaller implements Unmarshaller<Described
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedWorkflow.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedWorkflow.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Steps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedWorkflow.setSteps(new ListUnmarshaller<WorkflowStep>(WorkflowStepJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OnExceptionSteps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedWorkflow.setOnExceptionSteps(new ListUnmarshaller<WorkflowStep>(WorkflowStepJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("WorkflowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedWorkflow.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedWorkflow.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

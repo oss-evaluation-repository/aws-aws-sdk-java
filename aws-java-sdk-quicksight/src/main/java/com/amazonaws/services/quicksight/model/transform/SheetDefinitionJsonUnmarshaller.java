@@ -43,66 +43,85 @@ public class SheetDefinitionJsonUnmarshaller implements Unmarshaller<SheetDefini
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SheetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setSheetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterControls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setParameterControls(new ListUnmarshaller<ParameterControl>(ParameterControlJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FilterControls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setFilterControls(new ListUnmarshaller<FilterControl>(FilterControlJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Visuals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setVisuals(new ListUnmarshaller<Visual>(VisualJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TextBoxes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setTextBoxes(new ListUnmarshaller<SheetTextBox>(SheetTextBoxJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Layouts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setLayouts(new ListUnmarshaller<Layout>(LayoutJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SheetControlLayouts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setSheetControlLayouts(new ListUnmarshaller<SheetControlLayout>(SheetControlLayoutJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ContentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sheetDefinition.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

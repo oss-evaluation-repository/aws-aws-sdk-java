@@ -43,16 +43,22 @@ public class ServiceNowKnowledgeArticleConfigurationJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CrawlAttachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNowKnowledgeArticleConfiguration.setCrawlAttachments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeAttachmentFilePatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNowKnowledgeArticleConfiguration
                             .setIncludeAttachmentFilePatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -60,6 +66,7 @@ public class ServiceNowKnowledgeArticleConfigurationJsonUnmarshaller implements 
                             .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeAttachmentFilePatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNowKnowledgeArticleConfiguration
                             .setExcludeAttachmentFilePatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -67,14 +74,17 @@ public class ServiceNowKnowledgeArticleConfigurationJsonUnmarshaller implements 
                             .unmarshall(context));
                 }
                 if (context.testExpression("DocumentDataFieldName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNowKnowledgeArticleConfiguration.setDocumentDataFieldName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentTitleFieldName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNowKnowledgeArticleConfiguration.setDocumentTitleFieldName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNowKnowledgeArticleConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(
                             DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance())
@@ -82,8 +92,13 @@ public class ServiceNowKnowledgeArticleConfigurationJsonUnmarshaller implements 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FilterQuery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNowKnowledgeArticleConfiguration.setFilterQuery(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

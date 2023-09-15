@@ -43,60 +43,80 @@ public class AwsEc2TransitGatewayDetailsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultRouteTablePropagation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setDefaultRouteTablePropagation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoAcceptSharedAttachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setAutoAcceptSharedAttachments(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultRouteTableAssociation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setDefaultRouteTableAssociation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransitGatewayCidrBlocks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setTransitGatewayCidrBlocks(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AssociationDefaultRouteTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setAssociationDefaultRouteTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PropagationDefaultRouteTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setPropagationDefaultRouteTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpnEcmpSupport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setVpnEcmpSupport(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsSupport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setDnsSupport(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MulticastSupport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setMulticastSupport(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AmazonSideAsn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2TransitGatewayDetails.setAmazonSideAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

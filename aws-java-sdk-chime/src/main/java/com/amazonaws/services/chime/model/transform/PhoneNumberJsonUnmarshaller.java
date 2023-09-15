@@ -43,64 +43,85 @@ public class PhoneNumberJsonUnmarshaller implements Unmarshaller<PhoneNumber, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PhoneNumberId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setPhoneNumberId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("E164PhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setE164PhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Country", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setProductType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Capabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setCapabilities(PhoneNumberCapabilitiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Associations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setAssociations(new ListUnmarshaller<PhoneNumberAssociation>(PhoneNumberAssociationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CallingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setCallingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CallingNameStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setCallingNameStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("DeletionTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumber.setDeletionTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

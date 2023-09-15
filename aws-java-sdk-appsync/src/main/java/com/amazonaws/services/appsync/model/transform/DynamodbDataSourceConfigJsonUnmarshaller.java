@@ -43,30 +43,43 @@ public class DynamodbDataSourceConfigJsonUnmarshaller implements Unmarshaller<Dy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamodbDataSourceConfig.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamodbDataSourceConfig.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("useCallerCredentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamodbDataSourceConfig.setUseCallerCredentials(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("deltaSyncConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamodbDataSourceConfig.setDeltaSyncConfig(DeltaSyncConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("versioned", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamodbDataSourceConfig.setVersioned(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,75 +43,94 @@ public class DataSetJsonUnmarshaller implements Unmarshaller<DataSet, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setDataSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PhysicalTableMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setPhysicalTableMap(new MapUnmarshaller<String, PhysicalTable>(context.getUnmarshaller(String.class), PhysicalTableJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("LogicalTableMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setLogicalTableMap(new MapUnmarshaller<String, LogicalTable>(context.getUnmarshaller(String.class), LogicalTableJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("OutputColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setOutputColumns(new ListUnmarshaller<OutputColumn>(OutputColumnJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ImportMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setImportMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConsumedSpiceCapacityInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setConsumedSpiceCapacityInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setColumnGroups(new ListUnmarshaller<ColumnGroup>(ColumnGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FieldFolders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setFieldFolders(new MapUnmarshaller<String, FieldFolder>(context.getUnmarshaller(String.class), FieldFolderJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("RowLevelPermissionDataSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setRowLevelPermissionDataSet(RowLevelPermissionDataSetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RowLevelPermissionTagConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColumnLevelPermissionRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setColumnLevelPermissionRules(new ListUnmarshaller<ColumnLevelPermissionRule>(ColumnLevelPermissionRuleJsonUnmarshaller
                             .getInstance())
@@ -119,14 +138,20 @@ public class DataSetJsonUnmarshaller implements Unmarshaller<DataSet, JsonUnmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataSetUsageConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setDataSetUsageConfiguration(DataSetUsageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DatasetParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSet.setDatasetParameters(new ListUnmarshaller<DatasetParameter>(DatasetParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,60 +43,80 @@ public class HumanTaskConfigJsonUnmarshaller implements Unmarshaller<HumanTaskCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkteamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setWorkteamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UiConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setUiConfig(UiConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PreHumanTaskLambdaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setPreHumanTaskLambdaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskKeywords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setTaskKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TaskTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setTaskTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setTaskDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfHumanWorkersPerDataObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setNumberOfHumanWorkersPerDataObject(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskTimeLimitInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setTaskTimeLimitInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskAvailabilityLifetimeInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setTaskAvailabilityLifetimeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxConcurrentTaskCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setMaxConcurrentTaskCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AnnotationConsolidationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setAnnotationConsolidationConfig(AnnotationConsolidationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PublicWorkforceTaskPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanTaskConfig.setPublicWorkforceTaskPrice(PublicWorkforceTaskPriceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

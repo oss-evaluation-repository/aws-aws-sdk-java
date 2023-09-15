@@ -43,54 +43,73 @@ public class FieldToMatchJsonUnmarshaller implements Unmarshaller<FieldToMatch, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SingleHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setSingleHeader(SingleHeaderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SingleQueryArgument", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setSingleQueryArgument(SingleQueryArgumentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AllQueryArguments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setAllQueryArguments(AllQueryArgumentsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UriPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setUriPath(UriPathJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("QueryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setQueryString(QueryStringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Body", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setBody(BodyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Method", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setMethod(MethodJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JsonBody", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setJsonBody(JsonBodyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Headers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setHeaders(HeadersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Cookies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setCookies(CookiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HeaderOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldToMatch.setHeaderOrder(HeaderOrderJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

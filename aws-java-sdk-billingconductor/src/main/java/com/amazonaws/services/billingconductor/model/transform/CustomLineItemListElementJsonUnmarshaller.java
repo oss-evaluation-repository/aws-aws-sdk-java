@@ -43,50 +43,68 @@ public class CustomLineItemListElementJsonUnmarshaller implements Unmarshaller<C
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemListElement.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemListElement.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChargeDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemListElement.setChargeDetails(ListCustomLineItemChargeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemListElement.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemListElement.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemListElement.setProductCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BillingGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemListElement.setBillingGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemListElement.setCreationTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemListElement.setLastModifiedTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemListElement.setAssociationSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

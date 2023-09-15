@@ -43,51 +43,69 @@ public class DescribeMonitoringScheduleResultJsonUnmarshaller implements Unmarsh
             return describeMonitoringScheduleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitoringScheduleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMonitoringScheduleResult.setMonitoringScheduleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringScheduleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMonitoringScheduleResult.setMonitoringScheduleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringScheduleStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMonitoringScheduleResult.setMonitoringScheduleStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMonitoringScheduleResult.setMonitoringType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMonitoringScheduleResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMonitoringScheduleResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMonitoringScheduleResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("MonitoringScheduleConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMonitoringScheduleResult.setMonitoringScheduleConfig(MonitoringScheduleConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EndpointName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMonitoringScheduleResult.setEndpointName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastMonitoringExecutionSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMonitoringScheduleResult.setLastMonitoringExecutionSummary(MonitoringExecutionSummaryJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

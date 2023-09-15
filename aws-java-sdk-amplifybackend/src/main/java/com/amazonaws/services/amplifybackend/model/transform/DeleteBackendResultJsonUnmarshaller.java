@@ -43,34 +43,48 @@ public class DeleteBackendResultJsonUnmarshaller implements Unmarshaller<DeleteB
             return deleteBackendResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteBackendResult.setAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("backendEnvironmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteBackendResult.setBackendEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteBackendResult.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteBackendResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteBackendResult.setOperation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteBackendResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

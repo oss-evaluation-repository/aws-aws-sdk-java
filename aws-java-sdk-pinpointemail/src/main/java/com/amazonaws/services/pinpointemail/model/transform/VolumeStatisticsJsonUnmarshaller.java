@@ -43,26 +43,38 @@ public class VolumeStatisticsJsonUnmarshaller implements Unmarshaller<VolumeStat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InboxRawCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeStatistics.setInboxRawCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SpamRawCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeStatistics.setSpamRawCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ProjectedInbox", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeStatistics.setProjectedInbox(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ProjectedSpam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeStatistics.setProjectedSpam(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,49 @@ public class ImageScanFindingsJsonUnmarshaller implements Unmarshaller<ImageScan
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageScanCompletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFindings.setImageScanCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("vulnerabilitySourceUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFindings.setVulnerabilitySourceUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("findingSeverityCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFindings.setFindingSeverityCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
                 if (context.testExpression("findings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFindings.setFindings(new ListUnmarshaller<ImageScanFinding>(ImageScanFindingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("enhancedFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFindings
                             .setEnhancedFindings(new ListUnmarshaller<EnhancedImageScanFinding>(EnhancedImageScanFindingJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,62 +43,83 @@ public class DeviceDataJsonUnmarshaller implements Unmarshaller<DeviceData, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setDeviceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceSerialNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setDeviceSerialNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setDeviceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SoftwareVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setSoftwareVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MacAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setMacAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setDeviceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setNetworkProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setNetworkProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoomArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setRoomArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoomName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setRoomName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceStatusInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setDeviceStatusInfo(DeviceStatusInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceData.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

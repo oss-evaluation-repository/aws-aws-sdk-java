@@ -43,34 +43,48 @@ public class GenerateDataKeyPairResultJsonUnmarshaller implements Unmarshaller<G
             return generateDataKeyPairResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PrivateKeyCiphertextBlob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generateDataKeyPairResult.setPrivateKeyCiphertextBlob(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateKeyPlaintext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generateDataKeyPairResult.setPrivateKeyPlaintext(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generateDataKeyPairResult.setPublicKey(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generateDataKeyPairResult.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyPairSpec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generateDataKeyPairResult.setKeyPairSpec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CiphertextForRecipient", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generateDataKeyPairResult.setCiphertextForRecipient(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

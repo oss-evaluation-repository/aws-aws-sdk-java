@@ -43,62 +43,83 @@ public class DescribeRestoreJobResultJsonUnmarshaller implements Unmarshaller<De
             return describeRestoreJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RestoreJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setRestoreJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecoveryPointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setRecoveryPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setCompletionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PercentDone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setPercentDone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setBackupSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpectedCompletionTimeMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setExpectedCompletionTimeMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setCreatedResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRestoreJobResult.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

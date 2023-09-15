@@ -43,78 +43,102 @@ public class InputDeviceSummaryJsonUnmarshaller implements Unmarshaller<InputDev
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setConnectionState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceSettingsSyncState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setDeviceSettingsSyncState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceUpdateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setDeviceUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hdDeviceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setHdDeviceSettings(InputDeviceHdSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("macAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setMacAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setNetworkSettings(InputDeviceNetworkSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serialNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setSerialNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uhdDeviceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setUhdDeviceSettings(InputDeviceUhdSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary
                             .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("availabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("medialiveInputArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setMedialiveInputArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("outputType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceSummary.setOutputType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,42 @@ public class ZonalStatisticsConfigInputJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Statistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zonalStatisticsConfigInput.setStatistics(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TargetBands", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zonalStatisticsConfigInput.setTargetBands(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ZoneS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zonalStatisticsConfigInput.setZoneS3Path(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ZoneS3PathKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zonalStatisticsConfigInput.setZoneS3PathKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

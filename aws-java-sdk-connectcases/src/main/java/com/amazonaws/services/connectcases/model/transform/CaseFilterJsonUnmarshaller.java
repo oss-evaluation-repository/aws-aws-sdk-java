@@ -43,30 +43,42 @@ public class CaseFilterJsonUnmarshaller implements Unmarshaller<CaseFilter, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("andAll", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     caseFilter.setAndAll(new ListUnmarshaller<CaseFilter>(CaseFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("field", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     caseFilter.setField(FieldFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("not", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     caseFilter.setNot(CaseFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("orAll", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     caseFilter.setOrAll(new ListUnmarshaller<CaseFilter>(CaseFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

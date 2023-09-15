@@ -43,34 +43,48 @@ public class AwsIamInstanceProfileRoleJsonUnmarshaller implements Unmarshaller<A
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfileRole.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssumeRolePolicyDocument", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfileRole.setAssumeRolePolicyDocument(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfileRole.setCreateDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfileRole.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfileRole.setRoleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfileRole.setRoleName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

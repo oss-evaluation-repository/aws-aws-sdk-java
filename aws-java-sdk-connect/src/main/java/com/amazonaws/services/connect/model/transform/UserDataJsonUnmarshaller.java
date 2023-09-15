@@ -43,51 +43,68 @@ public class UserDataJsonUnmarshaller implements Unmarshaller<UserData, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("User", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userData.setUser(UserReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoutingProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userData.setRoutingProfile(RoutingProfileReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HierarchyPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userData.setHierarchyPath(HierarchyPathReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userData.setStatus(AgentStatusReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AvailableSlotsByChannel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userData.setAvailableSlotsByChannel(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
                 if (context.testExpression("MaxSlotsByChannel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userData.setMaxSlotsByChannel(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
                 if (context.testExpression("ActiveSlotsByChannel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userData.setActiveSlotsByChannel(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
                 if (context.testExpression("Contacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userData.setContacts(new ListUnmarshaller<AgentContactReference>(AgentContactReferenceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userData.setNextStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

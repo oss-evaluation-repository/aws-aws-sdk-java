@@ -43,34 +43,48 @@ public class AccountPolicyJsonUnmarshaller implements Unmarshaller<AccountPolicy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountPolicy.setPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyDocument", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountPolicy.setPolicyDocument(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountPolicy.setLastUpdatedTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("policyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountPolicy.setPolicyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountPolicy.setScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountPolicy.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

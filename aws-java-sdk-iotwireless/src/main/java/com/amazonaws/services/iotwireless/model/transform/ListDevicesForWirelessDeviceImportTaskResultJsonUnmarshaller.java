@@ -44,25 +44,36 @@ public class ListDevicesForWirelessDeviceImportTaskResultJsonUnmarshaller implem
             return listDevicesForWirelessDeviceImportTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listDevicesForWirelessDeviceImportTaskResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listDevicesForWirelessDeviceImportTaskResult.setDestinationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImportedWirelessDeviceList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listDevicesForWirelessDeviceImportTaskResult.setImportedWirelessDeviceList(new ListUnmarshaller<ImportedWirelessDevice>(
                             ImportedWirelessDeviceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

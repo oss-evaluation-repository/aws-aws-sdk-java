@@ -44,62 +44,83 @@ public class GetDataQualityRuleRecommendationRunResultJsonUnmarshaller implement
             return getDataQualityRuleRecommendationRunResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setDataSource(DataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfWorkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setNumberOfWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Timeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setErrorString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setStartedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setLastModifiedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setExecutionTime(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendedRuleset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setRecommendedRuleset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedRulesetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataQualityRuleRecommendationRunResult.setCreatedRulesetName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

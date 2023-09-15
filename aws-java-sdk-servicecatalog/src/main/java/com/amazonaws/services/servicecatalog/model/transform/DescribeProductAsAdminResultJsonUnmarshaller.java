@@ -43,16 +43,22 @@ public class DescribeProductAsAdminResultJsonUnmarshaller implements Unmarshalle
             return describeProductAsAdminResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProductViewDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProductAsAdminResult.setProductViewDetail(ProductViewDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProvisioningArtifactSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProductAsAdminResult.setProvisioningArtifactSummaries(new ListUnmarshaller<ProvisioningArtifactSummary>(
                             ProvisioningArtifactSummaryJsonUnmarshaller.getInstance())
@@ -60,22 +66,29 @@ public class DescribeProductAsAdminResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProductAsAdminResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TagOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProductAsAdminResult.setTagOptions(new ListUnmarshaller<TagOptionDetail>(TagOptionDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Budgets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProductAsAdminResult.setBudgets(new ListUnmarshaller<BudgetDetail>(BudgetDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

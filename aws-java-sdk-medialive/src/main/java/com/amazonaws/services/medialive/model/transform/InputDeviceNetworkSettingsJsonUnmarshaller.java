@@ -43,32 +43,45 @@ public class InputDeviceNetworkSettingsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dnsAddresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceNetworkSettings.setDnsAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("gateway", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceNetworkSettings.setGateway(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceNetworkSettings.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipScheme", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceNetworkSettings.setIpScheme(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subnetMask", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceNetworkSettings.setSubnetMask(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

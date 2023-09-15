@@ -43,42 +43,58 @@ public class EC2InstanceDetailsJsonUnmarshaller implements Unmarshaller<EC2Insta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Family", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceDetails.setFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceDetails.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceDetails.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceDetails.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceDetails.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tenancy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceDetails.setTenancy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentGeneration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceDetails.setCurrentGeneration(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeFlexEligible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceDetails.setSizeFlexEligible(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

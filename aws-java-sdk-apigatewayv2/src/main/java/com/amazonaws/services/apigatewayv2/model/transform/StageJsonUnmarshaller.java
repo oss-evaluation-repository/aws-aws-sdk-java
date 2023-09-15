@@ -43,69 +43,91 @@ public class StageJsonUnmarshaller implements Unmarshaller<Stage, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessLogSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setAccessLogSettings(AccessLogSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("apiGatewayManaged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("autoDeploy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setAutoDeploy(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("clientCertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setClientCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("defaultRouteSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setDefaultRouteSettings(RouteSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("deploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastDeploymentStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setLastDeploymentStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("routeSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setRouteSettings(new MapUnmarshaller<String, RouteSettings>(context.getUnmarshaller(String.class), RouteSettingsJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("stageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setStageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stageVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setStageVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stage.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

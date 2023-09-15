@@ -43,54 +43,72 @@ public class AwsLambdaFunctionDetailsJsonUnmarshaller implements Unmarshaller<Aw
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("architectures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setArchitectures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("codeSha256", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setCodeSha256(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("functionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setLastModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("layers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setLayers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("packageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setPackageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("runtime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setRuntime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setVpcConfig(LambdaVpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

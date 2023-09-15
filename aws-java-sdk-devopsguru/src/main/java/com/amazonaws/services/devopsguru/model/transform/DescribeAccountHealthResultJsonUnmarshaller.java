@@ -43,30 +43,43 @@ public class DescribeAccountHealthResultJsonUnmarshaller implements Unmarshaller
             return describeAccountHealthResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OpenReactiveInsights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountHealthResult.setOpenReactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OpenProactiveInsights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountHealthResult.setOpenProactiveInsights(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricsAnalyzed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountHealthResult.setMetricsAnalyzed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceHours", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountHealthResult.setResourceHours(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AnalyzedResourceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccountHealthResult.setAnalyzedResourceCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

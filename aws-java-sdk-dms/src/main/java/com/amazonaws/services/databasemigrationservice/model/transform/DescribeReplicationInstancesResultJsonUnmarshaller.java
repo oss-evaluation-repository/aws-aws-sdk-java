@@ -43,21 +43,31 @@ public class DescribeReplicationInstancesResultJsonUnmarshaller implements Unmar
             return describeReplicationInstancesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Marker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplicationInstancesResult.setMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplicationInstancesResult.setReplicationInstances(new ListUnmarshaller<ReplicationInstance>(ReplicationInstanceJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

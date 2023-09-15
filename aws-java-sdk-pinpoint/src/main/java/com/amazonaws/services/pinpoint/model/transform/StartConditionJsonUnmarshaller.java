@@ -43,22 +43,33 @@ public class StartConditionJsonUnmarshaller implements Unmarshaller<StartConditi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startCondition.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventStartCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startCondition.setEventStartCondition(EventStartConditionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SegmentStartCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startCondition.setSegmentStartCondition(SegmentConditionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class UserPoolConfigJsonUnmarshaller implements Unmarshaller<UserPoolConf
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("userPoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolConfig.setUserPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolConfig.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolConfig.setDefaultAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appIdClientRegex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolConfig.setAppIdClientRegex(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

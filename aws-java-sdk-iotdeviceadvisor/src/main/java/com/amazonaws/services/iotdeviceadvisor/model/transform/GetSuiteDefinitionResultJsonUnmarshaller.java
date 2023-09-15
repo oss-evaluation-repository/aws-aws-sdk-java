@@ -43,43 +43,59 @@ public class GetSuiteDefinitionResultJsonUnmarshaller implements Unmarshaller<Ge
             return getSuiteDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("suiteDefinitionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteDefinitionResult.setSuiteDefinitionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteDefinitionResult.setSuiteDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteDefinitionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteDefinitionResult.setSuiteDefinitionVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latestVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteDefinitionResult.setLatestVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteDefinitionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteDefinitionResult.setSuiteDefinitionConfiguration(SuiteDefinitionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteDefinitionResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteDefinitionResult.setLastModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteDefinitionResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

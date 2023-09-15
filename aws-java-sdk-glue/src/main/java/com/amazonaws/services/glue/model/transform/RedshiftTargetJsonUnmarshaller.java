@@ -43,40 +43,55 @@ public class RedshiftTargetJsonUnmarshaller implements Unmarshaller<RedshiftTarg
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftTarget.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftTarget.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Database", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftTarget.setDatabase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Table", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftTarget.setTable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RedshiftTmpDir", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftTarget.setRedshiftTmpDir(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TmpDirIAMRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftTarget.setTmpDirIAMRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpsertRedshiftOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftTarget.setUpsertRedshiftOptions(UpsertRedshiftTargetOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

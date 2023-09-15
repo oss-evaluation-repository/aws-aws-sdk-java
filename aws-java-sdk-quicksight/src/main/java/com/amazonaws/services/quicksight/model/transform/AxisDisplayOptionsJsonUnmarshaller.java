@@ -43,34 +43,48 @@ public class AxisDisplayOptionsJsonUnmarshaller implements Unmarshaller<AxisDisp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TickLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     axisDisplayOptions.setTickLabelOptions(AxisTickLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AxisLineVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     axisDisplayOptions.setAxisLineVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GridLineVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     axisDisplayOptions.setGridLineVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     axisDisplayOptions.setDataOptions(AxisDataOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ScrollbarOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     axisDisplayOptions.setScrollbarOptions(ScrollBarOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AxisOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     axisDisplayOptions.setAxisOffset(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

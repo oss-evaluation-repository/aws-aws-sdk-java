@@ -43,42 +43,58 @@ public class LoRaWANDeviceJsonUnmarshaller implements Unmarshaller<LoRaWANDevice
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DevEui", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDevice.setDevEui(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDevice.setDeviceProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDevice.setServiceProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OtaaV1_1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDevice.setOtaaV1_1(OtaaV11JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OtaaV1_0_x", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDevice.setOtaaV1_0_x(OtaaV10XJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AbpV1_1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDevice.setAbpV1_1(AbpV11JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AbpV1_0_x", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDevice.setAbpV1_0_x(AbpV10XJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FPorts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDevice.setFPorts(FPortsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

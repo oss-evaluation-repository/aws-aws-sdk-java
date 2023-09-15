@@ -43,42 +43,58 @@ public class SegmentationDescriptorJsonUnmarshaller implements Unmarshaller<Segm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SegmentNum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentationDescriptor.setSegmentNum(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentationEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentationDescriptor.setSegmentationEventId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentationTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentationDescriptor.setSegmentationTypeId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentationUpid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentationDescriptor.setSegmentationUpid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentationUpidType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentationDescriptor.setSegmentationUpidType(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentsExpected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentationDescriptor.setSegmentsExpected(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SubSegmentNum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentationDescriptor.setSubSegmentNum(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SubSegmentsExpected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentationDescriptor.setSubSegmentsExpected(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

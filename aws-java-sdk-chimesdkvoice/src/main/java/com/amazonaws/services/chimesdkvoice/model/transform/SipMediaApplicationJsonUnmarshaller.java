@@ -43,24 +43,32 @@ public class SipMediaApplicationJsonUnmarshaller implements Unmarshaller<SipMedi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SipMediaApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipMediaApplication.setSipMediaApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AwsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipMediaApplication.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipMediaApplication.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Endpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipMediaApplication.setEndpoints(new ListUnmarshaller<SipMediaApplicationEndpoint>(SipMediaApplicationEndpointJsonUnmarshaller
                             .getInstance())
@@ -68,16 +76,23 @@ public class SipMediaApplicationJsonUnmarshaller implements Unmarshaller<SipMedi
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipMediaApplication.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipMediaApplication.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("SipMediaApplicationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipMediaApplication.setSipMediaApplicationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class EmbeddedDestinationSettingsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("destination608ChannelNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     embeddedDestinationSettings.setDestination608ChannelNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("destination708ServiceNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     embeddedDestinationSettings.setDestination708ServiceNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

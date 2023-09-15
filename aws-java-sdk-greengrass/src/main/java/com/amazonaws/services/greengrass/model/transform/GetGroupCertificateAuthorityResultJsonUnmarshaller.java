@@ -43,22 +43,33 @@ public class GetGroupCertificateAuthorityResultJsonUnmarshaller implements Unmar
             return getGroupCertificateAuthorityResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GroupCertificateAuthorityArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getGroupCertificateAuthorityResult.setGroupCertificateAuthorityArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupCertificateAuthorityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getGroupCertificateAuthorityResult.setGroupCertificateAuthorityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PemEncodedCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getGroupCertificateAuthorityResult.setPemEncodedCertificate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

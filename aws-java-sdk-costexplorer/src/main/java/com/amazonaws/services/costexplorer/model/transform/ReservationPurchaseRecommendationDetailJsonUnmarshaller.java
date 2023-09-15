@@ -43,88 +43,115 @@ public class ReservationPurchaseRecommendationDetailJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setInstanceDetails(InstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RecommendedNumberOfInstancesToPurchase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail
                             .setRecommendedNumberOfInstancesToPurchase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendedNormalizedUnitsToPurchase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setRecommendedNormalizedUnitsToPurchase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumNumberOfInstancesUsedPerHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setMinimumNumberOfInstancesUsedPerHour(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumNormalizedUnitsUsedPerHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setMinimumNormalizedUnitsUsedPerHour(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumNumberOfInstancesUsedPerHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setMaximumNumberOfInstancesUsedPerHour(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumNormalizedUnitsUsedPerHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setMaximumNormalizedUnitsUsedPerHour(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AverageNumberOfInstancesUsedPerHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setAverageNumberOfInstancesUsedPerHour(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AverageNormalizedUnitsUsedPerHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setAverageNormalizedUnitsUsedPerHour(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AverageUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setAverageUtilization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedBreakEvenInMonths", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setEstimatedBreakEvenInMonths(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedMonthlySavingsAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setEstimatedMonthlySavingsAmount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedMonthlySavingsPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setEstimatedMonthlySavingsPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedMonthlyOnDemandCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setEstimatedMonthlyOnDemandCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedReservationCostForLookbackPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setEstimatedReservationCostForLookbackPeriod(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("UpfrontCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setUpfrontCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecurringStandardMonthlyCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setRecurringStandardMonthlyCost(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

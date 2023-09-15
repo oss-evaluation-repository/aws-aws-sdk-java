@@ -43,62 +43,82 @@ public class JobSettingsJsonUnmarshaller implements Unmarshaller<JobSettings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adAvailOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setAdAvailOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("availBlanking", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setAvailBlanking(AvailBlankingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("esam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setEsam(EsamSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("extendedDataServices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setExtendedDataServices(ExtendedDataServicesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setInputs(new ListUnmarshaller<Input>(InputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("kantarWatermark", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setKantarWatermark(KantarWatermarkSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("motionImageInserter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setMotionImageInserter(MotionImageInserterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nielsenConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setNielsenConfiguration(NielsenConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nielsenNonLinearWatermark", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setNielsenNonLinearWatermark(NielsenNonLinearWatermarkSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("outputGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("timecodeConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setTimecodeConfig(TimecodeConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataInsertion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobSettings.setTimedMetadataInsertion(TimedMetadataInsertionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

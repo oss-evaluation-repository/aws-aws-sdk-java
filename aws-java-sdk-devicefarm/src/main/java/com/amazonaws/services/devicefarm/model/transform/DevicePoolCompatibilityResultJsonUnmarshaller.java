@@ -43,25 +43,36 @@ public class DevicePoolCompatibilityResultJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("device", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     devicePoolCompatibilityResult.setDevice(DeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("compatible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     devicePoolCompatibilityResult.setCompatible(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("incompatibilityMessages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     devicePoolCompatibilityResult.setIncompatibilityMessages(new ListUnmarshaller<IncompatibilityMessage>(
                             IncompatibilityMessageJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

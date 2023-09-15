@@ -43,59 +43,77 @@ public class SkillDetailsJsonUnmarshaller implements Unmarshaller<SkillDetails, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProductDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillDetails.setProductDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InvocationPhrase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillDetails.setInvocationPhrase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReleaseDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillDetails.setReleaseDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndUserLicenseAgreement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillDetails.setEndUserLicenseAgreement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenericKeywords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillDetails.setGenericKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BulletPoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillDetails.setBulletPoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NewInThisVersionBulletPoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillDetails.setNewInThisVersionBulletPoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SkillTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillDetails.setSkillTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Reviews", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillDetails.setReviews(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("DeveloperInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillDetails.setDeveloperInfo(DeveloperInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

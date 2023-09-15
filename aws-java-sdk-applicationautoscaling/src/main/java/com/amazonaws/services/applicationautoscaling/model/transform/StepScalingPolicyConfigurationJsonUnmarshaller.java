@@ -43,32 +43,45 @@ public class StepScalingPolicyConfigurationJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AdjustmentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepScalingPolicyConfiguration.setAdjustmentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StepAdjustments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepScalingPolicyConfiguration.setStepAdjustments(new ListUnmarshaller<StepAdjustment>(StepAdjustmentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MinAdjustmentMagnitude", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepScalingPolicyConfiguration.setMinAdjustmentMagnitude(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Cooldown", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepScalingPolicyConfiguration.setCooldown(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricAggregationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepScalingPolicyConfiguration.setMetricAggregationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,14 +43,23 @@ public class GetExtensionVersionResultJsonUnmarshaller implements Unmarshaller<G
             return getExtensionVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExtensionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExtensionVersionResult.setExtensionVersion(ExtensionVersionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

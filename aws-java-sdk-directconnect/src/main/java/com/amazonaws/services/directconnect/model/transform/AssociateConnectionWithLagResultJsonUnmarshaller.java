@@ -43,102 +43,132 @@ public class AssociateConnectionWithLagResultJsonUnmarshaller implements Unmarsh
             return associateConnectionWithLagResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ownerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setConnectionState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bandwidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setBandwidth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setVlan(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("partnerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setPartnerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loaIssueTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setLoaIssueTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lagId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setLagId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsDevice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setProviderName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("macSecCapable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setMacSecCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("portEncryptionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setPortEncryptionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("macSecKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateConnectionWithLagResult.setMacSecKeys(new ListUnmarshaller<MacSecKey>(MacSecKeyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

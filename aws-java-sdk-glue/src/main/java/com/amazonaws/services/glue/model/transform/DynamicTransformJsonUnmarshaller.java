@@ -43,48 +43,64 @@ public class DynamicTransformJsonUnmarshaller implements Unmarshaller<DynamicTra
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicTransform.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransformName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicTransform.setTransformName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicTransform.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicTransform.setParameters(new ListUnmarshaller<TransformConfigParameter>(TransformConfigParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FunctionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicTransform.setFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicTransform.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicTransform.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputSchemas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dynamicTransform.setOutputSchemas(new ListUnmarshaller<GlueSchema>(GlueSchemaJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

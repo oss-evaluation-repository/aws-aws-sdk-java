@@ -43,22 +43,33 @@ public class UdpGroupSettingsJsonUnmarshaller implements Unmarshaller<UdpGroupSe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("inputLossAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     udpGroupSettings.setInputLossAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataId3Frame", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     udpGroupSettings.setTimedMetadataId3Frame(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataId3Period", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     udpGroupSettings.setTimedMetadataId3Period(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class PhysicalResourceJsonUnmarshaller implements Unmarshaller<PhysicalRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("additionalInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalResource.setAdditionalInfo(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -56,38 +61,50 @@ public class PhysicalResourceJsonUnmarshaller implements Unmarshaller<PhysicalRe
                     ).unmarshall(context));
                 }
                 if (context.testExpression("appComponents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalResource.setAppComponents(new ListUnmarshaller<AppComponent>(AppComponentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("excluded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalResource.setExcluded(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("logicalResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalResource.setLogicalResourceId(LogicalResourceIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("parentResourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalResource.setParentResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("physicalResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalResource.setPhysicalResourceId(PhysicalResourceIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalResource.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalResource.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalResource.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,9 +43,13 @@ public class DeleteMeshResultJsonUnmarshaller implements Unmarshaller<DeleteMesh
             return deleteMeshResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteMeshResult.setMesh(MeshDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

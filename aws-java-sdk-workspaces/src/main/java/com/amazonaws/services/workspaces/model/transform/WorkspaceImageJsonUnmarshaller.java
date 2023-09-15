@@ -43,60 +43,80 @@ public class WorkspaceImageJsonUnmarshaller implements Unmarshaller<WorkspaceIma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ImageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperatingSystem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setOperatingSystem(OperatingSystemJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequiredTenancy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setRequiredTenancy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OwnerAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setOwnerAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Updates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setUpdates(UpdateResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ErrorDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceImage.setErrorDetails(new ListUnmarshaller<ErrorDetails>(ErrorDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

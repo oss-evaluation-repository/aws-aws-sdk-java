@@ -43,22 +43,33 @@ public class VirtualGatewayConnectionPoolJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("grpc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayConnectionPool.setGrpc(VirtualGatewayGrpcConnectionPoolJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("http", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayConnectionPool.setHttp(VirtualGatewayHttpConnectionPoolJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("http2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayConnectionPool.setHttp2(VirtualGatewayHttp2ConnectionPoolJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

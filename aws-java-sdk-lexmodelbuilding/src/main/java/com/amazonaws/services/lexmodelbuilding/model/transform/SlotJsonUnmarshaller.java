@@ -43,56 +43,75 @@ public class SlotJsonUnmarshaller implements Unmarshaller<Slot, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotConstraint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setSlotConstraint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setSlotType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotTypeVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setSlotTypeVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("valueElicitationPrompt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setValueElicitationPrompt(PromptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleUtterances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("responseCard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setResponseCard(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("obfuscationSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setObfuscationSetting(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValueSpec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slot.setDefaultValueSpec(SlotDefaultValueSpecJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

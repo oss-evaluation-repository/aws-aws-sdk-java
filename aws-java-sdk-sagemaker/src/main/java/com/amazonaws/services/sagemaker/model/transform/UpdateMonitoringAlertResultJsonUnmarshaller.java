@@ -43,18 +43,28 @@ public class UpdateMonitoringAlertResultJsonUnmarshaller implements Unmarshaller
             return updateMonitoringAlertResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitoringScheduleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMonitoringAlertResult.setMonitoringScheduleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringAlertName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMonitoringAlertResult.setMonitoringAlertName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

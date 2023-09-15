@@ -43,67 +43,89 @@ public class ProposalJsonUnmarshaller implements Unmarshaller<Proposal, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProposalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setProposalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setActions(ProposalActionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProposedByMemberId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setProposedByMemberId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProposedByMemberName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setProposedByMemberName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setCreationDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ExpirationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setExpirationDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("YesVoteCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setYesVoteCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NoVoteCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setNoVoteCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OutstandingVoteCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setOutstandingVoteCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposal.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

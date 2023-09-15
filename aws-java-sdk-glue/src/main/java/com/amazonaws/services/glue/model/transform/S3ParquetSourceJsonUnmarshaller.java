@@ -43,60 +43,79 @@ public class S3ParquetSourceJsonUnmarshaller implements Unmarshaller<S3ParquetSo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Paths", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Exclusions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setExclusions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("GroupSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setGroupSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setGroupFiles(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Recurse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setRecurse(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxBand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setMaxBand(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxFilesInBand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setMaxFilesInBand(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setAdditionalOptions(S3DirectSourceAdditionalOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OutputSchemas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ParquetSource.setOutputSchemas(new ListUnmarshaller<GlueSchema>(GlueSchemaJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

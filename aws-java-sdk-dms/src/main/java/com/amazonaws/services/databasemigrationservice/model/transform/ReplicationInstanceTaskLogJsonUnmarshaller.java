@@ -43,22 +43,33 @@ public class ReplicationInstanceTaskLogJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplicationTaskName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstanceTaskLog.setReplicationTaskName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationTaskArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstanceTaskLog.setReplicationTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceTaskLogSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationInstanceTaskLog.setReplicationInstanceTaskLogSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

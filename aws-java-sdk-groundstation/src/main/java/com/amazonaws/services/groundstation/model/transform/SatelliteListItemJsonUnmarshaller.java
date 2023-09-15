@@ -43,32 +43,45 @@ public class SatelliteListItemJsonUnmarshaller implements Unmarshaller<Satellite
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("currentEphemeris", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     satelliteListItem.setCurrentEphemeris(EphemerisMetaDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("groundStations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     satelliteListItem.setGroundStations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("noradSatelliteID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     satelliteListItem.setNoradSatelliteID(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("satelliteArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     satelliteListItem.setSatelliteArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("satelliteId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     satelliteListItem.setSatelliteId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,62 @@ public class JobDataJsonUnmarshaller implements Unmarshaller<JobData, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobData.setActionTypeId(ActionTypeIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("actionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobData.setActionConfiguration(ActionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pipelineContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobData.setPipelineContext(PipelineContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobData.setInputArtifacts(new ListUnmarshaller<Artifact>(ArtifactJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("outputArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobData.setOutputArtifacts(new ListUnmarshaller<Artifact>(ArtifactJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("artifactCredentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobData.setArtifactCredentials(AWSSessionCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("continuationToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobData.setContinuationToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobData.setEncryptionKey(EncryptionKeyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

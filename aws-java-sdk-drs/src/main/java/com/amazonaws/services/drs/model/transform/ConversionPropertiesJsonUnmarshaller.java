@@ -44,33 +44,46 @@ public class ConversionPropertiesJsonUnmarshaller implements Unmarshaller<Conver
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conversionProperties.setDataTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("forceUefi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conversionProperties.setForceUefi(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("rootVolumeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conversionProperties.setRootVolumeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeToConversionMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conversionProperties.setVolumeToConversionMap(new MapUnmarshaller<String, java.util.Map<String, String>>(context
                             .getUnmarshaller(String.class), new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class))).unmarshall(context));
                 }
                 if (context.testExpression("volumeToVolumeSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conversionProperties.setVolumeToVolumeSize(new MapUnmarshaller<String, Long>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Long.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

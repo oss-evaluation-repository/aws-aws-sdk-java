@@ -43,48 +43,65 @@ public class TemplateV3JsonUnmarshaller implements Unmarshaller<TemplateV3, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CertificateValidity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateV3.setCertificateValidity(CertificateValidityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EnrollmentFlags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateV3.setEnrollmentFlags(EnrollmentFlagsV3JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Extensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateV3.setExtensions(ExtensionsV3JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GeneralFlags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateV3.setGeneralFlags(GeneralFlagsV3JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HashAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateV3.setHashAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateKeyAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateV3.setPrivateKeyAttributes(PrivateKeyAttributesV3JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PrivateKeyFlags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateV3.setPrivateKeyFlags(PrivateKeyFlagsV3JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SubjectNameFlags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateV3.setSubjectNameFlags(SubjectNameFlagsV3JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SupersededTemplates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateV3.setSupersededTemplates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

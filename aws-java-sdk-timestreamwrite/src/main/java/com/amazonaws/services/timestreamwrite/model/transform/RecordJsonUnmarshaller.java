@@ -43,46 +43,62 @@ public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Dimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setDimensions(new ListUnmarshaller<Dimension>(DimensionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MeasureName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setMeasureName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MeasureValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setMeasureValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MeasureValueType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setMeasureValueType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Time", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setTimeUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MeasureValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setMeasureValues(new ListUnmarshaller<MeasureValue>(MeasureValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

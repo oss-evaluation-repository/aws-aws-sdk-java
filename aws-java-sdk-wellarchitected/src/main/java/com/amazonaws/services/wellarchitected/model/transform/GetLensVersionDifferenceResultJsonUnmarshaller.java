@@ -43,34 +43,48 @@ public class GetLensVersionDifferenceResultJsonUnmarshaller implements Unmarshal
             return getLensVersionDifferenceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LensAlias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLensVersionDifferenceResult.setLensAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LensArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLensVersionDifferenceResult.setLensArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BaseLensVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLensVersionDifferenceResult.setBaseLensVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetLensVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLensVersionDifferenceResult.setTargetLensVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestLensVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLensVersionDifferenceResult.setLatestLensVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionDifferences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLensVersionDifferenceResult.setVersionDifferences(VersionDifferencesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

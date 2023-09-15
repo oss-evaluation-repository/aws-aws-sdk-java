@@ -43,30 +43,43 @@ public class AssumedRoleJsonUnmarshaller implements Unmarshaller<AssumedRole, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assumedRole.setAccessKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assumedRole.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assumedRole.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("principalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assumedRole.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sessionContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assumedRole.setSessionContext(SessionContextJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

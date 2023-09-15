@@ -44,12 +44,17 @@ public class DescribeLaunchConfigurationTemplatesResultJsonUnmarshaller implemen
             return describeLaunchConfigurationTemplatesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("items", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLaunchConfigurationTemplatesResult.setItems(new ListUnmarshaller<LaunchConfigurationTemplate>(
                             LaunchConfigurationTemplateJsonUnmarshaller.getInstance())
@@ -57,8 +62,13 @@ public class DescribeLaunchConfigurationTemplatesResultJsonUnmarshaller implemen
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLaunchConfigurationTemplatesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

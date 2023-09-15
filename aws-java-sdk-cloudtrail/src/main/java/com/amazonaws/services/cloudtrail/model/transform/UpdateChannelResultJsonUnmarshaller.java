@@ -43,28 +43,40 @@ public class UpdateChannelResultJsonUnmarshaller implements Unmarshaller<UpdateC
             return updateChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChannelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelResult.setDestinations(new ListUnmarshaller<Destination>(DestinationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

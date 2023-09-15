@@ -43,34 +43,48 @@ public class JoinInstructionJsonUnmarshaller implements Unmarshaller<JoinInstruc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LeftOperand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     joinInstruction.setLeftOperand(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RightOperand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     joinInstruction.setRightOperand(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LeftJoinKeyProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     joinInstruction.setLeftJoinKeyProperties(JoinKeyPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RightJoinKeyProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     joinInstruction.setRightJoinKeyProperties(JoinKeyPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     joinInstruction.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OnClause", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     joinInstruction.setOnClause(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

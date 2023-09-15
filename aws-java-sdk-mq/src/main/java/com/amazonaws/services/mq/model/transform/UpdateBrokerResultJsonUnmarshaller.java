@@ -43,68 +43,90 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
             return updateBrokerResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authenticationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setAuthenticationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoMinorVersionUpgrade", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setAutoMinorVersionUpgrade(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("brokerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setBrokerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setConfiguration(ConfigurationIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("engineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ldapServerMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setLdapServerMetadata(LdapServerMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("logs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setLogs(LogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("maintenanceWindowStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setMaintenanceWindowStartTime(WeeklyStartTimeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("dataReplicationMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setDataReplicationMetadata(DataReplicationMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dataReplicationMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setDataReplicationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingDataReplicationMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setPendingDataReplicationMetadata(DataReplicationMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pendingDataReplicationMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBrokerResult.setPendingDataReplicationMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

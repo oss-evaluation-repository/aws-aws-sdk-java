@@ -43,32 +43,44 @@ public class ZeppelinApplicationConfigurationUpdateJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitoringConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zeppelinApplicationConfigurationUpdate.setMonitoringConfigurationUpdate(ZeppelinMonitoringConfigurationUpdateJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("CatalogConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zeppelinApplicationConfigurationUpdate.setCatalogConfigurationUpdate(CatalogConfigurationUpdateJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("DeployAsApplicationConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zeppelinApplicationConfigurationUpdate.setDeployAsApplicationConfigurationUpdate(DeployAsApplicationConfigurationUpdateJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomArtifactsConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zeppelinApplicationConfigurationUpdate.setCustomArtifactsConfigurationUpdate(new ListUnmarshaller<CustomArtifactConfiguration>(
                             CustomArtifactConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

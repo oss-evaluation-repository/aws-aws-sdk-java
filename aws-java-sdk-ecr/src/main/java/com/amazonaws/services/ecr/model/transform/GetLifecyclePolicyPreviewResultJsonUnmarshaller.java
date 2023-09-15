@@ -43,32 +43,42 @@ public class GetLifecyclePolicyPreviewResultJsonUnmarshaller implements Unmarsha
             return getLifecyclePolicyPreviewResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("registryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLifecyclePolicyPreviewResult.setRegistryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLifecyclePolicyPreviewResult.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lifecyclePolicyText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLifecyclePolicyPreviewResult.setLifecyclePolicyText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLifecyclePolicyPreviewResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLifecyclePolicyPreviewResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("previewResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLifecyclePolicyPreviewResult.setPreviewResults(new ListUnmarshaller<LifecyclePolicyPreviewResult>(
                             LifecyclePolicyPreviewResultJsonUnmarshaller.getInstance())
@@ -76,8 +86,13 @@ public class GetLifecyclePolicyPreviewResultJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("summary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLifecyclePolicyPreviewResult.setSummary(LifecyclePolicyPreviewSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

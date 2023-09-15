@@ -43,31 +43,44 @@ public class InputDeviceConfigurableSettingsJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("configuredInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceConfigurableSettings.setConfiguredInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maxBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceConfigurableSettings.setMaxBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("latencyMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceConfigurableSettings.setLatencyMs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("codec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceConfigurableSettings.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaconnectSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceConfigurableSettings.setMediaconnectSettings(InputDeviceMediaConnectConfigurableSettingsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

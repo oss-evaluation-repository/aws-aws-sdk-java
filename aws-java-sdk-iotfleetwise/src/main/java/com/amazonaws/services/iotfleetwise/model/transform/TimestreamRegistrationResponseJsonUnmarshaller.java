@@ -43,34 +43,48 @@ public class TimestreamRegistrationResponseJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("timestreamDatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamRegistrationResponse.setTimestreamDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestreamTableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamRegistrationResponse.setTimestreamTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestreamDatabaseArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamRegistrationResponse.setTimestreamDatabaseArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestreamTableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamRegistrationResponse.setTimestreamTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("registrationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamRegistrationResponse.setRegistrationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timestreamRegistrationResponse.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

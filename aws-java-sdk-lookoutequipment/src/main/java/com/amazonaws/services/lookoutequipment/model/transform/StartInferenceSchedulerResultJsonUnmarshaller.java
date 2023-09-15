@@ -43,30 +43,43 @@ public class StartInferenceSchedulerResultJsonUnmarshaller implements Unmarshall
             return startInferenceSchedulerResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startInferenceSchedulerResult.setModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startInferenceSchedulerResult.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InferenceSchedulerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startInferenceSchedulerResult.setInferenceSchedulerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InferenceSchedulerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startInferenceSchedulerResult.setInferenceSchedulerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startInferenceSchedulerResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

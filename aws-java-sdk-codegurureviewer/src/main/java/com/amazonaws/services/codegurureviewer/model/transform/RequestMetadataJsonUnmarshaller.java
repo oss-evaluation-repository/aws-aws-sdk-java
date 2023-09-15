@@ -43,26 +43,38 @@ public class RequestMetadataJsonUnmarshaller implements Unmarshaller<RequestMeta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestMetadata.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Requester", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestMetadata.setRequester(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestMetadata.setEventInfo(EventInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VendorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestMetadata.setVendorName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

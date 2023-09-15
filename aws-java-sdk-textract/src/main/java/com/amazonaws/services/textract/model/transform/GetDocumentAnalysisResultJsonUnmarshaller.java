@@ -43,42 +43,57 @@ public class GetDocumentAnalysisResultJsonUnmarshaller implements Unmarshaller<G
             return getDocumentAnalysisResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDocumentAnalysisResult.setDocumentMetadata(DocumentMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDocumentAnalysisResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDocumentAnalysisResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Blocks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDocumentAnalysisResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Warnings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDocumentAnalysisResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDocumentAnalysisResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnalyzeDocumentModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDocumentAnalysisResult.setAnalyzeDocumentModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -45,20 +45,27 @@ public class DescribeFolderResolvedPermissionsResultJsonUnmarshaller implements 
             return describeFolderResolvedPermissionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FolderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFolderResolvedPermissionsResult.setFolderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFolderResolvedPermissionsResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Permissions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFolderResolvedPermissionsResult.setPermissions(new ListUnmarshaller<ResourcePermission>(ResourcePermissionJsonUnmarshaller
                             .getInstance())
@@ -66,12 +73,18 @@ public class DescribeFolderResolvedPermissionsResultJsonUnmarshaller implements 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFolderResolvedPermissionsResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFolderResolvedPermissionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

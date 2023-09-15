@@ -43,20 +43,30 @@ public class ListPolicyGenerationsResultJsonUnmarshaller implements Unmarshaller
             return listPolicyGenerationsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyGenerations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPolicyGenerationsResult.setPolicyGenerations(new ListUnmarshaller<PolicyGeneration>(PolicyGenerationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPolicyGenerationsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

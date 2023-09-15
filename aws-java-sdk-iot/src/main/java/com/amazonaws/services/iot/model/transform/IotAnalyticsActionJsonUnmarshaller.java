@@ -43,26 +43,38 @@ public class IotAnalyticsActionJsonUnmarshaller implements Unmarshaller<IotAnaly
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iotAnalyticsAction.setChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("channelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iotAnalyticsAction.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("batchMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iotAnalyticsAction.setBatchMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iotAnalyticsAction.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

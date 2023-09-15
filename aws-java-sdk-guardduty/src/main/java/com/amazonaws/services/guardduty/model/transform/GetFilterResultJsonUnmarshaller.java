@@ -43,35 +43,49 @@ public class GetFilterResultJsonUnmarshaller implements Unmarshaller<GetFilterRe
             return getFilterResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFilterResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFilterResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFilterResult.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rank", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFilterResult.setRank(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("findingCriteria", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFilterResult.setFindingCriteria(FindingCriteriaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFilterResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

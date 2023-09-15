@@ -43,55 +43,74 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeOperationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setActiveOperationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setClusterType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("currentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setCurrentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setStateInfo(StateInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("provisioned", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setProvisioned(ProvisionedJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serverless", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setServerless(ServerlessJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

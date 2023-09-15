@@ -43,39 +43,53 @@ public class OpsAggregatorJsonUnmarshaller implements Unmarshaller<OpsAggregator
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AggregatorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsAggregator.setAggregatorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsAggregator.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsAggregator.setAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Values", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsAggregator.setValues(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Filters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsAggregator.setFilters(new ListUnmarshaller<OpsFilter>(OpsFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Aggregators", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsAggregator.setAggregators(new ListUnmarshaller<OpsAggregator>(OpsAggregatorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,76 +43,99 @@ public class JobFlowDetailJsonUnmarshaller implements Unmarshaller<JobFlowDetail
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobFlowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setJobFlowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setLogUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogEncryptionKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setLogEncryptionKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AmiVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setAmiVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionStatusDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setExecutionStatusDetail(JobFlowExecutionStatusDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Instances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setInstances(JobFlowInstancesDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Steps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setSteps(new ListUnmarshaller<StepDetail>(StepDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BootstrapActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setBootstrapActions(new ListUnmarshaller<BootstrapActionDetail>(BootstrapActionDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportedProducts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setSupportedProducts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VisibleToAllUsers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setVisibleToAllUsers(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("JobFlowRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setJobFlowRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoScalingRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setAutoScalingRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScaleDownBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowDetail.setScaleDownBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

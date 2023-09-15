@@ -43,40 +43,55 @@ public class SkillsStoreSkillJsonUnmarshaller implements Unmarshaller<SkillsStor
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SkillId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillsStoreSkill.setSkillId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SkillName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillsStoreSkill.setSkillName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShortDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillsStoreSkill.setShortDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IconUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillsStoreSkill.setIconUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SampleUtterances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillsStoreSkill.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SkillDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillsStoreSkill.setSkillDetails(SkillDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SupportsLinking", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     skillsStoreSkill.setSupportsLinking(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

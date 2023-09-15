@@ -43,12 +43,17 @@ public class ListSolNetworkPackagesResultJsonUnmarshaller implements Unmarshalle
             return listSolNetworkPackagesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("networkPackages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackagesResult.setNetworkPackages(new ListUnmarshaller<ListSolNetworkPackageInfo>(ListSolNetworkPackageInfoJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListSolNetworkPackagesResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackagesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

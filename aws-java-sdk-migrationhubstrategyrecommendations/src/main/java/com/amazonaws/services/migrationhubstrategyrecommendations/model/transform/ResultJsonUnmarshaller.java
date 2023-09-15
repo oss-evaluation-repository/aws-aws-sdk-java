@@ -43,28 +43,40 @@ public class ResultJsonUnmarshaller implements Unmarshaller<Result, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("analysisStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     result.setAnalysisStatus(AnalysisStatusUnionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("analysisType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     result.setAnalysisType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("antipatternReportResultList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     result.setAntipatternReportResultList(new ListUnmarshaller<AntipatternReportResult>(AntipatternReportResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     result.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class ListRouteCalculatorsResponseEntryJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CalculatorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRouteCalculatorsResponseEntry.setCalculatorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRouteCalculatorsResponseEntry.setCreateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("DataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRouteCalculatorsResponseEntry.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRouteCalculatorsResponseEntry.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PricingPlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRouteCalculatorsResponseEntry.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRouteCalculatorsResponseEntry.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

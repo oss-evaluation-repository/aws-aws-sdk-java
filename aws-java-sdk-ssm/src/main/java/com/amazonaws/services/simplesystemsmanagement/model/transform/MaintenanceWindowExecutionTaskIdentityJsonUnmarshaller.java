@@ -43,53 +43,71 @@ public class MaintenanceWindowExecutionTaskIdentityJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WindowExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setWindowExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setTaskExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setStatusDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TaskArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setTaskType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlarmConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TriggeredAlarms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceWindowExecutionTaskIdentity.setTriggeredAlarms(new ListUnmarshaller<AlarmStateInformation>(AlarmStateInformationJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

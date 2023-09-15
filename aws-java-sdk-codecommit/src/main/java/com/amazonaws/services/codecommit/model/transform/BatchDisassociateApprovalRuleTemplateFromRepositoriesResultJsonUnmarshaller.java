@@ -44,12 +44,17 @@ public class BatchDisassociateApprovalRuleTemplateFromRepositoriesResultJsonUnma
             return batchDisassociateApprovalRuleTemplateFromRepositoriesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("disassociatedRepositoryNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDisassociateApprovalRuleTemplateFromRepositoriesResult.setDisassociatedRepositoryNames(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -57,12 +62,17 @@ public class BatchDisassociateApprovalRuleTemplateFromRepositoriesResultJsonUnma
                     .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDisassociateApprovalRuleTemplateFromRepositoriesResult
                             .setErrors(new ListUnmarshaller<BatchDisassociateApprovalRuleTemplateFromRepositoriesError>(
                                     BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

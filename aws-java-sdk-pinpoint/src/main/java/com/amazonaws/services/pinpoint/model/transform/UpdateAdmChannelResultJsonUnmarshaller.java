@@ -43,9 +43,13 @@ public class UpdateAdmChannelResultJsonUnmarshaller implements Unmarshaller<Upda
             return updateAdmChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateAdmChannelResult.setADMChannelResponse(ADMChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

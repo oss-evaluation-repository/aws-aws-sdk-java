@@ -43,50 +43,68 @@ public class WaterfallChartConfigurationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waterfallChartConfiguration.setFieldWells(WaterfallChartFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SortConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waterfallChartConfiguration.setSortConfiguration(WaterfallChartSortConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("WaterfallChartOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waterfallChartConfiguration.setWaterfallChartOptions(WaterfallChartOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CategoryAxisLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waterfallChartConfiguration.setCategoryAxisLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CategoryAxisDisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waterfallChartConfiguration.setCategoryAxisDisplayOptions(AxisDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PrimaryYAxisLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waterfallChartConfiguration.setPrimaryYAxisLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PrimaryYAxisDisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waterfallChartConfiguration.setPrimaryYAxisDisplayOptions(AxisDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Legend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waterfallChartConfiguration.setLegend(LegendOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waterfallChartConfiguration.setDataLabels(DataLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisualPalette", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waterfallChartConfiguration.setVisualPalette(VisualPaletteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

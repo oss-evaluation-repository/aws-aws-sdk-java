@@ -43,25 +43,33 @@ public class BudgetJsonUnmarshaller implements Unmarshaller<Budget, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BudgetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setBudgetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BudgetLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setBudgetLimit(SpendJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PlannedBudgetLimits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setPlannedBudgetLimits(new MapUnmarshaller<String, Spend>(context.getUnmarshaller(String.class), SpendJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
                 if (context.testExpression("CostFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setCostFilters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -69,32 +77,43 @@ public class BudgetJsonUnmarshaller implements Unmarshaller<Budget, JsonUnmarsha
                     ).unmarshall(context));
                 }
                 if (context.testExpression("CostTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setCostTypes(CostTypesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setTimeUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimePeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setTimePeriod(TimePeriodJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CalculatedSpend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setCalculatedSpend(CalculatedSpendJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BudgetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setBudgetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AutoAdjustData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budget.setAutoAdjustData(AutoAdjustDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

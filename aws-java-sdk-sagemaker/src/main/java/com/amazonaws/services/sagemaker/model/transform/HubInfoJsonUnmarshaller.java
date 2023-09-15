@@ -43,44 +43,60 @@ public class HubInfoJsonUnmarshaller implements Unmarshaller<HubInfo, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HubName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hubInfo.setHubName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hubInfo.setHubArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hubInfo.setHubDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hubInfo.setHubDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubSearchKeywords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hubInfo.setHubSearchKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HubStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hubInfo.setHubStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hubInfo.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hubInfo.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

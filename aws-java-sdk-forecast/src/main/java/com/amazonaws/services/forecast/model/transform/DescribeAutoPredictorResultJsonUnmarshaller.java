@@ -43,92 +43,119 @@ public class DescribeAutoPredictorResultJsonUnmarshaller implements Unmarshaller
             return describeAutoPredictorResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PredictorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setPredictorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setPredictorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ForecastHorizon", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setForecastHorizon(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ForecastTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setForecastTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ForecastFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setForecastFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ForecastDimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setForecastDimensions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DatasetImportJobArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setDatasetImportJobArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setDataConfig(DataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setEncryptionConfig(EncryptionConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReferencePredictorSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setReferencePredictorSummary(ReferencePredictorSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OptimizationMetric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setOptimizationMetric(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExplainabilityInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setExplainabilityInfo(ExplainabilityInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MonitorInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setMonitorInfo(MonitorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeAlignmentBoundary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoPredictorResult.setTimeAlignmentBoundary(TimeAlignmentBoundaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

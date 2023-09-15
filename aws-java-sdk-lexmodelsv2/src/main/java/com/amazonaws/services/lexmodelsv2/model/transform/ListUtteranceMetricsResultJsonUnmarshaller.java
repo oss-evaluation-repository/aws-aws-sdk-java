@@ -43,16 +43,22 @@ public class ListUtteranceMetricsResultJsonUnmarshaller implements Unmarshaller<
             return listUtteranceMetricsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listUtteranceMetricsResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("results", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listUtteranceMetricsResult
                             .setResults(new ListUnmarshaller<AnalyticsUtteranceResult>(AnalyticsUtteranceResultJsonUnmarshaller.getInstance())
@@ -60,8 +66,13 @@ public class ListUtteranceMetricsResultJsonUnmarshaller implements Unmarshaller<
                             .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listUtteranceMetricsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

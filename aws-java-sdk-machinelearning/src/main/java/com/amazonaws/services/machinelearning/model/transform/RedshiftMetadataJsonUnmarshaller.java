@@ -43,22 +43,33 @@ public class RedshiftMetadataJsonUnmarshaller implements Unmarshaller<RedshiftMe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RedshiftDatabase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftMetadata.setRedshiftDatabase(RedshiftDatabaseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DatabaseUserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftMetadata.setDatabaseUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectSqlQuery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftMetadata.setSelectSqlQuery(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

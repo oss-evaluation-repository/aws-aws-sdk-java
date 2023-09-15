@@ -43,88 +43,114 @@ public class ConfigurationItemJsonUnmarshaller implements Unmarshaller<Configura
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationItemCaptureTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setConfigurationItemCaptureTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("configurationItemStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setConfigurationItemStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationStateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setConfigurationStateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationItemMD5Hash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setConfigurationItemMD5Hash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("availabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceCreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setResourceCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("relatedEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setRelatedEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("relationships", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setRelationships(new ListUnmarshaller<Relationship>(RelationshipJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supplementaryConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationItem.setSupplementaryConfiguration(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

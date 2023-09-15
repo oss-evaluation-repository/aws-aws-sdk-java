@@ -43,58 +43,78 @@ public class UpdateMaintenanceWindowResultJsonUnmarshaller implements Unmarshall
             return updateMaintenanceWindowResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WindowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setWindowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setStartDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setEndDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setSchedule(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleTimezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setScheduleTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setScheduleOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Cutoff", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setCutoff(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowUnassociatedTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setAllowUnassociatedTargets(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowResult.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

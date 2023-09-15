@@ -44,25 +44,33 @@ public class AwsCertificateManagerCertificateDomainValidationOptionJsonUnmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCertificateManagerCertificateDomainValidationOption.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceRecord", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCertificateManagerCertificateDomainValidationOption.setResourceRecord(AwsCertificateManagerCertificateResourceRecordJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ValidationDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCertificateManagerCertificateDomainValidationOption.setValidationDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidationEmails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCertificateManagerCertificateDomainValidationOption.setValidationEmails(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -70,12 +78,18 @@ public class AwsCertificateManagerCertificateDomainValidationOptionJsonUnmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("ValidationMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCertificateManagerCertificateDomainValidationOption.setValidationMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCertificateManagerCertificateDomainValidationOption.setValidationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

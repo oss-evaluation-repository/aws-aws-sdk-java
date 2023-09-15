@@ -43,26 +43,38 @@ public class CostCategoryRuleJsonUnmarshaller implements Unmarshaller<CostCatego
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategoryRule.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Rule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategoryRule.setRule(ExpressionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InheritedValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategoryRule.setInheritedValue(CostCategoryInheritedValueDimensionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategoryRule.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

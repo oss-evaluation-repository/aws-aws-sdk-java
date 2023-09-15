@@ -43,42 +43,57 @@ public class GetExpenseAnalysisResultJsonUnmarshaller implements Unmarshaller<Ge
             return getExpenseAnalysisResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExpenseAnalysisResult.setDocumentMetadata(DocumentMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExpenseAnalysisResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExpenseAnalysisResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpenseDocuments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExpenseAnalysisResult.setExpenseDocuments(new ListUnmarshaller<ExpenseDocument>(ExpenseDocumentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Warnings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExpenseAnalysisResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExpenseAnalysisResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnalyzeExpenseModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExpenseAnalysisResult.setAnalyzeExpenseModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class ComponentConditionPropertyJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("property", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentConditionProperty.setProperty(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("field", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentConditionProperty.setField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentConditionProperty.setOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentConditionProperty.setOperand(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("then", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentConditionProperty.setThen(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("else", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentConditionProperty.setElse(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("operandType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentConditionProperty.setOperandType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class UpdateBackendConfigResultJsonUnmarshaller implements Unmarshaller<U
             return updateBackendConfigResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBackendConfigResult.setAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("backendManagerAppId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBackendConfigResult.setBackendManagerAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBackendConfigResult.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loginAuthConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBackendConfigResult.setLoginAuthConfig(LoginAuthConfigReqObjJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

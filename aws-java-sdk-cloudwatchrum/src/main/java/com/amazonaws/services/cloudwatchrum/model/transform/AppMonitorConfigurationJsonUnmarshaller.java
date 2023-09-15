@@ -43,54 +43,71 @@ public class AppMonitorConfigurationJsonUnmarshaller implements Unmarshaller<App
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AllowCookies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitorConfiguration.setAllowCookies(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableXRay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitorConfiguration.setEnableXRay(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExcludedPages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitorConfiguration.setExcludedPages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FavoritePages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitorConfiguration.setFavoritePages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("GuestRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitorConfiguration.setGuestRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityPoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitorConfiguration.setIdentityPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludedPages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitorConfiguration.setIncludedPages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SessionSampleRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitorConfiguration.setSessionSampleRate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Telemetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitorConfiguration.setTelemetries(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

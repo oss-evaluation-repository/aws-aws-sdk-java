@@ -43,77 +43,101 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setAppArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentSchedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setAssessmentSchedule(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("complianceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setComplianceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("driftStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setDriftStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventSubscriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setEventSubscriptions(new ListUnmarshaller<EventSubscription>(EventSubscriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastAppComplianceEvaluationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setLastAppComplianceEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastDriftEvaluationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setLastDriftEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastResiliencyScoreEvaluationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setLastResiliencyScoreEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("permissionModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setPermissionModel(PermissionModelJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("policyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resiliencyScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setResiliencyScore(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     app.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,58 +43,78 @@ public class DescribeQuerySuggestionsBlockListResultJsonUnmarshaller implements 
             return describeQuerySuggestionsBlockListResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setIndexId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SourceS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setSourceS3Path(S3PathJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ItemCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setItemCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setFileSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsBlockListResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

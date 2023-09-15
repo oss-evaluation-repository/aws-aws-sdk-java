@@ -43,40 +43,55 @@ public class DescribeCacheResultJsonUnmarshaller implements Unmarshaller<Describ
             return describeCacheResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCacheResult.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiskIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCacheResult.setDiskIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CacheAllocatedInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCacheResult.setCacheAllocatedInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheUsedPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCacheResult.setCacheUsedPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheDirtyPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCacheResult.setCacheDirtyPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheHitPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCacheResult.setCacheHitPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheMissPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCacheResult.setCacheMissPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

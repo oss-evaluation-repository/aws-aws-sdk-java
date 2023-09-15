@@ -43,94 +43,122 @@ public class SnapshotJsonUnmarshaller implements Unmarshaller<Snapshot, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountsWithProvisionedRestoreAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setAccountsWithProvisionedRestoreAccess(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("accountsWithRestoreAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setAccountsWithRestoreAccess(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("actualIncrementalBackupSizeInMegaBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setActualIncrementalBackupSizeInMegaBytes(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("adminUsername", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setAdminUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("backupProgressInMegaBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setBackupProgressInMegaBytes(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("currentBackupRateInMegaBytesPerSecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setCurrentBackupRateInMegaBytesPerSecond(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("elapsedTimeInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setElapsedTimeInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("estimatedSecondsToCompletion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setEstimatedSecondsToCompletion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setNamespaceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setNamespaceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ownerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setSnapshotArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotCreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setSnapshotCreateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("snapshotName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setSnapshotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotRemainingDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setSnapshotRemainingDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotRetentionPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setSnapshotRetentionPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotRetentionStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setSnapshotRetentionStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("totalBackupSizeInMegaBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshot.setTotalBackupSizeInMegaBytes(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

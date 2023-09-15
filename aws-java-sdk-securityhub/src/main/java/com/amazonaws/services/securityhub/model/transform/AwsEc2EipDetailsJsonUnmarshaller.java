@@ -43,50 +43,68 @@ public class AwsEc2EipDetailsJsonUnmarshaller implements Unmarshaller<AwsEc2EipD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2EipDetails.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicIp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2EipDetails.setPublicIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllocationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2EipDetails.setAllocationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2EipDetails.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2EipDetails.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicIpv4Pool", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2EipDetails.setPublicIpv4Pool(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkBorderGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2EipDetails.setNetworkBorderGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2EipDetails.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceOwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2EipDetails.setNetworkInterfaceOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2EipDetails.setPrivateIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

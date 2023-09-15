@@ -43,26 +43,38 @@ public class CoreJsonUnmarshaller implements Unmarshaller<Core, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     core.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     core.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SyncShadow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     core.setSyncShadow(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ThingArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     core.setThingArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

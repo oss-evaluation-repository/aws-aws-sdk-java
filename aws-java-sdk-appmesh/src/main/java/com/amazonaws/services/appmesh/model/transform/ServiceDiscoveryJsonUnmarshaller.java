@@ -43,18 +43,28 @@ public class ServiceDiscoveryJsonUnmarshaller implements Unmarshaller<ServiceDis
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("awsCloudMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceDiscovery.setAwsCloudMap(AwsCloudMapServiceDiscoveryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceDiscovery.setDns(DnsServiceDiscoveryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

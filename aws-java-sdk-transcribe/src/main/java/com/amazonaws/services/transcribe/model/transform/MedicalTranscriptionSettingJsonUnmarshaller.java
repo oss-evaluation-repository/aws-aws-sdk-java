@@ -43,34 +43,48 @@ public class MedicalTranscriptionSettingJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ShowSpeakerLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionSetting.setShowSpeakerLabels(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxSpeakerLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionSetting.setMaxSpeakerLabels(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelIdentification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionSetting.setChannelIdentification(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ShowAlternatives", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionSetting.setShowAlternatives(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxAlternatives", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionSetting.setMaxAlternatives(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionSetting.setVocabularyName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

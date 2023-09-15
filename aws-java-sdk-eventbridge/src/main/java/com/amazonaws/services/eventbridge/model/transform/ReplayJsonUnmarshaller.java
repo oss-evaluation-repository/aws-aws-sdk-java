@@ -43,46 +43,63 @@ public class ReplayJsonUnmarshaller implements Unmarshaller<Replay, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replay.setReplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventSourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replay.setEventSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replay.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replay.setStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replay.setEventStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EventEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replay.setEventEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EventLastReplayedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replay.setEventLastReplayedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReplayStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replay.setReplayStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReplayEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replay.setReplayEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

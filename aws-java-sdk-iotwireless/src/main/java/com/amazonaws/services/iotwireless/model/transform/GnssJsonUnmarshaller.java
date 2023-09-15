@@ -43,36 +43,50 @@ public class GnssJsonUnmarshaller implements Unmarshaller<Gnss, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Payload", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gnss.setPayload(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CaptureTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gnss.setCaptureTime(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("CaptureTimeAccuracy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gnss.setCaptureTimeAccuracy(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("AssistPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gnss.setAssistPosition(new ListUnmarshaller<Float>(context.getUnmarshaller(Float.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AssistAltitude", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gnss.setAssistAltitude(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("Use2DSolver", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gnss.setUse2DSolver(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,52 @@ public class CoverageFilterCriteriaJsonUnmarshaller implements Unmarshaller<Cove
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setAccountId(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ec2InstanceTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setEc2InstanceTags(new ListUnmarshaller<CoverageMapFilter>(CoverageMapFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ecrImageTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setEcrImageTags(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ecrRepositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setEcrRepositoryName(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setLambdaFunctionName(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionRuntime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setLambdaFunctionRuntime(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller
                             .getInstance())
@@ -86,46 +96,57 @@ public class CoverageFilterCriteriaJsonUnmarshaller implements Unmarshaller<Cove
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setLambdaFunctionTags(new ListUnmarshaller<CoverageMapFilter>(CoverageMapFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastScannedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setLastScannedAt(new ListUnmarshaller<CoverageDateFilter>(CoverageDateFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setResourceId(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setResourceType(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("scanStatusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setScanStatusCode(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("scanStatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setScanStatusReason(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("scanType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageFilterCriteria.setScanType(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

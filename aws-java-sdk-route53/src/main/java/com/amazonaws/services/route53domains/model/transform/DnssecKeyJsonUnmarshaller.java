@@ -43,38 +43,53 @@ public class DnssecKeyJsonUnmarshaller implements Unmarshaller<DnssecKey, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Algorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnssecKey.setAlgorithm(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Flags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnssecKey.setFlags(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnssecKey.setPublicKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DigestType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnssecKey.setDigestType(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Digest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnssecKey.setDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyTag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnssecKey.setKeyTag(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnssecKey.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

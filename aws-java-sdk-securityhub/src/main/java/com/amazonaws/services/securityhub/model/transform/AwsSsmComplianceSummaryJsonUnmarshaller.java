@@ -43,82 +43,108 @@ public class AwsSsmComplianceSummaryJsonUnmarshaller implements Unmarshaller<Aws
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompliantCriticalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setCompliantCriticalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CompliantHighCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setCompliantHighCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CompliantMediumCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setCompliantMediumCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setExecutionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NonCompliantCriticalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setNonCompliantCriticalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CompliantInformationalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setCompliantInformationalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NonCompliantInformationalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setNonCompliantInformationalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CompliantUnspecifiedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setCompliantUnspecifiedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NonCompliantLowCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setNonCompliantLowCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NonCompliantHighCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setNonCompliantHighCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CompliantLowCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setCompliantLowCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ComplianceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setComplianceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PatchBaselineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setPatchBaselineId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OverallSeverity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setOverallSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NonCompliantMediumCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setNonCompliantMediumCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NonCompliantUnspecifiedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setNonCompliantUnspecifiedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PatchGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSsmComplianceSummary.setPatchGroup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,37 @@ public class VpcConfigurationJsonUnmarshaller implements Unmarshaller<VpcConfigu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SubnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcConfiguration.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcConfiguration.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcConfiguration.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

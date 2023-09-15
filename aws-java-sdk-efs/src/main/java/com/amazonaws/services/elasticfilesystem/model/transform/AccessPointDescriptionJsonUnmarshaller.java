@@ -43,52 +43,70 @@ public class AccessPointDescriptionJsonUnmarshaller implements Unmarshaller<Acce
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClientToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPointDescription.setClientToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPointDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPointDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AccessPointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPointDescription.setAccessPointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessPointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPointDescription.setAccessPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPointDescription.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PosixUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPointDescription.setPosixUser(PosixUserJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RootDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPointDescription.setRootDirectory(RootDirectoryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPointDescription.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LifeCycleState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessPointDescription.setLifeCycleState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

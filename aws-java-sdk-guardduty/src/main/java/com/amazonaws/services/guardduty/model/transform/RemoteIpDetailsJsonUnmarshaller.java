@@ -43,30 +43,43 @@ public class RemoteIpDetailsJsonUnmarshaller implements Unmarshaller<RemoteIpDet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("city", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteIpDetails.setCity(CityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("country", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteIpDetails.setCountry(CountryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("geoLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteIpDetails.setGeoLocation(GeoLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ipAddressV4", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteIpDetails.setIpAddressV4(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("organization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteIpDetails.setOrganization(OrganizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

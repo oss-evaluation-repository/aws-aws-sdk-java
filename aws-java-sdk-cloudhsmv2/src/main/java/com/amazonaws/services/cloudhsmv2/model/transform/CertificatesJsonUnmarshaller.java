@@ -43,30 +43,43 @@ public class CertificatesJsonUnmarshaller implements Unmarshaller<Certificates, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClusterCsr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificates.setClusterCsr(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HsmCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificates.setHsmCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AwsHardwareCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificates.setAwsHardwareCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ManufacturerHardwareCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificates.setManufacturerHardwareCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificates.setClusterCertificate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

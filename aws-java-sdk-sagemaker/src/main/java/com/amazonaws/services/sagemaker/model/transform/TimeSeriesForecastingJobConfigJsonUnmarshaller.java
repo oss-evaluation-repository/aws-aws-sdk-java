@@ -43,47 +43,63 @@ public class TimeSeriesForecastingJobConfigJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FeatureSpecificationS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesForecastingJobConfig.setFeatureSpecificationS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletionCriteria", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesForecastingJobConfig.setCompletionCriteria(AutoMLJobCompletionCriteriaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ForecastFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesForecastingJobConfig.setForecastFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ForecastHorizon", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesForecastingJobConfig.setForecastHorizon(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ForecastQuantiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesForecastingJobConfig.setForecastQuantiles(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Transformations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesForecastingJobConfig.setTransformations(TimeSeriesTransformationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeSeriesConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesForecastingJobConfig.setTimeSeriesConfig(TimeSeriesConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HolidayConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesForecastingJobConfig.setHolidayConfig(new ListUnmarshaller<HolidayConfigAttributes>(HolidayConfigAttributesJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

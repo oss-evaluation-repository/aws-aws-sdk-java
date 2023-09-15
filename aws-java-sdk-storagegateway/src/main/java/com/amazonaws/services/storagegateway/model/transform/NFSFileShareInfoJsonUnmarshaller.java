@@ -43,110 +43,142 @@ public class NFSFileShareInfoJsonUnmarshaller implements Unmarshaller<NFSFileSha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NFSFileShareDefaults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setNFSFileShareDefaults(NFSFileShareDefaultsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FileShareARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setFileShareARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileShareId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setFileShareId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileShareStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setFileShareStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KMSEncrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setKMSEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KMSKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setKMSKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocationARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setLocationARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultStorageClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setDefaultStorageClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectACL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setObjectACL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setClientList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Squash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setSquash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReadOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setReadOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("GuessMIMETypeEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setGuessMIMETypeEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequesterPays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setRequesterPays(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FileShareName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setFileShareName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setCacheAttributes(CacheAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NotificationPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setNotificationPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VPCEndpointDNSName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setVPCEndpointDNSName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BucketRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setBucketRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuditDestinationARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareInfo.setAuditDestinationARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

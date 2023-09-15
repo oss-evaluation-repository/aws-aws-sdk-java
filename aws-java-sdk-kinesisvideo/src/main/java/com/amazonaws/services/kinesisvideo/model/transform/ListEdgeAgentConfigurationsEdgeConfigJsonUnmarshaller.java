@@ -43,38 +43,53 @@ public class ListEdgeAgentConfigurationsEdgeConfigJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEdgeAgentConfigurationsEdgeConfig.setStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEdgeAgentConfigurationsEdgeConfig.setStreamARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEdgeAgentConfigurationsEdgeConfig.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEdgeAgentConfigurationsEdgeConfig.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SyncStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEdgeAgentConfigurationsEdgeConfig.setSyncStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedStatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEdgeAgentConfigurationsEdgeConfig.setFailedStatusDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEdgeAgentConfigurationsEdgeConfig.setEdgeConfig(EdgeConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

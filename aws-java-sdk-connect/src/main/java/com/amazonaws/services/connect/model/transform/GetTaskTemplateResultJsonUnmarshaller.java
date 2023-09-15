@@ -43,65 +43,86 @@ public class GetTaskTemplateResultJsonUnmarshaller implements Unmarshaller<GetTa
             return getTaskTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactFlowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setContactFlowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Constraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setConstraints(TaskTemplateConstraintsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Defaults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setDefaults(TaskTemplateDefaultsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Fields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setFields(new ListUnmarshaller<TaskTemplateField>(TaskTemplateFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTaskTemplateResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

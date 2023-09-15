@@ -43,62 +43,83 @@ public class SentimentDetectionJobPropertiesJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setInputDataConfig(InputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setOutputDataConfig(OutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentDetectionJobProperties.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

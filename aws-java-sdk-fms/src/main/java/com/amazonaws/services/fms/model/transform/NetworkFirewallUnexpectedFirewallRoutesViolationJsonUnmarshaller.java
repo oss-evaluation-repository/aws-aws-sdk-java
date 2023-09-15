@@ -44,32 +44,45 @@ public class NetworkFirewallUnexpectedFirewallRoutesViolationJsonUnmarshaller im
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FirewallSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallUnexpectedFirewallRoutesViolation.setFirewallSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ViolatingRoutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallUnexpectedFirewallRoutesViolation.setViolatingRoutes(new ListUnmarshaller<Route>(RouteJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RouteTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallUnexpectedFirewallRoutesViolation.setRouteTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallUnexpectedFirewallRoutesViolation.setFirewallEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallUnexpectedFirewallRoutesViolation.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

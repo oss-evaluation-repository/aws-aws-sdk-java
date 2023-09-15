@@ -43,42 +43,58 @@ public class AppflowIntegrationWorkflowStepJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FlowName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appflowIntegrationWorkflowStep.setFlowName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appflowIntegrationWorkflowStep.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appflowIntegrationWorkflowStep.setExecutionMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecordsProcessed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appflowIntegrationWorkflowStep.setRecordsProcessed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchRecordsStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appflowIntegrationWorkflowStep.setBatchRecordsStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchRecordsEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appflowIntegrationWorkflowStep.setBatchRecordsEndTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appflowIntegrationWorkflowStep.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appflowIntegrationWorkflowStep.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,72 @@ public class BatchGetAssetPropertyAggregatesEntryJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("entryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesEntry.setEntryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesEntry.setAssetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("propertyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesEntry.setPropertyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("propertyAlias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesEntry.setPropertyAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("aggregateTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesEntry.setAggregateTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesEntry.setResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesEntry.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesEntry.setEndDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("qualities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesEntry.setQualities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("timeOrdering", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesEntry.setTimeOrdering(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

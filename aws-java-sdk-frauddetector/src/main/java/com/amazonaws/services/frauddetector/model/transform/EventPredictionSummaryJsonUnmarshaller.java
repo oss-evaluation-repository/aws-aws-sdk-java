@@ -43,34 +43,48 @@ public class EventPredictionSummaryJsonUnmarshaller implements Unmarshaller<Even
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventPredictionSummary.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventPredictionSummary.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventPredictionSummary.setEventTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("predictionTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventPredictionSummary.setPredictionTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventPredictionSummary.setDetectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventPredictionSummary.setDetectorVersionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

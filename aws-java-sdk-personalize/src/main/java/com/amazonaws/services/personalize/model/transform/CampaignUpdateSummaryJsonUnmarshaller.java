@@ -43,38 +43,53 @@ public class CampaignUpdateSummaryJsonUnmarshaller implements Unmarshaller<Campa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("solutionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignUpdateSummary.setSolutionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minProvisionedTPS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignUpdateSummary.setMinProvisionedTPS(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("campaignConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignUpdateSummary.setCampaignConfig(CampaignConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignUpdateSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignUpdateSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignUpdateSummary.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignUpdateSummary.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

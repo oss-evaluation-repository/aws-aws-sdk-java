@@ -43,42 +43,58 @@ public class DomainNodesStatusJsonUnmarshaller implements Unmarshaller<DomainNod
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NodeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNodesStatus.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNodesStatus.setNodeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNodesStatus.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNodesStatus.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNodesStatus.setNodeStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNodesStatus.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageVolumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNodesStatus.setStorageVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNodesStatus.setStorageSize(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

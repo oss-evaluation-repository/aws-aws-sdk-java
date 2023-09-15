@@ -43,51 +43,68 @@ public class DestinationDescriptionJsonUnmarshaller implements Unmarshaller<Dest
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DestinationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationDescription.setDestinationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DestinationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationDescription.setS3DestinationDescription(S3DestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExtendedS3DestinationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationDescription.setExtendedS3DestinationDescription(ExtendedS3DestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("RedshiftDestinationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationDescription.setRedshiftDestinationDescription(RedshiftDestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ElasticsearchDestinationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationDescription.setElasticsearchDestinationDescription(ElasticsearchDestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("AmazonopensearchserviceDestinationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationDescription.setAmazonopensearchserviceDestinationDescription(AmazonopensearchserviceDestinationDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SplunkDestinationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationDescription.setSplunkDestinationDescription(SplunkDestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HttpEndpointDestinationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationDescription.setHttpEndpointDestinationDescription(HttpEndpointDestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("AmazonOpenSearchServerlessDestinationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationDescription.setAmazonOpenSearchServerlessDestinationDescription(AmazonOpenSearchServerlessDestinationDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

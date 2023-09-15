@@ -43,27 +43,38 @@ public class AuditMitigationActionsTaskTargetJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("auditTaskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditMitigationActionsTaskTarget.setAuditTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("findingIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditMitigationActionsTaskTarget.setFindingIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("auditCheckToReasonCodeFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditMitigationActionsTaskTarget.setAuditCheckToReasonCodeFilter(new MapUnmarshaller<String, java.util.List<String>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     ).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

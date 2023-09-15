@@ -43,36 +43,50 @@ public class RotationJsonUnmarshaller implements Unmarshaller<Rotation, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RotationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotation.setRotationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotation.setContactIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotation.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TimeZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotation.setTimeZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Recurrence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotation.setRecurrence(RecurrenceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

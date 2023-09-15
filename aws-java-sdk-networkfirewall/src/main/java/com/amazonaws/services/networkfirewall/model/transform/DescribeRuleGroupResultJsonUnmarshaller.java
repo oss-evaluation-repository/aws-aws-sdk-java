@@ -43,22 +43,33 @@ public class DescribeRuleGroupResultJsonUnmarshaller implements Unmarshaller<Des
             return describeRuleGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UpdateToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRuleGroupResult.setUpdateToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRuleGroupResult.setRuleGroup(RuleGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RuleGroupResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRuleGroupResult.setRuleGroupResponse(RuleGroupResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

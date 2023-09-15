@@ -43,72 +43,94 @@ public class WorkgroupJsonUnmarshaller implements Unmarshaller<Workgroup, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("baseCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setBaseCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("configParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setConfigParameters(new ListUnmarshaller<ConfigParameter>(ConfigParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setCreationDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("endpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setEndpoint(EndpointJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("enhancedVpcRouting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setEnhancedVpcRouting(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setNamespaceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("publiclyAccessible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setPubliclyAccessible(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("workgroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setWorkgroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("workgroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setWorkgroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("workgroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workgroup.setWorkgroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

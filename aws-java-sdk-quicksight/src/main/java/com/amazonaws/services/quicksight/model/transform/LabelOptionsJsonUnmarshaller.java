@@ -43,22 +43,33 @@ public class LabelOptionsJsonUnmarshaller implements Unmarshaller<LabelOptions, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Visibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelOptions.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FontConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelOptions.setFontConfiguration(FontConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelOptions.setCustomLabel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

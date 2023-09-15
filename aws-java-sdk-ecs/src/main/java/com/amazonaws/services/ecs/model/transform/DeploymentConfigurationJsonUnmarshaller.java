@@ -43,26 +43,38 @@ public class DeploymentConfigurationJsonUnmarshaller implements Unmarshaller<Dep
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentCircuitBreaker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentConfiguration.setDeploymentCircuitBreaker(DeploymentCircuitBreakerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("maximumPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentConfiguration.setMaximumPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minimumHealthyPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentConfiguration.setMinimumHealthyPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("alarms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentConfiguration.setAlarms(DeploymentAlarmsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

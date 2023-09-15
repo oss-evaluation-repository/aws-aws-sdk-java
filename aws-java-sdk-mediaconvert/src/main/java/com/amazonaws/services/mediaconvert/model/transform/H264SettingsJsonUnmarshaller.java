@@ -43,178 +43,228 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bandwidthReductionFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setBandwidthReductionFilter(BandwidthReductionFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("bitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("codecLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setCodecLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codecProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setCodecProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dynamicSubGop", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setDynamicSubGop(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entropyEncoding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setEntropyEncoding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fieldEncoding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setFieldEncoding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("flickerAdaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setFlickerAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setFramerateControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateConversionAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setFramerateConversionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setFramerateDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setFramerateNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopBReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setGopBReference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gopClosedCadence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setGopClosedCadence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setGopSize(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("gopSizeUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setGopSizeUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hrdBufferFinalFillPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setHrdBufferFinalFillPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hrdBufferInitialFillPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setHrdBufferInitialFillPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hrdBufferSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setHrdBufferSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("interlaceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setInterlaceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maxBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setMaxBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minIInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setMinIInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberBFramesBetweenReferenceFrames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setNumberBFramesBetweenReferenceFrames(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberReferenceFrames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setNumberReferenceFrames(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setParControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setParDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setParNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("qualityTuningLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setQualityTuningLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("qvbrSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setQvbrSettings(H264QvbrSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rateControlMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setRateControlMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repeatPps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setRepeatPps(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sceneChangeDetect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setSceneChangeDetect(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setSlices(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("slowPal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setSlowPal(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("softness", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setSoftness(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("spatialAdaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setSpatialAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("syntax", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setSyntax(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("telecine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setTelecine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("temporalAdaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setTemporalAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("unregisteredSeiTimecode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264Settings.setUnregisteredSeiTimecode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

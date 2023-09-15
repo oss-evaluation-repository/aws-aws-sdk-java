@@ -48,22 +48,33 @@ public class UnsupportedOperationExceptionUnmarshaller extends EnhancedJsonError
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("detailedMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unsupportedOperationException.setDetailedMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unsupportedOperationException.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("code", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     unsupportedOperationException.setCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

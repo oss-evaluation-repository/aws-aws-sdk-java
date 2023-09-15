@@ -43,18 +43,28 @@ public class GetLexiconResultJsonUnmarshaller implements Unmarshaller<GetLexicon
             return getLexiconResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Lexicon", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLexiconResult.setLexicon(LexiconJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LexiconAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLexiconResult.setLexiconAttributes(LexiconAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

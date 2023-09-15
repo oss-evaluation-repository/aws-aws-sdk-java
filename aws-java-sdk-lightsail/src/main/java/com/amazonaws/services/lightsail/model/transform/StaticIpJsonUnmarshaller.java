@@ -43,46 +43,63 @@ public class StaticIpJsonUnmarshaller implements Unmarshaller<StaticIp, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticIp.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticIp.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticIp.setSupportCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticIp.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticIp.setLocation(ResourceLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticIp.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticIp.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attachedTo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticIp.setAttachedTo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isAttached", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticIp.setIsAttached(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

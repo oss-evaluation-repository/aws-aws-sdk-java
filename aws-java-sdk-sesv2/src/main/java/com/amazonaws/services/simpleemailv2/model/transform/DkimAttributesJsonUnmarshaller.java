@@ -43,40 +43,55 @@ public class DkimAttributesJsonUnmarshaller implements Unmarshaller<DkimAttribut
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SigningEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dkimAttributes.setSigningEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dkimAttributes.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tokens", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dkimAttributes.setTokens(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SigningAttributesOrigin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dkimAttributes.setSigningAttributesOrigin(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextSigningKeyLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dkimAttributes.setNextSigningKeyLength(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentSigningKeyLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dkimAttributes.setCurrentSigningKeyLength(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastKeyGenerationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dkimAttributes.setLastKeyGenerationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

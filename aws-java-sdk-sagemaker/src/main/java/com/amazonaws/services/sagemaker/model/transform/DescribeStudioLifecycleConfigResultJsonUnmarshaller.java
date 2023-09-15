@@ -43,34 +43,48 @@ public class DescribeStudioLifecycleConfigResultJsonUnmarshaller implements Unma
             return describeStudioLifecycleConfigResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StudioLifecycleConfigArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStudioLifecycleConfigResult.setStudioLifecycleConfigArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StudioLifecycleConfigName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStudioLifecycleConfigResult.setStudioLifecycleConfigName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStudioLifecycleConfigResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStudioLifecycleConfigResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StudioLifecycleConfigContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStudioLifecycleConfigResult.setStudioLifecycleConfigContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StudioLifecycleConfigAppType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStudioLifecycleConfigResult.setStudioLifecycleConfigAppType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

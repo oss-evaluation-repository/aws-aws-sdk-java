@@ -43,22 +43,32 @@ public class BatchGetFindingsResultJsonUnmarshaller implements Unmarshaller<Batc
             return batchGetFindingsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("failedFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetFindingsResult.setFailedFindings(new ListUnmarshaller<BatchGetFindingsError>(BatchGetFindingsErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("findings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetFindingsResult.setFindings(new ListUnmarshaller<Finding>(FindingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

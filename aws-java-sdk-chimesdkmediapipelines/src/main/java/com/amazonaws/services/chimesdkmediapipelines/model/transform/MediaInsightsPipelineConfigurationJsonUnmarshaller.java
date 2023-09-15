@@ -43,29 +43,38 @@ public class MediaInsightsPipelineConfigurationJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MediaInsightsPipelineConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfiguration.setMediaInsightsPipelineConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaInsightsPipelineConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfiguration.setMediaInsightsPipelineConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfiguration.setResourceAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RealTimeAlertConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfiguration.setRealTimeAlertConfiguration(RealTimeAlertConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("Elements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfiguration.setElements(new ListUnmarshaller<MediaInsightsPipelineConfigurationElement>(
                             MediaInsightsPipelineConfigurationElementJsonUnmarshaller.getInstance())
@@ -73,16 +82,23 @@ public class MediaInsightsPipelineConfigurationJsonUnmarshaller implements Unmar
                     .unmarshall(context));
                 }
                 if (context.testExpression("MediaInsightsPipelineConfigurationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfiguration.setMediaInsightsPipelineConfigurationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfiguration.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfiguration.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

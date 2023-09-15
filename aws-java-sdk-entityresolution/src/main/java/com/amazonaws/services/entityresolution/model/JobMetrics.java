@@ -43,7 +43,7 @@ public class JobMetrics implements Serializable, Cloneable, StructuredPojo {
     private Integer matchIDs;
     /**
      * <p>
-     * The total number of records that did not get processed,
+     * The total number of records that did not get processed.
      * </p>
      */
     private Integer recordsNotProcessed;
@@ -136,11 +136,11 @@ public class JobMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of records that did not get processed,
+     * The total number of records that did not get processed.
      * </p>
      * 
      * @param recordsNotProcessed
-     *        The total number of records that did not get processed,
+     *        The total number of records that did not get processed.
      */
 
     public void setRecordsNotProcessed(Integer recordsNotProcessed) {
@@ -149,10 +149,10 @@ public class JobMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of records that did not get processed,
+     * The total number of records that did not get processed.
      * </p>
      * 
-     * @return The total number of records that did not get processed,
+     * @return The total number of records that did not get processed.
      */
 
     public Integer getRecordsNotProcessed() {
@@ -161,11 +161,11 @@ public class JobMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of records that did not get processed,
+     * The total number of records that did not get processed.
      * </p>
      * 
      * @param recordsNotProcessed
-     *        The total number of records that did not get processed,
+     *        The total number of records that did not get processed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

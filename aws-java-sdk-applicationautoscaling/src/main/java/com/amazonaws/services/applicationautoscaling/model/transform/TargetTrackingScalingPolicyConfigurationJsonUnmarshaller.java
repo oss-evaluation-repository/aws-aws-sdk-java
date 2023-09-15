@@ -44,36 +44,50 @@ public class TargetTrackingScalingPolicyConfigurationJsonUnmarshaller implements
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetTrackingScalingPolicyConfiguration.setTargetValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("PredefinedMetricSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetTrackingScalingPolicyConfiguration.setPredefinedMetricSpecification(PredefinedMetricSpecificationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("CustomizedMetricSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetTrackingScalingPolicyConfiguration.setCustomizedMetricSpecification(CustomizedMetricSpecificationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ScaleOutCooldown", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetTrackingScalingPolicyConfiguration.setScaleOutCooldown(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ScaleInCooldown", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetTrackingScalingPolicyConfiguration.setScaleInCooldown(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DisableScaleIn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetTrackingScalingPolicyConfiguration.setDisableScaleIn(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

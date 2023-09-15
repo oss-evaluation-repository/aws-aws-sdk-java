@@ -43,38 +43,53 @@ public class EvaluationFormQuestionJsonUnmarshaller implements Unmarshaller<Eval
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormQuestion.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Instructions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormQuestion.setInstructions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RefId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormQuestion.setRefId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotApplicableEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormQuestion.setNotApplicableEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("QuestionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormQuestion.setQuestionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuestionTypeProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormQuestion.setQuestionTypeProperties(EvaluationFormQuestionTypePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Weight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormQuestion.setWeight(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

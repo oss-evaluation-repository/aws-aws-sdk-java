@@ -43,22 +43,33 @@ public class DeleteInventoryResultJsonUnmarshaller implements Unmarshaller<Delet
             return deleteInventoryResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeletionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteInventoryResult.setDeletionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteInventoryResult.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeletionSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteInventoryResult.setDeletionSummary(InventoryDeletionSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

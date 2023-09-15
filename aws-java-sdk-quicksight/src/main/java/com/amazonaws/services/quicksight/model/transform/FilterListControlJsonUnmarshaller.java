@@ -43,38 +43,53 @@ public class FilterListControlJsonUnmarshaller implements Unmarshaller<FilterLis
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilterControlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterListControl.setFilterControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterListControl.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceFilterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterListControl.setSourceFilterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterListControl.setDisplayOptions(ListControlDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterListControl.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectableValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterListControl.setSelectableValues(FilterSelectableValuesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CascadingControlConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterListControl.setCascadingControlConfiguration(CascadingControlConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

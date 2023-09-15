@@ -43,60 +43,80 @@ public class HlsPackageJsonUnmarshaller implements Unmarshaller<HlsPackage, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adMarkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setAdMarkers(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("adTriggers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("adsOnDeliveryRestrictions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setAdsOnDeliveryRestrictions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setEncryption(HlsEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("includeDvbSubtitles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setIncludeDvbSubtitles(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("includeIframeOnlyStream", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setIncludeIframeOnlyStream(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("playlistType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setPlaylistType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("playlistWindowSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setPlaylistWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("programDateTimeIntervalSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setProgramDateTimeIntervalSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setSegmentDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("streamSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setStreamSelection(StreamSelectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("useAudioRenditionGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsPackage.setUseAudioRenditionGroup(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

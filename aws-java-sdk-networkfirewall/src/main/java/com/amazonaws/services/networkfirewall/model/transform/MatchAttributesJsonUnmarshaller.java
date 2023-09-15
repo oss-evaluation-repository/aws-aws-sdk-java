@@ -43,46 +43,60 @@ public class MatchAttributesJsonUnmarshaller implements Unmarshaller<MatchAttrib
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchAttributes.setSources(new ListUnmarshaller<Address>(AddressJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchAttributes.setDestinations(new ListUnmarshaller<Address>(AddressJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SourcePorts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchAttributes.setSourcePorts(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DestinationPorts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchAttributes.setDestinationPorts(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Protocols", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchAttributes.setProtocols(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TCPFlags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchAttributes.setTCPFlags(new ListUnmarshaller<TCPFlagField>(TCPFlagFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

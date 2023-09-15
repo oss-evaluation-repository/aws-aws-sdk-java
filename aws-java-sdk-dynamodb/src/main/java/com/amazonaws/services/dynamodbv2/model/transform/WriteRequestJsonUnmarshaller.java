@@ -43,18 +43,28 @@ public class WriteRequestJsonUnmarshaller implements Unmarshaller<WriteRequest, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PutRequest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeRequest.setPutRequest(PutRequestJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeleteRequest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeRequest.setDeleteRequest(DeleteRequestJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

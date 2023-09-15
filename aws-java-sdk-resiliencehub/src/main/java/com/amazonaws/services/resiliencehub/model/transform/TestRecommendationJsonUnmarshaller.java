@@ -43,58 +43,77 @@ public class TestRecommendationJsonUnmarshaller implements Unmarshaller<TestReco
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appComponentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setAppComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dependsOnAlarms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setDependsOnAlarms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("intent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setIntent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("items", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setItems(new ListUnmarshaller<RecommendationItem>(RecommendationItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("prerequisite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setPrerequisite(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("referenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("risk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setRisk(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testRecommendation.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

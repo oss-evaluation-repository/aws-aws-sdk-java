@@ -43,30 +43,43 @@ public class HlsEncryptionJsonUnmarshaller implements Unmarshaller<HlsEncryption
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("constantInitializationVector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryption.setConstantInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryption.setEncryptionMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("keyRotationIntervalSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryption.setKeyRotationIntervalSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("repeatExtXKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryption.setRepeatExtXKey(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("spekeKeyProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryption.setSpekeKeyProvider(SpekeKeyProviderJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,47 +44,64 @@ public class CreateCalculatedAttributeDefinitionResultJsonUnmarshaller implement
             return createCalculatedAttributeDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CalculatedAttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCalculatedAttributeDefinitionResult.setCalculatedAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCalculatedAttributeDefinitionResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCalculatedAttributeDefinitionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCalculatedAttributeDefinitionResult.setAttributeDetails(AttributeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Conditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCalculatedAttributeDefinitionResult.setConditions(ConditionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Statistic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCalculatedAttributeDefinitionResult.setStatistic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCalculatedAttributeDefinitionResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCalculatedAttributeDefinitionResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCalculatedAttributeDefinitionResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class VolumeDetailJsonUnmarshaller implements Unmarshaller<VolumeDetail, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("volumeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeDetail.setVolumeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeDetail.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeDetail.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeSizeInGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeDetail.setVolumeSizeInGB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeDetail.setEncryptionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeDetail.setSnapshotArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeDetail.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class DisruptionComplianceJsonUnmarshaller implements Unmarshaller<Disrup
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("achievableRpoInSecs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disruptionCompliance.setAchievableRpoInSecs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("achievableRtoInSecs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disruptionCompliance.setAchievableRtoInSecs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("complianceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disruptionCompliance.setComplianceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("currentRpoInSecs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disruptionCompliance.setCurrentRpoInSecs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("currentRtoInSecs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disruptionCompliance.setCurrentRtoInSecs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disruptionCompliance.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rpoDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disruptionCompliance.setRpoDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rpoReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disruptionCompliance.setRpoReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rtoDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disruptionCompliance.setRtoDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rtoReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disruptionCompliance.setRtoReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

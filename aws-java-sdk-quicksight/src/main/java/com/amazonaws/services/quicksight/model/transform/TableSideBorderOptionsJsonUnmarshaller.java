@@ -43,34 +43,48 @@ public class TableSideBorderOptionsJsonUnmarshaller implements Unmarshaller<Tabl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InnerVertical", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableSideBorderOptions.setInnerVertical(TableBorderOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InnerHorizontal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableSideBorderOptions.setInnerHorizontal(TableBorderOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Left", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableSideBorderOptions.setLeft(TableBorderOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Right", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableSideBorderOptions.setRight(TableBorderOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Top", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableSideBorderOptions.setTop(TableBorderOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Bottom", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableSideBorderOptions.setBottom(TableBorderOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

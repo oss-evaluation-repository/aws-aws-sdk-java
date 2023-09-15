@@ -43,26 +43,38 @@ public class ThingTypeDefinitionJsonUnmarshaller implements Unmarshaller<ThingTy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("thingTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingTypeDefinition.setThingTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingTypeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingTypeDefinition.setThingTypeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingTypeProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingTypeDefinition.setThingTypeProperties(ThingTypePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("thingTypeMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingTypeDefinition.setThingTypeMetadata(ThingTypeMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

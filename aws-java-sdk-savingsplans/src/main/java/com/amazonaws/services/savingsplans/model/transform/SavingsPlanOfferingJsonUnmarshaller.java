@@ -43,59 +43,78 @@ public class SavingsPlanOfferingJsonUnmarshaller implements Unmarshaller<Savings
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("offeringId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setOfferingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("productTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setProductTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("planType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setPlanType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("paymentOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setPaymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("durationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setDurationSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("currency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setCurrency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setServiceCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setUsageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setOperation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOffering.setProperties(new ListUnmarshaller<SavingsPlanOfferingProperty>(SavingsPlanOfferingPropertyJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

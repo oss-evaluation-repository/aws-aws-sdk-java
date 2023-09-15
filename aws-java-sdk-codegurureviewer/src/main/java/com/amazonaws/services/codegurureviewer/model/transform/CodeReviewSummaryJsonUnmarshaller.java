@@ -43,58 +43,78 @@ public class CodeReviewSummaryJsonUnmarshaller implements Unmarshaller<CodeRevie
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeReviewArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setCodeReviewArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RepositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProviderType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setProviderType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimeStamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setCreatedTimeStamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTimeStamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setLastUpdatedTimeStamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PullRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setPullRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricsSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setMetricsSummary(MetricsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SourceCodeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReviewSummary.setSourceCodeType(SourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

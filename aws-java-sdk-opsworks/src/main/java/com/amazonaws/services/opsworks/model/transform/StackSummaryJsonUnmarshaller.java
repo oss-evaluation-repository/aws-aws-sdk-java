@@ -43,34 +43,48 @@ public class StackSummaryJsonUnmarshaller implements Unmarshaller<StackSummary, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stackSummary.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stackSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stackSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LayersCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stackSummary.setLayersCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AppsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stackSummary.setAppsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stackSummary.setInstancesCount(InstancesCountJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

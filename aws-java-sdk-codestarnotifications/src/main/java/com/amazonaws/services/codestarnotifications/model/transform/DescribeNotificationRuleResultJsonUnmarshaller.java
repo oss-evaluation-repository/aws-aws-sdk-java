@@ -43,59 +43,78 @@ public class DescribeNotificationRuleResultJsonUnmarshaller implements Unmarshal
             return describeNotificationRuleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setEventTypes(new ListUnmarshaller<EventTypeSummary>(EventTypeSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Resource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setResource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setTargets(new ListUnmarshaller<TargetSummary>(TargetSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DetailType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setDetailType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setLastModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotificationRuleResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

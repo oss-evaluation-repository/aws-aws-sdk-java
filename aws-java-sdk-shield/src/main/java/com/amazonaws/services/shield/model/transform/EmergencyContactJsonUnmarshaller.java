@@ -43,22 +43,33 @@ public class EmergencyContactJsonUnmarshaller implements Unmarshaller<EmergencyC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emergencyContact.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emergencyContact.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactNotes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emergencyContact.setContactNotes(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

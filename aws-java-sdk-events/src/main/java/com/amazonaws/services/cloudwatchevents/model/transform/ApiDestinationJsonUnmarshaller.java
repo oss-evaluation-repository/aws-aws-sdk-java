@@ -43,46 +43,63 @@ public class ApiDestinationJsonUnmarshaller implements Unmarshaller<ApiDestinati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApiDestinationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiDestination.setApiDestinationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiDestination.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiDestinationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiDestination.setApiDestinationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiDestination.setConnectionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InvocationEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiDestination.setInvocationEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HttpMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiDestination.setHttpMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InvocationRateLimitPerSecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiDestination.setInvocationRateLimitPerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiDestination.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiDestination.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

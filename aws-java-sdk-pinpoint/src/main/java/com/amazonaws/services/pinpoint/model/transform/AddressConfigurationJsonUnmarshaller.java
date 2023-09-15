@@ -43,29 +43,38 @@ public class AddressConfigurationJsonUnmarshaller implements Unmarshaller<Addres
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BodyOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addressConfiguration.setBodyOverride(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addressConfiguration.setChannelType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Context", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addressConfiguration.setContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("RawContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addressConfiguration.setRawContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Substitutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addressConfiguration.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -73,8 +82,13 @@ public class AddressConfigurationJsonUnmarshaller implements Unmarshaller<Addres
                     ).unmarshall(context));
                 }
                 if (context.testExpression("TitleOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addressConfiguration.setTitleOverride(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

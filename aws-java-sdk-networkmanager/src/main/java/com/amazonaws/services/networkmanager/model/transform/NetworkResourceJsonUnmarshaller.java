@@ -43,57 +43,76 @@ public class NetworkResourceJsonUnmarshaller implements Unmarshaller<NetworkReso
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegisteredGatewayArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setRegisteredGatewayArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CoreNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setCoreNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AwsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setDefinition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefinitionTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setDefinitionTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setMetadata(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

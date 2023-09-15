@@ -43,17 +43,26 @@ public class GetBlacklistReportsResultJsonUnmarshaller implements Unmarshaller<G
             return getBlacklistReportsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BlacklistReport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBlacklistReportsResult.setBlacklistReport(new MapUnmarshaller<String, java.util.List<BlacklistEntry>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<BlacklistEntry>(BlacklistEntryJsonUnmarshaller.getInstance())
 
                     ).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

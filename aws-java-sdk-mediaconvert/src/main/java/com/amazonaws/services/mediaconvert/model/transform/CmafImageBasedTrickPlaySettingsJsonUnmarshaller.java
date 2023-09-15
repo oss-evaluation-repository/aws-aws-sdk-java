@@ -43,34 +43,48 @@ public class CmafImageBasedTrickPlaySettingsJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("intervalCadence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafImageBasedTrickPlaySettings.setIntervalCadence(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thumbnailHeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafImageBasedTrickPlaySettings.setThumbnailHeight(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("thumbnailInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafImageBasedTrickPlaySettings.setThumbnailInterval(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("thumbnailWidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafImageBasedTrickPlaySettings.setThumbnailWidth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("tileHeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafImageBasedTrickPlaySettings.setTileHeight(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("tileWidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafImageBasedTrickPlaySettings.setTileWidth(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

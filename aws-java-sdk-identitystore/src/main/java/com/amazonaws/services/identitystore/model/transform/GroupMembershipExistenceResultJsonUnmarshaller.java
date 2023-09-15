@@ -43,22 +43,33 @@ public class GroupMembershipExistenceResultJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupMembershipExistenceResult.setGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MemberId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupMembershipExistenceResult.setMemberId(MemberIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MembershipExists", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupMembershipExistenceResult.setMembershipExists(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

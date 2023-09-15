@@ -43,34 +43,48 @@ public class NetworkConnectionActionJsonUnmarshaller implements Unmarshaller<Net
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConnectionDirection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setConnectionDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RemoteIpDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setRemoteIpDetails(ActionRemoteIpDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RemotePortDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setRemotePortDetails(ActionRemotePortDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LocalPortDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setLocalPortDetails(ActionLocalPortDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Blocked", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setBlocked(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

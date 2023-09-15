@@ -43,44 +43,57 @@ public class GetReplicationConfigurationResultJsonUnmarshaller implements Unmars
             return getReplicationConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("associateDefaultSecurityGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setAssociateDefaultSecurityGroup(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("bandwidthThrottling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setBandwidthThrottling(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("createPublicIP", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setCreatePublicIP(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("dataPlaneRouting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setDataPlaneRouting(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultLargeStagingDiskType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setDefaultLargeStagingDiskType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ebsEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setEbsEncryption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ebsEncryptionKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setEbsEncryptionKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicatedDisks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setReplicatedDisks(new ListUnmarshaller<ReplicationConfigurationReplicatedDisk>(
                             ReplicationConfigurationReplicatedDiskJsonUnmarshaller.getInstance())
@@ -88,10 +101,12 @@ public class GetReplicationConfigurationResultJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("replicationServerInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setReplicationServerInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicationServersSecurityGroupsIDs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult
                             .setReplicationServersSecurityGroupsIDs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -99,25 +114,34 @@ public class GetReplicationConfigurationResultJsonUnmarshaller implements Unmars
                             .unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stagingAreaSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setStagingAreaSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stagingAreaTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setStagingAreaTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("useDedicatedReplicationServer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setUseDedicatedReplicationServer(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("useFipsEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReplicationConfigurationResult.setUseFipsEndpoint(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

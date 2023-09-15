@@ -43,28 +43,40 @@ public class ImageResponseCardJsonUnmarshaller implements Unmarshaller<ImageResp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageResponseCard.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subtitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageResponseCard.setSubtitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageResponseCard.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("buttons", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageResponseCard.setButtons(new ListUnmarshaller<Button>(ButtonJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

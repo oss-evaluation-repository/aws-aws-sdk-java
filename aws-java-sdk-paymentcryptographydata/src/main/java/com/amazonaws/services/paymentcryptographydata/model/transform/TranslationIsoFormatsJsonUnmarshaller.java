@@ -43,26 +43,38 @@ public class TranslationIsoFormatsJsonUnmarshaller implements Unmarshaller<Trans
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IsoFormat0", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     translationIsoFormats.setIsoFormat0(TranslationPinDataIsoFormat034JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IsoFormat1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     translationIsoFormats.setIsoFormat1(TranslationPinDataIsoFormat1JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IsoFormat3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     translationIsoFormats.setIsoFormat3(TranslationPinDataIsoFormat034JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IsoFormat4", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     translationIsoFormats.setIsoFormat4(TranslationPinDataIsoFormat034JsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

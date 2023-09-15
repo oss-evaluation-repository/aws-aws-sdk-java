@@ -43,26 +43,38 @@ public class InterMetricImpactDetailsJsonUnmarshaller implements Unmarshaller<In
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interMetricImpactDetails.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnomalyGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interMetricImpactDetails.setAnomalyGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RelationshipType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interMetricImpactDetails.setRelationshipType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContributionPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interMetricImpactDetails.setContributionPercentage(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

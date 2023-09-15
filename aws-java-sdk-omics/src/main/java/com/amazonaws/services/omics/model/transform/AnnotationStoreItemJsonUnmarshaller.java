@@ -43,58 +43,78 @@ public class AnnotationStoreItemJsonUnmarshaller implements Unmarshaller<Annotat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setReference(ReferenceItemJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setStoreArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storeFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setStoreFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sseConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setSseConfig(SseConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storeSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     annotationStoreItem.setStoreSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

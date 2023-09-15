@@ -43,40 +43,53 @@ public class ServerCertificateScopeJsonUnmarshaller implements Unmarshaller<Serv
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverCertificateScope.setSources(new ListUnmarshaller<Address>(AddressJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverCertificateScope.setDestinations(new ListUnmarshaller<Address>(AddressJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SourcePorts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverCertificateScope.setSourcePorts(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DestinationPorts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverCertificateScope.setDestinationPorts(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Protocols", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverCertificateScope.setProtocols(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

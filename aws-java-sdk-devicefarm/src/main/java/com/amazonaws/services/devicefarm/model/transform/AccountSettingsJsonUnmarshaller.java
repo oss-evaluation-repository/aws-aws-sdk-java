@@ -43,45 +43,61 @@ public class AccountSettingsJsonUnmarshaller implements Unmarshaller<AccountSett
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("awsAccountNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setAwsAccountNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("unmeteredDevices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setUnmeteredDevices(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
                 if (context.testExpression("unmeteredRemoteAccessDevices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setUnmeteredRemoteAccessDevices(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
                 if (context.testExpression("maxJobTimeoutMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setMaxJobTimeoutMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("trialMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setTrialMinutes(TrialMinutesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("maxSlots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setMaxSlots(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
                 if (context.testExpression("defaultJobTimeoutMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setDefaultJobTimeoutMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("skipAppResign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setSkipAppResign(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

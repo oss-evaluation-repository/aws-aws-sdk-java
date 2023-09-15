@@ -43,76 +43,99 @@ public class DocumentIdentifierJsonUnmarshaller implements Unmarshaller<Document
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlatformTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setPlatformTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setDocumentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setDocumentFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setTargetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Requires", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setRequires(new ListUnmarshaller<DocumentRequires>(DocumentRequiresJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReviewStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setReviewStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Author", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentIdentifier.setAuthor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

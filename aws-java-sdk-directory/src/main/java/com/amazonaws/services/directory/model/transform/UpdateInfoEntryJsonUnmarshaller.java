@@ -43,42 +43,58 @@ public class UpdateInfoEntryJsonUnmarshaller implements Unmarshaller<UpdateInfoE
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateInfoEntry.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateInfoEntry.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateInfoEntry.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitiatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateInfoEntry.setInitiatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NewValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateInfoEntry.setNewValue(UpdateValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PreviousValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateInfoEntry.setPreviousValue(UpdateValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateInfoEntry.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateInfoEntry.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

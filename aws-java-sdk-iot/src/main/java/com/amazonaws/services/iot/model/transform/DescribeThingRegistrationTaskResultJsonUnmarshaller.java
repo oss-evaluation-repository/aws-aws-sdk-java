@@ -43,58 +43,78 @@ public class DescribeThingRegistrationTaskResultJsonUnmarshaller implements Unma
             return describeThingRegistrationTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("templateBody", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setTemplateBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputFileBucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setInputFileBucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputFileKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setInputFileKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("successCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setSuccessCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("failureCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setFailureCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("percentageProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingRegistrationTaskResult.setPercentageProgress(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

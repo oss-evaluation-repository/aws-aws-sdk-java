@@ -43,38 +43,53 @@ public class GitHubDocumentCrawlPropertiesJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CrawlRepositoryDocuments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubDocumentCrawlProperties.setCrawlRepositoryDocuments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlIssue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubDocumentCrawlProperties.setCrawlIssue(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlIssueComment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubDocumentCrawlProperties.setCrawlIssueComment(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlIssueCommentAttachment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubDocumentCrawlProperties.setCrawlIssueCommentAttachment(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlPullRequest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubDocumentCrawlProperties.setCrawlPullRequest(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlPullRequestComment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubDocumentCrawlProperties.setCrawlPullRequestComment(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlPullRequestCommentAttachment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubDocumentCrawlProperties.setCrawlPullRequestCommentAttachment(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

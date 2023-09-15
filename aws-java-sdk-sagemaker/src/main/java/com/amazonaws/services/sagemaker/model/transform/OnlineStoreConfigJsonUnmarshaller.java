@@ -43,22 +43,33 @@ public class OnlineStoreConfigJsonUnmarshaller implements Unmarshaller<OnlineSto
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SecurityConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     onlineStoreConfig.setSecurityConfig(OnlineStoreSecurityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EnableOnlineStore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     onlineStoreConfig.setEnableOnlineStore(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TtlDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     onlineStoreConfig.setTtlDuration(TtlDurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

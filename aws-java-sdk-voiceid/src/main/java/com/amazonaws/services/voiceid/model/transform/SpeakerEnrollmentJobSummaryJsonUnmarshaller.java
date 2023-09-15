@@ -43,42 +43,58 @@ public class SpeakerEnrollmentJobSummaryJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJobSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DomainId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJobSummary.setDomainId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJobSummary.setEndedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJobSummary.setFailureDetails(FailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJobSummary.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJobSummary.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJobSummary.setJobProgress(JobProgressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerEnrollmentJobSummary.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

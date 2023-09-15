@@ -43,25 +43,36 @@ public class CanDbcDefinitionJsonUnmarshaller implements Unmarshaller<CanDbcDefi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("networkInterface", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canDbcDefinition.setNetworkInterface(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("canDbcFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canDbcDefinition.setCanDbcFiles(new ListUnmarshaller<java.nio.ByteBuffer>(context.getUnmarshaller(java.nio.ByteBuffer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("signalsMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canDbcDefinition.setSignalsMap(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

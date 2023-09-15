@@ -43,22 +43,33 @@ public class CognitoMemberDefinitionJsonUnmarshaller implements Unmarshaller<Cog
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserPool", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cognitoMemberDefinition.setUserPool(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cognitoMemberDefinition.setUserGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cognitoMemberDefinition.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

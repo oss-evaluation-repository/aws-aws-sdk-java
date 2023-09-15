@@ -43,50 +43,68 @@ public class BackupVaultListMemberJsonUnmarshaller implements Unmarshaller<Backu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupVaultName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupVaultListMember.setBackupVaultName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupVaultArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupVaultListMember.setBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupVaultListMember.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EncryptionKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupVaultListMember.setEncryptionKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatorRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupVaultListMember.setCreatorRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfRecoveryPoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupVaultListMember.setNumberOfRecoveryPoints(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Locked", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupVaultListMember.setLocked(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MinRetentionDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupVaultListMember.setMinRetentionDays(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxRetentionDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupVaultListMember.setMaxRetentionDays(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LockDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupVaultListMember.setLockDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

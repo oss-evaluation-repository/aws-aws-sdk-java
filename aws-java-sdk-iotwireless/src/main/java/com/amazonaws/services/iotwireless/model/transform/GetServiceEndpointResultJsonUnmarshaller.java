@@ -43,22 +43,33 @@ public class GetServiceEndpointResultJsonUnmarshaller implements Unmarshaller<Ge
             return getServiceEndpointResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceEndpointResult.setServiceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceEndpointResult.setServiceEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerTrust", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceEndpointResult.setServerTrust(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

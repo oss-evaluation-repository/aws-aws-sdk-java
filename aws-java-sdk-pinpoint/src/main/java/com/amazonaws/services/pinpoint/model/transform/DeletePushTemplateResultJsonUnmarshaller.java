@@ -43,9 +43,13 @@ public class DeletePushTemplateResultJsonUnmarshaller implements Unmarshaller<De
             return deletePushTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deletePushTemplateResult.setMessageBody(MessageBodyJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

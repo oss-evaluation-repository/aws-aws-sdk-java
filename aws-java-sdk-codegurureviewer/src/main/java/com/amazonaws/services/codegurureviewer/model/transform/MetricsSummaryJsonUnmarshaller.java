@@ -43,22 +43,33 @@ public class MetricsSummaryJsonUnmarshaller implements Unmarshaller<MetricsSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MeteredLinesOfCodeCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricsSummary.setMeteredLinesOfCodeCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SuppressedLinesOfCodeCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricsSummary.setSuppressedLinesOfCodeCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FindingsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricsSummary.setFindingsCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

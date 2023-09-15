@@ -43,22 +43,33 @@ public class TemplateLinkedPolicyDefinitionJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyTemplateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateLinkedPolicyDefinition.setPolicyTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("principal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateLinkedPolicyDefinition.setPrincipal(EntityIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateLinkedPolicyDefinition.setResource(EntityIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

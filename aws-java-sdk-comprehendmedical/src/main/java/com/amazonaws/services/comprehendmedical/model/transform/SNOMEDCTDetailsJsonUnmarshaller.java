@@ -43,22 +43,33 @@ public class SNOMEDCTDetailsJsonUnmarshaller implements Unmarshaller<SNOMEDCTDet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Edition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTDetails.setEdition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Language", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTDetails.setLanguage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTDetails.setVersionDate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

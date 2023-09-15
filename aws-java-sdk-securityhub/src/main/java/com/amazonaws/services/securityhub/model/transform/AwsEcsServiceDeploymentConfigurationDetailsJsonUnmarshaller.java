@@ -44,24 +44,35 @@ public class AwsEcsServiceDeploymentConfigurationDetailsJsonUnmarshaller impleme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeploymentCircuitBreaker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsServiceDeploymentConfigurationDetails
                             .setDeploymentCircuitBreaker(AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("MaximumPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsServiceDeploymentConfigurationDetails.setMaximumPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumHealthyPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsServiceDeploymentConfigurationDetails.setMinimumHealthyPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

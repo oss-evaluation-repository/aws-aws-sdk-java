@@ -43,22 +43,33 @@ public class OtaaV10XJsonUnmarshaller implements Unmarshaller<OtaaV10X, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     otaaV10X.setAppKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppEui", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     otaaV10X.setAppEui(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenAppKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     otaaV10X.setGenAppKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

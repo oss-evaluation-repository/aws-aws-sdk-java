@@ -43,62 +43,83 @@ public class BatchInferenceJobJsonUnmarshaller implements Unmarshaller<BatchInfe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("batchInferenceJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setBatchInferenceJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setFilterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("solutionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setSolutionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setNumResults(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("jobInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setJobInput(BatchInferenceJobInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setJobOutput(BatchInferenceJobOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("batchInferenceJobConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setBatchInferenceJobConfig(BatchInferenceJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchInferenceJob.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

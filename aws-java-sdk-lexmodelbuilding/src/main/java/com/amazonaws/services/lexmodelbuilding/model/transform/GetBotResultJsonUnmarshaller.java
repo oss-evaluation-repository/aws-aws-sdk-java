@@ -43,84 +43,110 @@ public class GetBotResultJsonUnmarshaller implements Unmarshaller<GetBotResult, 
             return getBotResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("intents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setIntents(new ListUnmarshaller<Intent>(IntentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("enableModelImprovements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setEnableModelImprovements(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("nluIntentConfidenceThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setNluIntentConfidenceThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("clarificationPrompt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setClarificationPrompt(PromptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("abortStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setAbortStatement(StatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("idleSessionTTLInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setIdleSessionTTLInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("voiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setVoiceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("checksum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("locale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setLocale(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("childDirected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setChildDirected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("detectSentiment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBotResult.setDetectSentiment(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

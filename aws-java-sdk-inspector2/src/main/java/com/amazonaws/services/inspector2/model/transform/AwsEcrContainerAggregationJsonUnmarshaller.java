@@ -43,48 +43,63 @@ public class AwsEcrContainerAggregationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("architectures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregation.setArchitectures(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("imageShas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregation.setImageShas(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("imageTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregation.setImageTags(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("repositories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregation.setRepositories(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregation.setResourceIds(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sortBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregation.setSortBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sortOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregation.setSortOrder(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

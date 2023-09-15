@@ -43,18 +43,24 @@ public class AwsEc2VpcDetailsJsonUnmarshaller implements Unmarshaller<AwsEc2VpcD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CidrBlockAssociationSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcDetails.setCidrBlockAssociationSet(new ListUnmarshaller<CidrBlockAssociation>(CidrBlockAssociationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Ipv6CidrBlockAssociationSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcDetails.setIpv6CidrBlockAssociationSet(new ListUnmarshaller<Ipv6CidrBlockAssociation>(Ipv6CidrBlockAssociationJsonUnmarshaller
                             .getInstance())
@@ -62,12 +68,18 @@ public class AwsEc2VpcDetailsJsonUnmarshaller implements Unmarshaller<AwsEc2VpcD
                     .unmarshall(context));
                 }
                 if (context.testExpression("DhcpOptionsId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcDetails.setDhcpOptionsId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcDetails.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

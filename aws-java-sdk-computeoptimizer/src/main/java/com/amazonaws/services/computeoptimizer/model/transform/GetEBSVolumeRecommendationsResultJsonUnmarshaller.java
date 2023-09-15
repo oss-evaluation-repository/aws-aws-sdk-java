@@ -43,16 +43,22 @@ public class GetEBSVolumeRecommendationsResultJsonUnmarshaller implements Unmars
             return getEBSVolumeRecommendationsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEBSVolumeRecommendationsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeRecommendations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEBSVolumeRecommendationsResult.setVolumeRecommendations(new ListUnmarshaller<VolumeRecommendation>(VolumeRecommendationJsonUnmarshaller
                             .getInstance())
@@ -60,11 +66,16 @@ public class GetEBSVolumeRecommendationsResultJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEBSVolumeRecommendationsResult.setErrors(new ListUnmarshaller<GetRecommendationError>(GetRecommendationErrorJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

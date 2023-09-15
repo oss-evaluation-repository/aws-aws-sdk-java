@@ -43,16 +43,25 @@ public class BatchGetDeploymentsResultJsonUnmarshaller implements Unmarshaller<B
             return batchGetDeploymentsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentsInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetDeploymentsResult.setDeploymentsInfo(new ListUnmarshaller<DeploymentInfo>(DeploymentInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

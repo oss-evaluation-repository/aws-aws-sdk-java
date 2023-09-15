@@ -43,48 +43,65 @@ public class CustomRoutingAcceleratorJsonUnmarshaller implements Unmarshaller<Cu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AcceleratorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingAccelerator.setAcceleratorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingAccelerator.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddressType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingAccelerator.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingAccelerator.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IpSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingAccelerator.setIpSets(new ListUnmarshaller<IpSet>(IpSetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingAccelerator.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingAccelerator.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingAccelerator.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingAccelerator.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

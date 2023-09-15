@@ -43,26 +43,38 @@ public class PutObjectResultJsonUnmarshaller implements Unmarshaller<PutObjectRe
             return putObjectResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InlineChunkChecksum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putObjectResult.setInlineChunkChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InlineChunkChecksumAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putObjectResult.setInlineChunkChecksumAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectChecksum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putObjectResult.setObjectChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectChecksumAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putObjectResult.setObjectChecksumAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

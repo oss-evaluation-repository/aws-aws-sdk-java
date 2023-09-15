@@ -43,38 +43,53 @@ public class NeptuneSettingsJsonUnmarshaller implements Unmarshaller<NeptuneSett
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     neptuneSettings.setServiceAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     neptuneSettings.setS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketFolder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     neptuneSettings.setS3BucketFolder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorRetryDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     neptuneSettings.setErrorRetryDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxFileSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     neptuneSettings.setMaxFileSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxRetryCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     neptuneSettings.setMaxRetryCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IamAuthEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     neptuneSettings.setIamAuthEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

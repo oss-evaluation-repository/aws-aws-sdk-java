@@ -43,40 +43,54 @@ public class ContainerOverridesJsonUnmarshaller implements Unmarshaller<Containe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("vcpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverrides.setVcpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverrides.setMemory(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverrides.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverrides.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverrides.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceRequirements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverrides.setResourceRequirements(new ListUnmarshaller<ResourceRequirement>(ResourceRequirementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

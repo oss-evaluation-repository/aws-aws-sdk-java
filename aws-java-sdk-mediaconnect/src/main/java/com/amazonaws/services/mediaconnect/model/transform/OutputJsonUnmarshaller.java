@@ -43,40 +43,52 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataTransferSubscriberFeePercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setDataTransferSubscriberFeePercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("entitlementArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setEntitlementArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("listenerAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setListenerAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaLiveInputArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setMediaLiveInputArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStreamOutputConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setMediaStreamOutputConfigurations(new ListUnmarshaller<MediaStreamOutputConfiguration>(
                             MediaStreamOutputConfigurationJsonUnmarshaller.getInstance())
@@ -84,34 +96,45 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setOutputArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("transport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setTransport(TransportJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vpcInterfaceAttachment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setVpcInterfaceAttachment(VpcInterfaceAttachmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("bridgeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setBridgeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bridgePorts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setBridgePorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

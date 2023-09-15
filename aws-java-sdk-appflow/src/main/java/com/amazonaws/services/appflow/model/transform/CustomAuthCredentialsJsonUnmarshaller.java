@@ -43,19 +43,29 @@ public class CustomAuthCredentialsJsonUnmarshaller implements Unmarshaller<Custo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("customAuthenticationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customAuthCredentials.setCustomAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("credentialsMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customAuthCredentials.setCredentialsMap(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

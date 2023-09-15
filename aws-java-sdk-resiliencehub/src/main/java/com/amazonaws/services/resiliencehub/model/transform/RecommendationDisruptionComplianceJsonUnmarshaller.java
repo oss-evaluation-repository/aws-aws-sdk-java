@@ -43,30 +43,43 @@ public class RecommendationDisruptionComplianceJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("expectedComplianceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDisruptionCompliance.setExpectedComplianceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expectedRpoDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDisruptionCompliance.setExpectedRpoDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expectedRpoInSecs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDisruptionCompliance.setExpectedRpoInSecs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("expectedRtoDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDisruptionCompliance.setExpectedRtoDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expectedRtoInSecs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDisruptionCompliance.setExpectedRtoInSecs(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

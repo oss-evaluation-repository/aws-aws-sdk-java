@@ -43,24 +43,32 @@ public class SimulationApplicationConfigJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("application", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationApplicationConfig.setApplication(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationApplicationConfig.setApplicationVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationApplicationConfig.setLaunchConfig(LaunchConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("uploadConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationApplicationConfig.setUploadConfigurations(new ListUnmarshaller<UploadConfiguration>(UploadConfigurationJsonUnmarshaller
                             .getInstance())
@@ -68,24 +76,32 @@ public class SimulationApplicationConfigJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("worldConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationApplicationConfig.setWorldConfigs(new ListUnmarshaller<WorldConfig>(WorldConfigJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("useDefaultUploadConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationApplicationConfig.setUseDefaultUploadConfigurations(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("tools", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationApplicationConfig.setTools(new ListUnmarshaller<Tool>(ToolJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("useDefaultTools", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simulationApplicationConfig.setUseDefaultTools(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

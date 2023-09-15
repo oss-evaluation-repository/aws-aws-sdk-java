@@ -43,65 +43,85 @@ public class LensReviewJsonUnmarshaller implements Unmarshaller<LensReview, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LensAlias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setLensAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LensArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setLensArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LensVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setLensVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LensName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setLensName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LensStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setLensStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PillarReviewSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setPillarReviewSummaries(new ListUnmarshaller<PillarReviewSummary>(PillarReviewSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Notes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setNotes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RiskCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview
                             .setRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context.getUnmarshaller(Integer.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Profiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setProfiles(new ListUnmarshaller<WorkloadProfile>(WorkloadProfileJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PrioritizedRiskCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lensReview.setPrioritizedRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

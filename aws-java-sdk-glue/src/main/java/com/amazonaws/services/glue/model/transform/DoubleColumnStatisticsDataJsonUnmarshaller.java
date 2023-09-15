@@ -43,26 +43,38 @@ public class DoubleColumnStatisticsDataJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MinimumValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     doubleColumnStatisticsData.setMinimumValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     doubleColumnStatisticsData.setMaximumValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfNulls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     doubleColumnStatisticsData.setNumberOfNulls(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfDistinctValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     doubleColumnStatisticsData.setNumberOfDistinctValues(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

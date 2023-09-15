@@ -43,26 +43,38 @@ public class GatewayRouteSpecJsonUnmarshaller implements Unmarshaller<GatewayRou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("grpcRoute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayRouteSpec.setGrpcRoute(GrpcGatewayRouteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("http2Route", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayRouteSpec.setHttp2Route(HttpGatewayRouteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("httpRoute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayRouteSpec.setHttpRoute(HttpGatewayRouteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayRouteSpec.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

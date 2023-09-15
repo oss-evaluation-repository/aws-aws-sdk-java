@@ -43,42 +43,57 @@ public class IntentSummaryJsonUnmarshaller implements Unmarshaller<IntentSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("intentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setIntentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("intentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setIntentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parentIntentSignature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setParentIntentSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setInputContexts(new ListUnmarshaller<InputContext>(InputContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("outputContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setOutputContexts(new ListUnmarshaller<OutputContext>(OutputContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

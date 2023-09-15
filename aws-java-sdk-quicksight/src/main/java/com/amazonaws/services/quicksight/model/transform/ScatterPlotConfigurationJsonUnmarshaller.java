@@ -43,46 +43,63 @@ public class ScatterPlotConfigurationJsonUnmarshaller implements Unmarshaller<Sc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotConfiguration.setFieldWells(ScatterPlotFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("XAxisLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotConfiguration.setXAxisLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("XAxisDisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotConfiguration.setXAxisDisplayOptions(AxisDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("YAxisLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotConfiguration.setYAxisLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("YAxisDisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotConfiguration.setYAxisDisplayOptions(AxisDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Legend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotConfiguration.setLegend(LegendOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotConfiguration.setDataLabels(DataLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tooltip", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotConfiguration.setTooltip(TooltipOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisualPalette", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotConfiguration.setVisualPalette(VisualPaletteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

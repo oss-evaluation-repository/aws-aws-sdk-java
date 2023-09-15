@@ -43,48 +43,65 @@ public class RuleJsonUnmarshaller implements Unmarshaller<Rule, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Statement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setStatement(StatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setAction(RuleActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OverrideAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setOverrideAction(OverrideActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RuleLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setRuleLabels(new ListUnmarshaller<Label>(LabelJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VisibilityConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setVisibilityConfig(VisibilityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CaptchaConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setCaptchaConfig(CaptchaConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChallengeConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setChallengeConfig(ChallengeConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

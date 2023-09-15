@@ -43,24 +43,35 @@ public class ListSubChannelsResultJsonUnmarshaller implements Unmarshaller<ListS
             return listSubChannelsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChannelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSubChannelsResult.setChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubChannels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSubChannelsResult.setSubChannels(new ListUnmarshaller<SubChannelSummary>(SubChannelSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSubChannelsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,70 +43,93 @@ public class DescribeAlarmModelResultJsonUnmarshaller implements Unmarshaller<De
             return describeAlarmModelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("alarmModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setAlarmModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alarmModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setAlarmModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alarmModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setAlarmModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alarmModelDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setAlarmModelDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setSeverity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("alarmRule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setAlarmRule(AlarmRuleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("alarmNotification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setAlarmNotification(AlarmNotificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("alarmEventActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setAlarmEventActions(AlarmEventActionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("alarmCapabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlarmModelResult.setAlarmCapabilities(AlarmCapabilitiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

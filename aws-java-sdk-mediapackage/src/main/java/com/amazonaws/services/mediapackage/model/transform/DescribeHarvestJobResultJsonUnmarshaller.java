@@ -43,46 +43,63 @@ public class DescribeHarvestJobResultJsonUnmarshaller implements Unmarshaller<De
             return describeHarvestJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHarvestJobResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("channelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHarvestJobResult.setChannelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHarvestJobResult.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHarvestJobResult.setEndTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHarvestJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("originEndpointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHarvestJobResult.setOriginEndpointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHarvestJobResult.setS3Destination(S3DestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHarvestJobResult.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHarvestJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

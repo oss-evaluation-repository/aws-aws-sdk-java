@@ -43,12 +43,17 @@ public class GetRelationalDatabasesResultJsonUnmarshaller implements Unmarshalle
             return getRelationalDatabasesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("relationalDatabases", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRelationalDatabasesResult.setRelationalDatabases(new ListUnmarshaller<RelationalDatabase>(RelationalDatabaseJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class GetRelationalDatabasesResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRelationalDatabasesResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

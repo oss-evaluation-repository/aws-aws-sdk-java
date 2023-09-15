@@ -43,34 +43,47 @@ public class LoggingConfigurationJsonUnmarshaller implements Unmarshaller<Loggin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loggingConfiguration.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogDestinationConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loggingConfiguration.setLogDestinationConfigs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RedactedFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loggingConfiguration.setRedactedFields(new ListUnmarshaller<FieldToMatch>(FieldToMatchJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ManagedByFirewallManager", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loggingConfiguration.setManagedByFirewallManager(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LoggingFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loggingConfiguration.setLoggingFilter(LoggingFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

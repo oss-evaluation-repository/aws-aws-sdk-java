@@ -44,29 +44,41 @@ public class FlinkApplicationConfigurationDescriptionJsonUnmarshaller implements
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CheckpointConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flinkApplicationConfigurationDescription.setCheckpointConfigurationDescription(CheckpointConfigurationDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MonitoringConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flinkApplicationConfigurationDescription.setMonitoringConfigurationDescription(MonitoringConfigurationDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ParallelismConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flinkApplicationConfigurationDescription.setParallelismConfigurationDescription(ParallelismConfigurationDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobPlanDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flinkApplicationConfigurationDescription.setJobPlanDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

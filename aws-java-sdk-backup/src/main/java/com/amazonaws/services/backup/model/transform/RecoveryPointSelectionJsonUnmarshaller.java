@@ -43,26 +43,37 @@ public class RecoveryPointSelectionJsonUnmarshaller implements Unmarshaller<Reco
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VaultNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointSelection.setVaultNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceIdentifiers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointSelection.setResourceIdentifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DateRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPointSelection.setDateRange(DateRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,58 +43,78 @@ public class Hdr10MetadataJsonUnmarshaller implements Unmarshaller<Hdr10Metadata
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bluePrimaryX", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setBluePrimaryX(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("bluePrimaryY", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setBluePrimaryY(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("greenPrimaryX", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setGreenPrimaryX(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("greenPrimaryY", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setGreenPrimaryY(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxContentLightLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setMaxContentLightLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxFrameAverageLightLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setMaxFrameAverageLightLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxLuminance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setMaxLuminance(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minLuminance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setMinLuminance(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("redPrimaryX", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setRedPrimaryX(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("redPrimaryY", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setRedPrimaryY(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("whitePointX", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setWhitePointX(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("whitePointY", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hdr10Metadata.setWhitePointY(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

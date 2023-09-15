@@ -43,18 +43,28 @@ public class MetricGoalConfigJsonUnmarshaller implements Unmarshaller<MetricGoal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("desiredChange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricGoalConfig.setDesiredChange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricGoalConfig.setMetricDefinition(MetricDefinitionConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

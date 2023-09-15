@@ -43,79 +43,101 @@ public class SlackConfigurationJsonUnmarshaller implements Unmarshaller<SlackCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TeamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setTeamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setVpcConfiguration(DataSourceVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SlackEntityList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setSlackEntityList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UseChangeLog", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setUseChangeLog(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlBotMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setCrawlBotMessage(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExcludeArchived", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setExcludeArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SinceCrawlDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setSinceCrawlDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LookBackPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setLookBackPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateChannelFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setPrivateChannelFilter(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PublicChannelFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setPublicChannelFilter(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

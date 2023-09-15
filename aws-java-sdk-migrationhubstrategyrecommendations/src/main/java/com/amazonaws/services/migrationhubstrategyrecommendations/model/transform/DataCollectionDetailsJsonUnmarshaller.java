@@ -43,42 +43,58 @@ public class DataCollectionDetailsJsonUnmarshaller implements Unmarshaller<DataC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("completionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCollectionDetails.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("failed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCollectionDetails.setFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("inProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCollectionDetails.setInProgress(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("servers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCollectionDetails.setServers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCollectionDetails.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCollectionDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCollectionDetails.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("success", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCollectionDetails.setSuccess(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

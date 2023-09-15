@@ -43,28 +43,39 @@ public class ProtectiveEquipmentSummaryJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PersonsWithRequiredEquipment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectiveEquipmentSummary.setPersonsWithRequiredEquipment(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PersonsWithoutRequiredEquipment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectiveEquipmentSummary.setPersonsWithoutRequiredEquipment(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PersonsIndeterminate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectiveEquipmentSummary.setPersonsIndeterminate(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

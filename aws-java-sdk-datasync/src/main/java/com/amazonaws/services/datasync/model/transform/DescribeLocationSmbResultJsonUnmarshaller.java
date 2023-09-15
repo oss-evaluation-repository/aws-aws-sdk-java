@@ -43,40 +43,55 @@ public class DescribeLocationSmbResultJsonUnmarshaller implements Unmarshaller<D
             return describeLocationSmbResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationSmbResult.setLocationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationSmbResult.setLocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgentArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationSmbResult.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("User", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationSmbResult.setUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationSmbResult.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MountOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationSmbResult.setMountOptions(SmbMountOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationSmbResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

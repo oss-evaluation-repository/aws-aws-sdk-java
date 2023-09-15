@@ -43,30 +43,43 @@ public class SmallMultiplesOptionsJsonUnmarshaller implements Unmarshaller<Small
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MaxVisibleRows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     smallMultiplesOptions.setMaxVisibleRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxVisibleColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     smallMultiplesOptions.setMaxVisibleColumns(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("PanelConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     smallMultiplesOptions.setPanelConfiguration(PanelConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("XAxis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     smallMultiplesOptions.setXAxis(SmallMultiplesAxisPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("YAxis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     smallMultiplesOptions.setYAxis(SmallMultiplesAxisPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

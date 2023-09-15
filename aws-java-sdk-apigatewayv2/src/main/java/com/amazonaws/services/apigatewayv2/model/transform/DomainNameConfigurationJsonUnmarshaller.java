@@ -43,50 +43,68 @@ public class DomainNameConfigurationJsonUnmarshaller implements Unmarshaller<Dom
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("apiGatewayDomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNameConfiguration.setApiGatewayDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNameConfiguration.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNameConfiguration.setCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateUploadDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNameConfiguration.setCertificateUploadDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("domainNameStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNameConfiguration.setDomainNameStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainNameStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNameConfiguration.setDomainNameStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endpointType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNameConfiguration.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostedZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNameConfiguration.setHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNameConfiguration.setSecurityPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ownershipVerificationCertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainNameConfiguration.setOwnershipVerificationCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

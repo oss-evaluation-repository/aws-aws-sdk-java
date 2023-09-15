@@ -43,28 +43,37 @@ public class DescribeDeploymentJobResultJsonUnmarshaller implements Unmarshaller
             return describeDeploymentJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeploymentJobResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fleet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeploymentJobResult.setFleet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeploymentJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeploymentJobResult.setDeploymentConfig(DeploymentConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("deploymentApplicationConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeploymentJobResult.setDeploymentApplicationConfigs(new ListUnmarshaller<DeploymentApplicationConfig>(
                             DeploymentApplicationConfigJsonUnmarshaller.getInstance())
@@ -72,27 +81,36 @@ public class DescribeDeploymentJobResultJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeploymentJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeploymentJobResult.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeploymentJobResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("robotDeploymentSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeploymentJobResult.setRobotDeploymentSummary(new ListUnmarshaller<RobotDeployment>(RobotDeploymentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeploymentJobResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

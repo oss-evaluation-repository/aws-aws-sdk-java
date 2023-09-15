@@ -43,28 +43,37 @@ public class IAMPolicyAssignmentJsonUnmarshaller implements Unmarshaller<IAMPoli
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AwsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iAMPolicyAssignment.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssignmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iAMPolicyAssignment.setAssignmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssignmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iAMPolicyAssignment.setAssignmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iAMPolicyAssignment.setPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Identities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iAMPolicyAssignment.setIdentities(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -72,8 +81,13 @@ public class IAMPolicyAssignmentJsonUnmarshaller implements Unmarshaller<IAMPoli
                     ).unmarshall(context));
                 }
                 if (context.testExpression("AssignmentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iAMPolicyAssignment.setAssignmentStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

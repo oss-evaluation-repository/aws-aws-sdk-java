@@ -43,70 +43,93 @@ public class BatchWriteOperationJsonUnmarshaller implements Unmarshaller<BatchWr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreateObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setCreateObject(BatchCreateObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AttachObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setAttachObject(BatchAttachObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DetachObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setDetachObject(BatchDetachObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UpdateObjectAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setUpdateObjectAttributes(BatchUpdateObjectAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeleteObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setDeleteObject(BatchDeleteObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AddFacetToObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setAddFacetToObject(BatchAddFacetToObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RemoveFacetFromObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setRemoveFacetFromObject(BatchRemoveFacetFromObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AttachPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setAttachPolicy(BatchAttachPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DetachPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setDetachPolicy(BatchDetachPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreateIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setCreateIndex(BatchCreateIndexJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AttachToIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setAttachToIndex(BatchAttachToIndexJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DetachFromIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setDetachFromIndex(BatchDetachFromIndexJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AttachTypedLink", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setAttachTypedLink(BatchAttachTypedLinkJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DetachTypedLink", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setDetachTypedLink(BatchDetachTypedLinkJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UpdateLinkAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchWriteOperation.setUpdateLinkAttributes(BatchUpdateLinkAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

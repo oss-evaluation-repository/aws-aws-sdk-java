@@ -43,46 +43,63 @@ public class GetLicenseConversionTaskResultJsonUnmarshaller implements Unmarshal
             return getLicenseConversionTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LicenseConversionTaskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLicenseConversionTaskResult.setLicenseConversionTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLicenseConversionTaskResult.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceLicenseContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLicenseConversionTaskResult.setSourceLicenseContext(LicenseConversionContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DestinationLicenseContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLicenseConversionTaskResult.setDestinationLicenseContext(LicenseConversionContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLicenseConversionTaskResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLicenseConversionTaskResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLicenseConversionTaskResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LicenseConversionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLicenseConversionTaskResult.setLicenseConversionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLicenseConversionTaskResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

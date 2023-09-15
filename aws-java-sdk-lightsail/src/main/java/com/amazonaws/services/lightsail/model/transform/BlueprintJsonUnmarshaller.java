@@ -43,62 +43,83 @@ public class BlueprintJsonUnmarshaller implements Unmarshaller<Blueprint, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("blueprintId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setBlueprintId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("group", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isActive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setIsActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("minPower", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setMinPower(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setVersionCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("productUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setProductUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("licenseUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setLicenseUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appCategory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setAppCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

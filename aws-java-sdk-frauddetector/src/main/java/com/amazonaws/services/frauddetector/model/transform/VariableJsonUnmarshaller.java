@@ -43,46 +43,63 @@ public class VariableJsonUnmarshaller implements Unmarshaller<Variable, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variable.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variable.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variable.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variable.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variable.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("variableType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variable.setVariableType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variable.setLastUpdatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variable.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variable.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class InstanceHealthSummaryJsonUnmarshaller implements Unmarshaller<Insta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("instanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceHealthSummary.setInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceHealth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceHealthSummary.setInstanceHealth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceHealthReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceHealthSummary.setInstanceHealthReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

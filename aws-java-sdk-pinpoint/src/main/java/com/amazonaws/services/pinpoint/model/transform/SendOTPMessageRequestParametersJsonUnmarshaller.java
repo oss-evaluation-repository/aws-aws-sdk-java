@@ -43,54 +43,73 @@ public class SendOTPMessageRequestParametersJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AllowedAttempts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setAllowedAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BrandName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setBrandName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Channel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setChannel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setCodeLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationIdentity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setDestinationIdentity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EntityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setEntityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Language", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setLanguage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginationIdentity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setOriginationIdentity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidityPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendOTPMessageRequestParameters.setValidityPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

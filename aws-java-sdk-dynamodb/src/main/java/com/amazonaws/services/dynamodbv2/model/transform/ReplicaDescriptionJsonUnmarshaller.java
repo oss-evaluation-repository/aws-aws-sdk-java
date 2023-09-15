@@ -43,36 +43,47 @@ public class ReplicaDescriptionJsonUnmarshaller implements Unmarshaller<ReplicaD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaDescription.setRegionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaDescription.setReplicaStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaStatusDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaDescription.setReplicaStatusDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaStatusPercentProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaDescription.setReplicaStatusPercentProgress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KMSMasterKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaDescription.setKMSMasterKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughputOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaDescription.setProvisionedThroughputOverride(ProvisionedThroughputOverrideJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaDescription.setGlobalSecondaryIndexes(new ListUnmarshaller<ReplicaGlobalSecondaryIndexDescription>(
                             ReplicaGlobalSecondaryIndexDescriptionJsonUnmarshaller.getInstance())
@@ -80,12 +91,18 @@ public class ReplicaDescriptionJsonUnmarshaller implements Unmarshaller<ReplicaD
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReplicaInaccessibleDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaDescription.setReplicaInaccessibleDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReplicaTableClassSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaDescription.setReplicaTableClassSummary(TableClassSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

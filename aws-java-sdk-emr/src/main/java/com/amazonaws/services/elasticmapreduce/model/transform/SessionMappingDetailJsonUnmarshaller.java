@@ -43,38 +43,53 @@ public class SessionMappingDetailJsonUnmarshaller implements Unmarshaller<Sessio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StudioId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingDetail.setStudioId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingDetail.setIdentityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingDetail.setIdentityName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingDetail.setIdentityType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionPolicyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingDetail.setSessionPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingDetail.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingDetail.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

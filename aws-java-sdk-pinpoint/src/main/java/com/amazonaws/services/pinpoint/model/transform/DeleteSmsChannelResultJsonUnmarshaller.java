@@ -43,9 +43,13 @@ public class DeleteSmsChannelResultJsonUnmarshaller implements Unmarshaller<Dele
             return deleteSmsChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteSmsChannelResult.setSMSChannelResponse(SMSChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

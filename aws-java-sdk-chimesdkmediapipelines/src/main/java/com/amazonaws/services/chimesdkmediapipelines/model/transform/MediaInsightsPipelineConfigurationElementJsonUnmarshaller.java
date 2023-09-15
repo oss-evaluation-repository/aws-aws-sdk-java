@@ -44,60 +44,78 @@ public class MediaInsightsPipelineConfigurationElementJsonUnmarshaller implement
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfigurationElement.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AmazonTranscribeCallAnalyticsProcessorConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfigurationElement
                             .setAmazonTranscribeCallAnalyticsProcessorConfiguration(AmazonTranscribeCallAnalyticsProcessorConfigurationJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AmazonTranscribeProcessorConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfigurationElement.setAmazonTranscribeProcessorConfiguration(AmazonTranscribeProcessorConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisDataStreamSinkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfigurationElement.setKinesisDataStreamSinkConfiguration(KinesisDataStreamSinkConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3RecordingSinkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfigurationElement.setS3RecordingSinkConfiguration(S3RecordingSinkConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("VoiceAnalyticsProcessorConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfigurationElement.setVoiceAnalyticsProcessorConfiguration(VoiceAnalyticsProcessorConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LambdaFunctionSinkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfigurationElement.setLambdaFunctionSinkConfiguration(LambdaFunctionSinkConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("SqsQueueSinkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfigurationElement.setSqsQueueSinkConfiguration(SqsQueueSinkConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("SnsTopicSinkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfigurationElement.setSnsTopicSinkConfiguration(SnsTopicSinkConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("VoiceEnhancementSinkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipelineConfigurationElement.setVoiceEnhancementSinkConfiguration(VoiceEnhancementSinkConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

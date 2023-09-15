@@ -43,57 +43,76 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setChannelState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FillerSlate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setFillerSlate(SlateSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LogConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setLogConfiguration(LogConfigurationForChannelJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Outputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setOutputs(new ListUnmarshaller<ResponseOutputItem>(ResponseOutputItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PlaybackMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setPlaybackMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Tier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     channel.setTier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

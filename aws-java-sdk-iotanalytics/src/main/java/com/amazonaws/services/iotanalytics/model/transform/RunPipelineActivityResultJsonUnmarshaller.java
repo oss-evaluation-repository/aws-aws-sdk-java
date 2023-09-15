@@ -43,20 +43,30 @@ public class RunPipelineActivityResultJsonUnmarshaller implements Unmarshaller<R
             return runPipelineActivityResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("payloads", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runPipelineActivityResult.setPayloads(new ListUnmarshaller<java.nio.ByteBuffer>(context.getUnmarshaller(java.nio.ByteBuffer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("logResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runPipelineActivityResult.setLogResult(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

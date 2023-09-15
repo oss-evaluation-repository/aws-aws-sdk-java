@@ -43,18 +43,28 @@ public class CreateCostCategoryDefinitionResultJsonUnmarshaller implements Unmar
             return createCostCategoryDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CostCategoryArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCostCategoryDefinitionResult.setCostCategoryArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EffectiveStart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCostCategoryDefinitionResult.setEffectiveStart(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

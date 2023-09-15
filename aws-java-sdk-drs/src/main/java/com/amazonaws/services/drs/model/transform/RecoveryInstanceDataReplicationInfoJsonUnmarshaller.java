@@ -43,34 +43,44 @@ public class RecoveryInstanceDataReplicationInfoJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataReplicationError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceDataReplicationInfo.setDataReplicationError(RecoveryInstanceDataReplicationErrorJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("dataReplicationInitiation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceDataReplicationInfo.setDataReplicationInitiation(RecoveryInstanceDataReplicationInitiationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("dataReplicationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceDataReplicationInfo.setDataReplicationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("etaDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceDataReplicationInfo.setEtaDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lagDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceDataReplicationInfo.setLagDuration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicatedDisks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceDataReplicationInfo.setReplicatedDisks(new ListUnmarshaller<RecoveryInstanceDataReplicationInfoReplicatedDisk>(
                             RecoveryInstanceDataReplicationInfoReplicatedDiskJsonUnmarshaller.getInstance())
@@ -78,8 +88,13 @@ public class RecoveryInstanceDataReplicationInfoJsonUnmarshaller implements Unma
                     .unmarshall(context));
                 }
                 if (context.testExpression("stagingAvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceDataReplicationInfo.setStagingAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

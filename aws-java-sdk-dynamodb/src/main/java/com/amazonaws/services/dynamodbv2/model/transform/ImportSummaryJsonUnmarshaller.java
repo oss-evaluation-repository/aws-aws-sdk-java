@@ -43,42 +43,58 @@ public class ImportSummaryJsonUnmarshaller implements Unmarshaller<ImportSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ImportArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setImportArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImportStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setImportStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setS3BucketSource(S3BucketSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLogGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setCloudWatchLogGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setInputFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importSummary.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

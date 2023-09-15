@@ -43,72 +43,95 @@ public class NetAppONTAPVolumeJsonUnmarshaller implements Unmarshaller<NetAppONT
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setVolumeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CifsShareCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setCifsShareCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setSecurityStyle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SvmUuid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setSvmUuid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SvmName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setSvmName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CapacityUsed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setCapacityUsed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CapacityProvisioned", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setCapacityProvisioned(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LogicalCapacityUsed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setLogicalCapacityUsed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NfsExported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setNfsExported(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotCapacityUsed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setSnapshotCapacityUsed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxP95Performance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setMaxP95Performance(MaxP95PerformanceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Recommendations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setRecommendations(new ListUnmarshaller<Recommendation>(RecommendationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RecommendationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setRecommendationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LunCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     netAppONTAPVolume.setLunCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

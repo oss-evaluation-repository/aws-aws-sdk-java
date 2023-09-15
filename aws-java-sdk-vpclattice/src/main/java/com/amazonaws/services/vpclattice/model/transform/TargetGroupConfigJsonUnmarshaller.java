@@ -43,38 +43,53 @@ public class TargetGroupConfigJsonUnmarshaller implements Unmarshaller<TargetGro
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("healthCheck", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetGroupConfig.setHealthCheck(HealthCheckConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ipAddressType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetGroupConfig.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lambdaEventStructureVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetGroupConfig.setLambdaEventStructureVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetGroupConfig.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetGroupConfig.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protocolVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetGroupConfig.setProtocolVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetGroupConfig.setVpcIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

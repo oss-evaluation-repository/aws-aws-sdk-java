@@ -43,50 +43,68 @@ public class JobInputJsonUnmarshaller implements Unmarshaller<JobInput, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobInput.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobInput.setFrameRate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Resolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobInput.setResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AspectRatio", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobInput.setAspectRatio(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Interlaced", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobInput.setInterlaced(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Container", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobInput.setContainer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobInput.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeSpan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobInput.setTimeSpan(TimeSpanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputCaptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobInput.setInputCaptions(InputCaptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DetectedProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobInput.setDetectedProperties(DetectedPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

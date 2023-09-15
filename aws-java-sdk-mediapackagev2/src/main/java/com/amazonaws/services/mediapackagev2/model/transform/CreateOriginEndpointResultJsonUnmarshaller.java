@@ -43,52 +43,67 @@ public class CreateOriginEndpointResultJsonUnmarshaller implements Unmarshaller<
             return createOriginEndpointResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setChannelGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginEndpointName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setOriginEndpointName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContainerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setContainerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Segment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setSegment(SegmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartoverWindowSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setStartoverWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("HlsManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setHlsManifests(new ListUnmarshaller<GetHlsManifestConfiguration>(GetHlsManifestConfigurationJsonUnmarshaller
                             .getInstance())
@@ -96,6 +111,7 @@ public class CreateOriginEndpointResultJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("LowLatencyHlsManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setLowLatencyHlsManifests(new ListUnmarshaller<GetLowLatencyHlsManifestConfiguration>(
                             GetLowLatencyHlsManifestConfigurationJsonUnmarshaller.getInstance())
@@ -103,9 +119,14 @@ public class CreateOriginEndpointResultJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOriginEndpointResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,9 +43,13 @@ public class GetGcmChannelResultJsonUnmarshaller implements Unmarshaller<GetGcmC
             return getGcmChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getGcmChannelResult.setGCMChannelResponse(GCMChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

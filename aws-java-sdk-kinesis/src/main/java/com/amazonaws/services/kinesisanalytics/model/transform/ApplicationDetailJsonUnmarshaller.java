@@ -43,48 +43,61 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setApplicationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setApplicationDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setApplicationARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setApplicationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setCreateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setLastUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InputDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setInputDescriptions(new ListUnmarshaller<InputDescription>(InputDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OutputDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setOutputDescriptions(new ListUnmarshaller<OutputDescription>(OutputDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReferenceDataSourceDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setReferenceDataSourceDescriptions(new ListUnmarshaller<ReferenceDataSourceDescription>(
                             ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance())
@@ -92,6 +105,7 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
                     .unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptionDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setCloudWatchLoggingOptionDescriptions(new ListUnmarshaller<CloudWatchLoggingOptionDescription>(
                             CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance())
@@ -99,12 +113,18 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
                     .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setApplicationCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationDetail.setApplicationVersionId(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

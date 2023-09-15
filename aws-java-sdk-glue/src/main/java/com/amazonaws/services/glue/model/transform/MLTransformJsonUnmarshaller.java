@@ -43,90 +43,117 @@ public class MLTransformJsonUnmarshaller implements Unmarshaller<MLTransform, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TransformId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setTransformId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setCreatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setLastModifiedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InputRecordTables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setInputRecordTables(new ListUnmarshaller<GlueTable>(GlueTableJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setParameters(TransformParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EvaluationMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setEvaluationMetrics(EvaluationMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LabelCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setLabelCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Schema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setSchema(new ListUnmarshaller<SchemaColumn>(SchemaColumnJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlueVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setMaxCapacity(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setWorkerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfWorkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setNumberOfWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Timeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setMaxRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TransformEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLTransform.setTransformEncryption(TransformEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

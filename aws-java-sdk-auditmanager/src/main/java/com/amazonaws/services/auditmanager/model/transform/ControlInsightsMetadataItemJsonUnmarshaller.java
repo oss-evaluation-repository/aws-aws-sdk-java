@@ -43,26 +43,38 @@ public class ControlInsightsMetadataItemJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlInsightsMetadataItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlInsightsMetadataItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceInsights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlInsightsMetadataItem.setEvidenceInsights(EvidenceInsightsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlInsightsMetadataItem.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

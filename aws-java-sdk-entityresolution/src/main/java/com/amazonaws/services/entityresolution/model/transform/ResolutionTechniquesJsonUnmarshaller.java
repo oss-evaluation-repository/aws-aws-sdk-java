@@ -43,18 +43,28 @@ public class ResolutionTechniquesJsonUnmarshaller implements Unmarshaller<Resolu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resolutionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolutionTechniques.setResolutionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ruleBasedProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolutionTechniques.setRuleBasedProperties(RuleBasedPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

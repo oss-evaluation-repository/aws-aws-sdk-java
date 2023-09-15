@@ -43,40 +43,55 @@ public class ListPackageVersionAssetsResultJsonUnmarshaller implements Unmarshal
             return listPackageVersionAssetsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionAssetsResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionAssetsResult.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("package", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionAssetsResult.setPackage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionAssetsResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionRevision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionAssetsResult.setVersionRevision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionAssetsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionAssetsResult.setAssets(new ListUnmarshaller<AssetSummary>(AssetSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

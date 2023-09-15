@@ -43,44 +43,60 @@ public class JDBCConnectorSourceJsonUnmarshaller implements Unmarshaller<JDBCCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorSource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorSource.setConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorSource.setConnectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorSource.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorSource.setAdditionalOptions(JDBCConnectorOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConnectionTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorSource.setConnectionTable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Query", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorSource.setQuery(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputSchemas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorSource.setOutputSchemas(new ListUnmarshaller<GlueSchema>(GlueSchemaJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

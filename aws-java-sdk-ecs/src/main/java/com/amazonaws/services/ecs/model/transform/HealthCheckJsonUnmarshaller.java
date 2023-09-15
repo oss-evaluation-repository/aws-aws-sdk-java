@@ -43,32 +43,45 @@ public class HealthCheckJsonUnmarshaller implements Unmarshaller<HealthCheck, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheck.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("interval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheck.setInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("timeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheck.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("retries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheck.setRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("startPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheck.setStartPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

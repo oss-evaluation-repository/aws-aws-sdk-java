@@ -43,50 +43,67 @@ public class OrganizationCustomRuleMetadataJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomRuleMetadata.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LambdaFunctionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomRuleMetadata.setLambdaFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationConfigRuleTriggerTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomRuleMetadata.setOrganizationConfigRuleTriggerTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InputParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomRuleMetadata.setInputParameters(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumExecutionFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomRuleMetadata.setMaximumExecutionFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceTypesScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomRuleMetadata.setResourceTypesScope(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceIdScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomRuleMetadata.setResourceIdScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TagKeyScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomRuleMetadata.setTagKeyScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TagValueScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomRuleMetadata.setTagValueScope(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

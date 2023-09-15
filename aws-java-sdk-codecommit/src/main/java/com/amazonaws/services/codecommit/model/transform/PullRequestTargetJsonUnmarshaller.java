@@ -43,38 +43,53 @@ public class PullRequestTargetJsonUnmarshaller implements Unmarshaller<PullReque
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestTarget.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestTarget.setSourceReference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestTarget.setDestinationReference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationCommit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestTarget.setDestinationCommit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceCommit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestTarget.setSourceCommit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergeBase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestTarget.setMergeBase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergeMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestTarget.setMergeMetadata(MergeMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

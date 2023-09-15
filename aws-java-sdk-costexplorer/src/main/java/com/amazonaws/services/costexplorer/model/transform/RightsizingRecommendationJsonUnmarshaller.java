@@ -43,36 +43,50 @@ public class RightsizingRecommendationJsonUnmarshaller implements Unmarshaller<R
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rightsizingRecommendation.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentInstance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rightsizingRecommendation.setCurrentInstance(CurrentInstanceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RightsizingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rightsizingRecommendation.setRightsizingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModifyRecommendationDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rightsizingRecommendation.setModifyRecommendationDetail(ModifyRecommendationDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TerminateRecommendationDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rightsizingRecommendation.setTerminateRecommendationDetail(TerminateRecommendationDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FindingReasonCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rightsizingRecommendation.setFindingReasonCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

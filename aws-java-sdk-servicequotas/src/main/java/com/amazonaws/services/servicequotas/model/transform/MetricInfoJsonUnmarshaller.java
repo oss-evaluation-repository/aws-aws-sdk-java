@@ -43,27 +43,39 @@ public class MetricInfoJsonUnmarshaller implements Unmarshaller<MetricInfo, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricInfo.setMetricNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricInfo.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricDimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricInfo.setMetricDimensions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("MetricStatisticRecommendation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricInfo.setMetricStatisticRecommendation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

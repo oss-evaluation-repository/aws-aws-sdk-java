@@ -43,54 +43,73 @@ public class ConfigurationJsonUnmarshaller implements Unmarshaller<Configuration
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ebsSnapshot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setEbsSnapshot(EbsSnapshotConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ecrRepository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setEcrRepository(EcrRepositoryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iamRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setIamRole(IamRoleConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("efsFileSystem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setEfsFileSystem(EfsFileSystemConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kmsKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setKmsKey(KmsKeyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rdsDbClusterSnapshot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setRdsDbClusterSnapshot(RdsDbClusterSnapshotConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rdsDbSnapshot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setRdsDbSnapshot(RdsDbSnapshotConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("secretsManagerSecret", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setSecretsManagerSecret(SecretsManagerSecretConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setS3Bucket(S3BucketConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("snsTopic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setSnsTopic(SnsTopicConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sqsQueue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setSqsQueue(SqsQueueConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

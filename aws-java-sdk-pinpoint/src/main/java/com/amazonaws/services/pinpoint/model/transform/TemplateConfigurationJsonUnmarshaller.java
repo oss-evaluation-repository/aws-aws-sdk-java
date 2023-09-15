@@ -43,30 +43,43 @@ public class TemplateConfigurationJsonUnmarshaller implements Unmarshaller<Templ
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EmailTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateConfiguration.setEmailTemplate(TemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PushTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateConfiguration.setPushTemplate(TemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SMSTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateConfiguration.setSMSTemplate(TemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VoiceTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateConfiguration.setVoiceTemplate(TemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InAppTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateConfiguration.setInAppTemplate(TemplateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

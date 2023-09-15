@@ -43,18 +43,28 @@ public class RedactedEwsAvailabilityProviderJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EwsEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redactedEwsAvailabilityProvider.setEwsEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EwsUsername", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redactedEwsAvailabilityProvider.setEwsUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

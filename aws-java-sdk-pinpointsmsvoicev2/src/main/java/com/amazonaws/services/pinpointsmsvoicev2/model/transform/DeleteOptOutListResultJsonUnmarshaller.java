@@ -43,22 +43,33 @@ public class DeleteOptOutListResultJsonUnmarshaller implements Unmarshaller<Dele
             return deleteOptOutListResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OptOutListArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteOptOutListResult.setOptOutListArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OptOutListName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteOptOutListResult.setOptOutListName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteOptOutListResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

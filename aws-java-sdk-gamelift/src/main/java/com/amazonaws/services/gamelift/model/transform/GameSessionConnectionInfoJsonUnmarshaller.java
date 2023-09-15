@@ -43,33 +43,46 @@ public class GameSessionConnectionInfoJsonUnmarshaller implements Unmarshaller<G
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GameSessionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionConnectionInfo.setGameSessionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionConnectionInfo.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionConnectionInfo.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionConnectionInfo.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchedPlayerSessions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionConnectionInfo.setMatchedPlayerSessions(new ListUnmarshaller<MatchedPlayerSession>(MatchedPlayerSessionJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

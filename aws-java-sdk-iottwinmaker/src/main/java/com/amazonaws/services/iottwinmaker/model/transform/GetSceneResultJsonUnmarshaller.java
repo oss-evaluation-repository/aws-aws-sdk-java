@@ -43,58 +43,77 @@ public class GetSceneResultJsonUnmarshaller implements Unmarshaller<GetSceneResu
             return getSceneResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workspaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sceneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setSceneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contentLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setContentLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setUpdateDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("capabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sceneMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setSceneMetadata(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("generatedSceneMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setGeneratedSceneMetadata(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSceneResult.setError(SceneErrorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

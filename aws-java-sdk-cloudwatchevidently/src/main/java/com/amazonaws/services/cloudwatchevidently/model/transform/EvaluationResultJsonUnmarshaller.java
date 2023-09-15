@@ -43,38 +43,53 @@ public class EvaluationResultJsonUnmarshaller implements Unmarshaller<Evaluation
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("details", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationResult.setDetails(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(context));
                 }
                 if (context.testExpression("entityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationResult.setEntityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("feature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationResult.setFeature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("project", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationResult.setProject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationResult.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationResult.setValue(VariableValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("variation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationResult.setVariation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

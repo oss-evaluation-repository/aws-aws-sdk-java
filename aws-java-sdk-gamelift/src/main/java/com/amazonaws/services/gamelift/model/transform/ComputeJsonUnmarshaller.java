@@ -43,58 +43,78 @@ public class ComputeJsonUnmarshaller implements Unmarshaller<Compute, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FleetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setComputeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setComputeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setComputeStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OperatingSystem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameLiftServiceSdkEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compute.setGameLiftServiceSdkEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

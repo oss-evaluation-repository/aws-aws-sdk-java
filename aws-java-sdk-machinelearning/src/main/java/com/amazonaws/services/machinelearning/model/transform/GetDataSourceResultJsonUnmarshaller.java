@@ -43,90 +43,118 @@ public class GetDataSourceResultJsonUnmarshaller implements Unmarshaller<GetData
             return getDataSourceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataLocationS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setDataLocationS3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRearrangement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setDataRearrangement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setCreatedByIamUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setDataSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setNumberOfFiles(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setLogUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RedshiftMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setRedshiftMetadata(RedshiftMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RDSMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setRDSMetadata(RDSMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setComputeStatistics(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setComputeTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FinishedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataSourceSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSourceResult.setDataSourceSchema(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

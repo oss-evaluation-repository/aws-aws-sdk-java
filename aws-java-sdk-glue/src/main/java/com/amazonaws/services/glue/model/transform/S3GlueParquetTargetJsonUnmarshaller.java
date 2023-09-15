@@ -43,22 +43,29 @@ public class S3GlueParquetTargetJsonUnmarshaller implements Unmarshaller<S3GlueP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3GlueParquetTarget.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3GlueParquetTarget.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PartitionKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3GlueParquetTarget.setPartitionKeys(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -68,16 +75,23 @@ public class S3GlueParquetTargetJsonUnmarshaller implements Unmarshaller<S3GlueP
                     .unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3GlueParquetTarget.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Compression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3GlueParquetTarget.setCompression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaChangePolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3GlueParquetTarget.setSchemaChangePolicy(DirectSchemaChangePolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

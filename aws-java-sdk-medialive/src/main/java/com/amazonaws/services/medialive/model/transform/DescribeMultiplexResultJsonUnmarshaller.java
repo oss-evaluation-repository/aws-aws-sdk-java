@@ -43,22 +43,29 @@ public class DescribeMultiplexResultJsonUnmarshaller implements Unmarshaller<Des
             return describeMultiplexResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMultiplexResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("availabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMultiplexResult.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMultiplexResult.setDestinations(new ListUnmarshaller<MultiplexOutputDestination>(MultiplexOutputDestinationJsonUnmarshaller
                             .getInstance())
@@ -66,33 +73,44 @@ public class DescribeMultiplexResultJsonUnmarshaller implements Unmarshaller<Des
                     .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMultiplexResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("multiplexSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMultiplexResult.setMultiplexSettings(MultiplexSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMultiplexResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pipelinesRunningCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMultiplexResult.setPipelinesRunningCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("programCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMultiplexResult.setProgramCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMultiplexResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMultiplexResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,35 +43,49 @@ public class VoiceTemplateRequestJsonUnmarshaller implements Unmarshaller<VoiceT
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Body", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceTemplateRequest.setBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceTemplateRequest.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceTemplateRequest.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceTemplateRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TemplateDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceTemplateRequest.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VoiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceTemplateRequest.setVoiceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

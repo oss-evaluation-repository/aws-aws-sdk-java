@@ -43,41 +43,56 @@ public class StreamRecordJsonUnmarshaller implements Unmarshaller<StreamRecord, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApproximateCreationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamRecord.setApproximateCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Keys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamRecord.setKeys(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class), AttributeValueJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("NewImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamRecord.setNewImage(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class), AttributeValueJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("OldImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamRecord.setOldImage(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class), AttributeValueJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("SequenceNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamRecord.setSequenceNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamRecord.setSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamViewType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamRecord.setStreamViewType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

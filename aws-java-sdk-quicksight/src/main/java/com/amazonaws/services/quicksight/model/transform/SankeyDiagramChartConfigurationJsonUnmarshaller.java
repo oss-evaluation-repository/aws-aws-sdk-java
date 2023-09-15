@@ -43,22 +43,33 @@ public class SankeyDiagramChartConfigurationJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sankeyDiagramChartConfiguration.setFieldWells(SankeyDiagramFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SortConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sankeyDiagramChartConfiguration.setSortConfiguration(SankeyDiagramSortConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sankeyDiagramChartConfiguration.setDataLabels(DataLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,55 +43,74 @@ public class DashboardPublishOptionsJsonUnmarshaller implements Unmarshaller<Das
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AdHocFilteringOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setAdHocFilteringOption(AdHocFilteringOptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExportToCSVOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setExportToCSVOption(ExportToCSVOptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SheetControlsOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setSheetControlsOption(SheetControlsOptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisualPublishOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setVisualPublishOptions(DashboardVisualPublishOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SheetLayoutElementMaximizationOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setSheetLayoutElementMaximizationOption(SheetLayoutElementMaximizationOptionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("VisualMenuOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setVisualMenuOption(VisualMenuOptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisualAxisSortOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setVisualAxisSortOption(VisualAxisSortOptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExportWithHiddenFieldsOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setExportWithHiddenFieldsOption(ExportWithHiddenFieldsOptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataPointDrillUpDownOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setDataPointDrillUpDownOption(DataPointDrillUpDownOptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataPointMenuLabelOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setDataPointMenuLabelOption(DataPointMenuLabelOptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataPointTooltipOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashboardPublishOptions.setDataPointTooltipOption(DataPointTooltipOptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

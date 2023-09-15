@@ -43,12 +43,17 @@ public class DescribeEnvironmentMembershipsResultJsonUnmarshaller implements Unm
             return describeEnvironmentMembershipsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("memberships", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEnvironmentMembershipsResult
                             .setMemberships(new ListUnmarshaller<EnvironmentMember>(EnvironmentMemberJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class DescribeEnvironmentMembershipsResultJsonUnmarshaller implements Unm
                             .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEnvironmentMembershipsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,74 +43,98 @@ public class RequestedServiceQuotaChangeJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CaseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setCaseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setServiceCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuotaCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setQuotaCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuotaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setQuotaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DesiredValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setDesiredValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Requester", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setRequester(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuotaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setQuotaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlobalQuota", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setGlobalQuota(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuotaRequestedAtLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setQuotaRequestedAtLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuotaContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestedServiceQuotaChange.setQuotaContext(QuotaContextInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

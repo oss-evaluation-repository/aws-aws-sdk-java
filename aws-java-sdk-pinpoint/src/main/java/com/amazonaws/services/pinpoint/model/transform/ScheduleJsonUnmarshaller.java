@@ -43,38 +43,53 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setEndTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setEventFilter(CampaignEventFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Frequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsLocalTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setIsLocalTime(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("QuietTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setQuietTime(QuietTimeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schedule.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

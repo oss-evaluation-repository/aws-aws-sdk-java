@@ -45,28 +45,37 @@ public class CreateIAMPolicyAssignmentResultJsonUnmarshaller implements Unmarsha
             return createIAMPolicyAssignmentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssignmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createIAMPolicyAssignmentResult.setAssignmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssignmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createIAMPolicyAssignmentResult.setAssignmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssignmentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createIAMPolicyAssignmentResult.setAssignmentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createIAMPolicyAssignmentResult.setPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Identities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createIAMPolicyAssignmentResult.setIdentities(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -74,8 +83,13 @@ public class CreateIAMPolicyAssignmentResultJsonUnmarshaller implements Unmarsha
                     ).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createIAMPolicyAssignmentResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

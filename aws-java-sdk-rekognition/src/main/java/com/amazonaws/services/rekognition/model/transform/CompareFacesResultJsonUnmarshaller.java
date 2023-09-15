@@ -43,34 +43,47 @@ public class CompareFacesResultJsonUnmarshaller implements Unmarshaller<CompareF
             return compareFacesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceImageFace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compareFacesResult.setSourceImageFace(ComparedSourceImageFaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FaceMatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compareFacesResult.setFaceMatches(new ListUnmarshaller<CompareFacesMatch>(CompareFacesMatchJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UnmatchedFaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compareFacesResult.setUnmatchedFaces(new ListUnmarshaller<ComparedFace>(ComparedFaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SourceImageOrientationCorrection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compareFacesResult.setSourceImageOrientationCorrection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetImageOrientationCorrection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compareFacesResult.setTargetImageOrientationCorrection(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

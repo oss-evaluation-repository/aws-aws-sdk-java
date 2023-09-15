@@ -43,64 +43,85 @@ public class StorageVirtualMachineJsonUnmarshaller implements Unmarshaller<Stora
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ActiveDirectoryConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setActiveDirectoryConfiguration(SvmActiveDirectoryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Endpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setEndpoints(SvmEndpointsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Lifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setLifecycle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setResourceARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageVirtualMachineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setStorageVirtualMachineId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subtype", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setSubtype(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UUID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setUUID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LifecycleTransitionReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setLifecycleTransitionReason(LifecycleTransitionReasonJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RootVolumeSecurityStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageVirtualMachine.setRootVolumeSecurityStyle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

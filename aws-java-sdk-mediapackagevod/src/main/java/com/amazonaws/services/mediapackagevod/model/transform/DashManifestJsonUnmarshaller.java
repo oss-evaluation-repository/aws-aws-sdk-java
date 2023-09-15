@@ -43,34 +43,48 @@ public class DashManifestJsonUnmarshaller implements Unmarshaller<DashManifest, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("manifestLayout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashManifest.setManifestLayout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("manifestName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashManifest.setManifestName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minBufferTimeSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashManifest.setMinBufferTimeSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("profile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashManifest.setProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scteMarkersSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashManifest.setScteMarkersSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashManifest.setStreamSelection(StreamSelectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

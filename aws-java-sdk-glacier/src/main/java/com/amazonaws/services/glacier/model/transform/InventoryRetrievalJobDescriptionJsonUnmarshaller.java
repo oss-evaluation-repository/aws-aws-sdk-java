@@ -43,30 +43,43 @@ public class InventoryRetrievalJobDescriptionJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryRetrievalJobDescription.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryRetrievalJobDescription.setStartDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryRetrievalJobDescription.setEndDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Limit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryRetrievalJobDescription.setLimit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryRetrievalJobDescription.setMarker(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

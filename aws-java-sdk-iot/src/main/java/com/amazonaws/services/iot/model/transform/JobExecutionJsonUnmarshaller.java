@@ -43,54 +43,73 @@ public class JobExecutionJsonUnmarshaller implements Unmarshaller<JobExecution, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("forceCanceled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setForceCanceled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("statusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setStatusDetails(JobExecutionStatusDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("thingArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setThingArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queuedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setQueuedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("executionNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setExecutionNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("versionNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setVersionNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("approximateSecondsBeforeTimedOut", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecution.setApproximateSecondsBeforeTimedOut(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class PipelineExecutionSummaryJsonUnmarshaller implements Unmarshaller<Pi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PipelineExecutionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionSummary.setPipelineExecutionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PipelineExecutionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionSummary.setPipelineExecutionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineExecutionDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionSummary.setPipelineExecutionDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineExecutionDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionSummary.setPipelineExecutionDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineExecutionFailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionSummary.setPipelineExecutionFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

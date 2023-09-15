@@ -43,46 +43,63 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BuildId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     build.setBuildId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BuildArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     build.setBuildArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     build.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     build.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     build.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeOnDisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     build.setSizeOnDisk(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("OperatingSystem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     build.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     build.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ServerSdkVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     build.setServerSdkVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

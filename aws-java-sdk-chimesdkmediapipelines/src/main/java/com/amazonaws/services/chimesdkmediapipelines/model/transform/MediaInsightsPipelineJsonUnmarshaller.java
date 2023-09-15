@@ -43,58 +43,76 @@ public class MediaInsightsPipelineJsonUnmarshaller implements Unmarshaller<Media
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MediaPipelineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipeline.setMediaPipelineId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaPipelineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipeline.setMediaPipelineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaInsightsPipelineConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipeline.setMediaInsightsPipelineConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipeline.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KinesisVideoStreamSourceRuntimeConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipeline.setKinesisVideoStreamSourceRuntimeConfiguration(KinesisVideoStreamSourceRuntimeConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MediaInsightsRuntimeMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipeline.setMediaInsightsRuntimeMetadata(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("KinesisVideoStreamRecordingSourceRuntimeConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipeline
                             .setKinesisVideoStreamRecordingSourceRuntimeConfiguration(KinesisVideoStreamRecordingSourceRuntimeConfigurationJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3RecordingSinkRuntimeConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipeline.setS3RecordingSinkRuntimeConfiguration(S3RecordingSinkRuntimeConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipeline.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ElementStatuses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaInsightsPipeline.setElementStatuses(new ListUnmarshaller<MediaInsightsPipelineElementStatus>(
                             MediaInsightsPipelineElementStatusJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

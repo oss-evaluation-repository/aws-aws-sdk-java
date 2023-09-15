@@ -43,48 +43,65 @@ public class UpdateEndpointResultJsonUnmarshaller implements Unmarshaller<Update
             return updateEndpointResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEndpointResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEndpointResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoutingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEndpointResult.setRoutingConfig(RoutingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReplicationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEndpointResult.setReplicationConfig(ReplicationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventBuses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEndpointResult.setEventBuses(new ListUnmarshaller<EndpointEventBus>(EndpointEventBusJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEndpointResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEndpointResult.setEndpointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEndpointResult.setEndpointUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEndpointResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

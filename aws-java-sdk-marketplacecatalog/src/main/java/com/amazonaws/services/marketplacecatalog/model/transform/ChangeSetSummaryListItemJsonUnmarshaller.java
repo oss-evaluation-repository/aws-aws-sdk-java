@@ -43,44 +43,60 @@ public class ChangeSetSummaryListItemJsonUnmarshaller implements Unmarshaller<Ch
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChangeSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeSetSummaryListItem.setChangeSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChangeSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeSetSummaryListItem.setChangeSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChangeSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeSetSummaryListItem.setChangeSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeSetSummaryListItem.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeSetSummaryListItem.setEndTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeSetSummaryListItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EntityIdList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeSetSummaryListItem.setEntityIdList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FailureCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeSetSummaryListItem.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

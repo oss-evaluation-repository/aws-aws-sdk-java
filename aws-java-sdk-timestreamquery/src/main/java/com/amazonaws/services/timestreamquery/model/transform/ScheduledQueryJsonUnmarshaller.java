@@ -43,46 +43,63 @@ public class ScheduledQueryJsonUnmarshaller implements Unmarshaller<ScheduledQue
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledQuery.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledQuery.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledQuery.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledQuery.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreviousInvocationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledQuery.setPreviousInvocationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NextInvocationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledQuery.setNextInvocationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ErrorReportConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledQuery.setErrorReportConfiguration(ErrorReportConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TargetDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledQuery.setTargetDestination(TargetDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastRunStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledQuery.setLastRunStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

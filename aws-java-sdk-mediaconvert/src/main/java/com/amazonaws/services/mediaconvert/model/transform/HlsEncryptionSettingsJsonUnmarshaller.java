@@ -43,38 +43,53 @@ public class HlsEncryptionSettingsJsonUnmarshaller implements Unmarshaller<HlsEn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("constantInitializationVector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryptionSettings.setConstantInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryptionSettings.setEncryptionMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("initializationVectorInManifest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryptionSettings.setInitializationVectorInManifest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offlineEncrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryptionSettings.setOfflineEncrypted(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("spekeKeyProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryptionSettings.setSpekeKeyProvider(SpekeKeyProviderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("staticKeyProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryptionSettings.setStaticKeyProvider(StaticKeyProviderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsEncryptionSettings.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

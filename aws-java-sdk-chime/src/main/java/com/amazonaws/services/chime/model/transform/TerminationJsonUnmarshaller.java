@@ -43,34 +43,47 @@ public class TerminationJsonUnmarshaller implements Unmarshaller<Termination, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CpsLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     termination.setCpsLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultPhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     termination.setDefaultPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CallingRegions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     termination.setCallingRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CidrAllowedList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     termination.setCidrAllowedList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Disabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     termination.setDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

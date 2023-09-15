@@ -43,23 +43,34 @@ public class PathOptionsJsonUnmarshaller implements Unmarshaller<PathOptions, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LastModifiedDateCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pathOptions.setLastModifiedDateCondition(FilterExpressionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FilesLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pathOptions.setFilesLimit(FilesLimitJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pathOptions.setParameters(new MapUnmarshaller<String, DatasetParameter>(context.getUnmarshaller(String.class),
                             DatasetParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

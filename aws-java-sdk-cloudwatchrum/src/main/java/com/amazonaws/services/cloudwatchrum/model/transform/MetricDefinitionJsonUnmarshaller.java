@@ -43,39 +43,54 @@ public class MetricDefinitionJsonUnmarshaller implements Unmarshaller<MetricDefi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DimensionKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinition.setDimensionKeys(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("EventPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinition.setEventPattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricDefinitionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinition.setMetricDefinitionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinition.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinition.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UnitLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinition.setUnitLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ValueKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinition.setValueKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

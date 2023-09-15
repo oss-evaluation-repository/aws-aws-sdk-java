@@ -43,12 +43,17 @@ public class ModelPackageStatusDetailsJsonUnmarshaller implements Unmarshaller<M
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ValidationStatuses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageStatusDetails.setValidationStatuses(new ListUnmarshaller<ModelPackageStatusItem>(ModelPackageStatusItemJsonUnmarshaller
                             .getInstance())
@@ -56,11 +61,16 @@ public class ModelPackageStatusDetailsJsonUnmarshaller implements Unmarshaller<M
                     .unmarshall(context));
                 }
                 if (context.testExpression("ImageScanStatuses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageStatusDetails.setImageScanStatuses(new ListUnmarshaller<ModelPackageStatusItem>(ModelPackageStatusItemJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

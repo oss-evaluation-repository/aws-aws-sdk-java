@@ -43,38 +43,53 @@ public class BotSummaryJsonUnmarshaller implements Unmarshaller<BotSummary, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botSummary.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botSummary.setBotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botSummary.setBotStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latestBotVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botSummary.setLatestBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botSummary.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("botType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botSummary.setBotType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

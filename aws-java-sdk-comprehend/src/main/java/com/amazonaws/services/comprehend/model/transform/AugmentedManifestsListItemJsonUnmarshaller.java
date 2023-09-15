@@ -43,36 +43,50 @@ public class AugmentedManifestsListItemJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     augmentedManifestsListItem.setS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Split", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     augmentedManifestsListItem.setSplit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     augmentedManifestsListItem.setAttributeNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AnnotationDataS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     augmentedManifestsListItem.setAnnotationDataS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceDocumentsS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     augmentedManifestsListItem.setSourceDocumentsS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     augmentedManifestsListItem.setDocumentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

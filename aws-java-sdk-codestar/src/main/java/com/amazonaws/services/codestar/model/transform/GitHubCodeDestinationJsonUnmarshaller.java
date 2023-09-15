@@ -43,38 +43,53 @@ public class GitHubCodeDestinationJsonUnmarshaller implements Unmarshaller<GitHu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubCodeDestination.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubCodeDestination.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubCodeDestination.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubCodeDestination.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("privateRepository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubCodeDestination.setPrivateRepository(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("issuesEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubCodeDestination.setIssuesEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("token", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gitHubCodeDestination.setToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

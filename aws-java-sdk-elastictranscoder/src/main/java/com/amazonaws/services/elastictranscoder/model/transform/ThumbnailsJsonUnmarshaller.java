@@ -43,42 +43,58 @@ public class ThumbnailsJsonUnmarshaller implements Unmarshaller<Thumbnails, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnails.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Interval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnails.setInterval(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Resolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnails.setResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AspectRatio", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnails.setAspectRatio(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxWidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnails.setMaxWidth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxHeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnails.setMaxHeight(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizingPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnails.setSizingPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaddingPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnails.setPaddingPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

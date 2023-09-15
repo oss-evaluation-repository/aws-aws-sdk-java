@@ -44,16 +44,22 @@ public class ErrorDetailJsonUnmarshaller implements Unmarshaller<ErrorDetail, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     errorDetail.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     errorDetail.setErrorData(new ListUnmarshaller<java.util.Map<String, String>>(new MapUnmarshaller<String, String>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
@@ -61,8 +67,13 @@ public class ErrorDetailJsonUnmarshaller implements Unmarshaller<ErrorDetail, Js
                     .unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     errorDetail.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

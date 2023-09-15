@@ -43,26 +43,38 @@ public class ExperimentReportJsonUnmarshaller implements Unmarshaller<Experiment
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentReport.setContent(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(context));
                 }
                 if (context.testExpression("metricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentReport.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reportName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentReport.setReportName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("treatmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     experimentReport.setTreatmentName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

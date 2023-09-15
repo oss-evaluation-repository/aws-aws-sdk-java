@@ -43,42 +43,58 @@ public class AgentPreviewJsonUnmarshaller implements Unmarshaller<AgentPreview, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("hostname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentPreview.setHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentPreview.setAgentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentPreview.setAutoScalingGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentHealth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentPreview.setAgentHealth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentPreview.setAgentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operatingSystem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentPreview.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kernelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentPreview.setKernelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipv4Address", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentPreview.setIpv4Address(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

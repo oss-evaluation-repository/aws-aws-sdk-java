@@ -43,52 +43,70 @@ public class LteObjJsonUnmarshaller implements Unmarshaller<LteObj, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Mcc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lteObj.setMcc(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Mnc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lteObj.setMnc(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EutranCid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lteObj.setEutranCid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Tac", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lteObj.setTac(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LteLocalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lteObj.setLteLocalId(LteLocalIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LteTimingAdvance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lteObj.setLteTimingAdvance(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Rsrp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lteObj.setRsrp(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Rsrq", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lteObj.setRsrq(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("NrCapable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lteObj.setNrCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LteNmr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lteObj.setLteNmr(new ListUnmarshaller<LteNmrObj>(LteNmrObjJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

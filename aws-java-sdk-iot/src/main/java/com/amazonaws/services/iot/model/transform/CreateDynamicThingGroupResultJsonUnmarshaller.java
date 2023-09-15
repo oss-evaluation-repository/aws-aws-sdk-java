@@ -43,34 +43,48 @@ public class CreateDynamicThingGroupResultJsonUnmarshaller implements Unmarshall
             return createDynamicThingGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("thingGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDynamicThingGroupResult.setThingGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDynamicThingGroupResult.setThingGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDynamicThingGroupResult.setThingGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("indexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDynamicThingGroupResult.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDynamicThingGroupResult.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queryVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createDynamicThingGroupResult.setQueryVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

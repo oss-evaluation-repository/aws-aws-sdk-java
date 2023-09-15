@@ -43,56 +43,75 @@ public class StreamDescriptionSummaryJsonUnmarshaller implements Unmarshaller<St
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setStreamARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setStreamStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamModeDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setStreamModeDetails(StreamModeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RetentionPeriodHours", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setRetentionPeriodHours(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamCreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setStreamCreationTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("EnhancedMonitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setEnhancedMonitoring(new ListUnmarshaller<EnhancedMetrics>(EnhancedMetricsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EncryptionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setEncryptionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpenShardCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setOpenShardCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConsumerCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescriptionSummary.setConsumerCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

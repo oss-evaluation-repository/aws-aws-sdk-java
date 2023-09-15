@@ -43,36 +43,50 @@ public class RecommendationJsonUnmarshaller implements Unmarshaller<Recommendati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("allMatchesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setAllMatchesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("allMatchesSum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setAllMatchesSum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("pattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setPattern(PatternJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("topMatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setTopMatches(new ListUnmarshaller<Match>(MatchJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

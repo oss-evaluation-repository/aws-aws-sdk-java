@@ -43,26 +43,38 @@ public class ContainerServiceRegistryLoginJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceRegistryLogin.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceRegistryLogin.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expiresAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceRegistryLogin.setExpiresAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("registry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceRegistryLogin.setRegistry(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

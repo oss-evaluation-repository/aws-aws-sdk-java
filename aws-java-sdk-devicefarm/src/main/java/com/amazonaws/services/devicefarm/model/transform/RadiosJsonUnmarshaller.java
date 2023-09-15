@@ -43,26 +43,38 @@ public class RadiosJsonUnmarshaller implements Unmarshaller<Radios, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("wifi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radios.setWifi(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("bluetooth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radios.setBluetooth(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("nfc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radios.setNfc(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("gps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radios.setGps(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

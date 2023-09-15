@@ -43,52 +43,68 @@ public class PolicyDetailsJsonUnmarshaller implements Unmarshaller<PolicyDetails
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PolicyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyDetails.setPolicyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyDetails.setResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceLocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyDetails.setResourceLocations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TargetTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyDetails.setTargetTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Schedules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyDetails.setSchedules(new ListUnmarshaller<Schedule>(ScheduleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyDetails.setParameters(ParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyDetails.setEventSource(EventSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyDetails.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

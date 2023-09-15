@@ -43,18 +43,28 @@ public class SuggestResultJsonUnmarshaller implements Unmarshaller<SuggestResult
             return suggestResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suggestResult.setStatus(SuggestStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("suggest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suggestResult.setSuggest(SuggestModelJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

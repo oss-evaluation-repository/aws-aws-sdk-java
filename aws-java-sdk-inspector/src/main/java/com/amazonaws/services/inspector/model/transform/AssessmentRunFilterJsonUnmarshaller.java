@@ -43,42 +43,57 @@ public class AssessmentRunFilterJsonUnmarshaller implements Unmarshaller<Assessm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("namePattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunFilter.setNamePattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("states", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunFilter.setStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("durationRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunFilter.setDurationRange(DurationRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunFilter.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("startTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunFilter.setStartTimeRange(TimestampRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("completionTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunFilter.setCompletionTimeRange(TimestampRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("stateChangeTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRunFilter.setStateChangeTimeRange(TimestampRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

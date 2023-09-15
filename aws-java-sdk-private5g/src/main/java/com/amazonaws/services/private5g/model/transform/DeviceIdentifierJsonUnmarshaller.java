@@ -43,46 +43,63 @@ public class DeviceIdentifierJsonUnmarshaller implements Unmarshaller<DeviceIden
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceIdentifier.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("deviceIdentifierArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceIdentifier.setDeviceIdentifierArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iccid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceIdentifier.setIccid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imsi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceIdentifier.setImsi(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceIdentifier.setNetworkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("orderArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceIdentifier.setOrderArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceIdentifier.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trafficGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceIdentifier.setTrafficGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vendor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceIdentifier.setVendor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

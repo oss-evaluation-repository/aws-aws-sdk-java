@@ -43,20 +43,27 @@ public class EvaluationFormNumericQuestionPropertiesJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MinValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormNumericQuestionProperties.setMinValue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormNumericQuestionProperties.setMaxValue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Options", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormNumericQuestionProperties.setOptions(new ListUnmarshaller<EvaluationFormNumericQuestionOption>(
                             EvaluationFormNumericQuestionOptionJsonUnmarshaller.getInstance())
@@ -64,9 +71,14 @@ public class EvaluationFormNumericQuestionPropertiesJsonUnmarshaller implements 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Automation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormNumericQuestionProperties.setAutomation(EvaluationFormNumericQuestionAutomationJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

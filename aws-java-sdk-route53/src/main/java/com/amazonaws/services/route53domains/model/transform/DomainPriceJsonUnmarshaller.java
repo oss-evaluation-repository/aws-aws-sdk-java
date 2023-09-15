@@ -43,34 +43,48 @@ public class DomainPriceJsonUnmarshaller implements Unmarshaller<DomainPrice, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainPrice.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrationPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainPrice.setRegistrationPrice(PriceWithCurrencyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TransferPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainPrice.setTransferPrice(PriceWithCurrencyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RenewalPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainPrice.setRenewalPrice(PriceWithCurrencyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChangeOwnershipPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainPrice.setChangeOwnershipPrice(PriceWithCurrencyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RestorationPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainPrice.setRestorationPrice(PriceWithCurrencyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,44 @@ public class AddOutputRequestJsonUnmarshaller implements Unmarshaller<AddOutputR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cidrAllowList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setCidrAllowList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("maxLatency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setMaxLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStreamOutputConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setMediaStreamOutputConfigurations(new ListUnmarshaller<MediaStreamOutputConfigurationRequest>(
                             MediaStreamOutputConfigurationRequestJsonUnmarshaller.getInstance())
@@ -78,40 +88,53 @@ public class AddOutputRequestJsonUnmarshaller implements Unmarshaller<AddOutputR
                     .unmarshall(context));
                 }
                 if (context.testExpression("minLatency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setMinLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remoteId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setRemoteId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("senderControlPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setSenderControlPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("smoothingLatency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setSmoothingLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("streamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setStreamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcInterfaceAttachment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOutputRequest.setVpcInterfaceAttachment(VpcInterfaceAttachmentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class TargetSummaryJsonUnmarshaller implements Unmarshaller<TargetSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetSummary.setTargetAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetSummary.setTargetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetSummary.setTargetStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

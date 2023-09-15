@@ -43,49 +43,66 @@ public class DatabaseJsonUnmarshaller implements Unmarshaller<Database, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setLocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreateTableDefaultPermissions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setCreateTableDefaultPermissions(new ListUnmarshaller<PrincipalPermissions>(PrincipalPermissionsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TargetDatabase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setTargetDatabase(DatabaseIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CatalogId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FederatedDatabase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setFederatedDatabase(FederatedDatabaseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,67 @@ public class GetSolNetworkOperationResultJsonUnmarshaller implements Unmarshalle
             return getSolNetworkOperationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationResult.setError(ProblemDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lcmOperationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationResult.setLcmOperationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationResult.setMetadata(GetSolNetworkOperationMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nsInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationResult.setNsInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationResult.setOperationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("tasks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolNetworkOperationResult.setTasks(new ListUnmarshaller<GetSolNetworkOperationTaskDetails>(
                             GetSolNetworkOperationTaskDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

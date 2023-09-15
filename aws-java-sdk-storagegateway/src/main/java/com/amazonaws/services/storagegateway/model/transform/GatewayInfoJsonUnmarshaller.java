@@ -43,46 +43,63 @@ public class GatewayInfoJsonUnmarshaller implements Unmarshaller<GatewayInfo, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayInfo.setGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayInfo.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayInfo.setGatewayType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayOperationalState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayInfo.setGatewayOperationalState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayInfo.setGatewayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayInfo.setEc2InstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayInfo.setEc2InstanceRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HostEnvironment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayInfo.setHostEnvironment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HostEnvironmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gatewayInfo.setHostEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

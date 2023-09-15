@@ -43,42 +43,58 @@ public class VoiceConnectorJsonUnmarshaller implements Unmarshaller<VoiceConnect
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VoiceConnectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnector.setVoiceConnectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AwsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnector.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnector.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutboundHostName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnector.setOutboundHostName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnector.setRequireEncryption(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnector.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnector.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("VoiceConnectorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnector.setVoiceConnectorArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

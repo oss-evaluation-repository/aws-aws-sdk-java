@@ -43,58 +43,78 @@ public class LabelingJobSummaryJsonUnmarshaller implements Unmarshaller<Labeling
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LabelingJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setLabelingJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelingJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setLabelingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LabelingJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setLabelingJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelCounters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setLabelCounters(LabelCountersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("WorkteamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setWorkteamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreHumanTaskLambdaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setPreHumanTaskLambdaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnnotationConsolidationLambdaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setAnnotationConsolidationLambdaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelingJobOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setLabelingJobOutput(LabelingJobOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobSummary.setInputConfig(LabelingJobInputConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

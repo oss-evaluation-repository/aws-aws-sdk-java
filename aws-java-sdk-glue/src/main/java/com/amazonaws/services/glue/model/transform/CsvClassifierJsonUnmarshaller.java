@@ -43,66 +43,87 @@ public class CsvClassifierJsonUnmarshaller implements Unmarshaller<CsvClassifier
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Delimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuoteSymbol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setQuoteSymbol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContainsHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setContainsHeader(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Header", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setHeader(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DisableValueTrimming", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setDisableValueTrimming(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowSingleColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setAllowSingleColumn(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomDatatypeConfigured", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setCustomDatatypeConfigured(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomDatatypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setCustomDatatypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Serde", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvClassifier.setSerde(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

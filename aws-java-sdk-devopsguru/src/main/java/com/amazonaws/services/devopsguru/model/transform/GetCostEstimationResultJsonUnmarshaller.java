@@ -43,36 +43,50 @@ public class GetCostEstimationResultJsonUnmarshaller implements Unmarshaller<Get
             return getCostEstimationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceCollection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCostEstimationResult.setResourceCollection(CostEstimationResourceCollectionFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCostEstimationResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Costs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCostEstimationResult.setCosts(new ListUnmarshaller<ServiceResourceCost>(ServiceResourceCostJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCostEstimationResult.setTimeRange(CostEstimationTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TotalCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCostEstimationResult.setTotalCost(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCostEstimationResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

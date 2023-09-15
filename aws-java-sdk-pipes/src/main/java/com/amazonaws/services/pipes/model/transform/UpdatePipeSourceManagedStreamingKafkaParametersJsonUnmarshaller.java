@@ -44,23 +44,34 @@ public class UpdatePipeSourceManagedStreamingKafkaParametersJsonUnmarshaller imp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BatchSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceManagedStreamingKafkaParameters.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Credentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceManagedStreamingKafkaParameters.setCredentials(MSKAccessCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaximumBatchingWindowInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceManagedStreamingKafkaParameters.setMaximumBatchingWindowInSeconds(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

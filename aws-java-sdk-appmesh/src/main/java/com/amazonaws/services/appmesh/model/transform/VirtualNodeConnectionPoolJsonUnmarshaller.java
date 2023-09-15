@@ -43,26 +43,38 @@ public class VirtualNodeConnectionPoolJsonUnmarshaller implements Unmarshaller<V
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("grpc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualNodeConnectionPool.setGrpc(VirtualNodeGrpcConnectionPoolJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("http", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualNodeConnectionPool.setHttp(VirtualNodeHttpConnectionPoolJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("http2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualNodeConnectionPool.setHttp2(VirtualNodeHttp2ConnectionPoolJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tcp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualNodeConnectionPool.setTcp(VirtualNodeTcpConnectionPoolJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

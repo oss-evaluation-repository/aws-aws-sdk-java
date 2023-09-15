@@ -43,20 +43,27 @@ public class CloudWatchMetricsDetailJsonUnmarshaller implements Unmarshaller<Clo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchMetricsDetail.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchMetricsDetail.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Dimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchMetricsDetail.setDimensions(new ListUnmarshaller<CloudWatchMetricsDimension>(CloudWatchMetricsDimensionJsonUnmarshaller
                             .getInstance())
@@ -64,20 +71,28 @@ public class CloudWatchMetricsDetailJsonUnmarshaller implements Unmarshaller<Clo
                     .unmarshall(context));
                 }
                 if (context.testExpression("Stat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchMetricsDetail.setStat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchMetricsDetail.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Period", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchMetricsDetail.setPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricDataSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchMetricsDetail.setMetricDataSummary(CloudWatchMetricsDataSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

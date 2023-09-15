@@ -43,50 +43,68 @@ public class TransactionEventJsonUnmarshaller implements Unmarshaller<Transactio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("network", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionEvent.setNetwork(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transactionHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionEvent.setTransactionHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionEvent.setEventType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("from", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionEvent.setFrom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("to", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionEvent.setTo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionEvent.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contractAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionEvent.setContractAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tokenId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionEvent.setTokenId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transactionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionEvent.setTransactionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("voutIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionEvent.setVoutIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

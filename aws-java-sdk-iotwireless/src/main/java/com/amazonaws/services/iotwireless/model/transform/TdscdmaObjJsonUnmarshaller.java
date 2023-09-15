@@ -43,48 +43,65 @@ public class TdscdmaObjJsonUnmarshaller implements Unmarshaller<TdscdmaObj, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Mcc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tdscdmaObj.setMcc(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Mnc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tdscdmaObj.setMnc(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Lac", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tdscdmaObj.setLac(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UtranCid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tdscdmaObj.setUtranCid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TdscdmaLocalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tdscdmaObj.setTdscdmaLocalId(TdscdmaLocalIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TdscdmaTimingAdvance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tdscdmaObj.setTdscdmaTimingAdvance(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Rscp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tdscdmaObj.setRscp(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PathLoss", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tdscdmaObj.setPathLoss(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TdscdmaNmr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tdscdmaObj.setTdscdmaNmr(new ListUnmarshaller<TdscdmaNmrObj>(TdscdmaNmrObjJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

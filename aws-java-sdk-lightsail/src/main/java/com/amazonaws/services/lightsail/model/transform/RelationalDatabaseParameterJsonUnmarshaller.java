@@ -43,42 +43,58 @@ public class RelationalDatabaseParameterJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("allowedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseParameter.setAllowedValues(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applyMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseParameter.setApplyMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseParameter.setApplyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseParameter.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseParameter.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isModifiable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseParameter.setIsModifiable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("parameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseParameter.setParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parameterValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseParameter.setParameterValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

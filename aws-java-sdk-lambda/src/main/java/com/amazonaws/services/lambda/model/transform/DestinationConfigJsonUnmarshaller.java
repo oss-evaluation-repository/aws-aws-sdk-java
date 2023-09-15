@@ -43,18 +43,28 @@ public class DestinationConfigJsonUnmarshaller implements Unmarshaller<Destinati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OnSuccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConfig.setOnSuccess(OnSuccessJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OnFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConfig.setOnFailure(OnFailureJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class PathComponentJsonUnmarshaller implements Unmarshaller<PathComponent
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Sequence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pathComponent.setSequence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Resource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pathComponent.setResource(NetworkResourceSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DestinationCidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pathComponent.setDestinationCidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,43 @@ public class ReEncryptResultJsonUnmarshaller implements Unmarshaller<ReEncryptRe
             return reEncryptResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CiphertextBlob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reEncryptResult.setCiphertextBlob(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reEncryptResult.setSourceKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reEncryptResult.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceEncryptionAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reEncryptResult.setSourceEncryptionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationEncryptionAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reEncryptResult.setDestinationEncryptionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

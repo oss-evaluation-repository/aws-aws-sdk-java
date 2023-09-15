@@ -43,36 +43,50 @@ public class FileUploaderFieldConfigJsonUnmarshaller implements Unmarshaller<Fil
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileUploaderFieldConfig.setAccessLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("acceptedFileTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileUploaderFieldConfig.setAcceptedFileTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("showThumbnails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileUploaderFieldConfig.setShowThumbnails(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isResumable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileUploaderFieldConfig.setIsResumable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("maxFileCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileUploaderFieldConfig.setMaxFileCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileUploaderFieldConfig.setMaxSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

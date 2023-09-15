@@ -43,60 +43,80 @@ public class HyperParameterTrainingJobSummaryJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrainingJobDefinitionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setTrainingJobDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setTrainingJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setTrainingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TuningJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setTuningJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setTrainingStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setTrainingEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setTrainingJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TunedHyperParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setTunedHyperParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FinalHyperParameterTuningJobObjectiveMetric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setFinalHyperParameterTuningJobObjectiveMetric(FinalHyperParameterTuningJobObjectiveMetricJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ObjectiveStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setObjectiveStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

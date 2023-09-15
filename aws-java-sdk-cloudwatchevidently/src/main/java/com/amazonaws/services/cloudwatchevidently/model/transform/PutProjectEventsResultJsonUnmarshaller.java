@@ -43,12 +43,17 @@ public class PutProjectEventsResultJsonUnmarshaller implements Unmarshaller<PutP
             return putProjectEventsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putProjectEventsResult.setEventResults(new ListUnmarshaller<PutProjectEventsResultEntry>(PutProjectEventsResultEntryJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class PutProjectEventsResultJsonUnmarshaller implements Unmarshaller<PutP
                     .unmarshall(context));
                 }
                 if (context.testExpression("failedEventCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putProjectEventsResult.setFailedEventCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

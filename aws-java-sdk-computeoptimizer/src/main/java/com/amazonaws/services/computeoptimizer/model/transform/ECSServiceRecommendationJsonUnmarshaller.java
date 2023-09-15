@@ -43,24 +43,32 @@ public class ECSServiceRecommendationJsonUnmarshaller implements Unmarshaller<EC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("serviceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setServiceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("currentServiceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setCurrentServiceConfiguration(ServiceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("utilizationMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setUtilizationMetrics(new ListUnmarshaller<ECSServiceUtilizationMetric>(
                             ECSServiceUtilizationMetricJsonUnmarshaller.getInstance())
@@ -68,28 +76,34 @@ public class ECSServiceRecommendationJsonUnmarshaller implements Unmarshaller<EC
                     .unmarshall(context));
                 }
                 if (context.testExpression("lookbackPeriodInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setLookbackPeriodInDays(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("launchType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setLaunchType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastRefreshTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setLastRefreshTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("finding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setFinding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("findingReasonCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setFindingReasonCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("serviceRecommendationOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setServiceRecommendationOptions(new ListUnmarshaller<ECSServiceRecommendationOption>(
                             ECSServiceRecommendationOptionJsonUnmarshaller.getInstance())
@@ -97,14 +111,20 @@ public class ECSServiceRecommendationJsonUnmarshaller implements Unmarshaller<EC
                     .unmarshall(context));
                 }
                 if (context.testExpression("currentPerformanceRisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setCurrentPerformanceRisk(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendation.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

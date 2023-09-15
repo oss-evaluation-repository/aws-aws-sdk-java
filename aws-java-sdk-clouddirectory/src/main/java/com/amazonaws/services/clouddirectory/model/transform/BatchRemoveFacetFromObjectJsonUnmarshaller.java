@@ -43,18 +43,28 @@ public class BatchRemoveFacetFromObjectJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaFacet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchRemoveFacetFromObject.setSchemaFacet(SchemaFacetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ObjectReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchRemoveFacetFromObject.setObjectReference(ObjectReferenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

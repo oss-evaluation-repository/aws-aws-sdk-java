@@ -43,36 +43,47 @@ public class EcsParametersJsonUnmarshaller implements Unmarshaller<EcsParameters
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TaskDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setTaskDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setTaskCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LaunchType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setLaunchType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PlatformVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setPlatformVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Group", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CapacityProviderStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setCapacityProviderStrategy(new ListUnmarshaller<CapacityProviderStrategyItem>(CapacityProviderStrategyItemJsonUnmarshaller
                             .getInstance())
@@ -80,38 +91,49 @@ public class EcsParametersJsonUnmarshaller implements Unmarshaller<EcsParameters
                     .unmarshall(context));
                 }
                 if (context.testExpression("EnableECSManagedTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setEnableECSManagedTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableExecuteCommand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setEnableExecuteCommand(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PlacementConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setPlacementConstraints(new ListUnmarshaller<PlacementConstraint>(PlacementConstraintJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PlacementStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setPlacementStrategy(new ListUnmarshaller<PlacementStrategy>(PlacementStrategyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PropagateTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setPropagateTags(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsParameters.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

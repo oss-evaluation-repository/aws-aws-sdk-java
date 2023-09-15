@@ -43,42 +43,58 @@ public class DescribeAppResultJsonUnmarshaller implements Unmarshaller<DescribeA
             return describeAppResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppResult.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppResult.setEndpointInfo(SimulationAppEndpointInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LaunchOverrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppResult.setLaunchOverrides(LaunchOverridesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Simulation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppResult.setSimulation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppResult.setTargetStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

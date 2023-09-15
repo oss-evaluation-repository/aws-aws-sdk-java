@@ -43,22 +43,33 @@ public class UpdateTrackerResultJsonUnmarshaller implements Unmarshaller<UpdateT
             return updateTrackerResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrackerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTrackerResult.setTrackerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrackerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTrackerResult.setTrackerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateTrackerResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

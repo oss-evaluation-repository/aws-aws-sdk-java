@@ -43,34 +43,48 @@ public class BackupSelectionsListMemberJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SelectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSelectionsListMember.setSelectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSelectionsListMember.setSelectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupPlanId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSelectionsListMember.setBackupPlanId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSelectionsListMember.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatorRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSelectionsListMember.setCreatorRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupSelectionsListMember.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

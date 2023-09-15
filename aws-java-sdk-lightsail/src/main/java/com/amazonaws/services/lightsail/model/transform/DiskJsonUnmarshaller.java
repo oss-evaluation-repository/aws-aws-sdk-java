@@ -43,86 +43,112 @@ public class DiskJsonUnmarshaller implements Unmarshaller<Disk, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setSupportCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setLocation(ResourceLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("addOns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setAddOns(new ListUnmarshaller<AddOn>(AddOnJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sizeInGb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setSizeInGb(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("isSystemDisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setIsSystemDisk(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("iops", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setIops(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attachedTo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setAttachedTo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isAttached", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setIsAttached(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("attachmentState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setAttachmentState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gbInUse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setGbInUse(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("autoMountStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disk.setAutoMountStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

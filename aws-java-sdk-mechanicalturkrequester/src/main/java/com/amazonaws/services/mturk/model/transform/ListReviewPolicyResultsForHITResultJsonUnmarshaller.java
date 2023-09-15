@@ -43,34 +43,48 @@ public class ListReviewPolicyResultsForHITResultJsonUnmarshaller implements Unma
             return listReviewPolicyResultsForHITResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HITId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listReviewPolicyResultsForHITResult.setHITId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssignmentReviewPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listReviewPolicyResultsForHITResult.setAssignmentReviewPolicy(ReviewPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HITReviewPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listReviewPolicyResultsForHITResult.setHITReviewPolicy(ReviewPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssignmentReviewReport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listReviewPolicyResultsForHITResult.setAssignmentReviewReport(ReviewReportJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HITReviewReport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listReviewPolicyResultsForHITResult.setHITReviewReport(ReviewReportJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listReviewPolicyResultsForHITResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

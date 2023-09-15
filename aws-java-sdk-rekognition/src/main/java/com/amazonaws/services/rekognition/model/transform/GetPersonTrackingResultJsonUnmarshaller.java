@@ -43,44 +43,60 @@ public class GetPersonTrackingResultJsonUnmarshaller implements Unmarshaller<Get
             return getPersonTrackingResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPersonTrackingResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPersonTrackingResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VideoMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPersonTrackingResult.setVideoMetadata(VideoMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPersonTrackingResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Persons", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPersonTrackingResult.setPersons(new ListUnmarshaller<PersonDetection>(PersonDetectionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPersonTrackingResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Video", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPersonTrackingResult.setVideo(VideoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobTag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPersonTrackingResult.setJobTag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

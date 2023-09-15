@@ -43,12 +43,17 @@ public class SourceTableFeatureDetailsJsonUnmarshaller implements Unmarshaller<S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableFeatureDetails.setLocalSecondaryIndexes(new ListUnmarshaller<LocalSecondaryIndexInfo>(LocalSecondaryIndexInfoJsonUnmarshaller
                             .getInstance())
@@ -56,6 +61,7 @@ public class SourceTableFeatureDetailsJsonUnmarshaller implements Unmarshaller<S
                     .unmarshall(context));
                 }
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableFeatureDetails.setGlobalSecondaryIndexes(new ListUnmarshaller<GlobalSecondaryIndexInfo>(GlobalSecondaryIndexInfoJsonUnmarshaller
                             .getInstance())
@@ -63,16 +69,23 @@ public class SourceTableFeatureDetailsJsonUnmarshaller implements Unmarshaller<S
                     .unmarshall(context));
                 }
                 if (context.testExpression("StreamDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableFeatureDetails.setStreamDescription(StreamSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeToLiveDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableFeatureDetails.setTimeToLiveDescription(TimeToLiveDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SSEDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableFeatureDetails.setSSEDescription(SSEDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

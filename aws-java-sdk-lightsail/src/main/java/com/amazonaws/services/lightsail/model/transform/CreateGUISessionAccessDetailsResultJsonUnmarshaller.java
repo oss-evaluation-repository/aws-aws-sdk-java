@@ -43,32 +43,45 @@ public class CreateGUISessionAccessDetailsResultJsonUnmarshaller implements Unma
             return createGUISessionAccessDetailsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createGUISessionAccessDetailsResult.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createGUISessionAccessDetailsResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("percentageComplete", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createGUISessionAccessDetailsResult.setPercentageComplete(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createGUISessionAccessDetailsResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sessions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createGUISessionAccessDetailsResult.setSessions(new ListUnmarshaller<Session>(SessionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

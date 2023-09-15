@@ -43,26 +43,38 @@ public class ResourceScanMetadataJsonUnmarshaller implements Unmarshaller<Resour
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ec2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceScanMetadata.setEc2(Ec2MetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ecrImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceScanMetadata.setEcrImage(EcrContainerImageMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ecrRepository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceScanMetadata.setEcrRepository(EcrRepositoryMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceScanMetadata.setLambdaFunction(LambdaFunctionMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

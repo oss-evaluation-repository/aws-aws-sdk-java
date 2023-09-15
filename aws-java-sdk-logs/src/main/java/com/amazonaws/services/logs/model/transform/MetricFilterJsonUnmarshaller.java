@@ -43,32 +43,45 @@ public class MetricFilterJsonUnmarshaller implements Unmarshaller<MetricFilter, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricFilter.setFilterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricFilter.setFilterPattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricTransformations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricFilter.setMetricTransformations(new ListUnmarshaller<MetricTransformation>(MetricTransformationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricFilter.setCreationTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("logGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricFilter.setLogGroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

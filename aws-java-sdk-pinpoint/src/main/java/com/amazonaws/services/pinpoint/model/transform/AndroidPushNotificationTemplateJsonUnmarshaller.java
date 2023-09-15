@@ -43,46 +43,63 @@ public class AndroidPushNotificationTemplateJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     androidPushNotificationTemplate.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Body", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     androidPushNotificationTemplate.setBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageIconUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     androidPushNotificationTemplate.setImageIconUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     androidPushNotificationTemplate.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RawContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     androidPushNotificationTemplate.setRawContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SmallImageIconUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     androidPushNotificationTemplate.setSmallImageIconUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Sound", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     androidPushNotificationTemplate.setSound(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     androidPushNotificationTemplate.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     androidPushNotificationTemplate.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

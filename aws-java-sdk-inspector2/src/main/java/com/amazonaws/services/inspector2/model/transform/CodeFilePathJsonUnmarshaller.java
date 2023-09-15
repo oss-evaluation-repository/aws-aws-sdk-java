@@ -43,26 +43,38 @@ public class CodeFilePathJsonUnmarshaller implements Unmarshaller<CodeFilePath, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("endLine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeFilePath.setEndLine(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeFilePath.setFileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeFilePath.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startLine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeFilePath.setStartLine(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

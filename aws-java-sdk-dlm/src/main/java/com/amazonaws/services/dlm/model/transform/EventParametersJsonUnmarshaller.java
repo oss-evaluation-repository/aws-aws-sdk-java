@@ -43,24 +43,35 @@ public class EventParametersJsonUnmarshaller implements Unmarshaller<EventParame
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventParameters.setEventType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventParameters.setSnapshotOwner(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DescriptionRegex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventParameters.setDescriptionRegex(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

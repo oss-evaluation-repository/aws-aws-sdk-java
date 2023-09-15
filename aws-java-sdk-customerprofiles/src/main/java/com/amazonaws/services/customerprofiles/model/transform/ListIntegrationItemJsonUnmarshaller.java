@@ -43,48 +43,65 @@ public class ListIntegrationItemJsonUnmarshaller implements Unmarshaller<ListInt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIntegrationItem.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIntegrationItem.setUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIntegrationItem.setObjectTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIntegrationItem.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIntegrationItem.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIntegrationItem.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("ObjectTypeNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIntegrationItem.setObjectTypeNames(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("WorkflowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIntegrationItem.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsUnstructured", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIntegrationItem.setIsUnstructured(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

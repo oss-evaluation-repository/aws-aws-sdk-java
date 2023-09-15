@@ -43,36 +43,46 @@ public class OneDriveConfigurationJsonUnmarshaller implements Unmarshaller<OneDr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TenantDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oneDriveConfiguration.setTenantDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oneDriveConfiguration.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OneDriveUsers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oneDriveConfiguration.setOneDriveUsers(OneDriveUsersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oneDriveConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oneDriveConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oneDriveConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
@@ -80,8 +90,13 @@ public class OneDriveConfigurationJsonUnmarshaller implements Unmarshaller<OneDr
                     .unmarshall(context));
                 }
                 if (context.testExpression("DisableLocalGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oneDriveConfiguration.setDisableLocalGroups(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

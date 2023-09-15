@@ -43,44 +43,60 @@ public class TopicRuleJsonUnmarshaller implements Unmarshaller<TopicRule, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ruleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRule.setRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sql", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRule.setSql(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRule.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRule.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRule.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ruleDisabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRule.setRuleDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("awsIotSqlVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRule.setAwsIotSqlVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRule.setErrorAction(ActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

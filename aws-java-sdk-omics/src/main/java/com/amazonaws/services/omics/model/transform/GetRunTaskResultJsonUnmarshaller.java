@@ -43,58 +43,78 @@ public class GetRunTaskResultJsonUnmarshaller implements Unmarshaller<GetRunTask
             return getRunTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setMemory(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("stopTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setStopTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logStream", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setLogStream(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setGpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunTaskResult.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

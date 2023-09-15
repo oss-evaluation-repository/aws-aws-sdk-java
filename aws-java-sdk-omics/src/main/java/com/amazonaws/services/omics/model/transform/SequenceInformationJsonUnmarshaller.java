@@ -43,26 +43,38 @@ public class SequenceInformationJsonUnmarshaller implements Unmarshaller<Sequenc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("totalReadCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sequenceInformation.setTotalReadCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalBaseCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sequenceInformation.setTotalBaseCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("generatedFrom", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sequenceInformation.setGeneratedFrom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alignment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sequenceInformation.setAlignment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class AutoMLSecurityConfigJsonUnmarshaller implements Unmarshaller<AutoML
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLSecurityConfig.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableInterContainerTrafficEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLSecurityConfig.setEnableInterContainerTrafficEncryption(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLSecurityConfig.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class FlywheelIterationPropertiesJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FlywheelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setFlywheelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FlywheelIterationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setFlywheelIterationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluatedModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setEvaluatedModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluatedModelMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setEvaluatedModelMetrics(FlywheelModelEvaluationMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TrainedModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setTrainedModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrainedModelMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setTrainedModelMetrics(FlywheelModelEvaluationMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EvaluationManifestS3Prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelIterationProperties.setEvaluationManifestS3Prefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

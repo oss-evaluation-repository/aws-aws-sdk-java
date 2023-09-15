@@ -43,19 +43,29 @@ public class ContinuousBackupsDescriptionJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContinuousBackupsStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     continuousBackupsDescription.setContinuousBackupsStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PointInTimeRecoveryDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     continuousBackupsDescription.setPointInTimeRecoveryDescription(PointInTimeRecoveryDescriptionJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

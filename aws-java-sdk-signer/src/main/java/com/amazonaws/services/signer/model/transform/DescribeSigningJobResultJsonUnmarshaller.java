@@ -43,87 +43,114 @@ public class DescribeSigningJobResultJsonUnmarshaller implements Unmarshaller<De
             return describeSigningJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setSource(SourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("signingMaterial", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setSigningMaterial(SigningMaterialJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("platformId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setPlatformId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platformDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setPlatformDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("profileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("profileVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setProfileVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("overrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setOverrides(SigningPlatformOverridesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("signingParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setSigningParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("signatureExpiresAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setSignatureExpiresAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("requestedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setRequestedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revocationRecord", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setRevocationRecord(SigningJobRevocationRecordJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("signedObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setSignedObject(SignedObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setJobOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobInvoker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSigningJobResult.setJobInvoker(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

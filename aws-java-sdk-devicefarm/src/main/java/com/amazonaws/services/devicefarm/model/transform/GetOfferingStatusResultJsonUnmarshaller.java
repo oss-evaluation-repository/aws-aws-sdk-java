@@ -43,24 +43,35 @@ public class GetOfferingStatusResultJsonUnmarshaller implements Unmarshaller<Get
             return getOfferingStatusResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("current", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getOfferingStatusResult.setCurrent(new MapUnmarshaller<String, OfferingStatus>(context.getUnmarshaller(String.class),
                             OfferingStatusJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nextPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getOfferingStatusResult.setNextPeriod(new MapUnmarshaller<String, OfferingStatus>(context.getUnmarshaller(String.class),
                             OfferingStatusJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getOfferingStatusResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

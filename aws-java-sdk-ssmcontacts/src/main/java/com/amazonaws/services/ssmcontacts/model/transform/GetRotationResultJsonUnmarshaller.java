@@ -43,36 +43,50 @@ public class GetRotationResultJsonUnmarshaller implements Unmarshaller<GetRotati
             return getRotationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RotationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRotationResult.setRotationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRotationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRotationResult.setContactIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRotationResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TimeZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRotationResult.setTimeZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Recurrence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRotationResult.setRecurrence(RecurrenceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

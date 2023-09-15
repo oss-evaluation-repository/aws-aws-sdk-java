@@ -43,42 +43,58 @@ public class BatchDescribeModelPackageSummaryJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelPackageGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeModelPackageSummary.setModelPackageGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeModelPackageSummary.setModelPackageVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeModelPackageSummary.setModelPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeModelPackageSummary.setModelPackageDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeModelPackageSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InferenceSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeModelPackageSummary.setInferenceSpecification(InferenceSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeModelPackageSummary.setModelPackageStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelApprovalStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeModelPackageSummary.setModelApprovalStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,72 +44,94 @@ public class AmazonopensearchserviceDestinationDescriptionJsonUnmarshaller imple
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setDomainARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setClusterEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexRotationPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setIndexRotationPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BufferingHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setBufferingHints(AmazonopensearchserviceBufferingHintsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("RetryOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setRetryOptions(AmazonopensearchserviceRetryOptionsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("S3BackupMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setS3BackupMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DestinationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setS3DestinationDescription(S3DestinationDescriptionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setVpcConfigurationDescription(VpcConfigurationDescriptionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("DocumentIdOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationDescription.setDocumentIdOptions(DocumentIdOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

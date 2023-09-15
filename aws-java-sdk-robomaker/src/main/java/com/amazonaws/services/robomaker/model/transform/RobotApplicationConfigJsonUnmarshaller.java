@@ -43,42 +43,57 @@ public class RobotApplicationConfigJsonUnmarshaller implements Unmarshaller<Robo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("application", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     robotApplicationConfig.setApplication(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     robotApplicationConfig.setApplicationVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     robotApplicationConfig.setLaunchConfig(LaunchConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("uploadConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     robotApplicationConfig.setUploadConfigurations(new ListUnmarshaller<UploadConfiguration>(UploadConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("useDefaultUploadConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     robotApplicationConfig.setUseDefaultUploadConfigurations(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("tools", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     robotApplicationConfig.setTools(new ListUnmarshaller<Tool>(ToolJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("useDefaultTools", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     robotApplicationConfig.setUseDefaultTools(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

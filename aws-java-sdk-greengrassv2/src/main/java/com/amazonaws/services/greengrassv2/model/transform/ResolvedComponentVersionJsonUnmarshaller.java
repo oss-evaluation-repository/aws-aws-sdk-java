@@ -43,34 +43,48 @@ public class ResolvedComponentVersionJsonUnmarshaller implements Unmarshaller<Re
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolvedComponentVersion.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolvedComponentVersion.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolvedComponentVersion.setComponentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recipe", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolvedComponentVersion.setRecipe(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("vendorGuidance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolvedComponentVersion.setVendorGuidance(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolvedComponentVersion.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

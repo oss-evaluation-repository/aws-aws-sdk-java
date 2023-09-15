@@ -43,34 +43,48 @@ public class CreateAliasResultJsonUnmarshaller implements Unmarshaller<CreateAli
             return createAliasResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AliasArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAliasResult.setAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAliasResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FunctionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAliasResult.setFunctionVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAliasResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoutingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAliasResult.setRoutingConfig(AliasRoutingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RevisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAliasResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

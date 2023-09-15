@@ -43,41 +43,56 @@ public class TableConfigurationJsonUnmarshaller implements Unmarshaller<TableCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableConfiguration.setFieldWells(TableFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SortConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableConfiguration.setSortConfiguration(TableSortConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TableOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableConfiguration.setTableOptions(TableOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TotalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableConfiguration.setTotalOptions(TotalOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FieldOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableConfiguration.setFieldOptions(TableFieldOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PaginatedReportOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableConfiguration.setPaginatedReportOptions(TablePaginatedReportOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TableInlineVisualizations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableConfiguration.setTableInlineVisualizations(new ListUnmarshaller<TableInlineVisualization>(TableInlineVisualizationJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

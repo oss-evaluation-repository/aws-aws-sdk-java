@@ -43,9 +43,13 @@ public class GetCampaignsResultJsonUnmarshaller implements Unmarshaller<GetCampa
             return getCampaignsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getCampaignsResult.setCampaignsResponse(CampaignsResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

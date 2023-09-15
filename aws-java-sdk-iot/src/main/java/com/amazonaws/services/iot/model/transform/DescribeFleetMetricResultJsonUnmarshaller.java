@@ -43,62 +43,83 @@ public class DescribeFleetMetricResultJsonUnmarshaller implements Unmarshaller<D
             return describeFleetMetricResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("metricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("aggregationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setAggregationType(AggregationTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("period", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("aggregationField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setAggregationField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queryVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setQueryVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("indexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("metricArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFleetMetricResult.setMetricArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

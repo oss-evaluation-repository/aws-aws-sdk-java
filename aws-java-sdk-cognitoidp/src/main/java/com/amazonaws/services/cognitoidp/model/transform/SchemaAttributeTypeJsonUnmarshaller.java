@@ -43,38 +43,53 @@ public class SchemaAttributeTypeJsonUnmarshaller implements Unmarshaller<SchemaA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaAttributeType.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeDataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaAttributeType.setAttributeDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeveloperOnlyAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaAttributeType.setDeveloperOnlyAttribute(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Mutable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaAttributeType.setMutable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Required", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaAttributeType.setRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberAttributeConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaAttributeType.setNumberAttributeConstraints(NumberAttributeConstraintsTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StringAttributeConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaAttributeType.setStringAttributeConstraints(StringAttributeConstraintsTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

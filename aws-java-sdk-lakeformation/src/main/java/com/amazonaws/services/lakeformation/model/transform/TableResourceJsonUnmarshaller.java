@@ -43,26 +43,38 @@ public class TableResourceJsonUnmarshaller implements Unmarshaller<TableResource
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CatalogId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableResource.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableResource.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableResource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableWildcard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableResource.setTableWildcard(TableWildcardJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

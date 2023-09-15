@@ -43,20 +43,30 @@ public class DescribeBudgetActionHistoriesResultJsonUnmarshaller implements Unma
             return describeBudgetActionHistoriesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ActionHistories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBudgetActionHistoriesResult.setActionHistories(new ListUnmarshaller<ActionHistory>(ActionHistoryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBudgetActionHistoriesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

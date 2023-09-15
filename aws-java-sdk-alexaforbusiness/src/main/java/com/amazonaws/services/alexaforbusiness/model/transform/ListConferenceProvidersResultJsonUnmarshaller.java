@@ -43,12 +43,17 @@ public class ListConferenceProvidersResultJsonUnmarshaller implements Unmarshall
             return listConferenceProvidersResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConferenceProviders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listConferenceProvidersResult.setConferenceProviders(new ListUnmarshaller<ConferenceProvider>(ConferenceProviderJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListConferenceProvidersResultJsonUnmarshaller implements Unmarshall
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listConferenceProvidersResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

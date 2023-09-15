@@ -43,54 +43,73 @@ public class EffectiveDeploymentJsonUnmarshaller implements Unmarshaller<Effecti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setDeploymentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iotJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setIotJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iotJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setIotJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("coreDeviceExecutionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setCoreDeviceExecutionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("modifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("statusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     effectiveDeployment.setStatusDetails(EffectiveDeploymentStatusDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

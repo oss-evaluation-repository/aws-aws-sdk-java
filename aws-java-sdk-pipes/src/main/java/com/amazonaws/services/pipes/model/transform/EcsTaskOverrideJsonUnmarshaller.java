@@ -43,30 +43,39 @@ public class EcsTaskOverrideJsonUnmarshaller implements Unmarshaller<EcsTaskOver
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContainerOverrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsTaskOverride.setContainerOverrides(new ListUnmarshaller<EcsContainerOverride>(EcsContainerOverrideJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsTaskOverride.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EphemeralStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsTaskOverride.setEphemeralStorage(EcsEphemeralStorageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsTaskOverride.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InferenceAcceleratorOverrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsTaskOverride.setInferenceAcceleratorOverrides(new ListUnmarshaller<EcsInferenceAcceleratorOverride>(
                             EcsInferenceAcceleratorOverrideJsonUnmarshaller.getInstance())
@@ -74,12 +83,18 @@ public class EcsTaskOverrideJsonUnmarshaller implements Unmarshaller<EcsTaskOver
                     .unmarshall(context));
                 }
                 if (context.testExpression("Memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsTaskOverride.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsTaskOverride.setTaskRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,57 +43,76 @@ public class DescribeModelQualityJobDefinitionResultJsonUnmarshaller implements 
             return describeModelQualityJobDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setJobDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobDefinitionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setJobDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModelQualityBaselineConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setModelQualityBaselineConfig(ModelQualityBaselineConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ModelQualityAppSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setModelQualityAppSpecification(ModelQualityAppSpecificationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ModelQualityJobInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setModelQualityJobInput(ModelQualityJobInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelQualityJobOutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setModelQualityJobOutputConfig(MonitoringOutputConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("JobResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setJobResources(MonitoringResourcesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NetworkConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setNetworkConfig(MonitoringNetworkConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StoppingCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelQualityJobDefinitionResult.setStoppingCondition(MonitoringStoppingConditionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

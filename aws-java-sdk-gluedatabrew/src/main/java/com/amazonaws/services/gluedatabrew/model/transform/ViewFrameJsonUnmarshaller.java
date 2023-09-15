@@ -43,36 +43,50 @@ public class ViewFrameJsonUnmarshaller implements Unmarshaller<ViewFrame, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartColumnIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     viewFrame.setStartColumnIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     viewFrame.setColumnRange(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("HiddenColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     viewFrame.setHiddenColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StartRowIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     viewFrame.setStartRowIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RowRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     viewFrame.setRowRange(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Analytics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     viewFrame.setAnalytics(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,37 +43,51 @@ public class AwsWafRateBasedRuleDetailsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafRateBasedRuleDetails.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafRateBasedRuleDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RateKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafRateBasedRuleDetails.setRateKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RateLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafRateBasedRuleDetails.setRateLimit(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafRateBasedRuleDetails.setRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchPredicates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafRateBasedRuleDetails.setMatchPredicates(new ListUnmarshaller<AwsWafRateBasedRuleMatchPredicate>(
                             AwsWafRateBasedRuleMatchPredicateJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

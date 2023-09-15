@@ -43,30 +43,42 @@ public class FieldValidationConfigurationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldValidationConfiguration.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("strValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldValidationConfiguration.setStrValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("numValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldValidationConfiguration.setNumValues(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("validationMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldValidationConfiguration.setValidationMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

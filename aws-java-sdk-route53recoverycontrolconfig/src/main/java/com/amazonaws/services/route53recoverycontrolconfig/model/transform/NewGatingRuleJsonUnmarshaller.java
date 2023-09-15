@@ -43,38 +43,52 @@ public class NewGatingRuleJsonUnmarshaller implements Unmarshaller<NewGatingRule
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ControlPanelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newGatingRule.setControlPanelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatingControls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newGatingRule.setGatingControls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newGatingRule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newGatingRule.setRuleConfig(RuleConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TargetControls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newGatingRule.setTargetControls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("WaitPeriodMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newGatingRule.setWaitPeriodMs(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

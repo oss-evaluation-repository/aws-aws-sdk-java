@@ -43,28 +43,40 @@ public class ProtocolDetailsJsonUnmarshaller implements Unmarshaller<ProtocolDet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PassiveIp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolDetails.setPassiveIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TlsSessionResumptionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolDetails.setTlsSessionResumptionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SetStatOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolDetails.setSetStatOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("As2Transports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolDetails.setAs2Transports(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

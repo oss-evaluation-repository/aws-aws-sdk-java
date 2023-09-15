@@ -43,30 +43,43 @@ public class LogicalResourceIdJsonUnmarshaller implements Unmarshaller<LogicalRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eksSourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logicalResourceId.setEksSourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logicalResourceId.setIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logicalStackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logicalResourceId.setLogicalStackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logicalResourceId.setResourceGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("terraformSourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logicalResourceId.setTerraformSourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

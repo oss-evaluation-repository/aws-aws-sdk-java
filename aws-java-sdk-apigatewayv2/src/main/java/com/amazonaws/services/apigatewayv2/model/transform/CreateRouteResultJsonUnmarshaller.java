@@ -43,66 +43,87 @@ public class CreateRouteResultJsonUnmarshaller implements Unmarshaller<CreateRou
             return createRouteResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("apiGatewayManaged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setApiKeyRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizationScopes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setAuthorizationScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("authorizationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setAuthorizationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setAuthorizerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modelSelectionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setModelSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setOperationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requestModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setRequestModels(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("requestParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setRequestParameters(new MapUnmarshaller<String, ParameterConstraints>(context.getUnmarshaller(String.class),
                             ParameterConstraintsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("routeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setRouteId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setRouteKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeResponseSelectionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setRouteResponseSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRouteResult.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

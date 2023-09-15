@@ -43,34 +43,48 @@ public class ListWorkflowsItemJsonUnmarshaller implements Unmarshaller<ListWorkf
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkflowType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowsItem.setWorkflowType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkflowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowsItem.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowsItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowsItem.setStatusDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowsItem.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowsItem.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

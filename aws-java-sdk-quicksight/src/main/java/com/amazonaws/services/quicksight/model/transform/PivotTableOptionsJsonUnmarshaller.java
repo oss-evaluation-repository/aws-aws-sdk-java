@@ -43,62 +43,83 @@ public class PivotTableOptionsJsonUnmarshaller implements Unmarshaller<PivotTabl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricPlacement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setMetricPlacement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SingleMetricVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setSingleMetricVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnNamesVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setColumnNamesVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ToggleButtonsVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setToggleButtonsVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnHeaderStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setColumnHeaderStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RowHeaderStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setRowHeaderStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CellStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setCellStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RowFieldNamesStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setRowFieldNamesStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RowAlternateColorOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setRowAlternateColorOptions(RowAlternateColorOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CollapsedRowDimensionsVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setCollapsedRowDimensionsVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RowsLayout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setRowsLayout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RowsLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setRowsLabelOptions(PivotTableRowsLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultCellWidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableOptions.setDefaultCellWidth(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

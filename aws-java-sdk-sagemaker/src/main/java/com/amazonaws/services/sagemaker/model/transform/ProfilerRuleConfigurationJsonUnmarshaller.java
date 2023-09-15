@@ -43,39 +43,54 @@ public class ProfilerRuleConfigurationJsonUnmarshaller implements Unmarshaller<P
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RuleConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilerRuleConfiguration.setRuleConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocalPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilerRuleConfiguration.setLocalPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3OutputPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilerRuleConfiguration.setS3OutputPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleEvaluatorImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilerRuleConfiguration.setRuleEvaluatorImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilerRuleConfiguration.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilerRuleConfiguration.setVolumeSizeInGB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilerRuleConfiguration.setRuleParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,56 +43,75 @@ public class ConfigRuleJsonUnmarshaller implements Unmarshaller<ConfigRule, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigRuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setConfigRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigRuleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setConfigRuleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigRuleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setConfigRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Scope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setScope(ScopeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setSource(SourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setInputParameters(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumExecutionFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setMaximumExecutionFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigRuleState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setConfigRuleState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationModes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRule.setEvaluationModes(new ListUnmarshaller<EvaluationModeConfiguration>(EvaluationModeConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class AudioCodecOptionsJsonUnmarshaller implements Unmarshaller<AudioCode
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Profile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecOptions.setProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BitDepth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecOptions.setBitDepth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BitOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecOptions.setBitOrder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Signed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecOptions.setSigned(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

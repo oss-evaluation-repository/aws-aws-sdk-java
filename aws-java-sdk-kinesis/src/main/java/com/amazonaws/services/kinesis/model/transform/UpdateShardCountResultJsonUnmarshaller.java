@@ -43,26 +43,38 @@ public class UpdateShardCountResultJsonUnmarshaller implements Unmarshaller<Upda
             return updateShardCountResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateShardCountResult.setStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentShardCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateShardCountResult.setCurrentShardCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetShardCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateShardCountResult.setTargetShardCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateShardCountResult.setStreamARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

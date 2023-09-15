@@ -43,34 +43,48 @@ public class AvailabilityZoneInfoJsonUnmarshaller implements Unmarshaller<Availa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AvailabilityZoneName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityZoneInfo.setAvailabilityZoneName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ZoneStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityZoneInfo.setZoneStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfiguredDataNodeCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityZoneInfo.setConfiguredDataNodeCount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailableDataNodeCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityZoneInfo.setAvailableDataNodeCount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalShards", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityZoneInfo.setTotalShards(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalUnAssignedShards", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityZoneInfo.setTotalUnAssignedShards(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

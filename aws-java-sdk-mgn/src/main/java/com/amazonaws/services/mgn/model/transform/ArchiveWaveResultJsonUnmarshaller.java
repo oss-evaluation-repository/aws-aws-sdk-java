@@ -43,47 +43,64 @@ public class ArchiveWaveResultJsonUnmarshaller implements Unmarshaller<ArchiveWa
             return archiveWaveResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveWaveResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveWaveResult.setCreationDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveWaveResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isArchived", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveWaveResult.setIsArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveWaveResult.setLastModifiedDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveWaveResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveWaveResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("waveAggregatedStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveWaveResult.setWaveAggregatedStatus(WaveAggregatedStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("waveID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveWaveResult.setWaveID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

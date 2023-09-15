@@ -43,47 +43,64 @@ public class ClaimedPhoneNumberSummaryJsonUnmarshaller implements Unmarshaller<C
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PhoneNumberId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     claimedPhoneNumberSummary.setPhoneNumberId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumberArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     claimedPhoneNumberSummary.setPhoneNumberArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     claimedPhoneNumberSummary.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumberCountryCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     claimedPhoneNumberSummary.setPhoneNumberCountryCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumberType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     claimedPhoneNumberSummary.setPhoneNumberType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumberDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     claimedPhoneNumberSummary.setPhoneNumberDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     claimedPhoneNumberSummary.setTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     claimedPhoneNumberSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumberStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     claimedPhoneNumberSummary.setPhoneNumberStatus(PhoneNumberStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

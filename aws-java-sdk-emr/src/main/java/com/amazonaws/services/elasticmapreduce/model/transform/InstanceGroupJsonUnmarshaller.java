@@ -43,88 +43,114 @@ public class InstanceGroupJsonUnmarshaller implements Unmarshaller<InstanceGroup
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Market", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setMarket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceGroupType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setInstanceGroupType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BidPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setBidPrice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestedInstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setRequestedInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RunningInstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setRunningInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setStatus(InstanceGroupStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationsVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setConfigurationsVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfullyAppliedConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setLastSuccessfullyAppliedConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfullyAppliedConfigurationsVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setLastSuccessfullyAppliedConfigurationsVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsBlockDevices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setEbsBlockDevices(new ListUnmarshaller<EbsBlockDevice>(EbsBlockDeviceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EbsOptimized", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setEbsOptimized(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ShrinkPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setShrinkPolicy(ShrinkPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoScalingPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setAutoScalingPolicy(AutoScalingPolicyDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomAmiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroup.setCustomAmiId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

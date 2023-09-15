@@ -43,26 +43,38 @@ public class DolbyVisionJsonUnmarshaller implements Unmarshaller<DolbyVision, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("l6Metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dolbyVision.setL6Metadata(DolbyVisionLevel6MetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("l6Mode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dolbyVision.setL6Mode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mapping", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dolbyVision.setMapping(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("profile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dolbyVision.setProfile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

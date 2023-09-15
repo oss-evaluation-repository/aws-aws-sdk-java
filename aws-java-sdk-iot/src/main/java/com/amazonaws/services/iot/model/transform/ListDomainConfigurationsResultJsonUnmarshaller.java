@@ -43,12 +43,17 @@ public class ListDomainConfigurationsResultJsonUnmarshaller implements Unmarshal
             return listDomainConfigurationsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("domainConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listDomainConfigurationsResult.setDomainConfigurations(new ListUnmarshaller<DomainConfigurationSummary>(
                             DomainConfigurationSummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListDomainConfigurationsResultJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextMarker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listDomainConfigurationsResult.setNextMarker(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

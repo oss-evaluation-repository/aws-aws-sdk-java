@@ -43,24 +43,35 @@ public class ListAliasesResultJsonUnmarshaller implements Unmarshaller<ListAlias
             return listAliasesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Aliases", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAliasesResult.setAliases(new ListUnmarshaller<AliasListEntry>(AliasListEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAliasesResult.setNextMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Truncated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAliasesResult.setTruncated(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

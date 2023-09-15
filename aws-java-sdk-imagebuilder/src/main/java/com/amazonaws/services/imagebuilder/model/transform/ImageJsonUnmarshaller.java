@@ -43,99 +43,129 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enhancedImageMetadataEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setEnhancedImageMetadataEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("osVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setOsVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setState(ImageStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageRecipe", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setImageRecipe(ImageRecipeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("containerRecipe", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setContainerRecipe(ContainerRecipeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourcePipelineName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setSourcePipelineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourcePipelineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setSourcePipelineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("infrastructureConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setInfrastructureConfiguration(InfrastructureConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("distributionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setDistributionConfiguration(DistributionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageTestsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setImageTestsConfiguration(ImageTestsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setDateCreated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setOutputResources(OutputResourcesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("buildType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setBuildType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setImageSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setScanState(ImageScanStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageScanningConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     image.setImageScanningConfiguration(ImageScanningConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

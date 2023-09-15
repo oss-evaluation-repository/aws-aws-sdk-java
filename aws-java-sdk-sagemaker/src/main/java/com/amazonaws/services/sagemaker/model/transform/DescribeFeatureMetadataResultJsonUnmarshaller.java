@@ -43,44 +43,60 @@ public class DescribeFeatureMetadataResultJsonUnmarshaller implements Unmarshall
             return describeFeatureMetadataResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FeatureGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureMetadataResult.setFeatureGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeatureGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureMetadataResult.setFeatureGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeatureName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureMetadataResult.setFeatureName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeatureType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureMetadataResult.setFeatureType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureMetadataResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureMetadataResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureMetadataResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureMetadataResult.setParameters(new ListUnmarshaller<FeatureParameter>(FeatureParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

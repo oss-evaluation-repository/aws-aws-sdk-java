@@ -43,54 +43,73 @@ public class NodeJsonUnmarshaller implements Unmarshaller<Node, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setPackageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setPackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PatchVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setPatchVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

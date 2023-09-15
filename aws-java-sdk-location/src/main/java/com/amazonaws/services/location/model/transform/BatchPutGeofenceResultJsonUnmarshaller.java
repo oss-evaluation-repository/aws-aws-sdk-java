@@ -43,22 +43,32 @@ public class BatchPutGeofenceResultJsonUnmarshaller implements Unmarshaller<Batc
             return batchPutGeofenceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPutGeofenceResult.setErrors(new ListUnmarshaller<BatchPutGeofenceError>(BatchPutGeofenceErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Successes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPutGeofenceResult.setSuccesses(new ListUnmarshaller<BatchPutGeofenceSuccess>(BatchPutGeofenceSuccessJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

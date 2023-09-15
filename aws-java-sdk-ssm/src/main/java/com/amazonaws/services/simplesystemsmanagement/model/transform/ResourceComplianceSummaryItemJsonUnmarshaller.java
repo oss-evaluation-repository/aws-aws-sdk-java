@@ -43,42 +43,58 @@ public class ResourceComplianceSummaryItemJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComplianceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceComplianceSummaryItem.setComplianceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceComplianceSummaryItem.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceComplianceSummaryItem.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceComplianceSummaryItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OverallSeverity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceComplianceSummaryItem.setOverallSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceComplianceSummaryItem.setExecutionSummary(ComplianceExecutionSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CompliantSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceComplianceSummaryItem.setCompliantSummary(CompliantSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NonCompliantSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceComplianceSummaryItem.setNonCompliantSummary(NonCompliantSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

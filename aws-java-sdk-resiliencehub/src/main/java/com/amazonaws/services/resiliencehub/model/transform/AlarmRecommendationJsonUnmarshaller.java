@@ -43,50 +43,67 @@ public class AlarmRecommendationJsonUnmarshaller implements Unmarshaller<AlarmRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appComponentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmRecommendation.setAppComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appComponentNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmRecommendation.setAppComponentNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmRecommendation.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("items", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmRecommendation.setItems(new ListUnmarshaller<RecommendationItem>(RecommendationItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmRecommendation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("prerequisite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmRecommendation.setPrerequisite(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmRecommendation.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("referenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmRecommendation.setReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmRecommendation.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

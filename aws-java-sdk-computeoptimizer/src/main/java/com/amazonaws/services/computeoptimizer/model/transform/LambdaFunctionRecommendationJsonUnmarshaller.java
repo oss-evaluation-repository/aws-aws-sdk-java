@@ -43,32 +43,42 @@ public class LambdaFunctionRecommendationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("functionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("functionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setFunctionVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("currentMemorySize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setCurrentMemorySize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfInvocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setNumberOfInvocations(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("utilizationMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setUtilizationMetrics(new ListUnmarshaller<LambdaFunctionUtilizationMetric>(
                             LambdaFunctionUtilizationMetricJsonUnmarshaller.getInstance())
@@ -76,24 +86,29 @@ public class LambdaFunctionRecommendationJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("lookbackPeriodInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setLookbackPeriodInDays(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("lastRefreshTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setLastRefreshTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("finding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setFinding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("findingReasonCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setFindingReasonCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("memorySizeRecommendationOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setMemorySizeRecommendationOptions(new ListUnmarshaller<LambdaFunctionMemoryRecommendationOption>(
                             LambdaFunctionMemoryRecommendationOptionJsonUnmarshaller.getInstance())
@@ -101,14 +116,20 @@ public class LambdaFunctionRecommendationJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("currentPerformanceRisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setCurrentPerformanceRisk(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecommendation.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

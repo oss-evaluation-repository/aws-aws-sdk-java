@@ -43,34 +43,48 @@ public class WordCloudOptionsJsonUnmarshaller implements Unmarshaller<WordCloudO
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WordOrientation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wordCloudOptions.setWordOrientation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WordScaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wordCloudOptions.setWordScaling(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudLayout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wordCloudOptions.setCloudLayout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WordCasing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wordCloudOptions.setWordCasing(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WordPadding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wordCloudOptions.setWordPadding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumStringLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wordCloudOptions.setMaximumStringLength(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

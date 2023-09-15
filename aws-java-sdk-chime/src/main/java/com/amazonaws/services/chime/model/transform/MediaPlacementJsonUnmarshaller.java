@@ -43,42 +43,58 @@ public class MediaPlacementJsonUnmarshaller implements Unmarshaller<MediaPlaceme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AudioHostUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaPlacement.setAudioHostUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AudioFallbackUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaPlacement.setAudioFallbackUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScreenDataUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaPlacement.setScreenDataUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScreenSharingUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaPlacement.setScreenSharingUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScreenViewingUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaPlacement.setScreenViewingUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SignalingUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaPlacement.setSignalingUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TurnControlUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaPlacement.setTurnControlUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventIngestionUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaPlacement.setEventIngestionUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

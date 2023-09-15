@@ -43,26 +43,38 @@ public class CreateWorkflowStepResultJsonUnmarshaller implements Unmarshaller<Cr
             return createWorkflowStepResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createWorkflowStepResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stepGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createWorkflowStepResult.setStepGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("workflowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createWorkflowStepResult.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createWorkflowStepResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

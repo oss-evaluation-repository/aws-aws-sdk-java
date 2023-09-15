@@ -43,42 +43,58 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Email", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setUserRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnabledDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setEnabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DisabledDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setDisabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

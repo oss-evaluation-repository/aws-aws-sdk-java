@@ -43,22 +43,33 @@ public class AccountSettingsJsonUnmarshaller implements Unmarshaller<AccountSett
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineCodebuildRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setPipelineCodebuildRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pipelineProvisioningRepository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setPipelineProvisioningRepository(RepositoryBranchJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pipelineServiceRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountSettings.setPipelineServiceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

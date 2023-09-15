@@ -43,68 +43,90 @@ public class AnalysisTemplateJsonUnmarshaller implements Unmarshaller<AnalysisTe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setCollaborationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setCollaborationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("membershipId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setMembershipId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("membershipArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setMembershipArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("schema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setSchema(AnalysisSchemaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setSource(AnalysisSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("analysisParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisTemplate.setAnalysisParameters(new ListUnmarshaller<AnalysisParameter>(AnalysisParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,32 +43,45 @@ public class GenericAttachmentJsonUnmarshaller implements Unmarshaller<GenericAt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     genericAttachment.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     genericAttachment.setSubTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attachmentLinkUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     genericAttachment.setAttachmentLinkUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     genericAttachment.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("buttons", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     genericAttachment.setButtons(new ListUnmarshaller<Button>(ButtonJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

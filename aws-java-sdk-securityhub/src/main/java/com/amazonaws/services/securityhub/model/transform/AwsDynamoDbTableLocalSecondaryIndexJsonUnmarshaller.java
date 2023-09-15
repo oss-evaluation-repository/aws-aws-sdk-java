@@ -43,20 +43,27 @@ public class AwsDynamoDbTableLocalSecondaryIndexJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableLocalSecondaryIndex.setIndexArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableLocalSecondaryIndex.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableLocalSecondaryIndex.setKeySchema(new ListUnmarshaller<AwsDynamoDbTableKeySchema>(AwsDynamoDbTableKeySchemaJsonUnmarshaller
                             .getInstance())
@@ -64,8 +71,13 @@ public class AwsDynamoDbTableLocalSecondaryIndexJsonUnmarshaller implements Unma
                     .unmarshall(context));
                 }
                 if (context.testExpression("Projection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableLocalSecondaryIndex.setProjection(AwsDynamoDbTableProjectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

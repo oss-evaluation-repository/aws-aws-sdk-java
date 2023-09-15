@@ -43,46 +43,63 @@ public class ForecastSummaryJsonUnmarshaller implements Unmarshaller<ForecastSum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ForecastArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastSummary.setForecastArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ForecastName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastSummary.setForecastName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastSummary.setPredictorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedUsingAutoPredictor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastSummary.setCreatedUsingAutoPredictor(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastSummary.setDatasetGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastSummary.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastSummary.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

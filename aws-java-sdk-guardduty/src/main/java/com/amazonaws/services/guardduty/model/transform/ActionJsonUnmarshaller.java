@@ -43,38 +43,53 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsApiCallAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setAwsApiCallAction(AwsApiCallActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dnsRequestAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setDnsRequestAction(DnsRequestActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("networkConnectionAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setNetworkConnectionAction(NetworkConnectionActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("portProbeAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setPortProbeAction(PortProbeActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kubernetesApiCallAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setKubernetesApiCallAction(KubernetesApiCallActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rdsLoginAttemptAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     action.setRdsLoginAttemptAction(RdsLoginAttemptActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

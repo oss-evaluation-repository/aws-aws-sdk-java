@@ -43,39 +43,53 @@ public class RecognizeTextResultJsonUnmarshaller implements Unmarshaller<Recogni
             return recognizeTextResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("messages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recognizeTextResult.setMessages(new ListUnmarshaller<Message>(MessageJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sessionState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recognizeTextResult.setSessionState(SessionStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("interpretations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recognizeTextResult.setInterpretations(new ListUnmarshaller<Interpretation>(InterpretationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("requestAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recognizeTextResult.setRequestAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("sessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recognizeTextResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recognizedBotMember", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recognizeTextResult.setRecognizedBotMember(RecognizedBotMemberJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

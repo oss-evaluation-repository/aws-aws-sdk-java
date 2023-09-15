@@ -43,38 +43,53 @@ public class JobListEntryJsonUnmarshaller implements Unmarshaller<JobListEntry, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobListEntry.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobListEntry.setJobState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsMaster", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobListEntry.setIsMaster(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("JobType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobListEntry.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnowballType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobListEntry.setSnowballType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobListEntry.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobListEntry.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

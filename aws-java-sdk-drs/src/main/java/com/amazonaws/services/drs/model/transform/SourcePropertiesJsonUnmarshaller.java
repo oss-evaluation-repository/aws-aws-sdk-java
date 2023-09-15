@@ -43,52 +43,69 @@ public class SourcePropertiesJsonUnmarshaller implements Unmarshaller<SourceProp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceProperties.setCpus(new ListUnmarshaller<CPU>(CPUJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("disks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceProperties.setDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("identificationHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceProperties.setIdentificationHints(IdentificationHintsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceProperties.setLastUpdatedDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceProperties.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("os", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceProperties.setOs(OSJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ramBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceProperties.setRamBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendedInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceProperties.setRecommendedInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportsNitroInstances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceProperties.setSupportsNitroInstances(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

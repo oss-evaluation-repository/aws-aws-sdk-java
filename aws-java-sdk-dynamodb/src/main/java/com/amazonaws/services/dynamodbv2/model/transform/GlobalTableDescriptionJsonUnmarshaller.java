@@ -43,32 +43,45 @@ public class GlobalTableDescriptionJsonUnmarshaller implements Unmarshaller<Glob
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplicationGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalTableDescription.setReplicationGroup(new ListUnmarshaller<ReplicaDescription>(ReplicaDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("GlobalTableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalTableDescription.setGlobalTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalTableDescription.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("GlobalTableStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalTableDescription.setGlobalTableStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlobalTableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     globalTableDescription.setGlobalTableName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

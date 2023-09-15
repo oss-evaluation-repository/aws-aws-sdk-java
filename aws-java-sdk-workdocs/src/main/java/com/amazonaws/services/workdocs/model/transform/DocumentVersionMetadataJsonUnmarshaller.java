@@ -43,64 +43,85 @@ public class DocumentVersionMetadataJsonUnmarshaller implements Unmarshaller<Doc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Signature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ContentCreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setContentCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ContentModifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setContentModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setCreatorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Thumbnail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setThumbnail(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentVersionMetadata.setSource(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,43 @@ public class CaptionDescriptionJsonUnmarshaller implements Unmarshaller<CaptionD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("captionSelectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDescription.setCaptionSelectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("customLanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDescription.setCustomLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDescription.setDestinationSettings(CaptionDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("languageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDescription.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("languageDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionDescription.setLanguageDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

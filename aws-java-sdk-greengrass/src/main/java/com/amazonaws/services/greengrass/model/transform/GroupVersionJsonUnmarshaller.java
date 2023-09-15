@@ -43,38 +43,53 @@ public class GroupVersionJsonUnmarshaller implements Unmarshaller<GroupVersion, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConnectorDefinitionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupVersion.setConnectorDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CoreDefinitionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupVersion.setCoreDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceDefinitionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupVersion.setDeviceDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FunctionDefinitionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupVersion.setFunctionDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoggerDefinitionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupVersion.setLoggerDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceDefinitionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupVersion.setResourceDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionDefinitionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupVersion.setSubscriptionDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

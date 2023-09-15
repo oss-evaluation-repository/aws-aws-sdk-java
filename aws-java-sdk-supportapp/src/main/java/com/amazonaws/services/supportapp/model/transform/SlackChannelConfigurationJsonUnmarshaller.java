@@ -43,42 +43,58 @@ public class SlackChannelConfigurationJsonUnmarshaller implements Unmarshaller<S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackChannelConfiguration.setChannelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("channelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackChannelConfiguration.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("channelRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackChannelConfiguration.setChannelRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("notifyOnAddCorrespondenceToCase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackChannelConfiguration.setNotifyOnAddCorrespondenceToCase(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("notifyOnCaseSeverity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackChannelConfiguration.setNotifyOnCaseSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("notifyOnCreateOrReopenCase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackChannelConfiguration.setNotifyOnCreateOrReopenCase(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("notifyOnResolveCase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackChannelConfiguration.setNotifyOnResolveCase(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("teamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slackChannelConfiguration.setTeamId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class GetCalculationExecutionResultJsonUnmarshaller implements Unmarshall
             return getCalculationExecutionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CalculationExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculationExecutionResult.setCalculationExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculationExecutionResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculationExecutionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkingDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculationExecutionResult.setWorkingDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculationExecutionResult.setStatus(CalculationStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Statistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculationExecutionResult.setStatistics(CalculationStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Result", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCalculationExecutionResult.setResult(CalculationResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,63 +43,84 @@ public class AwsApiGatewayV2StageDetailsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClientCertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setClientCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setCreatedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultRouteSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setDefaultRouteSettings(AwsApiGatewayV2RouteSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setLastUpdatedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RouteSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setRouteSettings(AwsApiGatewayV2RouteSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setStageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StageVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setStageVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("AccessLogSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setAccessLogSettings(AwsApiGatewayAccessLogSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoDeploy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setAutoDeploy(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LastDeploymentStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setLastDeploymentStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiGatewayManaged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

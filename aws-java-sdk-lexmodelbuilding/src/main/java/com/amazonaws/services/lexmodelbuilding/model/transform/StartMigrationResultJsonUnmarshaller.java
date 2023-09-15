@@ -43,42 +43,58 @@ public class StartMigrationResultJsonUnmarshaller implements Unmarshaller<StartM
             return startMigrationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("v1BotName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMigrationResult.setV1BotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("v1BotVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMigrationResult.setV1BotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("v1BotLocale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMigrationResult.setV1BotLocale(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("v2BotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMigrationResult.setV2BotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("v2BotRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMigrationResult.setV2BotRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("migrationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMigrationResult.setMigrationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("migrationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMigrationResult.setMigrationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("migrationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startMigrationResult.setMigrationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

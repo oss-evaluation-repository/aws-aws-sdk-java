@@ -43,40 +43,55 @@ public class ContainerStateChangeJsonUnmarshaller implements Unmarshaller<Contai
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerStateChange.setContainerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageDigest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerStateChange.setImageDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("runtimeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerStateChange.setRuntimeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("exitCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerStateChange.setExitCode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("networkBindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerStateChange.setNetworkBindings(new ListUnmarshaller<NetworkBinding>(NetworkBindingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerStateChange.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerStateChange.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

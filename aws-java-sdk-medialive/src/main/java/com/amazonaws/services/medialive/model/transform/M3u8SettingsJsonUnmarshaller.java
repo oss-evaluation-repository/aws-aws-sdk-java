@@ -43,86 +43,113 @@ public class M3u8SettingsJsonUnmarshaller implements Unmarshaller<M3u8Settings, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioFramesPerPes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setAudioFramesPerPes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("audioPids", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setAudioPids(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ecmPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setEcmPid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nielsenId3Behavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setNielsenId3Behavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("patInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPatInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pcrControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPcrControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pcrPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPcrPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pcrPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPcrPid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pmtInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPmtInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pmtPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPmtPid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("programNum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setProgramNum(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("scte35Behavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setScte35Behavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scte35Pid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setScte35Pid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setTimedMetadataBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setTimedMetadataPid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transportStreamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setTransportStreamId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("videoPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setVideoPid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("klvBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setKlvBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("klvDataPids", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setKlvDataPids(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

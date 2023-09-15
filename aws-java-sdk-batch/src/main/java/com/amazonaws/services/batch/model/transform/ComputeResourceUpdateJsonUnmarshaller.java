@@ -43,87 +43,112 @@ public class ComputeResourceUpdateJsonUnmarshaller implements Unmarshaller<Compu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("minvCpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setMinvCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxvCpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setMaxvCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("desiredvCpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setDesiredvCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("subnets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("allocationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setAllocationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ec2KeyPair", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setEc2KeyPair(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setInstanceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("placementGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setPlacementGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bidPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setBidPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("launchTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setLaunchTemplate(LaunchTemplateSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ec2Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setEc2Configuration(new ListUnmarshaller<Ec2Configuration>(Ec2ConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("updateToLatestImageVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setUpdateToLatestImageVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResourceUpdate.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class EvaluationMetadataJsonUnmarshaller implements Unmarshaller<Evaluati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationMetadata.setContactId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluatorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationMetadata.setEvaluatorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactAgentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationMetadata.setContactAgentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationMetadata.setScore(EvaluationScoreJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,30 @@ public class ListFirewallConfigsResultJsonUnmarshaller implements Unmarshaller<L
             return listFirewallConfigsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listFirewallConfigsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listFirewallConfigsResult.setFirewallConfigs(new ListUnmarshaller<FirewallConfig>(FirewallConfigJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class IndexStatisticsJsonUnmarshaller implements Unmarshaller<IndexStatis
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FaqStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     indexStatistics.setFaqStatistics(FaqStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TextDocumentStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     indexStatistics.setTextDocumentStatistics(TextDocumentStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

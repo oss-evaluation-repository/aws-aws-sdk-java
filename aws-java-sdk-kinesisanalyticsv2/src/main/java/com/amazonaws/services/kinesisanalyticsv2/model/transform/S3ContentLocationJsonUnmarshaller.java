@@ -43,22 +43,33 @@ public class S3ContentLocationJsonUnmarshaller implements Unmarshaller<S3Content
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BucketARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ContentLocation.setBucketARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ContentLocation.setFileKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3ContentLocation.setObjectVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

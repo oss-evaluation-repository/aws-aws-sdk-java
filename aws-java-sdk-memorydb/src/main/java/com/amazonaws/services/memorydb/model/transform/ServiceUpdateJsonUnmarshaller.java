@@ -43,42 +43,58 @@ public class ServiceUpdateJsonUnmarshaller implements Unmarshaller<ServiceUpdate
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceUpdate.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceUpdateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceUpdate.setServiceUpdateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReleaseDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceUpdate.setReleaseDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceUpdate.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceUpdate.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceUpdate.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodesUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceUpdate.setNodesUpdated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoUpdateStartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceUpdate.setAutoUpdateStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

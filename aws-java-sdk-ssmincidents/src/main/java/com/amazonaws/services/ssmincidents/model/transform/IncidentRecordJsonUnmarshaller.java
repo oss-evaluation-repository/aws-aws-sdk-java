@@ -43,70 +43,92 @@ public class IncidentRecordJsonUnmarshaller implements Unmarshaller<IncidentReco
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("automationExecutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setAutomationExecutions(new ListUnmarshaller<AutomationExecution>(AutomationExecutionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("chatChannel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setChatChannel(ChatChannelJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dedupeString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setDedupeString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("impact", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setImpact(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("incidentRecordSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setIncidentRecordSource(IncidentRecordSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setLastModifiedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("notificationTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setNotificationTargets(new ListUnmarshaller<NotificationTargetItem>(NotificationTargetItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resolvedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setResolvedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("summary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setSummary(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecord.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

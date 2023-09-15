@@ -43,70 +43,93 @@ public class SearchRecordJsonUnmarshaller implements Unmarshaller<SearchRecord, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrainingJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setTrainingJob(TrainingJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Experiment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setExperiment(ExperimentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Trial", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setTrial(TrialJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TrialComponent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setTrialComponent(TrialComponentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Endpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setEndpoint(EndpointJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelPackage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setModelPackage(ModelPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setModelPackageGroup(ModelPackageGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Pipeline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setPipeline(PipelineJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PipelineExecution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setPipelineExecution(PipelineExecutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FeatureGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setFeatureGroup(FeatureGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Project", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setProject(ProjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FeatureMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setFeatureMetadata(FeatureMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setHyperParameterTuningJob(HyperParameterTuningJobSearchEntityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setModel(ModelDashboardModelJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelCard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchRecord.setModelCard(ModelCardJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,52 +43,70 @@ public class InstanceGroupConfigJsonUnmarshaller implements Unmarshaller<Instanc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupConfig.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Market", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupConfig.setMarket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupConfig.setInstanceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BidPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupConfig.setBidPrice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupConfig.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupConfig.setInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupConfig.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EbsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupConfig.setEbsConfiguration(EbsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoScalingPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupConfig.setAutoScalingPolicy(AutoScalingPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomAmiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupConfig.setCustomAmiId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

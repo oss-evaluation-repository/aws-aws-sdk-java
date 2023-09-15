@@ -43,34 +43,48 @@ public class OutputGroupSettingsJsonUnmarshaller implements Unmarshaller<OutputG
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cmafGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setCmafGroupSettings(CmafGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dashIsoGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setDashIsoGroupSettings(DashIsoGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fileGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setFileGroupSettings(FileGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hlsGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setHlsGroupSettings(HlsGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("msSmoothGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setMsSmoothGroupSettings(MsSmoothGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

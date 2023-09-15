@@ -43,58 +43,78 @@ public class AwsApiGatewayMethodSettingsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LoggingLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setLoggingLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataTraceEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setDataTraceEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ThrottlingBurstLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setThrottlingBurstLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ThrottlingRateLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setThrottlingRateLimit(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CachingEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setCachingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheTtlInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setCacheTtlInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheDataEncrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setCacheDataEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireAuthorizationForCacheControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setRequireAuthorizationForCacheControl(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UnauthorizedCacheControlHeaderStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setUnauthorizedCacheControlHeaderStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HttpMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setHttpMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourcePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayMethodSettings.setResourcePath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

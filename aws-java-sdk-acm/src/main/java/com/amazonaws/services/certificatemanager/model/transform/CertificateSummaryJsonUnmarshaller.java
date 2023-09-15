@@ -43,88 +43,114 @@ public class CertificateSummaryJsonUnmarshaller implements Unmarshaller<Certific
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubjectAlternativeNameSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setSubjectAlternativeNameSummaries(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HasAdditionalSubjectAlternativeNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setHasAdditionalSubjectAlternativeNames(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setKeyAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyUsages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setKeyUsages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExtendedKeyUsages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setExtendedKeyUsages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InUse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setInUse(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Exported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setExported(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RenewalEligibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setRenewalEligibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setNotBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setNotAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IssuedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setIssuedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ImportedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setImportedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RevokedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateSummary.setRevokedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

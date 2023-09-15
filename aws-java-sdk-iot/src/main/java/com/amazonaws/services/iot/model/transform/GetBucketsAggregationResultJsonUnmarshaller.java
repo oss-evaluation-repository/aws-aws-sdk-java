@@ -43,20 +43,30 @@ public class GetBucketsAggregationResultJsonUnmarshaller implements Unmarshaller
             return getBucketsAggregationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("totalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketsAggregationResult.setTotalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("buckets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketsAggregationResult.setBuckets(new ListUnmarshaller<Bucket>(BucketJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

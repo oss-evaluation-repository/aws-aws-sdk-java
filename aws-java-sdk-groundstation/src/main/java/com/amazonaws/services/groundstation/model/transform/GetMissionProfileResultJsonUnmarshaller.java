@@ -43,20 +43,27 @@ public class GetMissionProfileResultJsonUnmarshaller implements Unmarshaller<Get
             return getMissionProfileResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("contactPostPassDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setContactPostPassDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("contactPrePassDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setContactPrePassDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("dataflowEdges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setDataflowEdges(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -66,41 +73,54 @@ public class GetMissionProfileResultJsonUnmarshaller implements Unmarshaller<Get
                     .unmarshall(context));
                 }
                 if (context.testExpression("minimumViableContactDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setMinimumViableContactDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("missionProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setMissionProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("missionProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setMissionProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamsKmsKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setStreamsKmsKey(KmsKeyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("streamsKmsRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setStreamsKmsRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("trackingConfigArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMissionProfileResult.setTrackingConfigArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

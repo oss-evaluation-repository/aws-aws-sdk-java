@@ -43,28 +43,37 @@ public class DocumentClassifierInputDataConfigJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierInputDataConfig.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierInputDataConfig.setS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TestS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierInputDataConfig.setTestS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelDelimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierInputDataConfig.setLabelDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AugmentedManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierInputDataConfig.setAugmentedManifests(new ListUnmarshaller<AugmentedManifestsListItem>(
                             AugmentedManifestsListItemJsonUnmarshaller.getInstance())
@@ -72,16 +81,23 @@ public class DocumentClassifierInputDataConfigJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("DocumentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierInputDataConfig.setDocumentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Documents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierInputDataConfig.setDocuments(DocumentClassifierDocumentsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DocumentReaderConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierInputDataConfig.setDocumentReaderConfig(DocumentReaderConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

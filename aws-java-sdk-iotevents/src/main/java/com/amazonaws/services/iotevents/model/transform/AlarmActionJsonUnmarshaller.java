@@ -43,46 +43,63 @@ public class AlarmActionJsonUnmarshaller implements Unmarshaller<AlarmAction, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmAction.setSns(SNSTopicPublishActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iotTopicPublish", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmAction.setIotTopicPublish(IotTopicPublishActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambda", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmAction.setLambda(LambdaActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iotEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmAction.setIotEvents(IotEventsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sqs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmAction.setSqs(SqsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("firehose", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmAction.setFirehose(FirehoseActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dynamoDB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmAction.setDynamoDB(DynamoDBActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dynamoDBv2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmAction.setDynamoDBv2(DynamoDBv2ActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iotSiteWise", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmAction.setIotSiteWise(IotSiteWiseActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

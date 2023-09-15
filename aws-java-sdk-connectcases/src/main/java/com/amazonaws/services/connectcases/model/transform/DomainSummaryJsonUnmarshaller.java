@@ -43,22 +43,33 @@ public class DomainSummaryJsonUnmarshaller implements Unmarshaller<DomainSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("domainArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainSummary.setDomainArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainSummary.setDomainId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

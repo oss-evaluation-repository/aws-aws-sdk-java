@@ -43,52 +43,70 @@ public class ActivationJsonUnmarshaller implements Unmarshaller<Activation, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ActivationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activation.setActivationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activation.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultInstanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activation.setDefaultInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activation.setIamRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrationLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activation.setRegistrationLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrationsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activation.setRegistrationsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpirationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activation.setExpirationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Expired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activation.setExpired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activation.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activation.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

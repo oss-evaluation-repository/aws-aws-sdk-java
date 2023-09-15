@@ -43,20 +43,27 @@ public class UpdateDomainNameResultJsonUnmarshaller implements Unmarshaller<Upda
             return updateDomainNameResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("apiMappingSelectionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setApiMappingSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainNameConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setDomainNameConfigurations(new ListUnmarshaller<DomainNameConfiguration>(DomainNameConfigurationJsonUnmarshaller
                             .getInstance())
@@ -64,13 +71,19 @@ public class UpdateDomainNameResultJsonUnmarshaller implements Unmarshaller<Upda
                     .unmarshall(context));
                 }
                 if (context.testExpression("mutualTlsAuthentication", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setMutualTlsAuthentication(MutualTlsAuthenticationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

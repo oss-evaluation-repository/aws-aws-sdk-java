@@ -43,40 +43,55 @@ public class BandwidthRateLimitIntervalJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartHourOfDay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bandwidthRateLimitInterval.setStartHourOfDay(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StartMinuteOfHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bandwidthRateLimitInterval.setStartMinuteOfHour(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndHourOfDay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bandwidthRateLimitInterval.setEndHourOfDay(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndMinuteOfHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bandwidthRateLimitInterval.setEndMinuteOfHour(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DaysOfWeek", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bandwidthRateLimitInterval.setDaysOfWeek(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AverageUploadRateLimitInBitsPerSec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bandwidthRateLimitInterval.setAverageUploadRateLimitInBitsPerSec(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AverageDownloadRateLimitInBitsPerSec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bandwidthRateLimitInterval.setAverageDownloadRateLimitInBitsPerSec(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

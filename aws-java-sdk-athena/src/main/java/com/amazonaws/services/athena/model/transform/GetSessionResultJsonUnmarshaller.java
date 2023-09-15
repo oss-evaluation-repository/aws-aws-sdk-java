@@ -43,46 +43,63 @@ public class GetSessionResultJsonUnmarshaller implements Unmarshaller<GetSession
             return getSessionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setWorkGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setEngineConfiguration(EngineConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NotebookVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setNotebookVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setSessionConfiguration(SessionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setStatus(SessionStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Statistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setStatistics(SessionStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

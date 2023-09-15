@@ -43,34 +43,48 @@ public class GetPackageVersionReadmeResultJsonUnmarshaller implements Unmarshall
             return getPackageVersionReadmeResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPackageVersionReadmeResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPackageVersionReadmeResult.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("package", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPackageVersionReadmeResult.setPackage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPackageVersionReadmeResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionRevision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPackageVersionReadmeResult.setVersionRevision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("readme", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPackageVersionReadmeResult.setReadme(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

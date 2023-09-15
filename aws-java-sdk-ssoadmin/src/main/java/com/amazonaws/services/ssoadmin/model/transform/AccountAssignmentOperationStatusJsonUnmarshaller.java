@@ -43,46 +43,63 @@ public class AccountAssignmentOperationStatusJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignmentOperationStatus.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignmentOperationStatus.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PermissionSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignmentOperationStatus.setPermissionSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrincipalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignmentOperationStatus.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrincipalType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignmentOperationStatus.setPrincipalType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignmentOperationStatus.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignmentOperationStatus.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignmentOperationStatus.setTargetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignmentOperationStatus.setTargetType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

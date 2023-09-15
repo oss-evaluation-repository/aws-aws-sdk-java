@@ -43,43 +43,59 @@ public class ContainerRecipeSummaryJsonUnmarshaller implements Unmarshaller<Cont
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipeSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipeSummary.setContainerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipeSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipeSummary.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipeSummary.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parentImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipeSummary.setParentImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipeSummary.setDateCreated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipeSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,47 @@ public class ExclusionPreviewJsonUnmarshaller implements Unmarshaller<ExclusionP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exclusionPreview.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exclusionPreview.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exclusionPreview.setRecommendation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scopes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exclusionPreview.setScopes(new ListUnmarshaller<Scope>(ScopeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exclusionPreview.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class GameServerJsonUnmarshaller implements Unmarshaller<GameServer, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GameServerGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setGameServerGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameServerGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setGameServerGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameServerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setGameServerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setConnectionInfo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameServerData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setGameServerData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClaimStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setClaimStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UtilizationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setUtilizationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setRegistrationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastClaimTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setLastClaimTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastHealthCheckTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameServer.setLastHealthCheckTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

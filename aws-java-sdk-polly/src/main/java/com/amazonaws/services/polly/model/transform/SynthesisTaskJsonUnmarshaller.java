@@ -43,74 +43,97 @@ public class SynthesisTaskJsonUnmarshaller implements Unmarshaller<SynthesisTask
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setTaskStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskStatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setTaskStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setOutputUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RequestCharacters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setRequestCharacters(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SnsTopicArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setSnsTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LexiconNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setLexiconNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OutputFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setOutputFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SampleRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setSampleRate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SpeechMarkTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setSpeechMarkTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TextType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setTextType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VoiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setVoiceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     synthesisTask.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,16 +43,22 @@ public class PossibleRemediationActionJsonUnmarshaller implements Unmarshaller<P
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     possibleRemediationAction.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrderedRemediationActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     possibleRemediationAction.setOrderedRemediationActions(new ListUnmarshaller<RemediationActionWithOrder>(
                             RemediationActionWithOrderJsonUnmarshaller.getInstance())
@@ -60,8 +66,13 @@ public class PossibleRemediationActionJsonUnmarshaller implements Unmarshaller<P
                     .unmarshall(context));
                 }
                 if (context.testExpression("IsDefaultAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     possibleRemediationAction.setIsDefaultAction(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

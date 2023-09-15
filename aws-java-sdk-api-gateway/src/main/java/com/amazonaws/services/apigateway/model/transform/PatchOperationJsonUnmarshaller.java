@@ -43,26 +43,38 @@ public class PatchOperationJsonUnmarshaller implements Unmarshaller<PatchOperati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("op", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchOperation.setOp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchOperation.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchOperation.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("from", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchOperation.setFrom(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

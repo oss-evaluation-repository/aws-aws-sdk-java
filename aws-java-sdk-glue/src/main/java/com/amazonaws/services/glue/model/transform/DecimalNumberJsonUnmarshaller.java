@@ -43,18 +43,28 @@ public class DecimalNumberJsonUnmarshaller implements Unmarshaller<DecimalNumber
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UnscaledValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decimalNumber.setUnscaledValue(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("Scale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decimalNumber.setScale(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

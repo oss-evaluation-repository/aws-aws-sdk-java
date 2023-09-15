@@ -43,46 +43,62 @@ public class GetUsagePlanResultJsonUnmarshaller implements Unmarshaller<GetUsage
             return getUsagePlanResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUsagePlanResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUsagePlanResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUsagePlanResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiStages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUsagePlanResult.setApiStages(new ListUnmarshaller<ApiStage>(ApiStageJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("throttle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUsagePlanResult.setThrottle(ThrottleSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("quota", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUsagePlanResult.setQuota(QuotaSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("productCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUsagePlanResult.setProductCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUsagePlanResult
                             .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

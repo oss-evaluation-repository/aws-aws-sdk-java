@@ -43,71 +43,93 @@ public class RecommendationTemplateJsonUnmarshaller implements Unmarshaller<Reco
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setAppArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setAssessmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("needsReplacements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setNeedsReplacements(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendationIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setRecommendationIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("recommendationTemplateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setRecommendationTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendationTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setRecommendationTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("templatesLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationTemplate.setTemplatesLocation(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

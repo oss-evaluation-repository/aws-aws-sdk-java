@@ -43,42 +43,58 @@ public class ProcessingJobSummaryJsonUnmarshaller implements Unmarshaller<Proces
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProcessingJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJobSummary.setProcessingJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProcessingJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJobSummary.setProcessingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProcessingEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJobSummary.setProcessingEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJobSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProcessingJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJobSummary.setProcessingJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJobSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExitMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJobSummary.setExitMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

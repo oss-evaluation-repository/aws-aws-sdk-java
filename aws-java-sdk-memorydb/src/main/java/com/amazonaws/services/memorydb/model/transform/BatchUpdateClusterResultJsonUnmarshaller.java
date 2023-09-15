@@ -43,22 +43,32 @@ public class BatchUpdateClusterResultJsonUnmarshaller implements Unmarshaller<Ba
             return batchUpdateClusterResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProcessedClusters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchUpdateClusterResult.setProcessedClusters(new ListUnmarshaller<Cluster>(ClusterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedClusters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchUpdateClusterResult.setUnprocessedClusters(new ListUnmarshaller<UnprocessedCluster>(UnprocessedClusterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

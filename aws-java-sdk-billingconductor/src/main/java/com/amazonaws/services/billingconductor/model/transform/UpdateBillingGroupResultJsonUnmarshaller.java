@@ -43,50 +43,68 @@ public class UpdateBillingGroupResultJsonUnmarshaller implements Unmarshaller<Up
             return updateBillingGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBillingGroupResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBillingGroupResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBillingGroupResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrimaryAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBillingGroupResult.setPrimaryAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PricingPlanArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBillingGroupResult.setPricingPlanArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBillingGroupResult.setSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBillingGroupResult.setLastModifiedTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBillingGroupResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBillingGroupResult.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountGrouping", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBillingGroupResult.setAccountGrouping(UpdateBillingGroupAccountGroupingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

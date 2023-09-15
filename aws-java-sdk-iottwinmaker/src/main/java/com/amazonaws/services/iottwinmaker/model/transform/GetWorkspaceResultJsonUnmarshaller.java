@@ -43,38 +43,53 @@ public class GetWorkspaceResultJsonUnmarshaller implements Unmarshaller<GetWorks
             return getWorkspaceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workspaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkspaceResult.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkspaceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkspaceResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkspaceResult.setS3Location(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkspaceResult.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkspaceResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkspaceResult.setUpdateDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

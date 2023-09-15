@@ -43,22 +43,33 @@ public class LogConfigJsonUnmarshaller implements Unmarshaller<LogConfig, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fieldLogLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logConfig.setFieldLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cloudWatchLogsRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logConfig.setCloudWatchLogsRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("excludeVerboseContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logConfig.setExcludeVerboseContent(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

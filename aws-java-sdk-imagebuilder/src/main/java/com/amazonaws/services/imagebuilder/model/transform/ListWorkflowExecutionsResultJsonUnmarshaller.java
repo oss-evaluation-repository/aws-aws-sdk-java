@@ -43,16 +43,22 @@ public class ListWorkflowExecutionsResultJsonUnmarshaller implements Unmarshalle
             return listWorkflowExecutionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("requestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowExecutionsResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowExecutionsResult.setWorkflowExecutions(new ListUnmarshaller<WorkflowExecutionMetadata>(
                             WorkflowExecutionMetadataJsonUnmarshaller.getInstance())
@@ -60,16 +66,23 @@ public class ListWorkflowExecutionsResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("imageBuildVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowExecutionsResult.setImageBuildVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowExecutionsResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkflowExecutionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

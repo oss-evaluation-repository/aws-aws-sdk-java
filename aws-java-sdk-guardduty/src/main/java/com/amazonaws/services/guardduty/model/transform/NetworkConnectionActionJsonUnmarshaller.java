@@ -43,38 +43,53 @@ public class NetworkConnectionActionJsonUnmarshaller implements Unmarshaller<Net
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("blocked", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setBlocked(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionDirection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setConnectionDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localPortDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setLocalPortDetails(LocalPortDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localIpDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setLocalIpDetails(LocalIpDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("remoteIpDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setRemoteIpDetails(RemoteIpDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("remotePortDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkConnectionAction.setRemotePortDetails(RemotePortDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

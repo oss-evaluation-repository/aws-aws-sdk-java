@@ -43,24 +43,35 @@ public class FrameMetricJsonUnmarshaller implements Unmarshaller<FrameMetric, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("frameName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     frameMetric.setFrameName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("threadStates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     frameMetric.setThreadStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     frameMetric.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

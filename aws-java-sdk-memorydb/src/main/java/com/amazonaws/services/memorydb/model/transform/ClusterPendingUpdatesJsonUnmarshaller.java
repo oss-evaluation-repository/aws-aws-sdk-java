@@ -43,25 +43,36 @@ public class ClusterPendingUpdatesJsonUnmarshaller implements Unmarshaller<Clust
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Resharding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterPendingUpdates.setResharding(ReshardingStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ACLs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterPendingUpdates.setACLs(ACLsUpdateStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceUpdates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterPendingUpdates.setServiceUpdates(new ListUnmarshaller<PendingModifiedServiceUpdate>(PendingModifiedServiceUpdateJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,83 @@ public class ModelSummaryJsonUnmarshaller implements Unmarshaller<ModelSummary, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelSummary.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelSummary.setModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelSummary.setDatasetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelSummary.setDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ActiveModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelSummary.setActiveModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ActiveModelVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelSummary.setActiveModelVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestScheduledRetrainingStatus", targetDepth)) {
+                    knownMember = true;
+                    context.nextToken();
+                    modelSummary.setLatestScheduledRetrainingStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestScheduledRetrainingModelVersion", targetDepth)) {
+                    knownMember = true;
+                    context.nextToken();
+                    modelSummary.setLatestScheduledRetrainingModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestScheduledRetrainingStartTime", targetDepth)) {
+                    knownMember = true;
+                    context.nextToken();
+                    modelSummary.setLatestScheduledRetrainingStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("NextScheduledRetrainingStartDate", targetDepth)) {
+                    knownMember = true;
+                    context.nextToken();
+                    modelSummary.setNextScheduledRetrainingStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("RetrainingSchedulerStatus", targetDepth)) {
+                    knownMember = true;
+                    context.nextToken();
+                    modelSummary.setRetrainingSchedulerStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

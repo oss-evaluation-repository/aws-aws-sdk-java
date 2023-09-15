@@ -43,60 +43,80 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setCompletedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IamUserArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setIamUserArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setCommand(DeploymentCommandJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomJson", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setCustomJson(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deployment.setInstanceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class IdentityJsonUnmarshaller implements Unmarshaller<Identity, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("user", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identity.setUser(UserIdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("group", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identity.setGroup(GroupIdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iamUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identity.setIamUser(IAMUserIdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iamRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identity.setIamRole(IAMRoleIdentityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

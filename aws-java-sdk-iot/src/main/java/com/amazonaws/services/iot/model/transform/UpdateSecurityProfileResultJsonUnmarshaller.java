@@ -43,41 +43,52 @@ public class UpdateSecurityProfileResultJsonUnmarshaller implements Unmarshaller
             return updateSecurityProfileResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("securityProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSecurityProfileResult.setSecurityProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSecurityProfileResult.setSecurityProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityProfileDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSecurityProfileResult.setSecurityProfileDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("behaviors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSecurityProfileResult.setBehaviors(new ListUnmarshaller<Behavior>(BehaviorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("alertTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSecurityProfileResult.setAlertTargets(new MapUnmarshaller<String, AlertTarget>(context.getUnmarshaller(String.class),
                             AlertTargetJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("additionalMetricsToRetain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSecurityProfileResult.setAdditionalMetricsToRetain(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("additionalMetricsToRetainV2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSecurityProfileResult.setAdditionalMetricsToRetainV2(new ListUnmarshaller<MetricToRetain>(MetricToRetainJsonUnmarshaller
                             .getInstance())
@@ -85,16 +96,23 @@ public class UpdateSecurityProfileResultJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSecurityProfileResult.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSecurityProfileResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSecurityProfileResult.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class GetModelVersionResultJsonUnmarshaller implements Unmarshaller<GetMo
             return getModelVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("modelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getModelVersionResult.setModelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getModelVersionResult.setModelType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modelVersionNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getModelVersionResult.setModelVersionNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trainingDataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getModelVersionResult.setTrainingDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trainingDataSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getModelVersionResult.setTrainingDataSchema(TrainingDataSchemaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("externalEventsDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getModelVersionResult.setExternalEventsDetail(ExternalEventsDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ingestedEventsDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getModelVersionResult.setIngestedEventsDetail(IngestedEventsDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getModelVersionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getModelVersionResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

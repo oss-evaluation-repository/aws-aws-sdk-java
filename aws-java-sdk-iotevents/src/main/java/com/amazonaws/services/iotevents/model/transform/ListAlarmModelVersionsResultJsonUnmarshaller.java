@@ -43,12 +43,17 @@ public class ListAlarmModelVersionsResultJsonUnmarshaller implements Unmarshalle
             return listAlarmModelVersionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("alarmModelVersionSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAlarmModelVersionsResult.setAlarmModelVersionSummaries(new ListUnmarshaller<AlarmModelVersionSummary>(
                             AlarmModelVersionSummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListAlarmModelVersionsResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAlarmModelVersionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

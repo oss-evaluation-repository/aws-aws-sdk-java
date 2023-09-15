@@ -43,70 +43,93 @@ public class StorediSCSIVolumeJsonUnmarshaller implements Unmarshaller<StorediSC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setVolumeARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setVolumeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setVolumeStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeAttachmentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setVolumeAttachmentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setVolumeSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setVolumeProgress(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeDiskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setVolumeDiskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceSnapshotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setSourceSnapshotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreservedExistingData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setPreservedExistingData(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeiSCSIAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setVolumeiSCSIAttributes(VolumeiSCSIAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("VolumeUsedInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setVolumeUsedInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("KMSKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setKMSKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storediSCSIVolume.setTargetName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

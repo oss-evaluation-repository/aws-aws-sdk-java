@@ -43,80 +43,105 @@ public class CreateFileSystemResultJsonUnmarshaller implements Unmarshaller<Crea
             return createFileSystemResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setCreationToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setFileSystemArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LifeCycleState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setLifeCycleState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfMountTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setNumberOfMountTargets(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setSizeInBytes(FileSystemSizeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PerformanceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setPerformanceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThroughputMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setThroughputMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughputInMibps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setProvisionedThroughputInMibps(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZoneName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setAvailabilityZoneName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setAvailabilityZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

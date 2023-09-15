@@ -44,20 +44,30 @@ public class ProtectiveEquipmentSummarizationAttributesJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MinConfidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectiveEquipmentSummarizationAttributes.setMinConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("RequiredEquipmentTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protectiveEquipmentSummarizationAttributes.setRequiredEquipmentTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

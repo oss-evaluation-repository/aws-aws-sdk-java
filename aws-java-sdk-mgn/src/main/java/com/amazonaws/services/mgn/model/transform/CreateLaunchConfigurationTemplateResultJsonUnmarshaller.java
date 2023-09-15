@@ -43,79 +43,104 @@ public class CreateLaunchConfigurationTemplateResultJsonUnmarshaller implements 
             return createLaunchConfigurationTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associatePublicIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setAssociatePublicIpAddress(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("bootMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setBootMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("copyPrivateIp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setCopyPrivateIp(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("copyTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setCopyTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ec2LaunchTemplateID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setEc2LaunchTemplateID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enableMapAutoTagging", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setEnableMapAutoTagging(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("largeVolumeConf", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setLargeVolumeConf(LaunchTemplateDiskConfJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("launchConfigurationTemplateID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setLaunchConfigurationTemplateID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchDisposition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setLaunchDisposition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("licensing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setLicensing(LicensingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mapAutoTaggingMpeID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setMapAutoTaggingMpeID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("postLaunchActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setPostLaunchActions(PostLaunchActionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("smallVolumeConf", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setSmallVolumeConf(LaunchTemplateDiskConfJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("smallVolumeMaxSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setSmallVolumeMaxSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("targetInstanceTypeRightSizingMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createLaunchConfigurationTemplateResult.setTargetInstanceTypeRightSizingMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

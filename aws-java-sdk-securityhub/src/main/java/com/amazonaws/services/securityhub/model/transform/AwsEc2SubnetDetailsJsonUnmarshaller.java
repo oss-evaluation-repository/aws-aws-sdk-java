@@ -43,65 +43,86 @@ public class AwsEc2SubnetDetailsJsonUnmarshaller implements Unmarshaller<AwsEc2S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssignIpv6AddressOnCreation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setAssignIpv6AddressOnCreation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setAvailabilityZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailableIpAddressCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setAvailableIpAddressCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setCidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultForAz", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setDefaultForAz(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MapPublicIpOnLaunch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setMapPublicIpOnLaunch(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setSubnetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ipv6CidrBlockAssociationSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SubnetDetails.setIpv6CidrBlockAssociationSet(new ListUnmarshaller<Ipv6CidrBlockAssociation>(Ipv6CidrBlockAssociationJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class ListPricingPlansResultJsonUnmarshaller implements Unmarshaller<List
             return listPricingPlansResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BillingPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPricingPlansResult.setBillingPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PricingPlans", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPricingPlansResult.setPricingPlans(new ListUnmarshaller<PricingPlanListElement>(PricingPlanListElementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPricingPlansResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

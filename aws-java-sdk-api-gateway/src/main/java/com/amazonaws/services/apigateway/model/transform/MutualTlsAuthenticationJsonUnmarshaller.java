@@ -43,24 +43,35 @@ public class MutualTlsAuthenticationJsonUnmarshaller implements Unmarshaller<Mut
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("truststoreUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutualTlsAuthentication.setTruststoreUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("truststoreVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutualTlsAuthentication.setTruststoreVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("truststoreWarnings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutualTlsAuthentication.setTruststoreWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

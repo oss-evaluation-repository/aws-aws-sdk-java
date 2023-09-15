@@ -43,23 +43,34 @@ public class MonitoringConfigurationJsonUnmarshaller implements Unmarshaller<Mon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("s3MonitoringConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringConfiguration.setS3MonitoringConfiguration(S3MonitoringConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("managedPersistenceMonitoringConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringConfiguration.setManagedPersistenceMonitoringConfiguration(ManagedPersistenceMonitoringConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cloudWatchLoggingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringConfiguration.setCloudWatchLoggingConfiguration(CloudWatchLoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

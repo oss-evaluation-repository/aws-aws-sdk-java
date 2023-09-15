@@ -43,35 +43,49 @@ public class JourneyExecutionActivityMetricsResponseJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ActivityType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyExecutionActivityMetricsResponse.setActivityType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyExecutionActivityMetricsResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JourneyActivityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyExecutionActivityMetricsResponse.setJourneyActivityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JourneyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyExecutionActivityMetricsResponse.setJourneyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyExecutionActivityMetricsResponse.setLastEvaluatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Metrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journeyExecutionActivityMetricsResponse.setMetrics(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

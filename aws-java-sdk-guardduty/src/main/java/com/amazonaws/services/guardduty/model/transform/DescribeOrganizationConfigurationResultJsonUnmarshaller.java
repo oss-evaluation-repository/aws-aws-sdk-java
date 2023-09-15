@@ -43,25 +43,33 @@ public class DescribeOrganizationConfigurationResultJsonUnmarshaller implements 
             return describeOrganizationConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("autoEnable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationConfigurationResult.setAutoEnable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("memberAccountLimitReached", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationConfigurationResult.setMemberAccountLimitReached(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("dataSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationConfigurationResult.setDataSources(OrganizationDataSourceConfigurationsResultJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("features", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationConfigurationResult.setFeatures(new ListUnmarshaller<OrganizationFeatureConfigurationResult>(
                             OrganizationFeatureConfigurationResultJsonUnmarshaller.getInstance())
@@ -69,12 +77,18 @@ public class DescribeOrganizationConfigurationResultJsonUnmarshaller implements 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationConfigurationResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoEnableOrganizationMembers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOrganizationConfigurationResult.setAutoEnableOrganizationMembers(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

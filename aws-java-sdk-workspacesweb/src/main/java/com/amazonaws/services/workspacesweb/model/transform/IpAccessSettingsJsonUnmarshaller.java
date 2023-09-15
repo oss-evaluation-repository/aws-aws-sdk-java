@@ -43,38 +43,52 @@ public class IpAccessSettingsJsonUnmarshaller implements Unmarshaller<IpAccessSe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("associatedPortalArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipAccessSettings.setAssociatedPortalArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipAccessSettings.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipAccessSettings.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("displayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipAccessSettings.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipAccessSettingsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipAccessSettings.setIpAccessSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipAccessSettings.setIpRules(new ListUnmarshaller<IpRule>(IpRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

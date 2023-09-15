@@ -43,38 +43,52 @@ public class ExpectedRouteJsonUnmarshaller implements Unmarshaller<ExpectedRoute
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IpV4Cidr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expectedRoute.setIpV4Cidr(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrefixListId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expectedRoute.setPrefixListId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpV6Cidr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expectedRoute.setIpV6Cidr(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContributingSubnets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expectedRoute.setContributingSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AllowedTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expectedRoute.setAllowedTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RouteTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expectedRoute.setRouteTableId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

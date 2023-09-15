@@ -44,22 +44,33 @@ public class PullRequestMergedStateChangedEventMetadataJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestMergedStateChangedEventMetadata.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestMergedStateChangedEventMetadata.setDestinationReference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergeMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestMergedStateChangedEventMetadata.setMergeMetadata(MergeMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

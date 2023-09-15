@@ -43,24 +43,35 @@ public class DateTimeDefaultValuesJsonUnmarshaller implements Unmarshaller<DateT
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DynamicValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dateTimeDefaultValues.setDynamicValue(DynamicDefaultValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StaticValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dateTimeDefaultValues.setStaticValues(new ListUnmarshaller<java.util.Date>(DateJsonUnmarshallerFactory.getInstance("unixTimestamp"))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RollingDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dateTimeDefaultValues.setRollingDate(RollingDateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

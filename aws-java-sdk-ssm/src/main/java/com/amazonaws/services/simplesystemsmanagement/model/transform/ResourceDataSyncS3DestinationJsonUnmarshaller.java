@@ -43,35 +43,49 @@ public class ResourceDataSyncS3DestinationJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncS3Destination.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncS3Destination.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SyncFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncS3Destination.setSyncFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncS3Destination.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AWSKMSKeyARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncS3Destination.setAWSKMSKeyARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationDataSharing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncS3Destination.setDestinationDataSharing(ResourceDataSyncDestinationDataSharingJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

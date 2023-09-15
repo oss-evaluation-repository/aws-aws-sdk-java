@@ -43,26 +43,38 @@ public class NetworkPathComponentJsonUnmarshaller implements Unmarshaller<Networ
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComponentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkPathComponent.setComponentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComponentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkPathComponent.setComponentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Egress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkPathComponent.setEgress(NetworkHeaderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Ingress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkPathComponent.setIngress(NetworkHeaderJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

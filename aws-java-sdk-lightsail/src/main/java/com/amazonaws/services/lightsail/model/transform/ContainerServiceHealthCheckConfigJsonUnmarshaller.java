@@ -43,34 +43,48 @@ public class ContainerServiceHealthCheckConfigJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("healthyThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceHealthCheckConfig.setHealthyThreshold(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("unhealthyThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceHealthCheckConfig.setUnhealthyThreshold(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("timeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceHealthCheckConfig.setTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("intervalSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceHealthCheckConfig.setIntervalSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceHealthCheckConfig.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("successCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceHealthCheckConfig.setSuccessCodes(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

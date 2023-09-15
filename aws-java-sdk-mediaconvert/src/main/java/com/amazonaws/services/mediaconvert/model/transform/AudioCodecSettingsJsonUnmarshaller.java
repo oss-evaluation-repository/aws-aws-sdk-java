@@ -43,58 +43,78 @@ public class AudioCodecSettingsJsonUnmarshaller implements Unmarshaller<AudioCod
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("aacSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setAacSettings(AacSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ac3Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setAc3Settings(Ac3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("aiffSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setAiffSettings(AiffSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("codec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eac3AtmosSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setEac3AtmosSettings(Eac3AtmosSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("eac3Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setEac3Settings(Eac3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("flacSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setFlacSettings(FlacSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mp2Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setMp2Settings(Mp2SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mp3Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setMp3Settings(Mp3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("opusSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setOpusSettings(OpusSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vorbisSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setVorbisSettings(VorbisSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("wavSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioCodecSettings.setWavSettings(WavSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

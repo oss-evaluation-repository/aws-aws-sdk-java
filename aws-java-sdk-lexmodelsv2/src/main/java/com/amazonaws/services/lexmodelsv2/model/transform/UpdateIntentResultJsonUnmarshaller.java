@@ -43,94 +43,121 @@ public class UpdateIntentResultJsonUnmarshaller implements Unmarshaller<UpdateIn
             return updateIntentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("intentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setIntentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("intentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setIntentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parentIntentSignature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setParentIntentSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleUtterances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setSampleUtterances(new ListUnmarshaller<SampleUtterance>(SampleUtteranceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("dialogCodeHook", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setDialogCodeHook(DialogCodeHookSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fulfillmentCodeHook", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setFulfillmentCodeHook(FulfillmentCodeHookSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("slotPriorities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setSlotPriorities(new ListUnmarshaller<SlotPriority>(SlotPriorityJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("intentConfirmationSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setIntentConfirmationSetting(IntentConfirmationSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("intentClosingSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setIntentClosingSetting(IntentClosingSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setInputContexts(new ListUnmarshaller<InputContext>(InputContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("outputContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setOutputContexts(new ListUnmarshaller<OutputContext>(OutputContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("kendraConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setKendraConfiguration(KendraConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setLocaleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("initialResponseSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntentResult.setInitialResponseSetting(InitialResponseSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

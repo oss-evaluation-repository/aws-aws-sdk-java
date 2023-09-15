@@ -43,70 +43,93 @@ public class AwsCloudTrailTrailDetailsJsonUnmarshaller implements Unmarshaller<A
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CloudWatchLogsLogGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setCloudWatchLogsLogGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLogsRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setCloudWatchLogsRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HasCustomEventSelectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setHasCustomEventSelectors(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HomeRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setHomeRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeGlobalServiceEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setIncludeGlobalServiceEvents(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IsMultiRegionTrail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setIsMultiRegionTrail(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IsOrganizationTrail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setIsOrganizationTrail(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogFileValidationEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setLogFileValidationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3KeyPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setS3KeyPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnsTopicArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setSnsTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnsTopicName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setSnsTopicName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrailArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudTrailTrailDetails.setTrailArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,39 +43,54 @@ public class CampaignJsonUnmarshaller implements Unmarshaller<Campaign, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setConnectInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dialerConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setDialerConfig(DialerConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("outboundCallConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setOutboundCallConfig(OutboundCallConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

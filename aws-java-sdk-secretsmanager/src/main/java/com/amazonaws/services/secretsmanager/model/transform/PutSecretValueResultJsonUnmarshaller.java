@@ -43,28 +43,40 @@ public class PutSecretValueResultJsonUnmarshaller implements Unmarshaller<PutSec
             return putSecretValueResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSecretValueResult.setARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSecretValueResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSecretValueResult.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionStages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSecretValueResult.setVersionStages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

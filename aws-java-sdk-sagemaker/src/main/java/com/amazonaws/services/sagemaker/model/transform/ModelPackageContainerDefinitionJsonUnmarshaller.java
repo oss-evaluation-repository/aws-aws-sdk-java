@@ -43,51 +43,69 @@ public class ModelPackageContainerDefinitionJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContainerHostname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageContainerDefinition.setContainerHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Image", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageContainerDefinition.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageDigest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageContainerDefinition.setImageDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelDataUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageContainerDefinition.setModelDataUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageContainerDefinition.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageContainerDefinition.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("ModelInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageContainerDefinition.setModelInput(ModelInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Framework", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageContainerDefinition.setFramework(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameworkVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageContainerDefinition.setFrameworkVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NearestModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackageContainerDefinition.setNearestModelName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

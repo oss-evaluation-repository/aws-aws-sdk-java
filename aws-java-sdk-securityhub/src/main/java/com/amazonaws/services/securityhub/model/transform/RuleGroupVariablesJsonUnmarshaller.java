@@ -43,18 +43,28 @@ public class RuleGroupVariablesJsonUnmarshaller implements Unmarshaller<RuleGrou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IpSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupVariables.setIpSets(RuleGroupVariablesIpSetsDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PortSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupVariables.setPortSets(RuleGroupVariablesPortSetsDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

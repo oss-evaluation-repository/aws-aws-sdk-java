@@ -43,108 +43,139 @@ public class PatchJsonUnmarshaller implements Unmarshaller<Patch, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReleaseDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setReleaseDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setContentUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Vendor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setVendor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductFamily", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setProductFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Product", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setProduct(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Classification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setClassification(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MsrcSeverity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setMsrcSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KbNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setKbNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MsrcNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setMsrcNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Language", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setLanguage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdvisoryIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setAdvisoryIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BugzillaIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setBugzillaIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CVEIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setCVEIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Epoch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setEpoch(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Release", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setRelease(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setArch(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Repository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patch.setRepository(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

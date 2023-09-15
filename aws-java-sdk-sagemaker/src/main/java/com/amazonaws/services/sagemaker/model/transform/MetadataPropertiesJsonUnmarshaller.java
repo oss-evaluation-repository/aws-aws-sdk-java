@@ -43,26 +43,38 @@ public class MetadataPropertiesJsonUnmarshaller implements Unmarshaller<Metadata
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metadataProperties.setCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Repository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metadataProperties.setRepository(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GeneratedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metadataProperties.setGeneratedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProjectId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metadataProperties.setProjectId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

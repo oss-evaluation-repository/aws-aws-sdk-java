@@ -43,22 +43,33 @@ public class SshPublicKeyJsonUnmarshaller implements Unmarshaller<SshPublicKey, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DateImported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sshPublicKey.setDateImported(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SshPublicKeyBody", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sshPublicKey.setSshPublicKeyBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshPublicKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sshPublicKey.setSshPublicKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

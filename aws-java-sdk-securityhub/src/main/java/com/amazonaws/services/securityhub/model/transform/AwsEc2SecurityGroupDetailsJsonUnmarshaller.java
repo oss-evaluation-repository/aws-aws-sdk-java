@@ -43,28 +43,37 @@ public class AwsEc2SecurityGroupDetailsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupDetails.setGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupDetails.setGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupDetails.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpPermissions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupDetails.setIpPermissions(new ListUnmarshaller<AwsEc2SecurityGroupIpPermission>(
                             AwsEc2SecurityGroupIpPermissionJsonUnmarshaller.getInstance())
@@ -72,11 +81,16 @@ public class AwsEc2SecurityGroupDetailsJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("IpPermissionsEgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2SecurityGroupDetails.setIpPermissionsEgress(new ListUnmarshaller<AwsEc2SecurityGroupIpPermission>(
                             AwsEc2SecurityGroupIpPermissionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

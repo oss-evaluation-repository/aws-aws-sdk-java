@@ -43,58 +43,78 @@ public class NetworkJsonUnmarshaller implements Unmarshaller<Network, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Direction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpenPortRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setOpenPortRange(PortRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SourceIpV4", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setSourceIpV4(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceIpV6", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setSourceIpV6(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourcePort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setSourcePort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setSourceDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceMac", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setSourceMac(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationIpV4", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setDestinationIpV4(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationIpV6", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setDestinationIpV6(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setDestinationPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     network.setDestinationDomain(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

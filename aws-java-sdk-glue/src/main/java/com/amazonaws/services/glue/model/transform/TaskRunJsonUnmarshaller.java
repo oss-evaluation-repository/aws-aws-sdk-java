@@ -43,50 +43,68 @@ public class TaskRunJsonUnmarshaller implements Unmarshaller<TaskRun, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TransformId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRun.setTransformId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRun.setTaskRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRun.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRun.setLogGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRun.setProperties(TaskRunPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ErrorString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRun.setErrorString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRun.setStartedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRun.setLastModifiedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRun.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRun.setExecutionTime(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

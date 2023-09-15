@@ -43,20 +43,27 @@ public class BudgetPerformanceHistoryJsonUnmarshaller implements Unmarshaller<Bu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BudgetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budgetPerformanceHistory.setBudgetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BudgetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budgetPerformanceHistory.setBudgetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CostFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budgetPerformanceHistory.setCostFilters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -64,19 +71,26 @@ public class BudgetPerformanceHistoryJsonUnmarshaller implements Unmarshaller<Bu
                     ).unmarshall(context));
                 }
                 if (context.testExpression("CostTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budgetPerformanceHistory.setCostTypes(CostTypesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budgetPerformanceHistory.setTimeUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BudgetedAndActualAmountsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budgetPerformanceHistory.setBudgetedAndActualAmountsList(new ListUnmarshaller<BudgetedAndActualAmounts>(
                             BudgetedAndActualAmountsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

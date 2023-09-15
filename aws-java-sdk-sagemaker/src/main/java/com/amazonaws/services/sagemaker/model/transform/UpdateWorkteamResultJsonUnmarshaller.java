@@ -43,14 +43,23 @@ public class UpdateWorkteamResultJsonUnmarshaller implements Unmarshaller<Update
             return updateWorkteamResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Workteam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkteamResult.setWorkteam(WorkteamJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

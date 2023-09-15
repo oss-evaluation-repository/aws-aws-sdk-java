@@ -43,64 +43,84 @@ public class VPCConnectionJsonUnmarshaller implements Unmarshaller<VPCConnection
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VPCConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setVPCConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VPCId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setVPCId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DnsResolvers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setDnsResolvers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setAvailabilityStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCConnection.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class SplunkDestinationUpdateJsonUnmarshaller implements Unmarshaller<Spl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HECEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     splunkDestinationUpdate.setHECEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HECEndpointType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     splunkDestinationUpdate.setHECEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HECToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     splunkDestinationUpdate.setHECToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HECAcknowledgmentTimeoutInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     splunkDestinationUpdate.setHECAcknowledgmentTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RetryOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     splunkDestinationUpdate.setRetryOptions(SplunkRetryOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3BackupMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     splunkDestinationUpdate.setS3BackupMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Update", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     splunkDestinationUpdate.setS3Update(S3DestinationUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     splunkDestinationUpdate.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     splunkDestinationUpdate.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,35 +43,49 @@ public class CreateSolNetworkPackageResultJsonUnmarshaller implements Unmarshall
             return createSolNetworkPackageResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSolNetworkPackageResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSolNetworkPackageResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdOnboardingState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSolNetworkPackageResult.setNsdOnboardingState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdOperationalState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSolNetworkPackageResult.setNsdOperationalState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdUsageState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSolNetworkPackageResult.setNsdUsageState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSolNetworkPackageResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

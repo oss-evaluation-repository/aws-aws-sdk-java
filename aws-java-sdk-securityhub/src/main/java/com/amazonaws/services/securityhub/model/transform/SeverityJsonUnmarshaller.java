@@ -43,26 +43,38 @@ public class SeverityJsonUnmarshaller implements Unmarshaller<Severity, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Product", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severity.setProduct(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severity.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Normalized", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severity.setNormalized(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Original", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     severity.setOriginal(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

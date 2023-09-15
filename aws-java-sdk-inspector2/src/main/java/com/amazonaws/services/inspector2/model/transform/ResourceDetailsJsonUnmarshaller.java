@@ -43,22 +43,33 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("awsEc2Instance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDetails.setAwsEc2Instance(AwsEc2InstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("awsEcrContainerImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDetails.setAwsEcrContainerImage(AwsEcrContainerImageDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("awsLambdaFunction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDetails.setAwsLambdaFunction(AwsLambdaFunctionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

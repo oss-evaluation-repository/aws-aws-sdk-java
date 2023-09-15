@@ -43,46 +43,63 @@ public class KeyUsageJsonUnmarshaller implements Unmarshaller<KeyUsage, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DigitalSignature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsage.setDigitalSignature(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NonRepudiation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsage.setNonRepudiation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyEncipherment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsage.setKeyEncipherment(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DataEncipherment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsage.setDataEncipherment(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyAgreement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsage.setKeyAgreement(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyCertSign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsage.setKeyCertSign(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CRLSign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsage.setCRLSign(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EncipherOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsage.setEncipherOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DecipherOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keyUsage.setDecipherOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

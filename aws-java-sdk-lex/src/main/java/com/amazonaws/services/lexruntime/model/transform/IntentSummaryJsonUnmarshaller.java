@@ -43,39 +43,54 @@ public class IntentSummaryJsonUnmarshaller implements Unmarshaller<IntentSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("intentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setIntentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("checkpointLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setCheckpointLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setSlots(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("confirmationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setConfirmationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dialogActionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setDialogActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fulfillmentState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setFulfillmentState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotToElicit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentSummary.setSlotToElicit(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

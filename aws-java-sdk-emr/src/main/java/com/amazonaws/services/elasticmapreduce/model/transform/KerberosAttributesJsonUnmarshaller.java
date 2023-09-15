@@ -43,30 +43,43 @@ public class KerberosAttributesJsonUnmarshaller implements Unmarshaller<Kerberos
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Realm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kerberosAttributes.setRealm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KdcAdminPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kerberosAttributes.setKdcAdminPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CrossRealmTrustPrincipalPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kerberosAttributes.setCrossRealmTrustPrincipalPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ADDomainJoinUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kerberosAttributes.setADDomainJoinUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ADDomainJoinPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kerberosAttributes.setADDomainJoinPassword(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

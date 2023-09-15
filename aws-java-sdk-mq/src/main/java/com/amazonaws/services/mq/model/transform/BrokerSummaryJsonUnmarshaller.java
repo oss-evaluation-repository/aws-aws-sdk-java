@@ -43,42 +43,58 @@ public class BrokerSummaryJsonUnmarshaller implements Unmarshaller<BrokerSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("brokerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSummary.setBrokerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("brokerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSummary.setBrokerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("brokerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSummary.setBrokerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("brokerState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSummary.setBrokerState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSummary.setCreated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("deploymentMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSummary.setDeploymentMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engineType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSummary.setEngineType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerSummary.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

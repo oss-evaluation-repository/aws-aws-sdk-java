@@ -43,22 +43,33 @@ public class SuspendedStateJsonUnmarshaller implements Unmarshaller<SuspendedSta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DynamicScalingInSuspended", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suspendedState.setDynamicScalingInSuspended(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DynamicScalingOutSuspended", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suspendedState.setDynamicScalingOutSuspended(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduledScalingSuspended", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suspendedState.setScheduledScalingSuspended(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

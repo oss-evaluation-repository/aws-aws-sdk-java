@@ -43,32 +43,45 @@ public class UpdateIntegrationResponseResultJsonUnmarshaller implements Unmarsha
             return updateIntegrationResponseResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("statusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("selectionPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setSelectionPattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("responseParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setResponseParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("responseTemplates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setResponseTemplates(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("contentHandling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setContentHandling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

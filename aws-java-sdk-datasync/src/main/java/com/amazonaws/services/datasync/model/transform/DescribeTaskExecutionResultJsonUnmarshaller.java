@@ -43,90 +43,117 @@ public class DescribeTaskExecutionResultJsonUnmarshaller implements Unmarshaller
             return describeTaskExecutionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TaskExecutionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setTaskExecutionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Options", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setOptions(OptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Excludes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setExcludes(new ListUnmarshaller<FilterRule>(FilterRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Includes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setIncludes(new ListUnmarshaller<FilterRule>(FilterRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EstimatedFilesToTransfer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setEstimatedFilesToTransfer(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedBytesToTransfer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setEstimatedBytesToTransfer(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FilesTransferred", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setFilesTransferred(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("BytesWritten", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setBytesWritten(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("BytesTransferred", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setBytesTransferred(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Result", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setResult(TaskExecutionResultDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BytesCompressed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setBytesCompressed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskReportConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setTaskReportConfig(TaskReportConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FilesDeleted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setFilesDeleted(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FilesSkipped", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setFilesSkipped(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FilesVerified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setFilesVerified(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setReportResult(ReportResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EstimatedFilesToDelete", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTaskExecutionResult.setEstimatedFilesToDelete(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

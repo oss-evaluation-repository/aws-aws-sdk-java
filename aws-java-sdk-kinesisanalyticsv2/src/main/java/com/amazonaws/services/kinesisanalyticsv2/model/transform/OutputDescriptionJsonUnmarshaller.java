@@ -43,34 +43,48 @@ public class OutputDescriptionJsonUnmarshaller implements Unmarshaller<OutputDes
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OutputId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputDescription.setOutputId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KinesisStreamsOutputDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputDescription.setKinesisStreamsOutputDescription(KinesisStreamsOutputDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisFirehoseOutputDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputDescription.setKinesisFirehoseOutputDescription(KinesisFirehoseOutputDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LambdaOutputDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputDescription.setLambdaOutputDescription(LambdaOutputDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DestinationSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputDescription.setDestinationSchema(DestinationSchemaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

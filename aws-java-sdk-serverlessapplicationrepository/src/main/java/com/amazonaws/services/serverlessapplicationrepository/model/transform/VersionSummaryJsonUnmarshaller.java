@@ -43,26 +43,38 @@ public class VersionSummaryJsonUnmarshaller implements Unmarshaller<VersionSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     versionSummary.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     versionSummary.setCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("semanticVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     versionSummary.setSemanticVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceCodeUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     versionSummary.setSourceCodeUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

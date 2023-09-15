@@ -43,42 +43,57 @@ public class ResourceChangeJsonUnmarshaller implements Unmarshaller<ResourceChan
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceChange.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogicalResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceChange.setLogicalResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhysicalResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceChange.setPhysicalResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceChange.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Replacement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceChange.setReplacement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Scope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceChange.setScope(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Details", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceChange.setDetails(new ListUnmarshaller<ResourceChangeDetail>(ResourceChangeDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

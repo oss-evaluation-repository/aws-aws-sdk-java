@@ -43,46 +43,63 @@ public class FlywheelSummaryJsonUnmarshaller implements Unmarshaller<FlywheelSum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FlywheelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelSummary.setFlywheelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ActiveModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelSummary.setActiveModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataLakeS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelSummary.setDataLakeS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelSummary.setModelType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelSummary.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestFlywheelIteration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelSummary.setLatestFlywheelIteration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

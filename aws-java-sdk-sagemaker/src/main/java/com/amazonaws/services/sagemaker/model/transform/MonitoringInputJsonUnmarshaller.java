@@ -43,18 +43,28 @@ public class MonitoringInputJsonUnmarshaller implements Unmarshaller<MonitoringI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndpointInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringInput.setEndpointInput(EndpointInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BatchTransformInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringInput.setBatchTransformInput(BatchTransformInputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

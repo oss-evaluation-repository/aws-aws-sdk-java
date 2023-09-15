@@ -43,22 +43,33 @@ public class NodegroupScalingConfigJsonUnmarshaller implements Unmarshaller<Node
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("minSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodegroupScalingConfig.setMinSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodegroupScalingConfig.setMaxSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("desiredSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodegroupScalingConfig.setDesiredSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

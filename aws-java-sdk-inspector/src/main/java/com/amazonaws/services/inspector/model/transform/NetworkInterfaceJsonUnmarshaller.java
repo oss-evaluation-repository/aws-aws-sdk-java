@@ -43,56 +43,74 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("privateDnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setPrivateDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("privateIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setPrivateIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("privateIpAddresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setPrivateIpAddresses(new ListUnmarshaller<PrivateIp>(PrivateIpJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("publicDnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setPublicDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("publicIp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setPublicIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipv6Addresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setIpv6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setSecurityGroups(new ListUnmarshaller<SecurityGroup>(SecurityGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

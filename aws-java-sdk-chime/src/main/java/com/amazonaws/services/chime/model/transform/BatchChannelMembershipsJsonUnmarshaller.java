@@ -43,28 +43,40 @@ public class BatchChannelMembershipsJsonUnmarshaller implements Unmarshaller<Bat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InvitedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchChannelMemberships.setInvitedBy(IdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchChannelMemberships.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Members", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchChannelMemberships.setMembers(new ListUnmarshaller<Identity>(IdentityJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ChannelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchChannelMemberships.setChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

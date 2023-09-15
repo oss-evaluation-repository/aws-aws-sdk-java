@@ -43,58 +43,78 @@ public class DescribeReplayResultJsonUnmarshaller implements Unmarshaller<Descri
             return describeReplayResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setReplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplayArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setReplayArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventSourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setEventSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setDestination(ReplayDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setEventStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EventEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setEventEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EventLastReplayedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setEventLastReplayedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReplayStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setReplayStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReplayEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeReplayResult.setReplayEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

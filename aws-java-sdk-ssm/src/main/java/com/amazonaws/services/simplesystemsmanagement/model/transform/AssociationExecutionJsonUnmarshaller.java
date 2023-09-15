@@ -43,52 +43,70 @@ public class AssociationExecutionJsonUnmarshaller implements Unmarshaller<Associ
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationExecution.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationExecution.setAssociationVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationExecution.setExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationExecution.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DetailedStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationExecution.setDetailedStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationExecution.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastExecutionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationExecution.setLastExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceCountByStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationExecution.setResourceCountByStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlarmConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationExecution.setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TriggeredAlarms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationExecution.setTriggeredAlarms(new ListUnmarshaller<AlarmStateInformation>(AlarmStateInformationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class CanaryRunConfigOutputJsonUnmarshaller implements Unmarshaller<Canar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TimeoutInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canaryRunConfigOutput.setTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MemoryInMB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canaryRunConfigOutput.setMemoryInMB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ActiveTracing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canaryRunConfigOutput.setActiveTracing(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

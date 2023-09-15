@@ -43,42 +43,58 @@ public class CrawlerMetricsJsonUnmarshaller implements Unmarshaller<CrawlerMetri
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CrawlerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerMetrics.setCrawlerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeLeftSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerMetrics.setTimeLeftSeconds(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("StillEstimating", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerMetrics.setStillEstimating(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LastRuntimeSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerMetrics.setLastRuntimeSeconds(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MedianRuntimeSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerMetrics.setMedianRuntimeSeconds(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerMetrics.setTablesCreated(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerMetrics.setTablesUpdated(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesDeleted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerMetrics.setTablesDeleted(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

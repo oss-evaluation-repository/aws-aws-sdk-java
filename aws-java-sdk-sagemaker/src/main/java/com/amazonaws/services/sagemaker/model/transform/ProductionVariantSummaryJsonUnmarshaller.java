@@ -43,38 +43,49 @@ public class ProductionVariantSummaryJsonUnmarshaller implements Unmarshaller<Pr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VariantName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariantSummary.setVariantName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeployedImages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariantSummary.setDeployedImages(new ListUnmarshaller<DeployedImage>(DeployedImageJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CurrentWeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariantSummary.setCurrentWeight(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("DesiredWeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariantSummary.setDesiredWeight(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentInstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariantSummary.setCurrentInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DesiredInstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariantSummary.setDesiredInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VariantStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariantSummary.setVariantStatus(new ListUnmarshaller<ProductionVariantStatus>(ProductionVariantStatusJsonUnmarshaller
                             .getInstance())
@@ -82,12 +93,18 @@ public class ProductionVariantSummaryJsonUnmarshaller implements Unmarshaller<Pr
                     .unmarshall(context));
                 }
                 if (context.testExpression("CurrentServerlessConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariantSummary.setCurrentServerlessConfig(ProductionVariantServerlessConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DesiredServerlessConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariantSummary.setDesiredServerlessConfig(ProductionVariantServerlessConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

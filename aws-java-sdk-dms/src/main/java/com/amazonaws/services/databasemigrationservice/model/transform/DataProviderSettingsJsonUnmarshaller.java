@@ -43,27 +43,39 @@ public class DataProviderSettingsJsonUnmarshaller implements Unmarshaller<DataPr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PostgreSqlSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProviderSettings.setPostgreSqlSettings(PostgreSqlDataProviderSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MySqlSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProviderSettings.setMySqlSettings(MySqlDataProviderSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OracleSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProviderSettings.setOracleSettings(OracleDataProviderSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MicrosoftSqlServerSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProviderSettings
                             .setMicrosoftSqlServerSettings(MicrosoftSqlServerDataProviderSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

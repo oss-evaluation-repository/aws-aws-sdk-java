@@ -43,24 +43,35 @@ public class OrganizationalUnitScopeJsonUnmarshaller implements Unmarshaller<Org
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OrganizationalUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationalUnitScope.setOrganizationalUnits(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AllOrganizationalUnitsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationalUnitScope.setAllOrganizationalUnitsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExcludeSpecifiedOrganizationalUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationalUnitScope.setExcludeSpecifiedOrganizationalUnits(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

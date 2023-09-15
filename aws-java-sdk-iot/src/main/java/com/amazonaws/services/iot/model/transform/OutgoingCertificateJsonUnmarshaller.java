@@ -43,34 +43,48 @@ public class OutgoingCertificateJsonUnmarshaller implements Unmarshaller<Outgoin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("certificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outgoingCertificate.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outgoingCertificate.setCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transferredTo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outgoingCertificate.setTransferredTo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transferDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outgoingCertificate.setTransferDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("transferMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outgoingCertificate.setTransferMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outgoingCertificate.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

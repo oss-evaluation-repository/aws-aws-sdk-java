@@ -43,24 +43,32 @@ public class VoiceMessageJsonUnmarshaller implements Unmarshaller<VoiceMessage, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Body", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceMessage.setBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceMessage.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginationNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceMessage.setOriginationNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Substitutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceMessage.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -68,8 +76,13 @@ public class VoiceMessageJsonUnmarshaller implements Unmarshaller<VoiceMessage, 
                     ).unmarshall(context));
                 }
                 if (context.testExpression("VoiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceMessage.setVoiceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

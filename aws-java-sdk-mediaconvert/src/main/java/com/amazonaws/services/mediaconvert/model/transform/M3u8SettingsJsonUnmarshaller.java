@@ -43,96 +43,125 @@ public class M3u8SettingsJsonUnmarshaller implements Unmarshaller<M3u8Settings, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setAudioDuration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioFramesPerPes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setAudioFramesPerPes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("audioPids", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setAudioPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("dataPTSControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setDataPTSControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maxPcrInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setMaxPcrInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("nielsenId3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setNielsenId3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("patInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPatInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pcrControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPcrControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pcrPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPcrPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pmtInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPmtInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pmtPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPmtPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("privateMetadataPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPrivateMetadataPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("programNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setProgramNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ptsOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPtsOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ptsOffsetMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setPtsOffsetMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scte35Pid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setScte35Pid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("scte35Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setScte35Source(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setTimedMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setTimedMetadataPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("transportStreamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setTransportStreamId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("videoPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     m3u8Settings.setVideoPid(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

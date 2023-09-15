@@ -43,64 +43,85 @@ public class CreateApplicationResultJsonUnmarshaller implements Unmarshaller<Cre
             return createApplicationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("author", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setAuthor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("homePageUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setHomePageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isVerifiedAuthor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setIsVerifiedAuthor(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("labels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("licenseUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setLicenseUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("readmeUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setReadmeUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("spdxLicenseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setSpdxLicenseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("verifiedAuthorUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setVerifiedAuthorUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createApplicationResult.setVersion(VersionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

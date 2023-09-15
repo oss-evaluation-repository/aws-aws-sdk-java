@@ -43,30 +43,43 @@ public class EventTopicJsonUnmarshaller implements Unmarshaller<EventTopic, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventTopic.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventTopic.setTopicName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventTopic.setTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventTopic.setCreatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventTopic.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

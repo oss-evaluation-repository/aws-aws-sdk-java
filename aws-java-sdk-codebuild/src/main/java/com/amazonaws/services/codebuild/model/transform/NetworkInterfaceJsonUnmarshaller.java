@@ -43,18 +43,28 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("subnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkInterface.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

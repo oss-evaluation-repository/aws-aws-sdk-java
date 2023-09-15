@@ -43,48 +43,65 @@ public class ComputeConfigJsonUnmarshaller implements Unmarshaller<ComputeConfig
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeConfig.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsNameServers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeConfig.setDnsNameServers(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeConfig.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeConfig.setMaxCapacityUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeConfig.setMinCapacityUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MultiAZ", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeConfig.setMultiAZ(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PreferredMaintenanceWindow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeConfig.setPreferredMaintenanceWindow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationSubnetGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeConfig.setReplicationSubnetGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcSecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeConfig.setVpcSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,21 +44,31 @@ public class DescribeBandwidthRateLimitScheduleResultJsonUnmarshaller implements
             return describeBandwidthRateLimitScheduleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBandwidthRateLimitScheduleResult.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BandwidthRateLimitIntervals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBandwidthRateLimitScheduleResult.setBandwidthRateLimitIntervals(new ListUnmarshaller<BandwidthRateLimitInterval>(
                             BandwidthRateLimitIntervalJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

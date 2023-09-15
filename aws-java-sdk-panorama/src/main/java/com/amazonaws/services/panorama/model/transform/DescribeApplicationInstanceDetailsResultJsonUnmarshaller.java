@@ -44,43 +44,59 @@ public class DescribeApplicationInstanceDetailsResultJsonUnmarshaller implements
             return describeApplicationInstanceDetailsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceDetailsResult.setApplicationInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationInstanceIdToReplace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceDetailsResult.setApplicationInstanceIdToReplace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceDetailsResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DefaultRuntimeContextDevice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceDetailsResult.setDefaultRuntimeContextDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceDetailsResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ManifestOverridesPayload", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceDetailsResult.setManifestOverridesPayload(ManifestOverridesPayloadJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ManifestPayload", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceDetailsResult.setManifestPayload(ManifestPayloadJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceDetailsResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

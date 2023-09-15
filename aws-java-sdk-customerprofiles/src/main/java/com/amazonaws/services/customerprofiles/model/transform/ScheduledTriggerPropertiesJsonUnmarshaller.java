@@ -43,38 +43,53 @@ public class ScheduledTriggerPropertiesJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledTriggerProperties.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataPullMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledTriggerProperties.setDataPullMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledTriggerProperties.setScheduleStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ScheduleEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledTriggerProperties.setScheduleEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledTriggerProperties.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledTriggerProperties.setScheduleOffset(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FirstExecutionFrom", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledTriggerProperties.setFirstExecutionFrom(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

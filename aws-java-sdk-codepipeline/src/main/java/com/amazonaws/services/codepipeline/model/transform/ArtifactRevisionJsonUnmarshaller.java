@@ -43,34 +43,48 @@ public class ArtifactRevisionJsonUnmarshaller implements Unmarshaller<ArtifactRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactRevision.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactRevision.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionChangeIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactRevision.setRevisionChangeIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactRevision.setRevisionSummary(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactRevision.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("revisionUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactRevision.setRevisionUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

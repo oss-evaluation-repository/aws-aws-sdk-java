@@ -44,12 +44,17 @@ public class DescribeDirectConnectGatewayAttachmentsResultJsonUnmarshaller imple
             return describeDirectConnectGatewayAttachmentsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("directConnectGatewayAttachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDirectConnectGatewayAttachmentsResult.setDirectConnectGatewayAttachments(new ListUnmarshaller<DirectConnectGatewayAttachment>(
                             DirectConnectGatewayAttachmentJsonUnmarshaller.getInstance())
@@ -57,8 +62,13 @@ public class DescribeDirectConnectGatewayAttachmentsResultJsonUnmarshaller imple
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDirectConnectGatewayAttachmentsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

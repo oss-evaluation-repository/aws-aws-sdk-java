@@ -43,82 +43,108 @@ public class EntityRecognizerPropertiesJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EntityRecognizerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setEntityRecognizerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setTrainingStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setTrainingEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setInputDataConfig(EntityRecognizerInputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RecognizerMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setRecognizerMetadata(EntityRecognizerMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setModelKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setSourceModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FlywheelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setFlywheelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entityRecognizerProperties.setOutputDataConfig(EntityRecognizerOutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

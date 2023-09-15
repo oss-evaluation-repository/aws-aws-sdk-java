@@ -43,40 +43,55 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastReportedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setLastReportedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("OwningAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setOwningAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setProperties(new ListUnmarshaller<ResourceProperty>(ResourcePropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Service", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setService(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

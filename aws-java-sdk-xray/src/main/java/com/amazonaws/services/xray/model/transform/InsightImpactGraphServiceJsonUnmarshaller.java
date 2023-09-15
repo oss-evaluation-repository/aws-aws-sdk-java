@@ -43,38 +43,52 @@ public class InsightImpactGraphServiceJsonUnmarshaller implements Unmarshaller<I
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightImpactGraphService.setReferenceId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightImpactGraphService.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightImpactGraphService.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Names", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightImpactGraphService.setNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightImpactGraphService.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Edges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightImpactGraphService.setEdges(new ListUnmarshaller<InsightImpactGraphEdge>(InsightImpactGraphEdgeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

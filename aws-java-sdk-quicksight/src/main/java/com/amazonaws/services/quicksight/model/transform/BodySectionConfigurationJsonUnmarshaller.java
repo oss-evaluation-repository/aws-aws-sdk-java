@@ -43,26 +43,38 @@ public class BodySectionConfigurationJsonUnmarshaller implements Unmarshaller<Bo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bodySectionConfiguration.setSectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bodySectionConfiguration.setContent(BodySectionContentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Style", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bodySectionConfiguration.setStyle(SectionStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PageBreakConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bodySectionConfiguration.setPageBreakConfiguration(SectionPageBreakConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

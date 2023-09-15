@@ -43,18 +43,28 @@ public class ScalingPolicyObjectiveJsonUnmarshaller implements Unmarshaller<Scal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MinInvocationsPerMinute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicyObjective.setMinInvocationsPerMinute(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxInvocationsPerMinute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicyObjective.setMaxInvocationsPerMinute(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

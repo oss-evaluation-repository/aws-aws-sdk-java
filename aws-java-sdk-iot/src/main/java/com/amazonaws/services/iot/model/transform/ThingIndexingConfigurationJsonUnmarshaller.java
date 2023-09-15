@@ -43,42 +43,57 @@ public class ThingIndexingConfigurationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("thingIndexingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingIndexingConfiguration.setThingIndexingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingConnectivityIndexingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingIndexingConfiguration.setThingConnectivityIndexingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceDefenderIndexingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingIndexingConfiguration.setDeviceDefenderIndexingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namedShadowIndexingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingIndexingConfiguration.setNamedShadowIndexingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("managedFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingIndexingConfiguration.setManagedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("customFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingIndexingConfiguration.setCustomFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("filter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingIndexingConfiguration.setFilter(IndexingFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

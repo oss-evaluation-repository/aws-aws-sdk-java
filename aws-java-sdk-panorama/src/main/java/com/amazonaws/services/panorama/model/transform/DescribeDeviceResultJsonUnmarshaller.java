@@ -43,12 +43,17 @@ public class DescribeDeviceResultJsonUnmarshaller implements Unmarshaller<Descri
             return describeDeviceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AlternateSoftwares", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setAlternateSoftwares(new ListUnmarshaller<AlternateSoftwareMetadata>(AlternateSoftwareMetadataJsonUnmarshaller
                             .getInstance())
@@ -56,81 +61,104 @@ public class DescribeDeviceResultJsonUnmarshaller implements Unmarshaller<Descri
                     .unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Brand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setBrand(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CurrentNetworkingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setCurrentNetworkingStatus(NetworkStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CurrentSoftware", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setCurrentSoftware(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceAggregatedStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setDeviceAggregatedStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceConnectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setDeviceConnectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestAlternateSoftware", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setLatestAlternateSoftware(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestDeviceJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setLatestDeviceJob(LatestDeviceJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LatestSoftware", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setLatestSoftware(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LeaseExpirationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setLeaseExpirationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setNetworkingConfiguration(NetworkPayloadJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProvisioningStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setProvisioningStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SerialNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setSerialNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

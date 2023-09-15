@@ -43,80 +43,103 @@ public class AwsOpenSearchServiceDomainDetailsJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setAccessPolicies(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setDomainEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionAtRestOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setEncryptionAtRestOptions(AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NodeToNodeEncryptionOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails
                             .setNodeToNodeEncryptionOptions(AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("ServiceSoftwareOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setServiceSoftwareOptions(AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ClusterConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setClusterConfig(AwsOpenSearchServiceDomainClusterConfigDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("DomainEndpointOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setDomainEndpointOptions(AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VpcOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setVpcOptions(AwsOpenSearchServiceDomainVpcOptionsDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("LogPublishingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setLogPublishingOptions(AwsOpenSearchServiceDomainLogPublishingOptionsDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DomainEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setDomainEndpoints(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("AdvancedSecurityOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainDetails.setAdvancedSecurityOptions(AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

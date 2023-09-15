@@ -43,70 +43,93 @@ public class ClusterMetadataJsonUnmarshaller implements Unmarshaller<ClusterMeta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClusterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setClusterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setKmsKeyARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setClusterState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnowballType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setSnowballType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Resources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setResources(JobResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AddressId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setAddressId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShippingOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setShippingOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Notification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setNotification(NotificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ForwardingAddressId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setForwardingAddressId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaxDocuments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setTaxDocuments(TaxDocumentsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OnDeviceServiceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterMetadata.setOnDeviceServiceConfiguration(OnDeviceServiceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class SearchQuickConnectsResultJsonUnmarshaller implements Unmarshaller<S
             return searchQuickConnectsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QuickConnects", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchQuickConnectsResult.setQuickConnects(new ListUnmarshaller<QuickConnect>(QuickConnectJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchQuickConnectsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApproximateTotalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchQuickConnectsResult.setApproximateTotalCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

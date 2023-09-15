@@ -43,55 +43,74 @@ public class DescribeDashboardSnapshotJobResultJsonUnmarshaller implements Unmar
             return describeDashboardSnapshotJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AwsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DashboardId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult.setDashboardId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult.setSnapshotJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult
                             .setUserConfiguration(SnapshotUserConfigurationRedactedJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SnapshotConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult.setSnapshotConfiguration(SnapshotConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardSnapshotJobResult.setStatus(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

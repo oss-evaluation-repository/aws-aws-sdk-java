@@ -43,32 +43,45 @@ public class GetMailDomainResultJsonUnmarshaller implements Unmarshaller<GetMail
             return getMailDomainResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Records", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMailDomainResult.setRecords(new ListUnmarshaller<DnsRecord>(DnsRecordJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IsTestDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMailDomainResult.setIsTestDomain(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IsDefault", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMailDomainResult.setIsDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnershipVerificationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMailDomainResult.setOwnershipVerificationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DkimVerificationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMailDomainResult.setDkimVerificationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

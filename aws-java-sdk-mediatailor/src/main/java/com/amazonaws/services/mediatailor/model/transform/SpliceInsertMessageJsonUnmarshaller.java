@@ -43,26 +43,38 @@ public class SpliceInsertMessageJsonUnmarshaller implements Unmarshaller<SpliceI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AvailNum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     spliceInsertMessage.setAvailNum(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailsExpected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     spliceInsertMessage.setAvailsExpected(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SpliceEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     spliceInsertMessage.setSpliceEventId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UniqueProgramId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     spliceInsertMessage.setUniqueProgramId(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

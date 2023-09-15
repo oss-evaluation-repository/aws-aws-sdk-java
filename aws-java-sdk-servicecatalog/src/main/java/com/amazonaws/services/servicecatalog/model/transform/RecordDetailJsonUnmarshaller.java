@@ -43,70 +43,92 @@ public class RecordDetailJsonUnmarshaller implements Unmarshaller<RecordDetail, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RecordId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setRecordId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedProductName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setProvisionedProductName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedProductType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setProvisionedProductType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecordType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setRecordType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedProductId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setProvisionedProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisioningArtifactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setProvisioningArtifactId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PathId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setPathId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecordErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setRecordErrors(new ListUnmarshaller<RecordError>(RecordErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RecordTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setRecordTags(new ListUnmarshaller<RecordTag>(RecordTagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LaunchRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordDetail.setLaunchRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

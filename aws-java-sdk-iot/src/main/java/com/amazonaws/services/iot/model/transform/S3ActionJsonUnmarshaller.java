@@ -43,26 +43,38 @@ public class S3ActionJsonUnmarshaller implements Unmarshaller<S3Action, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Action.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Action.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Action.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cannedAcl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Action.setCannedAcl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

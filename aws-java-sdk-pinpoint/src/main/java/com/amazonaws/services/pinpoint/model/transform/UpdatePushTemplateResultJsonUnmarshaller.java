@@ -43,9 +43,13 @@ public class UpdatePushTemplateResultJsonUnmarshaller implements Unmarshaller<Up
             return updatePushTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updatePushTemplateResult.setMessageBody(MessageBodyJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

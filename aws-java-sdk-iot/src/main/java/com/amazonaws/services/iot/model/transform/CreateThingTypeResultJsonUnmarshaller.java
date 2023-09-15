@@ -43,22 +43,33 @@ public class CreateThingTypeResultJsonUnmarshaller implements Unmarshaller<Creat
             return createThingTypeResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("thingTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createThingTypeResult.setThingTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingTypeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createThingTypeResult.setThingTypeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createThingTypeResult.setThingTypeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

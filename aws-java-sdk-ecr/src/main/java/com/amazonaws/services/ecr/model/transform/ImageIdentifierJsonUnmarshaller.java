@@ -43,18 +43,28 @@ public class ImageIdentifierJsonUnmarshaller implements Unmarshaller<ImageIdenti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageDigest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageIdentifier.setImageDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageTag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageIdentifier.setImageTag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

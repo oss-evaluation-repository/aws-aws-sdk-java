@@ -43,40 +43,55 @@ public class CreateEndpointResultJsonUnmarshaller implements Unmarshaller<Create
             return createEndpointResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createEndpointResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createEndpointResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoutingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createEndpointResult.setRoutingConfig(RoutingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReplicationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createEndpointResult.setReplicationConfig(ReplicationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventBuses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createEndpointResult.setEventBuses(new ListUnmarshaller<EndpointEventBus>(EndpointEventBusJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createEndpointResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createEndpointResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

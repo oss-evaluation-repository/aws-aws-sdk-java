@@ -43,34 +43,48 @@ public class CredentialSummaryJsonUnmarshaller implements Unmarshaller<Credentia
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     credentialSummary.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("failed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     credentialSummary.setFailed(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("issuer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     credentialSummary.setIssuer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("seenAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     credentialSummary.setSeenAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("serialNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     credentialSummary.setSerialNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("x509CertificateData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     credentialSummary.setX509CertificateData(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

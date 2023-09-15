@@ -43,62 +43,83 @@ public class Vp8SettingsJsonUnmarshaller implements Unmarshaller<Vp8Settings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setFramerateControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateConversionAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setFramerateConversionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setFramerateDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setFramerateNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setGopSize(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("hrdBufferSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setHrdBufferSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setMaxBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setParControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setParDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setParNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("qualityTuningLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setQualityTuningLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rateControlMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vp8Settings.setRateControlMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

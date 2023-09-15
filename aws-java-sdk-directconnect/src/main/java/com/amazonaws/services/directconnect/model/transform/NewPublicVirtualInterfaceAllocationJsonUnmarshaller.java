@@ -43,40 +43,52 @@ public class NewPublicVirtualInterfaceAllocationJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("virtualInterfaceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setVirtualInterfaceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setVlan(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("asn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("authKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setAuthKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("amazonAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setAmazonAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("customerAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setCustomerAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("addressFamily", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setAddressFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeFilterPrefixes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setRouteFilterPrefixes(new ListUnmarshaller<RouteFilterPrefix>(RouteFilterPrefixJsonUnmarshaller
                             .getInstance())
@@ -84,10 +96,15 @@ public class NewPublicVirtualInterfaceAllocationJsonUnmarshaller implements Unma
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

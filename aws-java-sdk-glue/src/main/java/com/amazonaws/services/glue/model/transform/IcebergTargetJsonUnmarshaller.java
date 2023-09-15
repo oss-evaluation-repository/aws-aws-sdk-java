@@ -43,30 +43,42 @@ public class IcebergTargetJsonUnmarshaller implements Unmarshaller<IcebergTarget
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Paths", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     icebergTarget.setPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConnectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     icebergTarget.setConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Exclusions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     icebergTarget.setExclusions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MaximumTraversalDepth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     icebergTarget.setMaximumTraversalDepth(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

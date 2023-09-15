@@ -44,23 +44,34 @@ public class UpdateManagedRuleSetVersionExpiryDateResultJsonUnmarshaller impleme
             return updateManagedRuleSetVersionExpiryDateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExpiringVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateManagedRuleSetVersionExpiryDateResult.setExpiringVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpiryTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateManagedRuleSetVersionExpiryDateResult
                             .setExpiryTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NextLockToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateManagedRuleSetVersionExpiryDateResult.setNextLockToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

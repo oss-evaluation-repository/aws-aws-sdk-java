@@ -43,87 +43,114 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setJobRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("executionRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setStateDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("releaseLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setReleaseLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationOverrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setConfigurationOverrides(ConfigurationOverridesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobDriver", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setJobDriver(JobDriverJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("totalResourceUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setTotalResourceUtilization(TotalResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("networkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("totalExecutionDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setTotalExecutionDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("executionTimeoutMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setExecutionTimeoutMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("billedResourceUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobRun.setBilledResourceUtilization(ResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

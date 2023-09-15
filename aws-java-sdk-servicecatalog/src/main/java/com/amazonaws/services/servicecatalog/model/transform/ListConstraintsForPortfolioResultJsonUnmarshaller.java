@@ -43,12 +43,17 @@ public class ListConstraintsForPortfolioResultJsonUnmarshaller implements Unmars
             return listConstraintsForPortfolioResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConstraintDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listConstraintsForPortfolioResult.setConstraintDetails(new ListUnmarshaller<ConstraintDetail>(ConstraintDetailJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListConstraintsForPortfolioResultJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listConstraintsForPortfolioResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

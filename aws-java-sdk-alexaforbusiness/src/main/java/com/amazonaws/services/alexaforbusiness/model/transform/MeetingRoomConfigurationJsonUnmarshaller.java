@@ -43,30 +43,43 @@ public class MeetingRoomConfigurationJsonUnmarshaller implements Unmarshaller<Me
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoomUtilizationMetricsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meetingRoomConfiguration.setRoomUtilizationMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EndOfMeetingReminder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meetingRoomConfiguration.setEndOfMeetingReminder(EndOfMeetingReminderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InstantBooking", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meetingRoomConfiguration.setInstantBooking(InstantBookingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RequireCheckIn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meetingRoomConfiguration.setRequireCheckIn(RequireCheckInJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProactiveJoin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meetingRoomConfiguration.setProactiveJoin(ProactiveJoinJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

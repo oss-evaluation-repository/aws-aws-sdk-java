@@ -43,22 +43,33 @@ public class ThingConnectivityJsonUnmarshaller implements Unmarshaller<ThingConn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingConnectivity.setConnected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingConnectivity.setTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("disconnectReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingConnectivity.setDisconnectReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

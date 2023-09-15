@@ -43,46 +43,62 @@ public class GetContactResultJsonUnmarshaller implements Unmarshaller<GetContact
             return getContactResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContactListName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactResult.setContactListName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactResult.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicPreferences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactResult.setTopicPreferences(new ListUnmarshaller<TopicPreference>(TopicPreferenceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TopicDefaultPreferences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactResult.setTopicDefaultPreferences(new ListUnmarshaller<TopicPreference>(TopicPreferenceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UnsubscribeAll", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactResult.setUnsubscribeAll(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributesData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactResult.setAttributesData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactResult.setLastUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

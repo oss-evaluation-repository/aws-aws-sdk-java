@@ -43,56 +43,75 @@ public class DatabaseJsonUnmarshaller implements Unmarshaller<Database, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComponentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setComponentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Credentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setCredentials(new ListUnmarshaller<ApplicationCredential>(ApplicationCredentialJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DatabaseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setDatabaseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setDatabaseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrimaryHost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setPrimaryHost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SQLPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setSQLPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     database.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class LogsLocationJsonUnmarshaller implements Unmarshaller<LogsLocation, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("groupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logsLocation.setGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logsLocation.setStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deepLink", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logsLocation.setDeepLink(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3DeepLink", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logsLocation.setS3DeepLink(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cloudWatchLogsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logsLocation.setCloudWatchLogsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3LogsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logsLocation.setS3LogsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cloudWatchLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logsLocation.setCloudWatchLogs(CloudWatchLogsConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3Logs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logsLocation.setS3Logs(S3LogsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,30 @@ public class DataSetImportConfigJsonUnmarshaller implements Unmarshaller<DataSet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetImportConfig.setDataSets(new ListUnmarshaller<DataSetImportItem>(DataSetImportItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("s3Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetImportConfig.setS3Location(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

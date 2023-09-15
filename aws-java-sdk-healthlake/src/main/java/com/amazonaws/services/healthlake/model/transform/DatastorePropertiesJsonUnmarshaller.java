@@ -43,50 +43,68 @@ public class DatastorePropertiesJsonUnmarshaller implements Unmarshaller<Datasto
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatastoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setDatastoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatastoreArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setDatastoreArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatastoreName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setDatastoreName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatastoreStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setDatastoreStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DatastoreTypeVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setDatastoreTypeVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatastoreEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setDatastoreEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SseConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setSseConfiguration(SseConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PreloadDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setPreloadDataConfig(PreloadDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IdentityProviderConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreProperties.setIdentityProviderConfiguration(IdentityProviderConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class GetContactChannelResultJsonUnmarshaller implements Unmarshaller<Get
             return getContactChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContactArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactChannelResult.setContactArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactChannelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactChannelResult.setContactChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactChannelResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactChannelResult.setDeliveryAddress(ContactChannelAddressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ActivationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContactChannelResult.setActivationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

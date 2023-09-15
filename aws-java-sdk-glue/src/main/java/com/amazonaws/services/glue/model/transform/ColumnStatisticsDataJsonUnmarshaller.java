@@ -43,42 +43,58 @@ public class ColumnStatisticsDataJsonUnmarshaller implements Unmarshaller<Column
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatisticsData.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BooleanColumnStatisticsData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatisticsData.setBooleanColumnStatisticsData(BooleanColumnStatisticsDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DateColumnStatisticsData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatisticsData.setDateColumnStatisticsData(DateColumnStatisticsDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DecimalColumnStatisticsData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatisticsData.setDecimalColumnStatisticsData(DecimalColumnStatisticsDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DoubleColumnStatisticsData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatisticsData.setDoubleColumnStatisticsData(DoubleColumnStatisticsDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LongColumnStatisticsData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatisticsData.setLongColumnStatisticsData(LongColumnStatisticsDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StringColumnStatisticsData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatisticsData.setStringColumnStatisticsData(StringColumnStatisticsDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BinaryColumnStatisticsData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnStatisticsData.setBinaryColumnStatisticsData(BinaryColumnStatisticsDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

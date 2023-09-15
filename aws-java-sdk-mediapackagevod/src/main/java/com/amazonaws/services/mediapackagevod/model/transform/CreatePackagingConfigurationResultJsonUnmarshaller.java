@@ -43,47 +43,64 @@ public class CreatePackagingConfigurationResultJsonUnmarshaller implements Unmar
             return createPackagingConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPackagingConfigurationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cmafPackage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPackagingConfigurationResult.setCmafPackage(CmafPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPackagingConfigurationResult.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dashPackage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPackagingConfigurationResult.setDashPackage(DashPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hlsPackage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPackagingConfigurationResult.setHlsPackage(HlsPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPackagingConfigurationResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mssPackage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPackagingConfigurationResult.setMssPackage(MssPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("packagingGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPackagingConfigurationResult.setPackagingGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPackagingConfigurationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

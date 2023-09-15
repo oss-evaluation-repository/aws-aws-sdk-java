@@ -43,12 +43,17 @@ public class MetricsSummaryJsonUnmarshaller implements Unmarshaller<MetricsSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("categoriesWithMostFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricsSummary.setCategoriesWithMostFindings(new ListUnmarshaller<CategoryWithFindingNum>(CategoryWithFindingNumJsonUnmarshaller
                             .getInstance())
@@ -56,14 +61,17 @@ public class MetricsSummaryJsonUnmarshaller implements Unmarshaller<MetricsSumma
                     .unmarshall(context));
                 }
                 if (context.testExpression("date", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricsSummary.setDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("openFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricsSummary.setOpenFindings(FindingMetricsValuePerSeverityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scansWithMostOpenCriticalFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricsSummary.setScansWithMostOpenCriticalFindings(new ListUnmarshaller<ScanNameWithFindingNum>(ScanNameWithFindingNumJsonUnmarshaller
                             .getInstance())
@@ -71,11 +79,16 @@ public class MetricsSummaryJsonUnmarshaller implements Unmarshaller<MetricsSumma
                     .unmarshall(context));
                 }
                 if (context.testExpression("scansWithMostOpenFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricsSummary.setScansWithMostOpenFindings(new ListUnmarshaller<ScanNameWithFindingNum>(ScanNameWithFindingNumJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

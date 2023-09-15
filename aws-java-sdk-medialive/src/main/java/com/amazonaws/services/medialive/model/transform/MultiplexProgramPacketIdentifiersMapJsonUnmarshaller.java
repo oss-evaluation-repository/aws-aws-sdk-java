@@ -43,70 +43,91 @@ public class MultiplexProgramPacketIdentifiersMapJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioPids", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setAudioPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("dvbSubPids", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setDvbSubPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("dvbTeletextPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setDvbTeletextPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("etvPlatformPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setEtvPlatformPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("etvSignalPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setEtvSignalPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("klvDataPids", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setKlvDataPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("pcrPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setPcrPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pmtPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setPmtPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("privateMetadataPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setPrivateMetadataPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("scte27Pids", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setScte27Pids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("scte35Pid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setScte35Pid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setTimedMetadataPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("videoPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setVideoPid(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

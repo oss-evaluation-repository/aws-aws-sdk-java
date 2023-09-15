@@ -43,38 +43,53 @@ public class AlarmJsonUnmarshaller implements Unmarshaller<Alarm, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("alarmModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setAlarmModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alarmModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setAlarmModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("keyValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setKeyValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alarmState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setAlarmState(AlarmStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setSeverity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class Vc3SettingsJsonUnmarshaller implements Unmarshaller<Vc3Settings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("framerateControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vc3Settings.setFramerateControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateConversionAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vc3Settings.setFramerateConversionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vc3Settings.setFramerateDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vc3Settings.setFramerateNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("interlaceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vc3Settings.setInterlaceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vc3Settings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slowPal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vc3Settings.setSlowPal(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("telecine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vc3Settings.setTelecine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vc3Class", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vc3Settings.setVc3Class(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

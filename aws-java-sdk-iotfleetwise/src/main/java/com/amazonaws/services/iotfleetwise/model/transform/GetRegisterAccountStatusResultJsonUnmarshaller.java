@@ -43,35 +43,49 @@ public class GetRegisterAccountStatusResultJsonUnmarshaller implements Unmarshal
             return getRegisterAccountStatusResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("customerAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRegisterAccountStatusResult.setCustomerAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRegisterAccountStatusResult.setAccountStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestreamRegistrationResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRegisterAccountStatusResult.setTimestreamRegistrationResponse(TimestreamRegistrationResponseJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("iamRegistrationResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRegisterAccountStatusResult.setIamRegistrationResponse(IamRegistrationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRegisterAccountStatusResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRegisterAccountStatusResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

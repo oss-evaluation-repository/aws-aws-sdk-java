@@ -43,34 +43,48 @@ public class VoiceProfileSummaryJsonUnmarshaller implements Unmarshaller<VoicePr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VoiceProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceProfileSummary.setVoiceProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VoiceProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceProfileSummary.setVoiceProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VoiceProfileDomainId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceProfileSummary.setVoiceProfileDomainId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceProfileSummary.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceProfileSummary.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ExpirationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceProfileSummary.setExpirationTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

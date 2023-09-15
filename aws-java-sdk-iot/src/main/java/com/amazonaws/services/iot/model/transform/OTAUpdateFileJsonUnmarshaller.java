@@ -43,35 +43,49 @@ public class OTAUpdateFileJsonUnmarshaller implements Unmarshaller<OTAUpdateFile
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateFile.setFileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fileType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateFile.setFileType(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fileVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateFile.setFileVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fileLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateFile.setFileLocation(FileLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("codeSigning", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateFile.setCodeSigning(CodeSigningJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oTAUpdateFile.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

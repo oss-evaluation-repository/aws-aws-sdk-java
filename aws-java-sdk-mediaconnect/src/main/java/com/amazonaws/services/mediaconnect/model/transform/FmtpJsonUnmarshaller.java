@@ -43,38 +43,53 @@ public class FmtpJsonUnmarshaller implements Unmarshaller<Fmtp, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channelOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fmtp.setChannelOrder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("colorimetry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fmtp.setColorimetry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("exactFramerate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fmtp.setExactFramerate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("par", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fmtp.setPar(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("range", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fmtp.setRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fmtp.setScanMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tcs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fmtp.setTcs(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

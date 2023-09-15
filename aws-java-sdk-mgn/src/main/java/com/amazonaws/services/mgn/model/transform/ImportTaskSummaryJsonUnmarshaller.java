@@ -43,22 +43,33 @@ public class ImportTaskSummaryJsonUnmarshaller implements Unmarshaller<ImportTas
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTaskSummary.setApplications(ImportTaskSummaryApplicationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("servers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTaskSummary.setServers(ImportTaskSummaryServersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("waves", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTaskSummary.setWaves(ImportTaskSummaryWavesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

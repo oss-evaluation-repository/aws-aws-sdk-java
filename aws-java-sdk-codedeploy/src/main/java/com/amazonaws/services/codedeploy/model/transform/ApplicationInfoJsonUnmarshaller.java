@@ -43,34 +43,48 @@ public class ApplicationInfoJsonUnmarshaller implements Unmarshaller<Application
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setApplicationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("linkedToGitHub", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setLinkedToGitHub(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("gitHubAccountName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setGitHubAccountName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("computePlatform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setComputePlatform(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,57 @@ public class OrganizationConfigRuleJsonUnmarshaller implements Unmarshaller<Orga
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OrganizationConfigRuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConfigRule.setOrganizationConfigRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationConfigRuleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConfigRule.setOrganizationConfigRuleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationManagedRuleMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConfigRule
                             .setOrganizationManagedRuleMetadata(OrganizationManagedRuleMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OrganizationCustomRuleMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConfigRule.setOrganizationCustomRuleMetadata(OrganizationCustomRuleMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExcludedAccounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConfigRule.setExcludedAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConfigRule.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OrganizationCustomPolicyRuleMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationConfigRule.setOrganizationCustomPolicyRuleMetadata(OrganizationCustomPolicyRuleMetadataNoPolicyJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class KxDatabaseListEntryJsonUnmarshaller implements Unmarshaller<KxDatab
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("databaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxDatabaseListEntry.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxDatabaseListEntry.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxDatabaseListEntry.setLastModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

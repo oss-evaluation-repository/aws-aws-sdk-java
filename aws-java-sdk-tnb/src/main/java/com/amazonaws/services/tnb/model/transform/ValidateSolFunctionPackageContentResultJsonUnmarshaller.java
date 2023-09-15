@@ -43,35 +43,49 @@ public class ValidateSolFunctionPackageContentResultJsonUnmarshaller implements 
             return validateSolFunctionPackageContentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validateSolFunctionPackageContentResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validateSolFunctionPackageContentResult.setMetadata(ValidateSolFunctionPackageContentMetadataJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("vnfProductName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validateSolFunctionPackageContentResult.setVnfProductName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validateSolFunctionPackageContentResult.setVnfProvider(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfdId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validateSolFunctionPackageContentResult.setVnfdId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfdVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validateSolFunctionPackageContentResult.setVnfdVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

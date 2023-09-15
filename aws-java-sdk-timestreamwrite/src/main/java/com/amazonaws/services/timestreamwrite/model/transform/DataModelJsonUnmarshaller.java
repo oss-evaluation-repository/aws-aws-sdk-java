@@ -43,38 +43,52 @@ public class DataModelJsonUnmarshaller implements Unmarshaller<DataModel, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TimeColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataModel.setTimeColumn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataModel.setTimeUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DimensionMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataModel.setDimensionMappings(new ListUnmarshaller<DimensionMapping>(DimensionMappingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MultiMeasureMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataModel.setMultiMeasureMappings(MultiMeasureMappingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MixedMeasureMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataModel.setMixedMeasureMappings(new ListUnmarshaller<MixedMeasureMapping>(MixedMeasureMappingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MeasureNameColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataModel.setMeasureNameColumn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

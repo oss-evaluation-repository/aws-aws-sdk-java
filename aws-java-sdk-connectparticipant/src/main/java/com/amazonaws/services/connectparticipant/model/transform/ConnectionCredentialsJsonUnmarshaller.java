@@ -43,18 +43,28 @@ public class ConnectionCredentialsJsonUnmarshaller implements Unmarshaller<Conne
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConnectionToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionCredentials.setConnectionToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Expiry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionCredentials.setExpiry(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

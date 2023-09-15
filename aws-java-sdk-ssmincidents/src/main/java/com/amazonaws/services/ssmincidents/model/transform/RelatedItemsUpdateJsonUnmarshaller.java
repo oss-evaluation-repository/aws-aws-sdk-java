@@ -43,18 +43,28 @@ public class RelatedItemsUpdateJsonUnmarshaller implements Unmarshaller<RelatedI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("itemToAdd", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relatedItemsUpdate.setItemToAdd(RelatedItemJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("itemToRemove", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relatedItemsUpdate.setItemToRemove(ItemIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

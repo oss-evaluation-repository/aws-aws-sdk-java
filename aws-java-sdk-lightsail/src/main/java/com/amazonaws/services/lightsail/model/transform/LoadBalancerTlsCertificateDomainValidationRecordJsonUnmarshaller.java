@@ -44,35 +44,49 @@ public class LoadBalancerTlsCertificateDomainValidationRecordJsonUnmarshaller im
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancerTlsCertificateDomainValidationRecord.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancerTlsCertificateDomainValidationRecord.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancerTlsCertificateDomainValidationRecord.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("validationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancerTlsCertificateDomainValidationRecord.setValidationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancerTlsCertificateDomainValidationRecord.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dnsRecordCreationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancerTlsCertificateDomainValidationRecord.setDnsRecordCreationState(LoadBalancerTlsCertificateDnsRecordCreationStateJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

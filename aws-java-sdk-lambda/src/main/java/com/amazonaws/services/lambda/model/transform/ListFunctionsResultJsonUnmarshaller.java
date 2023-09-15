@@ -43,20 +43,30 @@ public class ListFunctionsResultJsonUnmarshaller implements Unmarshaller<ListFun
             return listFunctionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextMarker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listFunctionsResult.setNextMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Functions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listFunctionsResult.setFunctions(new ListUnmarshaller<FunctionConfiguration>(FunctionConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

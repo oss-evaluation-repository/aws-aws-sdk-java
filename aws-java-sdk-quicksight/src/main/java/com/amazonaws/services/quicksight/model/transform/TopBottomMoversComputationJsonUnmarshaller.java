@@ -43,42 +43,58 @@ public class TopBottomMoversComputationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComputationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomMoversComputation.setComputationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomMoversComputation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Time", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomMoversComputation.setTime(DimensionFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomMoversComputation.setCategory(DimensionFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomMoversComputation.setValue(MeasureFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MoverSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomMoversComputation.setMoverSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SortOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomMoversComputation.setSortOrder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomMoversComputation.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

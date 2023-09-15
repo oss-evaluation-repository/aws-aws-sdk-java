@@ -43,58 +43,78 @@ public class ServerLaunchConfigurationJsonUnmarshaller implements Unmarshaller<S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("server", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setServer(ServerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("logicalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setLogicalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setVpc(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subnet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setSubnet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setSecurityGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ec2KeyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setEc2KeyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setUserData(UserDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associatePublicIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setAssociatePublicIpAddress(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("iamInstanceProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setIamInstanceProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configureScript", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setConfigureScript(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configureScriptType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverLaunchConfiguration.setConfigureScriptType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

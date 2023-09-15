@@ -43,65 +43,84 @@ public class AwsEc2VpcEndpointServiceDetailsJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AcceptanceRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setAcceptanceRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BaseEndpointDnsNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setBaseEndpointDnsNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ManagesVpcEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setManagesVpcEndpoints(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayLoadBalancerArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setGatewayLoadBalancerArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NetworkLoadBalancerArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setNetworkLoadBalancerArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PrivateDnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setPrivateDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setServiceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setServiceState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcEndpointServiceDetails.setServiceType(new ListUnmarshaller<AwsEc2VpcEndpointServiceServiceTypeDetails>(
                             AwsEc2VpcEndpointServiceServiceTypeDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

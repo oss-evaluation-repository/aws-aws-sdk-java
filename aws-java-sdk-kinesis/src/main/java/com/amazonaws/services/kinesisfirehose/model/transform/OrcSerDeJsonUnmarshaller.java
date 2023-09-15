@@ -43,52 +43,70 @@ public class OrcSerDeJsonUnmarshaller implements Unmarshaller<OrcSerDe, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StripeSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orcSerDe.setStripeSizeBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BlockSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orcSerDe.setBlockSizeBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RowIndexStride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orcSerDe.setRowIndexStride(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EnablePadding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orcSerDe.setEnablePadding(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PaddingTolerance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orcSerDe.setPaddingTolerance(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Compression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orcSerDe.setCompression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BloomFilterColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orcSerDe.setBloomFilterColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BloomFilterFalsePositiveProbability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orcSerDe.setBloomFilterFalsePositiveProbability(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("DictionaryKeyThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orcSerDe.setDictionaryKeyThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("FormatVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orcSerDe.setFormatVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

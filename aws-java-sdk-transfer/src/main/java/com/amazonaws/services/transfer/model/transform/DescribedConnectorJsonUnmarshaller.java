@@ -43,44 +43,60 @@ public class DescribedConnectorJsonUnmarshaller implements Unmarshaller<Describe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedConnector.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedConnector.setConnectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedConnector.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("As2Config", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedConnector.setAs2Config(As2ConnectorConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AccessRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedConnector.setAccessRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoggingRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedConnector.setLoggingRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedConnector.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SftpConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedConnector.setSftpConfig(SftpConnectorConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

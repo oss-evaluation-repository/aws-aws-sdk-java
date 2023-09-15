@@ -43,26 +43,38 @@ public class InstanceFleetModifyConfigJsonUnmarshaller implements Unmarshaller<I
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceFleetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetModifyConfig.setInstanceFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetOnDemandCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetModifyConfig.setTargetOnDemandCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetSpotCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetModifyConfig.setTargetSpotCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ResizeSpecifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetModifyConfig.setResizeSpecifications(InstanceFleetResizingSpecificationsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

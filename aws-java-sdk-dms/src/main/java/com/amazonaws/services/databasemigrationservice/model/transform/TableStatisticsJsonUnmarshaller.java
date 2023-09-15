@@ -43,102 +43,133 @@ public class TableStatisticsJsonUnmarshaller implements Unmarshaller<TableStatis
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inserts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setInserts(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Deletes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setDeletes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Updates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setUpdates(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Ddls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setDdls(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AppliedInserts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setAppliedInserts(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AppliedDeletes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setAppliedDeletes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AppliedUpdates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setAppliedUpdates(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AppliedDdls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setAppliedDdls(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FullLoadRows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setFullLoadRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FullLoadCondtnlChkFailedRows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setFullLoadCondtnlChkFailedRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FullLoadErrorRows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setFullLoadErrorRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FullLoadStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setFullLoadStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FullLoadEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setFullLoadEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FullLoadReloaded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setFullLoadReloaded(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TableState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setTableState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidationPendingRecords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setValidationPendingRecords(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidationFailedRecords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setValidationFailedRecords(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidationSuspendedRecords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setValidationSuspendedRecords(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setValidationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidationStateDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableStatistics.setValidationStateDetails(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

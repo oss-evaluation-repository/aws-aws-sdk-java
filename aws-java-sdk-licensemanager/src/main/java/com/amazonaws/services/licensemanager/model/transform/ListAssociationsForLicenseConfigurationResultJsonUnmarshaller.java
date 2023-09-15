@@ -44,12 +44,17 @@ public class ListAssociationsForLicenseConfigurationResultJsonUnmarshaller imple
             return listAssociationsForLicenseConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LicenseConfigurationAssociations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAssociationsForLicenseConfigurationResult.setLicenseConfigurationAssociations(new ListUnmarshaller<LicenseConfigurationAssociation>(
                             LicenseConfigurationAssociationJsonUnmarshaller.getInstance())
@@ -57,8 +62,13 @@ public class ListAssociationsForLicenseConfigurationResultJsonUnmarshaller imple
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAssociationsForLicenseConfigurationResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

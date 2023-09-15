@@ -43,36 +43,50 @@ public class S3TargetJsonUnmarshaller implements Unmarshaller<S3Target, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Target.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Exclusions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Target.setExclusions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConnectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Target.setConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SampleSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Target.setSampleSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EventQueueArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Target.setEventQueueArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DlqEventQueueArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Target.setDlqEventQueueArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

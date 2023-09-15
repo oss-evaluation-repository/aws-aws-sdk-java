@@ -43,30 +43,43 @@ public class DakCertificateMetadataJsonUnmarshaller implements Unmarshaller<DakC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dakCertificateMetadata.setCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxAllowedSignature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dakCertificateMetadata.setMaxAllowedSignature(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FactorySupport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dakCertificateMetadata.setFactorySupport(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ApId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dakCertificateMetadata.setApId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dakCertificateMetadata.setDeviceTypeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

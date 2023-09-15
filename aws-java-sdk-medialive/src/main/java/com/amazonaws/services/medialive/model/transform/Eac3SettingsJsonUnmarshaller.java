@@ -43,90 +43,118 @@ public class Eac3SettingsJsonUnmarshaller implements Unmarshaller<Eac3Settings, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attenuationControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setAttenuationControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setBitrate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("bitstreamMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setBitstreamMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setCodingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dcFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setDcFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dialnorm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setDialnorm(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("drcLine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setDrcLine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("drcRf", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setDrcRf(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lfeControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setLfeControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lfeFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setLfeFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loRoCenterMixLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setLoRoCenterMixLevel(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("loRoSurroundMixLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setLoRoSurroundMixLevel(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ltRtCenterMixLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setLtRtCenterMixLevel(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ltRtSurroundMixLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setLtRtSurroundMixLevel(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("metadataControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setMetadataControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("passthroughControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setPassthroughControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("phaseControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setPhaseControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stereoDownmix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setStereoDownmix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("surroundExMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setSurroundExMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("surroundMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3Settings.setSurroundMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

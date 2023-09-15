@@ -43,29 +43,41 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setS(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("N", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setN(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("SL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setSL(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SDM", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeValue.setSDM(new MapUnmarshaller<String, Double>(context.getUnmarshaller(String.class), context.getUnmarshaller(Double.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

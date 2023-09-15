@@ -43,26 +43,38 @@ public class AttachmentItemJsonUnmarshaller implements Unmarshaller<AttachmentIt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attachmentItem.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttachmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attachmentItem.setAttachmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttachmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attachmentItem.setAttachmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attachmentItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

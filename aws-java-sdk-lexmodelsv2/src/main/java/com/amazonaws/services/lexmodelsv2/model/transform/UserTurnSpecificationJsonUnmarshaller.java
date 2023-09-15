@@ -43,18 +43,28 @@ public class UserTurnSpecificationJsonUnmarshaller implements Unmarshaller<UserT
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("input", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnSpecification.setInput(UserTurnInputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("expected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnSpecification.setExpected(UserTurnOutputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

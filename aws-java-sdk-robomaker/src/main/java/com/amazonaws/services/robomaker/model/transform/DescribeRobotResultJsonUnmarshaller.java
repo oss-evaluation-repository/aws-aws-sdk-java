@@ -43,51 +43,69 @@ public class DescribeRobotResultJsonUnmarshaller implements Unmarshaller<Describ
             return describeRobotResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRobotResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRobotResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fleetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRobotResult.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRobotResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("greengrassGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRobotResult.setGreengrassGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRobotResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("architecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRobotResult.setArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastDeploymentJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRobotResult.setLastDeploymentJob(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastDeploymentTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRobotResult.setLastDeploymentTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRobotResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

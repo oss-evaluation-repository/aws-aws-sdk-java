@@ -43,54 +43,73 @@ public class ReplicationTaskStatsJsonUnmarshaller implements Unmarshaller<Replic
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FullLoadProgressPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setFullLoadProgressPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ElapsedTimeMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setElapsedTimeMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesLoaded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setTablesLoaded(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesLoading", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setTablesLoading(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesQueued", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setTablesQueued(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesErrored", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setTablesErrored(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FreshStartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setFreshStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StopDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setStopDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FullLoadStartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setFullLoadStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FullLoadFinishDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskStats.setFullLoadFinishDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

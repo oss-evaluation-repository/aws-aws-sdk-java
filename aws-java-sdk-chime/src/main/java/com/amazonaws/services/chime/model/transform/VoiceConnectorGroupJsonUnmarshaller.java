@@ -43,36 +43,50 @@ public class VoiceConnectorGroupJsonUnmarshaller implements Unmarshaller<VoiceCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VoiceConnectorGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnectorGroup.setVoiceConnectorGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnectorGroup.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VoiceConnectorItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnectorGroup.setVoiceConnectorItems(new ListUnmarshaller<VoiceConnectorItem>(VoiceConnectorItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnectorGroup.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnectorGroup.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("VoiceConnectorGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceConnectorGroup.setVoiceConnectorGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

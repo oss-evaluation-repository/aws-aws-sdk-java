@@ -43,22 +43,33 @@ public class InputClippingSettingsJsonUnmarshaller implements Unmarshaller<Input
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("inputTimecodeSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputClippingSettings.setInputTimecodeSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTimecode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputClippingSettings.setStartTimecode(StartTimecodeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("stopTimecode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputClippingSettings.setStopTimecode(StopTimecodeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

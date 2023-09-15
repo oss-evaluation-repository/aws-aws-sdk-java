@@ -43,26 +43,38 @@ public class VideoSelectorJsonUnmarshaller implements Unmarshaller<VideoSelector
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("colorSpace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setColorSpace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("colorSpaceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setColorSpaceSettings(VideoSelectorColorSpaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("colorSpaceUsage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setColorSpaceUsage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("selectorSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setSelectorSettings(VideoSelectorSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

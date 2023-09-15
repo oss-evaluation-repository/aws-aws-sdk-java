@@ -43,30 +43,43 @@ public class VPCEConfigurationJsonUnmarshaller implements Unmarshaller<VPCEConfi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCEConfiguration.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpceConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCEConfiguration.setVpceConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpceServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCEConfiguration.setVpceServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceDnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCEConfiguration.setServiceDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpceConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vPCEConfiguration.setVpceConfigurationDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

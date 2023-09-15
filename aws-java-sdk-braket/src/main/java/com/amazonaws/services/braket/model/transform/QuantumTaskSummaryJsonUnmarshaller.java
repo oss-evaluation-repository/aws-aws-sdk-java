@@ -43,48 +43,65 @@ public class QuantumTaskSummaryJsonUnmarshaller implements Unmarshaller<QuantumT
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quantumTaskSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("deviceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quantumTaskSummary.setDeviceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quantumTaskSummary.setEndedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("outputS3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quantumTaskSummary.setOutputS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputS3Directory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quantumTaskSummary.setOutputS3Directory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("quantumTaskArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quantumTaskSummary.setQuantumTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("shots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quantumTaskSummary.setShots(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quantumTaskSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quantumTaskSummary
                             .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

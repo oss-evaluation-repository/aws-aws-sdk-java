@@ -43,34 +43,48 @@ public class ApplicationSummaryJsonUnmarshaller implements Unmarshaller<Applicat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationVersionId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("RuntimeEnvironment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setRuntimeEnvironment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

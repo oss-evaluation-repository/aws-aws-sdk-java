@@ -43,38 +43,53 @@ public class SubjectSummaryJsonUnmarshaller implements Unmarshaller<SubjectSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectSummary.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("lastSeenAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectSummary.setLastSeenAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("subjectArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectSummary.setSubjectArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subjectId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectSummary.setSubjectId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("x509Subject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectSummary.setX509Subject(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

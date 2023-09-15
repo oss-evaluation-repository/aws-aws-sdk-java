@@ -43,26 +43,38 @@ public class AwsElbLoadBalancerAccessLogJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EmitInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerAccessLog.setEmitInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerAccessLog.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerAccessLog.setS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerAccessLog.setS3BucketPrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

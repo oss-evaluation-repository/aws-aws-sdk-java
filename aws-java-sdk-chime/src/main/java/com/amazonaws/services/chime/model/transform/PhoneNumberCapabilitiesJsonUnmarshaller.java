@@ -43,34 +43,48 @@ public class PhoneNumberCapabilitiesJsonUnmarshaller implements Unmarshaller<Pho
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InboundCall", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberCapabilities.setInboundCall(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OutboundCall", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberCapabilities.setOutboundCall(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("InboundSMS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberCapabilities.setInboundSMS(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OutboundSMS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberCapabilities.setOutboundSMS(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("InboundMMS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberCapabilities.setInboundMMS(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OutboundMMS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     phoneNumberCapabilities.setOutboundMMS(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

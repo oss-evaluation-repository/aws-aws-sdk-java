@@ -43,21 +43,31 @@ public class ListRepositorySyncDefinitionsResultJsonUnmarshaller implements Unma
             return listRepositorySyncDefinitionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRepositorySyncDefinitionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("syncDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRepositorySyncDefinitionsResult.setSyncDefinitions(new ListUnmarshaller<RepositorySyncDefinition>(
                             RepositorySyncDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

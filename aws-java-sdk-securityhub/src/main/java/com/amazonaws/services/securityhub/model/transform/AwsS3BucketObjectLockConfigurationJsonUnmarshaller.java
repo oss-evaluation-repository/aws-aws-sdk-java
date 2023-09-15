@@ -43,18 +43,28 @@ public class AwsS3BucketObjectLockConfigurationJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ObjectLockEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketObjectLockConfiguration.setObjectLockEnabled(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Rule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketObjectLockConfiguration.setRule(AwsS3BucketObjectLockConfigurationRuleDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

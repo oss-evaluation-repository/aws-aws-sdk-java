@@ -43,50 +43,68 @@ public class MountTargetDescriptionJsonUnmarshaller implements Unmarshaller<Moun
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mountTargetDescription.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MountTargetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mountTargetDescription.setMountTargetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mountTargetDescription.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mountTargetDescription.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LifeCycleState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mountTargetDescription.setLifeCycleState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mountTargetDescription.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mountTargetDescription.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mountTargetDescription.setAvailabilityZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZoneName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mountTargetDescription.setAvailabilityZoneName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mountTargetDescription.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

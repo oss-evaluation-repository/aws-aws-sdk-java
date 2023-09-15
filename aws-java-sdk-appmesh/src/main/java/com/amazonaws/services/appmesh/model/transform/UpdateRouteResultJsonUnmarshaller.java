@@ -43,9 +43,13 @@ public class UpdateRouteResultJsonUnmarshaller implements Unmarshaller<UpdateRou
             return updateRouteResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateRouteResult.setRoute(RouteDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

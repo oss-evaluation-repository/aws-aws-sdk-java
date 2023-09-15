@@ -43,24 +43,35 @@ public class ParametricMonitoringConfigurationJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("persistentAppUI", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parametricMonitoringConfiguration.setPersistentAppUI(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cloudWatchMonitoringConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parametricMonitoringConfiguration.setCloudWatchMonitoringConfiguration(ParametricCloudWatchMonitoringConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3MonitoringConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parametricMonitoringConfiguration.setS3MonitoringConfiguration(ParametricS3MonitoringConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class SecurityGroupRuleDescriptionJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IPV4Range", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityGroupRuleDescription.setIPV4Range(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IPV6Range", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityGroupRuleDescription.setIPV6Range(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrefixListId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityGroupRuleDescription.setPrefixListId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityGroupRuleDescription.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FromPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityGroupRuleDescription.setFromPort(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ToPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityGroupRuleDescription.setToPort(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

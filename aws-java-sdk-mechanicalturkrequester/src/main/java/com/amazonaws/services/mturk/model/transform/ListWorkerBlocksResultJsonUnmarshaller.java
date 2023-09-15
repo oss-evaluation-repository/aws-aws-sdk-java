@@ -43,24 +43,35 @@ public class ListWorkerBlocksResultJsonUnmarshaller implements Unmarshaller<List
             return listWorkerBlocksResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkerBlocksResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkerBlocksResult.setNumResults(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkerBlocks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listWorkerBlocksResult.setWorkerBlocks(new ListUnmarshaller<WorkerBlock>(WorkerBlockJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

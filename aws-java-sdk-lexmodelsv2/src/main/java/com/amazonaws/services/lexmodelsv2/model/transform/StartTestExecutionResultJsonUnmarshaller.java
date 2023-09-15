@@ -43,34 +43,48 @@ public class StartTestExecutionResultJsonUnmarshaller implements Unmarshaller<St
             return startTestExecutionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("testExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startTestExecutionResult.setTestExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startTestExecutionResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("testSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startTestExecutionResult.setTestSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startTestExecutionResult.setTarget(TestExecutionTargetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("apiMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startTestExecutionResult.setApiMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testExecutionModality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startTestExecutionResult.setTestExecutionModality(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,44 +43,60 @@ public class EngineVersionJsonUnmarshaller implements Unmarshaller<EngineVersion
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineVersion.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Lifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineVersion.setLifecycle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReleaseStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineVersion.setReleaseStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LaunchDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineVersion.setLaunchDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AutoUpgradeDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineVersion.setAutoUpgradeDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeprecationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineVersion.setDeprecationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ForceUpgradeDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineVersion.setForceUpgradeDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AvailableUpgrades", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineVersion.setAvailableUpgrades(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

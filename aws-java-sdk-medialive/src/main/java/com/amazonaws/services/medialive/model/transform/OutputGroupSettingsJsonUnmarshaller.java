@@ -43,42 +43,58 @@ public class OutputGroupSettingsJsonUnmarshaller implements Unmarshaller<OutputG
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("archiveGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setArchiveGroupSettings(ArchiveGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("frameCaptureGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setFrameCaptureGroupSettings(FrameCaptureGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hlsGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setHlsGroupSettings(HlsGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mediaPackageGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setMediaPackageGroupSettings(MediaPackageGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("msSmoothGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setMsSmoothGroupSettings(MsSmoothGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("multiplexGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setMultiplexGroupSettings(MultiplexGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rtmpGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setRtmpGroupSettings(RtmpGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("udpGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputGroupSettings.setUdpGroupSettings(UdpGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

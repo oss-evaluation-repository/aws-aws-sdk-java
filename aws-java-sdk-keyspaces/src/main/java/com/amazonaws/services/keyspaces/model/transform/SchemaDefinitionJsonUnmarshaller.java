@@ -43,34 +43,46 @@ public class SchemaDefinitionJsonUnmarshaller implements Unmarshaller<SchemaDefi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("allColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaDefinition.setAllColumns(new ListUnmarshaller<ColumnDefinition>(ColumnDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("partitionKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaDefinition.setPartitionKeys(new ListUnmarshaller<PartitionKey>(PartitionKeyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("clusteringKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaDefinition.setClusteringKeys(new ListUnmarshaller<ClusteringKey>(ClusteringKeyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("staticColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaDefinition.setStaticColumns(new ListUnmarshaller<StaticColumn>(StaticColumnJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

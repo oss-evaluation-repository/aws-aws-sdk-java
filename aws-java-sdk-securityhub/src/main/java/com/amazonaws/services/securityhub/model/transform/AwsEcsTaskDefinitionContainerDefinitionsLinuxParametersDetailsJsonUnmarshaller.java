@@ -44,18 +44,24 @@ public class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsJsonU
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Capabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails
                             .setCapabilities(AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("Devices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails
                             .setDevices(new ListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails>(
@@ -64,30 +70,39 @@ public class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsJsonU
                             .unmarshall(context));
                 }
                 if (context.testExpression("InitProcessEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails.setInitProcessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("MaxSwap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails.setMaxSwap(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedMemorySize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails.setSharedMemorySize(context.getUnmarshaller(Integer.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("Swappiness", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails.setSwappiness(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Tmpfs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails
                             .setTmpfs(new ListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails>(
                                     AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

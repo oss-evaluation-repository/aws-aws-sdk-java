@@ -43,24 +43,35 @@ public class UserTurnOutputSpecificationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("intent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnOutputSpecification.setIntent(UserTurnIntentOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activeContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnOutputSpecification.setActiveContexts(new ListUnmarshaller<ActiveContext>(ActiveContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("transcript", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnOutputSpecification.setTranscript(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

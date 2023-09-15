@@ -43,45 +43,60 @@ public class ChangeProgressStatusDetailsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChangeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeProgressStatusDetails.setChangeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeProgressStatusDetails.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeProgressStatusDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PendingProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeProgressStatusDetails.setPendingProperties(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CompletedProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeProgressStatusDetails.setCompletedProperties(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TotalNumberOfStages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeProgressStatusDetails.setTotalNumberOfStages(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ChangeProgressStages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeProgressStatusDetails.setChangeProgressStages(new ListUnmarshaller<ChangeProgressStage>(ChangeProgressStageJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class SearchHoursOfOperationsResultJsonUnmarshaller implements Unmarshall
             return searchHoursOfOperationsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HoursOfOperations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchHoursOfOperationsResult.setHoursOfOperations(new ListUnmarshaller<HoursOfOperation>(HoursOfOperationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchHoursOfOperationsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApproximateTotalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchHoursOfOperationsResult.setApproximateTotalCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class DatasetImportJobJsonUnmarshaller implements Unmarshaller<DatasetImp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetImportJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setDatasetImportJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setDataSource(DataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setImportMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("publishAttributionMetricsToS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImportJob.setPublishAttributionMetricsToS3(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

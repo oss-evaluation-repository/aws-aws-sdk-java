@@ -43,44 +43,60 @@ public class SipRuleJsonUnmarshaller implements Unmarshaller<SipRule, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SipRuleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRule.setSipRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Disabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRule.setDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TriggerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRule.setTriggerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TriggerValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRule.setTriggerValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetApplications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRule.setTargetApplications(new ListUnmarshaller<SipRuleTargetApplication>(SipRuleTargetApplicationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRule.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sipRule.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,62 @@ public class InstanceTypeSpecificationJsonUnmarshaller implements Unmarshaller<I
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeSpecification.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WeightedCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeSpecification.setWeightedCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BidPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeSpecification.setBidPrice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BidPriceAsPercentageOfOnDemandPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeSpecification.setBidPriceAsPercentageOfOnDemandPrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeSpecification.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EbsBlockDevices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeSpecification.setEbsBlockDevices(new ListUnmarshaller<EbsBlockDevice>(EbsBlockDeviceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EbsOptimized", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeSpecification.setEbsOptimized(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomAmiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeSpecification.setCustomAmiId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

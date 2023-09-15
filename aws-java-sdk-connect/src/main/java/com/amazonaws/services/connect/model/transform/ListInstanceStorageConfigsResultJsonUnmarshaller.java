@@ -43,12 +43,17 @@ public class ListInstanceStorageConfigsResultJsonUnmarshaller implements Unmarsh
             return listInstanceStorageConfigsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorageConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listInstanceStorageConfigsResult.setStorageConfigs(new ListUnmarshaller<InstanceStorageConfig>(InstanceStorageConfigJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListInstanceStorageConfigsResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listInstanceStorageConfigsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class LayoutConfigurationJsonUnmarshaller implements Unmarshaller<LayoutC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GridLayout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layoutConfiguration.setGridLayout(GridLayoutConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FreeFormLayout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layoutConfiguration.setFreeFormLayout(FreeFormLayoutConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SectionBasedLayout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layoutConfiguration.setSectionBasedLayout(SectionBasedLayoutConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

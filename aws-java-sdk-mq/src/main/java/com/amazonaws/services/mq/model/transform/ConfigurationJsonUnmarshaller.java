@@ -43,51 +43,69 @@ public class ConfigurationJsonUnmarshaller implements Unmarshaller<Configuration
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authenticationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setAuthenticationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setCreated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engineType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setEngineType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latestRevision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setLatestRevision(ConfigurationRevisionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuration.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

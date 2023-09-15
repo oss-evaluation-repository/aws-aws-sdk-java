@@ -43,67 +43,89 @@ public class AddonJsonUnmarshaller implements Unmarshaller<Addon, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("addonName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setAddonName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("addonVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setAddonVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("health", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setHealth(AddonHealthJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("addonArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setAddonArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("modifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("serviceAccountRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setServiceAccountRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("publisher", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setPublisher(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("marketplaceInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setMarketplaceInformation(MarketplaceInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configurationValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addon.setConfigurationValues(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

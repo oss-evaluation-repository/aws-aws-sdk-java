@@ -43,46 +43,62 @@ public class EksPodPropertiesDetailJsonUnmarshaller implements Unmarshaller<EksP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("serviceAccountName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodPropertiesDetail.setServiceAccountName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostNetwork", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodPropertiesDetail.setHostNetwork(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("dnsPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodPropertiesDetail.setDnsPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodPropertiesDetail.setContainers(new ListUnmarshaller<EksContainerDetail>(EksContainerDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("volumes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodPropertiesDetail.setVolumes(new ListUnmarshaller<EksVolume>(EksVolumeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("podName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodPropertiesDetail.setPodName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nodeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodPropertiesDetail.setNodeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksPodPropertiesDetail.setMetadata(EksMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

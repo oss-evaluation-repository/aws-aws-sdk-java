@@ -44,12 +44,17 @@ public class ListClientDevicesAssociatedWithCoreDeviceResultJsonUnmarshaller imp
             return listClientDevicesAssociatedWithCoreDeviceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("associatedClientDevices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listClientDevicesAssociatedWithCoreDeviceResult.setAssociatedClientDevices(new ListUnmarshaller<AssociatedClientDevice>(
                             AssociatedClientDeviceJsonUnmarshaller.getInstance())
@@ -57,8 +62,13 @@ public class ListClientDevicesAssociatedWithCoreDeviceResultJsonUnmarshaller imp
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listClientDevicesAssociatedWithCoreDeviceResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

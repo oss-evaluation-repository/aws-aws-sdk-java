@@ -43,19 +43,29 @@ public class ResiliencyScoreJsonUnmarshaller implements Unmarshaller<ResiliencyS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("disruptionScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyScore.setDisruptionScore(new MapUnmarshaller<String, Double>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Double.class)).unmarshall(context));
                 }
                 if (context.testExpression("score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyScore.setScore(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

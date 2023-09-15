@@ -43,113 +43,146 @@ public class ProfileJsonUnmarshaller implements Unmarshaller<Profile, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setAccountNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setAdditionalInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setPartyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BusinessName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setBusinessName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirstName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setFirstName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MiddleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setMiddleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setLastName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BirthDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setBirthDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Gender", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setGender(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MobilePhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setMobilePhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HomePhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setHomePhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BusinessPhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setBusinessPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PersonalEmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setPersonalEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BusinessEmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setBusinessEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Address", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setAddress(AddressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ShippingAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setShippingAddress(AddressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MailingAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setMailingAddress(AddressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BillingAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setBillingAddress(AddressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("FoundByItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setFoundByItems(new ListUnmarshaller<FoundByKeyValue>(FoundByKeyValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PartyTypeString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setPartyTypeString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenderString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setGenderString(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

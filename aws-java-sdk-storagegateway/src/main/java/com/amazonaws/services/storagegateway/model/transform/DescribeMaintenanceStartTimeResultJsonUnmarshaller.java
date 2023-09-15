@@ -43,34 +43,48 @@ public class DescribeMaintenanceStartTimeResultJsonUnmarshaller implements Unmar
             return describeMaintenanceStartTimeResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMaintenanceStartTimeResult.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HourOfDay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMaintenanceStartTimeResult.setHourOfDay(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinuteOfHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMaintenanceStartTimeResult.setMinuteOfHour(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DayOfWeek", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMaintenanceStartTimeResult.setDayOfWeek(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DayOfMonth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMaintenanceStartTimeResult.setDayOfMonth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMaintenanceStartTimeResult.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("service", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setService(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTypeCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventTypeCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTypeCategory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventTypeCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("availabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("statusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventScopeCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventScopeCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

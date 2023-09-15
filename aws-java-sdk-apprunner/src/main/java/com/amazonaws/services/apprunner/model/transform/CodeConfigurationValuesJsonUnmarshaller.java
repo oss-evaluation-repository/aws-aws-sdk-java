@@ -43,36 +43,50 @@ public class CodeConfigurationValuesJsonUnmarshaller implements Unmarshaller<Cod
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Runtime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeConfigurationValues.setRuntime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BuildCommand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeConfigurationValues.setBuildCommand(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartCommand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeConfigurationValues.setStartCommand(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeConfigurationValues.setPort(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuntimeEnvironmentVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeConfigurationValues.setRuntimeEnvironmentVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("RuntimeEnvironmentSecrets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeConfigurationValues.setRuntimeEnvironmentSecrets(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

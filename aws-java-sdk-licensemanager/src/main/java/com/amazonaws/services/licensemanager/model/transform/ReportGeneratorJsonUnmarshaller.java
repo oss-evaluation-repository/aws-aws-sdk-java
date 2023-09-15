@@ -43,66 +43,87 @@ public class ReportGeneratorJsonUnmarshaller implements Unmarshaller<ReportGener
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReportGeneratorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setReportGeneratorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setReportType(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReportContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setReportContext(ReportContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReportFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setReportFrequency(ReportFrequencyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LicenseManagerReportGeneratorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setLicenseManagerReportGeneratorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastRunStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setLastRunStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastRunFailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setLastRunFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastReportGenerationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setLastReportGenerationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportCreatorAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setReportCreatorAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setS3Location(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setCreateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGenerator.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

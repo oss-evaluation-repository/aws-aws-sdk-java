@@ -44,41 +44,56 @@ public class AwsElasticsearchDomainElasticsearchClusterConfigDetailsJsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DedicatedMasterCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainElasticsearchClusterConfigDetails.setDedicatedMasterCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainElasticsearchClusterConfigDetails.setDedicatedMasterEnabled(context.getUnmarshaller(Boolean.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainElasticsearchClusterConfigDetails.setDedicatedMasterType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainElasticsearchClusterConfigDetails.setInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainElasticsearchClusterConfigDetails.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ZoneAwarenessConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainElasticsearchClusterConfigDetails
                             .setZoneAwarenessConfig(AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("ZoneAwarenessEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticsearchDomainElasticsearchClusterConfigDetails.setZoneAwarenessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

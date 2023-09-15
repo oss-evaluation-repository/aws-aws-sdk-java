@@ -43,30 +43,43 @@ public class GenerationSummaryJsonUnmarshaller implements Unmarshaller<Generatio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RecommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generationSummary.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenerationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generationSummary.setGenerationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenerationStartedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generationSummary.setGenerationStartedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenerationCompletionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generationSummary.setGenerationCompletionTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedCompletionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generationSummary.setEstimatedCompletionTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

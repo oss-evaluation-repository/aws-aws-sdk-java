@@ -43,34 +43,48 @@ public class StartDeviceAuthorizationResultJsonUnmarshaller implements Unmarshal
             return startDeviceAuthorizationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deviceCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeviceAuthorizationResult.setDeviceCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeviceAuthorizationResult.setUserCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("verificationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeviceAuthorizationResult.setVerificationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("verificationUriComplete", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeviceAuthorizationResult.setVerificationUriComplete(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expiresIn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeviceAuthorizationResult.setExpiresIn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("interval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeviceAuthorizationResult.setInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

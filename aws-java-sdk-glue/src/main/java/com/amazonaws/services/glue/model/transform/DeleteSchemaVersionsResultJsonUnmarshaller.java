@@ -43,17 +43,26 @@ public class DeleteSchemaVersionsResultJsonUnmarshaller implements Unmarshaller<
             return deleteSchemaVersionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaVersionErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteSchemaVersionsResult.setSchemaVersionErrors(new ListUnmarshaller<SchemaVersionErrorItem>(SchemaVersionErrorItemJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

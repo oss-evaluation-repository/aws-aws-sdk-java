@@ -43,26 +43,38 @@ public class AwsWafv2RulesActionDetailsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Allow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafv2RulesActionDetails.setAllow(AwsWafv2ActionAllowDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Block", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafv2RulesActionDetails.setBlock(AwsWafv2ActionBlockDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Captcha", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafv2RulesActionDetails.setCaptcha(AwsWafv2RulesActionCaptchaDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafv2RulesActionDetails.setCount(AwsWafv2RulesActionCountDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

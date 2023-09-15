@@ -43,47 +43,64 @@ public class AwsApiCallActionJsonUnmarshaller implements Unmarshaller<AwsApiCall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("api", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiCallAction.setApi(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("callerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiCallAction.setCallerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiCallAction.setDomainDetails(DomainDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("errorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiCallAction.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userAgent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiCallAction.setUserAgent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remoteIpDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiCallAction.setRemoteIpDetails(RemoteIpDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiCallAction.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remoteAccountDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiCallAction.setRemoteAccountDetails(RemoteAccountDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("affectedResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiCallAction.setAffectedResources(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

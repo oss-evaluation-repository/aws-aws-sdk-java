@@ -43,26 +43,38 @@ public class DatabaseInputDefinitionJsonUnmarshaller implements Unmarshaller<Dat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GlueConnectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInputDefinition.setGlueConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseTableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInputDefinition.setDatabaseTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TempDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInputDefinition.setTempDirectory(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("QueryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseInputDefinition.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

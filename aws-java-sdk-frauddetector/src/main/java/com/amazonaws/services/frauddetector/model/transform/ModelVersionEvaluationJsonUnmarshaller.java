@@ -43,22 +43,33 @@ public class ModelVersionEvaluationJsonUnmarshaller implements Unmarshaller<Mode
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("outputVariableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelVersionEvaluation.setOutputVariableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("evaluationScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelVersionEvaluation.setEvaluationScore(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("predictionExplanations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelVersionEvaluation.setPredictionExplanations(PredictionExplanationsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

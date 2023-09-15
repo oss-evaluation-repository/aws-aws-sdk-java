@@ -43,20 +43,30 @@ public class TagCriterionForJobJsonUnmarshaller implements Unmarshaller<TagCrite
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("comparator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tagCriterionForJob.setComparator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tagValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tagCriterionForJob.setTagValues(new ListUnmarshaller<TagCriterionPairForJob>(TagCriterionPairForJobJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

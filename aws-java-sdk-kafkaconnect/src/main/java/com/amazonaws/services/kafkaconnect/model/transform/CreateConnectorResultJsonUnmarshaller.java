@@ -43,22 +43,33 @@ public class CreateConnectorResultJsonUnmarshaller implements Unmarshaller<Creat
             return createConnectorResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createConnectorResult.setConnectorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createConnectorResult.setConnectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createConnectorResult.setConnectorState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

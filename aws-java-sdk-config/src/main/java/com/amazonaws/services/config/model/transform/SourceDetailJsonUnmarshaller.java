@@ -43,22 +43,33 @@ public class SourceDetailJsonUnmarshaller implements Unmarshaller<SourceDetail, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceDetail.setEventSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceDetail.setMessageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumExecutionFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceDetail.setMaximumExecutionFrequency(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

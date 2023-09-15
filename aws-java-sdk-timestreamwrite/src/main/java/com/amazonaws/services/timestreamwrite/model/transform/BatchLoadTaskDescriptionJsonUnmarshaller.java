@@ -43,62 +43,83 @@ public class BatchLoadTaskDescriptionJsonUnmarshaller implements Unmarshaller<Ba
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TaskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSourceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setDataSourceConfiguration(DataSourceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProgressReport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setProgressReport(BatchLoadProgressReportJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReportConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setReportConfiguration(ReportConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataModelConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setDataModelConfiguration(DataModelConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TargetDatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setTargetDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetTableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setTargetTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setTaskStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecordVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setRecordVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResumableUntil", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchLoadTaskDescription.setResumableUntil(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

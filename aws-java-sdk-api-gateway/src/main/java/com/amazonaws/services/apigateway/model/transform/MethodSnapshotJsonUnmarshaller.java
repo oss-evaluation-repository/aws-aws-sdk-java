@@ -43,18 +43,28 @@ public class MethodSnapshotJsonUnmarshaller implements Unmarshaller<MethodSnapsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authorizationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSnapshot.setAuthorizationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSnapshot.setApiKeyRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

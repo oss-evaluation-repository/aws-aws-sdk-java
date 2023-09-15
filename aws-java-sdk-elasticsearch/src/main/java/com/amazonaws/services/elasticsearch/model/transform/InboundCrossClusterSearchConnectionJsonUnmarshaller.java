@@ -43,27 +43,39 @@ public class InboundCrossClusterSearchConnectionJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceDomainInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inboundCrossClusterSearchConnection.setSourceDomainInfo(DomainInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DestinationDomainInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inboundCrossClusterSearchConnection.setDestinationDomainInfo(DomainInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CrossClusterSearchConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inboundCrossClusterSearchConnection.setCrossClusterSearchConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inboundCrossClusterSearchConnection.setConnectionStatus(InboundCrossClusterSearchConnectionStatusJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

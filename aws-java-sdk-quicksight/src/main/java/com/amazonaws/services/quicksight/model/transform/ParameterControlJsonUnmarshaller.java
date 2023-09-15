@@ -43,34 +43,48 @@ public class ParameterControlJsonUnmarshaller implements Unmarshaller<ParameterC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DateTimePicker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterControl.setDateTimePicker(ParameterDateTimePickerControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("List", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterControl.setList(ParameterListControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Dropdown", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterControl.setDropdown(ParameterDropDownControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TextField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterControl.setTextField(ParameterTextFieldControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TextArea", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterControl.setTextArea(ParameterTextAreaControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Slider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterControl.setSlider(ParameterSliderControlJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

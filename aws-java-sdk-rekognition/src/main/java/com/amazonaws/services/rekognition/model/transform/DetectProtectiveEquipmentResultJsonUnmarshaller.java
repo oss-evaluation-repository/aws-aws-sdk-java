@@ -43,16 +43,22 @@ public class DetectProtectiveEquipmentResultJsonUnmarshaller implements Unmarsha
             return detectProtectiveEquipmentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProtectiveEquipmentModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectProtectiveEquipmentResult.setProtectiveEquipmentModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Persons", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectProtectiveEquipmentResult.setPersons(new ListUnmarshaller<ProtectiveEquipmentPerson>(ProtectiveEquipmentPersonJsonUnmarshaller
                             .getInstance())
@@ -60,8 +66,13 @@ public class DetectProtectiveEquipmentResultJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("Summary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectProtectiveEquipmentResult.setSummary(ProtectiveEquipmentSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

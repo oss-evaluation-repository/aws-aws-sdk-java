@@ -43,32 +43,45 @@ public class DetectAnomalyResultJsonUnmarshaller implements Unmarshaller<DetectA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectAnomalyResult.setSource(ImageSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IsAnomalous", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectAnomalyResult.setIsAnomalous(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Confidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectAnomalyResult.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("Anomalies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectAnomalyResult.setAnomalies(new ListUnmarshaller<Anomaly>(AnomalyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AnomalyMask", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectAnomalyResult.setAnomalyMask(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

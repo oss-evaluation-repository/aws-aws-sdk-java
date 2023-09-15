@@ -43,9 +43,13 @@ public class UpdateApnsChannelResultJsonUnmarshaller implements Unmarshaller<Upd
             return updateApnsChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateApnsChannelResult.setAPNSChannelResponse(APNSChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

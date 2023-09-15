@@ -43,30 +43,43 @@ public class CreateExportResultJsonUnmarshaller implements Unmarshaller<CreateEx
             return createExportResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("exportId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createExportResult.setExportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createExportResult.setResourceSpecification(ExportResourceSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fileFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createExportResult.setFileFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("exportStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createExportResult.setExportStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createExportResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

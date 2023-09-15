@@ -43,64 +43,85 @@ public class SamplingRuleJsonUnmarshaller implements Unmarshaller<SamplingRule, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setRuleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setResourceARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FixedRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setFixedRate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ReservoirSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setReservoirSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setServiceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Host", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setHost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HTTPMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setHTTPMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("URLPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setURLPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule.setVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     samplingRule
                             .setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

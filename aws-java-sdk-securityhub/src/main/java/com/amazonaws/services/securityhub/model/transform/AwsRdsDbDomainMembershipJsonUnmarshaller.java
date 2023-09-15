@@ -43,26 +43,38 @@ public class AwsRdsDbDomainMembershipJsonUnmarshaller implements Unmarshaller<Aw
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbDomainMembership.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbDomainMembership.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Fqdn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbDomainMembership.setFqdn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRoleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbDomainMembership.setIamRoleName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

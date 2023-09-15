@@ -43,26 +43,37 @@ public class SearchResourcesResultJsonUnmarshaller implements Unmarshaller<Searc
             return searchResourcesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceIdentifiers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchResourcesResult.setResourceIdentifiers(new ListUnmarshaller<ResourceIdentifier>(ResourceIdentifierJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchResourcesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchResourcesResult.setQueryErrors(new ListUnmarshaller<QueryError>(QueryErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

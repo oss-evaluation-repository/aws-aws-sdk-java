@@ -43,18 +43,28 @@ public class FailoverConfigJsonUnmarshaller implements Unmarshaller<FailoverConf
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Primary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     failoverConfig.setPrimary(PrimaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Secondary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     failoverConfig.setSecondary(SecondaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

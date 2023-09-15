@@ -43,28 +43,37 @@ public class RecommendationJobInputConfigJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelPackageVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInputConfig.setModelPackageVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobDurationInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInputConfig.setJobDurationInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TrafficPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInputConfig.setTrafficPattern(TrafficPatternJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInputConfig.setResourceLimit(RecommendationJobResourceLimitJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EndpointConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInputConfig.setEndpointConfigurations(new ListUnmarshaller<EndpointInputConfiguration>(
                             EndpointInputConfigurationJsonUnmarshaller.getInstance())
@@ -72,26 +81,35 @@ public class RecommendationJobInputConfigJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInputConfig.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContainerConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInputConfig.setContainerConfig(RecommendationJobContainerConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Endpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInputConfig.setEndpoints(new ListUnmarshaller<EndpointInfo>(EndpointInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInputConfig.setVpcConfig(RecommendationJobVpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInputConfig.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

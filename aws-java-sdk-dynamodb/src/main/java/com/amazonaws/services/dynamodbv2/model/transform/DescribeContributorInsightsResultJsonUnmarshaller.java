@@ -43,36 +43,50 @@ public class DescribeContributorInsightsResultJsonUnmarshaller implements Unmars
             return describeContributorInsightsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContributorInsightsResult.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContributorInsightsResult.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContributorInsightsRuleList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContributorInsightsResult.setContributorInsightsRuleList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ContributorInsightsStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContributorInsightsResult.setContributorInsightsStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContributorInsightsResult.setLastUpdateDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureException", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContributorInsightsResult.setFailureException(FailureExceptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

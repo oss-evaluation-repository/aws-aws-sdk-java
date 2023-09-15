@@ -43,28 +43,40 @@ public class IdentitySourceItemDetailsJsonUnmarshaller implements Unmarshaller<I
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clientIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identitySourceItemDetails.setClientIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("userPoolArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identitySourceItemDetails.setUserPoolArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("discoveryUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identitySourceItemDetails.setDiscoveryUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("openIdIssuer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identitySourceItemDetails.setOpenIdIssuer(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

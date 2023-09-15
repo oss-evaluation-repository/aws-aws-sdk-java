@@ -43,22 +43,33 @@ public class DateTimeFormatConfigurationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DateTimeFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dateTimeFormatConfiguration.setDateTimeFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NullValueFormatConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dateTimeFormatConfiguration.setNullValueFormatConfiguration(NullValueFormatConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NumericFormatConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dateTimeFormatConfiguration.setNumericFormatConfiguration(NumericFormatConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

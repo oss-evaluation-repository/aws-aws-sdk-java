@@ -43,19 +43,29 @@ public class FeaturizationMethodJsonUnmarshaller implements Unmarshaller<Featuri
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FeaturizationMethodName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featurizationMethod.setFeaturizationMethodName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeaturizationMethodParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featurizationMethod.setFeaturizationMethodParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

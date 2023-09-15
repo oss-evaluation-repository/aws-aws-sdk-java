@@ -43,36 +43,49 @@ public class GrpcRetryPolicyJsonUnmarshaller implements Unmarshaller<GrpcRetryPo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("grpcRetryEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grpcRetryPolicy.setGrpcRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("httpRetryEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grpcRetryPolicy.setHttpRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("maxRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grpcRetryPolicy.setMaxRetries(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("perRetryTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grpcRetryPolicy.setPerRetryTimeout(DurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tcpRetryEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grpcRetryPolicy.setTcpRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class TaskScheduledEventDetailsJsonUnmarshaller implements Unmarshaller<T
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskScheduledEventDetails.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskScheduledEventDetails.setResource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskScheduledEventDetails.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskScheduledEventDetails.setParameters(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeoutInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskScheduledEventDetails.setTimeoutInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("heartbeatInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskScheduledEventDetails.setHeartbeatInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("taskCredentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskScheduledEventDetails.setTaskCredentials(TaskCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class DestinationConfigurationJsonUnmarshaller implements Unmarshaller<De
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("destinationIp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConfiguration.setDestinationIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConfiguration.setDestinationPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("interface", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConfiguration.setInterface(InterfaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("outboundIp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationConfiguration.setOutboundIp(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

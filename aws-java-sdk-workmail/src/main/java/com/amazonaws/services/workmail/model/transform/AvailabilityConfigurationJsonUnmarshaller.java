@@ -43,34 +43,48 @@ public class AvailabilityConfigurationJsonUnmarshaller implements Unmarshaller<A
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityConfiguration.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProviderType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityConfiguration.setProviderType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EwsProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityConfiguration.setEwsProvider(RedactedEwsAvailabilityProviderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LambdaProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityConfiguration.setLambdaProvider(LambdaAvailabilityProviderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityConfiguration.setDateCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DateModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     availabilityConfiguration.setDateModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class IdentityPoolUsageJsonUnmarshaller implements Unmarshaller<IdentityP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityPoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityPoolUsage.setIdentityPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SyncSessionsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityPoolUsage.setSyncSessionsCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DataStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityPoolUsage.setDataStorage(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityPoolUsage.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

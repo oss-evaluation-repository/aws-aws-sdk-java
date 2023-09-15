@@ -43,30 +43,43 @@ public class MacAlgorithmEmvJsonUnmarshaller implements Unmarshaller<MacAlgorith
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MajorKeyDerivationMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     macAlgorithmEmv.setMajorKeyDerivationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PanSequenceNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     macAlgorithmEmv.setPanSequenceNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrimaryAccountNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     macAlgorithmEmv.setPrimaryAccountNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionKeyDerivationMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     macAlgorithmEmv.setSessionKeyDerivationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionKeyDerivationValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     macAlgorithmEmv.setSessionKeyDerivationValue(SessionKeyDerivationValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,44 +43,60 @@ public class GetConfigurationProfileResultJsonUnmarshaller implements Unmarshall
             return getConfigurationProfileResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationProfileResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationProfileResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationProfileResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationProfileResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationProfileResult.setLocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetrievalRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationProfileResult.setRetrievalRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Validators", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationProfileResult.setValidators(new ListUnmarshaller<Validator>(ValidatorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationProfileResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

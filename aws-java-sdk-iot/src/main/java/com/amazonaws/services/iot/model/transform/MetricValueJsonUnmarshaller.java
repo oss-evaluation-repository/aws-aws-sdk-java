@@ -43,42 +43,56 @@ public class MetricValueJsonUnmarshaller implements Unmarshaller<MetricValue, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("count", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricValue.setCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("cidrs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricValue.setCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricValue.setPorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("number", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricValue.setNumber(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("numbers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricValue.setNumbers(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("strings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricValue.setStrings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

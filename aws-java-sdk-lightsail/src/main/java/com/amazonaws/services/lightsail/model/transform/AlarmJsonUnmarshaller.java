@@ -43,94 +43,122 @@ public class AlarmJsonUnmarshaller implements Unmarshaller<Alarm, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setLocation(ResourceLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setSupportCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("monitoredResourceInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setMonitoredResourceInfo(MonitoredResourceInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("comparisonOperator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setComparisonOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("evaluationPeriods", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setEvaluationPeriods(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("period", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("threshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("datapointsToAlarm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setDatapointsToAlarm(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("treatMissingData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setTreatMissingData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statistic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setStatistic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contactProtocols", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setContactProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("notificationTriggers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setNotificationTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("notificationEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarm.setNotificationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

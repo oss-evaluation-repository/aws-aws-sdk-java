@@ -43,59 +43,78 @@ public class UpdateMethodResultJsonUnmarshaller implements Unmarshaller<UpdateMe
             return updateMethodResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("httpMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setHttpMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setAuthorizationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setAuthorizerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setApiKeyRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("requestValidatorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setRequestValidatorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setOperationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requestParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setRequestParameters(new MapUnmarshaller<String, Boolean>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Boolean.class)).unmarshall(context));
                 }
                 if (context.testExpression("requestModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setRequestModels(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("methodResponses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setMethodResponses(new MapUnmarshaller<String, MethodResponse>(context.getUnmarshaller(String.class),
                             MethodResponseJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("methodIntegration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setMethodIntegration(IntegrationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("authorizationScopes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMethodResult.setAuthorizationScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

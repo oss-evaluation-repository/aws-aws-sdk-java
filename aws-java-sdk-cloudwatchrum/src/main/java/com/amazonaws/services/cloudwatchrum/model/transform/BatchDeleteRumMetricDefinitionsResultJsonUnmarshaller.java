@@ -43,12 +43,17 @@ public class BatchDeleteRumMetricDefinitionsResultJsonUnmarshaller implements Un
             return batchDeleteRumMetricDefinitionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteRumMetricDefinitionsResult.setErrors(new ListUnmarshaller<BatchDeleteRumMetricDefinitionsError>(
                             BatchDeleteRumMetricDefinitionsErrorJsonUnmarshaller.getInstance())
@@ -56,10 +61,15 @@ public class BatchDeleteRumMetricDefinitionsResultJsonUnmarshaller implements Un
                     .unmarshall(context));
                 }
                 if (context.testExpression("MetricDefinitionIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteRumMetricDefinitionsResult.setMetricDefinitionIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

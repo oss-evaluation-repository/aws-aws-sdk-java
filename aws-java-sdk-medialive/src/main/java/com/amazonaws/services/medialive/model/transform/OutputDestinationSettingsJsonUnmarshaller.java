@@ -43,26 +43,38 @@ public class OutputDestinationSettingsJsonUnmarshaller implements Unmarshaller<O
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("passwordParam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputDestinationSettings.setPasswordParam(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputDestinationSettings.setStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputDestinationSettings.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputDestinationSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

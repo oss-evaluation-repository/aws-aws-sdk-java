@@ -43,36 +43,50 @@ public class BotImportSpecificationJsonUnmarshaller implements Unmarshaller<BotI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botImportSpecification.setBotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botImportSpecification.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataPrivacy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botImportSpecification.setDataPrivacy(DataPrivacyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("idleSessionTTLInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botImportSpecification.setIdleSessionTTLInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("botTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botImportSpecification.setBotTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("testBotAliasTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     botImportSpecification.setTestBotAliasTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

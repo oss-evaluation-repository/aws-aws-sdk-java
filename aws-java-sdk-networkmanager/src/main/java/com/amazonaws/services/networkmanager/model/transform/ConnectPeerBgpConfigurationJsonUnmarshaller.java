@@ -43,26 +43,38 @@ public class ConnectPeerBgpConfigurationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CoreNetworkAsn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerBgpConfiguration.setCoreNetworkAsn(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("PeerAsn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerBgpConfiguration.setPeerAsn(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CoreNetworkAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerBgpConfiguration.setCoreNetworkAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PeerAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerBgpConfiguration.setPeerAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class ProactiveOrganizationInsightSummaryJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveOrganizationInsightSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveOrganizationInsightSummary.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationalUnitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveOrganizationInsightSummary.setOrganizationalUnitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveOrganizationInsightSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveOrganizationInsightSummary.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveOrganizationInsightSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InsightTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveOrganizationInsightSummary.setInsightTimeRange(InsightTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PredictionTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveOrganizationInsightSummary.setPredictionTimeRange(PredictionTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceCollection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveOrganizationInsightSummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceCollection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveOrganizationInsightSummary.setServiceCollection(ServiceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class ResourceMetadataJsonUnmarshaller implements Unmarshaller<ResourceMe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("meshOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setMeshOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setUid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMetadata.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class DescribeClientBrandingResultJsonUnmarshaller implements Unmarshalle
             return describeClientBrandingResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceTypeWindows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeClientBrandingResult.setDeviceTypeWindows(DefaultClientBrandingAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeOsx", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeClientBrandingResult.setDeviceTypeOsx(DefaultClientBrandingAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeAndroid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeClientBrandingResult.setDeviceTypeAndroid(DefaultClientBrandingAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeIos", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeClientBrandingResult.setDeviceTypeIos(IosClientBrandingAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeLinux", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeClientBrandingResult.setDeviceTypeLinux(DefaultClientBrandingAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypeWeb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeClientBrandingResult.setDeviceTypeWeb(DefaultClientBrandingAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

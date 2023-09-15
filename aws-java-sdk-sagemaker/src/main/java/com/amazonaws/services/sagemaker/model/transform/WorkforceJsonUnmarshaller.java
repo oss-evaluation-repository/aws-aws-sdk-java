@@ -43,54 +43,73 @@ public class WorkforceJsonUnmarshaller implements Unmarshaller<Workforce, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkforceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setWorkforceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkforceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setWorkforceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SourceIpConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setSourceIpConfig(SourceIpConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SubDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setSubDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CognitoConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setCognitoConfig(CognitoConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OidcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setOidcConfig(OidcConfigForResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("WorkforceVpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setWorkforceVpcConfig(WorkforceVpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workforce.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

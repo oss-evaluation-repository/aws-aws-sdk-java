@@ -43,42 +43,58 @@ public class TestCaseJsonUnmarshaller implements Unmarshaller<TestCase, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("reportArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCase.setReportArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testRawDataPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCase.setTestRawDataPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCase.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCase.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCase.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("durationInNanoSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCase.setDurationInNanoSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCase.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCase.setExpired(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

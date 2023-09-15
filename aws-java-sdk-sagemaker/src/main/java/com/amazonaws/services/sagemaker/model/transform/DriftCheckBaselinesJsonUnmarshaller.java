@@ -43,26 +43,38 @@ public class DriftCheckBaselinesJsonUnmarshaller implements Unmarshaller<DriftCh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Bias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     driftCheckBaselines.setBias(DriftCheckBiasJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Explainability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     driftCheckBaselines.setExplainability(DriftCheckExplainabilityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelQuality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     driftCheckBaselines.setModelQuality(DriftCheckModelQualityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelDataQuality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     driftCheckBaselines.setModelDataQuality(DriftCheckModelDataQualityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

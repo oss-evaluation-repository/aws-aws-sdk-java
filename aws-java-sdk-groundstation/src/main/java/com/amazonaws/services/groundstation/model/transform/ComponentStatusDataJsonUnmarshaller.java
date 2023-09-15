@@ -43,38 +43,53 @@ public class ComponentStatusDataJsonUnmarshaller implements Unmarshaller<Compone
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bytesReceived", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentStatusData.setBytesReceived(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("bytesSent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentStatusData.setBytesSent(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("capabilityArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentStatusData.setCapabilityArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentStatusData.setComponentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataflowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentStatusData.setDataflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("packetsDropped", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentStatusData.setPacketsDropped(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentStatusData.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

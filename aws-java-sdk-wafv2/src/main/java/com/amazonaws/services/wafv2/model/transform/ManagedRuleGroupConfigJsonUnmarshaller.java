@@ -43,39 +43,54 @@ public class ManagedRuleGroupConfigJsonUnmarshaller implements Unmarshaller<Mana
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LoginPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupConfig.setLoginPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PayloadType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupConfig.setPayloadType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UsernameField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupConfig.setUsernameField(UsernameFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PasswordField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupConfig.setPasswordField(PasswordFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AWSManagedRulesBotControlRuleSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupConfig.setAWSManagedRulesBotControlRuleSet(AWSManagedRulesBotControlRuleSetJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("AWSManagedRulesATPRuleSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupConfig.setAWSManagedRulesATPRuleSet(AWSManagedRulesATPRuleSetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AWSManagedRulesACFPRuleSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupConfig.setAWSManagedRulesACFPRuleSet(AWSManagedRulesACFPRuleSetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

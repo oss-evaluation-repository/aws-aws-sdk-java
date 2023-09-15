@@ -43,76 +43,100 @@ public class MedicalTranscriptionJobJsonUnmarshaller implements Unmarshaller<Med
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MedicalTranscriptionJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setMedicalTranscriptionJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TranscriptionJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setTranscriptionJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaSampleRateHertz", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setMediaSampleRateHertz(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setMediaFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Media", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setMedia(MediaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Transcript", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setTranscript(MedicalTranscriptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setSettings(MedicalTranscriptionSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ContentIdentificationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setContentIdentificationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Specialty", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setSpecialty(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJob.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

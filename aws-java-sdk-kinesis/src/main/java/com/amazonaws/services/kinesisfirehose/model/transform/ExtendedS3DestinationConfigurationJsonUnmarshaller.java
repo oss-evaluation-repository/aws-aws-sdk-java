@@ -43,64 +43,85 @@ public class ExtendedS3DestinationConfigurationJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BucketARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setBucketARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorOutputPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setErrorOutputPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BufferingHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setBufferingHints(BufferingHintsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CompressionFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setCompressionFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3BackupMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setS3BackupMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BackupConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setS3BackupConfiguration(S3DestinationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataFormatConversionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setDataFormatConversionConfiguration(DataFormatConversionConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("DynamicPartitioningConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     extendedS3DestinationConfiguration.setDynamicPartitioningConfiguration(DynamicPartitioningConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

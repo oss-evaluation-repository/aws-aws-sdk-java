@@ -43,38 +43,53 @@ public class ConfigTypeDataJsonUnmarshaller implements Unmarshaller<ConfigTypeDa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("antennaDownlinkConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configTypeData.setAntennaDownlinkConfig(AntennaDownlinkConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("antennaDownlinkDemodDecodeConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configTypeData.setAntennaDownlinkDemodDecodeConfig(AntennaDownlinkDemodDecodeConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("antennaUplinkConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configTypeData.setAntennaUplinkConfig(AntennaUplinkConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dataflowEndpointConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configTypeData.setDataflowEndpointConfig(DataflowEndpointConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3RecordingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configTypeData.setS3RecordingConfig(S3RecordingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("trackingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configTypeData.setTrackingConfig(TrackingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("uplinkEchoConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configTypeData.setUplinkEchoConfig(UplinkEchoConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class CompilationJobSummaryJsonUnmarshaller implements Unmarshaller<Compi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CompilationJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setCompilationJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompilationJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setCompilationJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompilationStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setCompilationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompilationEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setCompilationEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompilationTargetDevice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setCompilationTargetDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompilationTargetPlatformOs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setCompilationTargetPlatformOs(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompilationTargetPlatformArch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setCompilationTargetPlatformArch(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompilationTargetPlatformAccelerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setCompilationTargetPlatformAccelerator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompilationJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     compilationJobSummary.setCompilationJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

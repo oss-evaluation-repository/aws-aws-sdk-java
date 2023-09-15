@@ -43,24 +43,32 @@ public class TrustAnchorDetailJsonUnmarshaller implements Unmarshaller<TrustAnch
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustAnchorDetail.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustAnchorDetail.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustAnchorDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("notificationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustAnchorDetail.setNotificationSettings(new ListUnmarshaller<NotificationSettingDetail>(NotificationSettingDetailJsonUnmarshaller
                             .getInstance())
@@ -68,20 +76,28 @@ public class TrustAnchorDetailJsonUnmarshaller implements Unmarshaller<TrustAnch
                     .unmarshall(context));
                 }
                 if (context.testExpression("source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustAnchorDetail.setSource(SourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("trustAnchorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustAnchorDetail.setTrustAnchorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trustAnchorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustAnchorDetail.setTrustAnchorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trustAnchorDetail.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,28 +43,40 @@ public class AppsListDataSummaryJsonUnmarshaller implements Unmarshaller<AppsLis
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ListArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListDataSummary.setListArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ListId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListDataSummary.setListId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ListName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListDataSummary.setListName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListDataSummary.setAppsList(new ListUnmarshaller<App>(AppJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

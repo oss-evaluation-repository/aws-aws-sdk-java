@@ -43,24 +43,35 @@ public class InsightResultsJsonUnmarshaller implements Unmarshaller<InsightResul
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InsightArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightResults.setInsightArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupByAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightResults.setGroupByAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightResults.setResultValues(new ListUnmarshaller<InsightResultValue>(InsightResultValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class IpOrganizationDetailsJsonUnmarshaller implements Unmarshaller<IpOrg
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Asn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipOrganizationDetails.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AsnOrg", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipOrganizationDetails.setAsnOrg(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Isp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipOrganizationDetails.setIsp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Org", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipOrganizationDetails.setOrg(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

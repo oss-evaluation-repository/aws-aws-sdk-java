@@ -43,25 +43,33 @@ public class UpdateReplicationGroupMemberActionJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationGroupMemberAction.setRegionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KMSMasterKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationGroupMemberAction.setKMSMasterKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughputOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationGroupMemberAction.setProvisionedThroughputOverride(ProvisionedThroughputOverrideJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationGroupMemberAction.setGlobalSecondaryIndexes(new ListUnmarshaller<ReplicaGlobalSecondaryIndex>(
                             ReplicaGlobalSecondaryIndexJsonUnmarshaller.getInstance())
@@ -69,8 +77,13 @@ public class UpdateReplicationGroupMemberActionJsonUnmarshaller implements Unmar
                     .unmarshall(context));
                 }
                 if (context.testExpression("TableClassOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationGroupMemberAction.setTableClassOverride(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

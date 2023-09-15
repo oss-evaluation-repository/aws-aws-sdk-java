@@ -43,22 +43,33 @@ public class ClientAuthenticationJsonUnmarshaller implements Unmarshaller<Client
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sasl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clientAuthentication.setSasl(SaslJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clientAuthentication.setTls(TlsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("unauthenticated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clientAuthentication.setUnauthenticated(UnauthenticatedJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

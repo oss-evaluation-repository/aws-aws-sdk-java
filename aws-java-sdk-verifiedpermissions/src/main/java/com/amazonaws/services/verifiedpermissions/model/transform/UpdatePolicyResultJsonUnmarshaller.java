@@ -43,38 +43,53 @@ public class UpdatePolicyResultJsonUnmarshaller implements Unmarshaller<UpdatePo
             return updatePolicyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyStoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePolicyResult.setPolicyStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePolicyResult.setPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePolicyResult.setPolicyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("principal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePolicyResult.setPrincipal(EntityIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePolicyResult.setResource(EntityIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePolicyResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePolicyResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

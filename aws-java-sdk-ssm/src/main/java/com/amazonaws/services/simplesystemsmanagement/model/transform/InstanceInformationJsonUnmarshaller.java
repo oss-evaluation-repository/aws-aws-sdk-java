@@ -43,94 +43,123 @@ public class InstanceInformationJsonUnmarshaller implements Unmarshaller<Instanc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setPingStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastPingDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setLastPingDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AgentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setAgentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsLatestVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setIsLatestVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PlatformType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setPlatformType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlatformName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setPlatformName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlatformVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setPlatformVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ActivationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setActivationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setIamRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setRegistrationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IPAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setIPAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setComputerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setAssociationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastAssociationExecutionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setLastAssociationExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulAssociationExecutionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setLastSuccessfulAssociationExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AssociationOverview", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setAssociationOverview(InstanceAggregatedAssociationOverviewJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceInformation.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,43 @@ public class ConnectorOperatorJsonUnmarshaller implements Unmarshaller<Connector
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Marketo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setMarketo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setS3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Salesforce", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setSalesforce(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceNow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setServiceNow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Zendesk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorOperator.setZendesk(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

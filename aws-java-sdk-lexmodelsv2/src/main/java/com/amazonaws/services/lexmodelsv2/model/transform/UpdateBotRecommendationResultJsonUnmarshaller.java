@@ -43,46 +43,63 @@ public class UpdateBotRecommendationResultJsonUnmarshaller implements Unmarshall
             return updateBotRecommendationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBotRecommendationResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBotRecommendationResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBotRecommendationResult.setLocaleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botRecommendationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBotRecommendationResult.setBotRecommendationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botRecommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBotRecommendationResult.setBotRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBotRecommendationResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBotRecommendationResult.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("transcriptSourceSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBotRecommendationResult.setTranscriptSourceSetting(TranscriptSourceSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("encryptionSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateBotRecommendationResult.setEncryptionSetting(EncryptionSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

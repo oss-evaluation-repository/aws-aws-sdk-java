@@ -43,20 +43,30 @@ public class AddEndpointsResultJsonUnmarshaller implements Unmarshaller<AddEndpo
             return addEndpointsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndpointDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addEndpointsResult.setEndpointDescriptions(new ListUnmarshaller<EndpointDescription>(EndpointDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EndpointGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addEndpointsResult.setEndpointGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

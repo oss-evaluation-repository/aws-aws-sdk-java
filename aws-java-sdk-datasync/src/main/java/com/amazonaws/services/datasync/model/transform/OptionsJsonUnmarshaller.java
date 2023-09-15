@@ -43,70 +43,93 @@ public class OptionsJsonUnmarshaller implements Unmarshaller<Options, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VerifyMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setVerifyMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OverwriteMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setOverwriteMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Atime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setAtime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Mtime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setMtime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Uid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setUid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Gid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setGid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreserveDeletedFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setPreserveDeletedFiles(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreserveDevices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setPreserveDevices(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PosixPermissions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setPosixPermissions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BytesPerSecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setBytesPerSecond(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskQueueing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setTaskQueueing(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransferMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setTransferMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityDescriptorCopyFlags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setSecurityDescriptorCopyFlags(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     options.setObjectTags(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

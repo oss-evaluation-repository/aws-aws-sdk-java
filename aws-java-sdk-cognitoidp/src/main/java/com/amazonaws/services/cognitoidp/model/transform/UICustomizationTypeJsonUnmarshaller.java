@@ -43,38 +43,53 @@ public class UICustomizationTypeJsonUnmarshaller implements Unmarshaller<UICusto
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserPoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uICustomizationType.setUserPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uICustomizationType.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uICustomizationType.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CSS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uICustomizationType.setCSS(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CSSVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uICustomizationType.setCSSVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uICustomizationType.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uICustomizationType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

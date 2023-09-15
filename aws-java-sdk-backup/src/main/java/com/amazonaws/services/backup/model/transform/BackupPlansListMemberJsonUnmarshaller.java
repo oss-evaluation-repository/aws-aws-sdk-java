@@ -43,49 +43,66 @@ public class BackupPlansListMemberJsonUnmarshaller implements Unmarshaller<Backu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupPlanArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlansListMember.setBackupPlanArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupPlanId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlansListMember.setBackupPlanId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlansListMember.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeletionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlansListMember.setDeletionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("VersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlansListMember.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupPlanName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlansListMember.setBackupPlanName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatorRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlansListMember.setCreatorRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastExecutionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlansListMember.setLastExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AdvancedBackupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlansListMember.setAdvancedBackupSettings(new ListUnmarshaller<AdvancedBackupSetting>(AdvancedBackupSettingJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,47 +43,64 @@ public class DescribeMapResultJsonUnmarshaller implements Unmarshaller<DescribeM
             return describeMapResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapResult.setConfiguration(MapConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapResult.setCreateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("DataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapResult.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MapArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapResult.setMapArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MapName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapResult.setMapName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PricingPlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapResult.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("UpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

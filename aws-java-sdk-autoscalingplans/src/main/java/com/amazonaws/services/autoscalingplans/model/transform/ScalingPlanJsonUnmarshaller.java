@@ -43,44 +43,60 @@ public class ScalingPlanJsonUnmarshaller implements Unmarshaller<ScalingPlan, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ScalingPlanName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlan.setScalingPlanName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalingPlanVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlan.setScalingPlanVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlan.setApplicationSource(ApplicationSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ScalingInstructions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlan.setScalingInstructions(new ListUnmarshaller<ScalingInstruction>(ScalingInstructionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlan.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlan.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlan.setStatusStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPlan.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

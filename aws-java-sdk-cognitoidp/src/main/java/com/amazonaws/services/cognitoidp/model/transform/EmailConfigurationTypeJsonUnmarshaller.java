@@ -43,30 +43,43 @@ public class EmailConfigurationTypeJsonUnmarshaller implements Unmarshaller<Emai
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailConfigurationType.setSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplyToEmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailConfigurationType.setReplyToEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailSendingAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailConfigurationType.setEmailSendingAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("From", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailConfigurationType.setFrom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailConfigurationType.setConfigurationSet(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

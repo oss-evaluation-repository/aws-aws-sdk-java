@@ -43,22 +43,33 @@ public class FecOutputSettingsJsonUnmarshaller implements Unmarshaller<FecOutput
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("columnDepth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fecOutputSettings.setColumnDepth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("includeFec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fecOutputSettings.setIncludeFec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rowLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fecOutputSettings.setRowLength(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,30 @@ public class DescribeGroupsResultJsonUnmarshaller implements Unmarshaller<Descri
             return describeGroupsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Groups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGroupsResult.setGroups(new ListUnmarshaller<GroupMetadata>(GroupMetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGroupsResult.setMarker(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

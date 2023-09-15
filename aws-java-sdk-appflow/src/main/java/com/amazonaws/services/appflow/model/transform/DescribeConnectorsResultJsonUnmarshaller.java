@@ -43,25 +43,36 @@ public class DescribeConnectorsResultJsonUnmarshaller implements Unmarshaller<De
             return describeConnectorsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectorConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorsResult.setConnectorConfigurations(new MapUnmarshaller<String, ConnectorConfiguration>(context
                             .getUnmarshaller(String.class), ConnectorConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("connectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorsResult.setConnectors(new ListUnmarshaller<ConnectorDetail>(ConnectorDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

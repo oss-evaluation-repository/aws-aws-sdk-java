@@ -43,16 +43,22 @@ public class MediaStreamSourceConfigurationRequestJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("encodingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStreamSourceConfigurationRequest.setEncodingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStreamSourceConfigurationRequest.setInputConfigurations(new ListUnmarshaller<InputConfigurationRequest>(
                             InputConfigurationRequestJsonUnmarshaller.getInstance())
@@ -60,8 +66,13 @@ public class MediaStreamSourceConfigurationRequestJsonUnmarshaller implements Un
                     .unmarshall(context));
                 }
                 if (context.testExpression("mediaStreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStreamSourceConfigurationRequest.setMediaStreamName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

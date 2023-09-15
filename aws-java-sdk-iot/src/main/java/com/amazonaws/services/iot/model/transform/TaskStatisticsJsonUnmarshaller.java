@@ -43,38 +43,53 @@ public class TaskStatisticsJsonUnmarshaller implements Unmarshaller<TaskStatisti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("totalChecks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatistics.setTotalChecks(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("inProgressChecks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatistics.setInProgressChecks(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("waitingForDataCollectionChecks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatistics.setWaitingForDataCollectionChecks(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("compliantChecks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatistics.setCompliantChecks(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("nonCompliantChecks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatistics.setNonCompliantChecks(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("failedChecks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatistics.setFailedChecks(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("canceledChecks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatistics.setCanceledChecks(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

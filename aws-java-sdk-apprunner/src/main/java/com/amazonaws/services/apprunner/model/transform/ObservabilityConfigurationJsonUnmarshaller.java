@@ -43,42 +43,58 @@ public class ObservabilityConfigurationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ObservabilityConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     observabilityConfiguration.setObservabilityConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObservabilityConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     observabilityConfiguration.setObservabilityConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TraceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     observabilityConfiguration.setTraceConfiguration(TraceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ObservabilityConfigurationRevision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     observabilityConfiguration.setObservabilityConfigurationRevision(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Latest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     observabilityConfiguration.setLatest(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     observabilityConfiguration.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     observabilityConfiguration.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     observabilityConfiguration.setDeletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,88 +43,115 @@ public class GameSessionJsonUnmarshaller implements Unmarshaller<GameSession, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GameSessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setGameSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TerminationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setTerminationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CurrentPlayerSessionCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setCurrentPlayerSessionCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumPlayerSessionCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setMaximumPlayerSessionCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PlayerSessionCreationPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setPlayerSessionCreationPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setCreatorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameSessionData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setGameSessionData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchmakerData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setMatchmakerData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSession.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

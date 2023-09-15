@@ -43,22 +43,33 @@ public class DriftCheckBiasJsonUnmarshaller implements Unmarshaller<DriftCheckBi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigFile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     driftCheckBias.setConfigFile(FileSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PreTrainingConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     driftCheckBias.setPreTrainingConstraints(MetricsSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PostTrainingConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     driftCheckBias.setPostTrainingConstraints(MetricsSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

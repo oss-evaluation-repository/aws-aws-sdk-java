@@ -43,26 +43,38 @@ public class ParallelismConfigurationUpdateJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigurationTypeUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelismConfigurationUpdate.setConfigurationTypeUpdate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParallelismUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelismConfigurationUpdate.setParallelismUpdate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ParallelismPerKPUUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelismConfigurationUpdate.setParallelismPerKPUUpdate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoScalingEnabledUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parallelismConfigurationUpdate.setAutoScalingEnabledUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,42 +44,58 @@ public class AwsEc2LaunchTemplateDataPlacementDetailsJsonUnmarshaller implements
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Affinity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataPlacementDetails.setAffinity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataPlacementDetails.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataPlacementDetails.setGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HostId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataPlacementDetails.setHostId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HostResourceGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataPlacementDetails.setHostResourceGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartitionNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataPlacementDetails.setPartitionNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SpreadDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataPlacementDetails.setSpreadDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tenancy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataPlacementDetails.setTenancy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

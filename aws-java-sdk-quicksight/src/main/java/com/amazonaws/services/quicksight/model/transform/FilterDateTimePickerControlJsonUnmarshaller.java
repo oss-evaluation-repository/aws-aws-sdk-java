@@ -43,30 +43,43 @@ public class FilterDateTimePickerControlJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilterControlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterDateTimePickerControl.setFilterControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterDateTimePickerControl.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceFilterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterDateTimePickerControl.setSourceFilterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterDateTimePickerControl.setDisplayOptions(DateTimePickerControlDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterDateTimePickerControl.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

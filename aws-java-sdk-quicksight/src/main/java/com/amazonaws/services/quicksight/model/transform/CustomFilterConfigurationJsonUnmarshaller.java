@@ -43,30 +43,43 @@ public class CustomFilterConfigurationJsonUnmarshaller implements Unmarshaller<C
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MatchOperator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customFilterConfiguration.setMatchOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CategoryValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customFilterConfiguration.setCategoryValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectAllOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customFilterConfiguration.setSelectAllOptions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customFilterConfiguration.setParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NullOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customFilterConfiguration.setNullOption(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

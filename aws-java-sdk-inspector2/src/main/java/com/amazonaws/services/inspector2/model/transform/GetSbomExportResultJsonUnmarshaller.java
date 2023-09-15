@@ -43,38 +43,53 @@ public class GetSbomExportResultJsonUnmarshaller implements Unmarshaller<GetSbom
             return getSbomExportResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("errorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSbomExportResult.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSbomExportResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterCriteria", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSbomExportResult.setFilterCriteria(ResourceFilterCriteriaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSbomExportResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reportId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSbomExportResult.setReportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSbomExportResult.setS3Destination(DestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSbomExportResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

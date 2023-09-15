@@ -43,26 +43,38 @@ public class CredentialsJsonUnmarshaller implements Unmarshaller<Credentials, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     credentials.setAccessKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     credentials.setSecretKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     credentials.setSessionToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Expiration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     credentials.setExpiration(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

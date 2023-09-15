@@ -43,16 +43,22 @@ public class PublicEndpointJsonUnmarshaller implements Unmarshaller<PublicEndpoi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Address", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setAttributes(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -60,41 +66,54 @@ public class PublicEndpointJsonUnmarshaller implements Unmarshaller<PublicEndpoi
                     ).unmarshall(context));
                 }
                 if (context.testExpression("ChannelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setChannelType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Demographic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setDemographic(EndpointDemographicJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EffectiveDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setEffectiveDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setEndpointStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setLocation(EndpointLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Metrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setMetrics(new MapUnmarshaller<String, Double>(context.getUnmarshaller(String.class), context.getUnmarshaller(Double.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("OptOut", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setOptOut(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("User", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     publicEndpoint.setUser(EndpointUserJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

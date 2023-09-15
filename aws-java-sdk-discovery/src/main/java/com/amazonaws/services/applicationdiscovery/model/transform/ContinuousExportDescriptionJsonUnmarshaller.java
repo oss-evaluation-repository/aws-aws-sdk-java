@@ -43,43 +43,59 @@ public class ContinuousExportDescriptionJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("exportId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     continuousExportDescription.setExportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     continuousExportDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     continuousExportDescription.setStatusDetail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     continuousExportDescription.setS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     continuousExportDescription.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     continuousExportDescription.setStopTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     continuousExportDescription.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("schemaStorageConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     continuousExportDescription.setSchemaStorageConfig(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

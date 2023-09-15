@@ -44,12 +44,17 @@ public class AwsCertificateManagerCertificateRenewalSummaryJsonUnmarshaller impl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainValidationOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCertificateManagerCertificateRenewalSummary
                             .setDomainValidationOptions(new ListUnmarshaller<AwsCertificateManagerCertificateDomainValidationOption>(
@@ -58,16 +63,23 @@ public class AwsCertificateManagerCertificateRenewalSummaryJsonUnmarshaller impl
                             .unmarshall(context));
                 }
                 if (context.testExpression("RenewalStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCertificateManagerCertificateRenewalSummary.setRenewalStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RenewalStatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCertificateManagerCertificateRenewalSummary.setRenewalStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCertificateManagerCertificateRenewalSummary.setUpdatedAt(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

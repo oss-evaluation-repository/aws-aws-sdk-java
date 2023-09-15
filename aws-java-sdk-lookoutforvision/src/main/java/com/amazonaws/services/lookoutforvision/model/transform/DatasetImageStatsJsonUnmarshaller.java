@@ -43,26 +43,38 @@ public class DatasetImageStatsJsonUnmarshaller implements Unmarshaller<DatasetIm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Total", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImageStats.setTotal(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Labeled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImageStats.setLabeled(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Normal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImageStats.setNormal(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Anomaly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetImageStats.setAnomaly(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,29 @@ public class AggregateJsonUnmarshaller implements Unmarshaller<Aggregate, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregate.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregate.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Groups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregate.setGroups(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
@@ -67,10 +74,15 @@ public class AggregateJsonUnmarshaller implements Unmarshaller<Aggregate, JsonUn
                     .unmarshall(context));
                 }
                 if (context.testExpression("Aggs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregate.setAggs(new ListUnmarshaller<AggregateOperation>(AggregateOperationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,55 @@ public class SuiteDefinitionInformationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("suiteDefinitionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionInformation.setSuiteDefinitionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteDefinitionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionInformation.setSuiteDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultDevices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionInformation.setDefaultDevices(new ListUnmarshaller<DeviceUnderTest>(DeviceUnderTestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("intendedForQualification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionInformation.setIntendedForQualification(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isLongDurationTest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionInformation.setIsLongDurationTest(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionInformation.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteDefinitionInformation.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

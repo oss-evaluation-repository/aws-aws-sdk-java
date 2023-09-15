@@ -43,22 +43,33 @@ public class UpdateFleetCapacityResultJsonUnmarshaller implements Unmarshaller<U
             return updateFleetCapacityResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FleetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFleetCapacityResult.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFleetCapacityResult.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFleetCapacityResult.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

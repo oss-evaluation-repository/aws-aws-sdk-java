@@ -43,118 +43,149 @@ public class UpdateFunctionConfigurationResultJsonUnmarshaller implements Unmars
             return updateFunctionConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FunctionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FunctionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Runtime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setRuntime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Handler", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setHandler(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setCodeSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MemorySize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setMemorySize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setLastModified(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeSha256", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setCodeSha256(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeadLetterConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setDeadLetterConfig(DeadLetterConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setEnvironment(EnvironmentResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KMSKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setKMSKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TracingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setTracingConfig(TracingConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MasterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setMasterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RevisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Layers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateReasonCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setStateReasonCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setLastUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateStatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setLastUpdateStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateStatusReasonCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setLastUpdateStatusReasonCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setFileSystemConfigs(new ListUnmarshaller<FileSystemConfig>(FileSystemConfigJsonUnmarshaller
                             .getInstance())
@@ -162,38 +193,50 @@ public class UpdateFunctionConfigurationResultJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("PackageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setPackageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageConfigResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setImageConfigResponse(ImageConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SigningProfileVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setSigningProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SigningJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setSigningJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Architectures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setArchitectures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EphemeralStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setEphemeralStorage(EphemeralStorageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SnapStart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setSnapStart(SnapStartResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RuntimeVersionConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFunctionConfigurationResult.setRuntimeVersionConfig(RuntimeVersionConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

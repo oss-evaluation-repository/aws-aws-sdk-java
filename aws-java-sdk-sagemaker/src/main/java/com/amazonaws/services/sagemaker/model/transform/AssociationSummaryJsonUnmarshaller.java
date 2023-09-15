@@ -43,46 +43,63 @@ public class AssociationSummaryJsonUnmarshaller implements Unmarshaller<Associat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSummary.setSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSummary.setDestinationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSummary.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSummary.setDestinationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSummary.setAssociationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSummary.setSourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSummary.setDestinationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSummary.setCreatedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class ListPerformanceAnalysisReportsResultJsonUnmarshaller implements Unm
             return listPerformanceAnalysisReportsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AnalysisReports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPerformanceAnalysisReportsResult.setAnalysisReports(new ListUnmarshaller<AnalysisReportSummary>(AnalysisReportSummaryJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListPerformanceAnalysisReportsResultJsonUnmarshaller implements Unm
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPerformanceAnalysisReportsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

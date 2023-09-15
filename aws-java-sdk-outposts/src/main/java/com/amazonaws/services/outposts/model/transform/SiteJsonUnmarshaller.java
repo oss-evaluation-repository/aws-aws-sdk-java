@@ -43,55 +43,74 @@ public class SiteJsonUnmarshaller implements Unmarshaller<Site, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SiteId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setSiteId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("SiteArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setSiteArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Notes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setNotes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperatingAddressCountryCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setOperatingAddressCountryCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperatingAddressStateOrRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setOperatingAddressStateOrRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperatingAddressCity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setOperatingAddressCity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RackPhysicalProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     site.setRackPhysicalProperties(RackPhysicalPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

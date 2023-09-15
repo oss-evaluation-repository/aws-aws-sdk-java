@@ -43,74 +43,98 @@ public class UIColorPaletteJsonUnmarshaller implements Unmarshaller<UIColorPalet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PrimaryForeground", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setPrimaryForeground(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrimaryBackground", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setPrimaryBackground(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecondaryForeground", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setSecondaryForeground(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecondaryBackground", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setSecondaryBackground(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Accent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setAccent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccentForeground", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setAccentForeground(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Danger", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setDanger(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DangerForeground", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setDangerForeground(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Warning", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setWarning(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WarningForeground", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setWarningForeground(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Success", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setSuccess(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SuccessForeground", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setSuccessForeground(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Dimension", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setDimension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DimensionForeground", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setDimensionForeground(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Measure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setMeasure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MeasureForeground", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     uIColorPalette.setMeasureForeground(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

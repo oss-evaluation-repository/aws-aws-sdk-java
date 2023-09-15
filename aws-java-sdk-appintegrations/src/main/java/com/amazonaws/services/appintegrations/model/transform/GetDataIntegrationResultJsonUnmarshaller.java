@@ -44,55 +44,73 @@ public class GetDataIntegrationResultJsonUnmarshaller implements Unmarshaller<Ge
             return getDataIntegrationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataIntegrationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataIntegrationResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataIntegrationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataIntegrationResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataIntegrationResult.setKmsKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceURI", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataIntegrationResult.setSourceURI(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataIntegrationResult.setScheduleConfiguration(ScheduleConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataIntegrationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("FileConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataIntegrationResult.setFileConfiguration(FileConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ObjectConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataIntegrationResult.setObjectConfiguration(new MapUnmarshaller<String, java.util.Map<String, java.util.List<String>>>(context
                             .getUnmarshaller(String.class), new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     )).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

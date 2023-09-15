@@ -43,78 +43,102 @@ public class JobDefinitionJsonUnmarshaller implements Unmarshaller<JobDefinition
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobDefinitionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setJobDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setJobDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setRevision(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("schedulingPriority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setSchedulingPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("retryStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setRetryStrategy(RetryStrategyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("containerProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setContainerProperties(ContainerPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setTimeout(JobTimeoutJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nodeProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setNodeProperties(NodePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("propagateTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setPropagateTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("platformCapabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setPlatformCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("eksProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setEksProperties(EksPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("containerOrchestrationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDefinition.setContainerOrchestrationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,81 +43,106 @@ public class ContainerRecipeJsonUnmarshaller implements Unmarshaller<ContainerRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setContainerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("components", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setComponents(new ListUnmarshaller<ComponentConfiguration>(ComponentConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("instanceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setInstanceConfiguration(InstanceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dockerfileTemplateData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setDockerfileTemplateData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("parentImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setParentImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setDateCreated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("workingDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setWorkingDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetRepository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerRecipe.setTargetRepository(TargetContainerRepositoryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class DirectoryLimitsJsonUnmarshaller implements Unmarshaller<DirectoryLi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CloudOnlyDirectoriesLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryLimits.setCloudOnlyDirectoriesLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudOnlyDirectoriesCurrentCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryLimits.setCloudOnlyDirectoriesCurrentCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudOnlyDirectoriesLimitReached", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryLimits.setCloudOnlyDirectoriesLimitReached(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudOnlyMicrosoftADLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryLimits.setCloudOnlyMicrosoftADLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudOnlyMicrosoftADCurrentCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryLimits.setCloudOnlyMicrosoftADCurrentCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudOnlyMicrosoftADLimitReached", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryLimits.setCloudOnlyMicrosoftADLimitReached(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectedDirectoriesLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryLimits.setConnectedDirectoriesLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectedDirectoriesCurrentCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryLimits.setConnectedDirectoriesCurrentCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectedDirectoriesLimitReached", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryLimits.setConnectedDirectoriesLimitReached(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,64 +43,85 @@ public class UpdateSlotTypeResultJsonUnmarshaller implements Unmarshaller<Update
             return updateSlotTypeResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("slotTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setSlotTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setSlotTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotTypeValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setSlotTypeValues(new ListUnmarshaller<SlotTypeValue>(SlotTypeValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("valueSelectionSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setValueSelectionSetting(SlotValueSelectionSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("parentSlotTypeSignature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setParentSlotTypeSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setLocaleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("externalSourceSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setExternalSourceSetting(ExternalSourceSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("compositeSlotTypeSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateSlotTypeResult.setCompositeSlotTypeSetting(CompositeSlotTypeSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

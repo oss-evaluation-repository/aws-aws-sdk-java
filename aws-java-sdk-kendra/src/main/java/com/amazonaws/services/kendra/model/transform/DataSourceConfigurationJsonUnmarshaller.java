@@ -43,82 +43,108 @@ public class DataSourceConfigurationJsonUnmarshaller implements Unmarshaller<Dat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setS3Configuration(S3DataSourceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SharePointConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setSharePointConfiguration(SharePointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DatabaseConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setDatabaseConfiguration(DatabaseConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SalesforceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setSalesforceConfiguration(SalesforceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OneDriveConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setOneDriveConfiguration(OneDriveConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceNowConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setServiceNowConfiguration(ServiceNowConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConfluenceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setConfluenceConfiguration(ConfluenceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GoogleDriveConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setGoogleDriveConfiguration(GoogleDriveConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("WebCrawlerConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setWebCrawlerConfiguration(WebCrawlerConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("WorkDocsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setWorkDocsConfiguration(WorkDocsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FsxConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setFsxConfiguration(FsxConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SlackConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setSlackConfiguration(SlackConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BoxConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setBoxConfiguration(BoxConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("QuipConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setQuipConfiguration(QuipConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JiraConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setJiraConfiguration(JiraConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GitHubConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setGitHubConfiguration(GitHubConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AlfrescoConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setAlfrescoConfiguration(AlfrescoConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfiguration.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

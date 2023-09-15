@@ -43,26 +43,38 @@ public class AdminScopeJsonUnmarshaller implements Unmarshaller<AdminScope, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminScope.setAccountScope(AccountScopeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OrganizationalUnitScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminScope.setOrganizationalUnitScope(OrganizationalUnitScopeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RegionScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminScope.setRegionScope(RegionScopeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PolicyTypeScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminScope.setPolicyTypeScope(PolicyTypeScopeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

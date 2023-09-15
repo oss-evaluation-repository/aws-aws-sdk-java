@@ -43,42 +43,57 @@ public class LayerVersionsListItemJsonUnmarshaller implements Unmarshaller<Layer
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LayerVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionsListItem.setLayerVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionsListItem.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionsListItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionsListItem.setCreatedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompatibleRuntimes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionsListItem.setCompatibleRuntimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LicenseInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionsListItem.setLicenseInfo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompatibleArchitectures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionsListItem.setCompatibleArchitectures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

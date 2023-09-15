@@ -43,26 +43,38 @@ public class UpdateFailoverConfigJsonUnmarshaller implements Unmarshaller<Update
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("failoverMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFailoverConfig.setFailoverMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recoveryWindow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFailoverConfig.setRecoveryWindow(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("sourcePriority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFailoverConfig.setSourcePriority(SourcePriorityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateFailoverConfig.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

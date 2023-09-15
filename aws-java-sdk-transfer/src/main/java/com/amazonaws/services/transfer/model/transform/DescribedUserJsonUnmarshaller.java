@@ -43,56 +43,74 @@ public class DescribedUserJsonUnmarshaller implements Unmarshaller<DescribedUser
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedUser.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HomeDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedUser.setHomeDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HomeDirectoryMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedUser.setHomeDirectoryMappings(new ListUnmarshaller<HomeDirectoryMapEntry>(HomeDirectoryMapEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HomeDirectoryType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedUser.setHomeDirectoryType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Policy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedUser.setPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PosixProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedUser.setPosixProfile(PosixProfileJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedUser.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshPublicKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedUser.setSshPublicKeys(new ListUnmarshaller<SshPublicKey>(SshPublicKeyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedUser.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedUser.setUserName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

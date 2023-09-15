@@ -43,42 +43,58 @@ public class MapRunItemCountsJsonUnmarshaller implements Unmarshaller<MapRunItem
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pending", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunItemCounts.setPending(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("running", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunItemCounts.setRunning(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("succeeded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunItemCounts.setSucceeded(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("failed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunItemCounts.setFailed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("timedOut", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunItemCounts.setTimedOut(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("aborted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunItemCounts.setAborted(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("total", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunItemCounts.setTotal(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("resultsWritten", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunItemCounts.setResultsWritten(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class ReportJobJsonUnmarshaller implements Unmarshaller<ReportJob, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReportJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportJob.setReportJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportPlanArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportJob.setReportPlanArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportJob.setReportTemplate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportJob.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportJob.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportJob.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportJob.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportJob.setReportDestination(ReportDestinationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

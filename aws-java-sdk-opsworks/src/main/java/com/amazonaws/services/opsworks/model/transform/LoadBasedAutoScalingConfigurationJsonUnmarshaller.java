@@ -43,26 +43,38 @@ public class LoadBasedAutoScalingConfigurationJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LayerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBasedAutoScalingConfiguration.setLayerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBasedAutoScalingConfiguration.setEnable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UpScaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBasedAutoScalingConfiguration.setUpScaling(AutoScalingThresholdsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DownScaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBasedAutoScalingConfiguration.setDownScaling(AutoScalingThresholdsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

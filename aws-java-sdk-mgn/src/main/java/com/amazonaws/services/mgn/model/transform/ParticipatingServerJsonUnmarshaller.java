@@ -43,26 +43,38 @@ public class ParticipatingServerJsonUnmarshaller implements Unmarshaller<Partici
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("launchStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     participatingServer.setLaunchStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchedEc2InstanceID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     participatingServer.setLaunchedEc2InstanceID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("postLaunchActionsStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     participatingServer.setPostLaunchActionsStatus(PostLaunchActionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     participatingServer.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

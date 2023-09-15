@@ -43,28 +43,40 @@ public class FillMissingValuesJsonUnmarshaller implements Unmarshaller<FillMissi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fillMissingValues.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fillMissingValues.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ImputedPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fillMissingValues.setImputedPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FilledPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fillMissingValues.setFilledPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class GetPolicyVersionResultJsonUnmarshaller implements Unmarshaller<GetP
             return getPolicyVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPolicyVersionResult.setPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPolicyVersionResult.setPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyDocument", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPolicyVersionResult.setPolicyDocument(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPolicyVersionResult.setPolicyVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isDefaultVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPolicyVersionResult.setIsDefaultVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPolicyVersionResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPolicyVersionResult.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("generationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPolicyVersionResult.setGenerationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

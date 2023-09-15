@@ -43,38 +43,52 @@ public class VpcInterfaceJsonUnmarshaller implements Unmarshaller<VpcInterface, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcInterface.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaceIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcInterface.setNetworkInterfaceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcInterface.setNetworkInterfaceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcInterface.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcInterface.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("subnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcInterface.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

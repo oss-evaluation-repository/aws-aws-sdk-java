@@ -43,110 +43,142 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setBackupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setBackupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setBackupType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setEngineModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setInstanceProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyPair", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setKeyPair(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreferredBackupWindow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setPreferredBackupWindow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreferredMaintenanceWindow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setPreferredMaintenanceWindow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DataSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setS3DataSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DataUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setS3DataUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3LogUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setS3LogUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ServerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setServiceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setStatusDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ToolsVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setToolsVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backup.setUserArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

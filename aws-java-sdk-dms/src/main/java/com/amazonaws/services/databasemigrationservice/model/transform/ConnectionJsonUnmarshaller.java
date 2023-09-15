@@ -43,34 +43,48 @@ public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplicationInstanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setReplicationInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setEndpointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastFailureMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setLastFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setEndpointIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connection.setReplicationInstanceIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

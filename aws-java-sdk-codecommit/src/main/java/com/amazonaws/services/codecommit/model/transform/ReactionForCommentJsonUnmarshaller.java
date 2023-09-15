@@ -43,24 +43,35 @@ public class ReactionForCommentJsonUnmarshaller implements Unmarshaller<Reaction
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("reaction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactionForComment.setReaction(ReactionValueFormatsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("reactionUsers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactionForComment.setReactionUsers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("reactionsFromDeletedUsersCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reactionForComment.setReactionsFromDeletedUsersCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

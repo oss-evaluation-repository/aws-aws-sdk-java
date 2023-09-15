@@ -43,65 +43,86 @@ public class FormJsonUnmarshaller implements Unmarshaller<Form, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("formActionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setFormActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("style", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setStyle(FormStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setDataType(FormDataTypeConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setFields(new MapUnmarshaller<String, FieldConfig>(context.getUnmarshaller(String.class), FieldConfigJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
                 if (context.testExpression("sectionalElements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setSectionalElements(new MapUnmarshaller<String, SectionalElement>(context.getUnmarshaller(String.class),
                             SectionalElementJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("schemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("cta", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setCta(FormCTAJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("labelDecorator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     form.setLabelDecorator(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

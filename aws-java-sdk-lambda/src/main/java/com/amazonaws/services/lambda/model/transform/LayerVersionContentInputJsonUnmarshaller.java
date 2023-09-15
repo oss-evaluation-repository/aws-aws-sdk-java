@@ -43,26 +43,38 @@ public class LayerVersionContentInputJsonUnmarshaller implements Unmarshaller<La
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionContentInput.setS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionContentInput.setS3Key(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3ObjectVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionContentInput.setS3ObjectVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ZipFile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layerVersionContentInput.setZipFile(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

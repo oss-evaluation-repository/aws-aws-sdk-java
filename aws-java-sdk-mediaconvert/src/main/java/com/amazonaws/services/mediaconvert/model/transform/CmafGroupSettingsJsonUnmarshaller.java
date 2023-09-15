@@ -43,120 +43,155 @@ public class CmafGroupSettingsJsonUnmarshaller implements Unmarshaller<CmafGroup
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("additionalManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setAdditionalManifests(new ListUnmarshaller<CmafAdditionalManifest>(CmafAdditionalManifestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("baseUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setBaseUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientCache", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setClientCache(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codecSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setCodecSpecification(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dashManifestStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setDashManifestStyle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setDestinationSettings(DestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setEncryption(CmafEncryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fragmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setFragmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("imageBasedTrickPlay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setImageBasedTrickPlay(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageBasedTrickPlaySettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setImageBasedTrickPlaySettings(CmafImageBasedTrickPlaySettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("manifestCompression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setManifestCompression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("manifestDurationFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setManifestDurationFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minBufferTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setMinBufferTime(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minFinalSegmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setMinFinalSegmentLength(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("mpdManifestBandwidthType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setMpdManifestBandwidthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mpdProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setMpdProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ptsOffsetHandlingForBFrames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setPtsOffsetHandlingForBFrames(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setSegmentControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setSegmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentLengthControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setSegmentLengthControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamInfResolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setStreamInfResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetDurationCompatibilityMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setTargetDurationCompatibilityMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("videoCompositionOffsets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setVideoCompositionOffsets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("writeDashManifest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setWriteDashManifest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("writeHlsManifest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setWriteHlsManifest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("writeSegmentTimelineInRepresentation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafGroupSettings.setWriteSegmentTimelineInRepresentation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

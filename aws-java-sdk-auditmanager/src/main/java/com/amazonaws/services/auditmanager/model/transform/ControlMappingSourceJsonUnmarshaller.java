@@ -43,42 +43,58 @@ public class ControlMappingSourceJsonUnmarshaller implements Unmarshaller<Contro
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlMappingSource.setSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlMappingSource.setSourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlMappingSource.setSourceDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceSetUpOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlMappingSource.setSourceSetUpOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlMappingSource.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceKeyword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlMappingSource.setSourceKeyword(SourceKeywordJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlMappingSource.setSourceFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("troubleshootingText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     controlMappingSource.setTroubleshootingText(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,43 @@ public class OAuth2CredentialsJsonUnmarshaller implements Unmarshaller<OAuth2Cre
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2Credentials.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientSecret", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2Credentials.setClientSecret(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2Credentials.setAccessToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("refreshToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2Credentials.setRefreshToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("oAuthRequest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2Credentials.setOAuthRequest(ConnectorOAuthRequestJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

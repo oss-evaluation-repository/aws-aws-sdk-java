@@ -43,26 +43,38 @@ public class WordCloudChartConfigurationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wordCloudChartConfiguration.setFieldWells(WordCloudFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SortConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wordCloudChartConfiguration.setSortConfiguration(WordCloudSortConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CategoryLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wordCloudChartConfiguration.setCategoryLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("WordCloudOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wordCloudChartConfiguration.setWordCloudOptions(WordCloudOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

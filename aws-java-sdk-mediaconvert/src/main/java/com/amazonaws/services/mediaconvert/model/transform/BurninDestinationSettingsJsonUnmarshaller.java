@@ -43,94 +43,123 @@ public class BurninDestinationSettingsJsonUnmarshaller implements Unmarshaller<B
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("alignment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setAlignment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applyFontColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setApplyFontColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("backgroundColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setBackgroundColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("backgroundOpacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setBackgroundOpacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fallbackFont", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setFallbackFont(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fontColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setFontColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fontOpacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setFontOpacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fontResolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setFontResolution(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fontScript", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setFontScript(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fontSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setFontSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hexFontColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setHexFontColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outlineColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setOutlineColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outlineSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setOutlineSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shadowColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setShadowColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("shadowOpacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setShadowOpacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shadowXOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setShadowXOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shadowYOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setShadowYOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("stylePassthrough", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setStylePassthrough(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("teletextSpacing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setTeletextSpacing(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("xPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setXPosition(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("yPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     burninDestinationSettings.setYPosition(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

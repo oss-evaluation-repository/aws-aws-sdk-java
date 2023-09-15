@@ -43,38 +43,53 @@ public class UpdatePipeSourceKinesisStreamParametersJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BatchSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceKinesisStreamParameters.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DeadLetterConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceKinesisStreamParameters.setDeadLetterConfig(DeadLetterConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaximumBatchingWindowInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceKinesisStreamParameters.setMaximumBatchingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumRecordAgeInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceKinesisStreamParameters.setMaximumRecordAgeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumRetryAttempts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceKinesisStreamParameters.setMaximumRetryAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OnPartialBatchItemFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceKinesisStreamParameters.setOnPartialBatchItemFailure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParallelizationFactor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceKinesisStreamParameters.setParallelizationFactor(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

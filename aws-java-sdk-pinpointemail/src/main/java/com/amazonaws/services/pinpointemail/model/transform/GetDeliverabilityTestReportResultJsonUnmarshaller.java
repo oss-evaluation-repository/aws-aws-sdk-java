@@ -43,34 +43,47 @@ public class GetDeliverabilityTestReportResultJsonUnmarshaller implements Unmars
             return getDeliverabilityTestReportResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeliverabilityTestReport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeliverabilityTestReportResult.setDeliverabilityTestReport(DeliverabilityTestReportJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OverallPlacement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeliverabilityTestReportResult.setOverallPlacement(PlacementStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IspPlacements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeliverabilityTestReportResult.setIspPlacements(new ListUnmarshaller<IspPlacement>(IspPlacementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeliverabilityTestReportResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeliverabilityTestReportResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

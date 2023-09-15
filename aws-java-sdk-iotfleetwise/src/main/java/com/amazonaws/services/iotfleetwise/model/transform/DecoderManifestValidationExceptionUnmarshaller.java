@@ -48,12 +48,17 @@ public class DecoderManifestValidationExceptionUnmarshaller extends EnhancedJson
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("invalidSignals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decoderManifestValidationException.setInvalidSignals(new ListUnmarshaller<InvalidSignalDecoder>(InvalidSignalDecoderJsonUnmarshaller
                             .getInstance())
@@ -61,11 +66,16 @@ public class DecoderManifestValidationExceptionUnmarshaller extends EnhancedJson
                     .unmarshall(context));
                 }
                 if (context.testExpression("invalidNetworkInterfaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     decoderManifestValidationException.setInvalidNetworkInterfaces(new ListUnmarshaller<InvalidNetworkInterface>(
                             InvalidNetworkInterfaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

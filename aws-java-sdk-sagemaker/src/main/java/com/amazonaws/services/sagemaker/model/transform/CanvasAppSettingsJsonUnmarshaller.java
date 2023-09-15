@@ -43,29 +43,41 @@ public class CanvasAppSettingsJsonUnmarshaller implements Unmarshaller<CanvasApp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TimeSeriesForecastingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canvasAppSettings.setTimeSeriesForecastingSettings(TimeSeriesForecastingSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelRegisterSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canvasAppSettings.setModelRegisterSettings(ModelRegisterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("WorkspaceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canvasAppSettings.setWorkspaceSettings(WorkspaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IdentityProviderOAuthSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canvasAppSettings.setIdentityProviderOAuthSettings(new ListUnmarshaller<IdentityProviderOAuthSetting>(
                             IdentityProviderOAuthSettingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

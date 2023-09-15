@@ -43,12 +43,17 @@ public class AwsDynamoDbTableReplicaJsonUnmarshaller implements Unmarshaller<Aws
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableReplica.setGlobalSecondaryIndexes(new ListUnmarshaller<AwsDynamoDbTableReplicaGlobalSecondaryIndex>(
                             AwsDynamoDbTableReplicaGlobalSecondaryIndexJsonUnmarshaller.getInstance())
@@ -56,25 +61,34 @@ public class AwsDynamoDbTableReplicaJsonUnmarshaller implements Unmarshaller<Aws
                     .unmarshall(context));
                 }
                 if (context.testExpression("KmsMasterKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableReplica.setKmsMasterKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughputOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableReplica.setProvisionedThroughputOverride(AwsDynamoDbTableProvisionedThroughputOverrideJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("RegionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableReplica.setRegionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableReplica.setReplicaStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaStatusDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableReplica.setReplicaStatusDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

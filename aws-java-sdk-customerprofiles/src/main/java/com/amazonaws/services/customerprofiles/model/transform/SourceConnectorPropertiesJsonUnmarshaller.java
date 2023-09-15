@@ -43,30 +43,43 @@ public class SourceConnectorPropertiesJsonUnmarshaller implements Unmarshaller<S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Marketo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceConnectorProperties.setMarketo(MarketoSourcePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceConnectorProperties.setS3(S3SourcePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Salesforce", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceConnectorProperties.setSalesforce(SalesforceSourcePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceNow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceConnectorProperties.setServiceNow(ServiceNowSourcePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Zendesk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceConnectorProperties.setZendesk(ZendeskSourcePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

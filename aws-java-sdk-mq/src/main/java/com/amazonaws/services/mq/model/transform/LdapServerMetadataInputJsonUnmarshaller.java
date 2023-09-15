@@ -43,56 +43,75 @@ public class LdapServerMetadataInputJsonUnmarshaller implements Unmarshaller<Lda
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("hosts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setHosts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("roleBase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setRoleBase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleSearchMatching", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setRoleSearchMatching(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleSearchSubtree", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setRoleSearchSubtree(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceAccountPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setServiceAccountPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceAccountUsername", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setServiceAccountUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userBase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setUserBase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userRoleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setUserRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userSearchMatching", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setUserSearchMatching(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userSearchSubtree", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataInput.setUserSearchSubtree(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

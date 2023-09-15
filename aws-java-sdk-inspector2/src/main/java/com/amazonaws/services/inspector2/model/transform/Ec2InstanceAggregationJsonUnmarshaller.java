@@ -43,42 +43,56 @@ public class Ec2InstanceAggregationJsonUnmarshaller implements Unmarshaller<Ec2I
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("amis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAggregation.setAmis(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("instanceIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAggregation.setInstanceIds(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("instanceTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAggregation.setInstanceTags(new ListUnmarshaller<MapFilter>(MapFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("operatingSystems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAggregation.setOperatingSystems(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sortBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAggregation.setSortBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sortOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAggregation.setSortOrder(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

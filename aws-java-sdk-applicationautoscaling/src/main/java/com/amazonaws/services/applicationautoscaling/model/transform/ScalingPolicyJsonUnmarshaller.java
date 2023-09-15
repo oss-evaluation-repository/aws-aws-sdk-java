@@ -43,53 +43,71 @@ public class ScalingPolicyJsonUnmarshaller implements Unmarshaller<ScalingPolicy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PolicyARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setPolicyARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setServiceNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalableDimension", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setScalableDimension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setPolicyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StepScalingPolicyConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setStepScalingPolicyConfiguration(StepScalingPolicyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TargetTrackingScalingPolicyConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("Alarms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setAlarms(new ListUnmarshaller<Alarm>(AlarmJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

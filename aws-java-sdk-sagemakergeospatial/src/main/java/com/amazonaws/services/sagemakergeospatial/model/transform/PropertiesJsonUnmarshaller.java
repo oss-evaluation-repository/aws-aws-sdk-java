@@ -43,34 +43,48 @@ public class PropertiesJsonUnmarshaller implements Unmarshaller<Properties, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EoCloudCover", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     properties.setEoCloudCover(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("LandsatCloudCoverLand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     properties.setLandsatCloudCoverLand(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("Platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     properties.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ViewOffNadir", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     properties.setViewOffNadir(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("ViewSunAzimuth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     properties.setViewSunAzimuth(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("ViewSunElevation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     properties.setViewSunElevation(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

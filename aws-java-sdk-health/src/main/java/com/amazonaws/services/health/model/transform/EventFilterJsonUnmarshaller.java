@@ -44,78 +44,94 @@ public class EventFilterJsonUnmarshaller implements Unmarshaller<EventFilter, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setEventArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("eventTypeCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setEventTypeCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("services", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setServices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("regions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("availabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("startTimes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setStartTimes(new ListUnmarshaller<DateTimeRange>(DateTimeRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("endTimes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setEndTimes(new ListUnmarshaller<DateTimeRange>(DateTimeRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTimes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setLastUpdatedTimes(new ListUnmarshaller<DateTimeRange>(DateTimeRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("entityArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setEntityArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("entityValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setEntityValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("eventTypeCategories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setEventTypeCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setTags(new ListUnmarshaller<java.util.Map<String, String>>(new MapUnmarshaller<String, String>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
@@ -123,10 +139,15 @@ public class EventFilterJsonUnmarshaller implements Unmarshaller<EventFilter, Js
                     .unmarshall(context));
                 }
                 if (context.testExpression("eventStatusCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventFilter.setEventStatusCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

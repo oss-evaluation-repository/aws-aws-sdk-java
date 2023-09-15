@@ -43,26 +43,38 @@ public class CellJsonUnmarshaller implements Unmarshaller<Cell, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cellReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cell.setCellReference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cell.setColumn(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("columnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cell.setColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("row", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cell.setRow(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

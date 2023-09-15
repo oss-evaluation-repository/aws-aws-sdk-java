@@ -43,12 +43,17 @@ public class ListInsightsResultJsonUnmarshaller implements Unmarshaller<ListInsi
             return listInsightsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProactiveInsights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listInsightsResult
                             .setProactiveInsights(new ListUnmarshaller<ProactiveInsightSummary>(ProactiveInsightSummaryJsonUnmarshaller.getInstance())
@@ -56,14 +61,20 @@ public class ListInsightsResultJsonUnmarshaller implements Unmarshaller<ListInsi
                             .unmarshall(context));
                 }
                 if (context.testExpression("ReactiveInsights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listInsightsResult.setReactiveInsights(new ListUnmarshaller<ReactiveInsightSummary>(ReactiveInsightSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listInsightsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

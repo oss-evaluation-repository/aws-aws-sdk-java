@@ -43,50 +43,68 @@ public class ProvisionedRequestJsonUnmarshaller implements Unmarshaller<Provisio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("brokerNodeGroupInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedRequest.setBrokerNodeGroupInfo(BrokerNodeGroupInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("clientAuthentication", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedRequest.setClientAuthentication(ClientAuthenticationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configurationInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedRequest.setConfigurationInfo(ConfigurationInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("encryptionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedRequest.setEncryptionInfo(EncryptionInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("enhancedMonitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedRequest.setEnhancedMonitoring(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("openMonitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedRequest.setOpenMonitoring(OpenMonitoringInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kafkaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedRequest.setKafkaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loggingInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedRequest.setLoggingInfo(LoggingInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("numberOfBrokerNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedRequest.setNumberOfBrokerNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("storageMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedRequest.setStorageMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

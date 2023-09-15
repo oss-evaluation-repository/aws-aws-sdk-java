@@ -43,30 +43,43 @@ public class ActivityScheduledEventDetailsJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activityScheduledEventDetails.setResource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activityScheduledEventDetails.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activityScheduledEventDetails.setInputDetails(HistoryEventExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeoutInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activityScheduledEventDetails.setTimeoutInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("heartbeatInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activityScheduledEventDetails.setHeartbeatInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

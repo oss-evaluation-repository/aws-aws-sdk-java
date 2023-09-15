@@ -43,28 +43,37 @@ public class SyncDeploymentJobResultJsonUnmarshaller implements Unmarshaller<Syn
             return syncDeploymentJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncDeploymentJobResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fleet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncDeploymentJobResult.setFleet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncDeploymentJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncDeploymentJobResult.setDeploymentConfig(DeploymentConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("deploymentApplicationConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncDeploymentJobResult.setDeploymentApplicationConfigs(new ListUnmarshaller<DeploymentApplicationConfig>(
                             DeploymentApplicationConfigJsonUnmarshaller.getInstance())
@@ -72,16 +81,23 @@ public class SyncDeploymentJobResultJsonUnmarshaller implements Unmarshaller<Syn
                     .unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncDeploymentJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncDeploymentJobResult.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncDeploymentJobResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

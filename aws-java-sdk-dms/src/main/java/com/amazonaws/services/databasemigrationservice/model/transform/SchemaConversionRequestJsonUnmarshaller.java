@@ -43,30 +43,43 @@ public class SchemaConversionRequestJsonUnmarshaller implements Unmarshaller<Sch
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConversionRequest.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConversionRequest.setRequestIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MigrationProjectArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConversionRequest.setMigrationProjectArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConversionRequest.setError(ErrorDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExportSqlDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaConversionRequest.setExportSqlDetails(ExportSqlDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

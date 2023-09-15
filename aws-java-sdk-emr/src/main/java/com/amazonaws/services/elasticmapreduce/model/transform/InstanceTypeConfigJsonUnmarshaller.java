@@ -43,40 +43,55 @@ public class InstanceTypeConfigJsonUnmarshaller implements Unmarshaller<Instance
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeConfig.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WeightedCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeConfig.setWeightedCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BidPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeConfig.setBidPrice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BidPriceAsPercentageOfOnDemandPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeConfig.setBidPriceAsPercentageOfOnDemandPrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeConfig.setEbsConfiguration(EbsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeConfig.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CustomAmiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeConfig.setCustomAmiId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

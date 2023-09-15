@@ -43,96 +43,125 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("manufacturer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setManufacturer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setModelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("formFactor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setFormFactor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("os", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setOs(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setCpu(CPUJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setResolution(ResolutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("heapSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setHeapSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setMemory(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("image", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("carrier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setCarrier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("radio", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setRadio(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remoteAccessEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setRemoteAccessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("remoteDebugEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setRemoteDebugEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("fleetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setFleetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fleetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setFleetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setInstances(new ListUnmarshaller<DeviceInstance>(DeviceInstanceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("availability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     device.setAvailability(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

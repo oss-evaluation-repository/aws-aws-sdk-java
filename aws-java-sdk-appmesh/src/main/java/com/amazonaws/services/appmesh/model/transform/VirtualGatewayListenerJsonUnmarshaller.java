@@ -43,26 +43,38 @@ public class VirtualGatewayListenerJsonUnmarshaller implements Unmarshaller<Virt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectionPool", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayListener.setConnectionPool(VirtualGatewayConnectionPoolJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("healthCheck", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayListener.setHealthCheck(VirtualGatewayHealthCheckPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("portMapping", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayListener.setPortMapping(VirtualGatewayPortMappingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayListener.setTls(VirtualGatewayListenerTlsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

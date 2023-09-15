@@ -43,26 +43,38 @@ public class MilestoneSummaryJsonUnmarshaller implements Unmarshaller<MilestoneS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MilestoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     milestoneSummary.setMilestoneNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MilestoneName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     milestoneSummary.setMilestoneName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecordedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     milestoneSummary.setRecordedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("WorkloadSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     milestoneSummary.setWorkloadSummary(WorkloadSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

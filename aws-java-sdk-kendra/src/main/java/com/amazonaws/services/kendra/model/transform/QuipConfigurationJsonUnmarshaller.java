@@ -43,38 +43,49 @@ public class QuipConfigurationJsonUnmarshaller implements Unmarshaller<QuipConfi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlFileComments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setCrawlFileComments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlChatRooms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setCrawlChatRooms(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlAttachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setCrawlAttachments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("FolderIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setFolderIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ThreadFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setThreadFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
@@ -82,6 +93,7 @@ public class QuipConfigurationJsonUnmarshaller implements Unmarshaller<QuipConfi
                     .unmarshall(context));
                 }
                 if (context.testExpression("MessageFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setMessageFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
@@ -89,6 +101,7 @@ public class QuipConfigurationJsonUnmarshaller implements Unmarshaller<QuipConfi
                     .unmarshall(context));
                 }
                 if (context.testExpression("AttachmentFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setAttachmentFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(
                             DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance())
@@ -96,20 +109,27 @@ public class QuipConfigurationJsonUnmarshaller implements Unmarshaller<QuipConfi
                     .unmarshall(context));
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     quipConfiguration.setVpcConfiguration(DataSourceVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

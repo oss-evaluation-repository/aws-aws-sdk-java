@@ -43,50 +43,66 @@ public class ContainerOverrideJsonUnmarshaller implements Unmarshaller<Container
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverride.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverride.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverride.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("environmentFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverride.setEnvironmentFiles(new ListUnmarshaller<EnvironmentFile>(EnvironmentFileJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverride.setCpu(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverride.setMemory(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("memoryReservation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverride.setMemoryReservation(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceRequirements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerOverride.setResourceRequirements(new ListUnmarshaller<ResourceRequirement>(ResourceRequirementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

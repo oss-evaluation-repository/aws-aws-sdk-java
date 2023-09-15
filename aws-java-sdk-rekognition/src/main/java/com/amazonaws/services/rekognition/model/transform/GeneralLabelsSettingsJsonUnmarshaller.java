@@ -43,34 +43,46 @@ public class GeneralLabelsSettingsJsonUnmarshaller implements Unmarshaller<Gener
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LabelInclusionFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalLabelsSettings.setLabelInclusionFilters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LabelExclusionFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalLabelsSettings.setLabelExclusionFilters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LabelCategoryInclusionFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalLabelsSettings.setLabelCategoryInclusionFilters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LabelCategoryExclusionFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalLabelsSettings.setLabelCategoryExclusionFilters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

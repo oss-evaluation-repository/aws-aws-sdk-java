@@ -43,28 +43,40 @@ public class FileVersionJsonUnmarshaller implements Unmarshaller<FileVersion, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("commit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileVersion.setCommit(CommitJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("blobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileVersion.setBlobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileVersion.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionChildren", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileVersion.setRevisionChildren(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

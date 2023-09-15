@@ -43,28 +43,36 @@ public class GoogleDriveConfigurationJsonUnmarshaller implements Unmarshaller<Go
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     googleDriveConfiguration.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     googleDriveConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     googleDriveConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     googleDriveConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
@@ -72,22 +80,29 @@ public class GoogleDriveConfigurationJsonUnmarshaller implements Unmarshaller<Go
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeMimeTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     googleDriveConfiguration.setExcludeMimeTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeUserAccounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     googleDriveConfiguration.setExcludeUserAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeSharedDrives", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     googleDriveConfiguration.setExcludeSharedDrives(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

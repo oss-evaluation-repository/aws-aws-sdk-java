@@ -43,34 +43,44 @@ public class AutoMLCandidateJsonUnmarshaller implements Unmarshaller<AutoMLCandi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CandidateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setCandidateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FinalAutoMLJobObjectiveMetric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setFinalAutoMLJobObjectiveMetric(FinalAutoMLJobObjectiveMetricJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ObjectiveStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setObjectiveStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CandidateSteps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setCandidateSteps(new ListUnmarshaller<AutoMLCandidateStep>(AutoMLCandidateStepJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CandidateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setCandidateStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InferenceContainers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setInferenceContainers(new ListUnmarshaller<AutoMLContainerDefinition>(AutoMLContainerDefinitionJsonUnmarshaller
                             .getInstance())
@@ -78,32 +88,42 @@ public class AutoMLCandidateJsonUnmarshaller implements Unmarshaller<AutoMLCandi
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CandidateProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setCandidateProperties(CandidatePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InferenceContainerDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLCandidate.setInferenceContainerDefinitions(new MapUnmarshaller<String, java.util.List<AutoMLContainerDefinition>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<AutoMLContainerDefinition>(AutoMLContainerDefinitionJsonUnmarshaller
                             .getInstance())
 
                     ).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

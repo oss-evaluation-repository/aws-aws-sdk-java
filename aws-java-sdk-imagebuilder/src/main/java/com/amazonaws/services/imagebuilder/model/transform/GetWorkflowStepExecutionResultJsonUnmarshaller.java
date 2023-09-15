@@ -43,78 +43,103 @@ public class GetWorkflowStepExecutionResultJsonUnmarshaller implements Unmarshal
             return getWorkflowStepExecutionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("requestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stepExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setStepExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("workflowBuildVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setWorkflowBuildVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setWorkflowExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageBuildVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setImageBuildVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rollbackStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setRollbackStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setInputs(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setOutputs(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setEndTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("onFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setOnFailure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowStepExecutionResult.setTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

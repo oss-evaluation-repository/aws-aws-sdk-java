@@ -43,18 +43,28 @@ public class SourceJsonUnmarshaller implements Unmarshaller<Source, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sourceData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     source.setSourceData(SourceDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     source.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

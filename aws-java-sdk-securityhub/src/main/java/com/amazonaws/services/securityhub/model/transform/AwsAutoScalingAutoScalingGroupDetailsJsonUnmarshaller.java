@@ -43,39 +43,50 @@ public class AwsAutoScalingAutoScalingGroupDetailsJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LaunchConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupDetails.setLaunchConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoadBalancerNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupDetails.setLoadBalancerNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HealthCheckType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupDetails.setHealthCheckType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthCheckGracePeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupDetails.setHealthCheckGracePeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupDetails.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MixedInstancesPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupDetails.setMixedInstancesPolicy(AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupDetails
                             .setAvailabilityZones(new ListUnmarshaller<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>(
@@ -84,14 +95,20 @@ public class AwsAutoScalingAutoScalingGroupDetailsJsonUnmarshaller implements Un
                             .unmarshall(context));
                 }
                 if (context.testExpression("LaunchTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupDetails
                             .setLaunchTemplate(AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("CapacityRebalance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupDetails.setCapacityRebalance(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

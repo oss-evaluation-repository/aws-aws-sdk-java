@@ -43,38 +43,53 @@ public class RecommendationJsonUnmarshaller implements Unmarshaller<Recommendati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatabaseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setDatabaseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setEngineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setCreatedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Preferred", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setPreferred(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setSettings(RecommendationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Data", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setData(RecommendationDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

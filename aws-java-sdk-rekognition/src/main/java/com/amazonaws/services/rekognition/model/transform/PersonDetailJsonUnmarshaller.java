@@ -43,22 +43,33 @@ public class PersonDetailJsonUnmarshaller implements Unmarshaller<PersonDetail, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Index", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     personDetail.setIndex(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("BoundingBox", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     personDetail.setBoundingBox(BoundingBoxJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Face", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     personDetail.setFace(FaceDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

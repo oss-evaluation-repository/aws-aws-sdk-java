@@ -43,23 +43,34 @@ public class RecommendationJsonUnmarshaller implements Unmarshaller<Recommendati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setStorageConfiguration(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedMonthlyStorageCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendation.setEstimatedMonthlyStorageCost(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

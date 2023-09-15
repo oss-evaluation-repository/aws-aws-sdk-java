@@ -43,54 +43,73 @@ public class MpdSettingsJsonUnmarshaller implements Unmarshaller<MpdSettings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessibilityCaptionHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setAccessibilityCaptionHints(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setAudioDuration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("captionContainerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setCaptionContainerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("klvMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setKlvMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("manifestMetadataSignaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setManifestMetadataSignaling(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scte35Esam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setScte35Esam(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scte35Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setScte35Source(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setTimedMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataBoxVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setTimedMetadataBoxVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataSchemeIdUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setTimedMetadataSchemeIdUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpdSettings.setTimedMetadataValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

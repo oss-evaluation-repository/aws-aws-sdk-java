@@ -43,18 +43,28 @@ public class RecorderConfigJsonUnmarshaller implements Unmarshaller<RecorderConf
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MediaSourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recorderConfig.setMediaSourceConfig(MediaSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ScheduleConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recorderConfig.setScheduleConfig(ScheduleConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

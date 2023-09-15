@@ -43,38 +43,52 @@ public class QualificationRequirementJsonUnmarshaller implements Unmarshaller<Qu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QualificationTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequirement.setQualificationTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Comparator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequirement.setComparator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IntegerValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequirement.setIntegerValues(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LocaleValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequirement.setLocaleValues(new ListUnmarshaller<Locale>(LocaleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RequiredToPreview", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequirement.setRequiredToPreview(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ActionsGuarded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequirement.setActionsGuarded(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

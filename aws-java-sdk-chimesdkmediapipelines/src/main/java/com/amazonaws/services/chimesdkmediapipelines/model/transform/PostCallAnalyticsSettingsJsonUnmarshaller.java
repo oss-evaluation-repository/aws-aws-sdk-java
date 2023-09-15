@@ -43,26 +43,38 @@ public class PostCallAnalyticsSettingsJsonUnmarshaller implements Unmarshaller<P
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OutputLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCallAnalyticsSettings.setOutputLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCallAnalyticsSettings.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentRedactionOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCallAnalyticsSettings.setContentRedactionOutput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputEncryptionKMSKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postCallAnalyticsSettings.setOutputEncryptionKMSKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

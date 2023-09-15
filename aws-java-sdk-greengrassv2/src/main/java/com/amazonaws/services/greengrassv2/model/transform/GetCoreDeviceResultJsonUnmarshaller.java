@@ -43,39 +43,54 @@ public class GetCoreDeviceResultJsonUnmarshaller implements Unmarshaller<GetCore
             return getCoreDeviceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("coreDeviceThingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCoreDeviceResult.setCoreDeviceThingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("coreVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCoreDeviceResult.setCoreVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCoreDeviceResult.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("architecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCoreDeviceResult.setArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCoreDeviceResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatusUpdateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCoreDeviceResult.setLastStatusUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCoreDeviceResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

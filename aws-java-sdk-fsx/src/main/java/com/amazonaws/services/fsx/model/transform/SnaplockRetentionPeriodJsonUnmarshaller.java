@@ -43,22 +43,33 @@ public class SnaplockRetentionPeriodJsonUnmarshaller implements Unmarshaller<Sna
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DefaultRetention", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snaplockRetentionPeriod.setDefaultRetention(RetentionPeriodJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MinimumRetention", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snaplockRetentionPeriod.setMinimumRetention(RetentionPeriodJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaximumRetention", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snaplockRetentionPeriod.setMaximumRetention(RetentionPeriodJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

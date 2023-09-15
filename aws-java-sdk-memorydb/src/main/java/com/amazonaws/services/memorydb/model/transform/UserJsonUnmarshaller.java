@@ -43,40 +43,55 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setAccessString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ACLNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setACLNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MinimumEngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setMinimumEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Authentication", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setAuthentication(AuthenticationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

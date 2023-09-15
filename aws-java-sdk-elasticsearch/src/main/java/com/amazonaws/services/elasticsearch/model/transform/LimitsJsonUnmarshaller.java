@@ -43,26 +43,37 @@ public class LimitsJsonUnmarshaller implements Unmarshaller<Limits, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorageTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     limits.setStorageTypes(new ListUnmarshaller<StorageType>(StorageTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InstanceLimits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     limits.setInstanceLimits(InstanceLimitsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdditionalLimits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     limits.setAdditionalLimits(new ListUnmarshaller<AdditionalLimit>(AdditionalLimitJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

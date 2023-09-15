@@ -43,38 +43,53 @@ public class FaceJsonUnmarshaller implements Unmarshaller<Face, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     face.setFaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BoundingBox", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     face.setBoundingBox(BoundingBoxJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ImageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     face.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalImageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     face.setExternalImageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Confidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     face.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexFacesModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     face.setIndexFacesModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     face.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

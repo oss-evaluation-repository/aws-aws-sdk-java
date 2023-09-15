@@ -43,42 +43,58 @@ public class APNSVoipSandboxChannelRequestJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BundleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelRequest.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Certificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelRequest.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultAuthenticationMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelRequest.setDefaultAuthenticationMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelRequest.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelRequest.setPrivateKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TeamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelRequest.setTeamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TokenKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelRequest.setTokenKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TokenKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelRequest.setTokenKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

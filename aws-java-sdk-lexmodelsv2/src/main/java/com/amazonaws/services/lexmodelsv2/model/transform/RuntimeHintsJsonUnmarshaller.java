@@ -44,16 +44,25 @@ public class RuntimeHintsJsonUnmarshaller implements Unmarshaller<RuntimeHints, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("slotHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeHints.setSlotHints(new MapUnmarshaller<String, java.util.Map<String, RuntimeHintDetails>>(context.getUnmarshaller(String.class),
                             new MapUnmarshaller<String, RuntimeHintDetails>(context.getUnmarshaller(String.class), RuntimeHintDetailsJsonUnmarshaller
                                     .getInstance())).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

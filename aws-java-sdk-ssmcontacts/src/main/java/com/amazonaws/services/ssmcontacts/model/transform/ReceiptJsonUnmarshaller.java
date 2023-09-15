@@ -43,26 +43,38 @@ public class ReceiptJsonUnmarshaller implements Unmarshaller<Receipt, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContactChannelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     receipt.setContactChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReceiptType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     receipt.setReceiptType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReceiptInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     receipt.setReceiptInfo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReceiptTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     receipt.setReceiptTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

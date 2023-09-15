@@ -44,20 +44,27 @@ public class RunbookJsonUnmarshaller implements Unmarshaller<Runbook, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runbook.setDocumentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runbook.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runbook.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -65,16 +72,19 @@ public class RunbookJsonUnmarshaller implements Unmarshaller<Runbook, JsonUnmars
                     ).unmarshall(context));
                 }
                 if (context.testExpression("TargetParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runbook.setTargetParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runbook.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TargetMaps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runbook.setTargetMaps(new ListUnmarshaller<java.util.Map<String, java.util.List<String>>>(
                             new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class), new ListUnmarshaller<String>(context
@@ -85,18 +95,25 @@ public class RunbookJsonUnmarshaller implements Unmarshaller<Runbook, JsonUnmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("MaxConcurrency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runbook.setMaxConcurrency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runbook.setMaxErrors(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetLocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runbook.setTargetLocations(new ListUnmarshaller<TargetLocation>(TargetLocationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

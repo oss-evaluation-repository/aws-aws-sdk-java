@@ -43,30 +43,43 @@ public class AutoScalingDescriptionJsonUnmarshaller implements Unmarshaller<Auto
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("maxWorkerCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingDescription.setMaxWorkerCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("mcuCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingDescription.setMcuCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minWorkerCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingDescription.setMinWorkerCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("scaleInPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingDescription.setScaleInPolicy(ScaleInPolicyDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scaleOutPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingDescription.setScaleOutPolicy(ScaleOutPolicyDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

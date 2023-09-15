@@ -43,46 +43,62 @@ public class CheckoutBorrowLicenseResultJsonUnmarshaller implements Unmarshaller
             return checkoutBorrowLicenseResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LicenseArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutBorrowLicenseResult.setLicenseArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseConsumptionToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutBorrowLicenseResult.setLicenseConsumptionToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EntitlementsAllowed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutBorrowLicenseResult.setEntitlementsAllowed(new ListUnmarshaller<EntitlementData>(EntitlementDataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NodeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutBorrowLicenseResult.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SignedToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutBorrowLicenseResult.setSignedToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IssuedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutBorrowLicenseResult.setIssuedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Expiration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutBorrowLicenseResult.setExpiration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CheckoutMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkoutBorrowLicenseResult.setCheckoutMetadata(new ListUnmarshaller<Metadata>(MetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

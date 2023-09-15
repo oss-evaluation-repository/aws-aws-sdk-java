@@ -43,49 +43,66 @@ public class PipeSourceSelfManagedKafkaParametersJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AdditionalBootstrapServers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceSelfManagedKafkaParameters.setAdditionalBootstrapServers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BatchSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceSelfManagedKafkaParameters.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConsumerGroupID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceSelfManagedKafkaParameters.setConsumerGroupID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Credentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceSelfManagedKafkaParameters.setCredentials(SelfManagedKafkaAccessConfigurationCredentialsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("MaximumBatchingWindowInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceSelfManagedKafkaParameters.setMaximumBatchingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerRootCaCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceSelfManagedKafkaParameters.setServerRootCaCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartingPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceSelfManagedKafkaParameters.setStartingPosition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceSelfManagedKafkaParameters.setTopicName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Vpc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeSourceSelfManagedKafkaParameters.setVpc(SelfManagedKafkaAccessConfigurationVpcJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

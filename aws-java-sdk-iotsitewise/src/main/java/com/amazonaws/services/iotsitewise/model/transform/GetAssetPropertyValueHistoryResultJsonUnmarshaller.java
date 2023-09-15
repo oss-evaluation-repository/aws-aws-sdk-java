@@ -43,12 +43,17 @@ public class GetAssetPropertyValueHistoryResultJsonUnmarshaller implements Unmar
             return getAssetPropertyValueHistoryResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assetPropertyValueHistory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAssetPropertyValueHistoryResult.setAssetPropertyValueHistory(new ListUnmarshaller<AssetPropertyValue>(AssetPropertyValueJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class GetAssetPropertyValueHistoryResultJsonUnmarshaller implements Unmar
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAssetPropertyValueHistoryResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

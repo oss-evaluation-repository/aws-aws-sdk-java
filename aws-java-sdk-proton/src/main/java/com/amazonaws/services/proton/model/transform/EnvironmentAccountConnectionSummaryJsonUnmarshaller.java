@@ -43,50 +43,68 @@ public class EnvironmentAccountConnectionSummaryJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnectionSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnectionSummary.setComponentRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnectionSummary.setEnvironmentAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnectionSummary.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnectionSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnectionSummary.setLastModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("managementAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnectionSummary.setManagementAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requestedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnectionSummary.setRequestedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnectionSummary.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnectionSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

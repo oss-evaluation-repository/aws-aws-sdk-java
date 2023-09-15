@@ -43,151 +43,192 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Policies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setPolicies(UserPoolPolicyTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeletionProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setDeletionProtection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LambdaConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setLambdaConfig(LambdaConfigTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SchemaAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setSchemaAttributes(new ListUnmarshaller<SchemaAttributeType>(SchemaAttributeTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AutoVerifiedAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setAutoVerifiedAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AliasAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setAliasAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UsernameAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setUsernameAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SmsVerificationMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setSmsVerificationMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailVerificationMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setEmailVerificationMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailVerificationSubject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setEmailVerificationSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VerificationMessageTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setVerificationMessageTemplate(VerificationMessageTemplateTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SmsAuthenticationMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setSmsAuthenticationMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserAttributeUpdateSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setUserAttributeUpdateSettings(UserAttributeUpdateSettingsTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MfaConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setMfaConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setDeviceConfiguration(DeviceConfigurationTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EstimatedNumberOfUsers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setEstimatedNumberOfUsers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setEmailConfiguration(EmailConfigurationTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SmsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setSmsConfiguration(SmsConfigurationTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UserPoolTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setUserPoolTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("SmsConfigurationFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setSmsConfigurationFailure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailConfigurationFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setEmailConfigurationFailure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setCustomDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdminCreateUserConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setAdminCreateUserConfig(AdminCreateUserConfigTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UserPoolAddOns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setUserPoolAddOns(UserPoolAddOnsTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UsernameConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setUsernameConfiguration(UsernameConfigurationTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountRecoverySetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userPoolType.setAccountRecoverySetting(AccountRecoverySettingTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

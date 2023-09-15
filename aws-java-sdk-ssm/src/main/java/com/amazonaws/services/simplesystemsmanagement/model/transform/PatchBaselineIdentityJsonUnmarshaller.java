@@ -43,30 +43,43 @@ public class PatchBaselineIdentityJsonUnmarshaller implements Unmarshaller<Patch
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BaselineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchBaselineIdentity.setBaselineId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BaselineName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchBaselineIdentity.setBaselineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperatingSystem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchBaselineIdentity.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BaselineDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchBaselineIdentity.setBaselineDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultBaseline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchBaselineIdentity.setDefaultBaseline(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

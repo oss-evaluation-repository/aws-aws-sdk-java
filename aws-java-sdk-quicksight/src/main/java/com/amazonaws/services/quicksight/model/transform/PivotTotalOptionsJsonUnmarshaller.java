@@ -43,38 +43,53 @@ public class PivotTotalOptionsJsonUnmarshaller implements Unmarshaller<PivotTota
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TotalsVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTotalOptions.setTotalsVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Placement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTotalOptions.setPlacement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScrollStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTotalOptions.setScrollStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTotalOptions.setCustomLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalCellStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTotalOptions.setTotalCellStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ValueCellStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTotalOptions.setValueCellStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MetricHeaderCellStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTotalOptions.setMetricHeaderCellStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

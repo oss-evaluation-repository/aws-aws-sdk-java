@@ -43,52 +43,70 @@ public class AuthorizerJsonUnmarshaller implements Unmarshaller<Authorizer, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizer.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizer.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizer.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("providerARNs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizer.setProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("authType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizer.setAuthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizer.setAuthorizerUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerCredentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizer.setAuthorizerCredentials(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identitySource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizer.setIdentitySource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identityValidationExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizer.setIdentityValidationExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerResultTtlInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizer.setAuthorizerResultTtlInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

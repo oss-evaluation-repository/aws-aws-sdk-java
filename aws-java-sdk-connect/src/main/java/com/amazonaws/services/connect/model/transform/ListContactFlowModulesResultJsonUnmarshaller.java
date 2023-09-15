@@ -43,12 +43,17 @@ public class ListContactFlowModulesResultJsonUnmarshaller implements Unmarshalle
             return listContactFlowModulesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContactFlowModulesSummaryList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listContactFlowModulesResult.setContactFlowModulesSummaryList(new ListUnmarshaller<ContactFlowModuleSummary>(
                             ContactFlowModuleSummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListContactFlowModulesResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listContactFlowModulesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

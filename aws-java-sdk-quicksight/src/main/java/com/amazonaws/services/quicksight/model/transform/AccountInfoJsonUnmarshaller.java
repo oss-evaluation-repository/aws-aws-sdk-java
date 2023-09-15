@@ -43,34 +43,48 @@ public class AccountInfoJsonUnmarshaller implements Unmarshaller<AccountInfo, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountInfo.setAccountName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Edition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountInfo.setEdition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountInfo.setNotificationEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountInfo.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountSubscriptionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountInfo.setAccountSubscriptionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IAMIdentityCenterInstanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountInfo.setIAMIdentityCenterInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

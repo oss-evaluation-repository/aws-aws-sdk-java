@@ -43,58 +43,78 @@ public class DICOMTagsJsonUnmarshaller implements Unmarshaller<DICOMTags, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DICOMPatientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMPatientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMPatientName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMPatientName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMPatientBirthDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMPatientBirthDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMPatientSex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMPatientSex(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMStudyInstanceUID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMStudyInstanceUID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMStudyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMStudyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMStudyDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMStudyDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMNumberOfStudyRelatedSeries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMNumberOfStudyRelatedSeries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMNumberOfStudyRelatedInstances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMNumberOfStudyRelatedInstances(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMAccessionNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMAccessionNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMStudyDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMStudyDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DICOMStudyTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMTags.setDICOMStudyTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class HumanLoopConfigJsonUnmarshaller implements Unmarshaller<HumanLoopCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HumanLoopName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setHumanLoopName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FlowDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setFlowDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setDataAttributes(HumanLoopDataAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class ServiceSoftwareOptionsJsonUnmarshaller implements Unmarshaller<Serv
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CurrentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSoftwareOptions.setCurrentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NewVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSoftwareOptions.setNewVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateAvailable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSoftwareOptions.setUpdateAvailable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Cancellable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSoftwareOptions.setCancellable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSoftwareOptions.setUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSoftwareOptions.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutomatedUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSoftwareOptions.setAutomatedUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OptionalDeployment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSoftwareOptions.setOptionalDeployment(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

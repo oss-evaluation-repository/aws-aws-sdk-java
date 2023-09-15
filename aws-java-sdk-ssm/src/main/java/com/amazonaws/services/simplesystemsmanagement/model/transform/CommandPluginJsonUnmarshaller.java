@@ -43,58 +43,78 @@ public class CommandPluginJsonUnmarshaller implements Unmarshaller<CommandPlugin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setStatusDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResponseCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setResponseCode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ResponseStartDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setResponseStartDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResponseFinishDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setResponseFinishDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Output", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setOutput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StandardOutputUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setStandardOutputUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StandardErrorUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setStandardErrorUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputS3Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setOutputS3Region(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputS3BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setOutputS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputS3KeyPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandPlugin.setOutputS3KeyPrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

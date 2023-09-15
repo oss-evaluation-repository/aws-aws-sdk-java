@@ -43,68 +43,90 @@ public class GetBucketStatisticsResultJsonUnmarshaller implements Unmarshaller<G
             return getBucketStatisticsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bucketCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setBucketCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketCountByEffectivePermission", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setBucketCountByEffectivePermission(BucketCountByEffectivePermissionJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("bucketCountByEncryptionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setBucketCountByEncryptionType(BucketCountByEncryptionTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("bucketCountByObjectEncryptionRequirement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setBucketCountByObjectEncryptionRequirement(BucketCountPolicyAllowsUnencryptedObjectUploadsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("bucketCountBySharedAccessType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setBucketCountBySharedAccessType(BucketCountBySharedAccessTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("bucketStatisticsBySensitivity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setBucketStatisticsBySensitivity(BucketStatisticsBySensitivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("classifiableObjectCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setClassifiableObjectCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("classifiableSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setClassifiableSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("objectCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setObjectCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("sizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("sizeInBytesCompressed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setSizeInBytesCompressed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("unclassifiableObjectCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setUnclassifiableObjectCount(ObjectLevelStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("unclassifiableObjectSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBucketStatisticsResult.setUnclassifiableObjectSizeInBytes(ObjectLevelStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

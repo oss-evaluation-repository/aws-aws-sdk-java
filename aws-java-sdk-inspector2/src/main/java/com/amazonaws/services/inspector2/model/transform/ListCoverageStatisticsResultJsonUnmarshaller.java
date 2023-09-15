@@ -43,24 +43,35 @@ public class ListCoverageStatisticsResultJsonUnmarshaller implements Unmarshalle
             return listCoverageStatisticsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("countsByGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listCoverageStatisticsResult.setCountsByGroup(new ListUnmarshaller<Counts>(CountsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listCoverageStatisticsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("totalCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listCoverageStatisticsResult.setTotalCounts(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

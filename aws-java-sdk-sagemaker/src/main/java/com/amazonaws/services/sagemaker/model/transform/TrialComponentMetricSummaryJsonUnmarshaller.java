@@ -43,46 +43,63 @@ public class TrialComponentMetricSummaryJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentMetricSummary.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentMetricSummary.setSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeStamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentMetricSummary.setTimeStamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Max", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentMetricSummary.setMax(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Min", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentMetricSummary.setMin(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Last", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentMetricSummary.setLast(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentMetricSummary.setCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Avg", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentMetricSummary.setAvg(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("StdDev", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentMetricSummary.setStdDev(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

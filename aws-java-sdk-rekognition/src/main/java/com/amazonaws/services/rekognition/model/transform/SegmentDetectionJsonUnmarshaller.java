@@ -43,58 +43,78 @@ public class SegmentDetectionJsonUnmarshaller implements Unmarshaller<SegmentDet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTimestampMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setStartTimestampMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EndTimestampMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setEndTimestampMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DurationMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setDurationMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTimecodeSMPTE", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setStartTimecodeSMPTE(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndTimecodeSMPTE", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setEndTimecodeSMPTE(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DurationSMPTE", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setDurationSMPTE(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TechnicalCueSegment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setTechnicalCueSegment(TechnicalCueSegmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ShotSegment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setShotSegment(ShotSegmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartFrameNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setStartFrameNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EndFrameNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setEndFrameNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DurationFrames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDetection.setDurationFrames(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

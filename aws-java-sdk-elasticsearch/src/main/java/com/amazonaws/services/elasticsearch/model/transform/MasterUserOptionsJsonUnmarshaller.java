@@ -43,22 +43,33 @@ public class MasterUserOptionsJsonUnmarshaller implements Unmarshaller<MasterUse
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MasterUserARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     masterUserOptions.setMasterUserARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterUserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     masterUserOptions.setMasterUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterUserPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     masterUserOptions.setMasterUserPassword(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

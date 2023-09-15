@@ -43,34 +43,48 @@ public class AssertionAttributesJsonUnmarshaller implements Unmarshaller<Asserti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("email", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionAttributes.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("groups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionAttributes.setGroups(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("login", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionAttributes.setLogin(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionAttributes.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("org", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionAttributes.setOrg(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionAttributes.setRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

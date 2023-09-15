@@ -43,36 +43,50 @@ public class DescribeLocationS3ResultJsonUnmarshaller implements Unmarshaller<De
             return describeLocationS3Result;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationS3Result.setLocationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationS3Result.setLocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3StorageClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationS3Result.setS3StorageClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Config", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationS3Result.setS3Config(S3ConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AgentArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationS3Result.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationS3Result.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

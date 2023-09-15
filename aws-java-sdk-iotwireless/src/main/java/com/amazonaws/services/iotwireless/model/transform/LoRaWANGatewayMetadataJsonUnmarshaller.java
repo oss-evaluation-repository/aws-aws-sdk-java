@@ -43,22 +43,33 @@ public class LoRaWANGatewayMetadataJsonUnmarshaller implements Unmarshaller<LoRa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayEui", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANGatewayMetadata.setGatewayEui(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Snr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANGatewayMetadata.setSnr(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Rssi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANGatewayMetadata.setRssi(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

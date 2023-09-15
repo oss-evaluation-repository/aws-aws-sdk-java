@@ -43,18 +43,28 @@ public class ActivityTypeDetailJsonUnmarshaller implements Unmarshaller<Activity
             return activityTypeDetail;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("typeInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activityTypeDetail.setTypeInfo(ActivityTypeInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activityTypeDetail.setConfiguration(ActivityTypeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

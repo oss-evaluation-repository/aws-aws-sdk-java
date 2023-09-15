@@ -43,18 +43,24 @@ public class ValidatePipelineDefinitionResultJsonUnmarshaller implements Unmarsh
             return validatePipelineDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("validationErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validatePipelineDefinitionResult.setValidationErrors(new ListUnmarshaller<ValidationError>(ValidationErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("validationWarnings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validatePipelineDefinitionResult.setValidationWarnings(new ListUnmarshaller<ValidationWarning>(ValidationWarningJsonUnmarshaller
                             .getInstance())
@@ -62,8 +68,13 @@ public class ValidatePipelineDefinitionResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("errored", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     validatePipelineDefinitionResult.setErrored(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

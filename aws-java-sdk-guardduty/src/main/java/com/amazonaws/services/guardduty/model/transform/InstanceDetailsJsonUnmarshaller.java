@@ -43,68 +43,89 @@ public class InstanceDetailsJsonUnmarshaller implements Unmarshaller<InstanceDet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("availabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iamInstanceProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setIamInstanceProfile(IamInstanceProfileJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setImageDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setInstanceState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outpostArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setOutpostArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setLaunchTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("productCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setProductCodes(new ListUnmarshaller<ProductCode>(ProductCodeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceDetails.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

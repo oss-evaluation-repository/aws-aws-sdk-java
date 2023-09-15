@@ -43,44 +43,60 @@ public class DestinationPortMappingJsonUnmarshaller implements Unmarshaller<Dest
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AcceleratorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationPortMapping.setAcceleratorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AcceleratorSocketAddresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationPortMapping.setAcceleratorSocketAddresses(new ListUnmarshaller<SocketAddress>(SocketAddressJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EndpointGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationPortMapping.setEndpointGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationPortMapping.setEndpointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointGroupRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationPortMapping.setEndpointGroupRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationSocketAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationPortMapping.setDestinationSocketAddress(SocketAddressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IpAddressType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationPortMapping.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationTrafficState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationPortMapping.setDestinationTrafficState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,67 @@ public class ListRecordsResultJsonUnmarshaller implements Unmarshaller<ListRecor
             return listRecordsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Records", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecordsResult.setRecords(new ListUnmarshaller<Record>(RecordJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecordsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecordsResult.setCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetSyncCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecordsResult.setDatasetSyncCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecordsResult.setLastModifiedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MergedDatasetNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecordsResult.setMergedDatasetNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DatasetExists", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecordsResult.setDatasetExists(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetDeletedAfterRequestedSyncCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecordsResult.setDatasetDeletedAfterRequestedSyncCount(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SyncSessionToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecordsResult.setSyncSessionToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

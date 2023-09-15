@@ -43,25 +43,36 @@ public class ScheduleActionStartSettingsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fixedModeScheduleActionStartSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionStartSettings.setFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettingsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("followModeScheduleActionStartSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionStartSettings.setFollowModeScheduleActionStartSettings(FollowModeScheduleActionStartSettingsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("immediateModeScheduleActionStartSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionStartSettings.setImmediateModeScheduleActionStartSettings(ImmediateModeScheduleActionStartSettingsJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

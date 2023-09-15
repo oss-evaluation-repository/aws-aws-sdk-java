@@ -43,26 +43,38 @@ public class MaintenanceStartTimeJsonUnmarshaller implements Unmarshaller<Mainte
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DayOfMonth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceStartTime.setDayOfMonth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DayOfWeek", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceStartTime.setDayOfWeek(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("HourOfDay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceStartTime.setHourOfDay(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinuteOfHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceStartTime.setMinuteOfHour(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

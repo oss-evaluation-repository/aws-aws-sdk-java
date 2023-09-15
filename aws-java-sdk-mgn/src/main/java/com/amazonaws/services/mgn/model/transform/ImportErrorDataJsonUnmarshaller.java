@@ -43,38 +43,53 @@ public class ImportErrorDataJsonUnmarshaller implements Unmarshaller<ImportError
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importErrorData.setAccountID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importErrorData.setApplicationID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ec2LaunchTemplateID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importErrorData.setEc2LaunchTemplateID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rawError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importErrorData.setRawError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rowNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importErrorData.setRowNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importErrorData.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("waveID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importErrorData.setWaveID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

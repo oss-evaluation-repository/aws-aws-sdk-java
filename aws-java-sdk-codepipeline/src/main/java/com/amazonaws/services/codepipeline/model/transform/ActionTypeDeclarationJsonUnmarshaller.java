@@ -43,44 +43,60 @@ public class ActionTypeDeclarationJsonUnmarshaller implements Unmarshaller<Actio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeDeclaration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeDeclaration.setExecutor(ActionTypeExecutorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeDeclaration.setId(ActionTypeIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputArtifactDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeDeclaration.setInputArtifactDetails(ActionTypeArtifactDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("outputArtifactDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeDeclaration.setOutputArtifactDetails(ActionTypeArtifactDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("permissions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeDeclaration.setPermissions(ActionTypePermissionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeDeclaration.setProperties(new ListUnmarshaller<ActionTypeProperty>(ActionTypePropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("urls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeDeclaration.setUrls(ActionTypeUrlsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

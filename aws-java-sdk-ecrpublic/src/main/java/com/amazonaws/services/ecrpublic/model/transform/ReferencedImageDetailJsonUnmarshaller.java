@@ -43,30 +43,43 @@ public class ReferencedImageDetailJsonUnmarshaller implements Unmarshaller<Refer
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageDigest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referencedImageDetail.setImageDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referencedImageDetail.setImageSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("imagePushedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referencedImageDetail.setImagePushedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("imageManifestMediaType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referencedImageDetail.setImageManifestMediaType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("artifactMediaType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referencedImageDetail.setArtifactMediaType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class AccountInfoJsonUnmarshaller implements Unmarshaller<AccountInfo, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountInfo.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountInfo.setAccountName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("emailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountInfo.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class PutSigningProfileResultJsonUnmarshaller implements Unmarshaller<Put
             return putSigningProfileResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSigningProfileResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("profileVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSigningProfileResult.setProfileVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("profileVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSigningProfileResult.setProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

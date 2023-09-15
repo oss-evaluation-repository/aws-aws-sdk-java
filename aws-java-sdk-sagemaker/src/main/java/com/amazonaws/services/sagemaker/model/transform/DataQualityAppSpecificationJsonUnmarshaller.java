@@ -43,39 +43,53 @@ public class DataQualityAppSpecificationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ImageUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityAppSpecification.setImageUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContainerEntrypoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityAppSpecification.setContainerEntrypoint(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ContainerArguments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityAppSpecification.setContainerArguments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RecordPreprocessorSourceUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityAppSpecification.setRecordPreprocessorSourceUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PostAnalyticsProcessorSourceUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityAppSpecification.setPostAnalyticsProcessorSourceUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityAppSpecification.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

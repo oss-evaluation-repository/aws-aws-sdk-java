@@ -43,26 +43,37 @@ public class PipeTargetHttpParametersJsonUnmarshaller implements Unmarshaller<Pi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HeaderParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetHttpParameters.setHeaderParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("PathParameterValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetHttpParameters.setPathParameterValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("QueryStringParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetHttpParameters.setQueryStringParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

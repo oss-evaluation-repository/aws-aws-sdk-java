@@ -43,22 +43,33 @@ public class MaximumAllowedResourcesJsonUnmarshaller implements Unmarshaller<Max
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maximumAllowedResources.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maximumAllowedResources.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("disk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maximumAllowedResources.setDisk(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

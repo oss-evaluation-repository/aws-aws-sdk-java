@@ -43,18 +43,28 @@ public class PutAppsListResultJsonUnmarshaller implements Unmarshaller<PutAppsLi
             return putAppsListResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putAppsListResult.setAppsList(AppsListDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AppsListArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putAppsListResult.setAppsListArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

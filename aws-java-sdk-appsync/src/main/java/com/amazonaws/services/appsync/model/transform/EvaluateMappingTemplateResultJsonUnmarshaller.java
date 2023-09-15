@@ -43,24 +43,35 @@ public class EvaluateMappingTemplateResultJsonUnmarshaller implements Unmarshall
             return evaluateMappingTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("evaluationResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateMappingTemplateResult.setEvaluationResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateMappingTemplateResult.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("logs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateMappingTemplateResult.setLogs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

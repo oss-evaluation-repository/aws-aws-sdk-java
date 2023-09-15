@@ -43,18 +43,28 @@ public class AwsElbLbCookieStickinessPolicyJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CookieExpirationPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLbCookieStickinessPolicy.setCookieExpirationPeriod(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLbCookieStickinessPolicy.setPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

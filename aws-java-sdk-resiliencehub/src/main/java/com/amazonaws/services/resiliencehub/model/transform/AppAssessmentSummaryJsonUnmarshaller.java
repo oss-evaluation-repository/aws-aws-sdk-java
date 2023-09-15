@@ -43,66 +43,88 @@ public class AppAssessmentSummaryJsonUnmarshaller implements Unmarshaller<AppAss
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setAppArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setAppVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setAssessmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setAssessmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setAssessmentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("complianceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setComplianceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setCost(CostJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("driftStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setDriftStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("invoker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setInvoker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resiliencyScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setResiliencyScore(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("versionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessmentSummary.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

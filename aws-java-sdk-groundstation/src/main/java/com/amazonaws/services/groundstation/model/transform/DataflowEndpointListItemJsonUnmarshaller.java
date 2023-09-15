@@ -43,18 +43,28 @@ public class DataflowEndpointListItemJsonUnmarshaller implements Unmarshaller<Da
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataflowEndpointGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataflowEndpointListItem.setDataflowEndpointGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataflowEndpointGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataflowEndpointListItem.setDataflowEndpointGroupId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

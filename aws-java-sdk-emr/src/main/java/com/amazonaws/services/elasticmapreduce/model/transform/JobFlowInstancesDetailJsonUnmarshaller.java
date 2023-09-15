@@ -43,64 +43,85 @@ public class JobFlowInstancesDetailJsonUnmarshaller implements Unmarshaller<JobF
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MasterInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setMasterInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterPublicDnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setMasterPublicDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setMasterInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SlaveInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setSlaveInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setInstanceGroups(new ListUnmarshaller<InstanceGroupDetail>(InstanceGroupDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NormalizedInstanceHours", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setNormalizedInstanceHours(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2KeyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setEc2KeyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setEc2SubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Placement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setPlacement(PlacementTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KeepJobFlowAliveWhenNoSteps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setKeepJobFlowAliveWhenNoSteps(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TerminationProtected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setTerminationProtected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HadoopVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobFlowInstancesDetail.setHadoopVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

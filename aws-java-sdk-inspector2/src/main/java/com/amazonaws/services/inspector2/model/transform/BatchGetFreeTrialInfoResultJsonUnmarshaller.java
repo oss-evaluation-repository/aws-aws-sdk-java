@@ -43,22 +43,32 @@ public class BatchGetFreeTrialInfoResultJsonUnmarshaller implements Unmarshaller
             return batchGetFreeTrialInfoResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetFreeTrialInfoResult.setAccounts(new ListUnmarshaller<FreeTrialAccountInfo>(FreeTrialAccountInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("failedAccounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetFreeTrialInfoResult.setFailedAccounts(new ListUnmarshaller<FreeTrialInfoError>(FreeTrialInfoErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

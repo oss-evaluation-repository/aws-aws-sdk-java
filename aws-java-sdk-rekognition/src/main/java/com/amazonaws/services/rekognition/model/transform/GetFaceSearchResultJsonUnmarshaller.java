@@ -43,44 +43,60 @@ public class GetFaceSearchResultJsonUnmarshaller implements Unmarshaller<GetFace
             return getFaceSearchResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFaceSearchResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFaceSearchResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFaceSearchResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VideoMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFaceSearchResult.setVideoMetadata(VideoMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Persons", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFaceSearchResult.setPersons(new ListUnmarshaller<PersonMatch>(PersonMatchJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFaceSearchResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Video", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFaceSearchResult.setVideo(VideoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobTag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFaceSearchResult.setJobTag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

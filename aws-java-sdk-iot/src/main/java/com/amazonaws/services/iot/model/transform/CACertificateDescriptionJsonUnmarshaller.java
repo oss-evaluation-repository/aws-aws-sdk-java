@@ -43,58 +43,78 @@ public class CACertificateDescriptionJsonUnmarshaller implements Unmarshaller<CA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("certificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificatePem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setCertificatePem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ownedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setOwnedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("autoRegistrationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setAutoRegistrationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("customerVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setCustomerVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("generationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setGenerationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("validity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setValidity(CertificateValidityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("certificateMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cACertificateDescription.setCertificateMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

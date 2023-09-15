@@ -43,22 +43,33 @@ public class GetTerminologyResultJsonUnmarshaller implements Unmarshaller<GetTer
             return getTerminologyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TerminologyProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTerminologyResult.setTerminologyProperties(TerminologyPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TerminologyDataLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTerminologyResult.setTerminologyDataLocation(TerminologyDataLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AuxiliaryDataLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTerminologyResult.setAuxiliaryDataLocation(TerminologyDataLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

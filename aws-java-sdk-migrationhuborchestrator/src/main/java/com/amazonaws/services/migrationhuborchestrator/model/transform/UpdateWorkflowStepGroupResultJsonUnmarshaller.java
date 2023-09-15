@@ -43,48 +43,64 @@ public class UpdateWorkflowStepGroupResultJsonUnmarshaller implements Unmarshall
             return updateWorkflowStepGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkflowStepGroupResult.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkflowStepGroupResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkflowStepGroupResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkflowStepGroupResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tools", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkflowStepGroupResult.setTools(new ListUnmarshaller<Tool>(ToolJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("next", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkflowStepGroupResult.setNext(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("previous", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkflowStepGroupResult.setPrevious(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkflowStepGroupResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

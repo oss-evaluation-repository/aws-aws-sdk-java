@@ -43,48 +43,65 @@ public class RemediationActionJsonUnmarshaller implements Unmarshaller<Remediati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationAction.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EC2CreateRouteAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationAction.setEC2CreateRouteAction(EC2CreateRouteActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EC2ReplaceRouteAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationAction.setEC2ReplaceRouteAction(EC2ReplaceRouteActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EC2DeleteRouteAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationAction.setEC2DeleteRouteAction(EC2DeleteRouteActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EC2CopyRouteTableAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationAction.setEC2CopyRouteTableAction(EC2CopyRouteTableActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EC2ReplaceRouteTableAssociationAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationAction.setEC2ReplaceRouteTableAssociationAction(EC2ReplaceRouteTableAssociationActionJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("EC2AssociateRouteTableAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationAction.setEC2AssociateRouteTableAction(EC2AssociateRouteTableActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EC2CreateRouteTableAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationAction.setEC2CreateRouteTableAction(EC2CreateRouteTableActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FMSPolicyUpdateFirewallCreationConfigAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remediationAction.setFMSPolicyUpdateFirewallCreationConfigAction(FMSPolicyUpdateFirewallCreationConfigActionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

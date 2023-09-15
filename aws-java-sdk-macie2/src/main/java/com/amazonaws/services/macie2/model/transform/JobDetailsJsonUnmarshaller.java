@@ -43,26 +43,38 @@ public class JobDetailsJsonUnmarshaller implements Unmarshaller<JobDetails, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("isDefinedInJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDetails.setIsDefinedInJob(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isMonitoredByJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDetails.setIsMonitoredByJob(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDetails.setLastJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastJobRunTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobDetails.setLastJobRunTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

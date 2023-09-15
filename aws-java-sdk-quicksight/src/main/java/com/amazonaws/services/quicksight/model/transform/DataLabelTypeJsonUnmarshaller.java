@@ -43,30 +43,43 @@ public class DataLabelTypeJsonUnmarshaller implements Unmarshaller<DataLabelType
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldLabelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelType.setFieldLabelType(FieldLabelTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataPathLabelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelType.setDataPathLabelType(DataPathLabelTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RangeEndsLabelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelType.setRangeEndsLabelType(RangeEndsLabelTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MinimumLabelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelType.setMinimumLabelType(MinimumLabelTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaximumLabelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelType.setMaximumLabelType(MaximumLabelTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

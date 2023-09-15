@@ -43,34 +43,48 @@ public class CustomerActionJsonUnmarshaller implements Unmarshaller<CustomerActi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAction.setActionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snoozeActionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAction.setSnoozeActionConfiguration(SnoozeActionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("enableActionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAction.setEnableActionConfiguration(EnableActionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("disableActionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAction.setDisableActionConfiguration(DisableActionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("acknowledgeActionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAction.setAcknowledgeActionConfiguration(AcknowledgeActionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resetActionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAction.setResetActionConfiguration(ResetActionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

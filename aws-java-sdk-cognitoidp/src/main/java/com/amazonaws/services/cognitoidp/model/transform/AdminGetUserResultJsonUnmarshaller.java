@@ -43,52 +43,69 @@ public class AdminGetUserResultJsonUnmarshaller implements Unmarshaller<AdminGet
             return adminGetUserResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminGetUserResult.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminGetUserResult.setUserAttributes(new ListUnmarshaller<AttributeType>(AttributeTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserCreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminGetUserResult.setUserCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UserLastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminGetUserResult.setUserLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminGetUserResult.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UserStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminGetUserResult.setUserStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MFAOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminGetUserResult.setMFAOptions(new ListUnmarshaller<MFAOptionType>(MFAOptionTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PreferredMfaSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminGetUserResult.setPreferredMfaSetting(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserMFASettingList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminGetUserResult.setUserMFASettingList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

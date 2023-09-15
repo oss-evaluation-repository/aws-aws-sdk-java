@@ -43,9 +43,13 @@ public class RemoveAttributesResultJsonUnmarshaller implements Unmarshaller<Remo
             return removeAttributesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             removeAttributesResult.setAttributesResource(AttributesResourceJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

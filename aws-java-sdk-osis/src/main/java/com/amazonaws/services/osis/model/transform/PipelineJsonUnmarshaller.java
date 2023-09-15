@@ -43,62 +43,82 @@ public class PipelineJsonUnmarshaller implements Unmarshaller<Pipeline, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PipelineName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setPipelineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setPipelineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setMinUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setMaxUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setStatusReason(PipelineStatusReasonJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PipelineConfigurationBody", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setPipelineConfigurationBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IngestEndpointUrls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setIngestEndpointUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LogPublishingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setLogPublishingOptions(LogPublishingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VpcEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setVpcEndpoints(new ListUnmarshaller<VpcEndpoint>(VpcEndpointJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

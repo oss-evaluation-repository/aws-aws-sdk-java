@@ -43,39 +43,53 @@ public class RecommendationSummaryJsonUnmarshaller implements Unmarshaller<Recom
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("summaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setSummaries(new ListUnmarshaller<Summary>(SummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("recommendationResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setRecommendationResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("savingsOpportunity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setSavingsOpportunity(SavingsOpportunityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("currentPerformanceRiskRatings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setCurrentPerformanceRiskRatings(CurrentPerformanceRiskRatingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inferredWorkloadSavings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setInferredWorkloadSavings(new ListUnmarshaller<InferredWorkloadSaving>(InferredWorkloadSavingJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

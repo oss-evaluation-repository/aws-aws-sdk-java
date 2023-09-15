@@ -43,26 +43,38 @@ public class FlywheelModelEvaluationMetricsJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AverageF1Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelModelEvaluationMetrics.setAverageF1Score(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("AveragePrecision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelModelEvaluationMetrics.setAveragePrecision(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("AverageRecall", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelModelEvaluationMetrics.setAverageRecall(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("AverageAccuracy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flywheelModelEvaluationMetrics.setAverageAccuracy(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

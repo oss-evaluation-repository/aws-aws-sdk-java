@@ -43,42 +43,58 @@ public class VideoConfigurationJsonUnmarshaller implements Unmarshaller<VideoCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("avcLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoConfiguration.setAvcLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("avcProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoConfiguration.setAvcProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoConfiguration.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encoder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoConfiguration.setEncoder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoConfiguration.setTargetBitrate(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("targetFramerate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoConfiguration.setTargetFramerate(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("videoHeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoConfiguration.setVideoHeight(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("videoWidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoConfiguration.setVideoWidth(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class CognitoUserPoolConfigJsonUnmarshaller implements Unmarshaller<Cogni
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("userPoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cognitoUserPoolConfig.setUserPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cognitoUserPoolConfig.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appIdClientRegex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cognitoUserPoolConfig.setAppIdClientRegex(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

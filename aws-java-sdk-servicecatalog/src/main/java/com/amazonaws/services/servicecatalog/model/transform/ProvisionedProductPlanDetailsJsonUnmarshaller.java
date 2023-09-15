@@ -43,62 +43,79 @@ public class ProvisionedProductPlanDetailsJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PathId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setPathId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlanName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setPlanName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlanId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setPlanId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionProductId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setProvisionProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionProductName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setProvisionProductName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlanType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setPlanType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisioningArtifactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setProvisioningArtifactId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotificationArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setNotificationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ProvisioningParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setProvisioningParameters(new ListUnmarshaller<UpdateProvisioningParameter>(
                             UpdateProvisioningParameterJsonUnmarshaller.getInstance())
@@ -106,14 +123,20 @@ public class ProvisionedProductPlanDetailsJsonUnmarshaller implements Unmarshall
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanDetails.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

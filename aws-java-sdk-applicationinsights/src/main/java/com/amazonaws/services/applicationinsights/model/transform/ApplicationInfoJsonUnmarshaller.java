@@ -43,46 +43,63 @@ public class ApplicationInfoJsonUnmarshaller implements Unmarshaller<Application
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setResourceGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LifeCycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setLifeCycle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpsItemSNSTopicArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setOpsItemSNSTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpsCenterEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setOpsCenterEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CWEMonitorEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setCWEMonitorEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Remarks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setRemarks(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoConfigEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setAutoConfigEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DiscoveryType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationInfo.setDiscoveryType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

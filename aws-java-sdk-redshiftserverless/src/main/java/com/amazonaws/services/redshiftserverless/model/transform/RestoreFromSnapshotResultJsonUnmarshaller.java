@@ -43,22 +43,33 @@ public class RestoreFromSnapshotResultJsonUnmarshaller implements Unmarshaller<R
             return restoreFromSnapshotResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     restoreFromSnapshotResult.setNamespace(NamespaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ownerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     restoreFromSnapshotResult.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     restoreFromSnapshotResult.setSnapshotName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

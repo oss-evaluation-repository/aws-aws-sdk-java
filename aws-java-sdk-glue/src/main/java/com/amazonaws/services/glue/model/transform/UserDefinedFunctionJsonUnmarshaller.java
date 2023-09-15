@@ -43,44 +43,60 @@ public class UserDefinedFunctionJsonUnmarshaller implements Unmarshaller<UserDef
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FunctionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunction.setFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunction.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClassName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunction.setClassName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunction.setOwnerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunction.setOwnerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunction.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceUris", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunction.setResourceUris(new ListUnmarshaller<ResourceUri>(ResourceUriJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CatalogId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunction.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

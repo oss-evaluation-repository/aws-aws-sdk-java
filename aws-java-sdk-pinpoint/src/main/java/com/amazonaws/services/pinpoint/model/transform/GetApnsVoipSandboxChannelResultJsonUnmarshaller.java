@@ -43,9 +43,13 @@ public class GetApnsVoipSandboxChannelResultJsonUnmarshaller implements Unmarsha
             return getApnsVoipSandboxChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getApnsVoipSandboxChannelResult.setAPNSVoipSandboxChannelResponse(APNSVoipSandboxChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

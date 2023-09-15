@@ -43,38 +43,53 @@ public class RecommendationMetricsJsonUnmarshaller implements Unmarshaller<Recom
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CostPerHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationMetrics.setCostPerHour(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("CostPerInference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationMetrics.setCostPerInference(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxInvocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationMetrics.setMaxInvocations(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelLatency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationMetrics.setModelLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CpuUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationMetrics.setCpuUtilization(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("MemoryUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationMetrics.setMemoryUtilization(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelSetupTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationMetrics.setModelSetupTime(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

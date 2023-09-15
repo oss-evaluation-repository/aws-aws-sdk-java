@@ -43,58 +43,77 @@ public class AcceleratorJsonUnmarshaller implements Unmarshaller<Accelerator, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AcceleratorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setAcceleratorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddressType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IpSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setIpSets(new ListUnmarshaller<IpSet>(IpSetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DualStackDnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setDualStackDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Events", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accelerator.setEvents(new ListUnmarshaller<AcceleratorEvent>(AcceleratorEventJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

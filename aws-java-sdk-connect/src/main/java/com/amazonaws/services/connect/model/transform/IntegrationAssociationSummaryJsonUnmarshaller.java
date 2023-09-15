@@ -43,42 +43,58 @@ public class IntegrationAssociationSummaryJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IntegrationAssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integrationAssociationSummary.setIntegrationAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IntegrationAssociationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integrationAssociationSummary.setIntegrationAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integrationAssociationSummary.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IntegrationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integrationAssociationSummary.setIntegrationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IntegrationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integrationAssociationSummary.setIntegrationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceApplicationUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integrationAssociationSummary.setSourceApplicationUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceApplicationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integrationAssociationSummary.setSourceApplicationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     integrationAssociationSummary.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

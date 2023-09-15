@@ -43,22 +43,33 @@ public class FormButtonJsonUnmarshaller implements Unmarshaller<FormButton, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("excluded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formButton.setExcluded(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("children", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formButton.setChildren(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("position", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formButton.setPosition(FieldPositionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

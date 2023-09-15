@@ -43,50 +43,63 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SharePointVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setSharePointVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Urls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlAttachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setCrawlAttachments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UseChangeLog", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setUseChangeLog(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setVpcConfiguration(DataSourceVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
@@ -94,24 +107,33 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
                     .unmarshall(context));
                 }
                 if (context.testExpression("DocumentTitleFieldName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setDocumentTitleFieldName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisableLocalGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setDisableLocalGroups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SslCertificateS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setSslCertificateS3Path(S3PathJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProxyConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharePointConfiguration.setProxyConfiguration(ProxyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

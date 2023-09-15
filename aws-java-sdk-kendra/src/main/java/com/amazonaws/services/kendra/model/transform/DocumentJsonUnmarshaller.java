@@ -43,52 +43,69 @@ public class DocumentJsonUnmarshaller implements Unmarshaller<Document, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     document.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     document.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Blob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     document.setBlob(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     document.setS3Path(S3PathJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     document.setAttributes(new ListUnmarshaller<DocumentAttribute>(DocumentAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AccessControlList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     document.setAccessControlList(new ListUnmarshaller<Principal>(PrincipalJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HierarchicalAccessControlList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     document.setHierarchicalAccessControlList(new ListUnmarshaller<HierarchicalPrincipal>(HierarchicalPrincipalJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ContentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     document.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessControlConfigurationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     document.setAccessControlConfigurationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

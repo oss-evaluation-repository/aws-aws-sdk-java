@@ -43,20 +43,27 @@ public class ServiceConfigurationJsonUnmarshaller implements Unmarshaller<Servic
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceConfiguration.setMemory(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceConfiguration.setCpu(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("containerConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceConfiguration.setContainerConfigurations(new ListUnmarshaller<ContainerConfiguration>(ContainerConfigurationJsonUnmarshaller
                             .getInstance())
@@ -64,12 +71,18 @@ public class ServiceConfigurationJsonUnmarshaller implements Unmarshaller<Servic
                     .unmarshall(context));
                 }
                 if (context.testExpression("autoScalingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceConfiguration.setAutoScalingConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceConfiguration.setTaskDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

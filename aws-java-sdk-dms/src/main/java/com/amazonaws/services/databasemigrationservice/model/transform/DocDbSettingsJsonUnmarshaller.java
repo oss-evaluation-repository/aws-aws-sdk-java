@@ -43,62 +43,83 @@ public class DocDbSettingsJsonUnmarshaller implements Unmarshaller<DocDbSettings
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NestingLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setNestingLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExtractDocId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setExtractDocId(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DocsToInvestigate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setDocsToInvestigate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setSecretsManagerAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerSecretId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UseUpdateLookUp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setUseUpdateLookUp(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicateShardCollections", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     docDbSettings.setReplicateShardCollections(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

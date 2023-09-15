@@ -43,60 +43,80 @@ public class ItemJsonUnmarshaller implements Unmarshaller<Item, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AbsoluteTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setAbsoluteTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParticipantId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setParticipantId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParticipantRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setParticipantRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setAttachments(new ListUnmarshaller<AttachmentItem>(AttachmentItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MessageMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setMessageMetadata(MessageMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RelatedContactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setRelatedContactId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     item.setContactId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

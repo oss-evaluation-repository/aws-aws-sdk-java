@@ -43,24 +43,35 @@ public class DeviceStatusInfoJsonUnmarshaller implements Unmarshaller<DeviceStat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceStatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceStatusInfo.setDeviceStatusDetails(new ListUnmarshaller<DeviceStatusDetail>(DeviceStatusDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConnectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceStatusInfo.setConnectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionStatusUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deviceStatusInfo.setConnectionStatusUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

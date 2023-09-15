@@ -43,22 +43,33 @@ public class RequestImpactStatisticsJsonUnmarshaller implements Unmarshaller<Req
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FaultCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestImpactStatistics.setFaultCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("OkCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestImpactStatistics.setOkCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestImpactStatistics.setTotalCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

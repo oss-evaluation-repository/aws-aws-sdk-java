@@ -43,44 +43,60 @@ public class OrganizationManagedRuleMetadataJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationManagedRuleMetadata.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationManagedRuleMetadata.setRuleIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationManagedRuleMetadata.setInputParameters(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumExecutionFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationManagedRuleMetadata.setMaximumExecutionFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceTypesScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationManagedRuleMetadata.setResourceTypesScope(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceIdScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationManagedRuleMetadata.setResourceIdScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TagKeyScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationManagedRuleMetadata.setTagKeyScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TagValueScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationManagedRuleMetadata.setTagValueScope(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

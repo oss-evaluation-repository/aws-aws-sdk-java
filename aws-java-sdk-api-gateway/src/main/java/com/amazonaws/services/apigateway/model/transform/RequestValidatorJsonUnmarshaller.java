@@ -43,26 +43,38 @@ public class RequestValidatorJsonUnmarshaller implements Unmarshaller<RequestVal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestValidator.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestValidator.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("validateRequestBody", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestValidator.setValidateRequestBody(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("validateRequestParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestValidator.setValidateRequestParameters(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

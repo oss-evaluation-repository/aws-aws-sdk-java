@@ -43,52 +43,70 @@ public class UpdateAuthorizerResultJsonUnmarshaller implements Unmarshaller<Upda
             return updateAuthorizerResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("providerARNs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("authType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setAuthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerCredentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerCredentials(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identitySource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setIdentitySource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identityValidationExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setIdentityValidationExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerResultTtlInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerResultTtlInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

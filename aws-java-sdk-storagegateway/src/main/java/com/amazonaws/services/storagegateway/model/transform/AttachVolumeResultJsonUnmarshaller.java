@@ -43,18 +43,28 @@ public class AttachVolumeResultJsonUnmarshaller implements Unmarshaller<AttachVo
             return attachVolumeResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attachVolumeResult.setVolumeARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attachVolumeResult.setTargetARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class UpdateEventDestinationResultJsonUnmarshaller implements Unmarshalle
             return updateEventDestinationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigurationSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventDestinationResult.setConfigurationSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventDestinationResult.setConfigurationSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventDestinationResult.setEventDestination(EventDestinationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

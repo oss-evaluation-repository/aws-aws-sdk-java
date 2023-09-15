@@ -43,22 +43,33 @@ public class PagerDutyConfigurationJsonUnmarshaller implements Unmarshaller<Page
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pagerDutyConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pagerDutyIncidentConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pagerDutyConfiguration.setPagerDutyIncidentConfiguration(PagerDutyIncidentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("secretId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pagerDutyConfiguration.setSecretId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

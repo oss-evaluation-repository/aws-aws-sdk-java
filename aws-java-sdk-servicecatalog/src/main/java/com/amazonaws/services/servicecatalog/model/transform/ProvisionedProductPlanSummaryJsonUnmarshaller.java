@@ -43,34 +43,48 @@ public class ProvisionedProductPlanSummaryJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PlanName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanSummary.setPlanName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlanId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanSummary.setPlanId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionProductId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanSummary.setProvisionProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionProductName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanSummary.setProvisionProductName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlanType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanSummary.setPlanType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisioningArtifactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisionedProductPlanSummary.setProvisioningArtifactId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class ScriptModeConfigJsonUnmarshaller implements Unmarshaller<ScriptMode
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("compressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scriptModeConfig.setCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entryPoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scriptModeConfig.setEntryPoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scriptModeConfig.setS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

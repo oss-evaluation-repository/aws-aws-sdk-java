@@ -43,50 +43,66 @@ public class DatasetMetadataJsonUnmarshaller implements Unmarshaller<DatasetMeta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setDatasetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setDatasetDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setDataAggregation(DataAggregationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Filters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setFilters(new ListUnmarshaller<TopicFilter>(TopicFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Columns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setColumns(new ListUnmarshaller<TopicColumn>(TopicColumnJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CalculatedFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setCalculatedFields(new ListUnmarshaller<TopicCalculatedField>(TopicCalculatedFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NamedEntities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetMetadata.setNamedEntities(new ListUnmarshaller<TopicNamedEntity>(TopicNamedEntityJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

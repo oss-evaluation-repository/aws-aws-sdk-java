@@ -43,26 +43,38 @@ public class ThroughputJsonUnmarshaller implements Unmarshaller<Throughput, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Read", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     throughput.setRead(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Write", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     throughput.setWrite(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Other", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     throughput.setOther(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Total", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     throughput.setTotal(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class TestSetTurnRecordJsonUnmarshaller implements Unmarshaller<TestSetTu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("recordNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testSetTurnRecord.setRecordNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("conversationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testSetTurnRecord.setConversationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("turnNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testSetTurnRecord.setTurnNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("turnSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testSetTurnRecord.setTurnSpecification(TurnSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

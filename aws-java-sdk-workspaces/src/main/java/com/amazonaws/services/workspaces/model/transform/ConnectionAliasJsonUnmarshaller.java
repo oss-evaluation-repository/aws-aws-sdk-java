@@ -43,32 +43,45 @@ public class ConnectionAliasJsonUnmarshaller implements Unmarshaller<ConnectionA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConnectionString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionAlias.setConnectionString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AliasId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionAlias.setAliasId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionAlias.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionAlias.setOwnerAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Associations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectionAlias.setAssociations(new ListUnmarshaller<ConnectionAliasAssociation>(ConnectionAliasAssociationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

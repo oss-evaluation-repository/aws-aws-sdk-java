@@ -43,26 +43,38 @@ public class CloudwatchAlarmActionJsonUnmarshaller implements Unmarshaller<Cloud
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudwatchAlarmAction.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alarmName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudwatchAlarmAction.setAlarmName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudwatchAlarmAction.setStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudwatchAlarmAction.setStateValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

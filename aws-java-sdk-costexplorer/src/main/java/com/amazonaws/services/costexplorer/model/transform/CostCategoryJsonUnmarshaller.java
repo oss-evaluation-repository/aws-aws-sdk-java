@@ -43,38 +43,49 @@ public class CostCategoryJsonUnmarshaller implements Unmarshaller<CostCategory, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CostCategoryArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategory.setCostCategoryArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EffectiveStart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategory.setEffectiveStart(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EffectiveEnd", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategory.setEffectiveEnd(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategory.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategory.setRuleVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategory.setRules(new ListUnmarshaller<CostCategoryRule>(CostCategoryRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SplitChargeRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategory.setSplitChargeRules(new ListUnmarshaller<CostCategorySplitChargeRule>(CostCategorySplitChargeRuleJsonUnmarshaller
                             .getInstance())
@@ -82,6 +93,7 @@ public class CostCategoryJsonUnmarshaller implements Unmarshaller<CostCategory, 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ProcessingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategory.setProcessingStatus(new ListUnmarshaller<CostCategoryProcessingStatus>(CostCategoryProcessingStatusJsonUnmarshaller
                             .getInstance())
@@ -89,8 +101,13 @@ public class CostCategoryJsonUnmarshaller implements Unmarshaller<CostCategory, 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DefaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     costCategory.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

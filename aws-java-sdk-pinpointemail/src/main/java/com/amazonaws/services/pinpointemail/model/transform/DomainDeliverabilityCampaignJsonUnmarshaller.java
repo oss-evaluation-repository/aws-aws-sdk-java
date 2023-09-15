@@ -43,70 +43,92 @@ public class DomainDeliverabilityCampaignJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CampaignId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setCampaignId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FromAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setFromAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SendingIps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setSendingIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FirstSeenDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setFirstSeenDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSeenDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setLastSeenDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InboxCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setInboxCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SpamCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setSpamCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ReadRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setReadRate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("DeleteRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setDeleteRate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ReadDeleteRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setReadDeleteRate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ProjectedVolume", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setProjectedVolume(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Esps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDeliverabilityCampaign.setEsps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

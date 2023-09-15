@@ -43,14 +43,23 @@ public class DescribeClusterOperationV2ResultJsonUnmarshaller implements Unmarsh
             return describeClusterOperationV2Result;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterOperationInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeClusterOperationV2Result.setClusterOperationInfo(ClusterOperationV2JsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

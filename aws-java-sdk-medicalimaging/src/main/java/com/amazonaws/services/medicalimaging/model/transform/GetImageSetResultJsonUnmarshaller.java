@@ -43,50 +43,68 @@ public class GetImageSetResultJsonUnmarshaller implements Unmarshaller<GetImageS
             return getImageSetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("datastoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImageSetResult.setDatastoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImageSetResult.setImageSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImageSetResult.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSetState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImageSetResult.setImageSetState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSetWorkflowStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImageSetResult.setImageSetWorkflowStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImageSetResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImageSetResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImageSetResult.setDeletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImageSetResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImageSetResult.setImageSetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

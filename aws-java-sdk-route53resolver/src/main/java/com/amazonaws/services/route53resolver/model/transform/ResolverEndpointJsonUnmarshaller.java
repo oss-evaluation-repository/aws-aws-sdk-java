@@ -43,72 +43,95 @@ public class ResolverEndpointJsonUnmarshaller implements Unmarshaller<ResolverEn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatorRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setCreatorRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Direction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddressCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setIpAddressCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("HostVPCId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setHostVPCId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setModificationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResolverEndpointType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setResolverEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutpostArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setOutpostArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreferredInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolverEndpoint.setPreferredInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

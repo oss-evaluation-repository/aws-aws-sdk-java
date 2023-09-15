@@ -43,34 +43,48 @@ public class CreateUserProfileResultJsonUnmarshaller implements Unmarshaller<Cre
             return createUserProfileResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("userArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createUserProfileResult.setUserArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("displayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createUserProfileResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("emailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createUserProfileResult.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sshPublicKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createUserProfileResult.setSshPublicKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createUserProfileResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createUserProfileResult.setLastModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

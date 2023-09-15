@@ -43,28 +43,40 @@ public class SizeConstraintStatementJsonUnmarshaller implements Unmarshaller<Siz
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldToMatch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sizeConstraintStatement.setFieldToMatch(FieldToMatchJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ComparisonOperator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sizeConstraintStatement.setComparisonOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sizeConstraintStatement.setSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TextTransformations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sizeConstraintStatement.setTextTransformations(new ListUnmarshaller<TextTransformation>(TextTransformationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

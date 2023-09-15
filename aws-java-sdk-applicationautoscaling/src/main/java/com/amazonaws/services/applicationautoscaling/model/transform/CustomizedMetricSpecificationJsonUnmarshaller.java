@@ -43,39 +43,53 @@ public class CustomizedMetricSpecificationJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customizedMetricSpecification.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customizedMetricSpecification.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Dimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customizedMetricSpecification.setDimensions(new ListUnmarshaller<MetricDimension>(MetricDimensionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Statistic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customizedMetricSpecification.setStatistic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customizedMetricSpecification.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Metrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customizedMetricSpecification.setMetrics(new ListUnmarshaller<TargetTrackingMetricDataQuery>(TargetTrackingMetricDataQueryJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

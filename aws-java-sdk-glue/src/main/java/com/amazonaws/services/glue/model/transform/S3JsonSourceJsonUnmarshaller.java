@@ -43,68 +43,89 @@ public class S3JsonSourceJsonUnmarshaller implements Unmarshaller<S3JsonSource, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Paths", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Exclusions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setExclusions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("GroupSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setGroupSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setGroupFiles(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Recurse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setRecurse(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxBand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setMaxBand(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxFilesInBand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setMaxFilesInBand(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setAdditionalOptions(S3DirectSourceAdditionalOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JsonPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setJsonPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Multiline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setMultiline(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputSchemas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3JsonSource.setOutputSchemas(new ListUnmarshaller<GlueSchema>(GlueSchemaJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

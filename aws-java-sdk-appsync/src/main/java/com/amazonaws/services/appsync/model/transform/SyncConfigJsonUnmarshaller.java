@@ -43,22 +43,33 @@ public class SyncConfigJsonUnmarshaller implements Unmarshaller<SyncConfig, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("conflictHandler", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncConfig.setConflictHandler(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("conflictDetection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncConfig.setConflictDetection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lambdaConflictHandlerConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     syncConfig.setLambdaConflictHandlerConfig(LambdaConflictHandlerConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

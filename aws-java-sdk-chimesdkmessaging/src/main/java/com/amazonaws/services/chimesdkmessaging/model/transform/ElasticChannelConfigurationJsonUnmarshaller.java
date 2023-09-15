@@ -43,22 +43,33 @@ public class ElasticChannelConfigurationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MaximumSubChannels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticChannelConfiguration.setMaximumSubChannels(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetMembershipsPerSubChannel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticChannelConfiguration.setTargetMembershipsPerSubChannel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumMembershipPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticChannelConfiguration.setMinimumMembershipPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

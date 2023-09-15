@@ -43,9 +43,13 @@ public class ListTemplateVersionsResultJsonUnmarshaller implements Unmarshaller<
             return listTemplateVersionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             listTemplateVersionsResult.setTemplateVersionsResponse(TemplateVersionsResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

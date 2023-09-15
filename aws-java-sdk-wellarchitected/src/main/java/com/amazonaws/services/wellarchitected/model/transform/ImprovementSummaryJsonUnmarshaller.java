@@ -43,36 +43,50 @@ public class ImprovementSummaryJsonUnmarshaller implements Unmarshaller<Improvem
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QuestionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     improvementSummary.setQuestionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PillarId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     improvementSummary.setPillarId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuestionTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     improvementSummary.setQuestionTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Risk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     improvementSummary.setRisk(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImprovementPlanUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     improvementSummary.setImprovementPlanUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImprovementPlans", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     improvementSummary.setImprovementPlans(new ListUnmarshaller<ChoiceImprovementPlan>(ChoiceImprovementPlanJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

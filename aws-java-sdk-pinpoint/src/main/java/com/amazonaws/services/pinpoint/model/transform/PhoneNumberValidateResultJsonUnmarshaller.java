@@ -43,9 +43,13 @@ public class PhoneNumberValidateResultJsonUnmarshaller implements Unmarshaller<P
             return phoneNumberValidateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             phoneNumberValidateResult.setNumberValidateResponse(NumberValidateResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

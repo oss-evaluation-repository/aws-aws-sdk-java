@@ -43,42 +43,56 @@ public class LabelJsonUnmarshaller implements Unmarshaller<Label, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     label.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Confidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     label.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("Instances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     label.setInstances(new ListUnmarshaller<Instance>(InstanceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Parents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     label.setParents(new ListUnmarshaller<Parent>(ParentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Aliases", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     label.setAliases(new ListUnmarshaller<LabelAlias>(LabelAliasJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Categories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     label.setCategories(new ListUnmarshaller<LabelCategory>(LabelCategoryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

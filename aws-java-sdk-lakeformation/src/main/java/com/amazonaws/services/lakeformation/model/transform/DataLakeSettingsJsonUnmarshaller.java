@@ -43,24 +43,31 @@ public class DataLakeSettingsJsonUnmarshaller implements Unmarshaller<DataLakeSe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataLakeAdmins", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeSettings.setDataLakeAdmins(new ListUnmarshaller<DataLakePrincipal>(DataLakePrincipalJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReadOnlyAdmins", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeSettings.setReadOnlyAdmins(new ListUnmarshaller<DataLakePrincipal>(DataLakePrincipalJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreateDatabaseDefaultPermissions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeSettings.setCreateDatabaseDefaultPermissions(new ListUnmarshaller<PrincipalPermissions>(PrincipalPermissionsJsonUnmarshaller
                             .getInstance())
@@ -68,6 +75,7 @@ public class DataLakeSettingsJsonUnmarshaller implements Unmarshaller<DataLakeSe
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreateTableDefaultPermissions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeSettings.setCreateTableDefaultPermissions(new ListUnmarshaller<PrincipalPermissions>(PrincipalPermissionsJsonUnmarshaller
                             .getInstance())
@@ -75,35 +83,45 @@ public class DataLakeSettingsJsonUnmarshaller implements Unmarshaller<DataLakeSe
                     .unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeSettings.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TrustedResourceOwners", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeSettings.setTrustedResourceOwners(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AllowExternalDataFiltering", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeSettings.setAllowExternalDataFiltering(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowFullTableExternalDataAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeSettings.setAllowFullTableExternalDataAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalDataFilteringAllowList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeSettings.setExternalDataFilteringAllowList(new ListUnmarshaller<DataLakePrincipal>(DataLakePrincipalJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AuthorizedSessionTagValueList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeSettings.setAuthorizedSessionTagValueList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

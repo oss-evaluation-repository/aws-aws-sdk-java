@@ -43,47 +43,63 @@ public class S3LocationJsonUnmarshaller implements Unmarshaller<S3Location, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Location.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Location.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Location.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CannedACL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Location.setCannedACL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessControlList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Location.setAccessControlList(new ListUnmarshaller<Grant>(GrantJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tagging", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Location.setTagging(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("UserMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Location
                             .setUserMetadata(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("StorageClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Location.setStorageClass(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

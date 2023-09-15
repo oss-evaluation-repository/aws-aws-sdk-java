@@ -43,26 +43,38 @@ public class SvmEndpointsJsonUnmarshaller implements Unmarshaller<SvmEndpoints, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Iscsi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     svmEndpoints.setIscsi(SvmEndpointJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Management", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     svmEndpoints.setManagement(SvmEndpointJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Nfs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     svmEndpoints.setNfs(SvmEndpointJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Smb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     svmEndpoints.setSmb(SvmEndpointJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

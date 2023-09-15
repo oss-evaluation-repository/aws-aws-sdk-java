@@ -44,16 +44,22 @@ public class OrganizationCustomPolicyRuleMetadataNoPolicyJsonUnmarshaller implem
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomPolicyRuleMetadataNoPolicy.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationConfigRuleTriggerTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomPolicyRuleMetadataNoPolicy.setOrganizationConfigRuleTriggerTypes(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -61,41 +67,53 @@ public class OrganizationCustomPolicyRuleMetadataNoPolicyJsonUnmarshaller implem
                     .unmarshall(context));
                 }
                 if (context.testExpression("InputParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomPolicyRuleMetadataNoPolicy.setInputParameters(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumExecutionFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomPolicyRuleMetadataNoPolicy.setMaximumExecutionFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceTypesScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomPolicyRuleMetadataNoPolicy.setResourceTypesScope(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceIdScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomPolicyRuleMetadataNoPolicy.setResourceIdScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TagKeyScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomPolicyRuleMetadataNoPolicy.setTagKeyScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TagValueScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomPolicyRuleMetadataNoPolicy.setTagValueScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyRuntime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomPolicyRuleMetadataNoPolicy.setPolicyRuntime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DebugLogDeliveryAccounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationCustomPolicyRuleMetadataNoPolicy
                             .setDebugLogDeliveryAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class NotifyObjectCompleteResultJsonUnmarshaller implements Unmarshaller<
             return notifyObjectCompleteResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ObjectChecksum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notifyObjectCompleteResult.setObjectChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectChecksumAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notifyObjectCompleteResult.setObjectChecksumAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

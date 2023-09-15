@@ -43,36 +43,50 @@ public class RdsDbInstanceDetailsJsonUnmarshaller implements Unmarshaller<RdsDbI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dbInstanceIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstanceDetails.setDbInstanceIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstanceDetails.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstanceDetails.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dbClusterIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstanceDetails.setDbClusterIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dbInstanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstanceDetails.setDbInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstanceDetails.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

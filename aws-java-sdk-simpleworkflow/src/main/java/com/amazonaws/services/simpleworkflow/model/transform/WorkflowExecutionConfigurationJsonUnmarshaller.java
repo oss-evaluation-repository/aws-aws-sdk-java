@@ -43,34 +43,48 @@ public class WorkflowExecutionConfigurationJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskStartToCloseTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionConfiguration.setTaskStartToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionStartToCloseTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionConfiguration.setExecutionStartToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionConfiguration.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("taskPriority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionConfiguration.setTaskPriority(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("childPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionConfiguration.setChildPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lambdaRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionConfiguration.setLambdaRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

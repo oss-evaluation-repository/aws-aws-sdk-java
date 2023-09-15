@@ -43,46 +43,63 @@ public class ShareDetailsJsonUnmarshaller implements Unmarshaller<ShareDetails, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("shareId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareDetails.setShareId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareDetails.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("principalSubscriber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareDetails.setPrincipalSubscriber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ownerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareDetails.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareDetails.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("shareName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareDetails.setShareName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareDetails.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareDetails.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

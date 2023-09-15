@@ -43,22 +43,33 @@ public class AdminCreateUserConfigTypeJsonUnmarshaller implements Unmarshaller<A
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AllowAdminCreateUserOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminCreateUserConfigType.setAllowAdminCreateUserOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UnusedAccountValidityDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminCreateUserConfigType.setUnusedAccountValidityDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InviteMessageTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminCreateUserConfigType.setInviteMessageTemplate(MessageTemplateTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

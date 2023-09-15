@@ -43,34 +43,48 @@ public class EC2ResourceUtilizationJsonUnmarshaller implements Unmarshaller<EC2R
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MaxCpuUtilizationPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceUtilization.setMaxCpuUtilizationPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxMemoryUtilizationPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceUtilization.setMaxMemoryUtilizationPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxStorageUtilizationPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceUtilization.setMaxStorageUtilizationPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EBSResourceUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceUtilization.setEBSResourceUtilization(EBSResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DiskResourceUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceUtilization.setDiskResourceUtilization(DiskResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NetworkResourceUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceUtilization.setNetworkResourceUtilization(NetworkResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

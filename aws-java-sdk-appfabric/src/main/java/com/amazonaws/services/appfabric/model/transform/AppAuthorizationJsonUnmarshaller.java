@@ -43,50 +43,68 @@ public class AppAuthorizationJsonUnmarshaller implements Unmarshaller<AppAuthori
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appAuthorizationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAuthorization.setAppAuthorizationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appBundleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAuthorization.setAppBundleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("app", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAuthorization.setApp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tenant", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAuthorization.setTenant(TenantJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("authType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAuthorization.setAuthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAuthorization.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAuthorization.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAuthorization.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("persona", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAuthorization.setPersona(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAuthorization.setAuthUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

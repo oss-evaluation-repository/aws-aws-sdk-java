@@ -43,26 +43,38 @@ public class CurrentPerformanceRiskRatingsJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("high", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentPerformanceRiskRatings.setHigh(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("medium", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentPerformanceRiskRatings.setMedium(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("low", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentPerformanceRiskRatings.setLow(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("veryLow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentPerformanceRiskRatings.setVeryLow(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

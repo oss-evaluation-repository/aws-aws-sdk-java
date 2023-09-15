@@ -43,55 +43,74 @@ public class GetSolFunctionPackageResultJsonUnmarshaller implements Unmarshaller
             return getSolFunctionPackageResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setMetadata(GetSolFunctionPackageMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("onboardingState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setOnboardingState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationalState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setOperationalState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("usageState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setUsageState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfProductName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setVnfProductName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setVnfProvider(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfdId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setVnfdId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfdVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionPackageResult.setVnfdVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

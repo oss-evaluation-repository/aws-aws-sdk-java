@@ -43,80 +43,104 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComponentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setComponentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParentComponent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setParentComponent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChildComponents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setChildComponents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComponentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setComponentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SapHostname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setSapHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SapKernelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setSapKernelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HdbVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setHdbVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Resilience", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setResilience(ResilienceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssociatedHost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setAssociatedHost(AssociatedHostJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Databases", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setDatabases(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Hosts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setHosts(new ListUnmarshaller<Host>(HostJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PrimaryHost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setPrimaryHost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     component.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

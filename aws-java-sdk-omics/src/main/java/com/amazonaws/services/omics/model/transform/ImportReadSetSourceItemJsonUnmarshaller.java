@@ -43,55 +43,74 @@ public class ImportReadSetSourceItemJsonUnmarshaller implements Unmarshaller<Imp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sourceFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setSourceFiles(SourceFilesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceFileType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setSourceFileType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subjectId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setSubjectId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("generatedFrom", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setGeneratedFrom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("referenceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importReadSetSourceItem.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

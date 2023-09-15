@@ -43,24 +43,32 @@ public class ConversationLevelTestResultItemJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("conversationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conversationLevelTestResultItem.setConversationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endToEndResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conversationLevelTestResultItem.setEndToEndResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("speechTranscriptionResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conversationLevelTestResultItem.setSpeechTranscriptionResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("intentClassificationResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conversationLevelTestResultItem.setIntentClassificationResults(new ListUnmarshaller<ConversationLevelIntentClassificationResultItem>(
                             ConversationLevelIntentClassificationResultItemJsonUnmarshaller.getInstance())
@@ -68,11 +76,16 @@ public class ConversationLevelTestResultItemJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("slotResolutionResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conversationLevelTestResultItem.setSlotResolutionResults(new ListUnmarshaller<ConversationLevelSlotResolutionResultItem>(
                             ConversationLevelSlotResolutionResultItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,55 @@ public class LambdaTargetJsonUnmarshaller implements Unmarshaller<LambdaTarget, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaTarget.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaTarget.setTargetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaTarget.setTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaTarget.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaTarget.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lifecycleEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaTarget.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaTarget.setLambdaFunctionInfo(LambdaFunctionInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

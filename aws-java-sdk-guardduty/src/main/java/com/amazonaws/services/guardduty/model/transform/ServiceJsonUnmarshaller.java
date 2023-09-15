@@ -43,66 +43,88 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setAction(ActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("evidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setEvidence(EvidenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("archived", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("count", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setDetectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventFirstSeen", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setEventFirstSeen(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventLastSeen", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setEventLastSeen(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setResourceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userFeedback", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setUserFeedback(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("additionalInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setAdditionalInfo(ServiceAdditionalInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("featureName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setFeatureName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ebsVolumeScanDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setEbsVolumeScanDetails(EbsVolumeScanDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("runtimeDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setRuntimeDetails(RuntimeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

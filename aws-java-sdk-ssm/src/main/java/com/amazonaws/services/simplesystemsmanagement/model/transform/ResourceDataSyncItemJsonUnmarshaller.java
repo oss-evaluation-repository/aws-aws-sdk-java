@@ -43,50 +43,68 @@ public class ResourceDataSyncItemJsonUnmarshaller implements Unmarshaller<Resour
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SyncName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncItem.setSyncName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SyncType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncItem.setSyncType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SyncSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncItem.setSyncSource(ResourceDataSyncSourceWithStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncItem.setS3Destination(ResourceDataSyncS3DestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastSyncTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncItem.setLastSyncTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulSyncTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncItem.setLastSuccessfulSyncTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SyncLastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncItem.setSyncLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncItem.setLastStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SyncCreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncItem.setSyncCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSyncStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceDataSyncItem.setLastSyncStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

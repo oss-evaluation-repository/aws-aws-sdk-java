@@ -43,25 +43,36 @@ public class InventoryDeletionSummaryJsonUnmarshaller implements Unmarshaller<In
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TotalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryDeletionSummary.setTotalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RemainingCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryDeletionSummary.setRemainingCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SummaryItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryDeletionSummary.setSummaryItems(new ListUnmarshaller<InventoryDeletionSummaryItem>(InventoryDeletionSummaryItemJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,41 +43,56 @@ public class NumberDisplayFormatConfigurationJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberDisplayFormatConfiguration.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Suffix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberDisplayFormatConfiguration.setSuffix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SeparatorConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberDisplayFormatConfiguration.setSeparatorConfiguration(NumericSeparatorConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DecimalPlacesConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberDisplayFormatConfiguration
                             .setDecimalPlacesConfiguration(DecimalPlacesConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NumberScale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberDisplayFormatConfiguration.setNumberScale(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NegativeValueConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberDisplayFormatConfiguration
                             .setNegativeValueConfiguration(NegativeValueConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NullValueFormatConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numberDisplayFormatConfiguration.setNullValueFormatConfiguration(NullValueFormatConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

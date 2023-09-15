@@ -43,26 +43,38 @@ public class TFIMetricDataPointJsonUnmarshaller implements Unmarshaller<TFIMetri
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fpr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tFIMetricDataPoint.setFpr(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("precision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tFIMetricDataPoint.setPrecision(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("tpr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tFIMetricDataPoint.setTpr(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("threshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tFIMetricDataPoint.setThreshold(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

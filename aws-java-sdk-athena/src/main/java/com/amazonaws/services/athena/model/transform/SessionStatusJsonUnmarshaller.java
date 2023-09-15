@@ -43,34 +43,48 @@ public class SessionStatusJsonUnmarshaller implements Unmarshaller<SessionStatus
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionStatus.setStartDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionStatus.setLastModifiedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionStatus.setEndDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IdleSinceDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionStatus.setIdleSinceDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionStatus.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateChangeReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionStatus.setStateChangeReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

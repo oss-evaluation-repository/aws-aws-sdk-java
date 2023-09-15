@@ -43,34 +43,48 @@ public class OutputUpdateJsonUnmarshaller implements Unmarshaller<OutputUpdate, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OutputId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputUpdate.setOutputId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NameUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputUpdate.setNameUpdate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KinesisStreamsOutputUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputUpdate.setKinesisStreamsOutputUpdate(KinesisStreamsOutputUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisFirehoseOutputUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputUpdate.setKinesisFirehoseOutputUpdate(KinesisFirehoseOutputUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LambdaOutputUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputUpdate.setLambdaOutputUpdate(LambdaOutputUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DestinationSchemaUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outputUpdate.setDestinationSchemaUpdate(DestinationSchemaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

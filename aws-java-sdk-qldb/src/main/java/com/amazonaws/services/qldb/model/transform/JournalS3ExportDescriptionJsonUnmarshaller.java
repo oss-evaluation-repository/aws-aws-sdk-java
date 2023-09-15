@@ -43,46 +43,63 @@ public class JournalS3ExportDescriptionJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LedgerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journalS3ExportDescription.setLedgerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journalS3ExportDescription.setExportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportCreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journalS3ExportDescription.setExportCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journalS3ExportDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InclusiveStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journalS3ExportDescription.setInclusiveStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExclusiveEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journalS3ExportDescription.setExclusiveEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("S3ExportConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journalS3ExportDescription.setS3ExportConfiguration(S3ExportConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journalS3ExportDescription.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     journalS3ExportDescription.setOutputFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class PipeJsonUnmarshaller implements Unmarshaller<Pipe, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipe.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipe.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CurrentState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipe.setCurrentState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DesiredState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipe.setDesiredState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enrichment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipe.setEnrichment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipe.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipe.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipe.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipe.setStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipe.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

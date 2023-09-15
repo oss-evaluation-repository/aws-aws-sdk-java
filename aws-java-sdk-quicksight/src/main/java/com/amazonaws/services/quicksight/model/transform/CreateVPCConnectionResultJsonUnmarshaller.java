@@ -45,30 +45,43 @@ public class CreateVPCConnectionResultJsonUnmarshaller implements Unmarshaller<C
             return createVPCConnectionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVPCConnectionResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VPCConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVPCConnectionResult.setVPCConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVPCConnectionResult.setCreationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVPCConnectionResult.setAvailabilityStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVPCConnectionResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

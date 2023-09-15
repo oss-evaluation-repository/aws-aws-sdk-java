@@ -43,18 +43,28 @@ public class TermJsonUnmarshaller implements Unmarshaller<Term, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     term.setSourceText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     term.setTargetText(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

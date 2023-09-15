@@ -43,34 +43,48 @@ public class RecoveryPointJsonUnmarshaller implements Unmarshaller<RecoveryPoint
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("namespaceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPoint.setNamespaceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPoint.setNamespaceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recoveryPointCreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPoint.setRecoveryPointCreateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("recoveryPointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPoint.setRecoveryPointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("totalSizeInMegaBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPoint.setTotalSizeInMegaBytes(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("workgroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryPoint.setWorkgroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,50 @@ public class InstanceProfileJsonUnmarshaller implements Unmarshaller<InstancePro
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("packageCleanup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setPackageCleanup(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("excludeAppPackagesFromCleanup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setExcludeAppPackagesFromCleanup(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("rebootAfterUse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setRebootAfterUse(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

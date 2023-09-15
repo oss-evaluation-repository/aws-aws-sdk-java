@@ -43,48 +43,65 @@ public class LambdaDetailsJsonUnmarshaller implements Unmarshaller<LambdaDetails
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("functionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDetails.setFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("functionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDetails.setFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDetails.setLastModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("revisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDetails.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("functionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDetails.setFunctionVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDetails.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDetails.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDetails.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

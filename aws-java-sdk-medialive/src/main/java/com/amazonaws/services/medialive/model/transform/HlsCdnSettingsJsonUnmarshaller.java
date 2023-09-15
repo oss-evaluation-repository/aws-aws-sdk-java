@@ -43,30 +43,43 @@ public class HlsCdnSettingsJsonUnmarshaller implements Unmarshaller<HlsCdnSettin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("hlsAkamaiSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsCdnSettings.setHlsAkamaiSettings(HlsAkamaiSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hlsBasicPutSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsCdnSettings.setHlsBasicPutSettings(HlsBasicPutSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hlsMediaStoreSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsCdnSettings.setHlsMediaStoreSettings(HlsMediaStoreSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hlsS3Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsCdnSettings.setHlsS3Settings(HlsS3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hlsWebdavSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsCdnSettings.setHlsWebdavSettings(HlsWebdavSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

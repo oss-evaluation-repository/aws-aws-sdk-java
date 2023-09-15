@@ -43,50 +43,68 @@ public class BGPPeerJsonUnmarshaller implements Unmarshaller<BGPPeer, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bgpPeerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bGPPeer.setBgpPeerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("asn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bGPPeer.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("authKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bGPPeer.setAuthKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("addressFamily", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bGPPeer.setAddressFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("amazonAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bGPPeer.setAmazonAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("customerAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bGPPeer.setCustomerAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bgpPeerState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bGPPeer.setBgpPeerState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bgpStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bGPPeer.setBgpStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bGPPeer.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bGPPeer.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

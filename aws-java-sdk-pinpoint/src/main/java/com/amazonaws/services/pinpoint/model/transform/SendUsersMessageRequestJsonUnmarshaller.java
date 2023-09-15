@@ -43,32 +43,45 @@ public class SendUsersMessageRequestJsonUnmarshaller implements Unmarshaller<Sen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Context", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendUsersMessageRequest.setContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("MessageConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendUsersMessageRequest.setMessageConfiguration(DirectMessageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendUsersMessageRequest.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TraceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendUsersMessageRequest.setTraceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Users", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendUsersMessageRequest.setUsers(new MapUnmarshaller<String, EndpointSendConfiguration>(context.getUnmarshaller(String.class),
                             EndpointSendConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

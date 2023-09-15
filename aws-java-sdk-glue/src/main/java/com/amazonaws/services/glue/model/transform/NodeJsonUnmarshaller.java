@@ -43,34 +43,48 @@ public class NodeJsonUnmarshaller implements Unmarshaller<Node, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UniqueId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setUniqueId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TriggerDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setTriggerDetails(TriggerNodeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setJobDetails(JobNodeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CrawlerDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     node.setCrawlerDetails(CrawlerNodeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

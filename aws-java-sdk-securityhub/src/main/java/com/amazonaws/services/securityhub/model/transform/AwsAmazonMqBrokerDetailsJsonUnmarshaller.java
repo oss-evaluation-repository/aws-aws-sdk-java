@@ -43,91 +43,117 @@ public class AwsAmazonMqBrokerDetailsJsonUnmarshaller implements Unmarshaller<Aw
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AuthenticationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setAuthenticationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMinorVersionUpgrade", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setAutoMinorVersionUpgrade(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("BrokerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setBrokerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BrokerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setBrokerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setDeploymentMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setEncryptionOptions(AwsAmazonMqBrokerEncryptionOptionsDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EngineType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setEngineType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HostInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BrokerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setBrokerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LdapServerMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails
                             .setLdapServerMetadata(AwsAmazonMqBrokerLdapServerMetadataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Logs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setLogs(AwsAmazonMqBrokerLogsDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaintenanceWindowStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setMaintenanceWindowStartTime(AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("PubliclyAccessible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setPubliclyAccessible(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StorageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Users", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerDetails.setUsers(new ListUnmarshaller<AwsAmazonMqBrokerUsersDetails>(AwsAmazonMqBrokerUsersDetailsJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

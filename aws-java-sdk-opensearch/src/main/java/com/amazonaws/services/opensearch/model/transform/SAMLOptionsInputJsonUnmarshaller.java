@@ -43,38 +43,53 @@ public class SAMLOptionsInputJsonUnmarshaller implements Unmarshaller<SAMLOption
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAMLOptionsInput.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Idp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAMLOptionsInput.setIdp(SAMLIdpJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MasterUserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAMLOptionsInput.setMasterUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterBackendRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAMLOptionsInput.setMasterBackendRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubjectKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAMLOptionsInput.setSubjectKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RolesKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAMLOptionsInput.setRolesKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionTimeoutMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAMLOptionsInput.setSessionTimeoutMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

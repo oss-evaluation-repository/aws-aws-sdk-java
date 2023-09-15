@@ -43,28 +43,39 @@ public class ConflictResolutionJsonUnmarshaller implements Unmarshaller<Conflict
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("replaceContents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictResolution.setReplaceContents(new ListUnmarshaller<ReplaceContentEntry>(ReplaceContentEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("deleteFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictResolution.setDeleteFiles(new ListUnmarshaller<DeleteFileEntry>(DeleteFileEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("setFileModes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictResolution.setSetFileModes(new ListUnmarshaller<SetFileModeEntry>(SetFileModeEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

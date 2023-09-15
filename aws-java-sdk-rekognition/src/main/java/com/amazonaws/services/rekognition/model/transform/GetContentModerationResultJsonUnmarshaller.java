@@ -43,24 +43,32 @@ public class GetContentModerationResultJsonUnmarshaller implements Unmarshaller<
             return getContentModerationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContentModerationResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContentModerationResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VideoMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContentModerationResult.setVideoMetadata(VideoMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModerationLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContentModerationResult.setModerationLabels(new ListUnmarshaller<ContentModerationDetection>(ContentModerationDetectionJsonUnmarshaller
                             .getInstance())
@@ -68,28 +76,38 @@ public class GetContentModerationResultJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContentModerationResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModerationModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContentModerationResult.setModerationModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContentModerationResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Video", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContentModerationResult.setVideo(VideoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobTag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContentModerationResult.setJobTag(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GetRequestMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getContentModerationResult.setGetRequestMetadata(GetContentModerationRequestMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

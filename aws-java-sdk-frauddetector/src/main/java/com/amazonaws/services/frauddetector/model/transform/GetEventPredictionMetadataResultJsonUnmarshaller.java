@@ -43,44 +43,57 @@ public class GetEventPredictionMetadataResultJsonUnmarshaller implements Unmarsh
             return getEventPredictionMetadataResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setEntityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entityType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setEntityType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setEventTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setDetectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setDetectorVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorVersionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setDetectorVersionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setEventVariables(new ListUnmarshaller<EventVariableSummary>(EventVariableSummaryJsonUnmarshaller
                             .getInstance())
@@ -88,22 +101,26 @@ public class GetEventPredictionMetadataResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setRules(new ListUnmarshaller<EvaluatedRule>(EvaluatedRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ruleExecutionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setRuleExecutionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outcomes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setOutcomes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("evaluatedModelVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setEvaluatedModelVersions(new ListUnmarshaller<EvaluatedModelVersion>(
                             EvaluatedModelVersionJsonUnmarshaller.getInstance())
@@ -111,6 +128,7 @@ public class GetEventPredictionMetadataResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("evaluatedExternalModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setEvaluatedExternalModels(new ListUnmarshaller<EvaluatedExternalModel>(
                             EvaluatedExternalModelJsonUnmarshaller.getInstance())
@@ -118,8 +136,13 @@ public class GetEventPredictionMetadataResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("predictionTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEventPredictionMetadataResult.setPredictionTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

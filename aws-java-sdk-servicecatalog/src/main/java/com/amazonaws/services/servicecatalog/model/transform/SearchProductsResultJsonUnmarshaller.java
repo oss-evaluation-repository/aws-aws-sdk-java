@@ -43,18 +43,24 @@ public class SearchProductsResultJsonUnmarshaller implements Unmarshaller<Search
             return searchProductsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProductViewSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchProductsResult.setProductViewSummaries(new ListUnmarshaller<ProductViewSummary>(ProductViewSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ProductViewAggregations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchProductsResult.setProductViewAggregations(new MapUnmarshaller<String, java.util.List<ProductViewAggregationValue>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<ProductViewAggregationValue>(ProductViewAggregationValueJsonUnmarshaller
@@ -63,8 +69,13 @@ public class SearchProductsResultJsonUnmarshaller implements Unmarshaller<Search
                     ).unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchProductsResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,55 @@ public class RedshiftDataParametersJsonUnmarshaller implements Unmarshaller<Reds
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SecretManagerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDataParameters.setSecretManagerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Database", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDataParameters.setDatabase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDataParameters.setDbUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Sql", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDataParameters.setSql(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatementName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDataParameters.setStatementName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WithEvent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDataParameters.setWithEvent(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Sqls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDataParameters.setSqls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

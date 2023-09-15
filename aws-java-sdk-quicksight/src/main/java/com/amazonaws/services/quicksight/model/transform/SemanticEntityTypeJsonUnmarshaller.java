@@ -43,23 +43,34 @@ public class SemanticEntityTypeJsonUnmarshaller implements Unmarshaller<Semantic
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     semanticEntityType.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     semanticEntityType.setSubTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TypeParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     semanticEntityType.setTypeParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

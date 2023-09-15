@@ -43,40 +43,55 @@ public class ConsumedCapacityJsonUnmarshaller implements Unmarshaller<ConsumedCa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumedCapacity.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumedCapacity.setCapacityUnits(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ReadCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumedCapacity.setReadCapacityUnits(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("WriteCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumedCapacity.setWriteCapacityUnits(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Table", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumedCapacity.setTable(CapacityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LocalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumedCapacity.setLocalSecondaryIndexes(new MapUnmarshaller<String, Capacity>(context.getUnmarshaller(String.class),
                             CapacityJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumedCapacity.setGlobalSecondaryIndexes(new MapUnmarshaller<String, Capacity>(context.getUnmarshaller(String.class),
                             CapacityJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

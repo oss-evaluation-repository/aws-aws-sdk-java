@@ -43,12 +43,17 @@ public class AwsIamGroupDetailsJsonUnmarshaller implements Unmarshaller<AwsIamGr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttachedManagedPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamGroupDetails.setAttachedManagedPolicies(new ListUnmarshaller<AwsIamAttachedManagedPolicy>(AwsIamAttachedManagedPolicyJsonUnmarshaller
                             .getInstance())
@@ -56,26 +61,35 @@ public class AwsIamGroupDetailsJsonUnmarshaller implements Unmarshaller<AwsIamGr
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamGroupDetails.setCreateDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamGroupDetails.setGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamGroupDetails.setGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupPolicyList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamGroupDetails.setGroupPolicyList(new ListUnmarshaller<AwsIamGroupPolicy>(AwsIamGroupPolicyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamGroupDetails.setPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

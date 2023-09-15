@@ -43,56 +43,75 @@ public class AwsIamPolicyDetailsJsonUnmarshaller implements Unmarshaller<AwsIamP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttachmentCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setAttachmentCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setCreateDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setDefaultVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsAttachable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setIsAttachable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PermissionsBoundaryUsageCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setPermissionsBoundaryUsageCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyVersionList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setPolicyVersionList(new ListUnmarshaller<AwsIamPolicyVersion>(AwsIamPolicyVersionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamPolicyDetails.setUpdateDate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

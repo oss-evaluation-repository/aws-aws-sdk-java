@@ -43,12 +43,17 @@ public class SectionBasedLayoutConfigurationJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HeaderSections", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sectionBasedLayoutConfiguration.setHeaderSections(new ListUnmarshaller<HeaderFooterSectionConfiguration>(
                             HeaderFooterSectionConfigurationJsonUnmarshaller.getInstance())
@@ -56,6 +61,7 @@ public class SectionBasedLayoutConfigurationJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("BodySections", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sectionBasedLayoutConfiguration.setBodySections(new ListUnmarshaller<BodySectionConfiguration>(BodySectionConfigurationJsonUnmarshaller
                             .getInstance())
@@ -63,6 +69,7 @@ public class SectionBasedLayoutConfigurationJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("FooterSections", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sectionBasedLayoutConfiguration.setFooterSections(new ListUnmarshaller<HeaderFooterSectionConfiguration>(
                             HeaderFooterSectionConfigurationJsonUnmarshaller.getInstance())
@@ -70,8 +77,13 @@ public class SectionBasedLayoutConfigurationJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("CanvasSizeOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sectionBasedLayoutConfiguration.setCanvasSizeOptions(SectionBasedLayoutCanvasSizeOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

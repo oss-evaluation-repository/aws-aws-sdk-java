@@ -44,12 +44,17 @@ public class KeysAndAttributesJsonUnmarshaller implements Unmarshaller<KeysAndAt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Keys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keysAndAttributes.setKeys(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(new MapUnmarshaller<String, AttributeValue>(context
                             .getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance()))
@@ -57,23 +62,31 @@ public class KeysAndAttributesJsonUnmarshaller implements Unmarshaller<KeysAndAt
                     .unmarshall(context));
                 }
                 if (context.testExpression("AttributesToGet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keysAndAttributes.setAttributesToGet(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConsistentRead", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keysAndAttributes.setConsistentRead(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ProjectionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keysAndAttributes.setProjectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpressionAttributeNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     keysAndAttributes.setExpressionAttributeNames(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

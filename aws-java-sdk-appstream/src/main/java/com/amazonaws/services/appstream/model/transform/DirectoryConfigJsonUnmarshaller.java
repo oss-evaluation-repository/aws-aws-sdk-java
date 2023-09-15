@@ -43,32 +43,45 @@ public class DirectoryConfigJsonUnmarshaller implements Unmarshaller<DirectoryCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryConfig.setDirectoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationalUnitDistinguishedNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryConfig.setOrganizationalUnitDistinguishedNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ServiceAccountCredentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryConfig.setServiceAccountCredentials(ServiceAccountCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryConfig.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CertificateBasedAuthProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directoryConfig.setCertificateBasedAuthProperties(CertificateBasedAuthPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

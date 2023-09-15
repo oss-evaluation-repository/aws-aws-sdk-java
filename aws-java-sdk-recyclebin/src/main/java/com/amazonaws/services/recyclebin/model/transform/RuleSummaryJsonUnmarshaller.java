@@ -43,26 +43,38 @@ public class RuleSummaryJsonUnmarshaller implements Unmarshaller<RuleSummary, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Identifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleSummary.setIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetentionPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleSummary.setRetentionPeriod(RetentionPeriodJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LockState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleSummary.setLockState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

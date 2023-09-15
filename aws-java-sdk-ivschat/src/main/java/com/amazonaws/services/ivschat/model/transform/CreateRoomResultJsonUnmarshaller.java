@@ -43,53 +43,71 @@ public class CreateRoomResultJsonUnmarshaller implements Unmarshaller<CreateRoom
             return createRoomResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRoomResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRoomResult.setCreateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRoomResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loggingConfigurationIdentifiers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRoomResult.setLoggingConfigurationIdentifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("maximumMessageLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRoomResult.setMaximumMessageLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maximumMessageRatePerSecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRoomResult.setMaximumMessageRatePerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("messageReviewHandler", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRoomResult.setMessageReviewHandler(MessageReviewHandlerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRoomResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRoomResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRoomResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

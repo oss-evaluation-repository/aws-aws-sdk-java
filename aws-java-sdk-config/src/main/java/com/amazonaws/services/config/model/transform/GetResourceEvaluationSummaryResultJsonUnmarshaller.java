@@ -43,39 +43,54 @@ public class GetResourceEvaluationSummaryResultJsonUnmarshaller implements Unmar
             return getResourceEvaluationSummaryResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceEvaluationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceEvaluationSummaryResult.setResourceEvaluationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceEvaluationSummaryResult.setEvaluationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceEvaluationSummaryResult.setEvaluationStatus(EvaluationStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EvaluationStartTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceEvaluationSummaryResult
                             .setEvaluationStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Compliance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceEvaluationSummaryResult.setCompliance(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceEvaluationSummaryResult.setEvaluationContext(EvaluationContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceEvaluationSummaryResult.setResourceDetails(ResourceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

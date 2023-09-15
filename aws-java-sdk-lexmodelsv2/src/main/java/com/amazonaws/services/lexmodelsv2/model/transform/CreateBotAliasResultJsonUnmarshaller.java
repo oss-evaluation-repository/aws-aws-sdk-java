@@ -43,56 +43,75 @@ public class CreateBotAliasResultJsonUnmarshaller implements Unmarshaller<Create
             return createBotAliasResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botAliasId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setBotAliasId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botAliasName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setBotAliasName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botAliasLocaleSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setBotAliasLocaleSettings(new MapUnmarshaller<String, BotAliasLocaleSettings>(context.getUnmarshaller(String.class),
                             BotAliasLocaleSettingsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("conversationLogSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setConversationLogSettings(ConversationLogSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sentimentAnalysisSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setSentimentAnalysisSettings(SentimentAnalysisSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("botAliasStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setBotAliasStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotAliasResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

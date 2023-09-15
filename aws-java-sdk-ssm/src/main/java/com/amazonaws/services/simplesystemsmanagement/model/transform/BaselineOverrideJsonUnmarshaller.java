@@ -43,52 +43,69 @@ public class BaselineOverrideJsonUnmarshaller implements Unmarshaller<BaselineOv
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OperatingSystem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     baselineOverride.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlobalFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     baselineOverride.setGlobalFilters(PatchFilterGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ApprovalRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     baselineOverride.setApprovalRules(PatchRuleGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ApprovedPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     baselineOverride.setApprovedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ApprovedPatchesComplianceLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     baselineOverride.setApprovedPatchesComplianceLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RejectedPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     baselineOverride.setRejectedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RejectedPatchesAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     baselineOverride.setRejectedPatchesAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApprovedPatchesEnableNonSecurity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     baselineOverride.setApprovedPatchesEnableNonSecurity(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     baselineOverride.setSources(new ListUnmarshaller<PatchSource>(PatchSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

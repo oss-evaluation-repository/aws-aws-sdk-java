@@ -43,80 +43,101 @@ public class UpdateEventSourceMappingResultJsonUnmarshaller implements Unmarshal
             return updateEventSourceMappingResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UUID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setUUID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartingPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setStartingPosition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartingPositionTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setStartingPositionTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("BatchSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumBatchingWindowInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setMaximumBatchingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ParallelizationFactor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setParallelizationFactor(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EventSourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setEventSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FilterCriteria", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setFilterCriteria(FilterCriteriaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FunctionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastProcessingResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setLastProcessingResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateTransitionReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setStateTransitionReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setDestinationConfig(DestinationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Topics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setTopics(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Queues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setQueues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SourceAccessConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setSourceAccessConfigurations(new ListUnmarshaller<SourceAccessConfiguration>(
                             SourceAccessConfigurationJsonUnmarshaller.getInstance())
@@ -124,49 +145,63 @@ public class UpdateEventSourceMappingResultJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("SelfManagedEventSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setSelfManagedEventSource(SelfManagedEventSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaximumRecordAgeInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setMaximumRecordAgeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BisectBatchOnFunctionError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setBisectBatchOnFunctionError(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumRetryAttempts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setMaximumRetryAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TumblingWindowInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setTumblingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FunctionResponseTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setFunctionResponseTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AmazonManagedKafkaEventSourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfigJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("SelfManagedKafkaEventSourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfigJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ScalingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult.setScalingConfig(ScalingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DocumentDBEventSourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateEventSourceMappingResult
                             .setDocumentDBEventSourceConfig(DocumentDBEventSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

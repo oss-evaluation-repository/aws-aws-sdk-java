@@ -43,82 +43,104 @@ public class MobileDeviceAccessRuleJsonUnmarshaller implements Unmarshaller<Mobi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MobileDeviceAccessRuleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setMobileDeviceAccessRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Effect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setEffect(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setDeviceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotDeviceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setNotDeviceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DeviceModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setDeviceModels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotDeviceModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setNotDeviceModels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DeviceOperatingSystems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setDeviceOperatingSystems(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotDeviceOperatingSystems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setNotDeviceOperatingSystems(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DeviceUserAgents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setDeviceUserAgents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotDeviceUserAgents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setNotDeviceUserAgents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setDateCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DateModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mobileDeviceAccessRule.setDateModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

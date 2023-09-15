@@ -43,46 +43,63 @@ public class SchemaResponseJsonUnmarshaller implements Unmarshaller<SchemaRespon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CodeLineCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaResponse.setCodeLineCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaResponse.setCodeSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Complexity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaResponse.setComplexity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Server", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaResponse.setServer(ServerShortInfoResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DatabaseInstance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaResponse.setDatabaseInstance(DatabaseShortInfoResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SchemaId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaResponse.setSchemaId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaResponse.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginalSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaResponse.setOriginalSchema(SchemaShortInfoResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Similarity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     schemaResponse.setSimilarity(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

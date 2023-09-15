@@ -43,12 +43,17 @@ public class ParameterRangesJsonUnmarshaller implements Unmarshaller<ParameterRa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CategoricalParameterRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterRanges.setCategoricalParameterRanges(new ListUnmarshaller<CategoricalParameterRange>(CategoricalParameterRangeJsonUnmarshaller
                             .getInstance())
@@ -56,6 +61,7 @@ public class ParameterRangesJsonUnmarshaller implements Unmarshaller<ParameterRa
                     .unmarshall(context));
                 }
                 if (context.testExpression("ContinuousParameterRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterRanges.setContinuousParameterRanges(new ListUnmarshaller<ContinuousParameterRange>(ContinuousParameterRangeJsonUnmarshaller
                             .getInstance())
@@ -63,10 +69,15 @@ public class ParameterRangesJsonUnmarshaller implements Unmarshaller<ParameterRa
                     .unmarshall(context));
                 }
                 if (context.testExpression("IntegerParameterRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterRanges.setIntegerParameterRanges(new ListUnmarshaller<IntegerParameterRange>(IntegerParameterRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class ListAssetModelPropertiesResultJsonUnmarshaller implements Unmarshal
             return listAssetModelPropertiesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assetModelPropertySummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAssetModelPropertiesResult.setAssetModelPropertySummaries(new ListUnmarshaller<AssetModelPropertySummary>(
                             AssetModelPropertySummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListAssetModelPropertiesResultJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAssetModelPropertiesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

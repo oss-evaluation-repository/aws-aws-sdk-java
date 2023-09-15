@@ -43,18 +43,28 @@ public class NotificationChannelConfigJsonUnmarshaller implements Unmarshaller<N
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Sns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notificationChannelConfig.setSns(SnsChannelConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Filters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notificationChannelConfig.setFilters(NotificationFilterConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,25 +43,36 @@ public class UpdateCustomLineItemChargeDetailsJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Flat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCustomLineItemChargeDetails.setFlat(UpdateCustomLineItemFlatChargeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Percentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCustomLineItemChargeDetails.setPercentage(UpdateCustomLineItemPercentageChargeDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("LineItemFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateCustomLineItemChargeDetails.setLineItemFilters(new ListUnmarshaller<LineItemFilter>(LineItemFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

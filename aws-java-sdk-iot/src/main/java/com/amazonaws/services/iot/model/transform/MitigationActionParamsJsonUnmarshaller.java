@@ -43,35 +43,49 @@ public class MitigationActionParamsJsonUnmarshaller implements Unmarshaller<Miti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("updateDeviceCertificateParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mitigationActionParams.setUpdateDeviceCertificateParams(UpdateDeviceCertificateParamsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("updateCACertificateParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mitigationActionParams.setUpdateCACertificateParams(UpdateCACertificateParamsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("addThingsToThingGroupParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mitigationActionParams.setAddThingsToThingGroupParams(AddThingsToThingGroupParamsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("replaceDefaultPolicyVersionParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mitigationActionParams.setReplaceDefaultPolicyVersionParams(ReplaceDefaultPolicyVersionParamsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("enableIoTLoggingParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mitigationActionParams.setEnableIoTLoggingParams(EnableIoTLoggingParamsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("publishFindingToSnsParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mitigationActionParams.setPublishFindingToSnsParams(PublishFindingToSnsParamsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

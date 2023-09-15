@@ -43,18 +43,28 @@ public class ObjectAttributeRangeJsonUnmarshaller implements Unmarshaller<Object
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttributeKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     objectAttributeRange.setAttributeKey(AttributeKeyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Range", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     objectAttributeRange.setRange(TypedAttributeValueRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

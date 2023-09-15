@@ -43,24 +43,35 @@ public class BatchImportFindingsResultJsonUnmarshaller implements Unmarshaller<B
             return batchImportFindingsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FailedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImportFindingsResult.setFailedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SuccessCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImportFindingsResult.setSuccessCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchImportFindingsResult.setFailedFindings(new ListUnmarshaller<ImportFindingsError>(ImportFindingsErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

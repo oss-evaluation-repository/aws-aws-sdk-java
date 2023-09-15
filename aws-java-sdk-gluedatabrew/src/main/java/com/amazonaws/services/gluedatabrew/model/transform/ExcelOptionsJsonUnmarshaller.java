@@ -43,26 +43,37 @@ public class ExcelOptionsJsonUnmarshaller implements Unmarshaller<ExcelOptions, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SheetNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     excelOptions.setSheetNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SheetIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     excelOptions.setSheetIndexes(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HeaderRow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     excelOptions.setHeaderRow(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

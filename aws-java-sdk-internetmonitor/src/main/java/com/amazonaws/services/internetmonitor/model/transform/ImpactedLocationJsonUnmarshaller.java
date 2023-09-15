@@ -43,66 +43,88 @@ public class ImpactedLocationJsonUnmarshaller implements Unmarshaller<ImpactedLo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ASName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setASName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ASNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setASNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Country", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subdivision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setSubdivision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Metro", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setMetro(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("City", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setCity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Latitude", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setLatitude(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Longitude", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setLongitude(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CountryCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setCountryCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubdivisionCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setSubdivisionCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setServiceLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CausedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setCausedBy(NetworkImpairmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InternetHealth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     impactedLocation.setInternetHealth(InternetHealthJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class CreatePolicyVersionResultJsonUnmarshaller implements Unmarshaller<C
             return createPolicyVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPolicyVersionResult.setPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyDocument", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPolicyVersionResult.setPolicyDocument(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPolicyVersionResult.setPolicyVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isDefaultVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPolicyVersionResult.setIsDefaultVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

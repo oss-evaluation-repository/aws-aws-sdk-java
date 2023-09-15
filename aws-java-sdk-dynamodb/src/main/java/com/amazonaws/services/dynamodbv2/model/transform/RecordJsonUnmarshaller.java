@@ -43,38 +43,53 @@ public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setEventID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setEventName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setEventVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setEventSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dynamodb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setDynamodb(StreamRecordJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("userIdentity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     record.setUserIdentity(IdentityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

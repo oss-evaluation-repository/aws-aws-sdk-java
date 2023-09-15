@@ -43,35 +43,49 @@ public class MetricTransformationJsonUnmarshaller implements Unmarshaller<Metric
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("metricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricTransformation.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricTransformation.setMetricNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricTransformation.setMetricValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricTransformation.setDefaultValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("dimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricTransformation.setDimensions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricTransformation.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

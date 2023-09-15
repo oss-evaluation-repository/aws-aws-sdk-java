@@ -43,28 +43,40 @@ public class CmafPackageJsonUnmarshaller implements Unmarshaller<CmafPackage, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafPackage.setEncryption(CmafEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hlsManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafPackage.setHlsManifests(new ListUnmarshaller<HlsManifest>(HlsManifestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("includeEncoderConfigurationInSegments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafPackage.setIncludeEncoderConfigurationInSegments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafPackage.setSegmentDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

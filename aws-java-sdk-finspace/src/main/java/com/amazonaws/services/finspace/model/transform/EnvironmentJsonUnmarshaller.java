@@ -43,58 +43,78 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setEnvironmentUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sageMakerStudioDomainUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setSageMakerStudioDomainUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dedicatedServiceAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setDedicatedServiceAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("federationMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setFederationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("federationParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environment.setFederationParameters(FederationParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,69 +43,91 @@ public class DescribeStreamProcessorResultJsonUnmarshaller implements Unmarshall
             return describeStreamProcessorResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamProcessorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setStreamProcessorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setLastUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Input", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setInput(StreamProcessorInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Output", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setOutput(StreamProcessorOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setSettings(StreamProcessorSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NotificationChannel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setNotificationChannel(StreamProcessorNotificationChannelJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegionsOfInterest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setRegionsOfInterest(new ListUnmarshaller<RegionOfInterest>(RegionOfInterestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataSharingPreference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStreamProcessorResult.setDataSharingPreference(StreamProcessorDataSharingPreferenceJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

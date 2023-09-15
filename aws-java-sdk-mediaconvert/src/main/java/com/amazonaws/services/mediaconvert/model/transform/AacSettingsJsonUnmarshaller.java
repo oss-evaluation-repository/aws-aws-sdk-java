@@ -43,46 +43,63 @@ public class AacSettingsJsonUnmarshaller implements Unmarshaller<AacSettings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioDescriptionBroadcasterMix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aacSettings.setAudioDescriptionBroadcasterMix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aacSettings.setBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("codecProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aacSettings.setCodecProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aacSettings.setCodingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rateControlMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aacSettings.setRateControlMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rawFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aacSettings.setRawFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aacSettings.setSampleRate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("specification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aacSettings.setSpecification(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vbrQuality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aacSettings.setVbrQuality(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class TagHealthJsonUnmarshaller implements Unmarshaller<TagHealth, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppBoundaryKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tagHealth.setAppBoundaryKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TagValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tagHealth.setTagValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Insight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tagHealth.setInsight(InsightHealthJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AnalyzedResourceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tagHealth.setAnalyzedResourceCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

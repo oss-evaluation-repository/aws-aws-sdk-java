@@ -43,66 +43,88 @@ public class ColumnMetadataJsonUnmarshaller implements Unmarshaller<ColumnMetada
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setType(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("typeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("schemaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isAutoIncrement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setIsAutoIncrement(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isSigned", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setIsSigned(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isCurrency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setIsCurrency(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isCaseSensitive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setIsCaseSensitive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("nullable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setNullable(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("precision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setPrecision(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("scale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setScale(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("arrayBaseColumnType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnMetadata.setArrayBaseColumnType(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

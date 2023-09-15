@@ -43,30 +43,43 @@ public class AwsGroundStationAgentEndpointJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGroundStationAgentEndpoint.setAgentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("auditResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGroundStationAgentEndpoint.setAuditResults(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("egressAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGroundStationAgentEndpoint.setEgressAddress(ConnectionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ingressAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGroundStationAgentEndpoint.setIngressAddress(RangedConnectionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGroundStationAgentEndpoint.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

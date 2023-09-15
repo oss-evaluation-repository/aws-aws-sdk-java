@@ -43,34 +43,44 @@ public class DescribeFeaturedResultsSetResultJsonUnmarshaller implements Unmarsh
             return describeFeaturedResultsSetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FeaturedResultsSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeaturedResultsSetResult.setFeaturedResultsSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeaturedResultsSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeaturedResultsSetResult.setFeaturedResultsSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeaturedResultsSetResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeaturedResultsSetResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryTexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeaturedResultsSetResult.setQueryTexts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FeaturedDocumentsWithMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeaturedResultsSetResult.setFeaturedDocumentsWithMetadata(new ListUnmarshaller<FeaturedDocumentWithMetadata>(
                             FeaturedDocumentWithMetadataJsonUnmarshaller.getInstance())
@@ -78,6 +88,7 @@ public class DescribeFeaturedResultsSetResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("FeaturedDocumentsMissing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeaturedResultsSetResult.setFeaturedDocumentsMissing(new ListUnmarshaller<FeaturedDocumentMissing>(
                             FeaturedDocumentMissingJsonUnmarshaller.getInstance())
@@ -85,12 +96,18 @@ public class DescribeFeaturedResultsSetResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeaturedResultsSetResult.setLastUpdatedTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeaturedResultsSetResult.setCreationTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

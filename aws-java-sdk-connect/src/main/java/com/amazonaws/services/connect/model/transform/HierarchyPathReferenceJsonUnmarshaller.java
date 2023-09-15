@@ -43,30 +43,43 @@ public class HierarchyPathReferenceJsonUnmarshaller implements Unmarshaller<Hier
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LevelOne", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hierarchyPathReference.setLevelOne(HierarchyGroupSummaryReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LevelTwo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hierarchyPathReference.setLevelTwo(HierarchyGroupSummaryReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LevelThree", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hierarchyPathReference.setLevelThree(HierarchyGroupSummaryReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LevelFour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hierarchyPathReference.setLevelFour(HierarchyGroupSummaryReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LevelFive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hierarchyPathReference.setLevelFive(HierarchyGroupSummaryReferenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

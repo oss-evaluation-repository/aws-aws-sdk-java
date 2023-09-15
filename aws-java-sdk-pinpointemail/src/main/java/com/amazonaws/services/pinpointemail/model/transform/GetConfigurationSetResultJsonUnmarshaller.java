@@ -43,36 +43,50 @@ public class GetConfigurationSetResultJsonUnmarshaller implements Unmarshaller<G
             return getConfigurationSetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigurationSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationSetResult.setConfigurationSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrackingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationSetResult.setTrackingOptions(TrackingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeliveryOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationSetResult.setDeliveryOptions(DeliveryOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReputationOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationSetResult.setReputationOptions(ReputationOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SendingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationSetResult.setSendingOptions(SendingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigurationSetResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

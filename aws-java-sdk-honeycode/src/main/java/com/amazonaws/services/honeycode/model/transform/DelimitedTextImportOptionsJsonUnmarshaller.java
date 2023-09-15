@@ -43,26 +43,38 @@ public class DelimitedTextImportOptionsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("delimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delimitedTextImportOptions.setDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hasHeaderRow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delimitedTextImportOptions.setHasHeaderRow(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ignoreEmptyRows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delimitedTextImportOptions.setIgnoreEmptyRows(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("dataCharacterEncoding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     delimitedTextImportOptions.setDataCharacterEncoding(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

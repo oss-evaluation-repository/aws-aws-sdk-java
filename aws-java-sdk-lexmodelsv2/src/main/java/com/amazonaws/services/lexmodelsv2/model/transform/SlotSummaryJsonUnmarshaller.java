@@ -43,38 +43,53 @@ public class SlotSummaryJsonUnmarshaller implements Unmarshaller<SlotSummary, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("slotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotSummary.setSlotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotSummary.setSlotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotConstraint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotSummary.setSlotConstraint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotSummary.setSlotTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("valueElicitationPromptSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotSummary.setValueElicitationPromptSpecification(PromptSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotSummary.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

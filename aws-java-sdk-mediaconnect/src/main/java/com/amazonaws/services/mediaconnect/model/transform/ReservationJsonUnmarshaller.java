@@ -43,62 +43,83 @@ public class ReservationJsonUnmarshaller implements Unmarshaller<Reservation, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("currencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("durationUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setDurationUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("end", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setEnd(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offeringArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setOfferingArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offeringDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setOfferingDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pricePerUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setPricePerUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("priceUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setPriceUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reservationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setReservationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reservationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setReservationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reservationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setReservationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setResourceSpecification(ResourceSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("start", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservation.setStart(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

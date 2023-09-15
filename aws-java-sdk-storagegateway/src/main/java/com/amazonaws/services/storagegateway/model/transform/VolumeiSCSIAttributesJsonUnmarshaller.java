@@ -43,30 +43,43 @@ public class VolumeiSCSIAttributesJsonUnmarshaller implements Unmarshaller<Volum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeiSCSIAttributes.setTargetARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeiSCSIAttributes.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfacePort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeiSCSIAttributes.setNetworkInterfacePort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LunNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeiSCSIAttributes.setLunNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ChapEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeiSCSIAttributes.setChapEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

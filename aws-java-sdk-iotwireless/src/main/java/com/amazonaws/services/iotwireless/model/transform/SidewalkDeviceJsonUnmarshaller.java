@@ -43,46 +43,62 @@ public class SidewalkDeviceJsonUnmarshaller implements Unmarshaller<SidewalkDevi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AmazonId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDevice.setAmazonId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SidewalkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDevice.setSidewalkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SidewalkManufacturingSn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDevice.setSidewalkManufacturingSn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceCertificates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDevice.setDeviceCertificates(new ListUnmarshaller<CertificateList>(CertificateListJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PrivateKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDevice.setPrivateKeys(new ListUnmarshaller<CertificateList>(CertificateListJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DeviceProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDevice.setDeviceProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDevice.setCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sidewalkDevice.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

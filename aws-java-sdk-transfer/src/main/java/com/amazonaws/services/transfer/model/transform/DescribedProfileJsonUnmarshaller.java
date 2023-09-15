@@ -43,38 +43,52 @@ public class DescribedProfileJsonUnmarshaller implements Unmarshaller<DescribedP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedProfile.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedProfile.setProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedProfile.setProfileType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("As2Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedProfile.setAs2Id(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedProfile.setCertificateIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedProfile.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

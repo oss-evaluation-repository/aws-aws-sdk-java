@@ -43,54 +43,73 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Email", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setIdentityType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Active", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PrincipalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomPermissionsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setCustomPermissionsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalLoginFederationProviderType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setExternalLoginFederationProviderType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalLoginFederationProviderUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setExternalLoginFederationProviderUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalLoginId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setExternalLoginId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

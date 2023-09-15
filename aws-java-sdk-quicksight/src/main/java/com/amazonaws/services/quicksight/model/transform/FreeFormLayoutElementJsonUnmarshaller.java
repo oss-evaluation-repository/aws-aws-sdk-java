@@ -43,40 +43,52 @@ public class FreeFormLayoutElementJsonUnmarshaller implements Unmarshaller<FreeF
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ElementId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setElementId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ElementType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setElementType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("XAxisLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setXAxisLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("YAxisLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setYAxisLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Width", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setWidth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Height", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setHeight(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Visibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RenderingRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setRenderingRules(new ListUnmarshaller<SheetElementRenderingRule>(SheetElementRenderingRuleJsonUnmarshaller
                             .getInstance())
@@ -84,20 +96,28 @@ public class FreeFormLayoutElementJsonUnmarshaller implements Unmarshaller<FreeF
                     .unmarshall(context));
                 }
                 if (context.testExpression("BorderStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setBorderStyle(FreeFormLayoutElementBorderStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SelectedBorderStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setSelectedBorderStyle(FreeFormLayoutElementBorderStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BackgroundStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setBackgroundStyle(FreeFormLayoutElementBackgroundStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LoadingAnimation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     freeFormLayoutElement.setLoadingAnimation(LoadingAnimationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

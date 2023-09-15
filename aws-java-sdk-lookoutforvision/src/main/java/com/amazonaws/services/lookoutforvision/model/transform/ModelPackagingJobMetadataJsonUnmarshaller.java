@@ -43,46 +43,63 @@ public class ModelPackagingJobMetadataJsonUnmarshaller implements Unmarshaller<M
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackagingJobMetadata.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProjectName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackagingJobMetadata.setProjectName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackagingJobMetadata.setModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackagingJobDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackagingJobMetadata.setModelPackagingJobDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackagingMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackagingJobMetadata.setModelPackagingMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackagingJobMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackagingJobMetadata.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackagingJobMetadata.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelPackagingJobMetadata.setLastUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

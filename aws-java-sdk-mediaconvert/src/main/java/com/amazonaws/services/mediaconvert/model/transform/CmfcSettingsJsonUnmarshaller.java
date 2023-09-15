@@ -43,66 +43,88 @@ public class CmfcSettingsJsonUnmarshaller implements Unmarshaller<CmfcSettings, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setAudioDuration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setAudioGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioRenditionSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setAudioRenditionSets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioTrackType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setAudioTrackType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("descriptiveVideoServiceFlag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setDescriptiveVideoServiceFlag(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iFrameOnlyManifest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setIFrameOnlyManifest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("klvMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setKlvMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("manifestMetadataSignaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setManifestMetadataSignaling(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scte35Esam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setScte35Esam(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scte35Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setScte35Source(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setTimedMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataBoxVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setTimedMetadataBoxVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataSchemeIdUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setTimedMetadataSchemeIdUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmfcSettings.setTimedMetadataValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

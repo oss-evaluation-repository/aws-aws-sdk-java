@@ -43,56 +43,71 @@ public class PolicyJsonUnmarshaller implements Unmarshaller<Policy, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PolicyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyUpdateToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setPolicyUpdateToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityServicePolicyData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setSecurityServicePolicyData(SecurityServicePolicyDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceTypeList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setResourceTypeList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setResourceTags(new ListUnmarshaller<ResourceTag>(ResourceTagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeResourceTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setExcludeResourceTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RemediationEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setRemediationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DeleteUnusedFMManagedResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setDeleteUnusedFMManagedResources(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setIncludeMap(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -100,6 +115,7 @@ public class PolicyJsonUnmarshaller implements Unmarshaller<Policy, JsonUnmarsha
                     ).unmarshall(context));
                 }
                 if (context.testExpression("ExcludeMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setExcludeMap(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -107,18 +123,25 @@ public class PolicyJsonUnmarshaller implements Unmarshaller<Policy, JsonUnmarsha
                     ).unmarshall(context));
                 }
                 if (context.testExpression("ResourceSetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setResourceSetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PolicyDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setPolicyDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policy.setPolicyStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

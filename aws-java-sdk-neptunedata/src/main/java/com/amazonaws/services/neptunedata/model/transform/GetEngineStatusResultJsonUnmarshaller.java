@@ -43,60 +43,80 @@ public class GetEngineStatusResultJsonUnmarshaller implements Unmarshaller<GetEn
             return getEngineStatusResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dbEngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setDbEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dfeQueryEngine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setDfeQueryEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gremlin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setGremlin(QueryLanguageVersionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sparql", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setSparql(QueryLanguageVersionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("opencypher", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setOpencypher(QueryLanguageVersionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("labMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setLabMode(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("rollingBackTrxCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setRollingBackTrxCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("rollingBackTrxEarliestStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setRollingBackTrxEarliestStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getEngineStatusResult.setSettings(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

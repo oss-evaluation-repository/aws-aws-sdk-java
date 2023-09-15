@@ -44,28 +44,40 @@ public class ListPricingPlansAssociatedWithPricingRuleResultJsonUnmarshaller imp
             return listPricingPlansAssociatedWithPricingRuleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BillingPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPricingPlansAssociatedWithPricingRuleResult.setBillingPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PricingRuleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPricingPlansAssociatedWithPricingRuleResult.setPricingRuleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PricingPlanArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPricingPlansAssociatedWithPricingRuleResult.setPricingPlanArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPricingPlansAssociatedWithPricingRuleResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

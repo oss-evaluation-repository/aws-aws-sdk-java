@@ -43,54 +43,69 @@ public class UpdateReplicationConfigurationResultJsonUnmarshaller implements Unm
             return updateReplicationConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("associateDefaultSecurityGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setAssociateDefaultSecurityGroup(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("autoReplicateNewDisks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setAutoReplicateNewDisks(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("bandwidthThrottling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setBandwidthThrottling(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("createPublicIP", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setCreatePublicIP(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("dataPlaneRouting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setDataPlaneRouting(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultLargeStagingDiskType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setDefaultLargeStagingDiskType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ebsEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setEbsEncryption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ebsEncryptionKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setEbsEncryptionKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pitPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setPitPolicy(new ListUnmarshaller<PITPolicyRule>(PITPolicyRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("replicatedDisks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setReplicatedDisks(new ListUnmarshaller<ReplicationConfigurationReplicatedDisk>(
                             ReplicationConfigurationReplicatedDiskJsonUnmarshaller.getInstance())
@@ -98,10 +113,12 @@ public class UpdateReplicationConfigurationResultJsonUnmarshaller implements Unm
                     .unmarshall(context));
                 }
                 if (context.testExpression("replicationServerInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setReplicationServerInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicationServersSecurityGroupsIDs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setReplicationServersSecurityGroupsIDs(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -109,21 +126,29 @@ public class UpdateReplicationConfigurationResultJsonUnmarshaller implements Unm
                     .unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stagingAreaSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setStagingAreaSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stagingAreaTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setStagingAreaTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("useDedicatedReplicationServer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationResult.setUseDedicatedReplicationServer(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

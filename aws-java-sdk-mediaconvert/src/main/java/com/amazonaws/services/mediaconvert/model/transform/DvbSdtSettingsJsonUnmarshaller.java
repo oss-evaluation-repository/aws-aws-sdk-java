@@ -43,26 +43,38 @@ public class DvbSdtSettingsJsonUnmarshaller implements Unmarshaller<DvbSdtSettin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("outputSdt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSdtSettings.setOutputSdt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sdtInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSdtSettings.setSdtInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSdtSettings.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceProviderName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dvbSdtSettings.setServiceProviderName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

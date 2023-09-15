@@ -43,18 +43,28 @@ public class ForecastConfigurationJsonUnmarshaller implements Unmarshaller<Forec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ForecastProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastConfiguration.setForecastProperties(TimeBasedForecastPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Scenario", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     forecastConfiguration.setScenario(ForecastScenarioJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

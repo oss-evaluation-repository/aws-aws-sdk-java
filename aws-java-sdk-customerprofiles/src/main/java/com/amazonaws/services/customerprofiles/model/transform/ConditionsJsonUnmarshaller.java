@@ -43,22 +43,33 @@ public class ConditionsJsonUnmarshaller implements Unmarshaller<Conditions, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Range", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditions.setRange(RangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ObjectCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditions.setObjectCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Threshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conditions.setThreshold(ThresholdJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

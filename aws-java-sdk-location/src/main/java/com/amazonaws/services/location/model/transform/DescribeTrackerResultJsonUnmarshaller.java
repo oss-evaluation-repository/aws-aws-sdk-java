@@ -43,55 +43,74 @@ public class DescribeTrackerResultJsonUnmarshaller implements Unmarshaller<Descr
             return describeTrackerResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setCreateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventBridgeEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setEventBridgeEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PositionFiltering", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setPositionFiltering(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PricingPlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PricingPlanDataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setPricingPlanDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TrackerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setTrackerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrackerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setTrackerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrackerResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

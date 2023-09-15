@@ -43,26 +43,38 @@ public class TagSearchConditionJsonUnmarshaller implements Unmarshaller<TagSearc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tagKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tagSearchCondition.setTagKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tagValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tagSearchCondition.setTagValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tagKeyComparisonType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tagSearchCondition.setTagKeyComparisonType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tagValueComparisonType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tagSearchCondition.setTagValueComparisonType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,27 @@ public class ServiceConnectServiceJsonUnmarshaller implements Unmarshaller<Servi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("portName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceConnectService.setPortName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("discoveryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceConnectService.setDiscoveryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientAliases", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceConnectService.setClientAliases(new ListUnmarshaller<ServiceConnectClientAlias>(ServiceConnectClientAliasJsonUnmarshaller
                             .getInstance())
@@ -64,8 +71,13 @@ public class ServiceConnectServiceJsonUnmarshaller implements Unmarshaller<Servi
                     .unmarshall(context));
                 }
                 if (context.testExpression("ingressPortOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceConnectService.setIngressPortOverride(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

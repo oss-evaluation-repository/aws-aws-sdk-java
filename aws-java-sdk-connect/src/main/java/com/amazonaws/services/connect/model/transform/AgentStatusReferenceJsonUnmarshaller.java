@@ -43,22 +43,33 @@ public class AgentStatusReferenceJsonUnmarshaller implements Unmarshaller<AgentS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StatusStartTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentStatusReference.setStatusStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StatusArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentStatusReference.setStatusArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentStatusReference.setStatusName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

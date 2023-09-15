@@ -43,34 +43,48 @@ public class SlotTypeSummaryJsonUnmarshaller implements Unmarshaller<SlotTypeSum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("slotTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotTypeSummary.setSlotTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotTypeSummary.setSlotTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotTypeSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parentSlotTypeSignature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotTypeSummary.setParentSlotTypeSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotTypeSummary.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("slotTypeCategory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotTypeSummary.setSlotTypeCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

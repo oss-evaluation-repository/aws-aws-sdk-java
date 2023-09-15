@@ -43,38 +43,53 @@ public class WhatIfForecastSummaryJsonUnmarshaller implements Unmarshaller<WhatI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WhatIfForecastArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     whatIfForecastSummary.setWhatIfForecastArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WhatIfForecastName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     whatIfForecastSummary.setWhatIfForecastName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WhatIfAnalysisArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     whatIfForecastSummary.setWhatIfAnalysisArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     whatIfForecastSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     whatIfForecastSummary.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     whatIfForecastSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     whatIfForecastSummary.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

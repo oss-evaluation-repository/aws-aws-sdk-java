@@ -43,16 +43,22 @@ public class ReplicaAutoScalingDescriptionJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaAutoScalingDescription.setRegionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaAutoScalingDescription.setGlobalSecondaryIndexes(new ListUnmarshaller<ReplicaGlobalSecondaryIndexAutoScalingDescription>(
                             ReplicaGlobalSecondaryIndexAutoScalingDescriptionJsonUnmarshaller.getInstance())
@@ -60,18 +66,25 @@ public class ReplicaAutoScalingDescriptionJsonUnmarshaller implements Unmarshall
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReplicaProvisionedReadCapacityAutoScalingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaAutoScalingDescription.setReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReplicaProvisionedWriteCapacityAutoScalingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaAutoScalingDescription.setReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReplicaStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaAutoScalingDescription.setReplicaStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

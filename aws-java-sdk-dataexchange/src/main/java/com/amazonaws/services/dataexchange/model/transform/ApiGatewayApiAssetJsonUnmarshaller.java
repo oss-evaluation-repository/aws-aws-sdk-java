@@ -43,46 +43,63 @@ public class ApiGatewayApiAssetJsonUnmarshaller implements Unmarshaller<ApiGatew
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApiDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiGatewayApiAsset.setApiDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiGatewayApiAsset.setApiEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiGatewayApiAsset.setApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiGatewayApiAsset.setApiKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiGatewayApiAsset.setApiName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiSpecificationDownloadUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiGatewayApiAsset.setApiSpecificationDownloadUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiSpecificationDownloadUrlExpiresAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiGatewayApiAsset.setApiSpecificationDownloadUrlExpiresAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ProtocolType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiGatewayApiAsset.setProtocolType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Stage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     apiGatewayApiAsset.setStage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

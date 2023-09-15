@@ -43,30 +43,43 @@ public class ExportAssetToSignedUrlResponseDetailsJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportAssetToSignedUrlResponseDetails.setAssetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportAssetToSignedUrlResponseDetails.setDataSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RevisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportAssetToSignedUrlResponseDetails.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SignedUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportAssetToSignedUrlResponseDetails.setSignedUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SignedUrlExpiresAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportAssetToSignedUrlResponseDetails.setSignedUrlExpiresAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

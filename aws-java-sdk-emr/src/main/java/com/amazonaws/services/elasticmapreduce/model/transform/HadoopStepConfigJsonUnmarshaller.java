@@ -43,29 +43,41 @@ public class HadoopStepConfigJsonUnmarshaller implements Unmarshaller<HadoopStep
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Jar", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hadoopStepConfig.setJar(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hadoopStepConfig.setProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("MainClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hadoopStepConfig.setMainClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Args", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hadoopStepConfig.setArgs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class QueryExecutionStatisticsJsonUnmarshaller implements Unmarshaller<Qu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EngineExecutionTimeInMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecutionStatistics.setEngineExecutionTimeInMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DataScannedInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecutionStatistics.setDataScannedInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DataManifestLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecutionStatistics.setDataManifestLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalExecutionTimeInMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecutionStatistics.setTotalExecutionTimeInMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryQueueTimeInMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecutionStatistics.setQueryQueueTimeInMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryPlanningTimeInMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecutionStatistics.setQueryPlanningTimeInMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceProcessingTimeInMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecutionStatistics.setServiceProcessingTimeInMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultReuseInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecutionStatistics.setResultReuseInformation(ResultReuseInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,62 +43,83 @@ public class GetSchemaResultJsonUnmarshaller implements Unmarshaller<GetSchemaRe
             return getSchemaResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegistryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setRegistryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistryArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setRegistryArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setSchemaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Compatibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setCompatibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaCheckpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setSchemaCheckpoint(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestSchemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setLatestSchemaVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NextSchemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setNextSchemaVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setSchemaStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSchemaResult.setUpdatedTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class RevisionInfoJsonUnmarshaller implements Unmarshaller<RevisionInfo, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("revisionLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionInfo.setRevisionLocation(RevisionLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("genericRevisionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionInfo.setGenericRevisionInfo(GenericRevisionInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,40 +43,53 @@ public class OAuth2DefaultsJsonUnmarshaller implements Unmarshaller<OAuth2Defaul
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("oauthScopes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2Defaults.setOauthScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tokenUrls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2Defaults.setTokenUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("authCodeUrls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2Defaults.setAuthCodeUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("oauth2GrantTypesSupported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2Defaults.setOauth2GrantTypesSupported(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("oauth2CustomProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oAuth2Defaults.setOauth2CustomProperties(new ListUnmarshaller<OAuth2CustomParameter>(OAuth2CustomParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

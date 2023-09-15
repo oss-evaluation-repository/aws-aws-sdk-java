@@ -43,52 +43,70 @@ public class GetLabelDetectionResultJsonUnmarshaller implements Unmarshaller<Get
             return getLabelDetectionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLabelDetectionResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLabelDetectionResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VideoMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLabelDetectionResult.setVideoMetadata(VideoMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLabelDetectionResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Labels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLabelDetectionResult.setLabels(new ListUnmarshaller<LabelDetection>(LabelDetectionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LabelModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLabelDetectionResult.setLabelModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLabelDetectionResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Video", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLabelDetectionResult.setVideo(VideoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobTag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLabelDetectionResult.setJobTag(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GetRequestMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLabelDetectionResult.setGetRequestMetadata(GetLabelDetectionRequestMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

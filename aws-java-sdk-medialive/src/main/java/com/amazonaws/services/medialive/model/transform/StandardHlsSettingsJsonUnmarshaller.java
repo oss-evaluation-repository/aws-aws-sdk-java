@@ -43,18 +43,28 @@ public class StandardHlsSettingsJsonUnmarshaller implements Unmarshaller<Standar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioRenditionSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardHlsSettings.setAudioRenditionSets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("m3u8Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     standardHlsSettings.setM3u8Settings(M3u8SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

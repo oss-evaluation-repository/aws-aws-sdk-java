@@ -43,24 +43,35 @@ public class SearchPromptsResultJsonUnmarshaller implements Unmarshaller<SearchP
             return searchPromptsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Prompts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPromptsResult.setPrompts(new ListUnmarshaller<Prompt>(PromptJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPromptsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApproximateTotalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPromptsResult.setApproximateTotalCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

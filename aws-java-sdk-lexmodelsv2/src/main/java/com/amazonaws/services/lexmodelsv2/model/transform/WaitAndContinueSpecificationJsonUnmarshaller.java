@@ -43,26 +43,38 @@ public class WaitAndContinueSpecificationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("waitingResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waitAndContinueSpecification.setWaitingResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("continueResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waitAndContinueSpecification.setContinueResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("stillWaitingResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waitAndContinueSpecification.setStillWaitingResponse(StillWaitingResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("active", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     waitAndContinueSpecification.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

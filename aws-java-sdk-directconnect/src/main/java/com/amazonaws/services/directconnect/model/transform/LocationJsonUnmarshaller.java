@@ -43,40 +43,54 @@ public class LocationJsonUnmarshaller implements Unmarshaller<Location, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("locationCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     location.setLocationCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("locationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     location.setLocationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     location.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("availablePortSpeeds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     location.setAvailablePortSpeeds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("availableProviders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     location.setAvailableProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("availableMacSecPortSpeeds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     location.setAvailableMacSecPortSpeeds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

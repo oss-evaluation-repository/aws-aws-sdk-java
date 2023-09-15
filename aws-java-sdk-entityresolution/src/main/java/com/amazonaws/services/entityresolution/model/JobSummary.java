@@ -49,8 +49,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date startTime;
     /**
      * <p>
-     * The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or
-     * <code>failed</code>.
+     * The current status of the job.
      * </p>
      */
     private String status;
@@ -177,13 +176,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or
-     * <code>failed</code>.
+     * The current status of the job.
      * </p>
      * 
      * @param status
-     *        The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>,
-     *        or <code>failed</code>.
+     *        The current status of the job.
      * @see JobStatus
      */
 
@@ -193,12 +190,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or
-     * <code>failed</code>.
+     * The current status of the job.
      * </p>
      * 
-     * @return The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>,
-     *         or <code>failed</code>.
+     * @return The current status of the job.
      * @see JobStatus
      */
 
@@ -208,13 +203,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or
-     * <code>failed</code>.
+     * The current status of the job.
      * </p>
      * 
      * @param status
-     *        The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>,
-     *        or <code>failed</code>.
+     *        The current status of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -226,13 +219,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or
-     * <code>failed</code>.
+     * The current status of the job.
      * </p>
      * 
      * @param status
-     *        The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>,
-     *        or <code>failed</code>.
+     *        The current status of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */

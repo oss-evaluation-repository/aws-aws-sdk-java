@@ -43,27 +43,39 @@ public class CanarySettingsJsonUnmarshaller implements Unmarshaller<CanarySettin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("percentTraffic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canarySettings.setPercentTraffic(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canarySettings.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stageVariableOverrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canarySettings.setStageVariableOverrides(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("useStageCache", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canarySettings.setUseStageCache(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

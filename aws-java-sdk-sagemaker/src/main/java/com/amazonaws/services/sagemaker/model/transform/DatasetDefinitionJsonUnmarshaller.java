@@ -43,30 +43,43 @@ public class DatasetDefinitionJsonUnmarshaller implements Unmarshaller<DatasetDe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AthenaDatasetDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetDefinition.setAthenaDatasetDefinition(AthenaDatasetDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RedshiftDatasetDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetDefinition.setRedshiftDatasetDefinition(RedshiftDatasetDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LocalPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetDefinition.setLocalPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataDistributionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetDefinition.setDataDistributionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetDefinition.setInputMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

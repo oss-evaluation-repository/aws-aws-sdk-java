@@ -43,22 +43,33 @@ public class HPOConfigJsonUnmarshaller implements Unmarshaller<HPOConfig, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("hpoObjective", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hPOConfig.setHpoObjective(HPOObjectiveJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hpoResourceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hPOConfig.setHpoResourceConfig(HPOResourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("algorithmHyperParameterRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hPOConfig.setAlgorithmHyperParameterRanges(HyperParameterRangesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

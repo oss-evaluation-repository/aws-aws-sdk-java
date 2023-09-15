@@ -43,22 +43,33 @@ public class ChangeRequestJsonUnmarshaller implements Unmarshaller<ChangeRequest
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("changeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeRequest.setChangeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeRequest.setS3Path(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dbPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changeRequest.setDbPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

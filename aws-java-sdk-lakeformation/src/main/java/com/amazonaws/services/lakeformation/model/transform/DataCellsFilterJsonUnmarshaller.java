@@ -43,44 +43,60 @@ public class DataCellsFilterJsonUnmarshaller implements Unmarshaller<DataCellsFi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableCatalogId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCellsFilter.setTableCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCellsFilter.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCellsFilter.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCellsFilter.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RowFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCellsFilter.setRowFilter(RowFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColumnNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCellsFilter.setColumnNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ColumnWildcard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCellsFilter.setColumnWildcard(ColumnWildcardJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataCellsFilter.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

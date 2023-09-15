@@ -43,22 +43,33 @@ public class DocumentAttributeConditionJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConditionDocumentAttributeKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentAttributeCondition.setConditionDocumentAttributeKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Operator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentAttributeCondition.setOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConditionOnValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentAttributeCondition.setConditionOnValue(DocumentAttributeValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

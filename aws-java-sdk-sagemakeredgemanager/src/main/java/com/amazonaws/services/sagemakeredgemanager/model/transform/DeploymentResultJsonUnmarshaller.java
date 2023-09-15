@@ -43,36 +43,50 @@ public class DeploymentResultJsonUnmarshaller implements Unmarshaller<Deployment
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeploymentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentResult.setDeploymentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentResult.setDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentResult.setDeploymentStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentResult.setDeploymentStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeploymentEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentResult.setDeploymentEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeploymentModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentResult.setDeploymentModels(new ListUnmarshaller<DeploymentModel>(DeploymentModelJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

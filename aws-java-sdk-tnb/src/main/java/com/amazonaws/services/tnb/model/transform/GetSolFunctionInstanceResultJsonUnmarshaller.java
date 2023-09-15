@@ -43,59 +43,79 @@ public class GetSolFunctionInstanceResultJsonUnmarshaller implements Unmarshalle
             return getSolFunctionInstanceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instantiatedVnfInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setInstantiatedVnfInfo(GetSolVnfInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("instantiationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setInstantiationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setMetadata(GetSolFunctionInstanceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nsInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setNsInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("vnfPkgId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setVnfPkgId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfProductName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setVnfProductName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setVnfProvider(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfdId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setVnfdId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfdVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSolFunctionInstanceResult.setVnfdVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

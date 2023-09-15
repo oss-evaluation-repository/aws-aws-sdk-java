@@ -43,18 +43,28 @@ public class AxisDisplayRangeJsonUnmarshaller implements Unmarshaller<AxisDispla
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MinMax", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     axisDisplayRange.setMinMax(AxisDisplayMinMaxRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataDriven", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     axisDisplayRange.setDataDriven(AxisDisplayDataDrivenRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,52 +43,70 @@ public class LongTermPricingListEntryJsonUnmarshaller implements Unmarshaller<Lo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LongTermPricingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     longTermPricingListEntry.setLongTermPricingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LongTermPricingEndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     longTermPricingListEntry.setLongTermPricingEndDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LongTermPricingStartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     longTermPricingListEntry.setLongTermPricingStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LongTermPricingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     longTermPricingListEntry.setLongTermPricingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentActiveJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     longTermPricingListEntry.setCurrentActiveJob(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplacementJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     longTermPricingListEntry.setReplacementJob(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsLongTermPricingAutoRenew", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     longTermPricingListEntry.setIsLongTermPricingAutoRenew(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LongTermPricingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     longTermPricingListEntry.setLongTermPricingStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnowballType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     longTermPricingListEntry.setSnowballType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     longTermPricingListEntry.setJobIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

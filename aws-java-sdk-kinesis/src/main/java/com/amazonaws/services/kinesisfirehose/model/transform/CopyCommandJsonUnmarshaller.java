@@ -43,22 +43,33 @@ public class CopyCommandJsonUnmarshaller implements Unmarshaller<CopyCommand, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataTableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyCommand.setDataTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataTableColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyCommand.setDataTableColumns(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyCommand.setCopyOptions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

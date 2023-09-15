@@ -43,16 +43,25 @@ public class HlsIngestJsonUnmarshaller implements Unmarshaller<HlsIngest, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ingestEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsIngest.setIngestEndpoints(new ListUnmarshaller<IngestEndpoint>(IngestEndpointJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

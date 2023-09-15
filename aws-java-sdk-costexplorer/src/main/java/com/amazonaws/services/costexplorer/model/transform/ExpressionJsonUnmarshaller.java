@@ -43,38 +43,52 @@ public class ExpressionJsonUnmarshaller implements Unmarshaller<Expression, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Or", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expression.setOr(new ListUnmarshaller<Expression>(ExpressionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("And", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expression.setAnd(new ListUnmarshaller<Expression>(ExpressionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Not", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expression.setNot(ExpressionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Dimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expression.setDimensions(DimensionValuesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expression.setTags(TagValuesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CostCategories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expression.setCostCategories(CostCategoryValuesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

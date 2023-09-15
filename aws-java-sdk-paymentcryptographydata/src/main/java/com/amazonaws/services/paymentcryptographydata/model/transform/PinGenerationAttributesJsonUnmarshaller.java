@@ -43,34 +43,48 @@ public class PinGenerationAttributesJsonUnmarshaller implements Unmarshaller<Pin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ibm3624NaturalPin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pinGenerationAttributes.setIbm3624NaturalPin(Ibm3624NaturalPinJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Ibm3624PinFromOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pinGenerationAttributes.setIbm3624PinFromOffset(Ibm3624PinFromOffsetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Ibm3624PinOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pinGenerationAttributes.setIbm3624PinOffset(Ibm3624PinOffsetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Ibm3624RandomPin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pinGenerationAttributes.setIbm3624RandomPin(Ibm3624RandomPinJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisaPin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pinGenerationAttributes.setVisaPin(VisaPinJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisaPinVerificationValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pinGenerationAttributes.setVisaPinVerificationValue(VisaPinVerificationValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class CustomKeyStoresListEntryJsonUnmarshaller implements Unmarshaller<Cu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CustomKeyStoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customKeyStoresListEntry.setCustomKeyStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomKeyStoreName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customKeyStoresListEntry.setCustomKeyStoreName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudHsmClusterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customKeyStoresListEntry.setCloudHsmClusterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustAnchorCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customKeyStoresListEntry.setTrustAnchorCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customKeyStoresListEntry.setConnectionState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customKeyStoresListEntry.setConnectionErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customKeyStoresListEntry.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CustomKeyStoreType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customKeyStoresListEntry.setCustomKeyStoreType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("XksProxyConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customKeyStoresListEntry.setXksProxyConfiguration(XksProxyConfigurationTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

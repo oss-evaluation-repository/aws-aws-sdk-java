@@ -43,68 +43,90 @@ public class GetDeploymentResultJsonUnmarshaller implements Unmarshaller<GetDepl
             return getDeploymentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("targetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setDeploymentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iotJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setIotJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iotJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setIotJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("components", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setComponents(new MapUnmarshaller<String, ComponentDeploymentSpecification>(context.getUnmarshaller(String.class),
                             ComponentDeploymentSpecificationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("deploymentPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setDeploymentPolicies(DeploymentPoliciesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iotJobConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setIotJobConfiguration(DeploymentIoTJobConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("isLatestForTarget", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setIsLatestForTarget(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("parentTargetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setParentTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDeploymentResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class BlueprintJsonUnmarshaller implements Unmarshaller<Blueprint, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setCreatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setLastModifiedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ParameterSpec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setParameterSpec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BlueprintLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setBlueprintLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BlueprintServiceLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setBlueprintServiceLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastActiveDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     blueprint.setLastActiveDefinition(LastActiveDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

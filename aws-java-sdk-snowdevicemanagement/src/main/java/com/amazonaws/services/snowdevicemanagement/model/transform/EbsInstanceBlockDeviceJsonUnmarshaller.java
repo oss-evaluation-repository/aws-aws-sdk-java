@@ -43,26 +43,38 @@ public class EbsInstanceBlockDeviceJsonUnmarshaller implements Unmarshaller<EbsI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attachTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDevice.setAttachTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deleteOnTermination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDevice.setDeleteOnTermination(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDevice.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDevice.setVolumeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

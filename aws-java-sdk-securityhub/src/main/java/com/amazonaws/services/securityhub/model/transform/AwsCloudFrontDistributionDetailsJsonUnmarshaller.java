@@ -43,61 +43,81 @@ public class AwsCloudFrontDistributionDetailsJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CacheBehaviors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setCacheBehaviors(AwsCloudFrontDistributionCacheBehaviorsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("DefaultCacheBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setDefaultCacheBehavior(AwsCloudFrontDistributionDefaultCacheBehaviorJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("DefaultRootObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setDefaultRootObject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ETag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setETag(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setLastModifiedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Logging", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setLogging(AwsCloudFrontDistributionLoggingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Origins", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setOrigins(AwsCloudFrontDistributionOriginsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OriginGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setOriginGroups(AwsCloudFrontDistributionOriginGroupsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ViewerCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setViewerCertificate(AwsCloudFrontDistributionViewerCertificateJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WebAclId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setWebAclId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class OnPremiseConfigurationJsonUnmarshaller implements Unmarshaller<OnPr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HostUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     onPremiseConfiguration.setHostUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     onPremiseConfiguration.setOrganizationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SslCertificateS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     onPremiseConfiguration.setSslCertificateS3Path(S3PathJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

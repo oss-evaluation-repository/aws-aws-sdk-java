@@ -43,18 +43,28 @@ public class CalculationStatisticsJsonUnmarshaller implements Unmarshaller<Calcu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DpuExecutionInMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculationStatistics.setDpuExecutionInMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Progress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculationStatistics.setProgress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

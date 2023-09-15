@@ -43,80 +43,104 @@ public class FileCacheJsonUnmarshaller implements Unmarshaller<FileCache, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FileCacheId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setFileCacheId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileCacheType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setFileCacheType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileCacheTypeVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setFileCacheTypeVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Lifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setLifecycle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setFailureDetails(FileCacheFailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StorageCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setStorageCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setNetworkInterfaceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DNSName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setDNSName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setResourceARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LustreConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setLustreConfiguration(FileCacheLustreConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataRepositoryAssociationIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileCache.setDataRepositoryAssociationIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

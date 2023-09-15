@@ -44,47 +44,64 @@ public class DescribePredictorBacktestExportJobResultJsonUnmarshaller implements
             return describePredictorBacktestExportJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PredictorBacktestExportJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorBacktestExportJobResult.setPredictorBacktestExportJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictorBacktestExportJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorBacktestExportJobResult.setPredictorBacktestExportJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorBacktestExportJobResult.setPredictorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorBacktestExportJobResult.setDestination(DataDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorBacktestExportJobResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorBacktestExportJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorBacktestExportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorBacktestExportJobResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(
                             context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorBacktestExportJobResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

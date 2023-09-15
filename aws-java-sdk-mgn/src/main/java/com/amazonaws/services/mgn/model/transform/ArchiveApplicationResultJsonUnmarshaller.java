@@ -43,51 +43,69 @@ public class ArchiveApplicationResultJsonUnmarshaller implements Unmarshaller<Ar
             return archiveApplicationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationAggregatedStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveApplicationResult.setApplicationAggregatedStatus(ApplicationAggregatedStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("applicationID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveApplicationResult.setApplicationID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveApplicationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveApplicationResult.setCreationDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveApplicationResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isArchived", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveApplicationResult.setIsArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveApplicationResult.setLastModifiedDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveApplicationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveApplicationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("waveID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     archiveApplicationResult.setWaveID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

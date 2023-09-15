@@ -43,32 +43,45 @@ public class EngineConfigurationJsonUnmarshaller implements Unmarshaller<EngineC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CoordinatorDpuSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineConfiguration.setCoordinatorDpuSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxConcurrentDpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineConfiguration.setMaxConcurrentDpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultExecutorDpuSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineConfiguration.setDefaultExecutorDpuSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineConfiguration.setAdditionalConfigs(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("SparkProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     engineConfiguration.setSparkProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

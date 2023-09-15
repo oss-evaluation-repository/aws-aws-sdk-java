@@ -43,30 +43,43 @@ public class AgentTurnResultJsonUnmarshaller implements Unmarshaller<AgentTurnRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("expectedAgentPrompt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentTurnResult.setExpectedAgentPrompt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actualAgentPrompt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentTurnResult.setActualAgentPrompt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentTurnResult.setErrorDetails(ExecutionErrorDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("actualElicitedSlot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentTurnResult.setActualElicitedSlot(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actualIntent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentTurnResult.setActualIntent(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

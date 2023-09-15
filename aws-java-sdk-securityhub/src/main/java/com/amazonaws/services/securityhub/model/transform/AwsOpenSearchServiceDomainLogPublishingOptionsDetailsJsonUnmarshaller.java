@@ -44,25 +44,36 @@ public class AwsOpenSearchServiceDomainLogPublishingOptionsDetailsJsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexSlowLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainLogPublishingOptionsDetails.setIndexSlowLogs(AwsOpenSearchServiceDomainLogPublishingOptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SearchSlowLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainLogPublishingOptionsDetails.setSearchSlowLogs(AwsOpenSearchServiceDomainLogPublishingOptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AuditLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainLogPublishingOptionsDetails.setAuditLogs(AwsOpenSearchServiceDomainLogPublishingOptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

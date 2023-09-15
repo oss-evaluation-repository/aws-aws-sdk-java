@@ -43,26 +43,38 @@ public class TriggerDetailsJsonUnmarshaller implements Unmarshaller<TriggerDetai
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("rawData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     triggerDetails.setRawData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     triggerDetails.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     triggerDetails.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("triggerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     triggerDetails.setTriggerArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

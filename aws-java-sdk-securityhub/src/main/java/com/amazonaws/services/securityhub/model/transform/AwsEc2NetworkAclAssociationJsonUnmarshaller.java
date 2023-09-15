@@ -43,22 +43,33 @@ public class AwsEc2NetworkAclAssociationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NetworkAclAssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclAssociation.setNetworkAclAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkAclId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclAssociation.setNetworkAclId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclAssociation.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

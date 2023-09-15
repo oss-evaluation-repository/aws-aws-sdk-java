@@ -44,48 +44,61 @@ public class NetworkFirewallInternetTrafficNotInspectedViolationJsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetAvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setSubnetAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RouteTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setRouteTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ViolatingRoutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setViolatingRoutes(new ListUnmarshaller<Route>(RouteJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IsRouteTableUsedInDifferentAZ", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setIsRouteTableUsedInDifferentAZ(context.getUnmarshaller(Boolean.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("CurrentFirewallSubnetRouteTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setCurrentFirewallSubnetRouteTable(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("ExpectedFirewallEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setExpectedFirewallEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setFirewallSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpectedFirewallSubnetRoutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setExpectedFirewallSubnetRoutes(new ListUnmarshaller<ExpectedRoute>(
                             ExpectedRouteJsonUnmarshaller.getInstance())
@@ -93,6 +106,7 @@ public class NetworkFirewallInternetTrafficNotInspectedViolationJsonUnmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("ActualFirewallSubnetRoutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setActualFirewallSubnetRoutes(new ListUnmarshaller<Route>(RouteJsonUnmarshaller
                             .getInstance())
@@ -100,15 +114,18 @@ public class NetworkFirewallInternetTrafficNotInspectedViolationJsonUnmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("InternetGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setInternetGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentInternetGatewayRouteTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setCurrentInternetGatewayRouteTable(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("ExpectedInternetGatewayRoutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setExpectedInternetGatewayRoutes(new ListUnmarshaller<ExpectedRoute>(
                             ExpectedRouteJsonUnmarshaller.getInstance())
@@ -116,6 +133,7 @@ public class NetworkFirewallInternetTrafficNotInspectedViolationJsonUnmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("ActualInternetGatewayRoutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setActualInternetGatewayRoutes(new ListUnmarshaller<Route>(RouteJsonUnmarshaller
                             .getInstance())
@@ -123,8 +141,13 @@ public class NetworkFirewallInternetTrafficNotInspectedViolationJsonUnmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallInternetTrafficNotInspectedViolation.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

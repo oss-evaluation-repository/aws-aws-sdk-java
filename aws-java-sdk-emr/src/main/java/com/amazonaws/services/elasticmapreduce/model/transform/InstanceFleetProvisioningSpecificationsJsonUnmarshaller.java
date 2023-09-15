@@ -43,20 +43,30 @@ public class InstanceFleetProvisioningSpecificationsJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SpotSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetProvisioningSpecifications.setSpotSpecification(SpotProvisioningSpecificationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("OnDemandSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleetProvisioningSpecifications.setOnDemandSpecification(OnDemandProvisioningSpecificationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

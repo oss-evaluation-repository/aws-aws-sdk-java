@@ -43,30 +43,43 @@ public class SourceCodeTypeJsonUnmarshaller implements Unmarshaller<SourceCodeTy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CommitDiff", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceCodeType.setCommitDiff(CommitDiffSourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RepositoryHead", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceCodeType.setRepositoryHead(RepositoryHeadSourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BranchDiff", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceCodeType.setBranchDiff(BranchDiffSourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3BucketRepository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceCodeType.setS3BucketRepository(S3BucketRepositoryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RequestMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceCodeType.setRequestMetadata(RequestMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

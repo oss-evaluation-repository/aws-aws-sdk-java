@@ -43,48 +43,65 @@ public class GetKxChangesetResultJsonUnmarshaller implements Unmarshaller<GetKxC
             return getKxChangesetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("changesetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getKxChangesetResult.setChangesetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("databaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getKxChangesetResult.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getKxChangesetResult.setEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("changeRequests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getKxChangesetResult.setChangeRequests(new ListUnmarshaller<ChangeRequest>(ChangeRequestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getKxChangesetResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("activeFromTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getKxChangesetResult.setActiveFromTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getKxChangesetResult.setLastModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getKxChangesetResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getKxChangesetResult.setErrorInfo(ErrorInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

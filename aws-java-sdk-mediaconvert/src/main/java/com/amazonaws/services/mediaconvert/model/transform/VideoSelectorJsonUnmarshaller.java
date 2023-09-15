@@ -43,50 +43,68 @@ public class VideoSelectorJsonUnmarshaller implements Unmarshaller<VideoSelector
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("alphaBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setAlphaBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("colorSpace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setColorSpace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("colorSpaceUsage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setColorSpaceUsage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("embeddedTimecodeOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setEmbeddedTimecodeOverride(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hdr10Metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setHdr10Metadata(Hdr10MetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("padVideo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setPadVideo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("programNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setProgramNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("rotate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setRotate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoSelector.setSampleRange(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

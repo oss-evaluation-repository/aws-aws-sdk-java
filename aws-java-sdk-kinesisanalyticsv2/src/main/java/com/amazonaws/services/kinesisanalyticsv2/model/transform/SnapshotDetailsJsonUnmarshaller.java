@@ -43,26 +43,38 @@ public class SnapshotDetailsJsonUnmarshaller implements Unmarshaller<SnapshotDet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SnapshotName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotDetails.setSnapshotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotDetails.setSnapshotStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotDetails.setApplicationVersionId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotCreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotDetails.setSnapshotCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

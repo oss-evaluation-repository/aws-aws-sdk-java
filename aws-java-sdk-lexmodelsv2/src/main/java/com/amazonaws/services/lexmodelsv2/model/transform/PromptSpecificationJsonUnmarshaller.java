@@ -43,33 +43,46 @@ public class PromptSpecificationJsonUnmarshaller implements Unmarshaller<PromptS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("messageGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     promptSpecification.setMessageGroups(new ListUnmarshaller<MessageGroup>(MessageGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("maxRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     promptSpecification.setMaxRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("allowInterrupt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     promptSpecification.setAllowInterrupt(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("messageSelectionStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     promptSpecification.setMessageSelectionStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("promptAttemptsSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     promptSpecification.setPromptAttemptsSpecification(new MapUnmarshaller<String, PromptAttemptSpecification>(context
                             .getUnmarshaller(String.class), PromptAttemptSpecificationJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

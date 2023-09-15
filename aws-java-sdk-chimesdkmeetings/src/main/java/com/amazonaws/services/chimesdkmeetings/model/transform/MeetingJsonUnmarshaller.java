@@ -43,48 +43,65 @@ public class MeetingJsonUnmarshaller implements Unmarshaller<Meeting, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MeetingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meeting.setMeetingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MeetingHostId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meeting.setMeetingHostId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalMeetingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meeting.setExternalMeetingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meeting.setMediaRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaPlacement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meeting.setMediaPlacement(MediaPlacementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MeetingFeatures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meeting.setMeetingFeatures(MeetingFeaturesConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PrimaryMeetingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meeting.setPrimaryMeetingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TenantIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meeting.setTenantIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MeetingArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     meeting.setMeetingArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

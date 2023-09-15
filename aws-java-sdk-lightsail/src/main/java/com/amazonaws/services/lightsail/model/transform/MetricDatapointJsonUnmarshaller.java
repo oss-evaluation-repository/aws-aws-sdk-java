@@ -43,38 +43,53 @@ public class MetricDatapointJsonUnmarshaller implements Unmarshaller<MetricDatap
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("average", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDatapoint.setAverage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("maximum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDatapoint.setMaximum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("minimum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDatapoint.setMinimum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDatapoint.setSampleCount(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("sum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDatapoint.setSum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDatapoint.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDatapoint.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

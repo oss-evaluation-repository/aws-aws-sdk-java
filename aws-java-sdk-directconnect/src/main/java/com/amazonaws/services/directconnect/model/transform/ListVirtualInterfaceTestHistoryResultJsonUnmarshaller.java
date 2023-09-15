@@ -43,12 +43,17 @@ public class ListVirtualInterfaceTestHistoryResultJsonUnmarshaller implements Un
             return listVirtualInterfaceTestHistoryResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("virtualInterfaceTestHistory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listVirtualInterfaceTestHistoryResult.setVirtualInterfaceTestHistory(new ListUnmarshaller<VirtualInterfaceTestHistory>(
                             VirtualInterfaceTestHistoryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListVirtualInterfaceTestHistoryResultJsonUnmarshaller implements Un
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listVirtualInterfaceTestHistoryResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

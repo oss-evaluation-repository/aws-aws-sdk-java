@@ -43,26 +43,38 @@ public class LogSettingsRequestJsonUnmarshaller implements Unmarshaller<LogSetti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logSettingsRequest.setLogType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logSettingsRequest.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logSettingsRequest.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logSettingsRequest.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

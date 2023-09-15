@@ -43,30 +43,43 @@ public class AwsElbLoadBalancerListenerJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstancePort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerListener.setInstancePort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceProtocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerListener.setInstanceProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoadBalancerPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerListener.setLoadBalancerPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerListener.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SslCertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElbLoadBalancerListener.setSslCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

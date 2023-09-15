@@ -43,50 +43,67 @@ public class AwsEcsTaskDetailsJsonUnmarshaller implements Unmarshaller<AwsEcsTas
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDetails.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDetails.setTaskDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDetails.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDetails.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDetails.setStartedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDetails.setStartedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Group", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDetails.setGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Volumes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDetails.setVolumes(new ListUnmarshaller<AwsEcsTaskVolumeDetails>(AwsEcsTaskVolumeDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Containers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDetails.setContainers(new ListUnmarshaller<AwsEcsContainerDetails>(AwsEcsContainerDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

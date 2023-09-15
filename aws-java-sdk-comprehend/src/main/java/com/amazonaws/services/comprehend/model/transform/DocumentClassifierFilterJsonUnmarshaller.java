@@ -43,26 +43,38 @@ public class DocumentClassifierFilterJsonUnmarshaller implements Unmarshaller<Do
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierFilter.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentClassifierName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierFilter.setDocumentClassifierName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubmitTimeBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierFilter.setSubmitTimeBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SubmitTimeAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentClassifierFilter.setSubmitTimeAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

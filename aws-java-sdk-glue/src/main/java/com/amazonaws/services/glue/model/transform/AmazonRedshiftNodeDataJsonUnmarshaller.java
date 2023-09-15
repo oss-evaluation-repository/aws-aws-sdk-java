@@ -43,56 +43,72 @@ public class AmazonRedshiftNodeDataJsonUnmarshaller implements Unmarshaller<Amaz
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setAccessType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Connection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setConnection(OptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Schema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setSchema(OptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Table", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setTable(OptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CatalogDatabase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setCatalogDatabase(OptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CatalogTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setCatalogTable(OptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CatalogRedshiftSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setCatalogRedshiftSchema(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CatalogRedshiftTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setCatalogRedshiftTable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TempDir", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setTempDir(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setIamRole(OptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdvancedOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setAdvancedOptions(new ListUnmarshaller<AmazonRedshiftAdvancedOption>(AmazonRedshiftAdvancedOptionJsonUnmarshaller
                             .getInstance())
@@ -100,64 +116,82 @@ public class AmazonRedshiftNodeDataJsonUnmarshaller implements Unmarshaller<Amaz
                     .unmarshall(context));
                 }
                 if (context.testExpression("SampleQuery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setSampleQuery(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setPreAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PostAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setPostAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TablePrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setTablePrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Upsert", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setUpsert(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MergeAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setMergeAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MergeWhenMatched", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setMergeWhenMatched(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MergeWhenNotMatched", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setMergeWhenNotMatched(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MergeClause", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setMergeClause(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlerConnection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setCrawlerConnection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setTableSchema(new ListUnmarshaller<Option>(OptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StagingTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setStagingTable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectedColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonRedshiftNodeData.setSelectedColumns(new ListUnmarshaller<Option>(OptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

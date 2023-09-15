@@ -43,74 +43,98 @@ public class RouteSetDetailsJsonUnmarshaller implements Unmarshaller<RouteSetDet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CarrierGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setCarrierGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CoreNetworkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setCoreNetworkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationCidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setDestinationCidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationIpv6CidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setDestinationIpv6CidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationPrefixListId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setDestinationPrefixListId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EgressOnlyInternetGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setEgressOnlyInternetGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceOwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setInstanceOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocalGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setLocalGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NatGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setNatGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Origin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setOrigin(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransitGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setTransitGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcPeeringConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeSetDetails.setVpcPeeringConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

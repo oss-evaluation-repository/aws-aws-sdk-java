@@ -43,12 +43,17 @@ public class AwsEcsTaskDefinitionDetailsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContainerDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setContainerDefinitions(new ListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsDetails>(
                             AwsEcsTaskDefinitionContainerDefinitionsDetailsJsonUnmarshaller.getInstance())
@@ -56,18 +61,22 @@ public class AwsEcsTaskDefinitionDetailsJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("Cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Family", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InferenceAccelerators", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setInferenceAccelerators(new ListUnmarshaller<AwsEcsTaskDefinitionInferenceAcceleratorsDetails>(
                             AwsEcsTaskDefinitionInferenceAcceleratorsDetailsJsonUnmarshaller.getInstance())
@@ -75,22 +84,27 @@ public class AwsEcsTaskDefinitionDetailsJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("IpcMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setIpcMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setNetworkMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PidMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setPidMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlacementConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setPlacementConstraints(new ListUnmarshaller<AwsEcsTaskDefinitionPlacementConstraintsDetails>(
                             AwsEcsTaskDefinitionPlacementConstraintsDetailsJsonUnmarshaller.getInstance())
@@ -98,26 +112,34 @@ public class AwsEcsTaskDefinitionDetailsJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("ProxyConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setProxyConfiguration(AwsEcsTaskDefinitionProxyConfigurationDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("RequiresCompatibilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setRequiresCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TaskRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setTaskRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Volumes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionDetails.setVolumes(new ListUnmarshaller<AwsEcsTaskDefinitionVolumesDetails>(
                             AwsEcsTaskDefinitionVolumesDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

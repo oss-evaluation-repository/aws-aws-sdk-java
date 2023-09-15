@@ -43,92 +43,118 @@ public class StartChannelResultJsonUnmarshaller implements Unmarshaller<StartCha
             return startChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cdiInputSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setCdiInputSpecification(CdiInputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("channelClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setChannelClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setDestinations(new ListUnmarshaller<OutputDestination>(OutputDestinationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("egressEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setEgressEndpoints(new ListUnmarshaller<ChannelEgressEndpoint>(ChannelEgressEndpointJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("encoderSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setEncoderSettings(EncoderSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputAttachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("inputSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setInputSpecification(InputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("logLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maintenance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setMaintenance(MaintenanceStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pipelineDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("pipelinesRunningCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setPipelinesRunningCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult
                             .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("vpc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startChannelResult.setVpc(VpcOutputSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

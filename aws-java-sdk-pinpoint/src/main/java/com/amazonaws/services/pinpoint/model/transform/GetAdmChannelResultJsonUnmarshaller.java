@@ -43,9 +43,13 @@ public class GetAdmChannelResultJsonUnmarshaller implements Unmarshaller<GetAdmC
             return getAdmChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getAdmChannelResult.setADMChannelResponse(ADMChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -43,26 +43,38 @@ public class OrganizationJsonUnmarshaller implements Unmarshaller<Organization, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("asn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organization.setAsn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("asnOrg", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organization.setAsnOrg(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organization.setIsp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("org", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organization.setOrg(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

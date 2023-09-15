@@ -43,87 +43,114 @@ public class SessionJsonUnmarshaller implements Unmarshaller<Session, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setCreatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setCommand(SessionCommandJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultArguments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setDefaultArguments(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Connections", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setConnections(ConnectionsListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Progress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setProgress(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setMaxCapacity(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setSecurityConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlueVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfWorkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setNumberOfWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setWorkerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setExecutionTime(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("DPUSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setDPUSeconds(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("IdleTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setIdleTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class AbsoluteTimeRangeJsonUnmarshaller implements Unmarshaller<AbsoluteT
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     absoluteTimeRange.setStartTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     absoluteTimeRange.setEndTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("First", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     absoluteTimeRange.setFirst(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Last", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     absoluteTimeRange.setLast(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

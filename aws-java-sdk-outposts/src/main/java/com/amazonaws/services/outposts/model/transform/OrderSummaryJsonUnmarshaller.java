@@ -43,39 +43,54 @@ public class OrderSummaryJsonUnmarshaller implements Unmarshaller<OrderSummary, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OutpostId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderSummary.setOutpostId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderSummary.setOrderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrderType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderSummary.setOrderType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LineItemCountsByStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderSummary.setLineItemCountsByStatus(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
                 if (context.testExpression("OrderSubmissionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderSummary.setOrderSubmissionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OrderFulfilledDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderSummary.setOrderFulfilledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

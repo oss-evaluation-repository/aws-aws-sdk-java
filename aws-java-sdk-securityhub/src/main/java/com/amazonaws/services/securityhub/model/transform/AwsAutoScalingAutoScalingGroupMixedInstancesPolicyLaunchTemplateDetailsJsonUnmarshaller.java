@@ -44,24 +44,34 @@ public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LaunchTemplateSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails
                             .setLaunchTemplateSpecification(AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Overrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails
                             .setOverrides(new ListUnmarshaller<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>(
                                     AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetailsJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

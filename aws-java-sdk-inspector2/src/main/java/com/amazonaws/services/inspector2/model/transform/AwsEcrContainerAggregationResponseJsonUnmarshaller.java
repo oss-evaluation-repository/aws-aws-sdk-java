@@ -43,40 +43,55 @@ public class AwsEcrContainerAggregationResponseJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregationResponse.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("architecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregationResponse.setArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSha", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregationResponse.setImageSha(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregationResponse.setImageTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("repository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregationResponse.setRepository(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregationResponse.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("severityCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerAggregationResponse.setSeverityCounts(SeverityCountsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,62 +43,82 @@ public class InsightJsonUnmarshaller implements Unmarshaller<Insight, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InsightId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setInsightId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setGroupARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RootCauseServiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setRootCauseServiceId(ServiceIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Categories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Summary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setSummary(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientRequestImpactStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setClientRequestImpactStatistics(RequestImpactStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RootCauseServiceRequestImpactStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setRootCauseServiceRequestImpactStatistics(RequestImpactStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TopAnomalousServices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setTopAnomalousServices(new ListUnmarshaller<AnomalousService>(AnomalousServiceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

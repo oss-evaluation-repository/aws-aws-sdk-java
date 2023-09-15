@@ -44,44 +44,60 @@ public class ComponentBindingPropertiesValuePropertiesJsonUnmarshaller implement
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("field", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("predicates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setPredicates(new ListUnmarshaller<Predicate>(PredicateJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("userAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setUserAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setBucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setSlotName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

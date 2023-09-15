@@ -43,64 +43,85 @@ public class MembershipJsonUnmarshaller implements Unmarshaller<Membership, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setCollaborationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setCollaborationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationCreatorAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setCollaborationCreatorAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationCreatorDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setCollaborationCreatorDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collaborationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setCollaborationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("memberAbilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setMemberAbilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("queryLogStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setQueryLogStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultResultConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     membership.setDefaultResultConfiguration(MembershipProtectedQueryResultConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

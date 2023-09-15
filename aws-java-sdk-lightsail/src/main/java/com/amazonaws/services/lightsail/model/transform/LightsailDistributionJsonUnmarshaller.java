@@ -43,96 +43,124 @@ public class LightsailDistributionJsonUnmarshaller implements Unmarshaller<Light
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setSupportCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setLocation(ResourceLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alternativeDomainNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setAlternativeDomainNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setIsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("domainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bundleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("origin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setOrigin(OriginJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("originPublicDNS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setOriginPublicDNS(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultCacheBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setDefaultCacheBehavior(CacheBehaviorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cacheBehaviorSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setCacheBehaviorSettings(CacheSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cacheBehaviors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setCacheBehaviors(new ListUnmarshaller<CacheBehaviorPerPath>(CacheBehaviorPerPathJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ableToUpdateBundle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setAbleToUpdateBundle(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ipAddressType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lightsailDistribution.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

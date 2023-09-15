@@ -43,30 +43,43 @@ public class MacAttributesJsonUnmarshaller implements Unmarshaller<MacAttributes
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Algorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     macAttributes.setAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DukptCmac", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     macAttributes.setDukptCmac(MacAlgorithmDukptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DukptIso9797Algorithm1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     macAttributes.setDukptIso9797Algorithm1(MacAlgorithmDukptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DukptIso9797Algorithm3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     macAttributes.setDukptIso9797Algorithm3(MacAlgorithmDukptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EmvMac", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     macAttributes.setEmvMac(MacAlgorithmEmvJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

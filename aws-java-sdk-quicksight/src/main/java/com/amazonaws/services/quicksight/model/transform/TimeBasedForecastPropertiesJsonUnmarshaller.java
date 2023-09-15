@@ -43,34 +43,48 @@ public class TimeBasedForecastPropertiesJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PeriodsForward", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeBasedForecastProperties.setPeriodsForward(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PeriodsBackward", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeBasedForecastProperties.setPeriodsBackward(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UpperBoundary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeBasedForecastProperties.setUpperBoundary(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("LowerBoundary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeBasedForecastProperties.setLowerBoundary(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictionInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeBasedForecastProperties.setPredictionInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Seasonality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeBasedForecastProperties.setSeasonality(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

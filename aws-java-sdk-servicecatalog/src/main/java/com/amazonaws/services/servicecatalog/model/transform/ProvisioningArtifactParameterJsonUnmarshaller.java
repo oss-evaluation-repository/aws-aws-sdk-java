@@ -43,34 +43,48 @@ public class ProvisioningArtifactParameterJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ParameterKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioningArtifactParameter.setParameterKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioningArtifactParameter.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioningArtifactParameter.setParameterType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsNoEcho", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioningArtifactParameter.setIsNoEcho(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioningArtifactParameter.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioningArtifactParameter.setParameterConstraints(ParameterConstraintsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

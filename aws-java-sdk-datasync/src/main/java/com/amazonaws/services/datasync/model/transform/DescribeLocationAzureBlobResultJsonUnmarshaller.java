@@ -43,40 +43,55 @@ public class DescribeLocationAzureBlobResultJsonUnmarshaller implements Unmarsha
             return describeLocationAzureBlobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationAzureBlobResult.setLocationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationAzureBlobResult.setLocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationAzureBlobResult.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BlobType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationAzureBlobResult.setBlobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessTier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationAzureBlobResult.setAccessTier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgentArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationAzureBlobResult.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationAzureBlobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

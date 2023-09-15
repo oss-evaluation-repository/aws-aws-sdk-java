@@ -43,58 +43,77 @@ public class InputSettingsJsonUnmarshaller implements Unmarshaller<InputSettings
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioSelectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setAudioSelectors(new ListUnmarshaller<AudioSelector>(AudioSelectorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("captionSelectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setCaptionSelectors(new ListUnmarshaller<CaptionSelector>(CaptionSelectorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("deblockFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setDeblockFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("denoiseFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setDenoiseFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterStrength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setFilterStrength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("inputFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setInputFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkInputSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setNetworkInputSettings(NetworkInputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scte35Pid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setScte35Pid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("smpte2038DataPreference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setSmpte2038DataPreference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceEndBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setSourceEndBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("videoSelector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputSettings.setVideoSelector(VideoSelectorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

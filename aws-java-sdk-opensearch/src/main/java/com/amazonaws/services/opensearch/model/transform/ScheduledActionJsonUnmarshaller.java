@@ -43,46 +43,63 @@ public class ScheduledActionJsonUnmarshaller implements Unmarshaller<ScheduledAc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAction.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAction.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAction.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduledTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAction.setScheduledTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAction.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduledBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAction.setScheduledBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAction.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Mandatory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAction.setMandatory(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Cancellable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAction.setCancellable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

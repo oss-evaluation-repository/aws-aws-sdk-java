@@ -43,34 +43,48 @@ public class StageDeploymentSummaryJsonUnmarshaller implements Unmarshaller<Stag
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeploymentAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageDeploymentSummary.setDeploymentAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageDeploymentSummary.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageDeploymentSummary.setDeploymentResult(DeploymentResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeploymentState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageDeploymentSummary.setDeploymentState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageDeploymentSummary.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("SnapshotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageDeploymentSummary.setSnapshotId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

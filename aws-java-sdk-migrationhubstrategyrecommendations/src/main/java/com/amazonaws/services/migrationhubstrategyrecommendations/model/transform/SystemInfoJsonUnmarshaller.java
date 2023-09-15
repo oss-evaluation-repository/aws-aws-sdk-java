@@ -43,28 +43,40 @@ public class SystemInfoJsonUnmarshaller implements Unmarshaller<SystemInfo, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cpuArchitecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInfo.setCpuArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fileSystemType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInfo.setFileSystemType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkInfoList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInfo.setNetworkInfoList(new ListUnmarshaller<NetworkInfo>(NetworkInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("osInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     systemInfo.setOsInfo(OSInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

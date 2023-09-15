@@ -43,27 +43,39 @@ public class TrainingResultV2JsonUnmarshaller implements Unmarshaller<TrainingRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataValidationMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingResultV2.setDataValidationMetrics(DataValidationMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("trainingMetricsV2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingResultV2.setTrainingMetricsV2(TrainingMetricsV2JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("variableImportanceMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingResultV2.setVariableImportanceMetrics(VariableImportanceMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("aggregatedVariablesImportanceMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingResultV2.setAggregatedVariablesImportanceMetrics(AggregatedVariablesImportanceMetricsJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

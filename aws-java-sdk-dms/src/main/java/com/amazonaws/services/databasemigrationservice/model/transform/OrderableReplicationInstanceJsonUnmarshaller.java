@@ -43,48 +43,65 @@ public class OrderableReplicationInstanceJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderableReplicationInstance.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderableReplicationInstance.setReplicationInstanceClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderableReplicationInstance.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinAllocatedStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderableReplicationInstance.setMinAllocatedStorage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxAllocatedStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderableReplicationInstance.setMaxAllocatedStorage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultAllocatedStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderableReplicationInstance.setDefaultAllocatedStorage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludedAllocatedStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderableReplicationInstance.setIncludedAllocatedStorage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderableReplicationInstance.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReleaseStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     orderableReplicationInstance.setReleaseStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,43 @@ public class MicrosoftSqlServerDataProviderSettingsJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSqlServerDataProviderSettings.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSqlServerDataProviderSettings.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSqlServerDataProviderSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SslMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSqlServerDataProviderSettings.setSslMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSqlServerDataProviderSettings.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

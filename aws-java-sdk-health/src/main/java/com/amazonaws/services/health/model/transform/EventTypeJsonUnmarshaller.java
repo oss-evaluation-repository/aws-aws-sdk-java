@@ -43,22 +43,33 @@ public class EventTypeJsonUnmarshaller implements Unmarshaller<EventType, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("service", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventType.setService(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("code", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventType.setCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventType.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

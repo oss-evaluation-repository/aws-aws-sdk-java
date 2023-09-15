@@ -43,30 +43,42 @@ public class ListStreamsResultJsonUnmarshaller implements Unmarshaller<ListStrea
             return listStreamsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listStreamsResult.setStreamNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HasMoreStreams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listStreamsResult.setHasMoreStreams(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listStreamsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listStreamsResult.setStreamSummaries(new ListUnmarshaller<StreamSummary>(StreamSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class EvidenceJsonUnmarshaller implements Unmarshaller<Evidence, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("evidenceDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setEvidenceDetail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceRule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setEvidenceRule(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

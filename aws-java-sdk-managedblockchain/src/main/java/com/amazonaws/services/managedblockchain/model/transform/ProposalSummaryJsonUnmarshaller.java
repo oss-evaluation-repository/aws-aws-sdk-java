@@ -43,42 +43,58 @@ public class ProposalSummaryJsonUnmarshaller implements Unmarshaller<ProposalSum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProposalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposalSummary.setProposalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposalSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProposedByMemberId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposalSummary.setProposedByMemberId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProposedByMemberName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposalSummary.setProposedByMemberName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposalSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposalSummary.setCreationDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ExpirationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposalSummary.setExpirationDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proposalSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

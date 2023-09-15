@@ -43,40 +43,55 @@ public class GetBackendResultJsonUnmarshaller implements Unmarshaller<GetBackend
             return getBackendResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("amplifyFeatureFlags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBackendResult.setAmplifyFeatureFlags(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("amplifyMetaConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBackendResult.setAmplifyMetaConfig(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBackendResult.setAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBackendResult.setAppName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("backendEnvironmentList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBackendResult.setBackendEnvironmentList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("backendEnvironmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBackendResult.setBackendEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBackendResult.setError(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

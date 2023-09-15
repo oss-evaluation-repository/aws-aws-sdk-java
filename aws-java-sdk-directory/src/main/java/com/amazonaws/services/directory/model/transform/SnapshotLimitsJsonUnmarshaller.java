@@ -43,22 +43,33 @@ public class SnapshotLimitsJsonUnmarshaller implements Unmarshaller<SnapshotLimi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ManualSnapshotsLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotLimits.setManualSnapshotsLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ManualSnapshotsCurrentCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotLimits.setManualSnapshotsCurrentCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ManualSnapshotsLimitReached", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotLimits.setManualSnapshotsLimitReached(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

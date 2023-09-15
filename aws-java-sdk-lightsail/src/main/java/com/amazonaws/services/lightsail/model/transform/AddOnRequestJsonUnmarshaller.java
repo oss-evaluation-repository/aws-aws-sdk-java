@@ -43,22 +43,33 @@ public class AddOnRequestJsonUnmarshaller implements Unmarshaller<AddOnRequest, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("addOnType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOnRequest.setAddOnType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoSnapshotAddOnRequest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOnRequest.setAutoSnapshotAddOnRequest(AutoSnapshotAddOnRequestJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("stopInstanceOnIdleRequest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addOnRequest.setStopInstanceOnIdleRequest(StopInstanceOnIdleRequestJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

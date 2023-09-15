@@ -43,40 +43,53 @@ public class CellTowersJsonUnmarshaller implements Unmarshaller<CellTowers, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Gsm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cellTowers.setGsm(new ListUnmarshaller<GsmObj>(GsmObjJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Wcdma", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cellTowers.setWcdma(new ListUnmarshaller<WcdmaObj>(WcdmaObjJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tdscdma", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cellTowers.setTdscdma(new ListUnmarshaller<TdscdmaObj>(TdscdmaObjJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Lte", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cellTowers.setLte(new ListUnmarshaller<LteObj>(LteObjJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Cdma", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cellTowers.setCdma(new ListUnmarshaller<CdmaObj>(CdmaObjJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,56 +43,74 @@ public class SNOMEDCTEntityJsonUnmarshaller implements Unmarshaller<SNOMEDCTEnti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTEntity.setId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Text", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTEntity.setText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTEntity.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTEntity.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTEntity.setScore(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("BeginOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTEntity.setBeginOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTEntity.setEndOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTEntity.setAttributes(new ListUnmarshaller<SNOMEDCTAttribute>(SNOMEDCTAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Traits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTEntity.setTraits(new ListUnmarshaller<SNOMEDCTTrait>(SNOMEDCTTraitJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SNOMEDCTConcepts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTEntity.setSNOMEDCTConcepts(new ListUnmarshaller<SNOMEDCTConcept>(SNOMEDCTConceptJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

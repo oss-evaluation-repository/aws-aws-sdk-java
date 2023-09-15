@@ -43,38 +43,52 @@ public class ReplicationSubnetGroupJsonUnmarshaller implements Unmarshaller<Repl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplicationSubnetGroupIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationSubnetGroup.setReplicationSubnetGroupIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationSubnetGroupDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationSubnetGroup.setReplicationSubnetGroupDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationSubnetGroup.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetGroupStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationSubnetGroup.setSubnetGroupStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subnets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationSubnetGroup.setSubnets(new ListUnmarshaller<Subnet>(SubnetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportedNetworkTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationSubnetGroup.setSupportedNetworkTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class StartSelectorJsonUnmarshaller implements Unmarshaller<StartSelector
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartSelectorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSelector.setStartSelectorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AfterFragmentNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSelector.setAfterFragmentNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSelector.setStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ContinuationToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSelector.setContinuationToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

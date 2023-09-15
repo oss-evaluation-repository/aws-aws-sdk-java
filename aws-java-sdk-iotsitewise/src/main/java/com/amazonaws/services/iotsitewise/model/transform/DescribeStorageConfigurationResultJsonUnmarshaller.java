@@ -43,34 +43,48 @@ public class DescribeStorageConfigurationResultJsonUnmarshaller implements Unmar
             return describeStorageConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("storageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageConfigurationResult.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("multiLayerStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageConfigurationResult.setMultiLayerStorage(MultiLayerStorageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("disassociatedDataStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageConfigurationResult.setDisassociatedDataStorage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("retentionPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageConfigurationResult.setRetentionPeriod(RetentionPeriodJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configurationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageConfigurationResult.setConfigurationStatus(ConfigurationStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageConfigurationResult.setLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

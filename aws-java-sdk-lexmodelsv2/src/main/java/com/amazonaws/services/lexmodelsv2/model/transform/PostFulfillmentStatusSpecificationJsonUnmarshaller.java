@@ -43,46 +43,63 @@ public class PostFulfillmentStatusSpecificationJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("successResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postFulfillmentStatusSpecification.setSuccessResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postFulfillmentStatusSpecification.setFailureResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeoutResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postFulfillmentStatusSpecification.setTimeoutResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("successNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postFulfillmentStatusSpecification.setSuccessNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("successConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postFulfillmentStatusSpecification.setSuccessConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postFulfillmentStatusSpecification.setFailureNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postFulfillmentStatusSpecification.setFailureConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeoutNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postFulfillmentStatusSpecification.setTimeoutNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeoutConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postFulfillmentStatusSpecification.setTimeoutConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

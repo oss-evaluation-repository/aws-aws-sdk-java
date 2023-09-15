@@ -43,62 +43,83 @@ public class ImportTaskJsonUnmarshaller implements Unmarshaller<ImportTask, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("importTaskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setImportTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientRequestToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setClientRequestToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setImportUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importRequestTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setImportRequestTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("importCompletionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setImportCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("importDeletedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setImportDeletedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("serverImportSuccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setServerImportSuccess(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("serverImportFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setServerImportFailure(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationImportSuccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setApplicationImportSuccess(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationImportFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setApplicationImportFailure(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("errorsAndFailedEntriesZip", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importTask.setErrorsAndFailedEntriesZip(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

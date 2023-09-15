@@ -43,46 +43,63 @@ public class DataSetSummaryJsonUnmarshaller implements Unmarshaller<DataSetSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setDataSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ImportMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setImportMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RowLevelPermissionDataSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setRowLevelPermissionDataSet(RowLevelPermissionDataSetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RowLevelPermissionTagConfigurationApplied", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setRowLevelPermissionTagConfigurationApplied(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnLevelPermissionRulesApplied", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetSummary.setColumnLevelPermissionRulesApplied(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

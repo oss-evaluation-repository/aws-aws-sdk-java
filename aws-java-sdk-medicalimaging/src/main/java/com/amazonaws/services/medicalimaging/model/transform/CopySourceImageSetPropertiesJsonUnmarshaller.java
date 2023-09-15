@@ -43,38 +43,53 @@ public class CopySourceImageSetPropertiesJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copySourceImageSetProperties.setImageSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latestVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copySourceImageSetProperties.setLatestVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSetState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copySourceImageSetProperties.setImageSetState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSetWorkflowStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copySourceImageSetProperties.setImageSetWorkflowStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copySourceImageSetProperties.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copySourceImageSetProperties.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("imageSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copySourceImageSetProperties.setImageSetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

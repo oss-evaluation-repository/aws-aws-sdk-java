@@ -43,72 +43,95 @@ public class EnhancedImageScanFindingJsonUnmarshaller implements Unmarshaller<En
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("awsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("findingArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setFindingArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("firstObservedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setFirstObservedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastObservedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setLastObservedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("packageVulnerabilityDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setPackageVulnerabilityDetails(PackageVulnerabilityDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("remediation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setRemediation(RemediationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setScore(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("scoreDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setScoreDetails(ScoreDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enhancedImageScanFinding.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

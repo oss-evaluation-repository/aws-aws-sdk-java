@@ -43,56 +43,74 @@ public class ICD10CMEntityJsonUnmarshaller implements Unmarshaller<ICD10CMEntity
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iCD10CMEntity.setId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Text", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iCD10CMEntity.setText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iCD10CMEntity.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iCD10CMEntity.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iCD10CMEntity.setScore(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("BeginOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iCD10CMEntity.setBeginOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iCD10CMEntity.setEndOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iCD10CMEntity.setAttributes(new ListUnmarshaller<ICD10CMAttribute>(ICD10CMAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Traits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iCD10CMEntity.setTraits(new ListUnmarshaller<ICD10CMTrait>(ICD10CMTraitJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ICD10CMConcepts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iCD10CMEntity.setICD10CMConcepts(new ListUnmarshaller<ICD10CMConcept>(ICD10CMConceptJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

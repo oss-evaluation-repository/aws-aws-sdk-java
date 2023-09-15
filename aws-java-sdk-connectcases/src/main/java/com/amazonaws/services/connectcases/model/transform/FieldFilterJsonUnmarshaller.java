@@ -43,34 +43,48 @@ public class FieldFilterJsonUnmarshaller implements Unmarshaller<FieldFilter, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("contains", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldFilter.setContains(FieldValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("equalTo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldFilter.setEqualTo(FieldValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("greaterThan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldFilter.setGreaterThan(FieldValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("greaterThanOrEqualTo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldFilter.setGreaterThanOrEqualTo(FieldValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lessThan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldFilter.setLessThan(FieldValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lessThanOrEqualTo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldFilter.setLessThanOrEqualTo(FieldValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

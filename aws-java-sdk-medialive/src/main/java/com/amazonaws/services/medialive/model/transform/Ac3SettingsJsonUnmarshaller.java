@@ -43,42 +43,58 @@ public class Ac3SettingsJsonUnmarshaller implements Unmarshaller<Ac3Settings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ac3Settings.setBitrate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("bitstreamMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ac3Settings.setBitstreamMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ac3Settings.setCodingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dialnorm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ac3Settings.setDialnorm(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("drcProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ac3Settings.setDrcProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lfeFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ac3Settings.setLfeFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadataControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ac3Settings.setMetadataControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attenuationControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ac3Settings.setAttenuationControl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

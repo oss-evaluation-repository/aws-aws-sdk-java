@@ -43,34 +43,48 @@ public class RecommendationItemJsonUnmarshaller implements Unmarshaller<Recommen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("alreadyImplemented", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationItem.setAlreadyImplemented(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("excludeReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationItem.setExcludeReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("excluded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationItem.setExcluded(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationItem.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationItem.setTargetAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationItem.setTargetRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

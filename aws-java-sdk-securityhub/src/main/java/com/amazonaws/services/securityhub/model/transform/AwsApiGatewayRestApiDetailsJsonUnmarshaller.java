@@ -43,48 +43,65 @@ public class AwsApiGatewayRestApiDetailsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayRestApiDetails.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayRestApiDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayRestApiDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayRestApiDetails.setCreatedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayRestApiDetails.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BinaryMediaTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayRestApiDetails.setBinaryMediaTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MinimumCompressionSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayRestApiDetails.setMinimumCompressionSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiKeySource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayRestApiDetails.setApiKeySource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayRestApiDetails.setEndpointConfiguration(AwsApiGatewayEndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

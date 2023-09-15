@@ -43,50 +43,67 @@ public class DataValueJsonUnmarshaller implements Unmarshaller<DataValue, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("booleanValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataValue.setBooleanValue(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("doubleValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataValue.setDoubleValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("integerValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataValue.setIntegerValue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("longValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataValue.setLongValue(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("stringValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataValue.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("listValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataValue.setListValue(new ListUnmarshaller<DataValue>(DataValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("mapValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataValue
                             .setMapValue(new MapUnmarshaller<String, DataValue>(context.getUnmarshaller(String.class), DataValueJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }
                 if (context.testExpression("relationshipValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataValue.setRelationshipValue(RelationshipValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("expression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataValue.setExpression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

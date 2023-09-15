@@ -43,62 +43,83 @@ public class RaidArrayJsonUnmarshaller implements Unmarshaller<RaidArray, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RaidArrayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setRaidArrayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RaidLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setRaidLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfDisks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setNumberOfDisks(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Device", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MountPoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setMountPoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Iops", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     raidArray.setIops(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

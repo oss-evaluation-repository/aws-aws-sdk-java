@@ -43,48 +43,65 @@ public class WorkflowExecutionInfoJsonUnmarshaller implements Unmarshaller<Workf
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("execution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionInfo.setExecution(WorkflowExecutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("workflowType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionInfo.setWorkflowType(WorkflowTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionInfo.setStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("closeTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionInfo.setCloseTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("executionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionInfo.setExecutionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("closeStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionInfo.setCloseStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionInfo.setParent(WorkflowExecutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tagList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionInfo.setTagList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("cancelRequested", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionInfo.setCancelRequested(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

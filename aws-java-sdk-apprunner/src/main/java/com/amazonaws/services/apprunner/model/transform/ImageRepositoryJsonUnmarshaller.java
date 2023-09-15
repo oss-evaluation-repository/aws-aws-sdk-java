@@ -43,22 +43,33 @@ public class ImageRepositoryJsonUnmarshaller implements Unmarshaller<ImageReposi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ImageIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRepository.setImageIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRepository.setImageConfiguration(ImageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ImageRepositoryType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRepository.setImageRepositoryType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class Scte35DeliveryRestrictionsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("archiveAllowedFlag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35DeliveryRestrictions.setArchiveAllowedFlag(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceRestrictions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35DeliveryRestrictions.setDeviceRestrictions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("noRegionalBlackoutFlag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35DeliveryRestrictions.setNoRegionalBlackoutFlag(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("webDeliveryAllowedFlag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35DeliveryRestrictions.setWebDeliveryAllowedFlag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

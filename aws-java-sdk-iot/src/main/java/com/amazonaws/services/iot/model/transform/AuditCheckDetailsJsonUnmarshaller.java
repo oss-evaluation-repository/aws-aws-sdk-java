@@ -43,38 +43,53 @@ public class AuditCheckDetailsJsonUnmarshaller implements Unmarshaller<AuditChec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("checkRunStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditCheckDetails.setCheckRunStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("checkCompliant", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditCheckDetails.setCheckCompliant(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("totalResourcesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditCheckDetails.setTotalResourcesCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("nonCompliantResourcesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditCheckDetails.setNonCompliantResourcesCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("suppressedNonCompliantResourcesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditCheckDetails.setSuppressedNonCompliantResourcesCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("errorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditCheckDetails.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditCheckDetails.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

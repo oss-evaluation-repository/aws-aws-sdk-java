@@ -43,34 +43,48 @@ public class DataSourceConfigurationsResultJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cloudTrail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfigurationsResult.setCloudTrail(CloudTrailConfigurationResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dnsLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfigurationsResult.setDNSLogs(DNSLogsConfigurationResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("flowLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfigurationsResult.setFlowLogs(FlowLogsConfigurationResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3Logs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfigurationsResult.setS3Logs(S3LogsConfigurationResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kubernetes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfigurationsResult.setKubernetes(KubernetesConfigurationResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("malwareProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfigurationsResult.setMalwareProtection(MalwareProtectionConfigurationResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

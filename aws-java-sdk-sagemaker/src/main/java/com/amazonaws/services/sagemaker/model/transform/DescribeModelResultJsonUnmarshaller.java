@@ -43,52 +43,70 @@ public class DescribeModelResultJsonUnmarshaller implements Unmarshaller<Describ
             return describeModelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelResult.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrimaryContainer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelResult.setPrimaryContainer(ContainerDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Containers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelResult.setContainers(new ListUnmarshaller<ContainerDefinition>(ContainerDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InferenceExecutionConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelResult.setInferenceExecutionConfig(InferenceExecutionConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelResult.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelResult.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelResult.setModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableNetworkIsolation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelResult.setEnableNetworkIsolation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentRecommendation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelResult.setDeploymentRecommendation(DeploymentRecommendationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

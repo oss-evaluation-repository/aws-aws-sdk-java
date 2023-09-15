@@ -43,40 +43,52 @@ public class DescribeJobRunResultJsonUnmarshaller implements Unmarshaller<Descri
             return describeJobRunResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attempt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setAttempt(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DatasetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setDatasetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setExecutionTime(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setProfileConfiguration(ProfileConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ValidationConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setValidationConfigurations(new ListUnmarshaller<ValidationConfiguration>(ValidationConfigurationJsonUnmarshaller
                             .getInstance())
@@ -84,54 +96,69 @@ public class DescribeJobRunResultJsonUnmarshaller implements Unmarshaller<Descri
                     .unmarshall(context));
                 }
                 if (context.testExpression("RunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogSubscription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setLogSubscription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setLogGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Outputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataCatalogOutputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setDataCatalogOutputs(new ListUnmarshaller<DataCatalogOutput>(DataCatalogOutputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DatabaseOutputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setDatabaseOutputs(new ListUnmarshaller<DatabaseOutput>(DatabaseOutputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RecipeReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setRecipeReference(RecipeReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setStartedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setStartedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("JobSample", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeJobRunResult.setJobSample(JobSampleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

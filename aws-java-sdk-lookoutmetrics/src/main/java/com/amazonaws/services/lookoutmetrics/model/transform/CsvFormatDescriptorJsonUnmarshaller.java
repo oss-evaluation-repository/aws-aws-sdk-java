@@ -43,36 +43,50 @@ public class CsvFormatDescriptorJsonUnmarshaller implements Unmarshaller<CsvForm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FileCompression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvFormatDescriptor.setFileCompression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Charset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvFormatDescriptor.setCharset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContainsHeader", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvFormatDescriptor.setContainsHeader(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Delimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvFormatDescriptor.setDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HeaderList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvFormatDescriptor.setHeaderList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("QuoteSymbol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     csvFormatDescriptor.setQuoteSymbol(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

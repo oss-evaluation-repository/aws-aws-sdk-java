@@ -43,26 +43,38 @@ public class DataLakeConfigurationJsonUnmarshaller implements Unmarshaller<DataL
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("encryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeConfiguration.setEncryptionConfiguration(DataLakeEncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lifecycleConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeConfiguration.setLifecycleConfiguration(DataLakeLifecycleConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeConfiguration.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLakeConfiguration.setReplicationConfiguration(DataLakeReplicationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

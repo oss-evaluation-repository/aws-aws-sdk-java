@@ -43,47 +43,64 @@ public class GetRunGroupResultJsonUnmarshaller implements Unmarshaller<GetRunGro
             return getRunGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunGroupResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunGroupResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunGroupResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maxCpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunGroupResult.setMaxCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxRuns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunGroupResult.setMaxRuns(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunGroupResult.setMaxDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunGroupResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunGroupResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("maxGpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRunGroupResult.setMaxGpus(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

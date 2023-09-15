@@ -43,46 +43,62 @@ public class HandshakeJsonUnmarshaller implements Unmarshaller<Handshake, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     handshake.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     handshake.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     handshake.setParties(new ListUnmarshaller<HandshakeParty>(HandshakePartyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     handshake.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     handshake.setRequestedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExpirationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     handshake.setExpirationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     handshake.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Resources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     handshake.setResources(new ListUnmarshaller<HandshakeResource>(HandshakeResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class HealthCheckConfigJsonUnmarshaller implements Unmarshaller<HealthChe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckConfig.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("healthCheckIntervalSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckConfig.setHealthCheckIntervalSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("healthCheckTimeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckConfig.setHealthCheckTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("healthyThresholdCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckConfig.setHealthyThresholdCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("matcher", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckConfig.setMatcher(MatcherJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckConfig.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckConfig.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckConfig.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protocolVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckConfig.setProtocolVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("unhealthyThresholdCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckConfig.setUnhealthyThresholdCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

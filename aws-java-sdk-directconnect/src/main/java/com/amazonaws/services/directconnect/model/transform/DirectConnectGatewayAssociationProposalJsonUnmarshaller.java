@@ -43,32 +43,42 @@ public class DirectConnectGatewayAssociationProposalJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("proposalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociationProposal.setProposalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("directConnectGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociationProposal.setDirectConnectGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("directConnectGatewayOwnerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociationProposal.setDirectConnectGatewayOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("proposalState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociationProposal.setProposalState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associatedGateway", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociationProposal.setAssociatedGateway(AssociatedGatewayJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("existingAllowedPrefixesToDirectConnectGateway", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociationProposal.setExistingAllowedPrefixesToDirectConnectGateway(new ListUnmarshaller<RouteFilterPrefix>(
                             RouteFilterPrefixJsonUnmarshaller.getInstance())
@@ -76,11 +86,16 @@ public class DirectConnectGatewayAssociationProposalJsonUnmarshaller implements 
                     .unmarshall(context));
                 }
                 if (context.testExpression("requestedAllowedPrefixesToDirectConnectGateway", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociationProposal.setRequestedAllowedPrefixesToDirectConnectGateway(new ListUnmarshaller<RouteFilterPrefix>(
                             RouteFilterPrefixJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

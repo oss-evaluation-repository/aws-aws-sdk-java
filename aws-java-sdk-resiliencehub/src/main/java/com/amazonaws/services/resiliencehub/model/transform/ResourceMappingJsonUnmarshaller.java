@@ -43,42 +43,58 @@ public class ResourceMappingJsonUnmarshaller implements Unmarshaller<ResourceMap
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appRegistryAppName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMapping.setAppRegistryAppName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eksSourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMapping.setEksSourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logicalStackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMapping.setLogicalStackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mappingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMapping.setMappingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("physicalResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMapping.setPhysicalResourceId(PhysicalResourceIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMapping.setResourceGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMapping.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("terraformSourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceMapping.setTerraformSourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

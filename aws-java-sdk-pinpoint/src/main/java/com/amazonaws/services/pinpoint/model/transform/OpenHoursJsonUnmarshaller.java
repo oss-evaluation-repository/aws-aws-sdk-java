@@ -43,12 +43,17 @@ public class OpenHoursJsonUnmarshaller implements Unmarshaller<OpenHours, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EMAIL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openHours.setEMAIL(new MapUnmarshaller<String, java.util.List<OpenHoursRule>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<OpenHoursRule>(OpenHoursRuleJsonUnmarshaller.getInstance())
@@ -56,6 +61,7 @@ public class OpenHoursJsonUnmarshaller implements Unmarshaller<OpenHours, JsonUn
                     ).unmarshall(context));
                 }
                 if (context.testExpression("SMS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openHours.setSMS(new MapUnmarshaller<String, java.util.List<OpenHoursRule>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<OpenHoursRule>(OpenHoursRuleJsonUnmarshaller.getInstance())
@@ -63,6 +69,7 @@ public class OpenHoursJsonUnmarshaller implements Unmarshaller<OpenHours, JsonUn
                     ).unmarshall(context));
                 }
                 if (context.testExpression("PUSH", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openHours.setPUSH(new MapUnmarshaller<String, java.util.List<OpenHoursRule>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<OpenHoursRule>(OpenHoursRuleJsonUnmarshaller.getInstance())
@@ -70,6 +77,7 @@ public class OpenHoursJsonUnmarshaller implements Unmarshaller<OpenHours, JsonUn
                     ).unmarshall(context));
                 }
                 if (context.testExpression("VOICE", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openHours.setVOICE(new MapUnmarshaller<String, java.util.List<OpenHoursRule>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<OpenHoursRule>(OpenHoursRuleJsonUnmarshaller.getInstance())
@@ -77,11 +85,16 @@ public class OpenHoursJsonUnmarshaller implements Unmarshaller<OpenHours, JsonUn
                     ).unmarshall(context));
                 }
                 if (context.testExpression("CUSTOM", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openHours.setCUSTOM(new MapUnmarshaller<String, java.util.List<OpenHoursRule>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<OpenHoursRule>(OpenHoursRuleJsonUnmarshaller.getInstance())
 
                     ).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

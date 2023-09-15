@@ -43,66 +43,88 @@ public class EvaluationJsonUnmarshaller implements Unmarshaller<Evaluation, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EvaluationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setEvaluationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MLModelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setMLModelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationDataSourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setEvaluationDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputDataLocationS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setInputDataLocationS3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setCreatedByIamUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PerformanceMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setPerformanceMetrics(PerformanceMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setComputeTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FinishedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluation.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class ConformancePackRuleComplianceJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigRuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackRuleCompliance.setConfigRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComplianceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackRuleCompliance.setComplianceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Controls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackRuleCompliance.setControls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

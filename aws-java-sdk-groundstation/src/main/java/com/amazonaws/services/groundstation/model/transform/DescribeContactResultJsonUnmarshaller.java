@@ -43,69 +43,91 @@ public class DescribeContactResultJsonUnmarshaller implements Unmarshaller<Descr
             return describeContactResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("contactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setContactId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contactStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setContactStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataflowList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setDataflowList(new ListUnmarshaller<DataflowDetail>(DataflowDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("errorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("groundStation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setGroundStation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maximumElevation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setMaximumElevation(ElevationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("missionProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setMissionProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("postPassEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setPostPassEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("prePassStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setPrePassStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("satelliteArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setSatelliteArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeContactResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,52 +43,67 @@ public class DescribeApplicationInstanceResultJsonUnmarshaller implements Unmars
             return describeApplicationInstanceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setApplicationInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationInstanceIdToReplace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setApplicationInstanceIdToReplace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DefaultRuntimeContextDevice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setDefaultRuntimeContextDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultRuntimeContextDeviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setDefaultRuntimeContextDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setHealthStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuntimeContextStates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setRuntimeContextStates(new ListUnmarshaller<ReportedRuntimeContextState>(
                             ReportedRuntimeContextStateJsonUnmarshaller.getInstance())
@@ -96,21 +111,29 @@ public class DescribeApplicationInstanceResultJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("RuntimeRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setRuntimeRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setStatusDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeApplicationInstanceResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

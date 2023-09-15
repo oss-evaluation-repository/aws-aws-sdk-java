@@ -43,22 +43,33 @@ public class NielsenCBETJsonUnmarshaller implements Unmarshaller<NielsenCBET, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cbetCheckDigitString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenCBET.setCbetCheckDigitString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cbetStepaside", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenCBET.setCbetStepaside(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("csid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenCBET.setCsid(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

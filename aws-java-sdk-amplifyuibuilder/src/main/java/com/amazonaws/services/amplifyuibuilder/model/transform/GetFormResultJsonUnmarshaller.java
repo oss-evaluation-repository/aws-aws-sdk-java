@@ -43,9 +43,13 @@ public class GetFormResultJsonUnmarshaller implements Unmarshaller<GetFormResult
             return getFormResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getFormResult.setForm(FormJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

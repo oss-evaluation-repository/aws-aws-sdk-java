@@ -43,54 +43,72 @@ public class ClusterSnapshotJsonUnmarshaller implements Unmarshaller<ClusterSnap
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adminUserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterSnapshot.setAdminUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterSnapshot.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterCreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterSnapshot.setClusterCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterSnapshot.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterSnapshot.setSnapshotArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotCreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterSnapshot.setSnapshotCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterSnapshot.setSnapshotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterSnapshot.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterSnapshot.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("vpcSecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterSnapshot.setVpcSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

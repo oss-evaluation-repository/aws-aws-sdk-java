@@ -43,36 +43,50 @@ public class AwsWafWebAclRuleJsonUnmarshaller implements Unmarshaller<AwsWafWebA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafWebAclRule.setAction(WafActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExcludedRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafWebAclRule.setExcludedRules(new ListUnmarshaller<WafExcludedRule>(WafExcludedRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OverrideAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafWebAclRule.setOverrideAction(WafOverrideActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafWebAclRule.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafWebAclRule.setRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafWebAclRule.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

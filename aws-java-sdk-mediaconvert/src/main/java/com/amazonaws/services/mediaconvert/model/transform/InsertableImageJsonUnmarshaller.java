@@ -43,54 +43,73 @@ public class InsertableImageJsonUnmarshaller implements Unmarshaller<InsertableI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fadeIn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setFadeIn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fadeOut", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setFadeOut(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("height", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setHeight(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("imageInserterInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setImageInserterInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageX", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setImageX(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("imageY", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setImageY(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("layer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setLayer(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("opacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setOpacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("width", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insertableImage.setWidth(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

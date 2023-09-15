@@ -43,29 +43,38 @@ public class DefaultPushNotificationMessageJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultPushNotificationMessage.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Body", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultPushNotificationMessage.setBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Data", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultPushNotificationMessage.setData(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("SilentPush", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultPushNotificationMessage.setSilentPush(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Substitutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultPushNotificationMessage.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -73,12 +82,18 @@ public class DefaultPushNotificationMessageJsonUnmarshaller implements Unmarshal
                     ).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultPushNotificationMessage.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultPushNotificationMessage.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

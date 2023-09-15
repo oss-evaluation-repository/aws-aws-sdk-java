@@ -43,52 +43,70 @@ public class ActuatorJsonUnmarshaller implements Unmarshaller<Actuator, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fullyQualifiedName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actuator.setFullyQualifiedName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actuator.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actuator.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actuator.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("allowedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actuator.setAllowedValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("min", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actuator.setMin(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("max", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actuator.setMax(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("assignedValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actuator.setAssignedValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deprecationMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actuator.setDeprecationMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actuator.setComment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

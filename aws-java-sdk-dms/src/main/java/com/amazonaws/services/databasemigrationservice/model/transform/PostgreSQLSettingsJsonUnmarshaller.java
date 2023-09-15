@@ -43,106 +43,138 @@ public class PostgreSQLSettingsJsonUnmarshaller implements Unmarshaller<PostgreS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AfterConnectScript", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setAfterConnectScript(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CaptureDdls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setCaptureDdls(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxFileSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setMaxFileSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DdlArtifactsSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setDdlArtifactsSchema(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecuteTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setExecuteTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FailTasksOnLobTruncation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setFailTasksOnLobTruncation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HeartbeatEnable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setHeartbeatEnable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HeartbeatSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setHeartbeatSchema(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HeartbeatFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setHeartbeatFrequency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SlotName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setSlotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PluginName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setPluginName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setSecretsManagerAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerSecretId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrimSpaceInChar", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setTrimSpaceInChar(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MapBooleanAsBoolean", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setMapBooleanAsBoolean(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MapJsonbAsClob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setMapJsonbAsClob(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MapLongVarcharAs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setMapLongVarcharAs(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setDatabaseMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BabelfishDatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postgreSQLSettings.setBabelfishDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

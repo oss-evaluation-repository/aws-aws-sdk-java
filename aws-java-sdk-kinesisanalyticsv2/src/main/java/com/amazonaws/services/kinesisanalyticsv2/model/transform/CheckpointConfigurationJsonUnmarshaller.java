@@ -43,26 +43,38 @@ public class CheckpointConfigurationJsonUnmarshaller implements Unmarshaller<Che
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigurationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkpointConfiguration.setConfigurationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CheckpointingEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkpointConfiguration.setCheckpointingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CheckpointInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkpointConfiguration.setCheckpointInterval(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MinPauseBetweenCheckpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     checkpointConfiguration.setMinPauseBetweenCheckpoints(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,50 @@ public class DescribeSnapshotScheduleResultJsonUnmarshaller implements Unmarshal
             return describeSnapshotScheduleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSnapshotScheduleResult.setVolumeARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSnapshotScheduleResult.setStartAt(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RecurrenceInHours", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSnapshotScheduleResult.setRecurrenceInHours(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSnapshotScheduleResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSnapshotScheduleResult.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSnapshotScheduleResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

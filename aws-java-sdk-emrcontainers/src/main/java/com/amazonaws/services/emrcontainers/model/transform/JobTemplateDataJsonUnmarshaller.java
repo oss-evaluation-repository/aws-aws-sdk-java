@@ -43,37 +43,51 @@ public class JobTemplateDataJsonUnmarshaller implements Unmarshaller<JobTemplate
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("executionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobTemplateData.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("releaseLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobTemplateData.setReleaseLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationOverrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobTemplateData.setConfigurationOverrides(ParametricConfigurationOverridesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobDriver", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobTemplateData.setJobDriver(JobDriverJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("parameterConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobTemplateData.setParameterConfiguration(new MapUnmarshaller<String, TemplateParameterConfiguration>(
                             context.getUnmarshaller(String.class), TemplateParameterConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("jobTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobTemplateData
                             .setJobTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

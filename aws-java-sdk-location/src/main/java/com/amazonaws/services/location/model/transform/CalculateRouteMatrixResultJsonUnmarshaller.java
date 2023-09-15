@@ -43,12 +43,17 @@ public class CalculateRouteMatrixResultJsonUnmarshaller implements Unmarshaller<
             return calculateRouteMatrixResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RouteMatrix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculateRouteMatrixResult.setRouteMatrix(new ListUnmarshaller<java.util.List<RouteMatrixEntry>>(new ListUnmarshaller<RouteMatrixEntry>(
                             RouteMatrixEntryJsonUnmarshaller.getInstance())
@@ -58,6 +63,7 @@ public class CalculateRouteMatrixResultJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("SnappedDeparturePositions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculateRouteMatrixResult.setSnappedDeparturePositions(new ListUnmarshaller<java.util.List<Double>>(new ListUnmarshaller<Double>(context
                             .getUnmarshaller(Double.class))
@@ -67,6 +73,7 @@ public class CalculateRouteMatrixResultJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("SnappedDestinationPositions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculateRouteMatrixResult.setSnappedDestinationPositions(new ListUnmarshaller<java.util.List<Double>>(new ListUnmarshaller<Double>(context
                             .getUnmarshaller(Double.class))
@@ -76,8 +83,13 @@ public class CalculateRouteMatrixResultJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("Summary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculateRouteMatrixResult.setSummary(CalculateRouteMatrixSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("additionalManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setAdditionalManifests(new ListUnmarshaller<DashAdditionalManifest>(DashAdditionalManifestJsonUnmarshaller
                             .getInstance())
@@ -56,84 +61,108 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
                     .unmarshall(context));
                 }
                 if (context.testExpression("audioChannelConfigSchemeIdUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setAudioChannelConfigSchemeIdUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("baseUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setBaseUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dashManifestStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setDashManifestStyle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setDestinationSettings(DestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setEncryption(DashIsoEncryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fragmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setFragmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hbbtvCompliance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setHbbtvCompliance(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageBasedTrickPlay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setImageBasedTrickPlay(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageBasedTrickPlaySettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setImageBasedTrickPlaySettings(DashIsoImageBasedTrickPlaySettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("minBufferTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setMinBufferTime(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minFinalSegmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setMinFinalSegmentLength(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("mpdManifestBandwidthType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setMpdManifestBandwidthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mpdProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setMpdProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ptsOffsetHandlingForBFrames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setPtsOffsetHandlingForBFrames(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setSegmentControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setSegmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentLengthControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setSegmentLengthControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("videoCompositionOffsets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setVideoCompositionOffsets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("writeSegmentTimelineInRepresentation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashIsoGroupSettings.setWriteSegmentTimelineInRepresentation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

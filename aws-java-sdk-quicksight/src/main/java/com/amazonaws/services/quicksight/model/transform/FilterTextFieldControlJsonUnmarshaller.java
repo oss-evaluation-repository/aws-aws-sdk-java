@@ -43,26 +43,38 @@ public class FilterTextFieldControlJsonUnmarshaller implements Unmarshaller<Filt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilterControlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterTextFieldControl.setFilterControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterTextFieldControl.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceFilterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterTextFieldControl.setSourceFilterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterTextFieldControl.setDisplayOptions(TextFieldControlDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,67 @@ public class GetLayerVersionResultJsonUnmarshaller implements Unmarshaller<GetLa
             return getLayerVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLayerVersionResult.setContent(LayerVersionContentOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LayerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLayerVersionResult.setLayerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LayerVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLayerVersionResult.setLayerVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLayerVersionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLayerVersionResult.setCreatedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLayerVersionResult.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CompatibleRuntimes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLayerVersionResult.setCompatibleRuntimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LicenseInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLayerVersionResult.setLicenseInfo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompatibleArchitectures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLayerVersionResult.setCompatibleArchitectures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

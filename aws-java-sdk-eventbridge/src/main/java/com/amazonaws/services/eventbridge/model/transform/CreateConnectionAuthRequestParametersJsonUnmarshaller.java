@@ -43,30 +43,42 @@ public class CreateConnectionAuthRequestParametersJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BasicAuthParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createConnectionAuthRequestParameters.setBasicAuthParameters(CreateConnectionBasicAuthRequestParametersJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("OAuthParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createConnectionAuthRequestParameters.setOAuthParameters(CreateConnectionOAuthRequestParametersJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ApiKeyAuthParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createConnectionAuthRequestParameters.setApiKeyAuthParameters(CreateConnectionApiKeyAuthRequestParametersJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("InvocationHttpParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createConnectionAuthRequestParameters.setInvocationHttpParameters(ConnectionHttpParametersJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

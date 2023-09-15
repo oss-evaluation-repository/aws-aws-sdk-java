@@ -43,54 +43,73 @@ public class AlertJsonUnmarshaller implements Unmarshaller<Alert, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setAction(ActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AlertDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setAlertDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlertArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setAlertArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnomalyDetectorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setAnomalyDetectorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlertName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setAlertName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlertSensitivityThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setAlertSensitivityThreshold(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AlertType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setAlertType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlertStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setAlertStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AlertFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alert.setAlertFilters(AlertFiltersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

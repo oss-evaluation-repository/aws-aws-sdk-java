@@ -43,86 +43,111 @@ public class TopicColumnJsonUnmarshaller implements Unmarshaller<TopicColumn, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ColumnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnFriendlyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setColumnFriendlyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setColumnDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnSynonyms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setColumnSynonyms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ColumnDataRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setColumnDataRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Aggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setAggregation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsIncludedInTopic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setIsIncludedInTopic(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DisableIndexing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setDisableIndexing(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ComparativeOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setComparativeOrder(ComparativeOrderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SemanticType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setSemanticType(SemanticTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeGranularity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setTimeGranularity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowedAggregations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setAllowedAggregations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotAllowedAggregations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setNotAllowedAggregations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DefaultFormatting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setDefaultFormatting(DefaultFormattingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NeverAggregateInFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setNeverAggregateInFilter(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CellValueSynonyms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setCellValueSynonyms(new ListUnmarshaller<CellValueSynonym>(CellValueSynonymJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NonAdditive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicColumn.setNonAdditive(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

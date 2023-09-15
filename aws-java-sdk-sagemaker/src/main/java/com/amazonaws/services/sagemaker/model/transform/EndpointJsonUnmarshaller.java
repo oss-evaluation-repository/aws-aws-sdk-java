@@ -43,66 +43,86 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndpointName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setEndpointName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setEndpointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointConfigName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setEndpointConfigName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductionVariants", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setProductionVariants(new ListUnmarshaller<ProductionVariantSummary>(ProductionVariantSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataCaptureConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setDataCaptureConfig(DataCaptureConfigSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EndpointStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setEndpointStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("MonitoringSchedules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setMonitoringSchedules(new ListUnmarshaller<MonitoringSchedule>(MonitoringScheduleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ShadowProductionVariants", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpoint.setShadowProductionVariants(new ListUnmarshaller<ProductionVariantSummary>(ProductionVariantSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

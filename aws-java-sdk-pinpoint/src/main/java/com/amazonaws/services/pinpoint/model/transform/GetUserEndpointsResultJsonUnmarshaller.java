@@ -43,9 +43,13 @@ public class GetUserEndpointsResultJsonUnmarshaller implements Unmarshaller<GetU
             return getUserEndpointsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getUserEndpointsResult.setEndpointsResponse(EndpointsResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

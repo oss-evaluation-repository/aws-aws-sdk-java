@@ -43,82 +43,108 @@ public class AssessmentEvidenceFolderJsonUnmarshaller implements Unmarshaller<As
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("date", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("assessmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setAssessmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("controlSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setControlSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("controlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("author", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setAuthor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("totalEvidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setTotalEvidence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentReportSelectionCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setAssessmentReportSelectionCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("controlName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setControlName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceResourcesIncludedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setEvidenceResourcesIncludedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceByTypeConfigurationDataCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setEvidenceByTypeConfigurationDataCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceByTypeManualCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setEvidenceByTypeManualCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceByTypeComplianceCheckCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setEvidenceByTypeComplianceCheckCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceByTypeComplianceCheckIssuesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setEvidenceByTypeComplianceCheckIssuesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceByTypeUserActivityCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setEvidenceByTypeUserActivityCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceAwsServiceSourceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentEvidenceFolder.setEvidenceAwsServiceSourceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

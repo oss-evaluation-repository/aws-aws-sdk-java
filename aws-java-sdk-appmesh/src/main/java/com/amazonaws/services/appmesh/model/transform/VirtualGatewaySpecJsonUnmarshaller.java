@@ -43,24 +43,35 @@ public class VirtualGatewaySpecJsonUnmarshaller implements Unmarshaller<VirtualG
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("backendDefaults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewaySpec.setBackendDefaults(VirtualGatewayBackendDefaultsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("listeners", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewaySpec.setListeners(new ListUnmarshaller<VirtualGatewayListener>(VirtualGatewayListenerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("logging", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewaySpec.setLogging(VirtualGatewayLoggingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

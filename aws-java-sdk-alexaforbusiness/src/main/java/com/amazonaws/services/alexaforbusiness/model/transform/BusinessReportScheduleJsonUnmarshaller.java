@@ -43,42 +43,58 @@ public class BusinessReportScheduleJsonUnmarshaller implements Unmarshaller<Busi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ScheduleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     businessReportSchedule.setScheduleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     businessReportSchedule.setScheduleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     businessReportSchedule.setS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3KeyPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     businessReportSchedule.setS3KeyPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     businessReportSchedule.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     businessReportSchedule.setContentRange(BusinessReportContentRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Recurrence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     businessReportSchedule.setRecurrence(BusinessReportRecurrenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastBusinessReport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     businessReportSchedule.setLastBusinessReport(BusinessReportJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

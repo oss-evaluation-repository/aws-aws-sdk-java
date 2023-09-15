@@ -43,38 +43,53 @@ public class CampaignDateRangeKpiResponseJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignDateRangeKpiResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CampaignId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignDateRangeKpiResponse.setCampaignId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignDateRangeKpiResponse.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("KpiName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignDateRangeKpiResponse.setKpiName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KpiResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignDateRangeKpiResponse.setKpiResult(BaseKpiResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignDateRangeKpiResponse.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaignDateRangeKpiResponse.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

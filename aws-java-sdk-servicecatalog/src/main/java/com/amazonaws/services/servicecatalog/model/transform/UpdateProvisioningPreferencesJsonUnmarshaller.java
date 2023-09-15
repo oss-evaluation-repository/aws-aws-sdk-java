@@ -43,42 +43,57 @@ public class UpdateProvisioningPreferencesJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackSetAccounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProvisioningPreferences.setStackSetAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StackSetRegions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProvisioningPreferences.setStackSetRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StackSetFailureToleranceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProvisioningPreferences.setStackSetFailureToleranceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StackSetFailureTolerancePercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProvisioningPreferences.setStackSetFailureTolerancePercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StackSetMaxConcurrencyCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProvisioningPreferences.setStackSetMaxConcurrencyCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StackSetMaxConcurrencyPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProvisioningPreferences.setStackSetMaxConcurrencyPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StackSetOperationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProvisioningPreferences.setStackSetOperationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

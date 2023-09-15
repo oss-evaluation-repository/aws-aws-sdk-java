@@ -43,26 +43,38 @@ public class StreamSummaryJsonUnmarshaller implements Unmarshaller<StreamSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("streamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSummary.setStreamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSummary.setStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSummary.setStreamVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class DetectionFilterJsonUnmarshaller implements Unmarshaller<DetectionFi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MinConfidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectionFilter.setMinConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("MinBoundingBoxHeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectionFilter.setMinBoundingBoxHeight(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("MinBoundingBoxWidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectionFilter.setMinBoundingBoxWidth(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

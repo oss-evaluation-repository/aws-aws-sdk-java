@@ -43,50 +43,67 @@ public class AccountJsonUnmarshaller implements Unmarshaller<Account, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AwsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     account.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     account.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     account.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     account.setAccountType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     account.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("DefaultLicense", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     account.setDefaultLicense(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedLicenses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     account.setSupportedLicenses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AccountStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     account.setAccountStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SigninDelegateGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     account.setSigninDelegateGroups(new ListUnmarshaller<SigninDelegateGroup>(SigninDelegateGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

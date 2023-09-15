@@ -43,40 +43,55 @@ public class PlaylistJsonUnmarshaller implements Unmarshaller<Playlist, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playlist.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playlist.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playlist.setOutputKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HlsContentProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playlist.setHlsContentProtection(HlsContentProtectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PlayReadyDrm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playlist.setPlayReadyDrm(PlayReadyDrmJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playlist.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playlist.setStatusDetail(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

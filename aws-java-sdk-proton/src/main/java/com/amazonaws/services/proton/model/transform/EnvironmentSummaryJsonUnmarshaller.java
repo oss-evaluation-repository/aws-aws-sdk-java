@@ -43,82 +43,108 @@ public class EnvironmentSummaryJsonUnmarshaller implements Unmarshaller<Environm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setComponentRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deploymentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setDeploymentStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentAccountConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setEnvironmentAccountConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setEnvironmentAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastAttemptedDeploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setLastAttemptedDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastDeploymentAttemptedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setLastDeploymentAttemptedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastDeploymentSucceededAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setLastDeploymentSucceededAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastSucceededDeploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setLastSucceededDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protonServiceRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setProtonServiceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("provisioning", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setProvisioning(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateMajorVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setTemplateMajorVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateMinorVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setTemplateMinorVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentSummary.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

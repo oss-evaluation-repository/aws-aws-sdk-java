@@ -43,42 +43,58 @@ public class EbsInstanceBlockDeviceSpecificationJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDeviceSpecification.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("deleteOnTermination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDeviceSpecification.setDeleteOnTermination(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("iops", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDeviceSpecification.setIops(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDeviceSpecification.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snapshotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDeviceSpecification.setSnapshotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDeviceSpecification.setVolumeSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDeviceSpecification.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("throughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsInstanceBlockDeviceSpecification.setThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

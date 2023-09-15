@@ -43,46 +43,62 @@ public class AnomalySubscriptionJsonUnmarshaller implements Unmarshaller<Anomaly
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SubscriptionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalySubscription.setSubscriptionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalySubscription.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitorArnList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalySubscription.setMonitorArnList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Subscribers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalySubscription.setSubscribers(new ListUnmarshaller<Subscriber>(SubscriberJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Threshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalySubscription.setThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Frequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalySubscription.setFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalySubscription.setSubscriptionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThresholdExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalySubscription.setThresholdExpression(ExpressionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class ExportSnapshotRecordSourceInfoJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecordSourceInfo.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecordSourceInfo.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecordSourceInfo.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecordSourceInfo.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fromResourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecordSourceInfo.setFromResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fromResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecordSourceInfo.setFromResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceSnapshotInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecordSourceInfo.setInstanceSnapshotInfo(InstanceSnapshotInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("diskSnapshotInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportSnapshotRecordSourceInfo.setDiskSnapshotInfo(DiskSnapshotInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

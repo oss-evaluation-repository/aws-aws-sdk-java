@@ -43,135 +43,170 @@ public class WorkloadJsonUnmarshaller implements Unmarshaller<Workload, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkloadId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setWorkloadId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setWorkloadArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setWorkloadName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setEnvironment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AccountIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setAccountIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AwsRegions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setAwsRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NonAwsRegions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setNonAwsRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ArchitecturalDesign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setArchitecturalDesign(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReviewOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setReviewOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReviewRestrictionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setReviewRestrictionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IsReviewOwnerUpdateAcknowledged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setIsReviewOwnerUpdateAcknowledged(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IndustryType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setIndustryType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Industry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setIndustry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Notes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setNotes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImprovementStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setImprovementStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RiskCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context.getUnmarshaller(Integer.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("PillarPriorities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setPillarPriorities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Lenses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setLenses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShareInvitationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setShareInvitationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("DiscoveryConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setDiscoveryConfig(WorkloadDiscoveryConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Applications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setApplications(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Profiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setProfiles(new ListUnmarshaller<WorkloadProfile>(WorkloadProfileJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PrioritizedRiskCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workload.setPrioritizedRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

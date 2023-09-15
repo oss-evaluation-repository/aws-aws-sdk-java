@@ -43,38 +43,53 @@ public class GetCloudFormationTemplateResultJsonUnmarshaller implements Unmarsha
             return getCloudFormationTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCloudFormationTemplateResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCloudFormationTemplateResult.setCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expirationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCloudFormationTemplateResult.setExpirationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("semanticVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCloudFormationTemplateResult.setSemanticVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCloudFormationTemplateResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCloudFormationTemplateResult.setTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCloudFormationTemplateResult.setTemplateUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

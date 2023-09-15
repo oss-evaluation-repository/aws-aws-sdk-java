@@ -43,38 +43,53 @@ public class VideoDescriptionJsonUnmarshaller implements Unmarshaller<VideoDescr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("codecSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoDescription.setCodecSettings(VideoCodecSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("height", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoDescription.setHeight(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("respondToAfd", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoDescription.setRespondToAfd(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scalingBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoDescription.setScalingBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sharpness", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoDescription.setSharpness(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("width", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoDescription.setWidth(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

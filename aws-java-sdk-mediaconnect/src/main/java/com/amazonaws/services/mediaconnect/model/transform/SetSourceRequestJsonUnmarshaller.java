@@ -43,40 +43,52 @@ public class SetSourceRequestJsonUnmarshaller implements Unmarshaller<SetSourceR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("decryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setDecryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entitlementArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setEntitlementArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ingestPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setIngestPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setMaxBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxLatency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setMaxLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxSyncBuffer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setMaxSyncBuffer(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStreamSourceConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setMediaStreamSourceConfigurations(new ListUnmarshaller<MediaStreamSourceConfigurationRequest>(
                             MediaStreamSourceConfigurationRequestJsonUnmarshaller.getInstance())
@@ -84,48 +96,63 @@ public class SetSourceRequestJsonUnmarshaller implements Unmarshaller<SetSourceR
                     .unmarshall(context));
                 }
                 if (context.testExpression("minLatency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setMinLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("senderControlPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setSenderControlPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("senderIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setSenderIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceListenerAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setSourceListenerAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceListenerPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setSourceListenerPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("streamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setStreamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcInterfaceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setVpcInterfaceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("whitelistCidr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setWhitelistCidr(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gatewayBridgeSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setSourceRequest.setGatewayBridgeSource(SetGatewayBridgeSourceRequestJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

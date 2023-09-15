@@ -43,26 +43,38 @@ public class EvaluateOnExitJsonUnmarshaller implements Unmarshaller<EvaluateOnEx
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("onStatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateOnExit.setOnStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("onReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateOnExit.setOnReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("onExitCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateOnExit.setOnExitCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateOnExit.setAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

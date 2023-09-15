@@ -43,22 +43,33 @@ public class DetectLabelsImageQualityJsonUnmarshaller implements Unmarshaller<De
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Brightness", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsImageQuality.setBrightness(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("Sharpness", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsImageQuality.setSharpness(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("Contrast", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsImageQuality.setContrast(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

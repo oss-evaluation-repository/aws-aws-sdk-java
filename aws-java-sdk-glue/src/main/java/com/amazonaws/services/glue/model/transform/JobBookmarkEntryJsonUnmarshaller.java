@@ -43,38 +43,53 @@ public class JobBookmarkEntryJsonUnmarshaller implements Unmarshaller<JobBookmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobBookmarkEntry.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobBookmarkEntry.setVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Run", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobBookmarkEntry.setRun(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Attempt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobBookmarkEntry.setAttempt(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PreviousRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobBookmarkEntry.setPreviousRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobBookmarkEntry.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobBookmark", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobBookmarkEntry.setJobBookmark(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

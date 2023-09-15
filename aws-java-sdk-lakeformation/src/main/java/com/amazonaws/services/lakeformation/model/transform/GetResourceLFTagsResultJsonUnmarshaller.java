@@ -43,28 +43,39 @@ public class GetResourceLFTagsResultJsonUnmarshaller implements Unmarshaller<Get
             return getResourceLFTagsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LFTagOnDatabase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceLFTagsResult.setLFTagOnDatabase(new ListUnmarshaller<LFTagPair>(LFTagPairJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LFTagsOnTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceLFTagsResult.setLFTagsOnTable(new ListUnmarshaller<LFTagPair>(LFTagPairJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LFTagsOnColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceLFTagsResult.setLFTagsOnColumns(new ListUnmarshaller<ColumnLFTag>(ColumnLFTagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

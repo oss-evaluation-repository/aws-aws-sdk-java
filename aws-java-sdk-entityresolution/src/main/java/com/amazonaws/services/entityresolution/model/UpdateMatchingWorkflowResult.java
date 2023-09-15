@@ -57,8 +57,8 @@ public class UpdateMatchingWorkflowResult extends com.amazonaws.AmazonWebService
     private ResolutionTechniques resolutionTechniques;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on
-     * your behalf as part of workflow execution.
+     * The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your
+     * behalf as part of workflow execution.
      * </p>
      */
     private String roleArn;
@@ -347,13 +347,13 @@ public class UpdateMatchingWorkflowResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on
-     * your behalf as part of workflow execution.
+     * The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your
+     * behalf as part of workflow execution.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create
-     *        resources on your behalf as part of workflow execution.
+     *        The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on
+     *        your behalf as part of workflow execution.
      */
 
     public void setRoleArn(String roleArn) {
@@ -362,12 +362,12 @@ public class UpdateMatchingWorkflowResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on
-     * your behalf as part of workflow execution.
+     * The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your
+     * behalf as part of workflow execution.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create
-     *         resources on your behalf as part of workflow execution.
+     * @return The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources
+     *         on your behalf as part of workflow execution.
      */
 
     public String getRoleArn() {
@@ -376,13 +376,13 @@ public class UpdateMatchingWorkflowResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on
-     * your behalf as part of workflow execution.
+     * The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your
+     * behalf as part of workflow execution.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create
-     *        resources on your behalf as part of workflow execution.
+     *        The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on
+     *        your behalf as part of workflow execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

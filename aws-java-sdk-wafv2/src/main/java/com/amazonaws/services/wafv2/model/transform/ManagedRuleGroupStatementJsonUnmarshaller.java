@@ -43,34 +43,44 @@ public class ManagedRuleGroupStatementJsonUnmarshaller implements Unmarshaller<M
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VendorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupStatement.setVendorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupStatement.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupStatement.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExcludedRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupStatement.setExcludedRules(new ListUnmarshaller<ExcludedRule>(ExcludedRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ScopeDownStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupStatement.setScopeDownStatement(StatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ManagedRuleGroupConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupStatement.setManagedRuleGroupConfigs(new ListUnmarshaller<ManagedRuleGroupConfig>(ManagedRuleGroupConfigJsonUnmarshaller
                             .getInstance())
@@ -78,10 +88,15 @@ public class ManagedRuleGroupStatementJsonUnmarshaller implements Unmarshaller<M
                     .unmarshall(context));
                 }
                 if (context.testExpression("RuleActionOverrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleGroupStatement.setRuleActionOverrides(new ListUnmarshaller<RuleActionOverride>(RuleActionOverrideJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

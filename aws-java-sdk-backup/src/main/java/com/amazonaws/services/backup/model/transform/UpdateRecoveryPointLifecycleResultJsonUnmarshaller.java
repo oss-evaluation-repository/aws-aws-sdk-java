@@ -43,26 +43,38 @@ public class UpdateRecoveryPointLifecycleResultJsonUnmarshaller implements Unmar
             return updateRecoveryPointLifecycleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupVaultArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecoveryPointLifecycleResult.setBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecoveryPointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecoveryPointLifecycleResult.setRecoveryPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Lifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecoveryPointLifecycleResult.setLifecycle(LifecycleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CalculatedLifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateRecoveryPointLifecycleResult.setCalculatedLifecycle(CalculatedLifecycleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

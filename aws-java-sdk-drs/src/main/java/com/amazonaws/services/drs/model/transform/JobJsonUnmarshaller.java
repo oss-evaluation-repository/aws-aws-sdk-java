@@ -43,55 +43,73 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setCreationDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setEndDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("initiatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setInitiatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setJobID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("participatingResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setParticipatingResources(new ListUnmarshaller<ParticipatingResource>(ParticipatingResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("participatingServers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setParticipatingServers(new ListUnmarshaller<ParticipatingServer>(ParticipatingServerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

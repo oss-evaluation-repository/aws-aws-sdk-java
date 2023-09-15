@@ -43,80 +43,105 @@ public class DescribeFeatureGroupResultJsonUnmarshaller implements Unmarshaller<
             return describeFeatureGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FeatureGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setFeatureGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeatureGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setFeatureGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecordIdentifierFeatureName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setRecordIdentifierFeatureName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventTimeFeatureName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setEventTimeFeatureName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeatureDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setFeatureDefinitions(new ListUnmarshaller<FeatureDefinition>(FeatureDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OnlineStoreConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setOnlineStoreConfig(OnlineStoreConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OfflineStoreConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setOfflineStoreConfig(OfflineStoreConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeatureGroupStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setFeatureGroupStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OfflineStoreStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setOfflineStoreStatus(OfflineStoreStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setLastUpdateStatus(LastUpdateStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OnlineStoreTotalSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFeatureGroupResult.setOnlineStoreTotalSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

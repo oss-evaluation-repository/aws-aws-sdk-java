@@ -43,38 +43,53 @@ public class DescribeProjectResultJsonUnmarshaller implements Unmarshaller<Descr
             return describeProjectResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("projectId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("projectArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("projectName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setPortalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("projectDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("projectCreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("projectLastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,32 @@ public class AwsRdsDbSecurityGroupDetailsJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DbSecurityGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSecurityGroupDetails.setDbSecurityGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbSecurityGroupDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSecurityGroupDetails.setDbSecurityGroupDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbSecurityGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSecurityGroupDetails.setDbSecurityGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2SecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSecurityGroupDetails.setEc2SecurityGroups(new ListUnmarshaller<AwsRdsDbSecurityGroupEc2SecurityGroup>(
                             AwsRdsDbSecurityGroupEc2SecurityGroupJsonUnmarshaller.getInstance())
@@ -68,6 +76,7 @@ public class AwsRdsDbSecurityGroupDetailsJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("IpRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSecurityGroupDetails.setIpRanges(new ListUnmarshaller<AwsRdsDbSecurityGroupIpRange>(AwsRdsDbSecurityGroupIpRangeJsonUnmarshaller
                             .getInstance())
@@ -75,12 +84,18 @@ public class AwsRdsDbSecurityGroupDetailsJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSecurityGroupDetails.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbSecurityGroupDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

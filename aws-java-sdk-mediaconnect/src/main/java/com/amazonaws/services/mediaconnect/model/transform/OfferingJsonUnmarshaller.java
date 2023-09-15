@@ -43,42 +43,58 @@ public class OfferingJsonUnmarshaller implements Unmarshaller<Offering, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("currencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offering.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offering.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("durationUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offering.setDurationUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offeringArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offering.setOfferingArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offeringDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offering.setOfferingDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pricePerUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offering.setPricePerUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("priceUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offering.setPriceUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offering.setResourceSpecification(ResourceSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

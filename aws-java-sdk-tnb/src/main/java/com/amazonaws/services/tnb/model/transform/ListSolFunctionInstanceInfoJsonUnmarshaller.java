@@ -43,42 +43,58 @@ public class ListSolFunctionInstanceInfoJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionInstanceInfo.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionInstanceInfo.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instantiatedVnfInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionInstanceInfo.setInstantiatedVnfInfo(GetSolInstantiatedVnfInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("instantiationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionInstanceInfo.setInstantiationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionInstanceInfo.setMetadata(ListSolFunctionInstanceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nsInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionInstanceInfo.setNsInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfPkgId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionInstanceInfo.setVnfPkgId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfPkgName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionInstanceInfo.setVnfPkgName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

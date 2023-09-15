@@ -43,32 +43,42 @@ public class ConformancePackDetailJsonUnmarshaller implements Unmarshaller<Confo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConformancePackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackDetail.setConformancePackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConformancePackArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackDetail.setConformancePackArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConformancePackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackDetail.setConformancePackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryS3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackDetail.setDeliveryS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryS3KeyPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackDetail.setDeliveryS3KeyPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConformancePackInputParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackDetail.setConformancePackInputParameters(new ListUnmarshaller<ConformancePackInputParameter>(
                             ConformancePackInputParameterJsonUnmarshaller.getInstance())
@@ -76,16 +86,23 @@ public class ConformancePackDetailJsonUnmarshaller implements Unmarshaller<Confo
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateRequestedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackDetail.setLastUpdateRequestedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackDetail.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateSSMDocumentDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conformancePackDetail.setTemplateSSMDocumentDetails(TemplateSSMDocumentDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

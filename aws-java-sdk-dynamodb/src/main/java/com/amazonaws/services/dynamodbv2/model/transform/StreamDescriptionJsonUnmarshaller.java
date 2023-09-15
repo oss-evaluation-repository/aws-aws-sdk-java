@@ -43,50 +43,67 @@ public class StreamDescriptionJsonUnmarshaller implements Unmarshaller<StreamDes
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescription.setStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescription.setStreamLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescription.setStreamStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamViewType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescription.setStreamViewType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationRequestDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescription.setCreationRequestDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescription.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Shards", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescription.setShards(new ListUnmarshaller<Shard>(ShardJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedShardId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamDescription.setLastEvaluatedShardId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

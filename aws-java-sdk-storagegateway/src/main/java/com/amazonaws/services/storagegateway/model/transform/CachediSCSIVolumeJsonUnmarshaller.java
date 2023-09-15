@@ -43,62 +43,83 @@ public class CachediSCSIVolumeJsonUnmarshaller implements Unmarshaller<CachediSC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setVolumeARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setVolumeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setVolumeStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeAttachmentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setVolumeAttachmentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setVolumeSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setVolumeProgress(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceSnapshotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setSourceSnapshotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeiSCSIAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setVolumeiSCSIAttributes(VolumeiSCSIAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("VolumeUsedInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setVolumeUsedInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("KMSKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setKMSKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cachediSCSIVolume.setTargetName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

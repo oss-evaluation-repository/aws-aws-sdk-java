@@ -43,47 +43,64 @@ public class MemberJsonUnmarshaller implements Unmarshaller<Member, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     member.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("administratorAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     member.setAdministratorAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     member.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("email", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     member.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("invitedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     member.setInvitedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("masterAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     member.setMasterAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("relationshipStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     member.setRelationshipStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     member.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     member.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

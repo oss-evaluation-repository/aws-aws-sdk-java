@@ -43,22 +43,33 @@ public class ContainerConfigurationJsonUnmarshaller implements Unmarshaller<Cont
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerConfiguration.setContainerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("memorySizeConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerConfiguration.setMemorySizeConfiguration(MemorySizeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerConfiguration.setCpu(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

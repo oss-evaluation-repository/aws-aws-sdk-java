@@ -43,22 +43,33 @@ public class DescribeAddonConfigurationResultJsonUnmarshaller implements Unmarsh
             return describeAddonConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("addonName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAddonConfigurationResult.setAddonName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("addonVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAddonConfigurationResult.setAddonVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAddonConfigurationResult.setConfigurationSchema(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

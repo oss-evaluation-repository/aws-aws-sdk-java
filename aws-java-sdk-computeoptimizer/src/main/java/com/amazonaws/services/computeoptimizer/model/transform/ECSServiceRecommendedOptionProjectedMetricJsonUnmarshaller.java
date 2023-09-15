@@ -44,25 +44,36 @@ public class ECSServiceRecommendedOptionProjectedMetricJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("recommendedCpuUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendedOptionProjectedMetric.setRecommendedCpuUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendedMemorySize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendedOptionProjectedMetric.setRecommendedMemorySize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("projectedMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendedOptionProjectedMetric.setProjectedMetrics(new ListUnmarshaller<ECSServiceProjectedMetric>(
                             ECSServiceProjectedMetricJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

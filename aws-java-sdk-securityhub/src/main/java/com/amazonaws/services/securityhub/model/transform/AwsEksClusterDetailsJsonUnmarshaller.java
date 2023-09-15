@@ -43,46 +43,63 @@ public class AwsEksClusterDetailsJsonUnmarshaller implements Unmarshaller<AwsEks
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEksClusterDetails.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateAuthorityData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEksClusterDetails.setCertificateAuthorityData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEksClusterDetails.setClusterStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Endpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEksClusterDetails.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEksClusterDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourcesVpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEksClusterDetails.setResourcesVpcConfig(AwsEksClusterResourcesVpcConfigDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEksClusterDetails.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEksClusterDetails.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Logging", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEksClusterDetails.setLogging(AwsEksClusterLoggingDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

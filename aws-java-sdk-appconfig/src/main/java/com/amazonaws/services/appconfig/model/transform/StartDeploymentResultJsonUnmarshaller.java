@@ -43,98 +43,127 @@ public class StartDeploymentResultJsonUnmarshaller implements Unmarshaller<Start
             return startDeploymentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentStrategyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setDeploymentStrategyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setConfigurationProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setDeploymentNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationLocationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setConfigurationLocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setConfigurationVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentDurationInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setDeploymentDurationInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("GrowthType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setGrowthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GrowthFactor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setGrowthFactor(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("FinalBakeTimeInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setFinalBakeTimeInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventLog", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setEventLog(new ListUnmarshaller<DeploymentEvent>(DeploymentEventJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PercentageComplete", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setPercentageComplete(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setStartedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("CompletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("AppliedExtensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setAppliedExtensions(new ListUnmarshaller<AppliedExtension>(AppliedExtensionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startDeploymentResult.setKmsKeyIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

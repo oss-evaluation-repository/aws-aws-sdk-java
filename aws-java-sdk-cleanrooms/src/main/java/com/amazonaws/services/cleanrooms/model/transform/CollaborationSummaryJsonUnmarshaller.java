@@ -43,50 +43,68 @@ public class CollaborationSummaryJsonUnmarshaller implements Unmarshaller<Collab
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collaborationSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collaborationSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collaborationSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creatorAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collaborationSummary.setCreatorAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creatorDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collaborationSummary.setCreatorDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collaborationSummary.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collaborationSummary.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("memberStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collaborationSummary.setMemberStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("membershipId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collaborationSummary.setMembershipId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("membershipArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collaborationSummary.setMembershipArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

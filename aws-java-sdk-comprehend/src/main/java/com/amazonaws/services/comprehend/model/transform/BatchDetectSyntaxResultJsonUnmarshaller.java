@@ -43,12 +43,17 @@ public class BatchDetectSyntaxResultJsonUnmarshaller implements Unmarshaller<Bat
             return batchDetectSyntaxResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResultList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDetectSyntaxResult.setResultList(new ListUnmarshaller<BatchDetectSyntaxItemResult>(BatchDetectSyntaxItemResultJsonUnmarshaller
                             .getInstance())
@@ -56,10 +61,15 @@ public class BatchDetectSyntaxResultJsonUnmarshaller implements Unmarshaller<Bat
                     .unmarshall(context));
                 }
                 if (context.testExpression("ErrorList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDetectSyntaxResult.setErrorList(new ListUnmarshaller<BatchItemError>(BatchItemErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

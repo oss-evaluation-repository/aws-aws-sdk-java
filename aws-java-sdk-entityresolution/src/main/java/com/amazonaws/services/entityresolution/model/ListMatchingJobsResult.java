@@ -25,7 +25,8 @@ public class ListMatchingJobsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
+     * A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a
+     * job.
      * </p>
      */
     private java.util.List<JobSummary> jobs;
@@ -38,10 +39,12 @@ public class ListMatchingJobsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
+     * A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a
+     * job.
      * </p>
      * 
-     * @return A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
+     * @return A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time
+     *         of a job.
      */
 
     public java.util.List<JobSummary> getJobs() {
@@ -50,11 +53,13 @@ public class ListMatchingJobsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
+     * A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a
+     * job.
      * </p>
      * 
      * @param jobs
-     *        A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
+     *        A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time
+     *        of a job.
      */
 
     public void setJobs(java.util.Collection<JobSummary> jobs) {
@@ -68,7 +73,8 @@ public class ListMatchingJobsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
+     * A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a
+     * job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +83,8 @@ public class ListMatchingJobsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param jobs
-     *        A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
+     *        A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time
+     *        of a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +100,13 @@ public class ListMatchingJobsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
+     * A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a
+     * job.
      * </p>
      * 
      * @param jobs
-     *        A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
+     *        A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time
+     *        of a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

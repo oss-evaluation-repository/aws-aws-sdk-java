@@ -43,46 +43,62 @@ public class GetDetectorResultJsonUnmarshaller implements Unmarshaller<GetDetect
             return getDetectorResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorResult.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("findingPublishingFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorResult.setFindingPublishingFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorResult.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorResult.setUpdatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorResult.setDataSources(DataSourceConfigurationsResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("features", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorResult.setFeatures(new ListUnmarshaller<DetectorFeatureConfigurationResult>(DetectorFeatureConfigurationResultJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,79 +43,103 @@ public class BarChartConfigurationJsonUnmarshaller implements Unmarshaller<BarCh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setFieldWells(BarChartFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SortConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setSortConfiguration(BarChartSortConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Orientation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setOrientation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BarsArrangement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setBarsArrangement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VisualPalette", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setVisualPalette(VisualPaletteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SmallMultiplesOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setSmallMultiplesOptions(SmallMultiplesOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CategoryAxis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setCategoryAxis(AxisDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CategoryLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setCategoryLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ValueAxis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setValueAxis(AxisDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ValueLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setValueLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColorLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setColorLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Legend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setLegend(LegendOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setDataLabels(DataLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tooltip", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setTooltip(TooltipOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReferenceLines", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setReferenceLines(new ListUnmarshaller<ReferenceLine>(ReferenceLineJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ContributionAnalysisDefaults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     barChartConfiguration.setContributionAnalysisDefaults(new ListUnmarshaller<ContributionAnalysisDefault>(
                             ContributionAnalysisDefaultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

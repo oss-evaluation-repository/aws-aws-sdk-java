@@ -43,47 +43,64 @@ public class DescribeKeyResultJsonUnmarshaller implements Unmarshaller<DescribeK
             return describeKeyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeKeyResult.setCreateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeKeyResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpireTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeKeyResult.setExpireTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("Key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeKeyResult.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeKeyResult.setKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeKeyResult.setKeyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Restrictions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeKeyResult.setRestrictions(ApiKeyRestrictionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeKeyResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("UpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeKeyResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

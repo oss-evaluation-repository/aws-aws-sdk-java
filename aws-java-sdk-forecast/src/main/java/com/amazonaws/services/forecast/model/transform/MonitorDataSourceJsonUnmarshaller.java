@@ -43,22 +43,33 @@ public class MonitorDataSourceJsonUnmarshaller implements Unmarshaller<MonitorDa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatasetImportJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitorDataSource.setDatasetImportJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ForecastArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitorDataSource.setForecastArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitorDataSource.setPredictorArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

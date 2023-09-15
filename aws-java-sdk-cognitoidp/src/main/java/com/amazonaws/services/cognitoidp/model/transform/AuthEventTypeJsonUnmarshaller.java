@@ -43,44 +43,60 @@ public class AuthEventTypeJsonUnmarshaller implements Unmarshaller<AuthEventType
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authEventType.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authEventType.setEventType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authEventType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EventResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authEventType.setEventResponse(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventRisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authEventType.setEventRisk(EventRiskTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChallengeResponses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authEventType.setChallengeResponses(new ListUnmarshaller<ChallengeResponseType>(ChallengeResponseTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EventContextData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authEventType.setEventContextData(EventContextDataTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventFeedback", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authEventType.setEventFeedback(EventFeedbackTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

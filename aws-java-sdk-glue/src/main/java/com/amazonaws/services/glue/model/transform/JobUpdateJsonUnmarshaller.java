@@ -43,93 +43,121 @@ public class JobUpdateJsonUnmarshaller implements Unmarshaller<JobUpdate, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setLogUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionProperty", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setExecutionProperty(ExecutionPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setCommand(JobCommandJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultArguments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setDefaultArguments(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("NonOverridableArguments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setNonOverridableArguments(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Connections", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setConnections(ConnectionsListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaxRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setMaxRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AllocatedCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setAllocatedCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Timeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setMaxCapacity(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setWorkerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfWorkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setNumberOfWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setSecurityConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationProperty", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setNotificationProperty(NotificationPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GlueVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeGenConfigurationNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setCodeGenConfigurationNodes(new MapUnmarshaller<String, CodeGenConfigurationNode>(context.getUnmarshaller(String.class),
                             CodeGenConfigurationNodeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setExecutionClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceControlDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobUpdate.setSourceControlDetails(SourceControlDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,62 +43,83 @@ public class CustomLineItemVersionListElementJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChargeDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setChargeDetails(ListCustomLineItemChargeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setProductCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BillingGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setBillingGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setCreationTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setLastModifiedTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setAssociationSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("StartBillingPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setStartBillingPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndBillingPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setEndBillingPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customLineItemVersionListElement.setStartTime(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class IdentityResolutionJobJsonUnmarshaller implements Unmarshaller<Ident
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityResolutionJob.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityResolutionJob.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityResolutionJob.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityResolutionJob.setJobStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("JobEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityResolutionJob.setJobEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("JobStats", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityResolutionJob.setJobStats(JobStatsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExportingLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityResolutionJob.setExportingLocation(ExportingLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityResolutionJob.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

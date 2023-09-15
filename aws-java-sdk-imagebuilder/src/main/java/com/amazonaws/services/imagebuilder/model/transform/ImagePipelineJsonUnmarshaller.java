@@ -43,83 +43,109 @@ public class ImagePipelineJsonUnmarshaller implements Unmarshaller<ImagePipeline
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enhancedImageMetadataEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setEnhancedImageMetadataEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("imageRecipeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setImageRecipeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerRecipeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setContainerRecipeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("infrastructureConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setInfrastructureConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("distributionConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setDistributionConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageTestsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setImageTestsConfiguration(ImageTestsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setSchedule(ScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setDateCreated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dateUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setDateUpdated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dateLastRun", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setDateLastRun(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dateNextRun", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setDateNextRun(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("imageScanningConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imagePipeline.setImageScanningConfiguration(ImageScanningConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

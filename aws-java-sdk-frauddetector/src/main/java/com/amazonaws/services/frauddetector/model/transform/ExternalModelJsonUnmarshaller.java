@@ -43,46 +43,63 @@ public class ExternalModelJsonUnmarshaller implements Unmarshaller<ExternalModel
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("modelEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     externalModel.setModelEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modelSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     externalModel.setModelSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("invokeModelEndpointRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     externalModel.setInvokeModelEndpointRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     externalModel.setInputConfiguration(ModelInputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("outputConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     externalModel.setOutputConfiguration(ModelOutputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("modelEndpointStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     externalModel.setModelEndpointStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     externalModel.setLastUpdatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     externalModel.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     externalModel.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

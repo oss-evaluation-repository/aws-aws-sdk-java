@@ -43,18 +43,28 @@ public class ExportStatisticsJsonUnmarshaller implements Unmarshaller<ExportStat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProcessedRecordsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportStatistics.setProcessedRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportedRecordsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportStatistics.setExportedRecordsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

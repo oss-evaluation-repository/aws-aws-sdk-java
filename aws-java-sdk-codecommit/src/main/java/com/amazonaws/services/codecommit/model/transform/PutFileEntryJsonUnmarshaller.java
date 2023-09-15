@@ -43,26 +43,38 @@ public class PutFileEntryJsonUnmarshaller implements Unmarshaller<PutFileEntry, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putFileEntry.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fileMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putFileEntry.setFileMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fileContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putFileEntry.setFileContent(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceFile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putFileEntry.setSourceFile(SourceFileSpecifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

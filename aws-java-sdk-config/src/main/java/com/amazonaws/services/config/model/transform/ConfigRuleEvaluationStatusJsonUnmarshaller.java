@@ -43,70 +43,93 @@ public class ConfigRuleEvaluationStatusJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigRuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setConfigRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigRuleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setConfigRuleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigRuleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setConfigRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulInvocationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setLastSuccessfulInvocationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastFailedInvocationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setLastFailedInvocationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulEvaluationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setLastSuccessfulEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastFailedEvaluationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setLastFailedEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FirstActivatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setFirstActivatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastDeactivatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setLastDeactivatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setLastErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setLastErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirstEvaluationStarted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setFirstEvaluationStarted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LastDebugLogDeliveryStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setLastDebugLogDeliveryStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastDebugLogDeliveryStatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setLastDebugLogDeliveryStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastDebugLogDeliveryTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configRuleEvaluationStatus.setLastDebugLogDeliveryTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

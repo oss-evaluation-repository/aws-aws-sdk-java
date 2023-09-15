@@ -43,38 +43,53 @@ public class DescribeLocationEfsResultJsonUnmarshaller implements Unmarshaller<D
             return describeLocationEfsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationEfsResult.setLocationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationEfsResult.setLocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2Config", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationEfsResult.setEc2Config(Ec2ConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationEfsResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AccessPointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationEfsResult.setAccessPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationEfsResult.setFileSystemAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InTransitEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationEfsResult.setInTransitEncryption(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

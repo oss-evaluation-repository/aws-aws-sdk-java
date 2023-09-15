@@ -43,28 +43,40 @@ public class ListenerJsonUnmarshaller implements Unmarshaller<Listener, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ListenerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listener.setListenerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PortRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listener.setPortRanges(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listener.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientAffinity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listener.setClientAffinity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class RedshiftDestinationUpdateJsonUnmarshaller implements Unmarshaller<R
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterJDBCURL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setClusterJDBCURL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyCommand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setCopyCommand(CopyCommandJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetryOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setRetryOptions(RedshiftRetryOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3Update", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setS3Update(S3DestinationUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3BackupMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setS3BackupMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BackupUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setS3BackupUpdate(S3DestinationUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftDestinationUpdate.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

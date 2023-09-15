@@ -43,34 +43,48 @@ public class ShareInvitationJsonUnmarshaller implements Unmarshaller<ShareInvita
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ShareInvitationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitation.setShareInvitationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShareResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitation.setShareResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitation.setWorkloadId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LensAlias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitation.setLensAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LensArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitation.setLensArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     shareInvitation.setProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

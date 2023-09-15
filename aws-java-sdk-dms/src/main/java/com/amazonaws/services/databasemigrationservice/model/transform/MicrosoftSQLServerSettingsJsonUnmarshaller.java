@@ -43,78 +43,103 @@ public class MicrosoftSQLServerSettingsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BcpPacketSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setBcpPacketSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ControlTablesFileGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setControlTablesFileGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuerySingleAlwaysOnNode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setQuerySingleAlwaysOnNode(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ReadBackupOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setReadBackupOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SafeguardPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setSafeguardPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UseBcpFullLoad", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setUseBcpFullLoad(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UseThirdPartyBackupDevice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setUseThirdPartyBackupDevice(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setSecretsManagerAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerSecretId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrimSpaceInChar", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setTrimSpaceInChar(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TlogAccessMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setTlogAccessMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ForceLobLookup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     microsoftSQLServerSettings.setForceLobLookup(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

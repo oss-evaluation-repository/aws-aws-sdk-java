@@ -43,46 +43,63 @@ public class RateBasedStatementCustomKeyJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Header", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedStatementCustomKey.setHeader(RateLimitHeaderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Cookie", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedStatementCustomKey.setCookie(RateLimitCookieJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("QueryArgument", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedStatementCustomKey.setQueryArgument(RateLimitQueryArgumentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("QueryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedStatementCustomKey.setQueryString(RateLimitQueryStringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HTTPMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedStatementCustomKey.setHTTPMethod(RateLimitHTTPMethodJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ForwardedIP", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedStatementCustomKey.setForwardedIP(RateLimitForwardedIPJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IP", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedStatementCustomKey.setIP(RateLimitIPJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LabelNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedStatementCustomKey.setLabelNamespace(RateLimitLabelNamespaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UriPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedStatementCustomKey.setUriPath(RateLimitUriPathJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,44 @@ public class PatternJsonUnmarshaller implements Unmarshaller<Pattern, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("countersToAggregate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pattern.setCountersToAggregate(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pattern.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pattern.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pattern.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resolutionSteps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pattern.setResolutionSteps(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetFrames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pattern.setTargetFrames(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
@@ -79,8 +89,13 @@ public class PatternJsonUnmarshaller implements Unmarshaller<Pattern, JsonUnmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("thresholdPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pattern.setThresholdPercent(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

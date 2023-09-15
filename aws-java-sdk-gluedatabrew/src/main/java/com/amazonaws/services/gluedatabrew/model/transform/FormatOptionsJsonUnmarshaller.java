@@ -43,22 +43,33 @@ public class FormatOptionsJsonUnmarshaller implements Unmarshaller<FormatOptions
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Json", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formatOptions.setJson(JsonOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Excel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formatOptions.setExcel(ExcelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Csv", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formatOptions.setCsv(CsvOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class DomainDetailJsonUnmarshaller implements Unmarshaller<DomainDetail, 
             return domainDetail;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("domainInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDetail.setDomainInfo(DomainInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainDetail.setConfiguration(DomainConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

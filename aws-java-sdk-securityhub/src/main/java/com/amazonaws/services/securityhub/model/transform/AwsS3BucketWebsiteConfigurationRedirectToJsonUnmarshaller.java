@@ -44,18 +44,28 @@ public class AwsS3BucketWebsiteConfigurationRedirectToJsonUnmarshaller implement
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Hostname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketWebsiteConfigurationRedirectTo.setHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketWebsiteConfigurationRedirectTo.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

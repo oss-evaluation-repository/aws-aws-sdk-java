@@ -43,38 +43,53 @@ public class DescribeAccessPolicyResultJsonUnmarshaller implements Unmarshaller<
             return describeAccessPolicyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessPolicyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessPolicyResult.setAccessPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessPolicyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessPolicyResult.setAccessPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessPolicyIdentity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessPolicyResult.setAccessPolicyIdentity(IdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("accessPolicyResource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessPolicyResult.setAccessPolicyResource(ResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("accessPolicyPermission", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessPolicyResult.setAccessPolicyPermission(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessPolicyCreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessPolicyResult.setAccessPolicyCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("accessPolicyLastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAccessPolicyResult.setAccessPolicyLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

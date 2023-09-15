@@ -43,50 +43,68 @@ public class ColumnInfoJsonUnmarshaller implements Unmarshaller<ColumnInfo, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CatalogName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnInfo.setCatalogName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnInfo.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnInfo.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnInfo.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnInfo.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnInfo.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Precision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnInfo.setPrecision(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Scale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnInfo.setScale(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Nullable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnInfo.setNullable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CaseSensitive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnInfo.setCaseSensitive(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

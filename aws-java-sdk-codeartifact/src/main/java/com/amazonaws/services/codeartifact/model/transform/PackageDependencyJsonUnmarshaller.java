@@ -43,26 +43,38 @@ public class PackageDependencyJsonUnmarshaller implements Unmarshaller<PackageDe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDependency.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("package", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDependency.setPackage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dependencyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDependency.setDependencyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionRequirement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageDependency.setVersionRequirement(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

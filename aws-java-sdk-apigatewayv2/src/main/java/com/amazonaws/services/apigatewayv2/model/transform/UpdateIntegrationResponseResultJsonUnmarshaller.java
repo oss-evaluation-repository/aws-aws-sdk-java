@@ -43,36 +43,50 @@ public class UpdateIntegrationResponseResultJsonUnmarshaller implements Unmarsha
             return updateIntegrationResponseResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("contentHandlingStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setContentHandlingStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("integrationResponseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setIntegrationResponseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("integrationResponseKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setIntegrationResponseKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("responseParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setResponseParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("responseTemplates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setResponseTemplates(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("templateSelectionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIntegrationResponseResult.setTemplateSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

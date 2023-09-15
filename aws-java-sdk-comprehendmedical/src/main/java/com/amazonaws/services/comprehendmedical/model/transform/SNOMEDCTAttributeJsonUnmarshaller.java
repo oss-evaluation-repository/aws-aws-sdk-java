@@ -43,58 +43,77 @@ public class SNOMEDCTAttributeJsonUnmarshaller implements Unmarshaller<SNOMEDCTA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setScore(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("RelationshipScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setRelationshipScore(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("RelationshipType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setRelationshipType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BeginOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setBeginOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setEndOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Text", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Traits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setTraits(new ListUnmarshaller<SNOMEDCTTrait>(SNOMEDCTTraitJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SNOMEDCTConcepts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sNOMEDCTAttribute.setSNOMEDCTConcepts(new ListUnmarshaller<SNOMEDCTConcept>(SNOMEDCTConceptJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

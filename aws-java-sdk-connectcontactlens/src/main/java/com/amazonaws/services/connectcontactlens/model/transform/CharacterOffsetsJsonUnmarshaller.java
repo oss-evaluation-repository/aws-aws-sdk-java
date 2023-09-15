@@ -43,18 +43,28 @@ public class CharacterOffsetsJsonUnmarshaller implements Unmarshaller<CharacterO
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BeginOffsetChar", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     characterOffsets.setBeginOffsetChar(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndOffsetChar", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     characterOffsets.setEndOffsetChar(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

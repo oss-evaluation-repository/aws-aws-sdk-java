@@ -43,103 +43,133 @@ public class ProcessingJobJsonUnmarshaller implements Unmarshaller<ProcessingJob
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProcessingInputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setProcessingInputs(new ListUnmarshaller<ProcessingInput>(ProcessingInputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ProcessingOutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setProcessingOutputConfig(ProcessingOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProcessingJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setProcessingJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProcessingResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setProcessingResources(ProcessingResourcesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StoppingCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setStoppingCondition(ProcessingStoppingConditionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AppSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setAppSpecification(AppSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("NetworkConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setNetworkConfig(NetworkConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExperimentConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setExperimentConfig(ExperimentConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProcessingJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setProcessingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProcessingJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setProcessingJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExitMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setExitMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProcessingEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setProcessingEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProcessingStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setProcessingStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("MonitoringScheduleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setMonitoringScheduleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setAutoMLJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setTrainingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingJob.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

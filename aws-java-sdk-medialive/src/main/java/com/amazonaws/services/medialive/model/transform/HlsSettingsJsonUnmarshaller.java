@@ -43,26 +43,38 @@ public class HlsSettingsJsonUnmarshaller implements Unmarshaller<HlsSettings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioOnlyHlsSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setAudioOnlyHlsSettings(AudioOnlyHlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fmp4HlsSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setFmp4HlsSettings(Fmp4HlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("frameCaptureHlsSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setFrameCaptureHlsSettings(FrameCaptureHlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("standardHlsSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsSettings.setStandardHlsSettings(StandardHlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

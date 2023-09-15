@@ -43,37 +43,51 @@ public class RuleJsonUnmarshaller implements Unmarshaller<Rule, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Disabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CheckExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setCheckExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubstitutionMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setSubstitutionMap(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Threshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setThreshold(ThresholdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColumnSelectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rule.setColumnSelectors(new ListUnmarshaller<ColumnSelector>(ColumnSelectorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,32 @@ public class ReviewReportJsonUnmarshaller implements Unmarshaller<ReviewReport, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReviewResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reviewReport.setReviewResults(new ListUnmarshaller<ReviewResultDetail>(ReviewResultDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReviewActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reviewReport.setReviewActions(new ListUnmarshaller<ReviewActionDetail>(ReviewActionDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class DescribeFlowDefinitionResultJsonUnmarshaller implements Unmarshalle
             return describeFlowDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FlowDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFlowDefinitionResult.setFlowDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FlowDefinitionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFlowDefinitionResult.setFlowDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FlowDefinitionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFlowDefinitionResult.setFlowDefinitionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFlowDefinitionResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("HumanLoopRequestSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFlowDefinitionResult.setHumanLoopRequestSource(HumanLoopRequestSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HumanLoopActivationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFlowDefinitionResult.setHumanLoopActivationConfig(HumanLoopActivationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HumanLoopConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFlowDefinitionResult.setHumanLoopConfig(HumanLoopConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFlowDefinitionResult.setOutputConfig(FlowDefinitionOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFlowDefinitionResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFlowDefinitionResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

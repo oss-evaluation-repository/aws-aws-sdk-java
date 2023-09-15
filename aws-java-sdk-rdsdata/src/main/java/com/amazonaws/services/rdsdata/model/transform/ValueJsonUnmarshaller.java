@@ -43,52 +43,70 @@ public class ValueJsonUnmarshaller implements Unmarshaller<Value, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("isNull", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     value.setIsNull(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("bitValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     value.setBitValue(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("bigIntValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     value.setBigIntValue(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("intValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     value.setIntValue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("doubleValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     value.setDoubleValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("realValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     value.setRealValue(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("stringValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     value.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("blobValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     value.setBlobValue(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("arrayValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     value.setArrayValues(new ListUnmarshaller<Value>(ValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("structValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     value.setStructValue(StructValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

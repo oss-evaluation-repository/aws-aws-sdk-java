@@ -43,40 +43,55 @@ public class EventStreamSummaryJsonUnmarshaller implements Unmarshaller<EventStr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventStreamSummary.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventStreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventStreamSummary.setEventStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventStreamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventStreamSummary.setEventStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventStreamSummary.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StoppedSince", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventStreamSummary.setStoppedSince(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DestinationSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventStreamSummary.setDestinationSummary(DestinationSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventStreamSummary
                             .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

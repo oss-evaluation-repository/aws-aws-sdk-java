@@ -43,41 +43,56 @@ public class ArtifactsConcatenationConfigurationJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Audio", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConcatenationConfiguration.setAudio(AudioConcatenationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Video", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConcatenationConfiguration.setVideo(VideoConcatenationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConcatenationConfiguration.setContent(ContentConcatenationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataChannel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConcatenationConfiguration.setDataChannel(DataChannelConcatenationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TranscriptionMessages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConcatenationConfiguration.setTranscriptionMessages(TranscriptionMessagesConcatenationConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("MeetingEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConcatenationConfiguration.setMeetingEvents(MeetingEventsConcatenationConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("CompositedVideo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConcatenationConfiguration.setCompositedVideo(CompositedVideoConcatenationConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

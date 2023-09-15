@@ -43,90 +43,118 @@ public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Assigning", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setAssigning(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Booting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setBooting(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionLost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setConnectionLost(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Deregistering", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setDeregistering(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Online", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setOnline(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Pending", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setPending(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Rebooting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setRebooting(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Registered", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setRegistered(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Registering", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setRegistering(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Requested", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setRequested(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RunningSetup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setRunningSetup(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SetupFailed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setSetupFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ShuttingDown", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setShuttingDown(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StartFailed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setStartFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StopFailed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setStopFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Stopped", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setStopped(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Stopping", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setStopping(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Terminated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setTerminated(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Terminating", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setTerminating(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Unassigning", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancesCount.setUnassigning(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

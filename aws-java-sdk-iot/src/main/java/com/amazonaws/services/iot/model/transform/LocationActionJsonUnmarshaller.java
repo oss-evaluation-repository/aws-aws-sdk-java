@@ -43,34 +43,48 @@ public class LocationActionJsonUnmarshaller implements Unmarshaller<LocationActi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     locationAction.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trackerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     locationAction.setTrackerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     locationAction.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     locationAction.setTimestamp(LocationTimestampJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("latitude", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     locationAction.setLatitude(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("longitude", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     locationAction.setLongitude(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

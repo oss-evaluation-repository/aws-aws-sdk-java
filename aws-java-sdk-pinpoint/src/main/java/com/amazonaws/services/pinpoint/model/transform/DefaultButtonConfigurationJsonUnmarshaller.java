@@ -43,34 +43,48 @@ public class DefaultButtonConfigurationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackgroundColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultButtonConfiguration.setBackgroundColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BorderRadius", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultButtonConfiguration.setBorderRadius(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ButtonAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultButtonConfiguration.setButtonAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Link", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultButtonConfiguration.setLink(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Text", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultButtonConfiguration.setText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TextColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     defaultButtonConfiguration.setTextColor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,80 +43,105 @@ public class FileSystemDescriptionJsonUnmarshaller implements Unmarshaller<FileS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setCreationToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setFileSystemArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LifeCycleState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setLifeCycleState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfMountTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setNumberOfMountTargets(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setSizeInBytes(FileSystemSizeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PerformanceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setPerformanceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThroughputMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setThroughputMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughputInMibps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setProvisionedThroughputInMibps(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZoneName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setAvailabilityZoneName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setAvailabilityZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

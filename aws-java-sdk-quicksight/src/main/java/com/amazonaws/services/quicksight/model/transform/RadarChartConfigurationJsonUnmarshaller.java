@@ -43,70 +43,93 @@ public class RadarChartConfigurationJsonUnmarshaller implements Unmarshaller<Rad
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setFieldWells(RadarChartFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SortConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setSortConfiguration(RadarChartSortConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Shape", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setShape(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BaseSeriesSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setBaseSeriesSettings(RadarChartSeriesSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartAngle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setStartAngle(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("VisualPalette", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setVisualPalette(VisualPaletteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AlternateBandColorsVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setAlternateBandColorsVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlternateBandEvenColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setAlternateBandEvenColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlternateBandOddColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setAlternateBandOddColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CategoryAxis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setCategoryAxis(AxisDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CategoryLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setCategoryLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColorAxis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setColorAxis(AxisDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColorLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setColorLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Legend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setLegend(LegendOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AxesRangeScale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     radarChartConfiguration.setAxesRangeScale(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

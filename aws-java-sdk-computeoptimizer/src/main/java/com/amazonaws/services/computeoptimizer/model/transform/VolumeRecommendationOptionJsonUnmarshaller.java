@@ -43,26 +43,38 @@ public class VolumeRecommendationOptionJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendationOption.setConfiguration(VolumeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("performanceRisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendationOption.setPerformanceRisk(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("rank", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendationOption.setRank(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("savingsOpportunity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecommendationOption.setSavingsOpportunity(SavingsOpportunityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

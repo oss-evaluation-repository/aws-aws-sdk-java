@@ -43,26 +43,38 @@ public class OfferingStatusJsonUnmarshaller implements Unmarshaller<OfferingStat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offeringStatus.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offering", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offeringStatus.setOffering(OfferingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("quantity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offeringStatus.setQuantity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("effectiveOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     offeringStatus.setEffectiveOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

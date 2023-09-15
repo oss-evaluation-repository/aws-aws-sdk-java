@@ -43,50 +43,68 @@ public class DescribeLabelResultJsonUnmarshaller implements Unmarshaller<Describ
             return describeLabelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LabelGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLabelResult.setLabelGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLabelResult.setLabelGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLabelResult.setLabelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLabelResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLabelResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Rating", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLabelResult.setRating(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FaultCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLabelResult.setFaultCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Notes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLabelResult.setNotes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Equipment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLabelResult.setEquipment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLabelResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

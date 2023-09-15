@@ -43,46 +43,63 @@ public class RelationalDatabaseBundleJsonUnmarshaller implements Unmarshaller<Re
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bundleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBundle.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBundle.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("price", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBundle.setPrice(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("ramSizeInGb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBundle.setRamSizeInGb(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("diskSizeInGb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBundle.setDiskSizeInGb(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("transferPerMonthInGb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBundle.setTransferPerMonthInGb(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("cpuCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBundle.setCpuCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("isEncrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBundle.setIsEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isActive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBundle.setIsActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

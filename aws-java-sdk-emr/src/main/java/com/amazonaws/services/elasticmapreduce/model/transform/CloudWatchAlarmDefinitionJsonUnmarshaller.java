@@ -43,48 +43,65 @@ public class CloudWatchAlarmDefinitionJsonUnmarshaller implements Unmarshaller<C
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComparisonOperator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchAlarmDefinition.setComparisonOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationPeriods", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchAlarmDefinition.setEvaluationPeriods(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchAlarmDefinition.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchAlarmDefinition.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Period", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchAlarmDefinition.setPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Statistic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchAlarmDefinition.setStatistic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Threshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchAlarmDefinition.setThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchAlarmDefinition.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Dimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchAlarmDefinition.setDimensions(new ListUnmarshaller<MetricDimension>(MetricDimensionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

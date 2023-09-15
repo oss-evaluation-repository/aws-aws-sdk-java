@@ -43,55 +43,74 @@ public class RecommenderJsonUnmarshaller implements Unmarshaller<Recommender, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("recommenderArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setRecommenderArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setDatasetGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recipeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setRecipeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recommenderConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setRecommenderConfig(RecommenderConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latestRecommenderUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setLatestRecommenderUpdate(RecommenderUpdateSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("modelMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommender.setModelMetrics(new MapUnmarshaller<String, Double>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Double.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

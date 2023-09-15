@@ -43,24 +43,35 @@ public class ListLanguagesResultJsonUnmarshaller implements Unmarshaller<ListLan
             return listLanguagesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Languages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listLanguagesResult.setLanguages(new ListUnmarshaller<Language>(LanguageJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DisplayLanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listLanguagesResult.setDisplayLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listLanguagesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

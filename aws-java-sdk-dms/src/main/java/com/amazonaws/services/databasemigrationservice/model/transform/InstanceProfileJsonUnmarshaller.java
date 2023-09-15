@@ -43,52 +43,70 @@ public class InstanceProfileJsonUnmarshaller implements Unmarshaller<InstancePro
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setInstanceProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PubliclyAccessible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setPubliclyAccessible(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setNetworkType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setInstanceProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceProfileCreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setInstanceProfileCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("SubnetGroupIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setSubnetGroupIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcSecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceProfile.setVpcSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

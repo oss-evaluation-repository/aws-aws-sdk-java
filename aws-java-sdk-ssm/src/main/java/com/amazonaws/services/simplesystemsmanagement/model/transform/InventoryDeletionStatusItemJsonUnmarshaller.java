@@ -43,38 +43,53 @@ public class InventoryDeletionStatusItemJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeletionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryDeletionStatusItem.setDeletionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryDeletionStatusItem.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeletionStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryDeletionStatusItem.setDeletionStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryDeletionStatusItem.setLastStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryDeletionStatusItem.setLastStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeletionSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryDeletionStatusItem.setDeletionSummary(InventoryDeletionSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastStatusUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryDeletionStatusItem.setLastStatusUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

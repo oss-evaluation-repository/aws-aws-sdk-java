@@ -43,38 +43,53 @@ public class AddMediaStreamRequestJsonUnmarshaller implements Unmarshaller<AddMe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addMediaStreamRequest.setAttributes(MediaStreamAttributesRequestJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("clockRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addMediaStreamRequest.setClockRate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addMediaStreamRequest.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStreamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addMediaStreamRequest.setMediaStreamId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addMediaStreamRequest.setMediaStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStreamType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addMediaStreamRequest.setMediaStreamType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("videoFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addMediaStreamRequest.setVideoFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

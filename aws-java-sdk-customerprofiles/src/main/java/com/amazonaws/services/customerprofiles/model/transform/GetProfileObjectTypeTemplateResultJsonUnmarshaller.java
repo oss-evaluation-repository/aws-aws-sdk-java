@@ -43,42 +43,57 @@ public class GetProfileObjectTypeTemplateResultJsonUnmarshaller implements Unmar
             return getProfileObjectTypeTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TemplateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getProfileObjectTypeTemplateResult.setTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getProfileObjectTypeTemplateResult.setSourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getProfileObjectTypeTemplateResult.setSourceObject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowProfileCreation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getProfileObjectTypeTemplateResult.setAllowProfileCreation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceLastUpdatedTimestampFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getProfileObjectTypeTemplateResult.setSourceLastUpdatedTimestampFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Fields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getProfileObjectTypeTemplateResult.setFields(new MapUnmarshaller<String, ObjectTypeField>(context.getUnmarshaller(String.class),
                             ObjectTypeFieldJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Keys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getProfileObjectTypeTemplateResult.setKeys(new MapUnmarshaller<String, java.util.List<ObjectTypeKey>>(
                             context.getUnmarshaller(String.class), new ListUnmarshaller<ObjectTypeKey>(ObjectTypeKeyJsonUnmarshaller.getInstance())
 
                     ).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

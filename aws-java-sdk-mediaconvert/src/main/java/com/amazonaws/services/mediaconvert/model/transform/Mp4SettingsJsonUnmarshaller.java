@@ -43,34 +43,48 @@ public class Mp4SettingsJsonUnmarshaller implements Unmarshaller<Mp4Settings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mp4Settings.setAudioDuration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cslgAtom", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mp4Settings.setCslgAtom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cttsVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mp4Settings.setCttsVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("freeSpaceBox", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mp4Settings.setFreeSpaceBox(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("moovPlacement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mp4Settings.setMoovPlacement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mp4MajorBrand", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mp4Settings.setMp4MajorBrand(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

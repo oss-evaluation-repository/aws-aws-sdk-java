@@ -43,34 +43,48 @@ public class MotionImageInserterJsonUnmarshaller implements Unmarshaller<MotionI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("framerate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     motionImageInserter.setFramerate(MotionImageInsertionFramerateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     motionImageInserter.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("insertionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     motionImageInserter.setInsertionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     motionImageInserter.setOffset(MotionImageInsertionOffsetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("playback", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     motionImageInserter.setPlayback(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     motionImageInserter.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

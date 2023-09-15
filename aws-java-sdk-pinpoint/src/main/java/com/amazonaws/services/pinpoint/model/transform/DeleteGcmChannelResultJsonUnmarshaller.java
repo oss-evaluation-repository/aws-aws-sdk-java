@@ -43,9 +43,13 @@ public class DeleteGcmChannelResultJsonUnmarshaller implements Unmarshaller<Dele
             return deleteGcmChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteGcmChannelResult.setGCMChannelResponse(GCMChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

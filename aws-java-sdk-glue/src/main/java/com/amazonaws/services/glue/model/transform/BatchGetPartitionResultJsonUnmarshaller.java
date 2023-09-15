@@ -43,22 +43,32 @@ public class BatchGetPartitionResultJsonUnmarshaller implements Unmarshaller<Bat
             return batchGetPartitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Partitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetPartitionResult.setPartitions(new ListUnmarshaller<Partition>(PartitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetPartitionResult.setUnprocessedKeys(new ListUnmarshaller<PartitionValueList>(PartitionValueListJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

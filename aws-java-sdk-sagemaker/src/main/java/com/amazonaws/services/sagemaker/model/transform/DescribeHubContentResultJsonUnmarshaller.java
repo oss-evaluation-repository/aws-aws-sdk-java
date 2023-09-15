@@ -43,62 +43,79 @@ public class DescribeHubContentResultJsonUnmarshaller implements Unmarshaller<De
             return describeHubContentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HubContentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubContentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubContentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubContentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentSchemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setDocumentSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubContentDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubContentDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubContentMarkdown", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentMarkdown(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubContentDocument", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentDocument(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HubContentSearchKeywords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentSearchKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HubContentDependencies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentDependencies(new ListUnmarshaller<HubContentDependency>(HubContentDependencyJsonUnmarshaller
                             .getInstance())
@@ -106,16 +123,23 @@ public class DescribeHubContentResultJsonUnmarshaller implements Unmarshaller<De
                     .unmarshall(context));
                 }
                 if (context.testExpression("HubContentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setHubContentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHubContentResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

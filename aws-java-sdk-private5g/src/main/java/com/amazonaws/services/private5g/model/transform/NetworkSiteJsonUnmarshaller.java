@@ -43,54 +43,73 @@ public class NetworkSiteJsonUnmarshaller implements Unmarshaller<NetworkSite, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("availabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("availabilityZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setAvailabilityZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("currentPlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setCurrentPlan(SitePlanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setNetworkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkSiteArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setNetworkSiteArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkSiteName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setNetworkSiteName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingPlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setPendingPlan(SitePlanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkSite.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

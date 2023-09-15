@@ -43,26 +43,38 @@ public class FormCTAJsonUnmarshaller implements Unmarshaller<FormCTA, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("position", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formCTA.setPosition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clear", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formCTA.setClear(FormButtonJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cancel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formCTA.setCancel(FormButtonJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("submit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formCTA.setSubmit(FormButtonJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

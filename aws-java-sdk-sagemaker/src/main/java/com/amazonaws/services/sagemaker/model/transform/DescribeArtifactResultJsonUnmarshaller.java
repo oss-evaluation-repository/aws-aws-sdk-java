@@ -43,55 +43,74 @@ public class DescribeArtifactResultJsonUnmarshaller implements Unmarshaller<Desc
             return describeArtifactResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ArtifactName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setArtifactName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ArtifactArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setArtifactArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setSource(ArtifactSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ArtifactType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setArtifactType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setCreatedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setLastModifiedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MetadataProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LineageGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArtifactResult.setLineageGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

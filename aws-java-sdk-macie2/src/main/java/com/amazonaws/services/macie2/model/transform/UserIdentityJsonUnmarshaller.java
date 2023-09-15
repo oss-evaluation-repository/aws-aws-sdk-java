@@ -43,38 +43,53 @@ public class UserIdentityJsonUnmarshaller implements Unmarshaller<UserIdentity, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assumedRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentity.setAssumedRole(AssumedRoleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("awsAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentity.setAwsAccount(AwsAccountJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("awsService", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentity.setAwsService(AwsServiceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("federatedUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentity.setFederatedUser(FederatedUserJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("iamUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentity.setIamUser(IamUserJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("root", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentity.setRoot(UserIdentityRootJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userIdentity.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

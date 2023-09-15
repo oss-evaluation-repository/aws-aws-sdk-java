@@ -43,52 +43,70 @@ public class TriggerJsonUnmarshaller implements Unmarshaller<Trigger, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trigger.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkflowName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trigger.setWorkflowName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trigger.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trigger.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trigger.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trigger.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trigger.setSchedule(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trigger.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Predicate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trigger.setPredicate(PredicateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventBatchingCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trigger.setEventBatchingCondition(EventBatchingConditionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

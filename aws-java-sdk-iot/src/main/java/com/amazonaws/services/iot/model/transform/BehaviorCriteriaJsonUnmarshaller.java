@@ -43,38 +43,53 @@ public class BehaviorCriteriaJsonUnmarshaller implements Unmarshaller<BehaviorCr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("comparisonOperator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorCriteria.setComparisonOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorCriteria.setValue(MetricValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("durationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorCriteria.setDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("consecutiveDatapointsToAlarm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorCriteria.setConsecutiveDatapointsToAlarm(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("consecutiveDatapointsToClear", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorCriteria.setConsecutiveDatapointsToClear(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("statisticalThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorCriteria.setStatisticalThreshold(StatisticalThresholdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mlDetectionConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     behaviorCriteria.setMlDetectionConfig(MachineLearningDetectionConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

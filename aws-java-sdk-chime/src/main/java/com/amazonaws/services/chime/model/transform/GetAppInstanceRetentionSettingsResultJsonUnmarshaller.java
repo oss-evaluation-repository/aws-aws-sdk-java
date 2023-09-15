@@ -43,20 +43,30 @@ public class GetAppInstanceRetentionSettingsResultJsonUnmarshaller implements Un
             return getAppInstanceRetentionSettingsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppInstanceRetentionSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAppInstanceRetentionSettingsResult.setAppInstanceRetentionSettings(AppInstanceRetentionSettingsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("InitiateDeletionTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAppInstanceRetentionSettingsResult.setInitiateDeletionTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

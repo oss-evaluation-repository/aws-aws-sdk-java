@@ -43,29 +43,40 @@ public class BatchGetRecordResultJsonUnmarshaller implements Unmarshaller<BatchG
             return batchGetRecordResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Records", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetRecordResult.setRecords(new ListUnmarshaller<BatchGetRecordResultDetail>(BatchGetRecordResultDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetRecordResult.setErrors(new ListUnmarshaller<BatchGetRecordError>(BatchGetRecordErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedIdentifiers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetRecordResult.setUnprocessedIdentifiers(new ListUnmarshaller<BatchGetRecordIdentifier>(BatchGetRecordIdentifierJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

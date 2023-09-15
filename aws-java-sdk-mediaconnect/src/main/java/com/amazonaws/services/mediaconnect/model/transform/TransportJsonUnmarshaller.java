@@ -43,64 +43,85 @@ public class TransportJsonUnmarshaller implements Unmarshaller<Transport, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cidrAllowList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setCidrAllowList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("maxBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setMaxBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxLatency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setMaxLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxSyncBuffer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setMaxSyncBuffer(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minLatency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setMinLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remoteId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setRemoteId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("senderControlPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setSenderControlPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("senderIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setSenderIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("smoothingLatency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setSmoothingLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceListenerAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setSourceListenerAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceListenerPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setSourceListenerPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("streamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transport.setStreamId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

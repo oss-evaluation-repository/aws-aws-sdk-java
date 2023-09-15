@@ -43,34 +43,48 @@ public class AutoMLChannelJsonUnmarshaller implements Unmarshaller<AutoMLChannel
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLChannel.setDataSource(AutoMLDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLChannel.setCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetAttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLChannel.setTargetAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLChannel.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLChannel.setChannelType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SampleWeightAttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLChannel.setSampleWeightAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

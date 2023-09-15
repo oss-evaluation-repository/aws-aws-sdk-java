@@ -43,50 +43,68 @@ public class DescribeModelCardExportJobResultJsonUnmarshaller implements Unmarsh
             return describeModelCardExportJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelCardExportJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelCardExportJobResult.setModelCardExportJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelCardExportJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelCardExportJobResult.setModelCardExportJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelCardExportJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelCardName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelCardExportJobResult.setModelCardName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelCardVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelCardExportJobResult.setModelCardVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelCardExportJobResult.setOutputConfig(ModelCardExportOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelCardExportJobResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelCardExportJobResult.setLastModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelCardExportJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeModelCardExportJobResult.setExportArtifacts(ModelCardExportArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

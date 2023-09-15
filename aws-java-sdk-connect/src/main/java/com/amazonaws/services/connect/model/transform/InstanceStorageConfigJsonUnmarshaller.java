@@ -43,34 +43,48 @@ public class InstanceStorageConfigJsonUnmarshaller implements Unmarshaller<Insta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceStorageConfig.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceStorageConfig.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Config", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceStorageConfig.setS3Config(S3ConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisVideoStreamConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceStorageConfig.setKinesisVideoStreamConfig(KinesisVideoStreamConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisStreamConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceStorageConfig.setKinesisStreamConfig(KinesisStreamConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisFirehoseConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceStorageConfig.setKinesisFirehoseConfig(KinesisFirehoseConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

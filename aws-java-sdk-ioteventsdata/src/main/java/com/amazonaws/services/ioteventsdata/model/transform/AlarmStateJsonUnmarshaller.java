@@ -43,26 +43,38 @@ public class AlarmStateJsonUnmarshaller implements Unmarshaller<AlarmState, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("stateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmState.setStateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ruleEvaluation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmState.setRuleEvaluation(RuleEvaluationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("customerAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmState.setCustomerAction(CustomerActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("systemEvent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alarmState.setSystemEvent(SystemEventJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class AuditEventJsonUnmarshaller implements Unmarshaller<AuditEvent, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditEvent.setEventData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventDataChecksum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditEvent.setEventDataChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditEvent.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

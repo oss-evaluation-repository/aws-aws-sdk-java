@@ -43,40 +43,54 @@ public class AwsGuardDutyDetectorDataSourcesDetailsJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CloudTrail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGuardDutyDetectorDataSourcesDetails.setCloudTrail(AwsGuardDutyDetectorDataSourcesCloudTrailDetailsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("DnsLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGuardDutyDetectorDataSourcesDetails.setDnsLogs(AwsGuardDutyDetectorDataSourcesDnsLogsDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("FlowLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGuardDutyDetectorDataSourcesDetails.setFlowLogs(AwsGuardDutyDetectorDataSourcesFlowLogsDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("Kubernetes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGuardDutyDetectorDataSourcesDetails.setKubernetes(AwsGuardDutyDetectorDataSourcesKubernetesDetailsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("MalwareProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGuardDutyDetectorDataSourcesDetails.setMalwareProtection(AwsGuardDutyDetectorDataSourcesMalwareProtectionDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3Logs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsGuardDutyDetectorDataSourcesDetails.setS3Logs(AwsGuardDutyDetectorDataSourcesS3LogsDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,9 +43,13 @@ public class DeleteEndpointResultJsonUnmarshaller implements Unmarshaller<Delete
             return deleteEndpointResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteEndpointResult.setEndpointResponse(EndpointResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -43,24 +43,35 @@ public class DetectDocumentTextResultJsonUnmarshaller implements Unmarshaller<De
             return detectDocumentTextResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectDocumentTextResult.setDocumentMetadata(DocumentMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Blocks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectDocumentTextResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DetectDocumentTextModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectDocumentTextResult.setDetectDocumentTextModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

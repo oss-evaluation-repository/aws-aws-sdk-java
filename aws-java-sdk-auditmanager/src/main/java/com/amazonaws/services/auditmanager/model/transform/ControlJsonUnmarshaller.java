@@ -43,73 +43,96 @@ public class ControlJsonUnmarshaller implements Unmarshaller<Control, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testingInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setTestingInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionPlanTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setActionPlanTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionPlanInstructions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setActionPlanInstructions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("controlSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setControlSources(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("controlMappingSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setControlMappingSources(new ListUnmarshaller<ControlMappingSource>(ControlMappingSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setLastUpdatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     control.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

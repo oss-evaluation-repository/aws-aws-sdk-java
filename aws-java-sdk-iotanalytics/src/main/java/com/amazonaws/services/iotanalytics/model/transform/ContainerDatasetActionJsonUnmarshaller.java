@@ -43,28 +43,40 @@ public class ContainerDatasetActionJsonUnmarshaller implements Unmarshaller<Cont
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("image", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDatasetAction.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDatasetAction.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDatasetAction.setResourceConfiguration(ResourceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("variables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDatasetAction.setVariables(new ListUnmarshaller<Variable>(VariableJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

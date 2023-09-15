@@ -43,22 +43,33 @@ public class DeploymentStageJsonUnmarshaller implements Unmarshaller<DeploymentS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentStage.setStageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceSelectionConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentStage.setDeviceSelectionConfig(DeviceSelectionConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeploymentConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentStage.setDeploymentConfig(EdgeDeploymentConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

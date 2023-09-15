@@ -44,53 +44,68 @@ public class UpdateReplicationConfigurationTemplateResultJsonUnmarshaller implem
             return updateReplicationConfigurationTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associateDefaultSecurityGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setAssociateDefaultSecurityGroup(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("bandwidthThrottling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setBandwidthThrottling(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("createPublicIP", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setCreatePublicIP(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("dataPlaneRouting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setDataPlaneRouting(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultLargeStagingDiskType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setDefaultLargeStagingDiskType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ebsEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setEbsEncryption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ebsEncryptionKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setEbsEncryptionKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicationConfigurationTemplateID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setReplicationConfigurationTemplateID(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("replicationServerInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setReplicationServerInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicationServersSecurityGroupsIDs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setReplicationServersSecurityGroupsIDs(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -98,26 +113,35 @@ public class UpdateReplicationConfigurationTemplateResultJsonUnmarshaller implem
                     .unmarshall(context));
                 }
                 if (context.testExpression("stagingAreaSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setStagingAreaSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stagingAreaTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setStagingAreaTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class),
                             context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("useDedicatedReplicationServer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setUseDedicatedReplicationServer(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("useFipsEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReplicationConfigurationTemplateResult.setUseFipsEndpoint(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

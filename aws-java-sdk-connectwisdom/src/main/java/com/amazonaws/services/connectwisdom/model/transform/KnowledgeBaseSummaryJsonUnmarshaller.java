@@ -43,52 +43,70 @@ public class KnowledgeBaseSummaryJsonUnmarshaller implements Unmarshaller<Knowle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("knowledgeBaseArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseSummary.setKnowledgeBaseArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("knowledgeBaseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseSummary.setKnowledgeBaseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("knowledgeBaseType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseSummary.setKnowledgeBaseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("renderingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseSummary.setRenderingConfiguration(RenderingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serverSideEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseSummary.setServerSideEncryptionConfiguration(ServerSideEncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("sourceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseSummary.setSourceConfiguration(SourceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     knowledgeBaseSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

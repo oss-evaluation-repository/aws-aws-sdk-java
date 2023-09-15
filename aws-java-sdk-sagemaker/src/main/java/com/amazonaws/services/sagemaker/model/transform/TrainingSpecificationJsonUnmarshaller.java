@@ -43,20 +43,27 @@ public class TrainingSpecificationJsonUnmarshaller implements Unmarshaller<Train
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrainingImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingSpecification.setTrainingImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrainingImageDigest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingSpecification.setTrainingImageDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedHyperParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingSpecification.setSupportedHyperParameters(new ListUnmarshaller<HyperParameterSpecification>(
                             HyperParameterSpecificationJsonUnmarshaller.getInstance())
@@ -64,33 +71,42 @@ public class TrainingSpecificationJsonUnmarshaller implements Unmarshaller<Train
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportedTrainingInstanceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingSpecification.setSupportedTrainingInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportsDistributedTraining", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingSpecification.setSupportsDistributedTraining(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingSpecification.setMetricDefinitions(new ListUnmarshaller<MetricDefinition>(MetricDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TrainingChannels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingSpecification.setTrainingChannels(new ListUnmarshaller<ChannelSpecification>(ChannelSpecificationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportedTuningJobObjectiveMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingSpecification.setSupportedTuningJobObjectiveMetrics(new ListUnmarshaller<HyperParameterTuningJobObjective>(
                             HyperParameterTuningJobObjectiveJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

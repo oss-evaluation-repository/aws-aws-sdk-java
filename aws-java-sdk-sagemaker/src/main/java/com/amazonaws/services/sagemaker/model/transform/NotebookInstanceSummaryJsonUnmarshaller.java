@@ -43,52 +43,70 @@ public class NotebookInstanceSummaryJsonUnmarshaller implements Unmarshaller<Not
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NotebookInstanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookInstanceSummary.setNotebookInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotebookInstanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookInstanceSummary.setNotebookInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotebookInstanceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookInstanceSummary.setNotebookInstanceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookInstanceSummary.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookInstanceSummary.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookInstanceSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookInstanceSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotebookInstanceLifecycleConfigName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookInstanceSummary.setNotebookInstanceLifecycleConfigName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultCodeRepository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookInstanceSummary.setDefaultCodeRepository(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalCodeRepositories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notebookInstanceSummary.setAdditionalCodeRepositories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,12 +44,17 @@ public class BatchDisassociateResourcesFromCustomLineItemResultJsonUnmarshaller 
             return batchDisassociateResourcesFromCustomLineItemResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SuccessfullyDisassociatedResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDisassociateResourcesFromCustomLineItemResult
                             .setSuccessfullyDisassociatedResources(new ListUnmarshaller<DisassociateResourceResponseElement>(
@@ -58,12 +63,17 @@ public class BatchDisassociateResourcesFromCustomLineItemResultJsonUnmarshaller 
                             .unmarshall(context));
                 }
                 if (context.testExpression("FailedDisassociatedResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDisassociateResourcesFromCustomLineItemResult
                             .setFailedDisassociatedResources(new ListUnmarshaller<DisassociateResourceResponseElement>(
                                     DisassociateResourceResponseElementJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

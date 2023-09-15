@@ -44,18 +44,24 @@ public class AwsEc2LaunchTemplateDataInstanceRequirementsDetailsJsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AcceleratorCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails
                             .setAcceleratorCount(AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsJsonUnmarshaller.getInstance().unmarshall(
                                     context));
                 }
                 if (context.testExpression("AcceleratorManufacturers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setAcceleratorManufacturers(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -63,44 +69,52 @@ public class AwsEc2LaunchTemplateDataInstanceRequirementsDetailsJsonUnmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("AcceleratorNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setAcceleratorNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AcceleratorTotalMemoryMiB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails
                             .setAcceleratorTotalMemoryMiB(AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetailsJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AcceleratorTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setAcceleratorTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BareMetal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setBareMetal(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BaselineEbsBandwidthMbps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails
                             .setBaselineEbsBandwidthMbps(AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetailsJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BurstablePerformance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setBurstablePerformance(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CpuManufacturers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setCpuManufacturers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExcludedInstanceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setExcludedInstanceTypes(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -108,6 +122,7 @@ public class AwsEc2LaunchTemplateDataInstanceRequirementsDetailsJsonUnmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("InstanceGenerations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setInstanceGenerations(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -115,10 +130,12 @@ public class AwsEc2LaunchTemplateDataInstanceRequirementsDetailsJsonUnmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("LocalStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setLocalStorage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocalStorageTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails
                             .setLocalStorageTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -126,46 +143,58 @@ public class AwsEc2LaunchTemplateDataInstanceRequirementsDetailsJsonUnmarshaller
                             .unmarshall(context));
                 }
                 if (context.testExpression("MemoryGiBPerVCpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails
                             .setMemoryGiBPerVCpu(AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsJsonUnmarshaller.getInstance().unmarshall(
                                     context));
                 }
                 if (context.testExpression("MemoryMiB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails
                             .setMemoryMiB(AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails
                             .setNetworkInterfaceCount(AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("OnDemandMaxPricePercentageOverLowestPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setOnDemandMaxPricePercentageOverLowestPrice(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("RequireHibernateSupport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setRequireHibernateSupport(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SpotMaxPricePercentageOverLowestPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails.setSpotMaxPricePercentageOverLowestPrice(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("TotalLocalStorageGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails
                             .setTotalLocalStorageGB(AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGBDetailsJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("VCpuCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceRequirementsDetails
                             .setVCpuCount(AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

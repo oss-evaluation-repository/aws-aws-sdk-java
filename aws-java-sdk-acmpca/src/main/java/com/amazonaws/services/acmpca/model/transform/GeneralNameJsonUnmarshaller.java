@@ -43,42 +43,58 @@ public class GeneralNameJsonUnmarshaller implements Unmarshaller<GeneralName, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OtherName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalName.setOtherName(OtherNameJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Rfc822Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalName.setRfc822Name(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalName.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalName.setDirectoryName(ASN1SubjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EdiPartyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalName.setEdiPartyName(EdiPartyNameJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UniformResourceIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalName.setUniformResourceIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalName.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegisteredId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generalName.setRegisteredId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,43 +43,59 @@ public class TransformOperationJsonUnmarshaller implements Unmarshaller<Transfor
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProjectOperation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformOperation.setProjectOperation(ProjectOperationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FilterOperation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformOperation.setFilterOperation(FilterOperationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreateColumnsOperation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformOperation.setCreateColumnsOperation(CreateColumnsOperationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RenameColumnOperation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformOperation.setRenameColumnOperation(RenameColumnOperationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CastColumnTypeOperation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformOperation.setCastColumnTypeOperation(CastColumnTypeOperationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TagColumnOperation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformOperation.setTagColumnOperation(TagColumnOperationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UntagColumnOperation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformOperation.setUntagColumnOperation(UntagColumnOperationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OverrideDatasetParameterOperation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformOperation
                             .setOverrideDatasetParameterOperation(OverrideDatasetParameterOperationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

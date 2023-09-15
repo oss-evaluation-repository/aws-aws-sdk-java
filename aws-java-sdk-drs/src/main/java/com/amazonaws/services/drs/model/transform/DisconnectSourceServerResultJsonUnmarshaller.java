@@ -43,63 +43,84 @@ public class DisconnectSourceServerResultJsonUnmarshaller implements Unmarshalle
             return disconnectSourceServerResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataReplicationInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setDataReplicationInfo(DataReplicationInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastLaunchResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setLastLaunchResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lifeCycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setLifeCycle(LifeCycleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("recoveryInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setRecoveryInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicationDirection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setReplicationDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reversedDirectionSourceServerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setReversedDirectionSourceServerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceCloudProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setSourceCloudProperties(SourceCloudPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceNetworkID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setSourceNetworkID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setSourceProperties(SourcePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stagingArea", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setStagingArea(StagingAreaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disconnectSourceServerResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

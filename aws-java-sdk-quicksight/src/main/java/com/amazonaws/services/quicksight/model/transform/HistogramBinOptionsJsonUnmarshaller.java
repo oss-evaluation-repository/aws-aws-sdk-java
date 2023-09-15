@@ -43,26 +43,38 @@ public class HistogramBinOptionsJsonUnmarshaller implements Unmarshaller<Histogr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SelectedBinType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     histogramBinOptions.setSelectedBinType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BinCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     histogramBinOptions.setBinCount(BinCountOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BinWidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     histogramBinOptions.setBinWidth(BinWidthOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     histogramBinOptions.setStartValue(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

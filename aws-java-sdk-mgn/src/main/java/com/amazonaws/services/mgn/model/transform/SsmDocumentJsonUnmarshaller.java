@@ -43,25 +43,33 @@ public class SsmDocumentJsonUnmarshaller implements Unmarshaller<SsmDocument, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmDocument.setActionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("externalParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmDocument.setExternalParameters(new MapUnmarshaller<String, SsmExternalParameter>(context.getUnmarshaller(String.class),
                             SsmExternalParameterJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("mustSucceedForCutover", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmDocument.setMustSucceedForCutover(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmDocument.setParameters(new MapUnmarshaller<String, java.util.List<SsmParameterStoreParameter>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<SsmParameterStoreParameter>(SsmParameterStoreParameterJsonUnmarshaller.getInstance())
@@ -69,12 +77,18 @@ public class SsmDocumentJsonUnmarshaller implements Unmarshaller<SsmDocument, Js
                     ).unmarshall(context));
                 }
                 if (context.testExpression("ssmDocumentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmDocument.setSsmDocumentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ssmDocument.setTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

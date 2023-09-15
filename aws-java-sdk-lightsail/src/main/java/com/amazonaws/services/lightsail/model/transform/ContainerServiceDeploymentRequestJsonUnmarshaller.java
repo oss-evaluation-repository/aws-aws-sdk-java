@@ -43,19 +43,29 @@ public class ContainerServiceDeploymentRequestJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceDeploymentRequest.setContainers(new MapUnmarshaller<String, Container>(context.getUnmarshaller(String.class),
                             ContainerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("publicEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceDeploymentRequest.setPublicEndpoint(EndpointRequestJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

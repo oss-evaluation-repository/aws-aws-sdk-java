@@ -43,60 +43,80 @@ public class OidcIdentityProviderConfigJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("identityProviderConfigName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setIdentityProviderConfigName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identityProviderConfigArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setIdentityProviderConfigArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("issuerUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setIssuerUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usernameClaim", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setUsernameClaim(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usernamePrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setUsernamePrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("groupsClaim", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setGroupsClaim(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("groupsPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setGroupsPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requiredClaims", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setRequiredClaims(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfig.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

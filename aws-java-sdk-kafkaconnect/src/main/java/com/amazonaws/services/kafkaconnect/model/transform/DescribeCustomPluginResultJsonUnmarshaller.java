@@ -43,38 +43,53 @@ public class DescribeCustomPluginResultJsonUnmarshaller implements Unmarshaller<
             return describeCustomPluginResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCustomPluginResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("customPluginArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCustomPluginResult.setCustomPluginArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("customPluginState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCustomPluginResult.setCustomPluginState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCustomPluginResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latestRevision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCustomPluginResult.setLatestRevision(CustomPluginRevisionSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCustomPluginResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCustomPluginResult.setStateDescription(StateDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

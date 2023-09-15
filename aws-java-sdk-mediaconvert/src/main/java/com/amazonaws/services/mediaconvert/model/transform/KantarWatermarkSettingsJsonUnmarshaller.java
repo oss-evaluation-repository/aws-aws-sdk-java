@@ -43,62 +43,83 @@ public class KantarWatermarkSettingsJsonUnmarshaller implements Unmarshaller<Kan
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contentReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setContentReference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("credentialsSecretName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setCredentialsSecretName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fileOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setFileOffset(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("kantarLicenseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setKantarLicenseId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("kantarServerUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setKantarServerUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setLogDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setMetadata3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata4", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setMetadata4(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata5", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setMetadata5(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata6", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setMetadata6(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata7", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setMetadata7(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata8", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kantarWatermarkSettings.setMetadata8(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class HyperParameterSpecificationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterSpecification.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterSpecification.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterSpecification.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Range", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterSpecification.setRange(ParameterRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IsTunable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterSpecification.setIsTunable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IsRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterSpecification.setIsRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterSpecification.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

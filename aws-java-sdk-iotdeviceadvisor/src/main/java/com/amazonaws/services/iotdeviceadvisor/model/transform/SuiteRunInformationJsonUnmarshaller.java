@@ -43,50 +43,68 @@ public class SuiteRunInformationJsonUnmarshaller implements Unmarshaller<SuiteRu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("suiteDefinitionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteRunInformation.setSuiteDefinitionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteDefinitionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteRunInformation.setSuiteDefinitionVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteDefinitionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteRunInformation.setSuiteDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteRunInformation.setSuiteRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteRunInformation.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteRunInformation.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteRunInformation.setEndAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteRunInformation.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("passed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteRunInformation.setPassed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("failed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     suiteRunInformation.setFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

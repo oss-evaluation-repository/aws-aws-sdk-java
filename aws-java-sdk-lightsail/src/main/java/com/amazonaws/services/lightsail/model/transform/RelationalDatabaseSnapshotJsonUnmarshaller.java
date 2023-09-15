@@ -43,72 +43,95 @@ public class RelationalDatabaseSnapshotJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setSupportCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setLocation(ResourceLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sizeInGb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setSizeInGb(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fromRelationalDatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setFromRelationalDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fromRelationalDatabaseArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setFromRelationalDatabaseArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fromRelationalDatabaseBundleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setFromRelationalDatabaseBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fromRelationalDatabaseBlueprintId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseSnapshot.setFromRelationalDatabaseBlueprintId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

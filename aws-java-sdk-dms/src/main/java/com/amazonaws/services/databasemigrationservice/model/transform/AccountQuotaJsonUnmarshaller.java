@@ -43,22 +43,33 @@ public class AccountQuotaJsonUnmarshaller implements Unmarshaller<AccountQuota, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountQuotaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountQuota.setAccountQuotaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Used", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountQuota.setUsed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Max", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountQuota.setMax(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

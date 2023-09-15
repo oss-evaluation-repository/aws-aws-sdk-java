@@ -43,22 +43,33 @@ public class ChallengeResponseJsonUnmarshaller implements Unmarshaller<Challenge
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResponseCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     challengeResponse.setResponseCode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SolveTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     challengeResponse.setSolveTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     challengeResponse.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class VoiceMessageContentJsonUnmarshaller implements Unmarshaller<VoiceMe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CallInstructionsMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceMessageContent.setCallInstructionsMessage(CallInstructionsMessageTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PlainTextMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceMessageContent.setPlainTextMessage(PlainTextMessageTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SSMLMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceMessageContent.setSSMLMessage(SSMLMessageTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

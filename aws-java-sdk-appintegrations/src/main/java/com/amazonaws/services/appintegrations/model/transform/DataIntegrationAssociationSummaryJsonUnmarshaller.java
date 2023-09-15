@@ -43,22 +43,33 @@ public class DataIntegrationAssociationSummaryJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataIntegrationAssociationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataIntegrationAssociationSummary.setDataIntegrationAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataIntegrationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataIntegrationAssociationSummary.setDataIntegrationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataIntegrationAssociationSummary.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

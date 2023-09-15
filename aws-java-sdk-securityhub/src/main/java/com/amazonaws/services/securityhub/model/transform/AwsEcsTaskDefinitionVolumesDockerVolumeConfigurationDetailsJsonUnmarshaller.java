@@ -44,32 +44,45 @@ public class AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsJsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Autoprovision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails.setAutoprovision(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Driver", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails.setDriver(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DriverOpts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails.setDriverOpts(new MapUnmarshaller<String, String>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Labels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails.setLabels(new MapUnmarshaller<String, String>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Scope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails.setScope(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

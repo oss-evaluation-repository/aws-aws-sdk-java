@@ -43,50 +43,68 @@ public class IBMDb2SettingsJsonUnmarshaller implements Unmarshaller<IBMDb2Settin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iBMDb2Settings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iBMDb2Settings.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iBMDb2Settings.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iBMDb2Settings.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SetDataCaptureChanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iBMDb2Settings.setSetDataCaptureChanges(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentLsn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iBMDb2Settings.setCurrentLsn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxKBytesPerRead", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iBMDb2Settings.setMaxKBytesPerRead(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iBMDb2Settings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iBMDb2Settings.setSecretsManagerAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerSecretId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     iBMDb2Settings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

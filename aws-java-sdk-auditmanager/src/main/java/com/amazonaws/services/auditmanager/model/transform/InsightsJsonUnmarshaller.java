@@ -43,38 +43,53 @@ public class InsightsJsonUnmarshaller implements Unmarshaller<Insights, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeAssessmentsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insights.setActiveAssessmentsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("noncompliantEvidenceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insights.setNoncompliantEvidenceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("compliantEvidenceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insights.setCompliantEvidenceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("inconclusiveEvidenceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insights.setInconclusiveEvidenceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentControlsCountByNoncompliantEvidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insights.setAssessmentControlsCountByNoncompliantEvidence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalAssessmentControlsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insights.setTotalAssessmentControlsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insights.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

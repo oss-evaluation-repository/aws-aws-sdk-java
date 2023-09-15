@@ -43,38 +43,53 @@ public class SegmentJsonUnmarshaller implements Unmarshaller<Segment, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SegmentDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segment.setSegmentDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segment.setSegmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TsUseAudioRenditionGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segment.setTsUseAudioRenditionGroup(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeIframeOnlyStreams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segment.setIncludeIframeOnlyStreams(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TsIncludeDvbSubtitles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segment.setTsIncludeDvbSubtitles(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Scte", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segment.setScte(ScteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segment.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

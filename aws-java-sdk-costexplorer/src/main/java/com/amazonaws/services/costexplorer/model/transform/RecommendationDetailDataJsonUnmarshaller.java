@@ -43,129 +43,166 @@ public class RecommendationDetailDataJsonUnmarshaller implements Unmarshaller<Re
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setAccountScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LookbackPeriodInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setLookbackPeriodInDays(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SavingsPlansType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setSavingsPlansType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TermInYears", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setTermInYears(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaymentOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setPaymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceFamily", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setInstanceFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OfferingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setOfferingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenerationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setGenerationTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestUsageTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setLatestUsageTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentAverageHourlyOnDemandSpend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setCurrentAverageHourlyOnDemandSpend(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentMaximumHourlyOnDemandSpend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setCurrentMaximumHourlyOnDemandSpend(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentMinimumHourlyOnDemandSpend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setCurrentMinimumHourlyOnDemandSpend(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedAverageUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setEstimatedAverageUtilization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedMonthlySavingsAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setEstimatedMonthlySavingsAmount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedOnDemandCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setEstimatedOnDemandCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedOnDemandCostWithCurrentCommitment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setEstimatedOnDemandCostWithCurrentCommitment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedROI", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setEstimatedROI(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedSPCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setEstimatedSPCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedSavingsAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setEstimatedSavingsAmount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedSavingsPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setEstimatedSavingsPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExistingHourlyCommitment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setExistingHourlyCommitment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HourlyCommitmentToPurchase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setHourlyCommitmentToPurchase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpfrontCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setUpfrontCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentAverageCoverage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setCurrentAverageCoverage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedAverageCoverage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setEstimatedAverageCoverage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricsOverLookbackPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationDetailData.setMetricsOverLookbackPeriod(new ListUnmarshaller<RecommendationDetailHourlyMetrics>(
                             RecommendationDetailHourlyMetricsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

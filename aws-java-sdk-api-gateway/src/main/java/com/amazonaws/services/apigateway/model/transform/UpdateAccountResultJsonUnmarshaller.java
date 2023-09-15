@@ -43,28 +43,40 @@ public class UpdateAccountResultJsonUnmarshaller implements Unmarshaller<UpdateA
             return updateAccountResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cloudwatchRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAccountResult.setCloudwatchRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("throttleSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAccountResult.setThrottleSettings(ThrottleSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("features", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAccountResult.setFeatures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("apiKeyVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateAccountResult.setApiKeyVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

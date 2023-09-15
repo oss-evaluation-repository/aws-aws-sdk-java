@@ -43,22 +43,33 @@ public class DataSourceToIndexFieldMappingJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSourceFieldName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceToIndexFieldMapping.setDataSourceFieldName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DateFieldFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceToIndexFieldMapping.setDateFieldFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexFieldName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceToIndexFieldMapping.setIndexFieldName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class CreateRepositoryResultJsonUnmarshaller implements Unmarshaller<Crea
             return createRepositoryResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("repository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRepositoryResult.setRepository(RepositoryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("catalogData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRepositoryResult.setCatalogData(RepositoryCatalogDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

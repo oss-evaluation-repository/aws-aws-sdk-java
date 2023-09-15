@@ -43,48 +43,65 @@ public class EndpointSettingJsonUnmarshaller implements Unmarshaller<EndpointSet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointSetting.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointSetting.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnumValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointSetting.setEnumValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Sensitive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointSetting.setSensitive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Units", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointSetting.setUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Applicability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointSetting.setApplicability(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IntValueMin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointSetting.setIntValueMin(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IntValueMax", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointSetting.setIntValueMax(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointSetting.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

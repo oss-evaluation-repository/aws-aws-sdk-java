@@ -43,26 +43,38 @@ public class CurrentRevisionJsonUnmarshaller implements Unmarshaller<CurrentRevi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("revision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentRevision.setRevision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("changeIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentRevision.setChangeIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentRevision.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("revisionSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentRevision.setRevisionSummary(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

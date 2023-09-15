@@ -43,63 +43,84 @@ public class ContactDataJsonUnmarshaller implements Unmarshaller<ContactData, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("contactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setContactId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contactStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setContactStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("errorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("groundStation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setGroundStation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maximumElevation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setMaximumElevation(ElevationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("missionProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setMissionProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("postPassEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setPostPassEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("prePassStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setPrePassStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("satelliteArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setSatelliteArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactData.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

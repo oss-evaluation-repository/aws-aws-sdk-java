@@ -43,51 +43,69 @@ public class GetDomainResultJsonUnmarshaller implements Unmarshaller<GetDomainRe
             return getDomainResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDomainResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultExpirationDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDomainResult.setDefaultExpirationDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultEncryptionKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDomainResult.setDefaultEncryptionKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeadLetterQueueUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDomainResult.setDeadLetterQueueUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Stats", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDomainResult.setStats(DomainStatsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Matching", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDomainResult.setMatching(MatchingResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RuleBasedMatching", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDomainResult.setRuleBasedMatching(RuleBasedMatchingResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDomainResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDomainResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDomainResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

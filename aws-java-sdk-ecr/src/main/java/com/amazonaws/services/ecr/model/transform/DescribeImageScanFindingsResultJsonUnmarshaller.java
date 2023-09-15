@@ -43,34 +43,48 @@ public class DescribeImageScanFindingsResultJsonUnmarshaller implements Unmarsha
             return describeImageScanFindingsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("registryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageScanFindingsResult.setRegistryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageScanFindingsResult.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageScanFindingsResult.setImageId(ImageIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageScanStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageScanFindingsResult.setImageScanStatus(ImageScanStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageScanFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageScanFindingsResult.setImageScanFindings(ImageScanFindingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeImageScanFindingsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

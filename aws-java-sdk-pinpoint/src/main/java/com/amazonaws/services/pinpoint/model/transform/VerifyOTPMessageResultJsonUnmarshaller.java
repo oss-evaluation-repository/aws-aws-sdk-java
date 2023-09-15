@@ -43,9 +43,13 @@ public class VerifyOTPMessageResultJsonUnmarshaller implements Unmarshaller<Veri
             return verifyOTPMessageResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             verifyOTPMessageResult.setVerificationResponse(VerificationResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

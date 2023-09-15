@@ -43,66 +43,87 @@ public class InsightSummaryJsonUnmarshaller implements Unmarshaller<InsightSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InsightId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setInsightId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setGroupARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RootCauseServiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setRootCauseServiceId(ServiceIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Categories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Summary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setSummary(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientRequestImpactStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setClientRequestImpactStatistics(RequestImpactStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RootCauseServiceRequestImpactStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setRootCauseServiceRequestImpactStatistics(RequestImpactStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TopAnomalousServices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setTopAnomalousServices(new ListUnmarshaller<AnomalousService>(AnomalousServiceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insightSummary.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

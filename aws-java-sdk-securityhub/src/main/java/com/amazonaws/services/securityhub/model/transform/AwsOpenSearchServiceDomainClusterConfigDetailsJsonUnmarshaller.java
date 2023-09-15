@@ -44,52 +44,70 @@ public class AwsOpenSearchServiceDomainClusterConfigDetailsJsonUnmarshaller impl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainClusterConfigDetails.setInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainClusterConfigDetails.setWarmEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainClusterConfigDetails.setWarmCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainClusterConfigDetails.setDedicatedMasterEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ZoneAwarenessConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainClusterConfigDetails
                             .setZoneAwarenessConfig(AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetailsJsonUnmarshaller.getInstance().unmarshall(
                                     context));
                 }
                 if (context.testExpression("DedicatedMasterCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainClusterConfigDetails.setDedicatedMasterCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainClusterConfigDetails.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainClusterConfigDetails.setWarmType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ZoneAwarenessEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainClusterConfigDetails.setZoneAwarenessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsOpenSearchServiceDomainClusterConfigDetails.setDedicatedMasterType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

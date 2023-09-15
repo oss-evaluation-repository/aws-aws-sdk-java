@@ -44,16 +44,22 @@ public class AwsAutoScalingLaunchConfigurationDetailsJsonUnmarshaller implements
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssociatePublicIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setAssociatePublicIpAddress(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("BlockDeviceMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails
                             .setBlockDeviceMappings(new ListUnmarshaller<AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>(
@@ -62,10 +68,12 @@ public class AwsAutoScalingLaunchConfigurationDetailsJsonUnmarshaller implements
                             .unmarshall(context));
                 }
                 if (context.testExpression("ClassicLinkVpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setClassicLinkVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClassicLinkVpcSecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails
                             .setClassicLinkVpcSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -73,68 +81,87 @@ public class AwsAutoScalingLaunchConfigurationDetailsJsonUnmarshaller implements
                             .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsOptimized", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setEbsOptimized(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IamInstanceProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setIamInstanceProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceMonitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setInstanceMonitoring(AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KernelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setKernelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setKeyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LaunchConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setLaunchConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlacementTenancy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setPlacementTenancy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RamdiskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setRamdiskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SpotPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setSpotPrice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setUserData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetadataOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingLaunchConfigurationDetails.setMetadataOptions(AwsAutoScalingLaunchConfigurationMetadataOptionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

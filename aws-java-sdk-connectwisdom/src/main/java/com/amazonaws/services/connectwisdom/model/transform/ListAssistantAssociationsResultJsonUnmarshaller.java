@@ -43,12 +43,17 @@ public class ListAssistantAssociationsResultJsonUnmarshaller implements Unmarsha
             return listAssistantAssociationsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assistantAssociationSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAssistantAssociationsResult.setAssistantAssociationSummaries(new ListUnmarshaller<AssistantAssociationSummary>(
                             AssistantAssociationSummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListAssistantAssociationsResultJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAssistantAssociationsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

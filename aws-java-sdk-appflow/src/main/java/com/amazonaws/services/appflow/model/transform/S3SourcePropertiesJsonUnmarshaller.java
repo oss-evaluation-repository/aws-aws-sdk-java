@@ -43,22 +43,33 @@ public class S3SourcePropertiesJsonUnmarshaller implements Unmarshaller<S3Source
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3SourceProperties.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3SourceProperties.setBucketPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3InputFormatConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3SourceProperties.setS3InputFormatConfig(S3InputFormatConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

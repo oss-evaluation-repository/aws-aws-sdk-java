@@ -43,37 +43,51 @@ public class CreateVehicleRequestItemJsonUnmarshaller implements Unmarshaller<Cr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("vehicleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVehicleRequestItem.setVehicleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modelManifestArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVehicleRequestItem.setModelManifestArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("decoderManifestArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVehicleRequestItem.setDecoderManifestArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVehicleRequestItem.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("associationBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVehicleRequestItem.setAssociationBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createVehicleRequestItem.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

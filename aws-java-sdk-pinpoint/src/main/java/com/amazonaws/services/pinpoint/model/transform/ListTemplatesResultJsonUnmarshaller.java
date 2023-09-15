@@ -43,9 +43,13 @@ public class ListTemplatesResultJsonUnmarshaller implements Unmarshaller<ListTem
             return listTemplatesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             listTemplatesResult.setTemplatesResponse(TemplatesResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

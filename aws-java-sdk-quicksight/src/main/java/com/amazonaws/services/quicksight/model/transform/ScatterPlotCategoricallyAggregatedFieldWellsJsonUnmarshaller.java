@@ -44,40 +44,53 @@ public class ScatterPlotCategoricallyAggregatedFieldWellsJsonUnmarshaller implem
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("XAxis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotCategoricallyAggregatedFieldWells.setXAxis(new ListUnmarshaller<MeasureField>(MeasureFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("YAxis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotCategoricallyAggregatedFieldWells.setYAxis(new ListUnmarshaller<MeasureField>(MeasureFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotCategoricallyAggregatedFieldWells.setCategory(new ListUnmarshaller<DimensionField>(DimensionFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotCategoricallyAggregatedFieldWells.setSize(new ListUnmarshaller<MeasureField>(MeasureFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scatterPlotCategoricallyAggregatedFieldWells.setLabel(new ListUnmarshaller<DimensionField>(DimensionFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

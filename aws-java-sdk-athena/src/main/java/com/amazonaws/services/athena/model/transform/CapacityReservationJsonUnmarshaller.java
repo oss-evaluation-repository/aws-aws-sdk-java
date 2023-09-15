@@ -43,38 +43,53 @@ public class CapacityReservationJsonUnmarshaller implements Unmarshaller<Capacit
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityReservation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityReservation.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetDpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityReservation.setTargetDpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AllocatedDpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityReservation.setAllocatedDpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LastAllocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityReservation.setLastAllocation(CapacityAllocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulAllocationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityReservation.setLastSuccessfulAllocationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityReservation.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

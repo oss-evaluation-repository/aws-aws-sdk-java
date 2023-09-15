@@ -43,22 +43,33 @@ public class GetBasePathMappingResultJsonUnmarshaller implements Unmarshaller<Ge
             return getBasePathMappingResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("basePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBasePathMappingResult.setBasePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("restApiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBasePathMappingResult.setRestApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBasePathMappingResult.setStage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

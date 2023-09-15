@@ -43,42 +43,54 @@ public class ReplicaSettingsDescriptionJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsDescription.setRegionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsDescription.setReplicaStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaBillingModeSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsDescription.setReplicaBillingModeSummary(BillingModeSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReplicaProvisionedReadCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsDescription.setReplicaProvisionedReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaProvisionedReadCapacityAutoScalingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsDescription.setReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReplicaProvisionedWriteCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsDescription.setReplicaProvisionedWriteCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaProvisionedWriteCapacityAutoScalingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsDescription.setReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReplicaGlobalSecondaryIndexSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsDescription.setReplicaGlobalSecondaryIndexSettings(new ListUnmarshaller<ReplicaGlobalSecondaryIndexSettingsDescription>(
                             ReplicaGlobalSecondaryIndexSettingsDescriptionJsonUnmarshaller.getInstance())
@@ -86,8 +98,13 @@ public class ReplicaSettingsDescriptionJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReplicaTableClassSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsDescription.setReplicaTableClassSummary(TableClassSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

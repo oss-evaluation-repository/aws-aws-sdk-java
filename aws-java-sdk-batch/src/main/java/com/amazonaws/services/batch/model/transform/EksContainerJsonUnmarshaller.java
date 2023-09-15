@@ -43,54 +43,71 @@ public class EksContainerJsonUnmarshaller implements Unmarshaller<EksContainer, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainer.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("image", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainer.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imagePullPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainer.setImagePullPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainer.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("args", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainer.setArgs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("env", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainer.setEnv(new ListUnmarshaller<EksContainerEnvironmentVariable>(EksContainerEnvironmentVariableJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainer.setResources(EksContainerResourceRequirementsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("volumeMounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainer.setVolumeMounts(new ListUnmarshaller<EksContainerVolumeMount>(EksContainerVolumeMountJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("securityContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksContainer.setSecurityContext(EksContainerSecurityContextJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

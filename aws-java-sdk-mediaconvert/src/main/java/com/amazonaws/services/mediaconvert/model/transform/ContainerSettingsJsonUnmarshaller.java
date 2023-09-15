@@ -43,46 +43,63 @@ public class ContainerSettingsJsonUnmarshaller implements Unmarshaller<Container
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cmfcSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerSettings.setCmfcSettings(CmfcSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("container", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerSettings.setContainer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("f4vSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerSettings.setF4vSettings(F4vSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("m2tsSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerSettings.setM2tsSettings(M2tsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("m3u8Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerSettings.setM3u8Settings(M3u8SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("movSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerSettings.setMovSettings(MovSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mp4Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerSettings.setMp4Settings(Mp4SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mpdSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerSettings.setMpdSettings(MpdSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mxfSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerSettings.setMxfSettings(MxfSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

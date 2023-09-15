@@ -43,24 +43,35 @@ public class ComputerJsonUnmarshaller implements Unmarshaller<Computer, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComputerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computer.setComputerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computer.setComputerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputerAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computer.setComputerAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

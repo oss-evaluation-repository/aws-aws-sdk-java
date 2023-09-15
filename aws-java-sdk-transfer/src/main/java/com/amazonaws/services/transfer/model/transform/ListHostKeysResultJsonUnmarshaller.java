@@ -43,24 +43,35 @@ public class ListHostKeysResultJsonUnmarshaller implements Unmarshaller<ListHost
             return listHostKeysResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listHostKeysResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listHostKeysResult.setServerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HostKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listHostKeysResult.setHostKeys(new ListUnmarshaller<ListedHostKey>(ListedHostKeyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

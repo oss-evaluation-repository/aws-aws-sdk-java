@@ -43,42 +43,58 @@ public class CanSignalJsonUnmarshaller implements Unmarshaller<CanSignal, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("messageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canSignal.setMessageId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("isBigEndian", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canSignal.setIsBigEndian(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isSigned", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canSignal.setIsSigned(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("startBit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canSignal.setStartBit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("offset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canSignal.setOffset(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("factor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canSignal.setFactor(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("length", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canSignal.setLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canSignal.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

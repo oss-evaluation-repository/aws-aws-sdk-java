@@ -43,12 +43,17 @@ public class GetPendingJobExecutionsResultJsonUnmarshaller implements Unmarshall
             return getPendingJobExecutionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("inProgressJobs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPendingJobExecutionsResult
                             .setInProgressJobs(new ListUnmarshaller<JobExecutionSummary>(JobExecutionSummaryJsonUnmarshaller.getInstance())
@@ -56,10 +61,15 @@ public class GetPendingJobExecutionsResultJsonUnmarshaller implements Unmarshall
                             .unmarshall(context));
                 }
                 if (context.testExpression("queuedJobs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPendingJobExecutionsResult.setQueuedJobs(new ListUnmarshaller<JobExecutionSummary>(JobExecutionSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

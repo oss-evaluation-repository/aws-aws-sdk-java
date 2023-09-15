@@ -43,74 +43,97 @@ public class SubscriberResourceJsonUnmarshaller implements Unmarshaller<Subscrib
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setAccessTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("resourceShareArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setResourceShareArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceShareName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setResourceShareName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3BucketArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setS3BucketArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setSources(new ListUnmarshaller<LogSourceResource>(LogSourceResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("subscriberArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setSubscriberArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subscriberDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setSubscriberDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subscriberEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setSubscriberEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subscriberId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setSubscriberId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subscriberIdentity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setSubscriberIdentity(AwsIdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("subscriberName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setSubscriberName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subscriberStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setSubscriberStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscriberResource.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

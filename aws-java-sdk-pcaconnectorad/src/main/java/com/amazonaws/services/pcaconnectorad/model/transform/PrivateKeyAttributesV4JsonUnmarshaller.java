@@ -43,32 +43,45 @@ public class PrivateKeyAttributesV4JsonUnmarshaller implements Unmarshaller<Priv
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Algorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyAttributesV4.setAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CryptoProviders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyAttributesV4.setCryptoProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("KeySpec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyAttributesV4.setKeySpec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyUsageProperty", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyAttributesV4.setKeyUsageProperty(KeyUsagePropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MinimalKeyLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyAttributesV4.setMinimalKeyLength(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

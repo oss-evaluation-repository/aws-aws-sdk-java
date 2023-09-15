@@ -43,42 +43,58 @@ public class AdministrativeActionJsonUnmarshaller implements Unmarshaller<Admini
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AdministrativeActionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrativeAction.setAdministrativeActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProgressPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrativeAction.setProgressPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrativeAction.setRequestTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrativeAction.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetFileSystemValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrativeAction.setTargetFileSystemValues(FileSystemJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FailureDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrativeAction.setFailureDetails(AdministrativeActionFailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TargetVolumeValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrativeAction.setTargetVolumeValues(VolumeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TargetSnapshotValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrativeAction.setTargetSnapshotValues(SnapshotJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

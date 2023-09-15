@@ -44,50 +44,68 @@ public class StaticImageActivateScheduleActionSettingsJsonUnmarshaller implement
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticImageActivateScheduleActionSettings.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fadeIn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticImageActivateScheduleActionSettings.setFadeIn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fadeOut", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticImageActivateScheduleActionSettings.setFadeOut(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("height", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticImageActivateScheduleActionSettings.setHeight(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("image", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticImageActivateScheduleActionSettings.setImage(InputLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageX", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticImageActivateScheduleActionSettings.setImageX(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("imageY", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticImageActivateScheduleActionSettings.setImageY(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("layer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticImageActivateScheduleActionSettings.setLayer(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("opacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticImageActivateScheduleActionSettings.setOpacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("width", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticImageActivateScheduleActionSettings.setWidth(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

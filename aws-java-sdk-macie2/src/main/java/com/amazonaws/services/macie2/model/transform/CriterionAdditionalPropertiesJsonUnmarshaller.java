@@ -43,44 +43,59 @@ public class CriterionAdditionalPropertiesJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eq", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     criterionAdditionalProperties.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("eqExactMatch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     criterionAdditionalProperties.setEqExactMatch(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("gt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     criterionAdditionalProperties.setGt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("gte", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     criterionAdditionalProperties.setGte(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     criterionAdditionalProperties.setLt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lte", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     criterionAdditionalProperties.setLte(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("neq", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     criterionAdditionalProperties.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

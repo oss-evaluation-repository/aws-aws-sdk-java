@@ -43,12 +43,17 @@ public class ListJournalS3ExportsResultJsonUnmarshaller implements Unmarshaller<
             return listJournalS3ExportsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JournalS3Exports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listJournalS3ExportsResult.setJournalS3Exports(new ListUnmarshaller<JournalS3ExportDescription>(JournalS3ExportDescriptionJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListJournalS3ExportsResultJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listJournalS3ExportsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

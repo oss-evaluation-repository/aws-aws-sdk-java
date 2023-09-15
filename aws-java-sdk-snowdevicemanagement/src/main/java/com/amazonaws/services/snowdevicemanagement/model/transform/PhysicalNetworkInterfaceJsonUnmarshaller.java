@@ -43,38 +43,53 @@ public class PhysicalNetworkInterfaceJsonUnmarshaller implements Unmarshaller<Ph
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("defaultGateway", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalNetworkInterface.setDefaultGateway(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalNetworkInterface.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipAddressAssignment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalNetworkInterface.setIpAddressAssignment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("macAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalNetworkInterface.setMacAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("netmask", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalNetworkInterface.setNetmask(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("physicalConnectorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalNetworkInterface.setPhysicalConnectorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("physicalNetworkInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     physicalNetworkInterface.setPhysicalNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

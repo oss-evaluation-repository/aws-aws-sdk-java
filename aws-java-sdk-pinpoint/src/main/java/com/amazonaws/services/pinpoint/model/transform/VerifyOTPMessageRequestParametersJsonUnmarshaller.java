@@ -43,22 +43,33 @@ public class VerifyOTPMessageRequestParametersJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DestinationIdentity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verifyOTPMessageRequestParameters.setDestinationIdentity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Otp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verifyOTPMessageRequestParameters.setOtp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verifyOTPMessageRequestParameters.setReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,62 +43,83 @@ public class KeyJsonUnmarshaller implements Unmarshaller<Key, JsonUnmarshallerCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setCreateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeletePendingTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setDeletePendingTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeleteTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setDeleteTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Exportable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setExportable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setKeyAttributes(KeyAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KeyCheckValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setKeyCheckValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyCheckValueAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setKeyCheckValueAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyOrigin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setKeyOrigin(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setKeyState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UsageStartTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setUsageStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UsageStopTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     key.setUsageStopTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

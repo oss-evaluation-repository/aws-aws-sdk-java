@@ -43,72 +43,95 @@ public class CallAnalyticsJobJsonUnmarshaller implements Unmarshaller<CallAnalyt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CallAnalyticsJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setCallAnalyticsJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CallAnalyticsJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setCallAnalyticsJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaSampleRateHertz", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setMediaSampleRateHertz(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setMediaFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Media", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setMedia(MediaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Transcript", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setTranscript(TranscriptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentifiedLanguageScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setIdentifiedLanguageScore(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setSettings(CallAnalyticsJobSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChannelDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJob.setChannelDefinitions(new ListUnmarshaller<ChannelDefinition>(ChannelDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

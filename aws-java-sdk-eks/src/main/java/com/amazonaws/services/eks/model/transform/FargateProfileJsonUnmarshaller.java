@@ -43,51 +43,68 @@ public class FargateProfileJsonUnmarshaller implements Unmarshaller<FargateProfi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fargateProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fargateProfile.setFargateProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fargateProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fargateProfile.setFargateProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fargateProfile.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fargateProfile.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("podExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fargateProfile.setPodExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subnets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fargateProfile.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("selectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fargateProfile.setSelectors(new ListUnmarshaller<FargateProfileSelector>(FargateProfileSelectorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fargateProfile.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fargateProfile.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

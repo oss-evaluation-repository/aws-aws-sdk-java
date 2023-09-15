@@ -43,50 +43,68 @@ public class PresetWatermarkJsonUnmarshaller implements Unmarshaller<PresetWater
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetWatermark.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxWidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetWatermark.setMaxWidth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxHeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetWatermark.setMaxHeight(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizingPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetWatermark.setSizingPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HorizontalAlign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetWatermark.setHorizontalAlign(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HorizontalOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetWatermark.setHorizontalOffset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VerticalAlign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetWatermark.setVerticalAlign(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VerticalOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetWatermark.setVerticalOffset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Opacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetWatermark.setOpacity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     presetWatermark.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

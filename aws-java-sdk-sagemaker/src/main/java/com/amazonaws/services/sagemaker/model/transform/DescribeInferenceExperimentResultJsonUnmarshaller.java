@@ -43,60 +43,77 @@ public class DescribeInferenceExperimentResultJsonUnmarshaller implements Unmars
             return describeInferenceExperimentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setSchedule(InferenceExperimentScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setEndpointMetadata(EndpointMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelVariants", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setModelVariants(new ListUnmarshaller<ModelVariantConfigSummary>(
                             ModelVariantConfigSummaryJsonUnmarshaller.getInstance())
@@ -104,17 +121,24 @@ public class DescribeInferenceExperimentResultJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataStorageConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setDataStorageConfig(InferenceExperimentDataStorageConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ShadowModeConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setShadowModeConfig(ShadowModeConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KmsKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceExperimentResult.setKmsKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

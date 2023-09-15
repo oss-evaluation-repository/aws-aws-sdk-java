@@ -43,50 +43,68 @@ public class DescribeThingGroupResultJsonUnmarshaller implements Unmarshaller<De
             return describeThingGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("thingGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingGroupResult.setThingGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingGroupResult.setThingGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingGroupResult.setThingGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingGroupResult.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("thingGroupProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingGroupResult.setThingGroupProperties(ThingGroupPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("thingGroupMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingGroupResult.setThingGroupMetadata(ThingGroupMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("indexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingGroupResult.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingGroupResult.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queryVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingGroupResult.setQueryVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingGroupResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,48 +43,64 @@ public class EdgeJsonUnmarshaller implements Unmarshaller<Edge, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edge.setReferenceId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edge.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edge.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SummaryStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edge.setSummaryStatistics(EdgeStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResponseTimeHistogram", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edge.setResponseTimeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Aliases", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edge.setAliases(new ListUnmarshaller<Alias>(AliasJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EdgeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edge.setEdgeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReceivedEventAgeHistogram", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edge.setReceivedEventAgeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

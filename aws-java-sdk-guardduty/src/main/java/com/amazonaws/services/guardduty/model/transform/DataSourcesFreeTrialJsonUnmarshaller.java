@@ -43,34 +43,48 @@ public class DataSourcesFreeTrialJsonUnmarshaller implements Unmarshaller<DataSo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cloudTrail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourcesFreeTrial.setCloudTrail(DataSourceFreeTrialJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dnsLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourcesFreeTrial.setDnsLogs(DataSourceFreeTrialJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("flowLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourcesFreeTrial.setFlowLogs(DataSourceFreeTrialJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3Logs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourcesFreeTrial.setS3Logs(DataSourceFreeTrialJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kubernetes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourcesFreeTrial.setKubernetes(KubernetesDataSourceFreeTrialJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("malwareProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourcesFreeTrial.setMalwareProtection(MalwareProtectionDataSourceFreeTrialJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,59 @@ public class WebACLJsonUnmarshaller implements Unmarshaller<WebACL, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setDefaultAction(DefaultActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VisibilityConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setVisibilityConfig(VisibilityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Capacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setCapacity(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("PreProcessFirewallManagerRuleGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setPreProcessFirewallManagerRuleGroups(new ListUnmarshaller<FirewallManagerRuleGroup>(FirewallManagerRuleGroupJsonUnmarshaller
                             .getInstance())
@@ -90,6 +103,7 @@ public class WebACLJsonUnmarshaller implements Unmarshaller<WebACL, JsonUnmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("PostProcessFirewallManagerRuleGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setPostProcessFirewallManagerRuleGroups(new ListUnmarshaller<FirewallManagerRuleGroup>(FirewallManagerRuleGroupJsonUnmarshaller
                             .getInstance())
@@ -97,35 +111,46 @@ public class WebACLJsonUnmarshaller implements Unmarshaller<WebACL, JsonUnmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("ManagedByFirewallManager", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setManagedByFirewallManager(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setLabelNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomResponseBodies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setCustomResponseBodies(new MapUnmarshaller<String, CustomResponseBody>(context.getUnmarshaller(String.class),
                             CustomResponseBodyJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("CaptchaConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setCaptchaConfig(CaptchaConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChallengeConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setChallengeConfig(ChallengeConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TokenDomains", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setTokenDomains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AssociationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webACL.setAssociationConfig(AssociationConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

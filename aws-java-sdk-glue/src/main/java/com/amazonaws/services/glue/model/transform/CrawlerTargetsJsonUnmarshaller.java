@@ -43,58 +43,74 @@ public class CrawlerTargetsJsonUnmarshaller implements Unmarshaller<CrawlerTarge
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerTargets.setS3Targets(new ListUnmarshaller<S3Target>(S3TargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("JdbcTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerTargets.setJdbcTargets(new ListUnmarshaller<JdbcTarget>(JdbcTargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MongoDBTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerTargets.setMongoDBTargets(new ListUnmarshaller<MongoDBTarget>(MongoDBTargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DynamoDBTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerTargets.setDynamoDBTargets(new ListUnmarshaller<DynamoDBTarget>(DynamoDBTargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CatalogTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerTargets.setCatalogTargets(new ListUnmarshaller<CatalogTarget>(CatalogTargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DeltaTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerTargets.setDeltaTargets(new ListUnmarshaller<DeltaTarget>(DeltaTargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IcebergTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerTargets.setIcebergTargets(new ListUnmarshaller<IcebergTarget>(IcebergTargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HudiTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerTargets.setHudiTargets(new ListUnmarshaller<HudiTarget>(HudiTargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

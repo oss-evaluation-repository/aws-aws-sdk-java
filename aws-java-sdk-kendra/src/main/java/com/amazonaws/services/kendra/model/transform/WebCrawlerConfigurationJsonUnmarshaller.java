@@ -43,50 +43,67 @@ public class WebCrawlerConfigurationJsonUnmarshaller implements Unmarshaller<Web
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Urls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webCrawlerConfiguration.setUrls(UrlsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CrawlDepth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webCrawlerConfiguration.setCrawlDepth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxLinksPerPage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webCrawlerConfiguration.setMaxLinksPerPage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxContentSizePerPageInMegaBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webCrawlerConfiguration.setMaxContentSizePerPageInMegaBytes(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxUrlsPerMinuteCrawlRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webCrawlerConfiguration.setMaxUrlsPerMinuteCrawlRate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UrlInclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webCrawlerConfiguration.setUrlInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UrlExclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webCrawlerConfiguration.setUrlExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ProxyConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webCrawlerConfiguration.setProxyConfiguration(ProxyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webCrawlerConfiguration.setAuthenticationConfiguration(AuthenticationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,55 +43,74 @@ public class SourceNetworkJsonUnmarshaller implements Unmarshaller<SourceNetwork
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cfnStackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setCfnStackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastRecovery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setLastRecovery(RecoveryLifeCycleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("launchedVpcID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setLaunchedVpcID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setReplicationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicationStatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setReplicationStatusDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceAccountID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setSourceAccountID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceNetworkID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setSourceNetworkID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setSourceRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceVpcID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setSourceVpcID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceNetwork.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

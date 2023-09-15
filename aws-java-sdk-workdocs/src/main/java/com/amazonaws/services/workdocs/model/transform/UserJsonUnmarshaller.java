@@ -43,70 +43,93 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GivenName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setGivenName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Surname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setSurname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setOrganizationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RootFolderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setRootFolderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecycleBinFolderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setRecycleBinFolderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TimeZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setTimeZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Locale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setLocale(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Storage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setStorage(UserStorageMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

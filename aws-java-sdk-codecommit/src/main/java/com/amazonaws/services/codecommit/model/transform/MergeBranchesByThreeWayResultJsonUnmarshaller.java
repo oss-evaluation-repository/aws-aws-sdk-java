@@ -43,18 +43,28 @@ public class MergeBranchesByThreeWayResultJsonUnmarshaller implements Unmarshall
             return mergeBranchesByThreeWayResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("commitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mergeBranchesByThreeWayResult.setCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("treeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mergeBranchesByThreeWayResult.setTreeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

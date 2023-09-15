@@ -44,20 +44,30 @@ public class AwsS3BucketWebsiteConfigurationRoutingRuleJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Condition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketWebsiteConfigurationRoutingRule.setCondition(AwsS3BucketWebsiteConfigurationRoutingRuleConditionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("Redirect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketWebsiteConfigurationRoutingRule.setRedirect(AwsS3BucketWebsiteConfigurationRoutingRuleRedirectJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

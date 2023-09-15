@@ -43,51 +43,69 @@ public class AuthorizerDescriptionJsonUnmarshaller implements Unmarshaller<Autho
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authorizerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerDescription.setAuthorizerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerDescription.setAuthorizerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerFunctionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerDescription.setAuthorizerFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tokenKeyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerDescription.setTokenKeyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tokenSigningPublicKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerDescription.setTokenSigningPublicKeys(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerDescription.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerDescription.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("signingDisabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerDescription.setSigningDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("enableCachingForHttp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authorizerDescription.setEnableCachingForHttp(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

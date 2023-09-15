@@ -43,38 +43,53 @@ public class Eac3AtmosSettingsJsonUnmarshaller implements Unmarshaller<Eac3Atmos
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setBitrate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("codingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setCodingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dialnorm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setDialnorm(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("drcLine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setDrcLine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("drcRf", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setDrcRf(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("heightTrim", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setHeightTrim(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("surroundTrim", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setSurroundTrim(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

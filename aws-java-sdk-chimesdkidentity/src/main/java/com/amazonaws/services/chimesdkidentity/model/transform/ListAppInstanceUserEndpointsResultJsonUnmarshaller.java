@@ -43,12 +43,17 @@ public class ListAppInstanceUserEndpointsResultJsonUnmarshaller implements Unmar
             return listAppInstanceUserEndpointsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppInstanceUserEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAppInstanceUserEndpointsResult.setAppInstanceUserEndpoints(new ListUnmarshaller<AppInstanceUserEndpointSummary>(
                             AppInstanceUserEndpointSummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListAppInstanceUserEndpointsResultJsonUnmarshaller implements Unmar
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAppInstanceUserEndpointsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

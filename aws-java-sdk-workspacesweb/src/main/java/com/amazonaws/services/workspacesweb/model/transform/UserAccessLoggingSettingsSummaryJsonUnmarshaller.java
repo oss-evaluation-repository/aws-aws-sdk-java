@@ -43,18 +43,28 @@ public class UserAccessLoggingSettingsSummaryJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("kinesisStreamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userAccessLoggingSettingsSummary.setKinesisStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userAccessLoggingSettingsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userAccessLoggingSettingsSummary.setUserAccessLoggingSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

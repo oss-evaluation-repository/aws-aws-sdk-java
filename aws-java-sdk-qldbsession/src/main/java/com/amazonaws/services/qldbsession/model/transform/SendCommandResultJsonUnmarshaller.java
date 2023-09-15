@@ -43,38 +43,53 @@ public class SendCommandResultJsonUnmarshaller implements Unmarshaller<SendComma
             return sendCommandResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartSession", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendCommandResult.setStartSession(StartSessionResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartTransaction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendCommandResult.setStartTransaction(StartTransactionResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EndSession", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendCommandResult.setEndSession(EndSessionResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CommitTransaction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendCommandResult.setCommitTransaction(CommitTransactionResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AbortTransaction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendCommandResult.setAbortTransaction(AbortTransactionResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExecuteStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendCommandResult.setExecuteStatement(ExecuteStatementResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FetchPage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sendCommandResult.setFetchPage(FetchPageResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

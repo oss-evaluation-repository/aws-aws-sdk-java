@@ -43,34 +43,47 @@ public class LineChartSortConfigurationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CategorySort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineChartSortConfiguration.setCategorySort(new ListUnmarshaller<FieldSortOptions>(FieldSortOptionsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CategoryItemsLimitConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineChartSortConfiguration.setCategoryItemsLimitConfiguration(ItemsLimitConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColorItemsLimitConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineChartSortConfiguration.setColorItemsLimitConfiguration(ItemsLimitConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SmallMultiplesSort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineChartSortConfiguration.setSmallMultiplesSort(new ListUnmarshaller<FieldSortOptions>(FieldSortOptionsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SmallMultiplesLimitConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineChartSortConfiguration.setSmallMultiplesLimitConfiguration(ItemsLimitConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

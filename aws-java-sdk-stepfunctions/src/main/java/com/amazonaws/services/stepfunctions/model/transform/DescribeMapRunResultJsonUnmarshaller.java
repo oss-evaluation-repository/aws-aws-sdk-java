@@ -43,50 +43,68 @@ public class DescribeMapRunResultJsonUnmarshaller implements Unmarshaller<Descri
             return describeMapRunResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("mapRunArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapRunResult.setMapRunArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapRunResult.setExecutionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapRunResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapRunResult.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapRunResult.setStopDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("maxConcurrency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapRunResult.setMaxConcurrency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("toleratedFailurePercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapRunResult.setToleratedFailurePercentage(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("toleratedFailureCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapRunResult.setToleratedFailureCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("itemCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapRunResult.setItemCounts(MapRunItemCountsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("executionCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMapRunResult.setExecutionCounts(MapRunExecutionCountsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

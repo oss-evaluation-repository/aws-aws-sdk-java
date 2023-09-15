@@ -43,34 +43,48 @@ public class AwsEfsAccessPointDetailsJsonUnmarshaller implements Unmarshaller<Aw
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessPointId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEfsAccessPointDetails.setAccessPointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEfsAccessPointDetails.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEfsAccessPointDetails.setClientToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEfsAccessPointDetails.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PosixUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEfsAccessPointDetails.setPosixUser(AwsEfsAccessPointPosixUserDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RootDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEfsAccessPointDetails.setRootDirectory(AwsEfsAccessPointRootDirectoryDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

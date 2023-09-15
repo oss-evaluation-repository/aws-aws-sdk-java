@@ -43,40 +43,55 @@ public class EvaluationFormContentJsonUnmarshaller implements Unmarshaller<Evalu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EvaluationFormVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormContent.setEvaluationFormVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationFormId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormContent.setEvaluationFormId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationFormArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormContent.setEvaluationFormArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormContent.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormContent.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Items", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormContent.setItems(new ListUnmarshaller<EvaluationFormItem>(EvaluationFormItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ScoringStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormContent.setScoringStrategy(EvaluationFormScoringStrategyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

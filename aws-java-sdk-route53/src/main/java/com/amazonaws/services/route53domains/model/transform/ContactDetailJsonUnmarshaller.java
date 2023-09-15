@@ -43,68 +43,90 @@ public class ContactDetailJsonUnmarshaller implements Unmarshaller<ContactDetail
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FirstName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setFirstName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setLastName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setContactType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setOrganizationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AddressLine1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setAddressLine1(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AddressLine2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setAddressLine2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("City", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setCity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CountryCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setCountryCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ZipCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setZipCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Email", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Fax", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setFax(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExtraParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactDetail.setExtraParams(new ListUnmarshaller<ExtraParam>(ExtraParamJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

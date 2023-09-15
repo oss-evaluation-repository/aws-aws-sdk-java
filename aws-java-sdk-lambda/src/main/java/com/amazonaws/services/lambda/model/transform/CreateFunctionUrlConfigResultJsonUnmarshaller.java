@@ -43,34 +43,48 @@ public class CreateFunctionUrlConfigResultJsonUnmarshaller implements Unmarshall
             return createFunctionUrlConfigResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FunctionUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFunctionUrlConfigResult.setFunctionUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FunctionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFunctionUrlConfigResult.setFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFunctionUrlConfigResult.setAuthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Cors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFunctionUrlConfigResult.setCors(CorsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFunctionUrlConfigResult.setCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InvokeMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFunctionUrlConfigResult.setInvokeMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

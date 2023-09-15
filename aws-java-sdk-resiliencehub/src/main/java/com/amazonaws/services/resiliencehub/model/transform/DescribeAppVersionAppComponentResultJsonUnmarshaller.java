@@ -43,22 +43,33 @@ public class DescribeAppVersionAppComponentResultJsonUnmarshaller implements Unm
             return describeAppVersionAppComponentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppVersionAppComponentResult.setAppArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appComponent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppVersionAppComponentResult.setAppComponent(AppComponentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("appVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAppVersionAppComponentResult.setAppVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

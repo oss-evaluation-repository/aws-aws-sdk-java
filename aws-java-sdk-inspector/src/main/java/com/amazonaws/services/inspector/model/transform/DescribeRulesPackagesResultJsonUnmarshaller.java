@@ -43,21 +43,31 @@ public class DescribeRulesPackagesResultJsonUnmarshaller implements Unmarshaller
             return describeRulesPackagesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("rulesPackages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRulesPackagesResult.setRulesPackages(new ListUnmarshaller<RulesPackage>(RulesPackageJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("failedItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRulesPackagesResult.setFailedItems(new MapUnmarshaller<String, FailedItemDetails>(context.getUnmarshaller(String.class),
                             FailedItemDetailsJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class AdministratorJsonUnmarshaller implements Unmarshaller<Administrator
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrator.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GraphArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrator.setGraphArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DelegationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     administrator.setDelegationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

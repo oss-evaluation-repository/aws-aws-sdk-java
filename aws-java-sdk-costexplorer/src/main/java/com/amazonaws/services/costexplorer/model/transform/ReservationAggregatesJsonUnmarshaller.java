@@ -43,78 +43,103 @@ public class ReservationAggregatesJsonUnmarshaller implements Unmarshaller<Reser
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UtilizationPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setUtilizationPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UtilizationPercentageInUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setUtilizationPercentageInUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PurchasedHours", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setPurchasedHours(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PurchasedUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setPurchasedUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalActualHours", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setTotalActualHours(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalActualUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setTotalActualUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UnusedHours", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setUnusedHours(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UnusedUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setUnusedUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OnDemandCostOfRIHoursUsed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setOnDemandCostOfRIHoursUsed(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetRISavings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setNetRISavings(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalPotentialRISavings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setTotalPotentialRISavings(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AmortizedUpfrontFee", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setAmortizedUpfrontFee(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AmortizedRecurringFee", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setAmortizedRecurringFee(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalAmortizedFee", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setTotalAmortizedFee(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RICostForUnusedHours", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setRICostForUnusedHours(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RealizedSavings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setRealizedSavings(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UnrealizedSavings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationAggregates.setUnrealizedSavings(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

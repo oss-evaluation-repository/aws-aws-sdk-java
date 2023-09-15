@@ -43,36 +43,50 @@ public class SelfManagedActiveDirectoryConfigurationJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfiguration.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationalUnitDistinguishedName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfiguration.setOrganizationalUnitDistinguishedName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemAdministratorsGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfiguration.setFileSystemAdministratorsGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfiguration.setUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfiguration.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsIps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfiguration.setDnsIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

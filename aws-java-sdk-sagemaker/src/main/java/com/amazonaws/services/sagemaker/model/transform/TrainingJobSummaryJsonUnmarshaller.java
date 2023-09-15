@@ -43,38 +43,53 @@ public class TrainingJobSummaryJsonUnmarshaller implements Unmarshaller<Training
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrainingJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingJobSummary.setTrainingJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingJobSummary.setTrainingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingJobSummary.setTrainingEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingJobSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingJobSummary.setTrainingJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmPoolStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingJobSummary.setWarmPoolStatus(WarmPoolStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

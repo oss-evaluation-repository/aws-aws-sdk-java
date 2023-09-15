@@ -43,12 +43,17 @@ public class HyperParameterRangesJsonUnmarshaller implements Unmarshaller<HyperP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("integerHyperParameterRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterRanges.setIntegerHyperParameterRanges(new ListUnmarshaller<IntegerHyperParameterRange>(
                             IntegerHyperParameterRangeJsonUnmarshaller.getInstance())
@@ -56,6 +61,7 @@ public class HyperParameterRangesJsonUnmarshaller implements Unmarshaller<HyperP
                     .unmarshall(context));
                 }
                 if (context.testExpression("continuousHyperParameterRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterRanges.setContinuousHyperParameterRanges(new ListUnmarshaller<ContinuousHyperParameterRange>(
                             ContinuousHyperParameterRangeJsonUnmarshaller.getInstance())
@@ -63,11 +69,16 @@ public class HyperParameterRangesJsonUnmarshaller implements Unmarshaller<HyperP
                     .unmarshall(context));
                 }
                 if (context.testExpression("categoricalHyperParameterRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterRanges.setCategoricalHyperParameterRanges(new ListUnmarshaller<CategoricalHyperParameterRange>(
                             CategoricalHyperParameterRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,43 @@ public class IdentityProviderDetailsJsonUnmarshaller implements Unmarshaller<Ide
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityProviderDetails.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InvocationRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityProviderDetails.setInvocationRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityProviderDetails.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Function", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityProviderDetails.setFunction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SftpAuthenticationMethods", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityProviderDetails.setSftpAuthenticationMethods(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

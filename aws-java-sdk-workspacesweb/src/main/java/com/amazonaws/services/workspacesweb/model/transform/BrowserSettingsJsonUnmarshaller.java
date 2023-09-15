@@ -43,24 +43,35 @@ public class BrowserSettingsJsonUnmarshaller implements Unmarshaller<BrowserSett
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("associatedPortalArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     browserSettings.setAssociatedPortalArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("browserPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     browserSettings.setBrowserPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("browserSettingsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     browserSettings.setBrowserSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

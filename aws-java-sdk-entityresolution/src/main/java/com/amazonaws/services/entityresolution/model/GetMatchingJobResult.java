@@ -56,8 +56,7 @@ public class GetMatchingJobResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.Date startTime;
     /**
      * <p>
-     * The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or
-     * <code>failed</code>.
+     * The current status of the job.
      * </p>
      */
     private String status;
@@ -270,13 +269,11 @@ public class GetMatchingJobResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or
-     * <code>failed</code>.
+     * The current status of the job.
      * </p>
      * 
      * @param status
-     *        The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>,
-     *        or <code>failed</code>.
+     *        The current status of the job.
      * @see JobStatus
      */
 
@@ -286,12 +283,10 @@ public class GetMatchingJobResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or
-     * <code>failed</code>.
+     * The current status of the job.
      * </p>
      * 
-     * @return The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>,
-     *         or <code>failed</code>.
+     * @return The current status of the job.
      * @see JobStatus
      */
 
@@ -301,13 +296,11 @@ public class GetMatchingJobResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or
-     * <code>failed</code>.
+     * The current status of the job.
      * </p>
      * 
      * @param status
-     *        The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>,
-     *        or <code>failed</code>.
+     *        The current status of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -319,13 +312,11 @@ public class GetMatchingJobResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or
-     * <code>failed</code>.
+     * The current status of the job.
      * </p>
      * 
      * @param status
-     *        The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>,
-     *        or <code>failed</code>.
+     *        The current status of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */

@@ -43,50 +43,64 @@ public class ImageRecipeJsonUnmarshaller implements Unmarshaller<ImageRecipe, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("components", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setComponents(new ListUnmarshaller<ComponentConfiguration>(ComponentConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("parentImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setParentImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("blockDeviceMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setBlockDeviceMappings(new ListUnmarshaller<InstanceBlockDeviceMapping>(InstanceBlockDeviceMappingJsonUnmarshaller
                             .getInstance())
@@ -94,21 +108,29 @@ public class ImageRecipeJsonUnmarshaller implements Unmarshaller<ImageRecipe, Js
                     .unmarshall(context));
                 }
                 if (context.testExpression("dateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setDateCreated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("workingDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setWorkingDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("additionalInstanceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageRecipe.setAdditionalInstanceConfiguration(AdditionalInstanceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,84 +43,110 @@ public class AppAssessmentJsonUnmarshaller implements Unmarshaller<AppAssessment
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("appArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setAppArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setAppVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setAssessmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setAssessmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setAssessmentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("compliance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setCompliance(new MapUnmarshaller<String, DisruptionCompliance>(context.getUnmarshaller(String.class),
                             DisruptionComplianceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("complianceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setComplianceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setCost(CostJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("driftStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setDriftStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("invoker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setInvoker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setPolicy(ResiliencyPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resiliencyScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setResiliencyScore(ResiliencyScoreJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceErrorsDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setResourceErrorsDetails(ResourceErrorsDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("versionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appAssessment.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

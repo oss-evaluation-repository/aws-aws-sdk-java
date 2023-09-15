@@ -43,28 +43,40 @@ public class GetTagsResultJsonUnmarshaller implements Unmarshaller<GetTagsResult
             return getTagsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextPageToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTagsResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTagsResult.setTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReturnSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTagsResult.setReturnSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTagsResult.setTotalSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

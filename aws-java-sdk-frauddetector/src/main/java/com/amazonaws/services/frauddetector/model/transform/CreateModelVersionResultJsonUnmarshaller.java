@@ -43,26 +43,38 @@ public class CreateModelVersionResultJsonUnmarshaller implements Unmarshaller<Cr
             return createModelVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("modelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createModelVersionResult.setModelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createModelVersionResult.setModelType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modelVersionNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createModelVersionResult.setModelVersionNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createModelVersionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

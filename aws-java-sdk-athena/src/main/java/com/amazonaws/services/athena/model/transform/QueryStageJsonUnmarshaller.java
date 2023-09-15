@@ -43,48 +43,65 @@ public class QueryStageJsonUnmarshaller implements Unmarshaller<QueryStage, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStage.setStageId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStage.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStage.setOutputBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputRows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStage.setOutputRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("InputBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStage.setInputBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("InputRows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStage.setInputRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStage.setExecutionTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryStagePlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStage.setQueryStagePlan(QueryStagePlanNodeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SubStages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStage.setSubStages(new ListUnmarshaller<QueryStage>(QueryStageJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class InstanceUserSummaryJsonUnmarshaller implements Unmarshaller<Instanc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssociationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceUserSummary.setAssociationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisassociationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceUserSummary.setDisassociationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceUserSummary.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceUserSummary.setIdentityProvider(IdentityProviderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceUserSummary.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceUserSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceUserSummary.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceUserSummary.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

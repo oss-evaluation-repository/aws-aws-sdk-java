@@ -43,26 +43,38 @@ public class NotScaledReasonJsonUnmarshaller implements Unmarshaller<NotScaledRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Code", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notScaledReason.setCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notScaledReason.setMaxCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notScaledReason.setMinCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notScaledReason.setCurrentCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

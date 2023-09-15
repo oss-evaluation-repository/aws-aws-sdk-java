@@ -43,58 +43,78 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Body", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageIconUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setImageIconUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageSmallIconUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setImageSmallIconUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JsonBody", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setJsonBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setMediaUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RawContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setRawContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SilentPush", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setSilentPush(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeToLive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setTimeToLive(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     message.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

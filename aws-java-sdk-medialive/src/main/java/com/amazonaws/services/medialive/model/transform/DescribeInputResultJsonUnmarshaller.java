@@ -43,89 +43,113 @@ public class DescribeInputResultJsonUnmarshaller implements Unmarshaller<Describ
             return describeInputResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attachedChannels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setAttachedChannels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setDestinations(new ListUnmarshaller<InputDestination>(InputDestinationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setInputClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputDevices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setInputDevices(new ListUnmarshaller<InputDeviceSettings>(InputDeviceSettingsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("inputPartnerIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setInputPartnerIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("inputSourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setInputSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaConnectFlows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setMediaConnectFlows(new ListUnmarshaller<MediaConnectFlow>(MediaConnectFlowJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setSources(new ListUnmarshaller<InputSource>(InputSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInputResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

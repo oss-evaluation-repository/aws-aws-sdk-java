@@ -43,74 +43,97 @@ public class AwsRdsDbPendingModifiedValuesJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DbInstanceClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setDbInstanceClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllocatedStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setAllocatedStorage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterUserPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setMasterUserPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupRetentionPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setBackupRetentionPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MultiAZ", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setMultiAZ(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setLicenseModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Iops", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setIops(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DbInstanceIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setDbInstanceIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CaCertificateIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setCaCertificateIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbSubnetGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setDbSubnetGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PendingCloudWatchLogsExports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setPendingCloudWatchLogsExports(AwsRdsPendingCloudWatchLogsExportsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ProcessorFeatures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbPendingModifiedValues.setProcessorFeatures(new ListUnmarshaller<AwsRdsDbProcessorFeature>(AwsRdsDbProcessorFeatureJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,16 +43,22 @@ public class AwsIamRoleDetailsJsonUnmarshaller implements Unmarshaller<AwsIamRol
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssumeRolePolicyDocument", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamRoleDetails.setAssumeRolePolicyDocument(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttachedManagedPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamRoleDetails.setAttachedManagedPolicies(new ListUnmarshaller<AwsIamAttachedManagedPolicy>(AwsIamAttachedManagedPolicyJsonUnmarshaller
                             .getInstance())
@@ -60,40 +66,52 @@ public class AwsIamRoleDetailsJsonUnmarshaller implements Unmarshaller<AwsIamRol
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamRoleDetails.setCreateDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceProfileList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamRoleDetails.setInstanceProfileList(new ListUnmarshaller<AwsIamInstanceProfile>(AwsIamInstanceProfileJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PermissionsBoundary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamRoleDetails.setPermissionsBoundary(AwsIamPermissionsBoundaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamRoleDetails.setRoleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamRoleDetails.setRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RolePolicyList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamRoleDetails.setRolePolicyList(new ListUnmarshaller<AwsIamRolePolicy>(AwsIamRolePolicyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MaxSessionDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamRoleDetails.setMaxSessionDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamRoleDetails.setPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

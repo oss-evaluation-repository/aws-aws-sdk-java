@@ -43,68 +43,90 @@ public class TerminologyPropertiesJsonUnmarshaller implements Unmarshaller<Termi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceLanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setSourceLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetLanguageCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setTargetLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EncryptionKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setEncryptionKey(EncryptionKeyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setSizeBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TermCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setTermCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Directionality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setDirectionality(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SkippedTermCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setSkippedTermCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     terminologyProperties.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,62 +43,82 @@ public class FirewallJsonUnmarshaller implements Unmarshaller<Firewall, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FirewallName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setFirewallName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setFirewallArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallPolicyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setFirewallPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setSubnetMappings(new ListUnmarshaller<SubnetMapping>(SubnetMappingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DeleteProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setDeleteProtection(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetChangeProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setSubnetChangeProtection(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallPolicyChangeProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setFirewallPolicyChangeProtection(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setFirewallId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewall.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class MediaLiveConnectorPipelineJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaLiveConnectorPipeline.setSources(new ListUnmarshaller<LiveConnectorSourceConfiguration>(
                             LiveConnectorSourceConfigurationJsonUnmarshaller.getInstance())
@@ -56,6 +61,7 @@ public class MediaLiveConnectorPipelineJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("Sinks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaLiveConnectorPipeline.setSinks(new ListUnmarshaller<LiveConnectorSinkConfiguration>(LiveConnectorSinkConfigurationJsonUnmarshaller
                             .getInstance())
@@ -63,24 +69,33 @@ public class MediaLiveConnectorPipelineJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("MediaPipelineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaLiveConnectorPipeline.setMediaPipelineId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaPipelineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaLiveConnectorPipeline.setMediaPipelineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaLiveConnectorPipeline.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaLiveConnectorPipeline.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaLiveConnectorPipeline.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class TapeInfoJsonUnmarshaller implements Unmarshaller<TapeInfo, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TapeARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tapeInfo.setTapeARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TapeBarcode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tapeInfo.setTapeBarcode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TapeSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tapeInfo.setTapeSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TapeStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tapeInfo.setTapeStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tapeInfo.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tapeInfo.setPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetentionStartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tapeInfo.setRetentionStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PoolEntryDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tapeInfo.setPoolEntryDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

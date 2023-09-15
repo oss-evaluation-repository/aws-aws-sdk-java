@@ -43,30 +43,43 @@ public class AwsApiGatewayV2RouteSettingsJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DetailedMetricsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2RouteSettings.setDetailedMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LoggingLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2RouteSettings.setLoggingLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataTraceEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2RouteSettings.setDataTraceEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ThrottlingBurstLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2RouteSettings.setThrottlingBurstLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ThrottlingRateLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsApiGatewayV2RouteSettings.setThrottlingRateLimit(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

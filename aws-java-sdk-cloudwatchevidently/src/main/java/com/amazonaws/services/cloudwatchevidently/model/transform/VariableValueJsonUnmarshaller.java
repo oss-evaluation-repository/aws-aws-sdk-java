@@ -43,26 +43,38 @@ public class VariableValueJsonUnmarshaller implements Unmarshaller<VariableValue
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("boolValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variableValue.setBoolValue(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("doubleValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variableValue.setDoubleValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("longValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variableValue.setLongValue(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("stringValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     variableValue.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,28 +43,40 @@ public class GetMergeOptionsResultJsonUnmarshaller implements Unmarshaller<GetMe
             return getMergeOptionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("mergeOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMergeOptionsResult.setMergeOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sourceCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMergeOptionsResult.setSourceCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMergeOptionsResult.setDestinationCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("baseCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMergeOptionsResult.setBaseCommitId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

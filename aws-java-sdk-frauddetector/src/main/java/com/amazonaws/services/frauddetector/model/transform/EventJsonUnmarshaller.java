@@ -43,41 +43,56 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("currentLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setCurrentLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("labelTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setLabelTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEntities(new ListUnmarshaller<Entity>(EntityJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

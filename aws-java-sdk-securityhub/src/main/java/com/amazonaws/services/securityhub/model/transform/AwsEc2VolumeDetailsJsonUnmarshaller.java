@@ -43,56 +43,75 @@ public class AwsEc2VolumeDetailsJsonUnmarshaller implements Unmarshaller<AwsEc2V
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setCreateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setSnapshotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setAttachments(new ListUnmarshaller<AwsEc2VolumeAttachment>(AwsEc2VolumeAttachmentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VolumeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setVolumeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeScanStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VolumeDetails.setVolumeScanStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

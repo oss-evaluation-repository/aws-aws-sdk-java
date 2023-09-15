@@ -43,78 +43,102 @@ public class WorkspaceJsonUnmarshaller implements Unmarshaller<Workspace, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkspaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BundleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setComputerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeEncryptionKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setVolumeEncryptionKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserVolumeEncryptionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setUserVolumeEncryptionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RootVolumeEncryptionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setRootVolumeEncryptionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkspaceProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setWorkspaceProperties(WorkspacePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModificationStates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setModificationStates(new ListUnmarshaller<ModificationState>(ModificationStateJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RelatedWorkspaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspace.setRelatedWorkspaces(new ListUnmarshaller<RelatedWorkspaceProperties>(RelatedWorkspacePropertiesJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

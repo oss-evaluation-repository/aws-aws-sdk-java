@@ -43,9 +43,13 @@ public class DescribeProfilingGroupResultJsonUnmarshaller implements Unmarshalle
             return describeProfilingGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             describeProfilingGroupResult.setProfilingGroup(ProfilingGroupDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

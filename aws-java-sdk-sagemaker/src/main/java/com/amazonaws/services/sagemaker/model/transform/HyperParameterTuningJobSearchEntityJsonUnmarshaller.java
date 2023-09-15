@@ -43,30 +43,39 @@ public class HyperParameterTuningJobSearchEntityJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HyperParameterTuningJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setHyperParameterTuningJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setHyperParameterTuningJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningJobConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setHyperParameterTuningJobConfig(HyperParameterTuningJobConfigJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setTrainingJobDefinition(HyperParameterTrainingJobDefinitionJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("TrainingJobDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setTrainingJobDefinitions(new ListUnmarshaller<HyperParameterTrainingJobDefinition>(
                             HyperParameterTrainingJobDefinitionJsonUnmarshaller.getInstance())
@@ -74,64 +83,81 @@ public class HyperParameterTuningJobSearchEntityJsonUnmarshaller implements Unma
                     .unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setHyperParameterTuningJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setHyperParameterTuningEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(
                             context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobStatusCounters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setTrainingJobStatusCounters(TrainingJobStatusCountersJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ObjectiveStatusCounters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setObjectiveStatusCounters(ObjectiveStatusCountersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BestTrainingJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setBestTrainingJob(HyperParameterTrainingJobSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OverallBestTrainingJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setOverallBestTrainingJob(HyperParameterTrainingJobSummaryJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("WarmStartConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setWarmStartConfig(HyperParameterTuningJobWarmStartConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TuningJobCompletionDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setTuningJobCompletionDetails(HyperParameterTuningJobCompletionDetailsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ConsumedResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hyperParameterTuningJobSearchEntity.setConsumedResources(HyperParameterTuningJobConsumedResourcesJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

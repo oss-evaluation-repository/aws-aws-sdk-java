@@ -43,54 +43,73 @@ public class UpdatePoolResultJsonUnmarshaller implements Unmarshaller<UpdatePool
             return updatePoolResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PoolArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setPoolArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setMessageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TwoWayEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setTwoWayEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TwoWayChannelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setTwoWayChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelfManagedOptOutsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setSelfManagedOptOutsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OptOutListName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setOptOutListName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedRoutesEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setSharedRoutesEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DeletionProtectionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setDeletionProtectionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePoolResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

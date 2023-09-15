@@ -43,18 +43,28 @@ public class MappingParametersJsonUnmarshaller implements Unmarshaller<MappingPa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JSONMappingParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mappingParameters.setJSONMappingParameters(JSONMappingParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CSVMappingParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mappingParameters.setCSVMappingParameters(CSVMappingParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

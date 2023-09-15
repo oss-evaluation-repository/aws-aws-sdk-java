@@ -43,58 +43,78 @@ public class GetFuotaTaskResultJsonUnmarshaller implements Unmarshaller<GetFuota
             return getFuotaTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoRaWAN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setLoRaWAN(LoRaWANFuotaTaskGetInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FirmwareUpdateImage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setFirmwareUpdateImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirmwareUpdateRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setFirmwareUpdateRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RedundancyPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setRedundancyPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FragmentSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setFragmentSizeBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FragmentIntervalMS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFuotaTaskResult.setFragmentIntervalMS(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

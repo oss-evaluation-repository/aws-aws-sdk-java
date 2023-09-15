@@ -43,58 +43,78 @@ public class APNSVoipSandboxChannelResponseJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultAuthenticationMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setDefaultAuthenticationMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HasCredential", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setHasCredential(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HasTokenKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setHasTokenKey(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsArchived", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setIsArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setLastModifiedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aPNSVoipSandboxChannelResponse.setVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,71 @@ public class DescribeHapgResultJsonUnmarshaller implements Unmarshaller<Describe
             return describeHapgResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HapgArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHapgResult.setHapgArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HapgSerial", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHapgResult.setHapgSerial(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HsmsLastActionFailed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHapgResult.setHsmsLastActionFailed(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HsmsPendingDeletion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHapgResult.setHsmsPendingDeletion(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HsmsPendingRegistration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHapgResult.setHsmsPendingRegistration(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHapgResult.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHapgResult.setLastModifiedTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartitionSerialList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHapgResult.setPartitionSerialList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHapgResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

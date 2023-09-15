@@ -43,70 +43,93 @@ public class ProfileJsonUnmarshaller implements Unmarshaller<Profile, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsDefault", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setIsDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Address", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DistanceUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setDistanceUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemperatureUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setTemperatureUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WakeWord", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setWakeWord(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Locale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setLocale(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SetupModeDisabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setSetupModeDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxVolumeLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setMaxVolumeLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PSTNEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setPSTNEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRetentionOptIn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setDataRetentionOptIn(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AddressBookArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setAddressBookArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MeetingRoomConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profile.setMeetingRoomConfiguration(MeetingRoomConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

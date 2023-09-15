@@ -43,46 +43,63 @@ public class RDSInstanceDetailsJsonUnmarshaller implements Unmarshaller<RDSInsta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Family", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSInstanceDetails.setFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSInstanceDetails.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSInstanceDetails.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseEngine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSInstanceDetails.setDatabaseEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseEdition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSInstanceDetails.setDatabaseEdition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSInstanceDetails.setDeploymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSInstanceDetails.setLicenseModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentGeneration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSInstanceDetails.setCurrentGeneration(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeFlexEligible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSInstanceDetails.setSizeFlexEligible(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

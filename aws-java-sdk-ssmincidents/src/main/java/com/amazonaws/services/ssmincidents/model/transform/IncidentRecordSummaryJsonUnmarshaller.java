@@ -43,38 +43,53 @@ public class IncidentRecordSummaryJsonUnmarshaller implements Unmarshaller<Incid
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecordSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecordSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("impact", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecordSummary.setImpact(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("incidentRecordSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecordSummary.setIncidentRecordSource(IncidentRecordSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resolvedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecordSummary.setResolvedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecordSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     incidentRecordSummary.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

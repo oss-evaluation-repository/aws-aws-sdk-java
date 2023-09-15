@@ -43,50 +43,68 @@ public class CrawlerHistoryJsonUnmarshaller implements Unmarshaller<CrawlerHisto
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CrawlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerHistory.setCrawlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerHistory.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerHistory.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerHistory.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Summary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerHistory.setSummary(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerHistory.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerHistory.setLogGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogStream", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerHistory.setLogStream(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessagePrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerHistory.setMessagePrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DPUHour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crawlerHistory.setDPUHour(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,38 +44,53 @@ public class AwsCloudFrontDistributionViewerCertificateJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AcmCertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionViewerCertificate.setAcmCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Certificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionViewerCertificate.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionViewerCertificate.setCertificateSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudFrontDefaultCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionViewerCertificate.setCloudFrontDefaultCertificate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IamCertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionViewerCertificate.setIamCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumProtocolVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionViewerCertificate.setMinimumProtocolVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SslSupportMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionViewerCertificate.setSslSupportMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

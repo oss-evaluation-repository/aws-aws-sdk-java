@@ -43,38 +43,53 @@ public class ApplicationSummaryJsonUnmarshaller implements Unmarshaller<Applicat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationCreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationCreationDate(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationLastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationLastUpdateDate(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationSummary.setApplicationState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

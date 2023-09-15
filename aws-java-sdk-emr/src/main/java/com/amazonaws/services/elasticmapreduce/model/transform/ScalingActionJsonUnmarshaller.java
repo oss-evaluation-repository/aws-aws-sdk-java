@@ -43,18 +43,28 @@ public class ScalingActionJsonUnmarshaller implements Unmarshaller<ScalingAction
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Market", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingAction.setMarket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SimpleScalingPolicyConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingAction.setSimpleScalingPolicyConfiguration(SimpleScalingPolicyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

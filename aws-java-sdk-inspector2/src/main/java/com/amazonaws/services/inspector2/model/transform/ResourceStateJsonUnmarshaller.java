@@ -43,26 +43,38 @@ public class ResourceStateJsonUnmarshaller implements Unmarshaller<ResourceState
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ec2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceState.setEc2(StateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ecr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceState.setEcr(StateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambda", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceState.setLambda(StateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambdaCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceState.setLambdaCode(StateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

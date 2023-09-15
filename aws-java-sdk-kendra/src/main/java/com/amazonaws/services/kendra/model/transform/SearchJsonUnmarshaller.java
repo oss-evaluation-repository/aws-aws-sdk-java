@@ -43,26 +43,38 @@ public class SearchJsonUnmarshaller implements Unmarshaller<Search, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Facetable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     search.setFacetable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Searchable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     search.setSearchable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Displayable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     search.setDisplayable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Sortable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     search.setSortable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

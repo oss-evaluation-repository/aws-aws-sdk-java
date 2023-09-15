@@ -43,43 +43,59 @@ public class OidcIdentityProviderConfigRequestJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("identityProviderConfigName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfigRequest.setIdentityProviderConfigName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("issuerUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfigRequest.setIssuerUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfigRequest.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usernameClaim", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfigRequest.setUsernameClaim(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usernamePrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfigRequest.setUsernamePrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("groupsClaim", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfigRequest.setGroupsClaim(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("groupsPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfigRequest.setGroupsPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requiredClaims", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcIdentityProviderConfigRequest.setRequiredClaims(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

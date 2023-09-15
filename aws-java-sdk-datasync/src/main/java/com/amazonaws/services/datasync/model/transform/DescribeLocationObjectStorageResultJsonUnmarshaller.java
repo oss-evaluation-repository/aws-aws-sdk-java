@@ -43,44 +43,60 @@ public class DescribeLocationObjectStorageResultJsonUnmarshaller implements Unma
             return describeLocationObjectStorageResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationObjectStorageResult.setLocationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocationUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationObjectStorageResult.setLocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationObjectStorageResult.setAccessKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationObjectStorageResult.setServerPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerProtocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationObjectStorageResult.setServerProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgentArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationObjectStorageResult.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationObjectStorageResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ServerCertificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeLocationObjectStorageResult.setServerCertificate(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

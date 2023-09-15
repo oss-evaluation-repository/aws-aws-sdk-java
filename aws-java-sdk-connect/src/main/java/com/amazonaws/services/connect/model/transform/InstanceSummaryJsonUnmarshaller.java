@@ -43,50 +43,68 @@ public class InstanceSummaryJsonUnmarshaller implements Unmarshaller<InstanceSum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityManagementType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceSummary.setIdentityManagementType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceAlias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceSummary.setInstanceAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceSummary.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceSummary.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceSummary.setInstanceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InboundCallsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceSummary.setInboundCallsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OutboundCallsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceSummary.setOutboundCallsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceAccessUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceSummary.setInstanceAccessUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

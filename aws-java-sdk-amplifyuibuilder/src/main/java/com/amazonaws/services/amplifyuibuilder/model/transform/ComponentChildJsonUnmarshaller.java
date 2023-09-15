@@ -43,38 +43,52 @@ public class ComponentChildJsonUnmarshaller implements Unmarshaller<ComponentChi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("componentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentChild.setComponentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentChild.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentChild.setProperties(new MapUnmarshaller<String, ComponentProperty>(context.getUnmarshaller(String.class),
                             ComponentPropertyJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("children", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentChild.setChildren(new ListUnmarshaller<ComponentChild>(ComponentChildJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("events", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentChild.setEvents(new MapUnmarshaller<String, ComponentEvent>(context.getUnmarshaller(String.class), ComponentEventJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("sourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentChild.setSourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

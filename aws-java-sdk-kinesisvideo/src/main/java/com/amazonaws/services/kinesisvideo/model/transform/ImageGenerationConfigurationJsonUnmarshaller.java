@@ -43,43 +43,59 @@ public class ImageGenerationConfigurationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageGenerationConfiguration.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageSelectorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageGenerationConfiguration.setImageSelectorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageGenerationConfiguration.setDestinationConfig(ImageGenerationDestinationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SamplingInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageGenerationConfiguration.setSamplingInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageGenerationConfiguration.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FormatConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageGenerationConfiguration.setFormatConfig(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("WidthPixels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageGenerationConfiguration.setWidthPixels(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("HeightPixels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageGenerationConfiguration.setHeightPixels(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class DatabaseConfigurationJsonUnmarshaller implements Unmarshaller<Datab
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatabaseEngineType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseConfiguration.setDatabaseEngineType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseConfiguration.setConnectionConfiguration(ConnectionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseConfiguration.setVpcConfiguration(DataSourceVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ColumnConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseConfiguration.setColumnConfiguration(ColumnConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AclConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseConfiguration.setAclConfiguration(AclConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SqlConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseConfiguration.setSqlConfiguration(SqlConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

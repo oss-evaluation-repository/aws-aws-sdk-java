@@ -43,34 +43,48 @@ public class CodegenGenericDataFieldJsonUnmarshaller implements Unmarshaller<Cod
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataField.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataTypeValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataField.setDataTypeValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("required", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataField.setRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("readOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataField.setReadOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isArray", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataField.setIsArray(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("relationship", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataField.setRelationship(CodegenGenericDataRelationshipTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

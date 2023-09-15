@@ -43,26 +43,38 @@ public class FileSystemDataSourceJsonUnmarshaller implements Unmarshaller<FileSy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FileSystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDataSource.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemAccessMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDataSource.setFileSystemAccessMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDataSource.setFileSystemType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemDataSource.setDirectoryPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

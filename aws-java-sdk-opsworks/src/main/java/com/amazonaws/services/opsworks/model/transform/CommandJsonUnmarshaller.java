@@ -43,50 +43,68 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CommandId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     command.setCommandId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     command.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     command.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     command.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AcknowledgedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     command.setAcknowledgedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     command.setCompletedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     command.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExitCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     command.setExitCode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LogUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     command.setLogUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     command.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

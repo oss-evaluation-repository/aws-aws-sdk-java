@@ -43,55 +43,74 @@ public class GetSuiteRunResultJsonUnmarshaller implements Unmarshaller<GetSuiteR
             return getSuiteRunResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("suiteDefinitionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setSuiteDefinitionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteDefinitionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setSuiteDefinitionVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setSuiteRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteRunArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setSuiteRunArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("suiteRunConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setSuiteRunConfiguration(SuiteRunConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("testResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setTestResult(TestResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setErrorReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSuiteRunResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

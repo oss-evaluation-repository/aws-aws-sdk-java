@@ -43,50 +43,68 @@ public class CodeCoverageJsonUnmarshaller implements Unmarshaller<CodeCoverage, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeCoverage.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reportARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeCoverage.setReportARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeCoverage.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lineCoveragePercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeCoverage.setLineCoveragePercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("linesCovered", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeCoverage.setLinesCovered(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("linesMissed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeCoverage.setLinesMissed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("branchCoveragePercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeCoverage.setBranchCoveragePercentage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("branchesCovered", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeCoverage.setBranchesCovered(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("branchesMissed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeCoverage.setBranchesMissed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("expired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeCoverage.setExpired(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

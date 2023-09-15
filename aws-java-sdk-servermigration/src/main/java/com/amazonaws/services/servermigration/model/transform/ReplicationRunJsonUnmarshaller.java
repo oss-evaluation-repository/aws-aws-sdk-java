@@ -43,54 +43,73 @@ public class ReplicationRunJsonUnmarshaller implements Unmarshaller<ReplicationR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("replicationRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setReplicationRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stageDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setStageDetails(ReplicationRunStageDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("amiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setAmiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scheduledStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setScheduledStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setCompletedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRun.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

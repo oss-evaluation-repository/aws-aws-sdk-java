@@ -43,28 +43,40 @@ public class NotificationJsonUnmarshaller implements Unmarshaller<Notification, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SnsTopicARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setSnsTopicARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobStatesToNotify", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setJobStatesToNotify(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotifyAll", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setNotifyAll(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DevicePickupSnsTopicARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notification.setDevicePickupSnsTopicARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

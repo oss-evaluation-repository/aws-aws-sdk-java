@@ -43,24 +43,35 @@ public class VpcAttachmentJsonUnmarshaller implements Unmarshaller<VpcAttachment
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attachment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcAttachment.setAttachment(AttachmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SubnetArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcAttachment.setSubnetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Options", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcAttachment.setOptions(VpcOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

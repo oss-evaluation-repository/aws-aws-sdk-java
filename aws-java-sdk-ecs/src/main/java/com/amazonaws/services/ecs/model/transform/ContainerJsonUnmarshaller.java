@@ -43,86 +43,111 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setContainerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("image", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageDigest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setImageDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("runtimeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setRuntimeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setLastStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("exitCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setExitCode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkBindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setNetworkBindings(new ListUnmarshaller<NetworkBinding>(NetworkBindingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("healthStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setHealthStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("managedAgents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setManagedAgents(new ListUnmarshaller<ManagedAgent>(ManagedAgentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("memoryReservation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setMemoryReservation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gpuIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     container.setGpuIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

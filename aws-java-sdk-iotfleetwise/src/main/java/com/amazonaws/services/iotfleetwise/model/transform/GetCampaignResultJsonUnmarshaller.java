@@ -43,93 +43,120 @@ public class GetCampaignResultJsonUnmarshaller implements Unmarshaller<GetCampai
             return getCampaignResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("signalCatalogArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setSignalCatalogArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("expiryTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setExpiryTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("postTriggerCollectionDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setPostTriggerCollectionDuration(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("diagnosticsMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setDiagnosticsMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("spoolingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setSpoolingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("compression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setCompression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("signalsToCollect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setSignalsToCollect(new ListUnmarshaller<SignalInformation>(SignalInformationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("collectionScheme", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setCollectionScheme(CollectionSchemeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dataExtraDimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setDataExtraDimensions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataDestinationConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCampaignResult
                             .setDataDestinationConfigs(new ListUnmarshaller<DataDestinationConfig>(DataDestinationConfigJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

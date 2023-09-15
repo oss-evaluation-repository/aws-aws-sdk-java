@@ -43,32 +43,45 @@ public class ZookeeperNodeInfoJsonUnmarshaller implements Unmarshaller<Zookeeper
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attachedENIId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zookeeperNodeInfo.setAttachedENIId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientVpcIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zookeeperNodeInfo.setClientVpcIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zookeeperNodeInfo.setEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("zookeeperId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zookeeperNodeInfo.setZookeeperId(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("zookeeperVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zookeeperNodeInfo.setZookeeperVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,30 @@ public class RouteAnalysisPathJsonUnmarshaller implements Unmarshaller<RouteAnal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CompletionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysisPath.setCompletionStatus(RouteAnalysisCompletionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysisPath.setPath(new ListUnmarshaller<PathComponent>(PathComponentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

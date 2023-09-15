@@ -43,62 +43,81 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements Unmarshaller<Ec2In
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ec2KeyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setEc2KeyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setEc2SubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestedEc2SubnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setRequestedEc2SubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Ec2AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setEc2AvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestedEc2AvailabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setRequestedEc2AvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IamInstanceProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setIamInstanceProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmrManagedMasterSecurityGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setEmrManagedMasterSecurityGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmrManagedSlaveSecurityGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setEmrManagedSlaveSecurityGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceAccessSecurityGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setServiceAccessSecurityGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalMasterSecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setAdditionalMasterSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AdditionalSlaveSecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2InstanceAttributes.setAdditionalSlaveSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

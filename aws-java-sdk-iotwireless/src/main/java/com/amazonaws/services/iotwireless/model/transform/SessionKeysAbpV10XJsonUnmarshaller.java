@@ -43,18 +43,28 @@ public class SessionKeysAbpV10XJsonUnmarshaller implements Unmarshaller<SessionK
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NwkSKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionKeysAbpV10X.setNwkSKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppSKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionKeysAbpV10X.setAppSKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

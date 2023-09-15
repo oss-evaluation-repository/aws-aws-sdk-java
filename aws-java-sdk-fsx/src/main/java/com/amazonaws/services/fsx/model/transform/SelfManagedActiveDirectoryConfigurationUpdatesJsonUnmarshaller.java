@@ -44,37 +44,51 @@ public class SelfManagedActiveDirectoryConfigurationUpdatesJsonUnmarshaller impl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfigurationUpdates.setUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfigurationUpdates.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsIps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfigurationUpdates.setDnsIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfigurationUpdates.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationalUnitDistinguishedName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfigurationUpdates.setOrganizationalUnitDistinguishedName(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("FileSystemAdministratorsGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     selfManagedActiveDirectoryConfigurationUpdates.setFileSystemAdministratorsGroup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

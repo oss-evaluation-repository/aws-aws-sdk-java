@@ -43,42 +43,58 @@ public class SettingsJsonUnmarshaller implements Unmarshaller<Settings, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VocabularyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settings.setVocabularyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShowSpeakerLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settings.setShowSpeakerLabels(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxSpeakerLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settings.setMaxSpeakerLabels(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelIdentification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settings.setChannelIdentification(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ShowAlternatives", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settings.setShowAlternatives(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxAlternatives", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settings.setMaxAlternatives(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyFilterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settings.setVocabularyFilterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyFilterMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settings.setVocabularyFilterMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class RepositoryMetadataJsonUnmarshaller implements Unmarshaller<Reposito
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryMetadata.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryMetadata.setRepositoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryMetadata.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryMetadata.setRepositoryDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultBranch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryMetadata.setDefaultBranch(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryMetadata.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryMetadata.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("cloneUrlHttp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryMetadata.setCloneUrlHttp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cloneUrlSsh", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryMetadata.setCloneUrlSsh(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryMetadata.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

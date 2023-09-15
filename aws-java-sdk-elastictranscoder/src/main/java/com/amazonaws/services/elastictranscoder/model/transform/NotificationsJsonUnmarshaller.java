@@ -43,26 +43,38 @@ public class NotificationsJsonUnmarshaller implements Unmarshaller<Notifications
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Progressing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notifications.setProgressing(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Completed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notifications.setCompleted(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Warning", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notifications.setWarning(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     notifications.setError(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

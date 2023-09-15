@@ -43,74 +43,98 @@ public class ContactJsonUnmarshaller implements Unmarshaller<Contact, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitialContactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setInitialContactId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreviousContactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setPreviousContactId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitiationMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setInitiationMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Channel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setChannel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueueInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setQueueInfo(QueueInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AgentInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setAgentInfo(AgentInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InitiationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setInitiationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DisconnectTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setDisconnectTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setLastUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ScheduledTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setScheduledTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RelatedContactId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setRelatedContactId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WisdomInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contact.setWisdomInfo(WisdomInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

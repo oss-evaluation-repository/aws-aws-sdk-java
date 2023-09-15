@@ -43,28 +43,39 @@ public class ContentJsonUnmarshaller implements Unmarshaller<Content, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TextList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     content.setTextList(new ListUnmarshaller<Text>(TextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SsmlList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     content.setSsmlList(new ListUnmarshaller<Ssml>(SsmlJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AudioList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     content.setAudioList(new ListUnmarshaller<Audio>(AudioJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

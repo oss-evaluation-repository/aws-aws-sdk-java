@@ -43,42 +43,58 @@ public class VideoPreprocessorJsonUnmarshaller implements Unmarshaller<VideoPrep
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("colorCorrector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoPreprocessor.setColorCorrector(ColorCorrectorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("deinterlacer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoPreprocessor.setDeinterlacer(DeinterlacerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dolbyVision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoPreprocessor.setDolbyVision(DolbyVisionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hdr10Plus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoPreprocessor.setHdr10Plus(Hdr10PlusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageInserter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoPreprocessor.setImageInserter(ImageInserterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("noiseReducer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoPreprocessor.setNoiseReducer(NoiseReducerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("partnerWatermarking", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoPreprocessor.setPartnerWatermarking(PartnerWatermarkingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timecodeBurnin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoPreprocessor.setTimecodeBurnin(TimecodeBurninJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

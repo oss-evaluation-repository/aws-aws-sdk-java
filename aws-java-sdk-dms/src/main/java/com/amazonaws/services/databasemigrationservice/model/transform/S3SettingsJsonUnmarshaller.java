@@ -43,174 +43,223 @@ public class S3SettingsJsonUnmarshaller implements Unmarshaller<S3Settings, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setServiceAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalTableDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setExternalTableDefinition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CsvRowDelimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCsvRowDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CsvDelimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCsvDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BucketFolder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setBucketFolder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerSideEncryptionKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setServerSideEncryptionKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncodingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setEncodingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DictPageSizeLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setDictPageSizeLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RowGroupLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setRowGroupLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DataPageSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setDataPageSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ParquetVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setParquetVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setEnableStatistics(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeOpForFullLoad", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setIncludeOpForFullLoad(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CdcInsertsOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCdcInsertsOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TimestampColumnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setTimestampColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParquetTimestampInMillisecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setParquetTimestampInMillisecond(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CdcInsertsAndUpdates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCdcInsertsAndUpdates(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DatePartitionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setDatePartitionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DatePartitionSequence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setDatePartitionSequence(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatePartitionDelimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setDatePartitionDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UseCsvNoSupValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setUseCsvNoSupValue(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CsvNoSupValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCsvNoSupValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreserveTransactions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setPreserveTransactions(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CdcPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCdcPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UseTaskStartTimeForFullLoadTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setUseTaskStartTimeForFullLoadTimestamp(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CannedAclForObjects", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCannedAclForObjects(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AddColumnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setAddColumnName(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CdcMaxBatchInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCdcMaxBatchInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CdcMinFileSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCdcMinFileSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CsvNullValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setCsvNullValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IgnoreHeaderRows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setIgnoreHeaderRows(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxFileSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setMaxFileSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Rfc4180", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setRfc4180(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DatePartitionTimezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setDatePartitionTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AddTrailingPaddingCharacter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setAddTrailingPaddingCharacter(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpectedBucketOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setExpectedBucketOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlueCatalogGeneration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Settings.setGlueCatalogGeneration(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

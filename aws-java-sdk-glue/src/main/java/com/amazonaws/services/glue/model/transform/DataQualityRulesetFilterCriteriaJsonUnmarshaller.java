@@ -43,38 +43,53 @@ public class DataQualityRulesetFilterCriteriaJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityRulesetFilterCriteria.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityRulesetFilterCriteria.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityRulesetFilterCriteria.setCreatedBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityRulesetFilterCriteria.setCreatedAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityRulesetFilterCriteria.setLastModifiedBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityRulesetFilterCriteria.setLastModifiedAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TargetTable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityRulesetFilterCriteria.setTargetTable(DataQualityTargetTableJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,78 +43,103 @@ public class GetBatchPredictionResultJsonUnmarshaller implements Unmarshaller<Ge
             return getBatchPredictionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BatchPredictionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setBatchPredictionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MLModelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setMLModelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchPredictionDataSourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setBatchPredictionDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputDataLocationS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setInputDataLocationS3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setCreatedByIamUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setOutputUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setLogUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setComputeTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FinishedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TotalRecordCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setTotalRecordCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("InvalidRecordCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBatchPredictionResult.setInvalidRecordCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

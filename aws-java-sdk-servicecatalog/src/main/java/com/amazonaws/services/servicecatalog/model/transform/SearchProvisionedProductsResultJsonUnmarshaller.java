@@ -43,12 +43,17 @@ public class SearchProvisionedProductsResultJsonUnmarshaller implements Unmarsha
             return searchProvisionedProductsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProvisionedProducts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchProvisionedProductsResult.setProvisionedProducts(new ListUnmarshaller<ProvisionedProductAttribute>(
                             ProvisionedProductAttributeJsonUnmarshaller.getInstance())
@@ -56,12 +61,18 @@ public class SearchProvisionedProductsResultJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("TotalResultsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchProvisionedProductsResult.setTotalResultsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchProvisionedProductsResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

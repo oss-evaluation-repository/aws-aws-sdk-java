@@ -43,42 +43,58 @@ public class VirtualRouterRefJsonUnmarshaller implements Unmarshaller<VirtualRou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualRouterRef.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualRouterRef.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualRouterRef.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("meshName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualRouterRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("meshOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualRouterRef.setMeshOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualRouterRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualRouterRef.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualRouterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualRouterRef.setVirtualRouterName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class DataSetImportItemJsonUnmarshaller implements Unmarshaller<DataSetIm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetImportItem.setDataSet(DataSetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("externalLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSetImportItem.setExternalLocation(ExternalLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

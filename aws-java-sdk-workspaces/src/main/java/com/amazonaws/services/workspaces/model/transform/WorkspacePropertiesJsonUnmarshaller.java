@@ -43,36 +43,50 @@ public class WorkspacePropertiesJsonUnmarshaller implements Unmarshaller<Workspa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RunningMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceProperties.setRunningMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RunningModeAutoStopTimeoutInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceProperties.setRunningModeAutoStopTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RootVolumeSizeGib", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceProperties.setRootVolumeSizeGib(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UserVolumeSizeGib", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceProperties.setUserVolumeSizeGib(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceProperties.setComputeTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Protocols", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceProperties.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

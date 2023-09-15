@@ -43,72 +43,95 @@ public class ScanJsonUnmarshaller implements Unmarshaller<Scan, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("detectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setDetectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("adminDetectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setAdminDetectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setScanId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setScanStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setScanStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("scanEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setScanEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("triggerDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setTriggerDetails(TriggerDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setResourceDetails(ResourceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scanResultDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setScanResultDetails(ScanResultDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("totalBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setTotalBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("fileCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setFileCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("attachedVolumes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setAttachedVolumes(new ListUnmarshaller<VolumeDetail>(VolumeDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("scanType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scan.setScanType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

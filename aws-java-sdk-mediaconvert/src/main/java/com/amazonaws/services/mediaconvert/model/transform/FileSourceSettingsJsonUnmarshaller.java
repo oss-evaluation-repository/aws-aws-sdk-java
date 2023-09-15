@@ -43,34 +43,48 @@ public class FileSourceSettingsJsonUnmarshaller implements Unmarshaller<FileSour
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("convert608To708", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSourceSettings.setConvert608To708(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("convertPaintToPop", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSourceSettings.setConvertPaintToPop(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSourceSettings.setFramerate(CaptionSourceFramerateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceFile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSourceSettings.setSourceFile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeDelta", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSourceSettings.setTimeDelta(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("timeDeltaUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSourceSettings.setTimeDeltaUnits(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class ExportJobRequestJsonUnmarshaller implements Unmarshaller<ExportJobR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobRequest.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3UrlPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobRequest.setS3UrlPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobRequest.setSegmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportJobRequest.setSegmentVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

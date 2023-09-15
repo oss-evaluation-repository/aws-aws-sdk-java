@@ -43,40 +43,55 @@ public class DatabaseResponseJsonUnmarshaller implements Unmarshaller<DatabaseRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatabaseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseResponse.setDatabaseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseResponse.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseResponse.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfSchemas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseResponse.setNumberOfSchemas(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Server", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseResponse.setServer(ServerShortInfoResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SoftwareDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseResponse.setSoftwareDetails(DatabaseInstanceSoftwareDetailsResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Collectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     databaseResponse.setCollectors(new ListUnmarshaller<CollectorShortInfoResponse>(CollectorShortInfoResponseJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

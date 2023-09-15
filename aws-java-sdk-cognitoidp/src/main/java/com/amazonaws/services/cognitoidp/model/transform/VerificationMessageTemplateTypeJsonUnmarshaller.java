@@ -43,34 +43,48 @@ public class VerificationMessageTemplateTypeJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SmsMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verificationMessageTemplateType.setSmsMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verificationMessageTemplateType.setEmailMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailSubject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verificationMessageTemplateType.setEmailSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailMessageByLink", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verificationMessageTemplateType.setEmailMessageByLink(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmailSubjectByLink", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verificationMessageTemplateType.setEmailSubjectByLink(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultEmailOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verificationMessageTemplateType.setDefaultEmailOption(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

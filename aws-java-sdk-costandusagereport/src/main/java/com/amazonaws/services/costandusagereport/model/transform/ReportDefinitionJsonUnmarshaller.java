@@ -43,62 +43,82 @@ public class ReportDefinitionJsonUnmarshaller implements Unmarshaller<ReportDefi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReportName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setReportName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setTimeUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Compression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setCompression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalSchemaElements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setAdditionalSchemaElements(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("S3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setS3Prefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setS3Region(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setAdditionalArtifacts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RefreshClosedReports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setRefreshClosedReports(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportVersioning", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setReportVersioning(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BillingViewArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportDefinition.setBillingViewArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

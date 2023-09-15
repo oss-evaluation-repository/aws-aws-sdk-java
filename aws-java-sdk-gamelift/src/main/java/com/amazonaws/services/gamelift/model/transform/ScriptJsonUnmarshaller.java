@@ -43,38 +43,53 @@ public class ScriptJsonUnmarshaller implements Unmarshaller<Script, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ScriptId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     script.setScriptId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScriptArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     script.setScriptArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     script.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     script.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeOnDisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     script.setSizeOnDisk(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     script.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StorageLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     script.setStorageLocation(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

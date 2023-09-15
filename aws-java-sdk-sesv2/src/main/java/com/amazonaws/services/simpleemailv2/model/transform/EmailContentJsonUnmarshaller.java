@@ -43,22 +43,33 @@ public class EmailContentJsonUnmarshaller implements Unmarshaller<EmailContent, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Simple", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailContent.setSimple(MessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Raw", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailContent.setRaw(RawMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Template", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailContent.setTemplate(TemplateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

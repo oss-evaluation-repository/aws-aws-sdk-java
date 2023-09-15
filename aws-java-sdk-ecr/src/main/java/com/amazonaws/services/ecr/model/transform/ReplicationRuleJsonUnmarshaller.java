@@ -43,22 +43,32 @@ public class ReplicationRuleJsonUnmarshaller implements Unmarshaller<Replication
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRule.setDestinations(new ListUnmarshaller<ReplicationDestination>(ReplicationDestinationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("repositoryFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationRule.setRepositoryFilters(new ListUnmarshaller<RepositoryFilter>(RepositoryFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

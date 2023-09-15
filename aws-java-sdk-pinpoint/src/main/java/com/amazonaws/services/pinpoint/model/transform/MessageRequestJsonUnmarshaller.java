@@ -43,37 +43,51 @@ public class MessageRequestJsonUnmarshaller implements Unmarshaller<MessageReque
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Addresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageRequest.setAddresses(new MapUnmarshaller<String, AddressConfiguration>(context.getUnmarshaller(String.class),
                             AddressConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Context", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageRequest.setContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Endpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageRequest.setEndpoints(new MapUnmarshaller<String, EndpointSendConfiguration>(context.getUnmarshaller(String.class),
                             EndpointSendConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("MessageConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageRequest.setMessageConfiguration(DirectMessageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageRequest.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TraceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     messageRequest.setTraceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

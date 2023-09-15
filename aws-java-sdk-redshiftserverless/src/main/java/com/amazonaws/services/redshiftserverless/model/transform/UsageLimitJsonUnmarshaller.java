@@ -43,38 +43,53 @@ public class UsageLimitJsonUnmarshaller implements Unmarshaller<UsageLimit, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("amount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageLimit.setAmount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("breachAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageLimit.setBreachAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("period", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageLimit.setPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageLimit.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usageLimitArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageLimit.setUsageLimitArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usageLimitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageLimit.setUsageLimitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageLimit.setUsageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

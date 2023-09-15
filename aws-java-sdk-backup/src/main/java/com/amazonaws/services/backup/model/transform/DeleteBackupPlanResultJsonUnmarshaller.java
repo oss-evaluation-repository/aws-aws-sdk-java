@@ -43,26 +43,38 @@ public class DeleteBackupPlanResultJsonUnmarshaller implements Unmarshaller<Dele
             return deleteBackupPlanResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupPlanId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteBackupPlanResult.setBackupPlanId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupPlanArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteBackupPlanResult.setBackupPlanArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeletionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteBackupPlanResult.setDeletionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("VersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteBackupPlanResult.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

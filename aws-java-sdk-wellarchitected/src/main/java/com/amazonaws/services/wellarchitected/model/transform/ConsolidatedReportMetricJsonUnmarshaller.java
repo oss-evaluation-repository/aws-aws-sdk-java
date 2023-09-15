@@ -43,45 +43,61 @@ public class ConsolidatedReportMetricJsonUnmarshaller implements Unmarshaller<Co
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consolidatedReportMetric.setMetricType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RiskCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consolidatedReportMetric.setRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consolidatedReportMetric.setWorkloadId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consolidatedReportMetric.setWorkloadName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consolidatedReportMetric.setWorkloadArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consolidatedReportMetric.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Lenses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consolidatedReportMetric.setLenses(new ListUnmarshaller<LensMetric>(LensMetricJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LensesAppliedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consolidatedReportMetric.setLensesAppliedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

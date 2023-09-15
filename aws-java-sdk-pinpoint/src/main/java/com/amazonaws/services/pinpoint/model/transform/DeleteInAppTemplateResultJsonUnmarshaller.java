@@ -43,9 +43,13 @@ public class DeleteInAppTemplateResultJsonUnmarshaller implements Unmarshaller<D
             return deleteInAppTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteInAppTemplateResult.setMessageBody(MessageBodyJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

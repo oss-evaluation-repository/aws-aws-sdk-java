@@ -43,34 +43,48 @@ public class VirtualMachineJsonUnmarshaller implements Unmarshaller<VirtualMachi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HostName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualMachine.setHostName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HypervisorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualMachine.setHypervisorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastBackupDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualMachine.setLastBackupDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualMachine.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualMachine.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualMachine.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

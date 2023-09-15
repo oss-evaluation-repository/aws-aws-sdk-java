@@ -43,45 +43,61 @@ public class SavingsPlanOfferingRateJsonUnmarshaller implements Unmarshaller<Sav
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("savingsPlanOffering", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOfferingRate.setSavingsPlanOffering(ParentSavingsPlanOfferingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOfferingRate.setRate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOfferingRate.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("productType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOfferingRate.setProductType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOfferingRate.setServiceCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOfferingRate.setUsageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOfferingRate.setOperation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlanOfferingRate.setProperties(new ListUnmarshaller<SavingsPlanOfferingRateProperty>(SavingsPlanOfferingRatePropertyJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

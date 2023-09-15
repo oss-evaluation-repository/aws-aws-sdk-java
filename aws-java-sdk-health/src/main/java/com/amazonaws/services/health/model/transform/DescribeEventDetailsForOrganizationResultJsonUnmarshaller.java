@@ -44,12 +44,17 @@ public class DescribeEventDetailsForOrganizationResultJsonUnmarshaller implement
             return describeEventDetailsForOrganizationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("successfulSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEventDetailsForOrganizationResult.setSuccessfulSet(new ListUnmarshaller<OrganizationEventDetails>(
                             OrganizationEventDetailsJsonUnmarshaller.getInstance())
@@ -57,11 +62,16 @@ public class DescribeEventDetailsForOrganizationResultJsonUnmarshaller implement
                     .unmarshall(context));
                 }
                 if (context.testExpression("failedSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEventDetailsForOrganizationResult.setFailedSet(new ListUnmarshaller<OrganizationEventDetailsErrorItem>(
                             OrganizationEventDetailsErrorItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

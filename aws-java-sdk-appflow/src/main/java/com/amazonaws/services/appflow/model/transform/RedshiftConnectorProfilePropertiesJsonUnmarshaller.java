@@ -43,46 +43,63 @@ public class RedshiftConnectorProfilePropertiesJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("databaseUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftConnectorProfileProperties.setDatabaseUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftConnectorProfileProperties.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftConnectorProfileProperties.setBucketPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftConnectorProfileProperties.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataApiRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftConnectorProfileProperties.setDataApiRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isRedshiftServerless", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftConnectorProfileProperties.setIsRedshiftServerless(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftConnectorProfileProperties.setClusterIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("workgroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftConnectorProfileProperties.setWorkgroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("databaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftConnectorProfileProperties.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

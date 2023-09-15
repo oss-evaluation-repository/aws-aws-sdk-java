@@ -43,42 +43,58 @@ public class FilterSliderControlJsonUnmarshaller implements Unmarshaller<FilterS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilterControlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterSliderControl.setFilterControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterSliderControl.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceFilterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterSliderControl.setSourceFilterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterSliderControl.setDisplayOptions(SliderControlDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterSliderControl.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterSliderControl.setMaximumValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterSliderControl.setMinimumValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("StepSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterSliderControl.setStepSize(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class MapRunExecutionCountsJsonUnmarshaller implements Unmarshaller<MapRu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pending", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunExecutionCounts.setPending(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("running", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunExecutionCounts.setRunning(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("succeeded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunExecutionCounts.setSucceeded(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("failed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunExecutionCounts.setFailed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("timedOut", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunExecutionCounts.setTimedOut(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("aborted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunExecutionCounts.setAborted(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("total", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunExecutionCounts.setTotal(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("resultsWritten", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mapRunExecutionCounts.setResultsWritten(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

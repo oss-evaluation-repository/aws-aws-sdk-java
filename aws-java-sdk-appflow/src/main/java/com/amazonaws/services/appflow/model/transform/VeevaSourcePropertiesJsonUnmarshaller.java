@@ -43,30 +43,43 @@ public class VeevaSourcePropertiesJsonUnmarshaller implements Unmarshaller<Veeva
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("object", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     veevaSourceProperties.setObject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("documentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     veevaSourceProperties.setDocumentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("includeSourceFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     veevaSourceProperties.setIncludeSourceFiles(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("includeRenditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     veevaSourceProperties.setIncludeRenditions(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("includeAllVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     veevaSourceProperties.setIncludeAllVersions(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

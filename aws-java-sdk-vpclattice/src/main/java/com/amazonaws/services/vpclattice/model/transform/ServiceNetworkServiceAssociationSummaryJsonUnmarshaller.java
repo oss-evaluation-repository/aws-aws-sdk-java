@@ -43,62 +43,83 @@ public class ServiceNetworkServiceAssociationSummaryJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("createdBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("customDomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setCustomDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dnsEntry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setDnsEntry(DnsEntryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setServiceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setServiceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceNetworkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setServiceNetworkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setServiceNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceNetworkName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setServiceNetworkName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceNetworkServiceAssociationSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

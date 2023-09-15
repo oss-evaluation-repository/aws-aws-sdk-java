@@ -189,6 +189,36 @@ public class DescribeModelVersionResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Long importedDataSizeInBytes;
+    /**
+     * <p>
+     * If the model version was retrained, this field shows a summary of the performance of the prior model on the new
+     * training range. You can use the information in this JSON-formatted object to compare the new model version and
+     * the prior model version.
+     * </p>
+     */
+    private String priorModelMetrics;
+    /**
+     * <p>
+     * Indicates the number of days of data used in the most recent scheduled retraining run.
+     * </p>
+     */
+    private Integer retrainingAvailableDataInDays;
+    /**
+     * <p>
+     * Indicates whether the model version was promoted to be the active version after retraining or if there was an
+     * error with or cancellation of the retraining.
+     * </p>
+     */
+    private String autoPromotionResult;
+    /**
+     * <p>
+     * Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its
+     * performance was worse than the active version, if there was an error during training, or if the retraining
+     * scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote
+     * mode if the performance is better than the previous model.
+     * </p>
+     */
+    private String autoPromotionResultReason;
 
     /**
      * <p>
@@ -1357,6 +1387,223 @@ public class DescribeModelVersionResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * If the model version was retrained, this field shows a summary of the performance of the prior model on the new
+     * training range. You can use the information in this JSON-formatted object to compare the new model version and
+     * the prior model version.
+     * </p>
+     * 
+     * @param priorModelMetrics
+     *        If the model version was retrained, this field shows a summary of the performance of the prior model on
+     *        the new training range. You can use the information in this JSON-formatted object to compare the new model
+     *        version and the prior model version.
+     */
+
+    public void setPriorModelMetrics(String priorModelMetrics) {
+        this.priorModelMetrics = priorModelMetrics;
+    }
+
+    /**
+     * <p>
+     * If the model version was retrained, this field shows a summary of the performance of the prior model on the new
+     * training range. You can use the information in this JSON-formatted object to compare the new model version and
+     * the prior model version.
+     * </p>
+     * 
+     * @return If the model version was retrained, this field shows a summary of the performance of the prior model on
+     *         the new training range. You can use the information in this JSON-formatted object to compare the new
+     *         model version and the prior model version.
+     */
+
+    public String getPriorModelMetrics() {
+        return this.priorModelMetrics;
+    }
+
+    /**
+     * <p>
+     * If the model version was retrained, this field shows a summary of the performance of the prior model on the new
+     * training range. You can use the information in this JSON-formatted object to compare the new model version and
+     * the prior model version.
+     * </p>
+     * 
+     * @param priorModelMetrics
+     *        If the model version was retrained, this field shows a summary of the performance of the prior model on
+     *        the new training range. You can use the information in this JSON-formatted object to compare the new model
+     *        version and the prior model version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelVersionResult withPriorModelMetrics(String priorModelMetrics) {
+        setPriorModelMetrics(priorModelMetrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the number of days of data used in the most recent scheduled retraining run.
+     * </p>
+     * 
+     * @param retrainingAvailableDataInDays
+     *        Indicates the number of days of data used in the most recent scheduled retraining run.
+     */
+
+    public void setRetrainingAvailableDataInDays(Integer retrainingAvailableDataInDays) {
+        this.retrainingAvailableDataInDays = retrainingAvailableDataInDays;
+    }
+
+    /**
+     * <p>
+     * Indicates the number of days of data used in the most recent scheduled retraining run.
+     * </p>
+     * 
+     * @return Indicates the number of days of data used in the most recent scheduled retraining run.
+     */
+
+    public Integer getRetrainingAvailableDataInDays() {
+        return this.retrainingAvailableDataInDays;
+    }
+
+    /**
+     * <p>
+     * Indicates the number of days of data used in the most recent scheduled retraining run.
+     * </p>
+     * 
+     * @param retrainingAvailableDataInDays
+     *        Indicates the number of days of data used in the most recent scheduled retraining run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelVersionResult withRetrainingAvailableDataInDays(Integer retrainingAvailableDataInDays) {
+        setRetrainingAvailableDataInDays(retrainingAvailableDataInDays);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the model version was promoted to be the active version after retraining or if there was an
+     * error with or cancellation of the retraining.
+     * </p>
+     * 
+     * @param autoPromotionResult
+     *        Indicates whether the model version was promoted to be the active version after retraining or if there was
+     *        an error with or cancellation of the retraining.
+     * @see AutoPromotionResult
+     */
+
+    public void setAutoPromotionResult(String autoPromotionResult) {
+        this.autoPromotionResult = autoPromotionResult;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the model version was promoted to be the active version after retraining or if there was an
+     * error with or cancellation of the retraining.
+     * </p>
+     * 
+     * @return Indicates whether the model version was promoted to be the active version after retraining or if there
+     *         was an error with or cancellation of the retraining.
+     * @see AutoPromotionResult
+     */
+
+    public String getAutoPromotionResult() {
+        return this.autoPromotionResult;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the model version was promoted to be the active version after retraining or if there was an
+     * error with or cancellation of the retraining.
+     * </p>
+     * 
+     * @param autoPromotionResult
+     *        Indicates whether the model version was promoted to be the active version after retraining or if there was
+     *        an error with or cancellation of the retraining.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoPromotionResult
+     */
+
+    public DescribeModelVersionResult withAutoPromotionResult(String autoPromotionResult) {
+        setAutoPromotionResult(autoPromotionResult);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the model version was promoted to be the active version after retraining or if there was an
+     * error with or cancellation of the retraining.
+     * </p>
+     * 
+     * @param autoPromotionResult
+     *        Indicates whether the model version was promoted to be the active version after retraining or if there was
+     *        an error with or cancellation of the retraining.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoPromotionResult
+     */
+
+    public DescribeModelVersionResult withAutoPromotionResult(AutoPromotionResult autoPromotionResult) {
+        this.autoPromotionResult = autoPromotionResult.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its
+     * performance was worse than the active version, if there was an error during training, or if the retraining
+     * scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote
+     * mode if the performance is better than the previous model.
+     * </p>
+     * 
+     * @param autoPromotionResultReason
+     *        Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted
+     *        if its performance was worse than the active version, if there was an error during training, or if the
+     *        retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in
+     *        <code>MANAGED</code> promote mode if the performance is better than the previous model.
+     */
+
+    public void setAutoPromotionResultReason(String autoPromotionResultReason) {
+        this.autoPromotionResultReason = autoPromotionResultReason;
+    }
+
+    /**
+     * <p>
+     * Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its
+     * performance was worse than the active version, if there was an error during training, or if the retraining
+     * scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote
+     * mode if the performance is better than the previous model.
+     * </p>
+     * 
+     * @return Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted
+     *         if its performance was worse than the active version, if there was an error during training, or if the
+     *         retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in
+     *         <code>MANAGED</code> promote mode if the performance is better than the previous model.
+     */
+
+    public String getAutoPromotionResultReason() {
+        return this.autoPromotionResultReason;
+    }
+
+    /**
+     * <p>
+     * Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its
+     * performance was worse than the active version, if there was an error during training, or if the retraining
+     * scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote
+     * mode if the performance is better than the previous model.
+     * </p>
+     * 
+     * @param autoPromotionResultReason
+     *        Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted
+     *        if its performance was worse than the active version, if there was an error during training, or if the
+     *        retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in
+     *        <code>MANAGED</code> promote mode if the performance is better than the previous model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelVersionResult withAutoPromotionResultReason(String autoPromotionResultReason) {
+        setAutoPromotionResultReason(autoPromotionResultReason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1423,7 +1670,15 @@ public class DescribeModelVersionResult extends com.amazonaws.AmazonWebServiceRe
         if (getImportJobEndTime() != null)
             sb.append("ImportJobEndTime: ").append(getImportJobEndTime()).append(",");
         if (getImportedDataSizeInBytes() != null)
-            sb.append("ImportedDataSizeInBytes: ").append(getImportedDataSizeInBytes());
+            sb.append("ImportedDataSizeInBytes: ").append(getImportedDataSizeInBytes()).append(",");
+        if (getPriorModelMetrics() != null)
+            sb.append("PriorModelMetrics: ").append(getPriorModelMetrics()).append(",");
+        if (getRetrainingAvailableDataInDays() != null)
+            sb.append("RetrainingAvailableDataInDays: ").append(getRetrainingAvailableDataInDays()).append(",");
+        if (getAutoPromotionResult() != null)
+            sb.append("AutoPromotionResult: ").append(getAutoPromotionResult()).append(",");
+        if (getAutoPromotionResultReason() != null)
+            sb.append("AutoPromotionResultReason: ").append(getAutoPromotionResultReason());
         sb.append("}");
         return sb.toString();
     }
@@ -1551,6 +1806,23 @@ public class DescribeModelVersionResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getImportedDataSizeInBytes() != null && other.getImportedDataSizeInBytes().equals(this.getImportedDataSizeInBytes()) == false)
             return false;
+        if (other.getPriorModelMetrics() == null ^ this.getPriorModelMetrics() == null)
+            return false;
+        if (other.getPriorModelMetrics() != null && other.getPriorModelMetrics().equals(this.getPriorModelMetrics()) == false)
+            return false;
+        if (other.getRetrainingAvailableDataInDays() == null ^ this.getRetrainingAvailableDataInDays() == null)
+            return false;
+        if (other.getRetrainingAvailableDataInDays() != null
+                && other.getRetrainingAvailableDataInDays().equals(this.getRetrainingAvailableDataInDays()) == false)
+            return false;
+        if (other.getAutoPromotionResult() == null ^ this.getAutoPromotionResult() == null)
+            return false;
+        if (other.getAutoPromotionResult() != null && other.getAutoPromotionResult().equals(this.getAutoPromotionResult()) == false)
+            return false;
+        if (other.getAutoPromotionResultReason() == null ^ this.getAutoPromotionResultReason() == null)
+            return false;
+        if (other.getAutoPromotionResultReason() != null && other.getAutoPromotionResultReason().equals(this.getAutoPromotionResultReason()) == false)
+            return false;
         return true;
     }
 
@@ -1587,6 +1859,10 @@ public class DescribeModelVersionResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getImportJobStartTime() == null) ? 0 : getImportJobStartTime().hashCode());
         hashCode = prime * hashCode + ((getImportJobEndTime() == null) ? 0 : getImportJobEndTime().hashCode());
         hashCode = prime * hashCode + ((getImportedDataSizeInBytes() == null) ? 0 : getImportedDataSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getPriorModelMetrics() == null) ? 0 : getPriorModelMetrics().hashCode());
+        hashCode = prime * hashCode + ((getRetrainingAvailableDataInDays() == null) ? 0 : getRetrainingAvailableDataInDays().hashCode());
+        hashCode = prime * hashCode + ((getAutoPromotionResult() == null) ? 0 : getAutoPromotionResult().hashCode());
+        hashCode = prime * hashCode + ((getAutoPromotionResultReason() == null) ? 0 : getAutoPromotionResultReason().hashCode());
         return hashCode;
     }
 

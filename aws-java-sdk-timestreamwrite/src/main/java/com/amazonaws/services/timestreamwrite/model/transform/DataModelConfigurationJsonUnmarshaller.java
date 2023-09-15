@@ -43,18 +43,28 @@ public class DataModelConfigurationJsonUnmarshaller implements Unmarshaller<Data
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataModelConfiguration.setDataModel(DataModelJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataModelS3Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataModelConfiguration.setDataModelS3Configuration(DataModelS3ConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

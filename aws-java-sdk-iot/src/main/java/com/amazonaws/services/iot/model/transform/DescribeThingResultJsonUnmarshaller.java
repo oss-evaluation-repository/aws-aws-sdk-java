@@ -43,43 +43,59 @@ public class DescribeThingResultJsonUnmarshaller implements Unmarshaller<Describ
             return describeThingResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("defaultClientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingResult.setDefaultClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingResult.setThingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingResult.setThingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingResult.setThingArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingResult.setThingTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingResult.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingResult.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("billingGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingResult.setBillingGroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

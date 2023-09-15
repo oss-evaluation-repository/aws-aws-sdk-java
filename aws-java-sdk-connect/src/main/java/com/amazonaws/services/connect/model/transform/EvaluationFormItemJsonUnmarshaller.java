@@ -43,18 +43,28 @@ public class EvaluationFormItemJsonUnmarshaller implements Unmarshaller<Evaluati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Section", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormItem.setSection(EvaluationFormSectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Question", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormItem.setQuestion(EvaluationFormQuestionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

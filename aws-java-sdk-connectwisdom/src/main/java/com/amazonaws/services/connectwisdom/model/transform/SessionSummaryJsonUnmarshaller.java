@@ -43,26 +43,38 @@ public class SessionSummaryJsonUnmarshaller implements Unmarshaller<SessionSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assistantArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSummary.setAssistantArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assistantId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSummary.setAssistantId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sessionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSummary.setSessionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSummary.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

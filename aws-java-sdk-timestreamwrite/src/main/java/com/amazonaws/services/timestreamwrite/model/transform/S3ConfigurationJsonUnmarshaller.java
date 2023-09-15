@@ -43,26 +43,38 @@ public class S3ConfigurationJsonUnmarshaller implements Unmarshaller<S3Configura
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Configuration.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectKeyPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Configuration.setObjectKeyPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Configuration.setEncryptionOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Configuration.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

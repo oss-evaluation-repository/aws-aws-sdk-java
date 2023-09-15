@@ -43,52 +43,69 @@ public class TemplateVersionJsonUnmarshaller implements Unmarshaller<TemplateVer
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersion.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersion.setErrors(new ListUnmarshaller<TemplateError>(TemplateErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VersionNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersion.setVersionNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersion.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSetConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersion.setDataSetConfigurations(new ListUnmarshaller<DataSetConfiguration>(DataSetConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersion.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceEntityArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersion.setSourceEntityArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThemeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersion.setThemeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Sheets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersion.setSheets(new ListUnmarshaller<Sheet>(SheetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

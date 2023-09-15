@@ -43,26 +43,37 @@ public class RecognizeCelebritiesResultJsonUnmarshaller implements Unmarshaller<
             return recognizeCelebritiesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CelebrityFaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recognizeCelebritiesResult.setCelebrityFaces(new ListUnmarshaller<Celebrity>(CelebrityJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UnrecognizedFaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recognizeCelebritiesResult.setUnrecognizedFaces(new ListUnmarshaller<ComparedFace>(ComparedFaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OrientationCorrection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recognizeCelebritiesResult.setOrientationCorrection(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

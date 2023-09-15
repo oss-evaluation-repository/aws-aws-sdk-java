@@ -43,51 +43,69 @@ public class AutoBranchCreationConfigJsonUnmarshaller implements Unmarshaller<Au
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("stage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoBranchCreationConfig.setStage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framework", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoBranchCreationConfig.setFramework(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enableAutoBuild", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoBranchCreationConfig.setEnableAutoBuild(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoBranchCreationConfig.setEnvironmentVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("basicAuthCredentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoBranchCreationConfig.setBasicAuthCredentials(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enableBasicAuth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoBranchCreationConfig.setEnableBasicAuth(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("enablePerformanceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoBranchCreationConfig.setEnablePerformanceMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("buildSpec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoBranchCreationConfig.setBuildSpec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enablePullRequestPreview", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoBranchCreationConfig.setEnablePullRequestPreview(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("pullRequestEnvironmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoBranchCreationConfig.setPullRequestEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class MsSmoothGroupSettingsJsonUnmarshaller implements Unmarshaller<MsSmo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("additionalManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setAdditionalManifests(new ListUnmarshaller<MsSmoothAdditionalManifest>(MsSmoothAdditionalManifestJsonUnmarshaller
                             .getInstance())
@@ -56,32 +61,43 @@ public class MsSmoothGroupSettingsJsonUnmarshaller implements Unmarshaller<MsSmo
                     .unmarshall(context));
                 }
                 if (context.testExpression("audioDeduplication", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setAudioDeduplication(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setDestinationSettings(DestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setEncryption(MsSmoothEncryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fragmentLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setFragmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("fragmentLengthControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setFragmentLengthControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("manifestEncoding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     msSmoothGroupSettings.setManifestEncoding(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

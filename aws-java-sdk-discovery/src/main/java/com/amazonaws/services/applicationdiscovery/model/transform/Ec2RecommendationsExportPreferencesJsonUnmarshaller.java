@@ -43,40 +43,55 @@ public class Ec2RecommendationsExportPreferencesJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2RecommendationsExportPreferences.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("cpuPerformanceMetricBasis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2RecommendationsExportPreferences.setCpuPerformanceMetricBasis(UsageMetricBasisJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ramPerformanceMetricBasis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2RecommendationsExportPreferences.setRamPerformanceMetricBasis(UsageMetricBasisJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tenancy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2RecommendationsExportPreferences.setTenancy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("excludedInstanceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2RecommendationsExportPreferences.setExcludedInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("preferredRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2RecommendationsExportPreferences.setPreferredRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reservedInstanceOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2RecommendationsExportPreferences.setReservedInstanceOptions(ReservedInstanceOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,28 +43,37 @@ public class AutoScalingGroupRecommendationJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setAutoScalingGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setAutoScalingGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("finding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setFinding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("utilizationMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setUtilizationMetrics(new ListUnmarshaller<UtilizationMetric>(UtilizationMetricJsonUnmarshaller
                             .getInstance())
@@ -72,14 +81,17 @@ public class AutoScalingGroupRecommendationJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("lookBackPeriodInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setLookBackPeriodInDays(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("currentConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setCurrentConfiguration(AutoScalingGroupConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("recommendationOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setRecommendationOptions(new ListUnmarshaller<AutoScalingGroupRecommendationOption>(
                             AutoScalingGroupRecommendationOptionJsonUnmarshaller.getInstance())
@@ -87,27 +99,36 @@ public class AutoScalingGroupRecommendationJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastRefreshTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setLastRefreshTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("currentPerformanceRisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setCurrentPerformanceRisk(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("effectiveRecommendationPreferences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("inferredWorkloadTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setInferredWorkloadTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("currentInstanceGpuInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoScalingGroupRecommendation.setCurrentInstanceGpuInfo(GpuInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

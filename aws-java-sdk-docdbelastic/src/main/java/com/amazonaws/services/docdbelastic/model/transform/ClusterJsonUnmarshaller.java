@@ -43,66 +43,87 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adminUserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setAdminUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setAuthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setClusterEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setCreateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("preferredMaintenanceWindow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setPreferredMaintenanceWindow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("shardCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setShardCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shardCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setShardCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("vpcSecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setVpcSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

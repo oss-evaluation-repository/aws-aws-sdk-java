@@ -43,36 +43,50 @@ public class AccountDetailsJsonUnmarshaller implements Unmarshaller<AccountDetai
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MailType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountDetails.setMailType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WebsiteURL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountDetails.setWebsiteURL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactLanguage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountDetails.setContactLanguage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UseCaseDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountDetails.setUseCaseDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalContactEmailAddresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountDetails.setAdditionalContactEmailAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReviewDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountDetails.setReviewDetails(ReviewDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

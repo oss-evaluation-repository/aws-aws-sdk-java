@@ -43,42 +43,58 @@ public class EdgeDeploymentPlanSummaryJsonUnmarshaller implements Unmarshaller<E
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EdgeDeploymentPlanArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentPlanSummary.setEdgeDeploymentPlanArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeDeploymentPlanName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentPlanSummary.setEdgeDeploymentPlanName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceFleetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentPlanSummary.setDeviceFleetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeDeploymentSuccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentPlanSummary.setEdgeDeploymentSuccess(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeDeploymentPending", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentPlanSummary.setEdgeDeploymentPending(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeDeploymentFailed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentPlanSummary.setEdgeDeploymentFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentPlanSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeploymentPlanSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

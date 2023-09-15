@@ -43,37 +43,51 @@ public class GetBulkDeploymentStatusResultJsonUnmarshaller implements Unmarshall
             return getBulkDeploymentStatusResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BulkDeploymentMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBulkDeploymentStatusResult.setBulkDeploymentMetrics(BulkDeploymentMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BulkDeploymentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBulkDeploymentStatusResult.setBulkDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBulkDeploymentStatusResult.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBulkDeploymentStatusResult.setErrorDetails(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBulkDeploymentStatusResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBulkDeploymentStatusResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

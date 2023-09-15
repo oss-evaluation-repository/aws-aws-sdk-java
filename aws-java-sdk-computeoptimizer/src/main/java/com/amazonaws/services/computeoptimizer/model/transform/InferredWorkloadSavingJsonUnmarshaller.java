@@ -43,20 +43,30 @@ public class InferredWorkloadSavingJsonUnmarshaller implements Unmarshaller<Infe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("inferredWorkloadTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inferredWorkloadSaving.setInferredWorkloadTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("estimatedMonthlySavings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inferredWorkloadSaving.setEstimatedMonthlySavings(EstimatedMonthlySavingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class ProductionBranchJsonUnmarshaller implements Unmarshaller<Production
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lastDeployTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionBranch.setLastDeployTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionBranch.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thumbnailUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionBranch.setThumbnailUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("branchName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionBranch.setBranchName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

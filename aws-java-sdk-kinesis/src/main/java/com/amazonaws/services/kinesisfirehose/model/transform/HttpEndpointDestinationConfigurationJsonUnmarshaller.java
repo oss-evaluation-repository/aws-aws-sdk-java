@@ -43,48 +43,65 @@ public class HttpEndpointDestinationConfigurationJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndpointConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpEndpointDestinationConfiguration.setEndpointConfiguration(HttpEndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BufferingHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpEndpointDestinationConfiguration.setBufferingHints(HttpEndpointBufferingHintsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpEndpointDestinationConfiguration
                             .setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RequestConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpEndpointDestinationConfiguration.setRequestConfiguration(HttpEndpointRequestConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpEndpointDestinationConfiguration.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpEndpointDestinationConfiguration.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetryOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpEndpointDestinationConfiguration.setRetryOptions(HttpEndpointRetryOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3BackupMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpEndpointDestinationConfiguration.setS3BackupMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpEndpointDestinationConfiguration.setS3Configuration(S3DestinationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,28 +43,40 @@ public class AwsEcsContainerDetailsJsonUnmarshaller implements Unmarshaller<AwsE
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsContainerDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Image", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsContainerDetails.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MountPoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsContainerDetails.setMountPoints(new ListUnmarshaller<AwsMountPoint>(AwsMountPointJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Privileged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcsContainerDetails.setPrivileged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

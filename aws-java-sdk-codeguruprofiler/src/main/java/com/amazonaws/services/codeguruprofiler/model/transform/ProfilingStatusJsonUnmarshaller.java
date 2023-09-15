@@ -43,22 +43,33 @@ public class ProfilingStatusJsonUnmarshaller implements Unmarshaller<ProfilingSt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("latestAgentOrchestratedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingStatus.setLatestAgentOrchestratedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("latestAgentProfileReportedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingStatus.setLatestAgentProfileReportedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("latestAggregatedProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     profilingStatus.setLatestAggregatedProfile(AggregatedProfileTimeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

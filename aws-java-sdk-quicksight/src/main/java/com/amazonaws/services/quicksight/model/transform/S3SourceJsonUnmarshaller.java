@@ -43,24 +43,35 @@ public class S3SourceJsonUnmarshaller implements Unmarshaller<S3Source, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Source.setDataSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UploadSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Source.setUploadSettings(UploadSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Source.setInputColumns(new ListUnmarshaller<InputColumn>(InputColumnJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class SearchProfilesResultJsonUnmarshaller implements Unmarshaller<Search
             return searchProfilesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Profiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchProfilesResult.setProfiles(new ListUnmarshaller<ProfileData>(ProfileDataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchProfilesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchProfilesResult.setTotalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

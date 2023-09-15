@@ -43,41 +43,56 @@ public class PolicyComplianceDetailJsonUnmarshaller implements Unmarshaller<Poli
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PolicyOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyComplianceDetail.setPolicyOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyComplianceDetail.setPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MemberAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyComplianceDetail.setMemberAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Violators", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyComplianceDetail.setViolators(new ListUnmarshaller<ComplianceViolator>(ComplianceViolatorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EvaluationLimitExceeded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyComplianceDetail.setEvaluationLimitExceeded(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpiredAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyComplianceDetail.setExpiredAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IssueInfoMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyComplianceDetail.setIssueInfoMap(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

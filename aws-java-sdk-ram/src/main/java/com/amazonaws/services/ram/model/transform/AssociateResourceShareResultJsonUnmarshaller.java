@@ -43,12 +43,17 @@ public class AssociateResourceShareResultJsonUnmarshaller implements Unmarshalle
             return associateResourceShareResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceShareAssociations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateResourceShareResult.setResourceShareAssociations(new ListUnmarshaller<ResourceShareAssociation>(
                             ResourceShareAssociationJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class AssociateResourceShareResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("clientToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associateResourceShareResult.setClientToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

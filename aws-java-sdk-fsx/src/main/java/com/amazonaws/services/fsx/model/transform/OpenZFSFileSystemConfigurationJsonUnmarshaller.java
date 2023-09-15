@@ -43,64 +43,85 @@ public class OpenZFSFileSystemConfigurationJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutomaticBackupRetentionDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyTagsToBackups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyTagsToVolumes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setCopyTagsToVolumes(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DailyAutomaticBackupStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setDailyAutomaticBackupStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThroughputCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setThroughputCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setWeeklyMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiskIopsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setDiskIopsConfiguration(DiskIopsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RootVolumeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setRootVolumeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreferredSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setPreferredSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointIpAddressRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setEndpointIpAddressRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RouteTableIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setRouteTableIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EndpointIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSFileSystemConfiguration.setEndpointIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

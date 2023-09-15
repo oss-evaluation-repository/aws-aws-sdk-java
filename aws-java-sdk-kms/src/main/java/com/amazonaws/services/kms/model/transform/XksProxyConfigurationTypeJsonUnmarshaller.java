@@ -43,30 +43,43 @@ public class XksProxyConfigurationTypeJsonUnmarshaller implements Unmarshaller<X
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Connectivity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xksProxyConfigurationType.setConnectivity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xksProxyConfigurationType.setAccessKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UriEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xksProxyConfigurationType.setUriEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UriPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xksProxyConfigurationType.setUriPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcEndpointServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     xksProxyConfigurationType.setVpcEndpointServiceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

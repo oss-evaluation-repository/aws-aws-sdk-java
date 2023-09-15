@@ -43,52 +43,70 @@ public class AgentInfoJsonUnmarshaller implements Unmarshaller<AgentInfo, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentInfo.setAgentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentInfo.setHostName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentNetworkInfoList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentInfo.setAgentNetworkInfoList(new ListUnmarshaller<AgentNetworkInfo>(AgentNetworkInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("connectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentInfo.setConnectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentInfo.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("health", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentInfo.setHealth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastHealthPingTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentInfo.setLastHealthPingTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentInfo.setCollectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentInfo.setAgentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("registeredTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     agentInfo.setRegisteredTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

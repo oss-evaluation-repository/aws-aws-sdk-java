@@ -43,36 +43,50 @@ public class GetMLModelTrainingJobResultJsonUnmarshaller implements Unmarshaller
             return getMLModelTrainingJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMLModelTrainingJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMLModelTrainingJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("processingJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMLModelTrainingJobResult.setProcessingJob(MlResourceDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hpoJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMLModelTrainingJobResult.setHpoJob(MlResourceDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("modelTransformJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMLModelTrainingJobResult.setModelTransformJob(MlResourceDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mlModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMLModelTrainingJobResult.setMlModels(new ListUnmarshaller<MlConfigDefinition>(MlConfigDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

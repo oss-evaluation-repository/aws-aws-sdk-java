@@ -43,57 +43,76 @@ public class PieChartConfigurationJsonUnmarshaller implements Unmarshaller<PieCh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setFieldWells(PieChartFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SortConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setSortConfiguration(PieChartSortConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DonutOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setDonutOptions(DonutOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SmallMultiplesOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setSmallMultiplesOptions(SmallMultiplesOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CategoryLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setCategoryLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ValueLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setValueLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Legend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setLegend(LegendOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setDataLabels(DataLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tooltip", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setTooltip(TooltipOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisualPalette", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setVisualPalette(VisualPaletteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ContributionAnalysisDefaults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pieChartConfiguration.setContributionAnalysisDefaults(new ListUnmarshaller<ContributionAnalysisDefault>(
                             ContributionAnalysisDefaultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

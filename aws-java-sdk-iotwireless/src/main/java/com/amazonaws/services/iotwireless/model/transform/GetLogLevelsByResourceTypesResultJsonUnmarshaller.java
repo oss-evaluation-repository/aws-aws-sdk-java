@@ -43,16 +43,22 @@ public class GetLogLevelsByResourceTypesResultJsonUnmarshaller implements Unmars
             return getLogLevelsByResourceTypesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DefaultLogLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLogLevelsByResourceTypesResult.setDefaultLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WirelessGatewayLogOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLogLevelsByResourceTypesResult.setWirelessGatewayLogOptions(new ListUnmarshaller<WirelessGatewayLogOption>(
                             WirelessGatewayLogOptionJsonUnmarshaller.getInstance())
@@ -60,11 +66,16 @@ public class GetLogLevelsByResourceTypesResultJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("WirelessDeviceLogOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLogLevelsByResourceTypesResult.setWirelessDeviceLogOptions(new ListUnmarshaller<WirelessDeviceLogOption>(
                             WirelessDeviceLogOptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

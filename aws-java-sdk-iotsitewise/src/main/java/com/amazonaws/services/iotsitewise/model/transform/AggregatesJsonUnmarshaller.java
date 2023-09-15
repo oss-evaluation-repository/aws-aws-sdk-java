@@ -43,34 +43,48 @@ public class AggregatesJsonUnmarshaller implements Unmarshaller<Aggregates, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("average", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregates.setAverage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("count", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregates.setCount(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("maximum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregates.setMaximum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("minimum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregates.setMinimum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("sum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregates.setSum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("standardDeviation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregates.setStandardDeviation(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

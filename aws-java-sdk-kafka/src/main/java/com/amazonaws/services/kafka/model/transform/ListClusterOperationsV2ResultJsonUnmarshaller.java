@@ -43,12 +43,17 @@ public class ListClusterOperationsV2ResultJsonUnmarshaller implements Unmarshall
             return listClusterOperationsV2Result;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterOperationInfoList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listClusterOperationsV2Result.setClusterOperationInfoList(new ListUnmarshaller<ClusterOperationV2Summary>(
                             ClusterOperationV2SummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListClusterOperationsV2ResultJsonUnmarshaller implements Unmarshall
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listClusterOperationsV2Result.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

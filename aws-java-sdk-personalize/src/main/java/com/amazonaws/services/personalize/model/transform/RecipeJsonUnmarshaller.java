@@ -43,46 +43,63 @@ public class RecipeJsonUnmarshaller implements Unmarshaller<Recipe, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recipe.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recipeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recipe.setRecipeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("algorithmArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recipe.setAlgorithmArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("featureTransformationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recipe.setFeatureTransformationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recipe.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recipe.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recipe.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("recipeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recipe.setRecipeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recipe.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

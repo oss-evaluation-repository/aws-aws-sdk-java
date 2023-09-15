@@ -43,34 +43,48 @@ public class BillingGroupCostReportElementJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     billingGroupCostReportElement.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AWSCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     billingGroupCostReportElement.setAWSCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProformaCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     billingGroupCostReportElement.setProformaCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Margin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     billingGroupCostReportElement.setMargin(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MarginPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     billingGroupCostReportElement.setMarginPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Currency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     billingGroupCostReportElement.setCurrency(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

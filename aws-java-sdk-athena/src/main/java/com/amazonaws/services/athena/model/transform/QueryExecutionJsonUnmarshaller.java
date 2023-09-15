@@ -43,60 +43,80 @@ public class QueryExecutionJsonUnmarshaller implements Unmarshaller<QueryExecuti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QueryExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setQueryExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Query", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setQuery(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatementType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setStatementType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setResultConfiguration(ResultConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResultReuseConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setResultReuseConfiguration(ResultReuseConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("QueryExecutionContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setQueryExecutionContext(QueryExecutionContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setStatus(QueryExecutionStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Statistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setStatistics(QueryExecutionStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("WorkGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setWorkGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setEngineVersion(EngineVersionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExecutionParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setExecutionParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SubstatementType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryExecution.setSubstatementType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

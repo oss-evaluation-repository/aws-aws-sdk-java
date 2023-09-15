@@ -43,36 +43,50 @@ public class AttemptContainerDetailJsonUnmarshaller implements Unmarshaller<Atte
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerInstanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attemptContainerDetail.setContainerInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attemptContainerDetail.setTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("exitCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attemptContainerDetail.setExitCode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attemptContainerDetail.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logStreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attemptContainerDetail.setLogStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attemptContainerDetail.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

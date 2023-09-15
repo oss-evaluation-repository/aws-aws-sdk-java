@@ -43,22 +43,33 @@ public class AccountLimitJsonUnmarshaller implements Unmarshaller<AccountLimit, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountLimit.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Used", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountLimit.setUsed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Max", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountLimit.setMax(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

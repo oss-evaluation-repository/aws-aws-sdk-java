@@ -43,26 +43,38 @@ public class TypedAttributeValueRangeJsonUnmarshaller implements Unmarshaller<Ty
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedAttributeValueRange.setStartMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedAttributeValueRange.setStartValue(TypedAttributeValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EndMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedAttributeValueRange.setEndMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedAttributeValueRange.setEndValue(TypedAttributeValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

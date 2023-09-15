@@ -43,38 +43,53 @@ public class WorkloadShareJsonUnmarshaller implements Unmarshaller<WorkloadShare
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ShareId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workloadShare.setShareId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workloadShare.setSharedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedWith", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workloadShare.setSharedWith(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PermissionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workloadShare.setPermissionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workloadShare.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workloadShare.setWorkloadName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workloadShare.setWorkloadId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

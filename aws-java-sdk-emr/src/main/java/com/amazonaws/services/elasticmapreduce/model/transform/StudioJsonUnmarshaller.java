@@ -43,82 +43,107 @@ public class StudioJsonUnmarshaller implements Unmarshaller<Studio, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StudioId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setStudioId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StudioArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setStudioArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setAuthMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setUserRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkspaceSecurityGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setWorkspaceSecurityGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineSecurityGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setEngineSecurityGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DefaultS3Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setDefaultS3Location(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdpAuthUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setIdpAuthUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdpRelayStateParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setIdpRelayStateParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,44 +43,57 @@ public class AwsElasticBeanstalkEnvironmentDetailsJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setApplicationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Cname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setCname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DateCreated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setDateCreated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DateUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setDateUpdated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setEndpointUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentLinks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setEnvironmentLinks(new ListUnmarshaller<AwsElasticBeanstalkEnvironmentEnvironmentLink>(
                             AwsElasticBeanstalkEnvironmentEnvironmentLinkJsonUnmarshaller.getInstance())
@@ -88,10 +101,12 @@ public class AwsElasticBeanstalkEnvironmentDetailsJsonUnmarshaller implements Un
                     .unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OptionSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setOptionSettings(new ListUnmarshaller<AwsElasticBeanstalkEnvironmentOptionSetting>(
                             AwsElasticBeanstalkEnvironmentOptionSettingJsonUnmarshaller.getInstance())
@@ -99,24 +114,33 @@ public class AwsElasticBeanstalkEnvironmentDetailsJsonUnmarshaller implements Un
                     .unmarshall(context));
                 }
                 if (context.testExpression("PlatformArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setPlatformArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SolutionStackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setSolutionStackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setTier(AwsElasticBeanstalkEnvironmentTierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VersionLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsElasticBeanstalkEnvironmentDetails.setVersionLabel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

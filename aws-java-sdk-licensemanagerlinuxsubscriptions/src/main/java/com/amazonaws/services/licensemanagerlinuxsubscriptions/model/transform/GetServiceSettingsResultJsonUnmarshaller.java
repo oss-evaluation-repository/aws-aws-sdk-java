@@ -43,34 +43,47 @@ public class GetServiceSettingsResultJsonUnmarshaller implements Unmarshaller<Ge
             return getServiceSettingsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HomeRegions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceSettingsResult.setHomeRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LinuxSubscriptionsDiscovery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceSettingsResult.setLinuxSubscriptionsDiscovery(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LinuxSubscriptionsDiscoverySettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceSettingsResult.setLinuxSubscriptionsDiscoverySettings(LinuxSubscriptionsDiscoverySettingsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceSettingsResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getServiceSettingsResult.setStatusMessage(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

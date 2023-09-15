@@ -43,26 +43,38 @@ public class TrialComponentSourceDetailJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentSourceDetail.setSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrainingJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentSourceDetail.setTrainingJob(TrainingJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProcessingJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentSourceDetail.setProcessingJob(ProcessingJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TransformJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trialComponentSourceDetail.setTransformJob(TransformJobJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

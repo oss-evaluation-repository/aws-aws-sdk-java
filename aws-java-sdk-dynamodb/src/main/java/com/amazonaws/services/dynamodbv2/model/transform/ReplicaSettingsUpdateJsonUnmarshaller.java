@@ -43,25 +43,33 @@ public class ReplicaSettingsUpdateJsonUnmarshaller implements Unmarshaller<Repli
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsUpdate.setRegionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaProvisionedReadCapacityUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsUpdate.setReplicaProvisionedReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsUpdate.setReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdateJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ReplicaGlobalSecondaryIndexSettingsUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsUpdate.setReplicaGlobalSecondaryIndexSettingsUpdate(new ListUnmarshaller<ReplicaGlobalSecondaryIndexSettingsUpdate>(
                             ReplicaGlobalSecondaryIndexSettingsUpdateJsonUnmarshaller.getInstance())
@@ -69,8 +77,13 @@ public class ReplicaSettingsUpdateJsonUnmarshaller implements Unmarshaller<Repli
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReplicaTableClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicaSettingsUpdate.setReplicaTableClass(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

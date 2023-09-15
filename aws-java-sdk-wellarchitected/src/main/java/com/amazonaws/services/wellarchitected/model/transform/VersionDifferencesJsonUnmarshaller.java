@@ -43,16 +43,25 @@ public class VersionDifferencesJsonUnmarshaller implements Unmarshaller<VersionD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PillarDifferences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     versionDifferences.setPillarDifferences(new ListUnmarshaller<PillarDifference>(PillarDifferenceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

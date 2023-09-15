@@ -43,22 +43,33 @@ public class LDAPSSettingInfoJsonUnmarshaller implements Unmarshaller<LDAPSSetti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LDAPSStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lDAPSSettingInfo.setLDAPSStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LDAPSStatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lDAPSSettingInfo.setLDAPSStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lDAPSSettingInfo.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

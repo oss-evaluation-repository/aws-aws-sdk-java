@@ -43,30 +43,43 @@ public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     permission.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamUserArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     permission.setIamUserArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowSsh", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     permission.setAllowSsh(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowSudo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     permission.setAllowSudo(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Level", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     permission.setLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

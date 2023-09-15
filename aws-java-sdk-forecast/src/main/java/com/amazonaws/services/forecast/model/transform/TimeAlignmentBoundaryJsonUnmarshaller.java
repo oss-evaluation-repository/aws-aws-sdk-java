@@ -43,26 +43,38 @@ public class TimeAlignmentBoundaryJsonUnmarshaller implements Unmarshaller<TimeA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Month", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeAlignmentBoundary.setMonth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DayOfMonth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeAlignmentBoundary.setDayOfMonth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DayOfWeek", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeAlignmentBoundary.setDayOfWeek(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Hour", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeAlignmentBoundary.setHour(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,39 @@ public class DistributionJsonUnmarshaller implements Unmarshaller<Distribution, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     distribution.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("amiDistributionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     distribution.setAmiDistributionConfiguration(AmiDistributionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("containerDistributionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     distribution.setContainerDistributionConfiguration(ContainerDistributionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("licenseConfigurationArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     distribution.setLicenseConfigurationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("launchTemplateConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     distribution.setLaunchTemplateConfigurations(new ListUnmarshaller<LaunchTemplateConfiguration>(LaunchTemplateConfigurationJsonUnmarshaller
                             .getInstance())
@@ -74,15 +83,21 @@ public class DistributionJsonUnmarshaller implements Unmarshaller<Distribution, 
                     .unmarshall(context));
                 }
                 if (context.testExpression("s3ExportConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     distribution.setS3ExportConfiguration(S3ExportConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fastLaunchConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     distribution.setFastLaunchConfigurations(new ListUnmarshaller<FastLaunchConfiguration>(FastLaunchConfigurationJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

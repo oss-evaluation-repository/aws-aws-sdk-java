@@ -32,7 +32,11 @@ public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources
-     * in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.
+     * in the account, which can impact performance. This requires <code>ListStacks</code> and
+     * <code>DescribeStacks</code> permissions.
+     * </p>
+     * <p>
+     * Consider using the <a>ListStacks</a> API if you're not passing a parameter to <code>StackName</code>.
      * </p>
      * <p>
      * The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid
@@ -74,7 +78,11 @@ public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources
-     * in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.
+     * in the account, which can impact performance. This requires <code>ListStacks</code> and
+     * <code>DescribeStacks</code> permissions.
+     * </p>
+     * <p>
+     * Consider using the <a>ListStacks</a> API if you're not passing a parameter to <code>StackName</code>.
      * </p>
      * <p>
      * The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid
@@ -107,8 +115,11 @@ public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param stackName
      *        <p>
      *        If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all
-     *        resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code>
-     *        permissions.
+     *        resources in the account, which can impact performance. This requires <code>ListStacks</code> and
+     *        <code>DescribeStacks</code> permissions.
+     *        </p>
+     *        <p>
+     *        Consider using the <a>ListStacks</a> API if you're not passing a parameter to <code>StackName</code>.
      *        </p>
      *        <p>
      *        The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and
@@ -146,7 +157,11 @@ public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources
-     * in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.
+     * in the account, which can impact performance. This requires <code>ListStacks</code> and
+     * <code>DescribeStacks</code> permissions.
+     * </p>
+     * <p>
+     * Consider using the <a>ListStacks</a> API if you're not passing a parameter to <code>StackName</code>.
      * </p>
      * <p>
      * The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid
@@ -178,8 +193,11 @@ public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @return <p>
      *         If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all
-     *         resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code>
-     *         permissions.
+     *         resources in the account, which can impact performance. This requires <code>ListStacks</code> and
+     *         <code>DescribeStacks</code> permissions.
+     *         </p>
+     *         <p>
+     *         Consider using the <a>ListStacks</a> API if you're not passing a parameter to <code>StackName</code>.
      *         </p>
      *         <p>
      *         The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and
@@ -217,7 +235,11 @@ public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources
-     * in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.
+     * in the account, which can impact performance. This requires <code>ListStacks</code> and
+     * <code>DescribeStacks</code> permissions.
+     * </p>
+     * <p>
+     * Consider using the <a>ListStacks</a> API if you're not passing a parameter to <code>StackName</code>.
      * </p>
      * <p>
      * The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid
@@ -250,8 +272,11 @@ public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param stackName
      *        <p>
      *        If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all
-     *        resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code>
-     *        permissions.
+     *        resources in the account, which can impact performance. This requires <code>ListStacks</code> and
+     *        <code>DescribeStacks</code> permissions.
+     *        </p>
+     *        <p>
+     *        Consider using the <a>ListStacks</a> API if you're not passing a parameter to <code>StackName</code>.
      *        </p>
      *        <p>
      *        The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and

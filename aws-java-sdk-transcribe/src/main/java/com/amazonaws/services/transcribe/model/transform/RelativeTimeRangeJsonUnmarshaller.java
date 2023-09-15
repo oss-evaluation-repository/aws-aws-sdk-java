@@ -43,26 +43,38 @@ public class RelativeTimeRangeJsonUnmarshaller implements Unmarshaller<RelativeT
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeTimeRange.setStartPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeTimeRange.setEndPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("First", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeTimeRange.setFirst(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Last", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeTimeRange.setLast(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

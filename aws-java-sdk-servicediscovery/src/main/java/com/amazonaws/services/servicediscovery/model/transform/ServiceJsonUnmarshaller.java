@@ -43,58 +43,78 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NamespaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setNamespaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setDnsConfig(DnsConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthCheckConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setHealthCheckConfig(HealthCheckConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HealthCheckCustomConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setHealthCheckCustomConfig(HealthCheckCustomConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatorRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setCreatorRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

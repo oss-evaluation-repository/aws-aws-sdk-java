@@ -43,56 +43,75 @@ public class FolderMetadataJsonUnmarshaller implements Unmarshaller<FolderMetada
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setCreatorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParentFolderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setParentFolderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setResourceState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Signature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Labels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestVersionSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     folderMetadata.setLatestVersionSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

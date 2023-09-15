@@ -43,42 +43,58 @@ public class SourceControlDetailsJsonUnmarshaller implements Unmarshaller<Source
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Provider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceControlDetails.setProvider(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Repository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceControlDetails.setRepository(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceControlDetails.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Branch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceControlDetails.setBranch(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Folder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceControlDetails.setFolder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceControlDetails.setLastCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceControlDetails.setAuthStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceControlDetails.setAuthToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

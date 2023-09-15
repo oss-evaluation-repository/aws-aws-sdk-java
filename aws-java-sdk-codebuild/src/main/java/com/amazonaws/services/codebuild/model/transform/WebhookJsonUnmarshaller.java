@@ -43,28 +43,37 @@ public class WebhookJsonUnmarshaller implements Unmarshaller<Webhook, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("payloadUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setPayloadUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("secret", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setSecret(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("branchFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setBranchFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setFilterGroups(new ListUnmarshaller<java.util.List<WebhookFilter>>(new ListUnmarshaller<WebhookFilter>(
                             WebhookFilterJsonUnmarshaller.getInstance())
@@ -74,12 +83,18 @@ public class WebhookJsonUnmarshaller implements Unmarshaller<Webhook, JsonUnmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("buildType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setBuildType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedSecret", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     webhook.setLastModifiedSecret(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

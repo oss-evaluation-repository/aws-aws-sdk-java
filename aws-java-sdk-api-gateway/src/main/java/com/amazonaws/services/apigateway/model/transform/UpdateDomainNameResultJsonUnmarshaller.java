@@ -43,79 +43,104 @@ public class UpdateDomainNameResultJsonUnmarshaller implements Unmarshaller<Upda
             return updateDomainNameResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("domainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateUploadDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setCertificateUploadDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("regionalDomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setRegionalDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("regionalHostedZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setRegionalHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("regionalCertificateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setRegionalCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("regionalCertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setRegionalCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("distributionDomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setDistributionDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("distributionHostedZoneId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setDistributionHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endpointConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setEndpointConfiguration(EndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("domainNameStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setDomainNameStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainNameStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setDomainNameStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setSecurityPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("mutualTlsAuthentication", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setMutualTlsAuthentication(MutualTlsAuthenticationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ownershipVerificationCertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateDomainNameResult.setOwnershipVerificationCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

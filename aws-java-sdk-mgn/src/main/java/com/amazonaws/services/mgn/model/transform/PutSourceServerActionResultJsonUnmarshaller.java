@@ -43,53 +43,68 @@ public class PutSourceServerActionResultJsonUnmarshaller implements Unmarshaller
             return putSourceServerActionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setActionID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setActionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("active", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("documentIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setDocumentIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("documentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("externalParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setExternalParameters(new MapUnmarshaller<String, SsmExternalParameter>(context.getUnmarshaller(String.class),
                             SsmExternalParameterJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("mustSucceedForCutover", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setMustSucceedForCutover(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("order", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setOrder(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setParameters(new MapUnmarshaller<String, java.util.List<SsmParameterStoreParameter>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<SsmParameterStoreParameter>(SsmParameterStoreParameterJsonUnmarshaller
@@ -98,8 +113,13 @@ public class PutSourceServerActionResultJsonUnmarshaller implements Unmarshaller
                     ).unmarshall(context));
                 }
                 if (context.testExpression("timeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSourceServerActionResult.setTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

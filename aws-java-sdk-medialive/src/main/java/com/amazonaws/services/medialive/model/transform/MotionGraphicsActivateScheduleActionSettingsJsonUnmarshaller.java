@@ -44,26 +44,38 @@ public class MotionGraphicsActivateScheduleActionSettingsJsonUnmarshaller implem
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     motionGraphicsActivateScheduleActionSettings.setDuration(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("passwordParam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     motionGraphicsActivateScheduleActionSettings.setPasswordParam(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     motionGraphicsActivateScheduleActionSettings.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     motionGraphicsActivateScheduleActionSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

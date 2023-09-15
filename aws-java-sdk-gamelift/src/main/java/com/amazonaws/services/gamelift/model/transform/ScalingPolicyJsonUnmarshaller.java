@@ -43,66 +43,88 @@ public class ScalingPolicyJsonUnmarshaller implements Unmarshaller<ScalingPolicy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FleetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalingAdjustment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setScalingAdjustment(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalingAdjustmentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setScalingAdjustmentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComparisonOperator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setComparisonOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Threshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationPeriods", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setEvaluationPeriods(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PolicyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setPolicyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setTargetConfiguration(TargetConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UpdateStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingPolicy.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

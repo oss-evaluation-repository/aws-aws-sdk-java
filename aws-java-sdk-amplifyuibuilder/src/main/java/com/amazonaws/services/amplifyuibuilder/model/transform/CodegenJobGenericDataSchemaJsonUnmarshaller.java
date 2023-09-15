@@ -43,29 +43,41 @@ public class CodegenJobGenericDataSchemaJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataSourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJobGenericDataSchema.setDataSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("models", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJobGenericDataSchema.setModels(new MapUnmarshaller<String, CodegenGenericDataModel>(context.getUnmarshaller(String.class),
                             CodegenGenericDataModelJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("enums", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJobGenericDataSchema.setEnums(new MapUnmarshaller<String, CodegenGenericDataEnum>(context.getUnmarshaller(String.class),
                             CodegenGenericDataEnumJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nonModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJobGenericDataSchema.setNonModels(new MapUnmarshaller<String, CodegenGenericDataNonModel>(context.getUnmarshaller(String.class),
                             CodegenGenericDataNonModelJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

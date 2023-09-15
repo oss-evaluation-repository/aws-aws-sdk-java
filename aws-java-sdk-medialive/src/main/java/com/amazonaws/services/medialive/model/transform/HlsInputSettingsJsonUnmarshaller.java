@@ -43,30 +43,43 @@ public class HlsInputSettingsJsonUnmarshaller implements Unmarshaller<HlsInputSe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bandwidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsInputSettings.setBandwidth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("bufferSegments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsInputSettings.setBufferSegments(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("retries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsInputSettings.setRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("retryInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsInputSettings.setRetryInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("scte35Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsInputSettings.setScte35Source(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

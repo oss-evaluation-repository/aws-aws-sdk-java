@@ -43,38 +43,53 @@ public class GrokClassifierJsonUnmarshaller implements Unmarshaller<GrokClassifi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grokClassifier.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Classification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grokClassifier.setClassification(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grokClassifier.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grokClassifier.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grokClassifier.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("GrokPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grokClassifier.setGrokPattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grokClassifier.setCustomPatterns(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

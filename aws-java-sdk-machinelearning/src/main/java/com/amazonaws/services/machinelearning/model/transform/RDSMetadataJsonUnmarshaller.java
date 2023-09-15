@@ -43,34 +43,48 @@ public class RDSMetadataJsonUnmarshaller implements Unmarshaller<RDSMetadata, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Database", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSMetadata.setDatabase(RDSDatabaseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DatabaseUserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSMetadata.setDatabaseUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectSqlQuery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSMetadata.setSelectSqlQuery(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSMetadata.setResourceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSMetadata.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataPipelineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSMetadata.setDataPipelineId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

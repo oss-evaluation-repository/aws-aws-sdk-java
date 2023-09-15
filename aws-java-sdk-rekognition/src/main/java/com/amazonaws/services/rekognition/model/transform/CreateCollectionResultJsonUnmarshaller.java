@@ -43,22 +43,33 @@ public class CreateCollectionResultJsonUnmarshaller implements Unmarshaller<Crea
             return createCollectionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StatusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCollectionResult.setStatusCode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CollectionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCollectionResult.setCollectionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FaceModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createCollectionResult.setFaceModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

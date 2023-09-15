@@ -44,46 +44,63 @@ public class PostDialogCodeHookInvocationSpecificationJsonUnmarshaller implement
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("successResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postDialogCodeHookInvocationSpecification.setSuccessResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("successNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postDialogCodeHookInvocationSpecification.setSuccessNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("successConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postDialogCodeHookInvocationSpecification.setSuccessConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postDialogCodeHookInvocationSpecification.setFailureResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postDialogCodeHookInvocationSpecification.setFailureNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postDialogCodeHookInvocationSpecification.setFailureConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeoutResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postDialogCodeHookInvocationSpecification.setTimeoutResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeoutNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postDialogCodeHookInvocationSpecification.setTimeoutNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeoutConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postDialogCodeHookInvocationSpecification.setTimeoutConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

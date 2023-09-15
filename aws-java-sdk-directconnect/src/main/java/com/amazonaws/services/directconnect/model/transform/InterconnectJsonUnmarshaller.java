@@ -43,72 +43,95 @@ public class InterconnectJsonUnmarshaller implements Unmarshaller<Interconnect, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("interconnectId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setInterconnectId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("interconnectName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setInterconnectName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("interconnectState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setInterconnectState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bandwidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setBandwidth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loaIssueTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setLoaIssueTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lagId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setLagId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsDevice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     interconnect.setProviderName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

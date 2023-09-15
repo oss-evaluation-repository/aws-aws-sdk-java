@@ -43,26 +43,38 @@ public class PropertyTypeJsonUnmarshaller implements Unmarshaller<PropertyType, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyType.setAttribute(AttributeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("measurement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyType.setMeasurement(MeasurementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("transform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyType.setTransform(TransformJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("metric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyType.setMetric(MetricJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

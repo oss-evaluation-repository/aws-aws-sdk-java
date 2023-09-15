@@ -43,54 +43,73 @@ public class SessionJsonUnmarshaller implements Unmarshaller<Session, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setEndDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DocumentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setDocumentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Details", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setOutputUrl(SessionManagerOutputUrlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaxSessionDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     session.setMaxSessionDuration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

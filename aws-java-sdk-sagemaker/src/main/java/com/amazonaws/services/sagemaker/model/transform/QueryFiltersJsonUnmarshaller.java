@@ -43,44 +43,59 @@ public class QueryFiltersJsonUnmarshaller implements Unmarshaller<QueryFilters, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Types", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryFilters.setTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LineageTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryFilters.setLineageTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreatedBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryFilters.setCreatedBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryFilters.setCreatedAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryFilters.setModifiedBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryFilters.setModifiedAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryFilters
                             .setProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

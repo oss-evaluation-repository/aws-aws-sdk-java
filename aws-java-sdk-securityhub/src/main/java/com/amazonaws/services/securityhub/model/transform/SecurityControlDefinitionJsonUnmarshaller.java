@@ -43,34 +43,48 @@ public class SecurityControlDefinitionJsonUnmarshaller implements Unmarshaller<S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SecurityControlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityControlDefinition.setSecurityControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityControlDefinition.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityControlDefinition.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RemediationUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityControlDefinition.setRemediationUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SeverityRating", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityControlDefinition.setSeverityRating(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentRegionAvailability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     securityControlDefinition.setCurrentRegionAvailability(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

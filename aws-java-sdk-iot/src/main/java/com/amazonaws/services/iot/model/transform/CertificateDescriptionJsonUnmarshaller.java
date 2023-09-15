@@ -43,66 +43,88 @@ public class CertificateDescriptionJsonUnmarshaller implements Unmarshaller<Cert
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("certificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("caCertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setCaCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificatePem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setCertificatePem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ownedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setOwnedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("previousOwnedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setPreviousOwnedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("customerVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setCustomerVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("transferData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setTransferData(TransferDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("generationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setGenerationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("validity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setValidity(CertificateValidityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("certificateMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateDescription.setCertificateMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

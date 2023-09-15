@@ -43,32 +43,44 @@ public class ExpenseDocumentJsonUnmarshaller implements Unmarshaller<ExpenseDocu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExpenseIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expenseDocument.setExpenseIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SummaryFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expenseDocument.setSummaryFields(new ListUnmarshaller<ExpenseField>(ExpenseFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LineItemGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expenseDocument.setLineItemGroups(new ListUnmarshaller<LineItemGroup>(LineItemGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Blocks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     expenseDocument.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

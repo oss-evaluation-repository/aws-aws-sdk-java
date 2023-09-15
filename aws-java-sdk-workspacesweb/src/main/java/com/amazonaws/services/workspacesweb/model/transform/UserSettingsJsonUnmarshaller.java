@@ -43,52 +43,70 @@ public class UserSettingsJsonUnmarshaller implements Unmarshaller<UserSettings, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("associatedPortalArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setAssociatedPortalArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("cookieSynchronizationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setCookieSynchronizationConfiguration(CookieSynchronizationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("copyAllowed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setCopyAllowed(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("disconnectTimeoutInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setDisconnectTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("downloadAllowed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setDownloadAllowed(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("idleDisconnectTimeoutInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setIdleDisconnectTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pasteAllowed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setPasteAllowed(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("printAllowed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setPrintAllowed(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uploadAllowed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setUploadAllowed(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userSettingsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSettings.setUserSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

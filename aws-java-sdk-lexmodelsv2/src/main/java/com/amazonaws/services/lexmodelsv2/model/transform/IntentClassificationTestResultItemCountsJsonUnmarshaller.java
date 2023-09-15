@@ -44,24 +44,35 @@ public class IntentClassificationTestResultItemCountsJsonUnmarshaller implements
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("totalResultCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentClassificationTestResultItemCounts.setTotalResultCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("speechTranscriptionResultCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentClassificationTestResultItemCounts.setSpeechTranscriptionResultCounts(new MapUnmarshaller<String, Integer>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(Integer.class)).unmarshall(context));
                 }
                 if (context.testExpression("intentMatchResultCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     intentClassificationTestResultItemCounts.setIntentMatchResultCounts(new MapUnmarshaller<String, Integer>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(Integer.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

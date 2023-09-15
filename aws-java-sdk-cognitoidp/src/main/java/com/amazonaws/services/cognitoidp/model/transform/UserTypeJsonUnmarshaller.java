@@ -43,42 +43,57 @@ public class UserTypeJsonUnmarshaller implements Unmarshaller<UserType, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userType.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userType.setAttributes(new ListUnmarshaller<AttributeType>(AttributeTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserCreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userType.setUserCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UserLastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userType.setUserLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userType.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UserStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userType.setUserStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MFAOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userType.setMFAOptions(new ListUnmarshaller<MFAOptionType>(MFAOptionTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

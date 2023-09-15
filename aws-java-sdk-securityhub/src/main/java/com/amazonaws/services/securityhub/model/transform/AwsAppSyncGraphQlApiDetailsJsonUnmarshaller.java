@@ -43,54 +43,69 @@ public class AwsAppSyncGraphQlApiDetailsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpenIdConnectConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setOpenIdConnectConfig(AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LambdaAuthorizerConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setLambdaAuthorizerConfig(AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("XrayEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setXrayEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserPoolConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setUserPoolConfig(AwsAppSyncGraphQlApiUserPoolConfigDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setLogConfig(AwsAppSyncGraphQlApiLogConfigDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdditionalAuthenticationProviders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails
                             .setAdditionalAuthenticationProviders(new ListUnmarshaller<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>(
@@ -99,8 +114,13 @@ public class AwsAppSyncGraphQlApiDetailsJsonUnmarshaller implements Unmarshaller
                             .unmarshall(context));
                 }
                 if (context.testExpression("WafWebAclArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAppSyncGraphQlApiDetails.setWafWebAclArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

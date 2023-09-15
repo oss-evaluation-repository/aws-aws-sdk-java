@@ -43,71 +43,93 @@ public class CreateRestApiResultJsonUnmarshaller implements Unmarshaller<CreateR
             return createRestApiResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("warnings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("binaryMediaTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setBinaryMediaTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("minimumCompressionSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setMinimumCompressionSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("apiKeySource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setApiKeySource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endpointConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setEndpointConfiguration(EndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("policy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("disableExecuteApiEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setDisableExecuteApiEndpoint(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("rootResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createRestApiResult.setRootResourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

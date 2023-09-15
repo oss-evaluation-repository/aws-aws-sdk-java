@@ -43,34 +43,48 @@ public class ParentSavingsPlanOfferingJsonUnmarshaller implements Unmarshaller<P
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("offeringId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parentSavingsPlanOffering.setOfferingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("paymentOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parentSavingsPlanOffering.setPaymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("planType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parentSavingsPlanOffering.setPlanType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("durationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parentSavingsPlanOffering.setDurationSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("currency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parentSavingsPlanOffering.setCurrency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("planDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parentSavingsPlanOffering.setPlanDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

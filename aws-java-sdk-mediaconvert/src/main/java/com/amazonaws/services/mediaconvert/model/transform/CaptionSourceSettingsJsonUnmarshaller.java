@@ -43,42 +43,58 @@ public class CaptionSourceSettingsJsonUnmarshaller implements Unmarshaller<Capti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ancillarySourceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionSourceSettings.setAncillarySourceSettings(AncillarySourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dvbSubSourceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionSourceSettings.setDvbSubSourceSettings(DvbSubSourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("embeddedSourceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionSourceSettings.setEmbeddedSourceSettings(EmbeddedSourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fileSourceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionSourceSettings.setFileSourceSettings(FileSourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionSourceSettings.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("teletextSourceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionSourceSettings.setTeletextSourceSettings(TeletextSourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("trackSourceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionSourceSettings.setTrackSourceSettings(TrackSourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("webvttHlsSourceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     captionSourceSettings.setWebvttHlsSourceSettings(WebvttHlsSourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

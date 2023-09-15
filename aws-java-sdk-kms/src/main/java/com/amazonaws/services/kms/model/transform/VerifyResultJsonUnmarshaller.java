@@ -43,22 +43,33 @@ public class VerifyResultJsonUnmarshaller implements Unmarshaller<VerifyResult, 
             return verifyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verifyResult.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SignatureValid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verifyResult.setSignatureValid(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SigningAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     verifyResult.setSigningAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

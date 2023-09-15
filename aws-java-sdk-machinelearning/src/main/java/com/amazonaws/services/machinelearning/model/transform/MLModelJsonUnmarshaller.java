@@ -43,87 +43,114 @@ public class MLModelJsonUnmarshaller implements Unmarshaller<MLModel, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MLModelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setMLModelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrainingDataSourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setTrainingDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setCreatedByIamUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setEndpointInfo(RealtimeEndpointInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TrainingParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setTrainingParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("InputDataLocationS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setInputDataLocationS3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Algorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MLModelType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setMLModelType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScoreThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setScoreThreshold(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("ScoreThresholdLastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setScoreThresholdLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setComputeTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FinishedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mLModel.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

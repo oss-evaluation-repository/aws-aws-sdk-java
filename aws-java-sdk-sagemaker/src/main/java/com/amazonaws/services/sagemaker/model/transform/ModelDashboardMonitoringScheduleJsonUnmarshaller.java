@@ -43,48 +43,62 @@ public class ModelDashboardMonitoringScheduleJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitoringScheduleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setMonitoringScheduleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringScheduleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setMonitoringScheduleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringScheduleStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setMonitoringScheduleStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setMonitoringType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("MonitoringScheduleConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setMonitoringScheduleConfig(MonitoringScheduleConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EndpointName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setEndpointName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringAlertSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setMonitoringAlertSummaries(new ListUnmarshaller<MonitoringAlertSummary>(
                             MonitoringAlertSummaryJsonUnmarshaller.getInstance())
@@ -92,9 +106,14 @@ public class ModelDashboardMonitoringScheduleJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastMonitoringExecutionSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDashboardMonitoringSchedule.setLastMonitoringExecutionSummary(MonitoringExecutionSummaryJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

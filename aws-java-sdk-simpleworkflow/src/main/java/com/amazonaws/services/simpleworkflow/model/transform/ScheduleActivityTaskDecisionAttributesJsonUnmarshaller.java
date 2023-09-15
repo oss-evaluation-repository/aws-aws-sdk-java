@@ -43,50 +43,68 @@ public class ScheduleActivityTaskDecisionAttributesJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activityType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActivityTaskDecisionAttributes.setActivityType(ActivityTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActivityTaskDecisionAttributes.setActivityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("control", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActivityTaskDecisionAttributes.setControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActivityTaskDecisionAttributes.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scheduleToCloseTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActivityTaskDecisionAttributes.setScheduleToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActivityTaskDecisionAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("taskPriority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActivityTaskDecisionAttributes.setTaskPriority(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scheduleToStartTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActivityTaskDecisionAttributes.setScheduleToStartTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startToCloseTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActivityTaskDecisionAttributes.setStartToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("heartbeatTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActivityTaskDecisionAttributes.setHeartbeatTimeout(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

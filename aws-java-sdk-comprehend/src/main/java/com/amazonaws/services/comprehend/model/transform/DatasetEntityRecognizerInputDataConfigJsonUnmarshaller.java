@@ -43,22 +43,33 @@ public class DatasetEntityRecognizerInputDataConfigJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Annotations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetEntityRecognizerInputDataConfig.setAnnotations(DatasetEntityRecognizerAnnotationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Documents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetEntityRecognizerInputDataConfig.setDocuments(DatasetEntityRecognizerDocumentsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EntityList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetEntityRecognizerInputDataConfig.setEntityList(DatasetEntityRecognizerEntityListJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

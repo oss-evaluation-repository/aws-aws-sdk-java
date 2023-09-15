@@ -43,86 +43,111 @@ public class TopicCalculatedFieldJsonUnmarshaller implements Unmarshaller<TopicC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CalculatedFieldName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setCalculatedFieldName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CalculatedFieldDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setCalculatedFieldDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Expression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CalculatedFieldSynonyms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setCalculatedFieldSynonyms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IsIncludedInTopic", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setIsIncludedInTopic(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DisableIndexing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setDisableIndexing(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnDataRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setColumnDataRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeGranularity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setTimeGranularity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultFormatting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setDefaultFormatting(DefaultFormattingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Aggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setAggregation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComparativeOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setComparativeOrder(ComparativeOrderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SemanticType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setSemanticType(SemanticTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AllowedAggregations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setAllowedAggregations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotAllowedAggregations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setNotAllowedAggregations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NeverAggregateInFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setNeverAggregateInFilter(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CellValueSynonyms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setCellValueSynonyms(new ListUnmarshaller<CellValueSynonym>(CellValueSynonymJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NonAdditive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicCalculatedField.setNonAdditive(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

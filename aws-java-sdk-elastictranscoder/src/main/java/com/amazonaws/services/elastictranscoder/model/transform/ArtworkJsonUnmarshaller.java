@@ -43,38 +43,53 @@ public class ArtworkJsonUnmarshaller implements Unmarshaller<Artwork, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InputKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artwork.setInputKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxWidth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artwork.setMaxWidth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxHeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artwork.setMaxHeight(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizingPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artwork.setSizingPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaddingPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artwork.setPaddingPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlbumArtFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artwork.setAlbumArtFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artwork.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

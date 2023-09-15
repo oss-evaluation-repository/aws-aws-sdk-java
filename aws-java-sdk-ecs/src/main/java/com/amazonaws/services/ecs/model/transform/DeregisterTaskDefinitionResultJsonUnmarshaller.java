@@ -43,14 +43,23 @@ public class DeregisterTaskDefinitionResultJsonUnmarshaller implements Unmarshal
             return deregisterTaskDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deregisterTaskDefinitionResult.setTaskDefinition(TaskDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

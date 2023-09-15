@@ -43,50 +43,68 @@ public class VulnerablePackageJsonUnmarshaller implements Unmarshaller<Vulnerabl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vulnerablePackage.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vulnerablePackage.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceLayerHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vulnerablePackage.setSourceLayerHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("epoch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vulnerablePackage.setEpoch(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("release", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vulnerablePackage.setRelease(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vulnerablePackage.setArch(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("packageManager", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vulnerablePackage.setPackageManager(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vulnerablePackage.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fixedInVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vulnerablePackage.setFixedInVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remediation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vulnerablePackage.setRemediation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

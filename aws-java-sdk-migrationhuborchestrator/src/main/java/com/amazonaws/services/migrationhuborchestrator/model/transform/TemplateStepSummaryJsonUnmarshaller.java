@@ -43,50 +43,67 @@ public class TemplateStepSummaryJsonUnmarshaller implements Unmarshaller<Templat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateStepSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stepGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateStepSummary.setStepGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateStepSummary.setTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateStepSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stepActionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateStepSummary.setStepActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateStepSummary.setTargetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateStepSummary.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("previous", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateStepSummary.setPrevious(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("next", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateStepSummary.setNext(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

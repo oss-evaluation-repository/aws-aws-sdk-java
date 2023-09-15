@@ -43,22 +43,33 @@ public class UpdateConstraintResultJsonUnmarshaller implements Unmarshaller<Upda
             return updateConstraintResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConstraintDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateConstraintResult.setConstraintDetail(ConstraintDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConstraintParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateConstraintResult.setConstraintParameters(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateConstraintResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

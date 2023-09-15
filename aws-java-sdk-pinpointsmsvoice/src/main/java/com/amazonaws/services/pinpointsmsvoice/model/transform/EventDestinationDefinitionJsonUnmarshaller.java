@@ -43,32 +43,45 @@ public class EventDestinationDefinitionJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CloudWatchLogsDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestinationDefinition.setCloudWatchLogsDestination(CloudWatchLogsDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestinationDefinition.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KinesisFirehoseDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestinationDefinition.setKinesisFirehoseDestination(KinesisFirehoseDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MatchingEventTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestinationDefinition.setMatchingEventTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SnsDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventDestinationDefinition.setSnsDestination(SnsDestinationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

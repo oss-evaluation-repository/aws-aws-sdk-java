@@ -43,24 +43,35 @@ public class TransformJsonUnmarshaller implements Unmarshaller<Transform, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("expression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transform.setExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("variables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transform.setVariables(new ListUnmarshaller<ExpressionVariable>(ExpressionVariableJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("processingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transform.setProcessingConfig(TransformProcessingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class BridgeFlowOutputJsonUnmarshaller implements Unmarshaller<BridgeFlow
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("flowArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridgeFlowOutput.setFlowArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("flowSourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridgeFlowOutput.setFlowSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridgeFlowOutput.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

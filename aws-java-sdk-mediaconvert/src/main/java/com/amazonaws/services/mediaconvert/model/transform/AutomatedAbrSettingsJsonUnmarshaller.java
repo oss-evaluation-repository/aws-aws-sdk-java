@@ -43,28 +43,40 @@ public class AutomatedAbrSettingsJsonUnmarshaller implements Unmarshaller<Automa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("maxAbrBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automatedAbrSettings.setMaxAbrBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxRenditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automatedAbrSettings.setMaxRenditions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minAbrBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automatedAbrSettings.setMinAbrBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automatedAbrSettings.setRules(new ListUnmarshaller<AutomatedAbrRule>(AutomatedAbrRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

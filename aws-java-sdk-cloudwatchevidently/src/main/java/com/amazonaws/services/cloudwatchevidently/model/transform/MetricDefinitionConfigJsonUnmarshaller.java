@@ -43,31 +43,44 @@ public class MetricDefinitionConfigJsonUnmarshaller implements Unmarshaller<Metr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("entityIdKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinitionConfig.setEntityIdKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinitionConfig.setEventPattern(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinitionConfig.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("unitLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinitionConfig.setUnitLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("valueKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricDefinitionConfig.setValueKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

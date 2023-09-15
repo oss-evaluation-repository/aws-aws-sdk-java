@@ -43,34 +43,48 @@ public class SummarizedCounterJsonUnmarshaller implements Unmarshaller<Summarize
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     summarizedCounter.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Max", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     summarizedCounter.setMax(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Average", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     summarizedCounter.setAverage(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Sum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     summarizedCounter.setSum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("N", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     summarizedCounter.setN(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     summarizedCounter.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,59 +43,79 @@ public class ProjectSummaryJsonUnmarshaller implements Unmarshaller<ProjectSumma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeExperimentCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setActiveExperimentCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("activeLaunchCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setActiveLaunchCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("experimentCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setExperimentCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("featureCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setFeatureCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("launchCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setLaunchCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

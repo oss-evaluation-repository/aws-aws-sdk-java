@@ -43,38 +43,53 @@ public class BuildArtifactsJsonUnmarshaller implements Unmarshaller<BuildArtifac
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildArtifacts.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sha256sum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildArtifacts.setSha256sum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("md5sum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildArtifacts.setMd5sum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("overrideArtifactName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildArtifacts.setOverrideArtifactName(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionDisabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildArtifacts.setEncryptionDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("artifactIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildArtifacts.setArtifactIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketOwnerAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     buildArtifacts.setBucketOwnerAccess(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

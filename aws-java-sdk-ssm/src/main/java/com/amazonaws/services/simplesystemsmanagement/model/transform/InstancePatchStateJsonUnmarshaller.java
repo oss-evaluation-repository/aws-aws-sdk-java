@@ -43,98 +43,128 @@ public class InstancePatchStateJsonUnmarshaller implements Unmarshaller<Instance
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PatchGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setPatchGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BaselineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setBaselineId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setSnapshotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstallOverrideList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setInstallOverrideList(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setOwnerInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstalledCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setInstalledCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstalledOtherCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setInstalledOtherCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstalledPendingRebootCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setInstalledPendingRebootCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstalledRejectedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setInstalledRejectedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MissingCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setMissingCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setFailedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UnreportedNotApplicableCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setUnreportedNotApplicableCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NotApplicableCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setNotApplicableCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OperationStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setOperationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OperationEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setOperationEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Operation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setOperation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastNoRebootInstallOperationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setLastNoRebootInstallOperationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RebootOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setRebootOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CriticalNonCompliantCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setCriticalNonCompliantCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityNonCompliantCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setSecurityNonCompliantCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OtherNonCompliantCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePatchState.setOtherNonCompliantCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

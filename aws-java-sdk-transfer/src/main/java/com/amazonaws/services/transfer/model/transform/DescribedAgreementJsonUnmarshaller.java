@@ -43,52 +43,70 @@ public class DescribedAgreementJsonUnmarshaller implements Unmarshaller<Describe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAgreement.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgreementId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAgreement.setAgreementId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAgreement.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAgreement.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAgreement.setServerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocalProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAgreement.setLocalProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartnerProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAgreement.setPartnerProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BaseDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAgreement.setBaseDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAgreement.setAccessRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAgreement.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,52 +44,70 @@ public class AwsAmazonMqBrokerLdapServerMetadataDetailsJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Hosts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLdapServerMetadataDetails.setHosts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RoleBase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLdapServerMetadataDetails.setRoleBase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLdapServerMetadataDetails.setRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleSearchMatching", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLdapServerMetadataDetails.setRoleSearchMatching(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleSearchSubtree", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLdapServerMetadataDetails.setRoleSearchSubtree(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceAccountUsername", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLdapServerMetadataDetails.setServiceAccountUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserBase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLdapServerMetadataDetails.setUserBase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserRoleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLdapServerMetadataDetails.setUserRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserSearchMatching", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLdapServerMetadataDetails.setUserSearchMatching(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserSearchSubtree", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAmazonMqBrokerLdapServerMetadataDetails.setUserSearchSubtree(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

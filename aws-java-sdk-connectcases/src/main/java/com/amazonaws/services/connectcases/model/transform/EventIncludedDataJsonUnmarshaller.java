@@ -43,18 +43,28 @@ public class EventIncludedDataJsonUnmarshaller implements Unmarshaller<EventIncl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("caseData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventIncludedData.setCaseData(CaseEventIncludedDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("relatedItemData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventIncludedData.setRelatedItemData(RelatedItemEventIncludedDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

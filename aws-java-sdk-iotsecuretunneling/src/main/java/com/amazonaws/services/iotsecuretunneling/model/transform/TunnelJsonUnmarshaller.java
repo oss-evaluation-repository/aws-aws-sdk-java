@@ -43,56 +43,75 @@ public class TunnelJsonUnmarshaller implements Unmarshaller<Tunnel, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tunnelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setTunnelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tunnelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setTunnelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceConnectionState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setSourceConnectionState(ConnectionStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("destinationConnectionState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setDestinationConnectionState(ConnectionStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setDestinationConfig(DestinationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeoutConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setTimeoutConfig(TimeoutConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tunnel.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

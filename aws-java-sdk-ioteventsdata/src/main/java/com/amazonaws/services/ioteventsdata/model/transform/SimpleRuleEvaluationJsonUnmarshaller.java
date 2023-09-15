@@ -43,22 +43,33 @@ public class SimpleRuleEvaluationJsonUnmarshaller implements Unmarshaller<Simple
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("inputPropertyValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simpleRuleEvaluation.setInputPropertyValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simpleRuleEvaluation.setOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thresholdValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simpleRuleEvaluation.setThresholdValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,32 +43,42 @@ public class ScalingInstructionJsonUnmarshaller implements Unmarshaller<ScalingI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setServiceNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalableDimension", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setScalableDimension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setMinCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setMaxCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetTrackingConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setTargetTrackingConfigurations(new ListUnmarshaller<TargetTrackingConfiguration>(
                             TargetTrackingConfigurationJsonUnmarshaller.getInstance())
@@ -76,38 +86,50 @@ public class ScalingInstructionJsonUnmarshaller implements Unmarshaller<ScalingI
                     .unmarshall(context));
                 }
                 if (context.testExpression("PredefinedLoadMetricSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction
                             .setPredefinedLoadMetricSpecification(PredefinedLoadMetricSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomizedLoadMetricSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction
                             .setCustomizedLoadMetricSpecification(CustomizedLoadMetricSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ScheduledActionBufferTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setScheduledActionBufferTime(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictiveScalingMaxCapacityBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setPredictiveScalingMaxCapacityBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictiveScalingMaxCapacityBuffer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setPredictiveScalingMaxCapacityBuffer(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictiveScalingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setPredictiveScalingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalingPolicyUpdateBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setScalingPolicyUpdateBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisableDynamicScaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalingInstruction.setDisableDynamicScaling(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

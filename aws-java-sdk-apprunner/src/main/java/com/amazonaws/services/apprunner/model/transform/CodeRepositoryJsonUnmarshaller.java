@@ -43,22 +43,33 @@ public class CodeRepositoryJsonUnmarshaller implements Unmarshaller<CodeReposito
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RepositoryUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeRepository.setRepositoryUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceCodeVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeRepository.setSourceCodeVersion(SourceCodeVersionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CodeConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeRepository.setCodeConfiguration(CodeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

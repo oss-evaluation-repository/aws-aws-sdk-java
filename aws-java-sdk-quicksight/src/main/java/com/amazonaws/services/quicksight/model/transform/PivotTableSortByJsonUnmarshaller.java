@@ -43,22 +43,33 @@ public class PivotTableSortByJsonUnmarshaller implements Unmarshaller<PivotTable
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Field", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableSortBy.setField(FieldSortJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableSortBy.setColumn(ColumnSortJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableSortBy.setDataPath(DataPathSortJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

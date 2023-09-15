@@ -43,28 +43,40 @@ public class GetCurrentMetricDataResultJsonUnmarshaller implements Unmarshaller<
             return getCurrentMetricDataResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCurrentMetricDataResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCurrentMetricDataResult.setMetricResults(new ListUnmarshaller<CurrentMetricResult>(CurrentMetricResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataSnapshotTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCurrentMetricDataResult.setDataSnapshotTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ApproximateTotalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCurrentMetricDataResult.setApproximateTotalCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

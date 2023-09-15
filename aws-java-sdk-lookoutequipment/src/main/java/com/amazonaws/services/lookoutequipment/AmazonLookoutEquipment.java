@@ -158,7 +158,7 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Creates an ML model for data inference.
+     * Creates a machine learning model for data inference.
      * </p>
      * <p>
      * A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for
@@ -197,6 +197,32 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Creates a retraining scheduler on the specified model.
+     * </p>
+     * 
+     * @param createRetrainingSchedulerRequest
+     * @return Result of the CreateRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.CreateRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRetrainingSchedulerResult createRetrainingScheduler(CreateRetrainingSchedulerRequest createRetrainingSchedulerRequest);
+
+    /**
+     * <p>
      * Deletes a dataset and associated artifacts. The operation will check to see if any inference scheduler or data
      * ingestion job is currently using the dataset, and if there isn't, the dataset, its metadata, and any associated
      * data stored in S3 will be deleted. This does not affect any models that used this dataset for training and
@@ -226,7 +252,7 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Deletes an inference scheduler that has been set up. Already processed output results are not affected.
+     * Deletes an inference scheduler that has been set up. Prior inference results will not be deleted.
      * </p>
      * 
      * @param deleteInferenceSchedulerRequest
@@ -304,8 +330,8 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Deletes an ML model currently available for Amazon Lookout for Equipment. This will prevent it from being used
-     * with an inference scheduler, even one that is already set up.
+     * Deletes a machine learning model currently available for Amazon Lookout for Equipment. This will prevent it from
+     * being used with an inference scheduler, even one that is already set up.
      * </p>
      * 
      * @param deleteModelRequest
@@ -354,6 +380,32 @@ public interface AmazonLookoutEquipment {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes a retraining scheduler from a model. The retraining scheduler must be in the <code>STOPPED</code> status.
+     * </p>
+     * 
+     * @param deleteRetrainingSchedulerRequest
+     * @return Result of the DeleteRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.DeleteRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRetrainingSchedulerResult deleteRetrainingScheduler(DeleteRetrainingSchedulerRequest deleteRetrainingSchedulerRequest);
 
     /**
      * <p>
@@ -479,8 +531,8 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Provides a JSON containing the overall information about a specific ML model, including model name and ARN,
-     * dataset, training and evaluation information, status, and so on.
+     * Provides a JSON containing the overall information about a specific machine learning model, including model name
+     * and ARN, dataset, training and evaluation information, status, and so on.
      * </p>
      * 
      * @param describeModelRequest
@@ -549,6 +601,31 @@ public interface AmazonLookoutEquipment {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeResourcePolicyResult describeResourcePolicy(DescribeResourcePolicyRequest describeResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Provides a description of the retraining scheduler, including information such as the model name and retraining
+     * parameters.
+     * </p>
+     * 
+     * @param describeRetrainingSchedulerRequest
+     * @return Result of the DescribeRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.DescribeRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRetrainingSchedulerResult describeRetrainingScheduler(DescribeRetrainingSchedulerRequest describeRetrainingSchedulerRequest);
 
     /**
      * <p>
@@ -815,6 +892,28 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Lists all retraining schedulers in your account, filtering by model name prefix and status.
+     * </p>
+     * 
+     * @param listRetrainingSchedulersRequest
+     * @return Result of the ListRetrainingSchedulers operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ListRetrainingSchedulers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRetrainingSchedulersResult listRetrainingSchedulers(ListRetrainingSchedulersRequest listRetrainingSchedulersRequest);
+
+    /**
+     * <p>
      * Lists statistics about the data collected for each of the sensors that have been successfully ingested in the
      * particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job.
      * </p>
@@ -946,6 +1045,32 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Starts a retraining scheduler.
+     * </p>
+     * 
+     * @param startRetrainingSchedulerRequest
+     * @return Result of the StartRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.StartRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartRetrainingSchedulerResult startRetrainingScheduler(StartRetrainingSchedulerRequest startRetrainingSchedulerRequest);
+
+    /**
+     * <p>
      * Stops an inference scheduler.
      * </p>
      * 
@@ -969,6 +1094,32 @@ public interface AmazonLookoutEquipment {
      *      target="_top">AWS API Documentation</a>
      */
     StopInferenceSchedulerResult stopInferenceScheduler(StopInferenceSchedulerRequest stopInferenceSchedulerRequest);
+
+    /**
+     * <p>
+     * Stops a retraining scheduler.
+     * </p>
+     * 
+     * @param stopRetrainingSchedulerRequest
+     * @return Result of the StopRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.StopRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopRetrainingSchedulerResult stopRetrainingScheduler(StopRetrainingSchedulerRequest stopRetrainingSchedulerRequest);
 
     /**
      * <p>
@@ -1100,6 +1251,58 @@ public interface AmazonLookoutEquipment {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateLabelGroupResult updateLabelGroup(UpdateLabelGroupRequest updateLabelGroupRequest);
+
+    /**
+     * <p>
+     * Updates a model in the account.
+     * </p>
+     * 
+     * @param updateModelRequest
+     * @return Result of the UpdateModel operation returned by the service.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.UpdateModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateModelResult updateModel(UpdateModelRequest updateModelRequest);
+
+    /**
+     * <p>
+     * Updates a retraining scheduler.
+     * </p>
+     * 
+     * @param updateRetrainingSchedulerRequest
+     * @return Result of the UpdateRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.UpdateRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRetrainingSchedulerResult updateRetrainingScheduler(UpdateRetrainingSchedulerRequest updateRetrainingSchedulerRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

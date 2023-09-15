@@ -43,62 +43,83 @@ public class GetTableResultJsonUnmarshaller implements Unmarshaller<GetTableResu
             return getTableResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("keyspaceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setKeyspaceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("schemaDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setSchemaDefinition(SchemaDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("capacitySpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setCapacitySpecification(CapacitySpecificationSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("encryptionSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setEncryptionSpecification(EncryptionSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pointInTimeRecovery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setPointInTimeRecovery(PointInTimeRecoverySummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ttl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setTtl(TimeToLiveJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("defaultTimeToLive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setDefaultTimeToLive(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setComment(CommentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("clientSideTimestamps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getTableResult.setClientSideTimestamps(ClientSideTimestampsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

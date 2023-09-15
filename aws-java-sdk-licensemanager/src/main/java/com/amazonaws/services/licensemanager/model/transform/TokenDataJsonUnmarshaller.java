@@ -43,42 +43,57 @@ public class TokenDataJsonUnmarshaller implements Unmarshaller<TokenData, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TokenId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenData.setTokenId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TokenType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenData.setTokenType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenData.setLicenseArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpirationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenData.setExpirationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TokenProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenData.setTokenProperties(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RoleArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenData.setRoleArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tokenData.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class ActiveViolationJsonUnmarshaller implements Unmarshaller<ActiveViola
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("violationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeViolation.setViolationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeViolation.setThingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeViolation.setSecurityProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("behavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeViolation.setBehavior(BehaviorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastViolationValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeViolation.setLastViolationValue(MetricValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("violationEventAdditionalInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeViolation.setViolationEventAdditionalInfo(ViolationEventAdditionalInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("verificationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeViolation.setVerificationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("verificationStateDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeViolation.setVerificationStateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastViolationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeViolation.setLastViolationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("violationStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeViolation.setViolationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class UpdateChannelMessageResultJsonUnmarshaller implements Unmarshaller<
             return updateChannelMessageResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChannelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelMessageResult.setChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelMessageResult.setMessageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelMessageResult.setStatus(ChannelMessageStatusStructureJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SubChannelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateChannelMessageResult.setSubChannelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

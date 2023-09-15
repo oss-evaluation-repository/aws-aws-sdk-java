@@ -44,19 +44,29 @@ public class AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsJsonUnmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MarketType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceMarketOptionsDetails.setMarketType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SpotOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceMarketOptionsDetails
                             .setSpotOptions(AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

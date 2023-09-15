@@ -43,40 +43,55 @@ public class RuleBasedMatchingRequestJsonUnmarshaller implements Unmarshaller<Ru
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleBasedMatchingRequest.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchingRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleBasedMatchingRequest.setMatchingRules(new ListUnmarshaller<MatchingRule>(MatchingRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MaxAllowedRuleLevelForMerging", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleBasedMatchingRequest.setMaxAllowedRuleLevelForMerging(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxAllowedRuleLevelForMatching", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleBasedMatchingRequest.setMaxAllowedRuleLevelForMatching(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeTypesSelector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleBasedMatchingRequest.setAttributeTypesSelector(AttributeTypesSelectorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConflictResolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleBasedMatchingRequest.setConflictResolution(ConflictResolutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExportingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleBasedMatchingRequest.setExportingConfig(ExportingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

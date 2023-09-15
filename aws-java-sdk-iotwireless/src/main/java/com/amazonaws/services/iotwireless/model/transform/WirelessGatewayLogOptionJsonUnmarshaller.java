@@ -43,25 +43,36 @@ public class WirelessGatewayLogOptionJsonUnmarshaller implements Unmarshaller<Wi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessGatewayLogOption.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessGatewayLogOption.setLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Events", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wirelessGatewayLogOption.setEvents(new ListUnmarshaller<WirelessGatewayEventLogOption>(WirelessGatewayEventLogOptionJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

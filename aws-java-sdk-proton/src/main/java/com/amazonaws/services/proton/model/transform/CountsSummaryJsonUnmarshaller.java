@@ -43,38 +43,53 @@ public class CountsSummaryJsonUnmarshaller implements Unmarshaller<CountsSummary
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("components", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     countsSummary.setComponents(ResourceCountsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("environmentTemplates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     countsSummary.setEnvironmentTemplates(ResourceCountsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("environments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     countsSummary.setEnvironments(ResourceCountsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pipelines", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     countsSummary.setPipelines(ResourceCountsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serviceInstances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     countsSummary.setServiceInstances(ResourceCountsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serviceTemplates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     countsSummary.setServiceTemplates(ResourceCountsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("services", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     countsSummary.setServices(ResourceCountsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

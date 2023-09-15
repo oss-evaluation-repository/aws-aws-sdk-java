@@ -43,79 +43,102 @@ public class AssessmentRunJsonUnmarshaller implements Unmarshaller<AssessmentRun
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentTemplateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setAssessmentTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("durationInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setDurationInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("userAttributesForFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setUserAttributesForFindings(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stateChangedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setStateChangedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataCollected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setDataCollected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("stateChanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setStateChanges(new ListUnmarshaller<AssessmentRunStateChange>(AssessmentRunStateChangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("notifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setNotifications(new ListUnmarshaller<AssessmentRunNotification>(AssessmentRunNotificationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("findingCounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentRun.setFindingCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

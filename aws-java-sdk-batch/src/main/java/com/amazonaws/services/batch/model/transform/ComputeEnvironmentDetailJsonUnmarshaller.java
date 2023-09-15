@@ -43,71 +43,94 @@ public class ComputeEnvironmentDetailJsonUnmarshaller implements Unmarshaller<Co
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("computeEnvironmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setComputeEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("computeEnvironmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setComputeEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("unmanagedvCpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setUnmanagedvCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ecsClusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setEcsClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("computeResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setComputeResources(ComputeResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serviceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatePolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setUpdatePolicy(UpdatePolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("eksConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setEksConfiguration(EksConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("containerOrchestrationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setContainerOrchestrationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uuid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeEnvironmentDetail.setUuid(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

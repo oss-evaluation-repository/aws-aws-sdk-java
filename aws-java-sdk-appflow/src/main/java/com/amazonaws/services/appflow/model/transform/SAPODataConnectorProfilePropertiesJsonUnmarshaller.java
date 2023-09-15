@@ -43,42 +43,58 @@ public class SAPODataConnectorProfilePropertiesJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationHostUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAPODataConnectorProfileProperties.setApplicationHostUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationServicePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAPODataConnectorProfileProperties.setApplicationServicePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAPODataConnectorProfileProperties.setPortNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("clientNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAPODataConnectorProfileProperties.setClientNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logonLanguage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAPODataConnectorProfileProperties.setLogonLanguage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("privateLinkServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAPODataConnectorProfileProperties.setPrivateLinkServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("oAuthProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAPODataConnectorProfileProperties.setOAuthProperties(OAuthPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("disableSSO", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sAPODataConnectorProfileProperties.setDisableSSO(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

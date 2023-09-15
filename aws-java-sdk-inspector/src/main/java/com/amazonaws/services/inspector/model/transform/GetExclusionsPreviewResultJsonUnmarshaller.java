@@ -43,24 +43,35 @@ public class GetExclusionsPreviewResultJsonUnmarshaller implements Unmarshaller<
             return getExclusionsPreviewResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("previewStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExclusionsPreviewResult.setPreviewStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("exclusionPreviews", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExclusionsPreviewResult.setExclusionPreviews(new ListUnmarshaller<ExclusionPreview>(ExclusionPreviewJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExclusionsPreviewResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

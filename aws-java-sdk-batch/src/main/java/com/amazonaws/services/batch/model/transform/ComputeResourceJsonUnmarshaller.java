@@ -43,87 +43,112 @@ public class ComputeResourceJsonUnmarshaller implements Unmarshaller<ComputeReso
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("allocationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setAllocationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minvCpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setMinvCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxvCpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setMaxvCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("desiredvCpus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setDesiredvCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("imageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subnets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ec2KeyPair", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setEc2KeyPair(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setInstanceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("placementGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setPlacementGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bidPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setBidPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("spotIamFleetRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setSpotIamFleetRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setLaunchTemplate(LaunchTemplateSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ec2Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computeResource.setEc2Configuration(new ListUnmarshaller<Ec2Configuration>(Ec2ConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

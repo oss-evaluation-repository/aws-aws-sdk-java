@@ -43,40 +43,55 @@ public class ConnectPeerSummaryJsonUnmarshaller implements Unmarshaller<ConnectP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CoreNetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerSummary.setCoreNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectAttachmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerSummary.setConnectAttachmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectPeerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerSummary.setConnectPeerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerSummary.setEdgeLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectPeerState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerSummary.setConnectPeerState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectPeerSummary.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,48 +43,64 @@ public class AssetAttributesJsonUnmarshaller implements Unmarshaller<AssetAttrib
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("schemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetAttributes.setSchemaVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("agentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetAttributes.setAgentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetAttributes.setAutoScalingGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("amiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetAttributes.setAmiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetAttributes.setHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipv4Addresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetAttributes.setIpv4Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetAttributes.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetAttributes.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

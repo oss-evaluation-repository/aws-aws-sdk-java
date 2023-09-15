@@ -43,34 +43,48 @@ public class CloudwatchMetricActionJsonUnmarshaller implements Unmarshaller<Clou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudwatchMetricAction.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudwatchMetricAction.setMetricNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudwatchMetricAction.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudwatchMetricAction.setMetricValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudwatchMetricAction.setMetricUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudwatchMetricAction.setMetricTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

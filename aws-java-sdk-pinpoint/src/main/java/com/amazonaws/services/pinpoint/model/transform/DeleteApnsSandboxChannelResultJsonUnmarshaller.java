@@ -43,9 +43,13 @@ public class DeleteApnsSandboxChannelResultJsonUnmarshaller implements Unmarshal
             return deleteApnsSandboxChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteApnsSandboxChannelResult.setAPNSSandboxChannelResponse(APNSSandboxChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

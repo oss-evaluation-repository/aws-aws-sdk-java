@@ -43,71 +43,94 @@ public class CertificateAuthorityJsonUnmarshaller implements Unmarshaller<Certif
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastStateChangeAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setLastStateChangeAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Serial", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setSerial(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setNotBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setNotAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateAuthorityConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setCertificateAuthorityConfiguration(CertificateAuthorityConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("RevocationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setRevocationConfiguration(RevocationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RestorableUntil", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setRestorableUntil(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("KeyStorageSecurityStandard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setKeyStorageSecurityStandard(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UsageMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     certificateAuthority.setUsageMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,50 @@ public class ClassificationResultJsonUnmarshaller implements Unmarshaller<Classi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MimeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setMimeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeClassified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setSizeClassified(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalOccurrences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setAdditionalOccurrences(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setStatus(ClassificationStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SensitiveData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setSensitiveData(new ListUnmarshaller<SensitiveDataResult>(SensitiveDataResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CustomDataIdentifiers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setCustomDataIdentifiers(CustomDataIdentifiersResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

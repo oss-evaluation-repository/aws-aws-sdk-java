@@ -43,36 +43,50 @@ public class ReferenceLineLabelConfigurationJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ValueLabelConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLineLabelConfiguration.setValueLabelConfiguration(ReferenceLineValueLabelConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("CustomLabelConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLineLabelConfiguration.setCustomLabelConfiguration(ReferenceLineCustomLabelConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("FontConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLineLabelConfiguration.setFontConfiguration(FontConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FontColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLineLabelConfiguration.setFontColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HorizontalPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLineLabelConfiguration.setHorizontalPosition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VerticalPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLineLabelConfiguration.setVerticalPosition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

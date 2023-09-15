@@ -43,35 +43,49 @@ public class TypedLinkAttributeDefinitionJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedLinkAttributeDefinition.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedLinkAttributeDefinition.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedLinkAttributeDefinition.setDefaultValue(TypedAttributeValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IsImmutable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedLinkAttributeDefinition.setIsImmutable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedLinkAttributeDefinition.setRules(new MapUnmarshaller<String, Rule>(context.getUnmarshaller(String.class), RuleJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("RequiredBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     typedLinkAttributeDefinition.setRequiredBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

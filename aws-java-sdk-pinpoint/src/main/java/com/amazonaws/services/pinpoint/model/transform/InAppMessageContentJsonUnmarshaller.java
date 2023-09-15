@@ -43,34 +43,48 @@ public class InAppMessageContentJsonUnmarshaller implements Unmarshaller<InAppMe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackgroundColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageContent.setBackgroundColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BodyConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageContent.setBodyConfig(InAppMessageBodyConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HeaderConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageContent.setHeaderConfig(InAppMessageHeaderConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ImageUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageContent.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrimaryBtn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageContent.setPrimaryBtn(InAppMessageButtonJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SecondaryBtn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageContent.setSecondaryBtn(InAppMessageButtonJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

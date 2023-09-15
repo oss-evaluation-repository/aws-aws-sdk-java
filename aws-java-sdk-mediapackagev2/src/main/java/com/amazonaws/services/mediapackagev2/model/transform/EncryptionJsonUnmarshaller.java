@@ -43,26 +43,38 @@ public class EncryptionJsonUnmarshaller implements Unmarshaller<Encryption, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConstantInitializationVector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryption.setConstantInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryption.setEncryptionMethod(EncryptionMethodJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KeyRotationIntervalSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryption.setKeyRotationIntervalSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SpekeKeyProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryption.setSpekeKeyProvider(SpekeKeyProviderJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

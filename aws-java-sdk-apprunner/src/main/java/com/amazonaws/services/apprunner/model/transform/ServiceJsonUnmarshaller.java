@@ -43,70 +43,93 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setServiceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setServiceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setServiceUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setDeletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setSourceConfiguration(SourceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InstanceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setInstanceConfiguration(InstanceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HealthCheckConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setHealthCheckConfiguration(HealthCheckConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoScalingConfigurationSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setAutoScalingConfigurationSummary(AutoScalingConfigurationSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NetworkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ObservabilityConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     service.setObservabilityConfiguration(ServiceObservabilityConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

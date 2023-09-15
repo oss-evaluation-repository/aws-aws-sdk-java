@@ -43,40 +43,55 @@ public class CelebrityDetailJsonUnmarshaller implements Unmarshaller<CelebrityDe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Urls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     celebrityDetail.setUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     celebrityDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     celebrityDetail.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Confidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     celebrityDetail.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("BoundingBox", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     celebrityDetail.setBoundingBox(BoundingBoxJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Face", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     celebrityDetail.setFace(FaceDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KnownGender", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     celebrityDetail.setKnownGender(KnownGenderJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

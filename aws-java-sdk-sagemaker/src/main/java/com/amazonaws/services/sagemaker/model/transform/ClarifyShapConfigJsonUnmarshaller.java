@@ -43,30 +43,43 @@ public class ClarifyShapConfigJsonUnmarshaller implements Unmarshaller<ClarifySh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ShapBaselineConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyShapConfig.setShapBaselineConfig(ClarifyShapBaselineConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NumberOfSamples", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyShapConfig.setNumberOfSamples(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UseLogit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyShapConfig.setUseLogit(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Seed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyShapConfig.setSeed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TextConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyShapConfig.setTextConfig(ClarifyTextConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

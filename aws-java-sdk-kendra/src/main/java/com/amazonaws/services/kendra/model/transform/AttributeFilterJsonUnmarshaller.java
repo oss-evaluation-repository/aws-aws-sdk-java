@@ -43,54 +43,72 @@ public class AttributeFilterJsonUnmarshaller implements Unmarshaller<AttributeFi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AndAllFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeFilter.setAndAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OrAllFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeFilter.setOrAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeFilter.setNotFilter(AttributeFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EqualsTo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeFilter.setEqualsTo(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ContainsAll", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeFilter.setContainsAll(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ContainsAny", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeFilter.setContainsAny(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GreaterThan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeFilter.setGreaterThan(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GreaterThanOrEquals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeFilter.setGreaterThanOrEquals(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LessThan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeFilter.setLessThan(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LessThanOrEquals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeFilter.setLessThanOrEquals(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

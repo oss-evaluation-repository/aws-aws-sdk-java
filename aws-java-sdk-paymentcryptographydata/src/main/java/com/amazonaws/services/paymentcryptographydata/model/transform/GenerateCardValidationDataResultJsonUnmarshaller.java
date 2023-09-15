@@ -43,22 +43,33 @@ public class GenerateCardValidationDataResultJsonUnmarshaller implements Unmarsh
             return generateCardValidationDataResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generateCardValidationDataResult.setKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyCheckValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generateCardValidationDataResult.setKeyCheckValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidationData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generateCardValidationDataResult.setValidationData(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

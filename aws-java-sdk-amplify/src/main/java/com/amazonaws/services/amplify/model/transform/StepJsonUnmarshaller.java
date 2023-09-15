@@ -43,55 +43,74 @@ public class StepJsonUnmarshaller implements Unmarshaller<Step, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("stepName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setStepName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("logUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setLogUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("artifactsUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setArtifactsUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testArtifactsUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setTestArtifactsUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testConfigUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setTestConfigUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("screenshots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setScreenshots(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("context", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     step.setContext(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

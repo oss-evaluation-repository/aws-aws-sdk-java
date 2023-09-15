@@ -43,21 +43,31 @@ public class CapacityAssignmentConfigurationJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CapacityReservationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityAssignmentConfiguration.setCapacityReservationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CapacityAssignments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacityAssignmentConfiguration.setCapacityAssignments(new ListUnmarshaller<CapacityAssignment>(CapacityAssignmentJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,62 +43,82 @@ public class AudioSelectorJsonUnmarshaller implements Unmarshaller<AudioSelector
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioDurationCorrection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setAudioDurationCorrection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("customLanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setCustomLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setDefaultSelection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("externalAudioFileInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setExternalAudioFileInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hlsRenditionGroupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setHlsRenditionGroupSettings(HlsRenditionGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("languageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pids", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("programSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setProgramSelection(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("remixSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setRemixSettings(RemixSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("selectorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setSelectorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tracks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelector.setTracks(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class VdmOptionsJsonUnmarshaller implements Unmarshaller<VdmOptions, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DashboardOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vdmOptions.setDashboardOptions(DashboardOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GuardianOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vdmOptions.setGuardianOptions(GuardianOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

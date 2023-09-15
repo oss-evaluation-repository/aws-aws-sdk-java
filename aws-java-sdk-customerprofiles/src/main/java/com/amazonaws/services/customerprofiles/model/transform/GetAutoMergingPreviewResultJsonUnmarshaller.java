@@ -43,26 +43,38 @@ public class GetAutoMergingPreviewResultJsonUnmarshaller implements Unmarshaller
             return getAutoMergingPreviewResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAutoMergingPreviewResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfMatchesInSample", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAutoMergingPreviewResult.setNumberOfMatchesInSample(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfProfilesInSample", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAutoMergingPreviewResult.setNumberOfProfilesInSample(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfProfilesWillBeMerged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAutoMergingPreviewResult.setNumberOfProfilesWillBeMerged(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

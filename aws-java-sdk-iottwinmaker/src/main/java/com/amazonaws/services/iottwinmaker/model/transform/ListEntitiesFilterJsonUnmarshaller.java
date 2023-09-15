@@ -43,22 +43,33 @@ public class ListEntitiesFilterJsonUnmarshaller implements Unmarshaller<ListEnti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("parentEntityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEntitiesFilter.setParentEntityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEntitiesFilter.setComponentTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("externalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEntitiesFilter.setExternalId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

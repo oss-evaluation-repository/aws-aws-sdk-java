@@ -43,42 +43,58 @@ public class StartBotRecommendationResultJsonUnmarshaller implements Unmarshalle
             return startBotRecommendationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startBotRecommendationResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startBotRecommendationResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startBotRecommendationResult.setLocaleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botRecommendationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startBotRecommendationResult.setBotRecommendationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botRecommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startBotRecommendationResult.setBotRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startBotRecommendationResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("transcriptSourceSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startBotRecommendationResult.setTranscriptSourceSetting(TranscriptSourceSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("encryptionSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startBotRecommendationResult.setEncryptionSetting(EncryptionSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class TreatmentConfigJsonUnmarshaller implements Unmarshaller<TreatmentCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentConfig.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("feature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentConfig.setFeature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentConfig.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("variation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentConfig.setVariation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

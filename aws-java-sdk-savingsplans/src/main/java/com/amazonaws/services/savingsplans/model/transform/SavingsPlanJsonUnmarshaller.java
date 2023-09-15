@@ -43,85 +43,111 @@ public class SavingsPlanJsonUnmarshaller implements Unmarshaller<SavingsPlan, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("offeringId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setOfferingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("savingsPlanId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setSavingsPlanId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("savingsPlanArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setSavingsPlanArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("start", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setStart(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("end", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setEnd(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ec2InstanceFamily", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setEc2InstanceFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("savingsPlanType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setSavingsPlanType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("paymentOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setPaymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("productTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setProductTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("currency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setCurrency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("commitment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setCommitment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("upfrontPaymentAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setUpfrontPaymentAmount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recurringPaymentAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setRecurringPaymentAmount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("termDurationInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setTermDurationInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlan.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

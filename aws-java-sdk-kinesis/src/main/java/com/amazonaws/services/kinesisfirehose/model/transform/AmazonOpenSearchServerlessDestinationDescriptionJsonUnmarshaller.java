@@ -44,56 +44,74 @@ public class AmazonOpenSearchServerlessDestinationDescriptionJsonUnmarshaller im
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonOpenSearchServerlessDestinationDescription.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CollectionEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonOpenSearchServerlessDestinationDescription.setCollectionEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonOpenSearchServerlessDestinationDescription.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BufferingHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonOpenSearchServerlessDestinationDescription.setBufferingHints(AmazonOpenSearchServerlessBufferingHintsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("RetryOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonOpenSearchServerlessDestinationDescription.setRetryOptions(AmazonOpenSearchServerlessRetryOptionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("S3BackupMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonOpenSearchServerlessDestinationDescription.setS3BackupMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DestinationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonOpenSearchServerlessDestinationDescription.setS3DestinationDescription(S3DestinationDescriptionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonOpenSearchServerlessDestinationDescription.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonOpenSearchServerlessDestinationDescription.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonOpenSearchServerlessDestinationDescription.setVpcConfigurationDescription(VpcConfigurationDescriptionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

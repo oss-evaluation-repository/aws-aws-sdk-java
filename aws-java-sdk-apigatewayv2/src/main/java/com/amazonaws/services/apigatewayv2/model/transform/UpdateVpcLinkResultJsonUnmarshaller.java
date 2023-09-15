@@ -43,51 +43,68 @@ public class UpdateVpcLinkResultJsonUnmarshaller implements Unmarshaller<UpdateV
             return updateVpcLinkResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVpcLinkResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVpcLinkResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVpcLinkResult.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("subnetIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVpcLinkResult.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVpcLinkResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("vpcLinkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVpcLinkResult.setVpcLinkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcLinkStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVpcLinkResult.setVpcLinkStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcLinkStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVpcLinkResult.setVpcLinkStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcLinkVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateVpcLinkResult.setVpcLinkVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

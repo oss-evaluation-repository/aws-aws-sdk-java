@@ -43,38 +43,53 @@ public class OpsItemEventSummaryJsonUnmarshaller implements Unmarshaller<OpsItem
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OpsItemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemEventSummary.setOpsItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemEventSummary.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemEventSummary.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DetailType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemEventSummary.setDetailType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Detail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemEventSummary.setDetail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemEventSummary.setCreatedBy(OpsItemIdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemEventSummary.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

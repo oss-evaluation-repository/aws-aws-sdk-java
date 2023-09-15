@@ -43,44 +43,60 @@ public class ReservedInstanceOfferingJsonUnmarshaller implements Unmarshaller<Re
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReservedInstanceOfferingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedInstanceOffering.setReservedInstanceOfferingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedInstanceOffering.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedInstanceOffering.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FixedPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedInstanceOffering.setFixedPrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("UsagePrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedInstanceOffering.setUsagePrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedInstanceOffering.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaymentOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedInstanceOffering.setPaymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecurringCharges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedInstanceOffering.setRecurringCharges(new ListUnmarshaller<RecurringCharge>(RecurringChargeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

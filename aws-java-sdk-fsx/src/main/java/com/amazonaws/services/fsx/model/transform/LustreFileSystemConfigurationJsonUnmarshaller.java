@@ -43,58 +43,78 @@ public class LustreFileSystemConfigurationJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setWeeklyMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRepositoryConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setDataRepositoryConfiguration(DataRepositoryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeploymentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PerUnitStorageThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setPerUnitStorageThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MountName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setMountName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DailyAutomaticBackupStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setDailyAutomaticBackupStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutomaticBackupRetentionDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyTagsToBackups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DriveCacheType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setDriveCacheType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataCompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setDataCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setLogConfiguration(LustreLogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RootSquashConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lustreFileSystemConfiguration.setRootSquashConfiguration(LustreRootSquashConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

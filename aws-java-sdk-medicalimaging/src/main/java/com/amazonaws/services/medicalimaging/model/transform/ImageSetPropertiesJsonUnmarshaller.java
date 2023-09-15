@@ -43,42 +43,58 @@ public class ImageSetPropertiesJsonUnmarshaller implements Unmarshaller<ImageSet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageSetProperties.setImageSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageSetProperties.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSetState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageSetProperties.setImageSetState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageSetWorkflowStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageSetProperties.setImageSetWorkflowStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageSetProperties.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageSetProperties.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageSetProperties.setDeletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageSetProperties.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

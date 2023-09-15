@@ -43,26 +43,38 @@ public class VmwareToAwsTagMappingJsonUnmarshaller implements Unmarshaller<Vmwar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AwsTagKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vmwareToAwsTagMapping.setAwsTagKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AwsTagValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vmwareToAwsTagMapping.setAwsTagValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VmwareCategory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vmwareToAwsTagMapping.setVmwareCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VmwareTagName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vmwareToAwsTagMapping.setVmwareTagName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

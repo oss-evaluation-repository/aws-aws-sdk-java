@@ -43,22 +43,33 @@ public class RotationRulesTypeJsonUnmarshaller implements Unmarshaller<RotationR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutomaticallyAfterDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotationRulesType.setAutomaticallyAfterDays(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotationRulesType.setDuration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rotationRulesType.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

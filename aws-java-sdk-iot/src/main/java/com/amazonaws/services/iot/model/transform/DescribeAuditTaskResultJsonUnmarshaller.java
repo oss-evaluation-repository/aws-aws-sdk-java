@@ -43,35 +43,49 @@ public class DescribeAuditTaskResultJsonUnmarshaller implements Unmarshaller<Des
             return describeAuditTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditTaskResult.setTaskStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditTaskResult.setTaskType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditTaskResult.setTaskStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("taskStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditTaskResult.setTaskStatistics(TaskStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scheduledAuditName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditTaskResult.setScheduledAuditName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("auditDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditTaskResult.setAuditDetails(new MapUnmarshaller<String, AuditCheckDetails>(context.getUnmarshaller(String.class),
                             AuditCheckDetailsJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

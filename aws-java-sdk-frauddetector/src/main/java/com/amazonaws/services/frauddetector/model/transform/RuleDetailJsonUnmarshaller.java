@@ -43,52 +43,70 @@ public class RuleDetailJsonUnmarshaller implements Unmarshaller<RuleDetail, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ruleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleDetail.setRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleDetail.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleDetail.setDetectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ruleVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleDetail.setRuleVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleDetail.setExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("language", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleDetail.setLanguage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outcomes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleDetail.setOutcomes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleDetail.setLastUpdatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleDetail.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleDetail.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

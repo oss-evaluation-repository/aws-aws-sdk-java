@@ -43,50 +43,67 @@ public class InputDescriptionJsonUnmarshaller implements Unmarshaller<InputDescr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InputId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDescription.setInputId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NamePrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDescription.setNamePrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InAppStreamNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDescription.setInAppStreamNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InputProcessingConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDescription.setInputProcessingConfigurationDescription(InputProcessingConfigurationDescriptionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("KinesisStreamsInputDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDescription.setKinesisStreamsInputDescription(KinesisStreamsInputDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisFirehoseInputDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDescription.setKinesisFirehoseInputDescription(KinesisFirehoseInputDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDescription.setInputSchema(SourceSchemaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputParallelism", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDescription.setInputParallelism(InputParallelismJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputStartingPositionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDescription
                             .setInputStartingPositionConfiguration(InputStartingPositionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,44 +43,60 @@ public class AnalysisReportJsonUnmarshaller implements Unmarshaller<AnalysisRepo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AnalysisReportId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReport.setAnalysisReportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Identifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReport.setIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReport.setServiceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReport.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReport.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReport.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReport.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Insights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisReport.setInsights(new ListUnmarshaller<Insight>(InsightJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

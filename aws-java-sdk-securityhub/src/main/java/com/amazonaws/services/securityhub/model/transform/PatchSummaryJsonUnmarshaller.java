@@ -43,54 +43,73 @@ public class PatchSummaryJsonUnmarshaller implements Unmarshaller<PatchSummary, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstalledCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setInstalledCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MissingCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setMissingCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setFailedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstalledOtherCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setInstalledOtherCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstalledRejectedCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setInstalledRejectedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstalledPendingReboot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setInstalledPendingReboot(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OperationStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setOperationStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperationEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setOperationEndTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RebootOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setRebootOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Operation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchSummary.setOperation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class VolumeRecoveryPointInfoJsonUnmarshaller implements Unmarshaller<Vol
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecoveryPointInfo.setVolumeARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecoveryPointInfo.setVolumeSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeUsageInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecoveryPointInfo.setVolumeUsageInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeRecoveryPointTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeRecoveryPointInfo.setVolumeRecoveryPointTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

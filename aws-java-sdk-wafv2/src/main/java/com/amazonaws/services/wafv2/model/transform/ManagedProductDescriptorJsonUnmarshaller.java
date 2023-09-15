@@ -43,46 +43,63 @@ public class ManagedProductDescriptorJsonUnmarshaller implements Unmarshaller<Ma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VendorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedProductDescriptor.setVendorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ManagedRuleSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedProductDescriptor.setManagedRuleSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedProductDescriptor.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductLink", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedProductDescriptor.setProductLink(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedProductDescriptor.setProductTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedProductDescriptor.setProductDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnsTopicArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedProductDescriptor.setSnsTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsVersioningSupported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedProductDescriptor.setIsVersioningSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IsAdvancedManagedRuleSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedProductDescriptor.setIsAdvancedManagedRuleSet(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

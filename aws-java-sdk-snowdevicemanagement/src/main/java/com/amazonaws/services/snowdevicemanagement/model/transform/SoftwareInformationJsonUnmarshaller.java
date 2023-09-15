@@ -43,22 +43,33 @@ public class SoftwareInformationJsonUnmarshaller implements Unmarshaller<Softwar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("installState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwareInformation.setInstallState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("installedVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwareInformation.setInstalledVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("installingVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwareInformation.setInstallingVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

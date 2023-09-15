@@ -43,9 +43,13 @@ public class GetVoiceChannelResultJsonUnmarshaller implements Unmarshaller<GetVo
             return getVoiceChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getVoiceChannelResult.setVoiceChannelResponse(VoiceChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -43,40 +43,55 @@ public class SolutionConfigJsonUnmarshaller implements Unmarshaller<SolutionConf
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventValueThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solutionConfig.setEventValueThreshold(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hpoConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solutionConfig.setHpoConfig(HPOConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("algorithmHyperParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solutionConfig.setAlgorithmHyperParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("featureTransformationParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solutionConfig.setFeatureTransformationParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("autoMLConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solutionConfig.setAutoMLConfig(AutoMLConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("optimizationObjective", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solutionConfig.setOptimizationObjective(OptimizationObjectiveJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("trainingDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solutionConfig.setTrainingDataConfig(TrainingDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

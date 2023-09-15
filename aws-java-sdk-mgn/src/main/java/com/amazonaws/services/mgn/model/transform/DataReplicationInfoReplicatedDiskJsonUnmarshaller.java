@@ -43,30 +43,43 @@ public class DataReplicationInfoReplicatedDiskJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("backloggedStorageBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfoReplicatedDisk.setBackloggedStorageBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfoReplicatedDisk.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicatedStorageBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfoReplicatedDisk.setReplicatedStorageBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("rescannedStorageBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfoReplicatedDisk.setRescannedStorageBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalStorageBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataReplicationInfoReplicatedDisk.setTotalStorageBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

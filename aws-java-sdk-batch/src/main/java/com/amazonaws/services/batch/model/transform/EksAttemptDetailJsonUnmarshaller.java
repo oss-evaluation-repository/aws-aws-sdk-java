@@ -43,36 +43,50 @@ public class EksAttemptDetailJsonUnmarshaller implements Unmarshaller<EksAttempt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksAttemptDetail.setContainers(new ListUnmarshaller<EksAttemptContainerDetail>(EksAttemptContainerDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("podName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksAttemptDetail.setPodName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nodeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksAttemptDetail.setNodeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksAttemptDetail.setStartedAt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("stoppedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksAttemptDetail.setStoppedAt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eksAttemptDetail.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

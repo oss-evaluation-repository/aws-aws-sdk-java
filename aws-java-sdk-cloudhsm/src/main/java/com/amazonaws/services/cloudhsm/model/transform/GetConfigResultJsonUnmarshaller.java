@@ -43,22 +43,33 @@ public class GetConfigResultJsonUnmarshaller implements Unmarshaller<GetConfigRe
             return getConfigResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigResult.setConfigType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigFile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigResult.setConfigFile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigCred", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigResult.setConfigCred(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,95 +43,124 @@ public class CopyJobJsonUnmarshaller implements Unmarshaller<CopyJob, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setCopyJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceBackupVaultArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setSourceBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceRecoveryPointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setSourceRecoveryPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationBackupVaultArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setDestinationBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationRecoveryPointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setDestinationRecoveryPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setCompletionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setBackupSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setCreatedBy(RecoveryPointCreatorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParentJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setParentJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsParent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setIsParent(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CompositeMemberIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setCompositeMemberIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfChildJobs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setNumberOfChildJobs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ChildJobsInState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setChildJobsInState(new MapUnmarshaller<String, Long>(context.getUnmarshaller(String.class), context.getUnmarshaller(Long.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("ResourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     copyJob.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

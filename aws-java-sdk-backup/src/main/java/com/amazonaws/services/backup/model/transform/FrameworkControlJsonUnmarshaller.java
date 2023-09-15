@@ -43,24 +43,35 @@ public class FrameworkControlJsonUnmarshaller implements Unmarshaller<FrameworkC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ControlName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     frameworkControl.setControlName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ControlInputParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     frameworkControl.setControlInputParameters(new ListUnmarshaller<ControlInputParameter>(ControlInputParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ControlScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     frameworkControl.setControlScope(ControlScopeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

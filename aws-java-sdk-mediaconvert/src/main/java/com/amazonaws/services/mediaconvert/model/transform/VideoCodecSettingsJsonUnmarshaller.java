@@ -43,58 +43,78 @@ public class VideoCodecSettingsJsonUnmarshaller implements Unmarshaller<VideoCod
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("av1Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setAv1Settings(Av1SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("avcIntraSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setAvcIntraSettings(AvcIntraSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("codec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("frameCaptureSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setFrameCaptureSettings(FrameCaptureSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("h264Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setH264Settings(H264SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("h265Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setH265Settings(H265SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mpeg2Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setMpeg2Settings(Mpeg2SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("proresSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setProresSettings(ProresSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vc3Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setVc3Settings(Vc3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vp8Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setVp8Settings(Vp8SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vp9Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setVp9Settings(Vp9SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("xavcSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setXavcSettings(XavcSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

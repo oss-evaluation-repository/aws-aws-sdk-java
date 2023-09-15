@@ -43,71 +43,94 @@ public class ProblemJsonUnmarshaller implements Unmarshaller<Problem, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Insights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setInsights(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AffectedResource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setAffectedResource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SeverityLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setSeverityLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setResourceGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Feedback", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setFeedback(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("RecurringCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setRecurringCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastRecurrenceTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setLastRecurrenceTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Visibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResolutionMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setResolutionMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

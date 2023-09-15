@@ -43,42 +43,58 @@ public class LogStreamJsonUnmarshaller implements Unmarshaller<LogStream, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logStreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logStream.setLogStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logStream.setCreationTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("firstEventTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logStream.setFirstEventTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lastEventTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logStream.setLastEventTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lastIngestionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logStream.setLastIngestionTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("uploadSequenceToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logStream.setUploadSequenceToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logStream.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storedBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logStream.setStoredBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

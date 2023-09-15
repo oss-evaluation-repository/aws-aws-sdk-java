@@ -43,51 +43,69 @@ public class StreamingSessionBackupJsonUnmarshaller implements Unmarshaller<Stre
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamingSessionBackup.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("backupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamingSessionBackup.setBackupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamingSessionBackup.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("launchProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamingSessionBackup.setLaunchProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ownedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamingSessionBackup.setOwnedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamingSessionBackup.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamingSessionBackup.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamingSessionBackup.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamingSessionBackup.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamingSessionBackup.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class ResponseItemJsonUnmarshaller implements Unmarshaller<ResponseItem, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseItem.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WebUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseItem.setWebUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseItem.setDocumentMetadata(DocumentMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FolderMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseItem.setFolderMetadata(FolderMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CommentMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseItem.setCommentMetadata(CommentMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersionMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseItem.setDocumentVersionMetadata(DocumentVersionMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

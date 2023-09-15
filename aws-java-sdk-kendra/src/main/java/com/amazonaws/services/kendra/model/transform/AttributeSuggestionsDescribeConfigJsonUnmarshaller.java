@@ -43,12 +43,17 @@ public class AttributeSuggestionsDescribeConfigJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SuggestableConfigList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeSuggestionsDescribeConfig.setSuggestableConfigList(new ListUnmarshaller<SuggestableConfig>(SuggestableConfigJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class AttributeSuggestionsDescribeConfigJsonUnmarshaller implements Unmar
                     .unmarshall(context));
                 }
                 if (context.testExpression("AttributeSuggestionsMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attributeSuggestionsDescribeConfig.setAttributeSuggestionsMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

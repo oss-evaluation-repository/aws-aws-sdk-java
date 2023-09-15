@@ -43,18 +43,28 @@ public class LoggingConfigurationJsonUnmarshaller implements Unmarshaller<Loggin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EnableSIPLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loggingConfiguration.setEnableSIPLogs(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableMediaMetricLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loggingConfiguration.setEnableMediaMetricLogs(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

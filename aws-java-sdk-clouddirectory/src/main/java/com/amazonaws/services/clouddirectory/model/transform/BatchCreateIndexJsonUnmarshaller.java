@@ -43,32 +43,45 @@ public class BatchCreateIndexJsonUnmarshaller implements Unmarshaller<BatchCreat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OrderedIndexedAttributeList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchCreateIndex.setOrderedIndexedAttributeList(new ListUnmarshaller<AttributeKey>(AttributeKeyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IsUnique", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchCreateIndex.setIsUnique(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ParentReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchCreateIndex.setParentReference(ObjectReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LinkName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchCreateIndex.setLinkName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchReferenceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchCreateIndex.setBatchReferenceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

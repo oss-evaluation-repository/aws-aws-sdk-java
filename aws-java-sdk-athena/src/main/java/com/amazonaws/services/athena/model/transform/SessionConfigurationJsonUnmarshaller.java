@@ -43,26 +43,38 @@ public class SessionConfigurationJsonUnmarshaller implements Unmarshaller<Sessio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExecutionRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionConfiguration.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkingDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionConfiguration.setWorkingDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdleTimeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionConfiguration.setIdleTimeoutSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionConfiguration.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

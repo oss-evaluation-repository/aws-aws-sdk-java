@@ -43,18 +43,28 @@ public class JobBookmarksEncryptionJsonUnmarshaller implements Unmarshaller<JobB
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobBookmarksEncryptionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobBookmarksEncryption.setJobBookmarksEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobBookmarksEncryption.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

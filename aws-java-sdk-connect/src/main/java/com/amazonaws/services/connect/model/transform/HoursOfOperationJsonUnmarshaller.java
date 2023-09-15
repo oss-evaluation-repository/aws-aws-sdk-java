@@ -43,41 +43,56 @@ public class HoursOfOperationJsonUnmarshaller implements Unmarshaller<HoursOfOpe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HoursOfOperationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hoursOfOperation.setHoursOfOperationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HoursOfOperationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hoursOfOperation.setHoursOfOperationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hoursOfOperation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hoursOfOperation.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hoursOfOperation.setTimeZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Config", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hoursOfOperation.setConfig(new ListUnmarshaller<HoursOfOperationConfig>(HoursOfOperationConfigJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hoursOfOperation.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

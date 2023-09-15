@@ -43,70 +43,93 @@ public class StatementJsonUnmarshaller implements Unmarshaller<Statement, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ByteMatchStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setByteMatchStatement(ByteMatchStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SqliMatchStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setSqliMatchStatement(SqliMatchStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("XssMatchStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setXssMatchStatement(XssMatchStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SizeConstraintStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setSizeConstraintStatement(SizeConstraintStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GeoMatchStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setGeoMatchStatement(GeoMatchStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RuleGroupReferenceStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setRuleGroupReferenceStatement(RuleGroupReferenceStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IPSetReferenceStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setIPSetReferenceStatement(IPSetReferenceStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RegexPatternSetReferenceStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setRegexPatternSetReferenceStatement(RegexPatternSetReferenceStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RateBasedStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setRateBasedStatement(RateBasedStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AndStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setAndStatement(AndStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OrStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setOrStatement(OrStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NotStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setNotStatement(NotStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ManagedRuleGroupStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setManagedRuleGroupStatement(ManagedRuleGroupStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LabelMatchStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setLabelMatchStatement(LabelMatchStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RegexMatchStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setRegexMatchStatement(RegexMatchStatementJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

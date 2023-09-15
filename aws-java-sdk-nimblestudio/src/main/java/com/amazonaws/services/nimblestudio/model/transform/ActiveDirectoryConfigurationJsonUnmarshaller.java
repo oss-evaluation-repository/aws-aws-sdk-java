@@ -43,12 +43,17 @@ public class ActiveDirectoryConfigurationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("computerAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeDirectoryConfiguration.setComputerAttributes(new ListUnmarshaller<ActiveDirectoryComputerAttribute>(
                             ActiveDirectoryComputerAttributeJsonUnmarshaller.getInstance())
@@ -56,12 +61,18 @@ public class ActiveDirectoryConfigurationJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("directoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeDirectoryConfiguration.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("organizationalUnitDistinguishedName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activeDirectoryConfiguration.setOrganizationalUnitDistinguishedName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

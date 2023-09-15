@@ -43,22 +43,33 @@ public class ResolvedAttributesJsonUnmarshaller implements Unmarshaller<Resolved
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutoMLJobObjective", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolvedAttributes.setAutoMLJobObjective(AutoMLJobObjectiveJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProblemType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolvedAttributes.setProblemType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletionCriteria", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resolvedAttributes.setCompletionCriteria(AutoMLJobCompletionCriteriaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

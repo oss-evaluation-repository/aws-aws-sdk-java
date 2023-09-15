@@ -43,26 +43,38 @@ public class JobMetricsJsonUnmarshaller implements Unmarshaller<JobMetrics, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("inputRecords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobMetrics.setInputRecords(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("matchIDs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobMetrics.setMatchIDs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("recordsNotProcessed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobMetrics.setRecordsNotProcessed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalRecordsProcessed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobMetrics.setTotalRecordsProcessed(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

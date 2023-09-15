@@ -43,66 +43,87 @@ public class WorkflowStepSummaryJsonUnmarshaller implements Unmarshaller<Workflo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("stepId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setStepId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stepActionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setStepActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("previous", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setPrevious(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("next", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setNext(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("noOfSrvCompleted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setNoOfSrvCompleted(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("noOfSrvFailed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setNoOfSrvFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalNoOfSrv", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setTotalNoOfSrv(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scriptLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepSummary.setScriptLocation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

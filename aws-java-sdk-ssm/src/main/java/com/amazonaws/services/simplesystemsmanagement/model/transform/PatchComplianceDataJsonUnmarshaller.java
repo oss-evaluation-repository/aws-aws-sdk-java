@@ -43,38 +43,53 @@ public class PatchComplianceDataJsonUnmarshaller implements Unmarshaller<PatchCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchComplianceData.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KBId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchComplianceData.setKBId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Classification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchComplianceData.setClassification(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchComplianceData.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchComplianceData.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstalledTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchComplianceData.setInstalledTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CVEIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     patchComplianceData.setCVEIds(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

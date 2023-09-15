@@ -45,20 +45,27 @@ public class DescribeAssetBundleExportJobResultJsonUnmarshaller implements Unmar
             return describeAssetBundleExportJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DownloadUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setDownloadUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setErrors(new ListUnmarshaller<AssetBundleExportJobError>(AssetBundleExportJobErrorJsonUnmarshaller
                             .getInstance())
@@ -66,44 +73,57 @@ public class DescribeAssetBundleExportJobResultJsonUnmarshaller implements Unmar
                     .unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AssetBundleExportJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setAssetBundleExportJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AwsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setResourceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IncludeAllDependencies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setIncludeAllDependencies(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setExportFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudFormationOverridePropertyConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult
                             .setCloudFormationOverridePropertyConfiguration(AssetBundleCloudFormationOverridePropertyConfigurationJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetBundleExportJobResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,62 +43,82 @@ public class BundleJsonUnmarshaller implements Unmarshaller<Bundle, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("price", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setPrice(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("cpuCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setCpuCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("diskSizeInGb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setDiskSizeInGb(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("bundleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isActive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setIsActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("power", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setPower(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ramSizeInGb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setRamSizeInGb(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("transferPerMonthInGb", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setTransferPerMonthInGb(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("supportedPlatforms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setSupportedPlatforms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("supportedAppCategories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bundle.setSupportedAppCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class LocationJsonUnmarshaller implements Unmarshaller<Location, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     location.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filePosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     location.setFilePosition(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("relativeFileVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     location.setRelativeFileVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

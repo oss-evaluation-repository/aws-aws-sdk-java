@@ -43,34 +43,47 @@ public class S3DataSourceJsonUnmarshaller implements Unmarshaller<S3DataSource, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3DataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSource.setS3DataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSource.setS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DataDistributionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSource.setS3DataDistributionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSource.setAttributeNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InstanceGroupNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DataSource.setInstanceGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

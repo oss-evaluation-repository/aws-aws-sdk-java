@@ -43,23 +43,34 @@ public class BatchPutGeofenceRequestEntryJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GeofenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPutGeofenceRequestEntry.setGeofenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GeofenceProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPutGeofenceRequestEntry.setGeofenceProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Geometry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchPutGeofenceRequestEntry.setGeometry(GeofenceGeometryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

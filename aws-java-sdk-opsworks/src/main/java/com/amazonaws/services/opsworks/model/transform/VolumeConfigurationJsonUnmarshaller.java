@@ -43,38 +43,53 @@ public class VolumeConfigurationJsonUnmarshaller implements Unmarshaller<VolumeC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MountPoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setMountPoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RaidLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setRaidLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfDisks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setNumberOfDisks(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Iops", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setIops(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

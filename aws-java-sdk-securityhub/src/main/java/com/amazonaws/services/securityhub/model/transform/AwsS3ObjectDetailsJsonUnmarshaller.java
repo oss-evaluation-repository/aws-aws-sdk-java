@@ -43,34 +43,48 @@ public class AwsS3ObjectDetailsJsonUnmarshaller implements Unmarshaller<AwsS3Obj
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LastModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3ObjectDetails.setLastModified(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ETag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3ObjectDetails.setETag(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3ObjectDetails.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3ObjectDetails.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerSideEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3ObjectDetails.setServerSideEncryption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SSEKMSKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3ObjectDetails.setSSEKMSKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

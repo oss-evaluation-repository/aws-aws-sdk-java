@@ -43,73 +43,96 @@ public class EvidenceJsonUnmarshaller implements Unmarshaller<Evidence, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceAwsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setEvidenceAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("time", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("eventSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setEventSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setEventName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceByType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setEvidenceByType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourcesIncluded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setResourcesIncluded(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("iamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setIamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("complianceCheck", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setComplianceCheck(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsOrganization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setAwsOrganization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceFolderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setEvidenceFolderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentReportSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidence.setAssessmentReportSelection(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

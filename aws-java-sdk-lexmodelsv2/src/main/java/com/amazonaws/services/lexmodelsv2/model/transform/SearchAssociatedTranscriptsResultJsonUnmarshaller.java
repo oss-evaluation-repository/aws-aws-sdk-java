@@ -43,32 +43,42 @@ public class SearchAssociatedTranscriptsResultJsonUnmarshaller implements Unmars
             return searchAssociatedTranscriptsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchAssociatedTranscriptsResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchAssociatedTranscriptsResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchAssociatedTranscriptsResult.setLocaleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botRecommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchAssociatedTranscriptsResult.setBotRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nextIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchAssociatedTranscriptsResult.setNextIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("associatedTranscripts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchAssociatedTranscriptsResult.setAssociatedTranscripts(new ListUnmarshaller<AssociatedTranscript>(AssociatedTranscriptJsonUnmarshaller
                             .getInstance())
@@ -76,8 +86,13 @@ public class SearchAssociatedTranscriptsResultJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("totalResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchAssociatedTranscriptsResult.setTotalResults(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

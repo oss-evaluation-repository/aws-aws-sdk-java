@@ -43,34 +43,48 @@ public class LabelingJobForWorkteamSummaryJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LabelingJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobForWorkteamSummary.setLabelingJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobReferenceCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobForWorkteamSummary.setJobReferenceCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkRequesterAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobForWorkteamSummary.setWorkRequesterAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobForWorkteamSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LabelCounters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobForWorkteamSummary.setLabelCounters(LabelCountersForWorkteamJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NumberOfHumanWorkersPerDataObject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     labelingJobForWorkteamSummary.setNumberOfHumanWorkersPerDataObject(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

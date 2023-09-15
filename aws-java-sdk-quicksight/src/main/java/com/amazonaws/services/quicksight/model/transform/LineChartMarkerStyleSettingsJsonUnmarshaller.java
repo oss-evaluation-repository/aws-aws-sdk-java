@@ -43,26 +43,38 @@ public class LineChartMarkerStyleSettingsJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MarkerVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineChartMarkerStyleSettings.setMarkerVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MarkerShape", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineChartMarkerStyleSettings.setMarkerShape(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MarkerSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineChartMarkerStyleSettings.setMarkerSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MarkerColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineChartMarkerStyleSettings.setMarkerColor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

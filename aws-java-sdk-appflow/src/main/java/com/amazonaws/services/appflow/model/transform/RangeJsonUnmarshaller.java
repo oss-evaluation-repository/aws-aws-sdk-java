@@ -43,18 +43,28 @@ public class RangeJsonUnmarshaller implements Unmarshaller<Range, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("maximum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     range.setMaximum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("minimum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     range.setMinimum(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

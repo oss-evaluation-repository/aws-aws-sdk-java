@@ -43,34 +43,48 @@ public class RouterTypeJsonUnmarshaller implements Unmarshaller<RouterType, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("vendor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routerType.setVendor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routerType.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("software", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routerType.setSoftware(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("xsltTemplateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routerType.setXsltTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("xsltTemplateNameForMacSec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routerType.setXsltTemplateNameForMacSec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routerTypeIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routerType.setRouterTypeIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,52 +43,70 @@ public class DescribeWhatIfForecastExportResultJsonUnmarshaller implements Unmar
             return describeWhatIfForecastExportResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WhatIfForecastExportArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastExportResult.setWhatIfForecastExportArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WhatIfForecastExportName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastExportResult.setWhatIfForecastExportName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WhatIfForecastArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastExportResult.setWhatIfForecastArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastExportResult.setDestination(DataDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastExportResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastExportResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastExportResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastExportResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastExportResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWhatIfForecastExportResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

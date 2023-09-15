@@ -43,26 +43,38 @@ public class CalculationResultJsonUnmarshaller implements Unmarshaller<Calculati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StdOutS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculationResult.setStdOutS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StdErrorS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculationResult.setStdErrorS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculationResult.setResultS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     calculationResult.setResultType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

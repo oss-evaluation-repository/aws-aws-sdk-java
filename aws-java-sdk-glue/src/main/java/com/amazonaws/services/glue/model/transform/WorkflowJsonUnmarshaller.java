@@ -43,47 +43,64 @@ public class WorkflowJsonUnmarshaller implements Unmarshaller<Workflow, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflow.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflow.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultRunProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflow.setDefaultRunProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("CreatedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflow.setCreatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflow.setLastModifiedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastRun", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflow.setLastRun(WorkflowRunJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Graph", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflow.setGraph(WorkflowGraphJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaxConcurrentRuns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflow.setMaxConcurrentRuns(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BlueprintDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflow.setBlueprintDetails(BlueprintDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

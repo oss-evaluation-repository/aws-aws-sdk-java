@@ -43,58 +43,78 @@ public class DataSourceJsonUnmarshaller implements Unmarshaller<DataSource, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataSourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setDataSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setServiceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dynamodbConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setDynamodbConfig(DynamodbDataSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambdaConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setLambdaConfig(LambdaDataSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("elasticsearchConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setElasticsearchConfig(ElasticsearchDataSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("openSearchServiceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setOpenSearchServiceConfig(OpenSearchServiceDataSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("httpConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setHttpConfig(HttpDataSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("relationalDatabaseConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setRelationalDatabaseConfig(RelationalDatabaseDataSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("eventBridgeConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSource.setEventBridgeConfig(EventBridgeDataSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

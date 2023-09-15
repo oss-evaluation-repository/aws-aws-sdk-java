@@ -43,30 +43,43 @@ public class FontConfigurationJsonUnmarshaller implements Unmarshaller<FontConfi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FontSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fontConfiguration.setFontSize(FontSizeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FontDecoration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fontConfiguration.setFontDecoration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FontColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fontConfiguration.setFontColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FontWeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fontConfiguration.setFontWeight(FontWeightJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FontStyle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fontConfiguration.setFontStyle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

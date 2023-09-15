@@ -43,56 +43,75 @@ public class ImageDetailJsonUnmarshaller implements Unmarshaller<ImageDetail, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("registryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setRegistryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageDigest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setImageDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setImageTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("imageSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setImageSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("imagePushedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setImagePushedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("imageScanStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setImageScanStatus(ImageScanStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageScanFindingsSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setImageScanFindingsSummary(ImageScanFindingsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imageManifestMediaType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setImageManifestMediaType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("artifactMediaType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setArtifactMediaType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastRecordedPullTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageDetail.setLastRecordedPullTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

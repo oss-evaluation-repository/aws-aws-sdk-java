@@ -43,39 +43,54 @@ public class TransformJobDefinitionJsonUnmarshaller implements Unmarshaller<Tran
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MaxConcurrentTransforms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobDefinition.setMaxConcurrentTransforms(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxPayloadInMB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobDefinition.setMaxPayloadInMB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobDefinition.setBatchStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobDefinition.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TransformInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobDefinition.setTransformInput(TransformInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TransformOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobDefinition.setTransformOutput(TransformOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TransformResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobDefinition.setTransformResources(TransformResourcesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

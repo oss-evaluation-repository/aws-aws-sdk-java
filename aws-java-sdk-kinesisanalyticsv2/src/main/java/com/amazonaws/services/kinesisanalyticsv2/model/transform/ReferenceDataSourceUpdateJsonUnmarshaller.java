@@ -43,26 +43,38 @@ public class ReferenceDataSourceUpdateJsonUnmarshaller implements Unmarshaller<R
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReferenceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceDataSourceUpdate.setReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableNameUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceDataSourceUpdate.setTableNameUpdate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3ReferenceDataSourceUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceDataSourceUpdate.setS3ReferenceDataSourceUpdate(S3ReferenceDataSourceUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReferenceSchemaUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceDataSourceUpdate.setReferenceSchemaUpdate(SourceSchemaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

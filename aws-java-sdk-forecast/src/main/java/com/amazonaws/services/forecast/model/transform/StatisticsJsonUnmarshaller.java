@@ -43,58 +43,78 @@ public class StatisticsJsonUnmarshaller implements Unmarshaller<Statistics, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Count", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CountDistinct", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setCountDistinct(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CountNull", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setCountNull(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CountNan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setCountNan(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Min", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setMin(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Max", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setMax(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Avg", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setAvg(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Stddev", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setStddev(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CountLong", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setCountLong(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CountDistinctLong", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setCountDistinctLong(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CountNullLong", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setCountNullLong(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CountNanLong", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statistics.setCountNanLong(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

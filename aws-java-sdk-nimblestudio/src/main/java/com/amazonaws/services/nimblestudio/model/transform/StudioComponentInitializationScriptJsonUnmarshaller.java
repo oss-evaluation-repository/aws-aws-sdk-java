@@ -43,26 +43,38 @@ public class StudioComponentInitializationScriptJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("launchProfileProtocolVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponentInitializationScript.setLaunchProfileProtocolVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponentInitializationScript.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("runContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponentInitializationScript.setRunContext(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("script", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studioComponentInitializationScript.setScript(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

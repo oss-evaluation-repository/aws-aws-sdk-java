@@ -43,56 +43,75 @@ public class DescribeWorldGenerationJobResultJsonUnmarshaller implements Unmarsh
             return describeWorldGenerationJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("failureCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientRequestToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setClientRequestToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("template", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setTemplate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("worldCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setWorldCount(WorldCountJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("finishedWorldsSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setFinishedWorldsSummary(FinishedWorldsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("worldTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorldGenerationJobResult.setWorldTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

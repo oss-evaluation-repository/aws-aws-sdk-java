@@ -43,45 +43,61 @@ public class ThingDocumentJsonUnmarshaller implements Unmarshaller<ThingDocument
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("thingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingDocument.setThingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingDocument.setThingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingDocument.setThingTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingGroupNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingDocument.setThingGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingDocument.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("shadow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingDocument.setShadow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceDefender", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingDocument.setDeviceDefender(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectivity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thingDocument.setConnectivity(ThingConnectivityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class DatasetOrgAttributesJsonUnmarshaller implements Unmarshaller<Datase
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("gdg", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetOrgAttributes.setGdg(GdgAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("po", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetOrgAttributes.setPo(PoAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetOrgAttributes.setPs(PsAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vsam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetOrgAttributes.setVsam(VsamAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

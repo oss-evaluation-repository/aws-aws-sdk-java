@@ -43,39 +43,54 @@ public class ManagedRuleSetJsonUnmarshaller implements Unmarshaller<ManagedRuleS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleSet.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleSet.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleSet.setARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleSet.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublishedVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleSet.setPublishedVersions(new MapUnmarshaller<String, ManagedRuleSetVersion>(context.getUnmarshaller(String.class),
                             ManagedRuleSetVersionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("RecommendedVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleSet.setRecommendedVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     managedRuleSet.setLabelNamespace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

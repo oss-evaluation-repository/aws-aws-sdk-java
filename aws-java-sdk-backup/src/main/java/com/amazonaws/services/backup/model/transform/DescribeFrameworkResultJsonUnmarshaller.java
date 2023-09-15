@@ -43,44 +43,60 @@ public class DescribeFrameworkResultJsonUnmarshaller implements Unmarshaller<Des
             return describeFrameworkResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FrameworkName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFrameworkResult.setFrameworkName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameworkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFrameworkResult.setFrameworkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameworkDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFrameworkResult.setFrameworkDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameworkControls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFrameworkResult.setFrameworkControls(new ListUnmarshaller<FrameworkControl>(FrameworkControlJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFrameworkResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeploymentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFrameworkResult.setDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameworkStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFrameworkResult.setFrameworkStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdempotencyToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeFrameworkResult.setIdempotencyToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

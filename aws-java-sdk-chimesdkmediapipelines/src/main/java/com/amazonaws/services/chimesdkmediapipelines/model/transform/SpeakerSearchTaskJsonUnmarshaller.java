@@ -43,26 +43,38 @@ public class SpeakerSearchTaskJsonUnmarshaller implements Unmarshaller<SpeakerSe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SpeakerSearchTaskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerSearchTask.setSpeakerSearchTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SpeakerSearchTaskStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerSearchTask.setSpeakerSearchTaskStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerSearchTask.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     speakerSearchTask.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,70 +43,93 @@ public class DescribePortalResultJsonUnmarshaller implements Unmarshaller<Descri
             return describePortalResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("portalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalClientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalStartUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalStartUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalContactEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalContactEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalStatus(PortalStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("portalCreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("portalLastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("portalLogoImageLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalLogoImageLocation(ImageLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalAuthMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setPortalAuthMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("notificationSenderEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setNotificationSenderEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alarms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePortalResult.setAlarms(AlarmsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

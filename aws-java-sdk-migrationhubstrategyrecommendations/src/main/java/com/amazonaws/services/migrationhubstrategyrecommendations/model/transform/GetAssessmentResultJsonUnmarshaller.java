@@ -43,24 +43,35 @@ public class GetAssessmentResultJsonUnmarshaller implements Unmarshaller<GetAsse
             return getAssessmentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assessmentTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAssessmentResult.setAssessmentTargets(new ListUnmarshaller<AssessmentTarget>(AssessmentTargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("dataCollectionDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAssessmentResult.setDataCollectionDetails(DataCollectionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAssessmentResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

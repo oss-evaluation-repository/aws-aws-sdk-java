@@ -43,46 +43,63 @@ public class OpsItemRelatedItemSummaryJsonUnmarshaller implements Unmarshaller<O
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OpsItemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemRelatedItemSummary.setOpsItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemRelatedItemSummary.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemRelatedItemSummary.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemRelatedItemSummary.setAssociationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemRelatedItemSummary.setResourceUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemRelatedItemSummary.setCreatedBy(OpsItemIdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemRelatedItemSummary.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemRelatedItemSummary.setLastModifiedBy(OpsItemIdentityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     opsItemRelatedItemSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

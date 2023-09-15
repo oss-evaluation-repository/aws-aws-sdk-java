@@ -43,42 +43,58 @@ public class CollectorJsonUnmarshaller implements Unmarshaller<Collector, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("collectorHealth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collector.setCollectorHealth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collector.setCollectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("collectorVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collector.setCollectorVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collector.setConfigurationSummary(ConfigurationSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("hostName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collector.setHostName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collector.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastActivityTimeStamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collector.setLastActivityTimeStamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("registeredTimeStamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collector.setRegisteredTimeStamp(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

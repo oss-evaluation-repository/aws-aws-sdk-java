@@ -43,30 +43,43 @@ public class HumanLoopSummaryJsonUnmarshaller implements Unmarshaller<HumanLoopS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HumanLoopName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopSummary.setHumanLoopName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HumanLoopStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopSummary.setHumanLoopStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FlowDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopSummary.setFlowDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

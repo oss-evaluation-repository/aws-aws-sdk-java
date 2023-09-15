@@ -43,48 +43,65 @@ public class CdmaObjJsonUnmarshaller implements Unmarshaller<CdmaObj, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaObj.setSystemId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaObj.setNetworkId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BaseStationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaObj.setBaseStationId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrationZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaObj.setRegistrationZone(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CdmaLocalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaObj.setCdmaLocalId(CdmaLocalIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PilotPower", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaObj.setPilotPower(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BaseLat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaObj.setBaseLat(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("BaseLng", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaObj.setBaseLng(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("CdmaNmr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaObj.setCdmaNmr(new ListUnmarshaller<CdmaNmrObj>(CdmaNmrObjJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

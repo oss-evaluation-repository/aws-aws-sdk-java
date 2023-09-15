@@ -43,51 +43,69 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContainerHostname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDefinition.setContainerHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Image", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDefinition.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDefinition.setImageConfig(ImageConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Mode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDefinition.setMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelDataUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDefinition.setModelDataUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDefinition.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDefinition.setModelPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InferenceSpecificationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDefinition.setInferenceSpecificationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MultiModelConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDefinition.setMultiModelConfig(MultiModelConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelDataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerDefinition.setModelDataSource(ModelDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

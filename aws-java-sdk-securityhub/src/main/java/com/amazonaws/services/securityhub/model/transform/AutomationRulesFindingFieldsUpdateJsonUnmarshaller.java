@@ -43,51 +43,68 @@ public class AutomationRulesFindingFieldsUpdateJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Note", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesFindingFieldsUpdate.setNote(NoteUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesFindingFieldsUpdate.setSeverity(SeverityUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VerificationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesFindingFieldsUpdate.setVerificationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Confidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesFindingFieldsUpdate.setConfidence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Criticality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesFindingFieldsUpdate.setCriticality(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Types", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesFindingFieldsUpdate.setTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserDefinedFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesFindingFieldsUpdate.setUserDefinedFields(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Workflow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesFindingFieldsUpdate.setWorkflow(WorkflowUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RelatedFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     automationRulesFindingFieldsUpdate.setRelatedFindings(new ListUnmarshaller<RelatedFinding>(RelatedFindingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

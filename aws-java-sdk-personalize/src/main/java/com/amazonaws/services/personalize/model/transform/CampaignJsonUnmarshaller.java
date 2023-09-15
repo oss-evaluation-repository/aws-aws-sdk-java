@@ -43,50 +43,68 @@ public class CampaignJsonUnmarshaller implements Unmarshaller<Campaign, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("campaignArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setCampaignArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("solutionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setSolutionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minProvisionedTPS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setMinProvisionedTPS(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("campaignConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setCampaignConfig(CampaignConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("latestCampaignUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     campaign.setLatestCampaignUpdate(CampaignUpdateSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class GetWebACLResultJsonUnmarshaller implements Unmarshaller<GetWebACLRe
             return getWebACLResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WebACL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWebACLResult.setWebACL(WebACLJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LockToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWebACLResult.setLockToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationIntegrationURL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWebACLResult.setApplicationIntegrationURL(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

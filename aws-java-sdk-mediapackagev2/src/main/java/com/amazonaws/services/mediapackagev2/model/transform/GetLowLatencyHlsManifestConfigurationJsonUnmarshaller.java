@@ -43,34 +43,48 @@ public class GetLowLatencyHlsManifestConfigurationJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ManifestName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLowLatencyHlsManifestConfiguration.setManifestName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLowLatencyHlsManifestConfiguration.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChildManifestName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLowLatencyHlsManifestConfiguration.setChildManifestName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ManifestWindowSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLowLatencyHlsManifestConfiguration.setManifestWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ProgramDateTimeIntervalSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLowLatencyHlsManifestConfiguration.setProgramDateTimeIntervalSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ScteHls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getLowLatencyHlsManifestConfiguration.setScteHls(ScteHlsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

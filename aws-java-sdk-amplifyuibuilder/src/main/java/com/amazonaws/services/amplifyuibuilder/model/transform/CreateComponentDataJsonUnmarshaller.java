@@ -44,69 +44,89 @@ public class CreateComponentDataJsonUnmarshaller implements Unmarshaller<CreateC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setComponentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setProperties(new MapUnmarshaller<String, ComponentProperty>(context.getUnmarshaller(String.class),
                             ComponentPropertyJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("children", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setChildren(new ListUnmarshaller<ComponentChild>(ComponentChildJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("variants", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setVariants(new ListUnmarshaller<ComponentVariant>(ComponentVariantJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("overrides", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setOverrides(new MapUnmarshaller<String, java.util.Map<String, String>>(context.getUnmarshaller(String.class),
                             new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
                             .unmarshall(context));
                 }
                 if (context.testExpression("bindingProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setBindingProperties(new MapUnmarshaller<String, ComponentBindingPropertiesValue>(
                             context.getUnmarshaller(String.class), ComponentBindingPropertiesValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("collectionProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setCollectionProperties(new MapUnmarshaller<String, ComponentDataConfiguration>(context.getUnmarshaller(String.class),
                             ComponentDataConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("events", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setEvents(new MapUnmarshaller<String, ComponentEvent>(context.getUnmarshaller(String.class),
                             ComponentEventJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("schemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComponentData.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class SupportedInstanceTypeJsonUnmarshaller implements Unmarshaller<Suppo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MemoryGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setMemoryGB(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setStorageGB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VCPU", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setVCPU(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Is64BitsOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setIs64BitsOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceFamilyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setInstanceFamilyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsOptimizedAvailable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setEbsOptimizedAvailable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsOptimizedByDefault", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setEbsOptimizedByDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfDisks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setNumberOfDisks(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsStorageOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setEbsStorageOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Architecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedInstanceType.setArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

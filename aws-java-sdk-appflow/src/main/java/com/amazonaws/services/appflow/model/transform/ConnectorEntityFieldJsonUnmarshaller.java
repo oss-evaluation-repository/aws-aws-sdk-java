@@ -43,55 +43,74 @@ public class ConnectorEntityFieldJsonUnmarshaller implements Unmarshaller<Connec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("identifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parentIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setParentIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isPrimaryKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setIsPrimaryKey(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isDeprecated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setIsDeprecated(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("supportedFieldTypeDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setSupportedFieldTypeDetails(SupportedFieldTypeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setSourceProperties(SourceFieldPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("destinationProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setDestinationProperties(DestinationFieldPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("customProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorEntityField.setCustomProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

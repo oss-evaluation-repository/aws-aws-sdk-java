@@ -43,44 +43,60 @@ public class LicenseOperationFailureJsonUnmarshaller implements Unmarshaller<Lic
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseOperationFailure.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseOperationFailure.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseOperationFailure.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseOperationFailure.setFailureTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OperationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseOperationFailure.setOperationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceOwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseOperationFailure.setResourceOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperationRequestedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseOperationFailure.setOperationRequestedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetadataList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseOperationFailure.setMetadataList(new ListUnmarshaller<Metadata>(MetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

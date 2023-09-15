@@ -43,57 +43,76 @@ public class DescribeDataQualityJobDefinitionResultJsonUnmarshaller implements U
             return describeDataQualityJobDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setJobDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobDefinitionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setJobDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataQualityBaselineConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setDataQualityBaselineConfig(DataQualityBaselineConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("DataQualityAppSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setDataQualityAppSpecification(DataQualityAppSpecificationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("DataQualityJobInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setDataQualityJobInput(DataQualityJobInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataQualityJobOutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setDataQualityJobOutputConfig(MonitoringOutputConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("JobResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setJobResources(MonitoringResourcesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NetworkConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setNetworkConfig(MonitoringNetworkConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StoppingCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDataQualityJobDefinitionResult.setStoppingCondition(MonitoringStoppingConditionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

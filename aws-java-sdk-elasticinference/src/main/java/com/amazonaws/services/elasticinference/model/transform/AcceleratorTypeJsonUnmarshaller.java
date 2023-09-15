@@ -43,24 +43,35 @@ public class AcceleratorTypeJsonUnmarshaller implements Unmarshaller<Accelerator
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("acceleratorTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     acceleratorType.setAcceleratorTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("memoryInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     acceleratorType.setMemoryInfo(MemoryInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("throughputInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     acceleratorType.setThroughputInfo(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

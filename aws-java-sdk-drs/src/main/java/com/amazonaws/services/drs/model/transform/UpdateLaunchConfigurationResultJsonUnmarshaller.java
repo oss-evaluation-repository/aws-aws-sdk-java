@@ -43,46 +43,63 @@ public class UpdateLaunchConfigurationResultJsonUnmarshaller implements Unmarsha
             return updateLaunchConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("copyPrivateIp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLaunchConfigurationResult.setCopyPrivateIp(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("copyTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLaunchConfigurationResult.setCopyTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ec2LaunchTemplateID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLaunchConfigurationResult.setEc2LaunchTemplateID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchDisposition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLaunchConfigurationResult.setLaunchDisposition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("licensing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLaunchConfigurationResult.setLicensing(LicensingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLaunchConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("postLaunchEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLaunchConfigurationResult.setPostLaunchEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLaunchConfigurationResult.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetInstanceTypeRightSizingMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLaunchConfigurationResult.setTargetInstanceTypeRightSizingMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

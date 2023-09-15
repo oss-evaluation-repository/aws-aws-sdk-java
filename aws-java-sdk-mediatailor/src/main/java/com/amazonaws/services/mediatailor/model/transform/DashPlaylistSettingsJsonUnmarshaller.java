@@ -43,26 +43,38 @@ public class DashPlaylistSettingsJsonUnmarshaller implements Unmarshaller<DashPl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ManifestWindowSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPlaylistSettings.setManifestWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinBufferTimeSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPlaylistSettings.setMinBufferTimeSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinUpdatePeriodSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPlaylistSettings.setMinUpdatePeriodSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SuggestedPresentationDelaySeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dashPlaylistSettings.setSuggestedPresentationDelaySeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

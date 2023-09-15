@@ -44,33 +44,43 @@ public class DescribeAuditMitigationActionsTaskResultJsonUnmarshaller implements
             return describeAuditMitigationActionsTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditMitigationActionsTaskResult.setTaskStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditMitigationActionsTaskResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditMitigationActionsTaskResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("taskStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditMitigationActionsTaskResult.setTaskStatistics(new MapUnmarshaller<String, TaskStatisticsForAuditCheck>(context
                             .getUnmarshaller(String.class), TaskStatisticsForAuditCheckJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditMitigationActionsTaskResult.setTarget(AuditMitigationActionsTaskTargetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("auditCheckToActionsMapping", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditMitigationActionsTaskResult.setAuditCheckToActionsMapping(new MapUnmarshaller<String, java.util.List<String>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -78,11 +88,16 @@ public class DescribeAuditMitigationActionsTaskResultJsonUnmarshaller implements
                     ).unmarshall(context));
                 }
                 if (context.testExpression("actionsDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAuditMitigationActionsTaskResult.setActionsDefinition(new ListUnmarshaller<MitigationAction>(MitigationActionJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

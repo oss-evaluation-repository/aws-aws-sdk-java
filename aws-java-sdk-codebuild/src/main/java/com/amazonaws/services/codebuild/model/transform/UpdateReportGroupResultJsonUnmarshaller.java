@@ -43,14 +43,23 @@ public class UpdateReportGroupResultJsonUnmarshaller implements Unmarshaller<Upd
             return updateReportGroupResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("reportGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateReportGroupResult.setReportGroup(ReportGroupJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

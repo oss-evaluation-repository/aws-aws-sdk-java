@@ -43,37 +43,51 @@ public class LambdaFunctionRecipeSourceJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lambdaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecipeSource.setLambdaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecipeSource.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecipeSource.setComponentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentPlatforms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecipeSource.setComponentPlatforms(new ListUnmarshaller<ComponentPlatform>(ComponentPlatformJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("componentDependencies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecipeSource.setComponentDependencies(new MapUnmarshaller<String, ComponentDependencyRequirement>(context
                             .getUnmarshaller(String.class), ComponentDependencyRequirementJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("componentLambdaParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionRecipeSource.setComponentLambdaParameters(LambdaExecutionParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

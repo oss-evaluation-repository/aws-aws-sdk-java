@@ -43,45 +43,61 @@ public class ReservedElasticsearchInstanceOfferingJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReservedElasticsearchInstanceOfferingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstanceOffering.setReservedElasticsearchInstanceOfferingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ElasticsearchInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstanceOffering.setElasticsearchInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstanceOffering.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FixedPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstanceOffering.setFixedPrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("UsagePrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstanceOffering.setUsagePrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstanceOffering.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaymentOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstanceOffering.setPaymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecurringCharges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstanceOffering.setRecurringCharges(new ListUnmarshaller<RecurringCharge>(RecurringChargeJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

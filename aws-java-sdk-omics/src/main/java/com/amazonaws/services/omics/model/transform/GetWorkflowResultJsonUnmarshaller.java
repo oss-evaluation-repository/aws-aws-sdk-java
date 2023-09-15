@@ -43,81 +43,106 @@ public class GetWorkflowResultJsonUnmarshaller implements Unmarshaller<GetWorkfl
             return getWorkflowResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setDefinition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("main", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setMain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("digest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parameterTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setParameterTemplate(new MapUnmarshaller<String, WorkflowParameter>(context.getUnmarshaller(String.class),
                             WorkflowParameterJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("storageCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setStorageCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setMetadata(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("accelerators", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWorkflowResult.setAccelerators(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

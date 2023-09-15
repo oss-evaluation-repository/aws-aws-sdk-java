@@ -43,19 +43,29 @@ public class SubSlotSettingJsonUnmarshaller implements Unmarshaller<SubSlotSetti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("expression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subSlotSetting.setExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotSpecifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subSlotSetting.setSlotSpecifications(new MapUnmarshaller<String, Specifications>(context.getUnmarshaller(String.class),
                             SpecificationsJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

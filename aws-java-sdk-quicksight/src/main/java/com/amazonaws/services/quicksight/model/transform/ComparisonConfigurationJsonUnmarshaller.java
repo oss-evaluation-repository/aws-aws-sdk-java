@@ -43,18 +43,28 @@ public class ComparisonConfigurationJsonUnmarshaller implements Unmarshaller<Com
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComparisonMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comparisonConfiguration.setComparisonMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComparisonFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comparisonConfiguration.setComparisonFormat(ComparisonFormatConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

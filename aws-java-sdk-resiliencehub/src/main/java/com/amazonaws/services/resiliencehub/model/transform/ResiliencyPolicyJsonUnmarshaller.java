@@ -43,48 +43,65 @@ public class ResiliencyPolicyJsonUnmarshaller implements Unmarshaller<Resiliency
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyPolicy.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataLocationConstraint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyPolicy.setDataLocationConstraint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("estimatedCostTier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyPolicy.setEstimatedCostTier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyPolicy.setPolicy(new MapUnmarshaller<String, FailurePolicy>(context.getUnmarshaller(String.class), FailurePolicyJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("policyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyPolicy.setPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyPolicy.setPolicyDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyPolicy.setPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyPolicy.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("tier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resiliencyPolicy.setTier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

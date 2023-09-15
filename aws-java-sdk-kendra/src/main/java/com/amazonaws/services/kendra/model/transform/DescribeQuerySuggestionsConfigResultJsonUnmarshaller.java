@@ -43,52 +43,70 @@ public class DescribeQuerySuggestionsConfigResultJsonUnmarshaller implements Unm
             return describeQuerySuggestionsConfigResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Mode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsConfigResult.setMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsConfigResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryLogLookBackWindowInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsConfigResult.setQueryLogLookBackWindowInDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeQueriesWithoutUserInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsConfigResult.setIncludeQueriesWithoutUserInformation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumNumberOfQueryingUsers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsConfigResult.setMinimumNumberOfQueryingUsers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimumQueryCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsConfigResult.setMinimumQueryCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LastSuggestionsBuildTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsConfigResult.setLastSuggestionsBuildTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(
                             context));
                 }
                 if (context.testExpression("LastClearTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsConfigResult.setLastClearTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TotalSuggestionsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsConfigResult.setTotalSuggestionsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeSuggestionsConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeQuerySuggestionsConfigResult.setAttributeSuggestionsConfig(AttributeSuggestionsDescribeConfigJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

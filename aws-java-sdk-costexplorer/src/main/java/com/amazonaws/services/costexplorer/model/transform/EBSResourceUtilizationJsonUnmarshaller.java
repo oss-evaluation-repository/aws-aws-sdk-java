@@ -43,26 +43,38 @@ public class EBSResourceUtilizationJsonUnmarshaller implements Unmarshaller<EBSR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EbsReadOpsPerSecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eBSResourceUtilization.setEbsReadOpsPerSecond(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsWriteOpsPerSecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eBSResourceUtilization.setEbsWriteOpsPerSecond(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsReadBytesPerSecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eBSResourceUtilization.setEbsReadBytesPerSecond(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsWriteBytesPerSecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eBSResourceUtilization.setEbsWriteBytesPerSecond(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

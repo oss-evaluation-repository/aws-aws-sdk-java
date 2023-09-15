@@ -43,42 +43,58 @@ public class S3DestinationDescriptionJsonUnmarshaller implements Unmarshaller<S3
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DestinationDescription.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BucketARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DestinationDescription.setBucketARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DestinationDescription.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorOutputPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DestinationDescription.setErrorOutputPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BufferingHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DestinationDescription.setBufferingHints(BufferingHintsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CompressionFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DestinationDescription.setCompressionFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DestinationDescription.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DestinationDescription.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

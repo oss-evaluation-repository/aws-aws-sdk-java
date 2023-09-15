@@ -43,82 +43,107 @@ public class KxEnvironmentJsonUnmarshaller implements Unmarshaller<KxEnvironment
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tgwStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setTgwStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dnsStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setDnsStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dedicatedServiceAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setDedicatedServiceAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transitGatewayConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setTransitGatewayConfiguration(TransitGatewayConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("customDNSConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setCustomDNSConfiguration(new ListUnmarshaller<CustomDNSServer>(CustomDNSServerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("creationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("availabilityZoneIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setAvailabilityZoneIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("certificateAuthorityArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kxEnvironment.setCertificateAuthorityArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

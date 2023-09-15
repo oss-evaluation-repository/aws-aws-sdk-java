@@ -43,111 +43,142 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LayerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setLayerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Shortname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setShortname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLogsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setCloudWatchLogsConfiguration(CloudWatchLogsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomInstanceProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setCustomInstanceProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomJson", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setCustomJson(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomSecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setCustomSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DefaultSecurityGroupNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setDefaultSecurityGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Packages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setPackages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VolumeConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setVolumeConfigurations(new ListUnmarshaller<VolumeConfiguration>(VolumeConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EnableAutoHealing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setEnableAutoHealing(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoAssignElasticIps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setAutoAssignElasticIps(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoAssignPublicIps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setAutoAssignPublicIps(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultRecipes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setDefaultRecipes(RecipesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomRecipes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setCustomRecipes(RecipesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstallUpdatesOnBoot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setInstallUpdatesOnBoot(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UseEbsOptimizedInstances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setUseEbsOptimizedInstances(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LifecycleEventConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setLifecycleEventConfiguration(LifecycleEventConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

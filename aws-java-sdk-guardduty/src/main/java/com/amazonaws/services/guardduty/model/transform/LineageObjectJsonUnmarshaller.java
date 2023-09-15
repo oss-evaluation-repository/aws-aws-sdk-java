@@ -43,46 +43,63 @@ public class LineageObjectJsonUnmarshaller implements Unmarshaller<LineageObject
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineageObject.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("namespacePid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineageObject.setNamespacePid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("userId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineageObject.setUserId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineageObject.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineageObject.setPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("uuid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineageObject.setUuid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executablePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineageObject.setExecutablePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("euid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineageObject.setEuid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parentUuid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lineageObject.setParentUuid(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

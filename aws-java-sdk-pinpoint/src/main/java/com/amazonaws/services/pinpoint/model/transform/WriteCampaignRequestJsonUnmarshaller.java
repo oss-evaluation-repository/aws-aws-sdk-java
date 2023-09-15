@@ -43,12 +43,17 @@ public class WriteCampaignRequestJsonUnmarshaller implements Unmarshaller<WriteC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AdditionalTreatments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setAdditionalTreatments(new ListUnmarshaller<WriteTreatmentResource>(WriteTreatmentResourceJsonUnmarshaller
                             .getInstance())
@@ -56,69 +61,89 @@ public class WriteCampaignRequestJsonUnmarshaller implements Unmarshaller<WriteC
                     .unmarshall(context));
                 }
                 if (context.testExpression("CustomDeliveryConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setCustomDeliveryConfiguration(CustomDeliveryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HoldoutPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setHoldoutPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Hook", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setHook(CampaignHookJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IsPaused", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setIsPaused(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Limits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setLimits(CampaignLimitsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MessageConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setMessageConfiguration(MessageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setSchedule(ScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SegmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setSegmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setSegmentVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TreatmentDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setTreatmentDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TreatmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setTreatmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeCampaignRequest.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

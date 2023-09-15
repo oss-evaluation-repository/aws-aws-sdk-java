@@ -43,26 +43,38 @@ public class NFSFileShareDefaultsJsonUnmarshaller implements Unmarshaller<NFSFil
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FileMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareDefaults.setFileMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareDefaults.setDirectoryMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareDefaults.setGroupId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nFSFileShareDefaults.setOwnerId(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

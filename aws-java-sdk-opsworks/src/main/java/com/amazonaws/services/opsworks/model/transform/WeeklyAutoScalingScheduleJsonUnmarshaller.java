@@ -43,45 +43,60 @@ public class WeeklyAutoScalingScheduleJsonUnmarshaller implements Unmarshaller<W
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Monday", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     weeklyAutoScalingSchedule.setMonday(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Tuesday", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     weeklyAutoScalingSchedule.setTuesday(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Wednesday", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     weeklyAutoScalingSchedule.setWednesday(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Thursday", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     weeklyAutoScalingSchedule.setThursday(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Friday", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     weeklyAutoScalingSchedule.setFriday(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Saturday", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     weeklyAutoScalingSchedule.setSaturday(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Sunday", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     weeklyAutoScalingSchedule.setSunday(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

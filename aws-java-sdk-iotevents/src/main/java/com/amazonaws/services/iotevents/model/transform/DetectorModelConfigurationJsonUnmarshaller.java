@@ -43,50 +43,68 @@ public class DetectorModelConfigurationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("detectorModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelConfiguration.setDetectorModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelConfiguration.setDetectorModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorModelDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelConfiguration.setDetectorModelDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelConfiguration.setDetectorModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelConfiguration.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelConfiguration.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelConfiguration.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelConfiguration.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelConfiguration.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("evaluationMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelConfiguration.setEvaluationMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

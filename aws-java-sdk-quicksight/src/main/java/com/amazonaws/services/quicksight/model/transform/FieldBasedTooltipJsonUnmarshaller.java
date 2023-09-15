@@ -43,24 +43,35 @@ public class FieldBasedTooltipJsonUnmarshaller implements Unmarshaller<FieldBase
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AggregationVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldBasedTooltip.setAggregationVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TooltipTitleType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldBasedTooltip.setTooltipTitleType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TooltipFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldBasedTooltip.setTooltipFields(new ListUnmarshaller<TooltipItem>(TooltipItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

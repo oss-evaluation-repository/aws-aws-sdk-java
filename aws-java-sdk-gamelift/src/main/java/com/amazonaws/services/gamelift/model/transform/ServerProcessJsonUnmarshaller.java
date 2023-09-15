@@ -43,22 +43,33 @@ public class ServerProcessJsonUnmarshaller implements Unmarshaller<ServerProcess
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LaunchPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverProcess.setLaunchPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverProcess.setParameters(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConcurrentExecutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverProcess.setConcurrentExecutions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

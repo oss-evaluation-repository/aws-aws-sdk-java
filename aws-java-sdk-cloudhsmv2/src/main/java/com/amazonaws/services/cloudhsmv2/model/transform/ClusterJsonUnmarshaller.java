@@ -43,75 +43,98 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setBackupPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupRetentionPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setBackupRetentionPolicy(BackupRetentionPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ClusterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setClusterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setCreateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Hsms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setHsms(new ListUnmarshaller<Hsm>(HsmJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HsmType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setHsmType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreCoPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setPreCoPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setSecurityGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceBackupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setSourceBackupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setStateMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetMapping", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setSubnetMapping(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Certificates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setCertificates(CertificatesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TagList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setTagList(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,35 +43,49 @@ public class GetConfigResultJsonUnmarshaller implements Unmarshaller<GetConfigRe
             return getConfigResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("configArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigResult.setConfigArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigResult.setConfigData(ConfigTypeDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigResult.setConfigId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigResult.setConfigType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getConfigResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

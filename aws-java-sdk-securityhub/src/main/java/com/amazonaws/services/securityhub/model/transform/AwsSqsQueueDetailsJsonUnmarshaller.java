@@ -43,26 +43,38 @@ public class AwsSqsQueueDetailsJsonUnmarshaller implements Unmarshaller<AwsSqsQu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KmsDataKeyReusePeriodSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSqsQueueDetails.setKmsDataKeyReusePeriodSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsMasterKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSqsQueueDetails.setKmsMasterKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueueName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSqsQueueDetails.setQueueName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeadLetterTargetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSqsQueueDetails.setDeadLetterTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

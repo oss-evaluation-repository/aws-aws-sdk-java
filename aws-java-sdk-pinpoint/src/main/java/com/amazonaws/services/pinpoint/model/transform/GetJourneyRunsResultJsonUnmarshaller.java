@@ -43,9 +43,13 @@ public class GetJourneyRunsResultJsonUnmarshaller implements Unmarshaller<GetJou
             return getJourneyRunsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getJourneyRunsResult.setJourneyRunsResponse(JourneyRunsResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

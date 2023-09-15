@@ -43,34 +43,48 @@ public class WriteApplicationSettingsRequestJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CampaignHook", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeApplicationSettingsRequest.setCampaignHook(CampaignHookJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchMetricsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeApplicationSettingsRequest.setCloudWatchMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EventTaggingEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeApplicationSettingsRequest.setEventTaggingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Limits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeApplicationSettingsRequest.setLimits(CampaignLimitsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("QuietTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeApplicationSettingsRequest.setQuietTime(QuietTimeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JourneyLimits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeApplicationSettingsRequest.setJourneyLimits(ApplicationSettingsJourneyLimitsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

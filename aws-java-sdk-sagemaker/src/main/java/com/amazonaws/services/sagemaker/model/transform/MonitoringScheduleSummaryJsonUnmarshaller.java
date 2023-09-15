@@ -43,42 +43,58 @@ public class MonitoringScheduleSummaryJsonUnmarshaller implements Unmarshaller<M
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitoringScheduleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringScheduleSummary.setMonitoringScheduleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringScheduleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringScheduleSummary.setMonitoringScheduleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringScheduleSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringScheduleSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("MonitoringScheduleStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringScheduleSummary.setMonitoringScheduleStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringScheduleSummary.setEndpointName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringJobDefinitionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringScheduleSummary.setMonitoringJobDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitoringType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringScheduleSummary.setMonitoringType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

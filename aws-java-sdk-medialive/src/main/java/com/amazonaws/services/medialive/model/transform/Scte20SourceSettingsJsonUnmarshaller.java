@@ -43,18 +43,28 @@ public class Scte20SourceSettingsJsonUnmarshaller implements Unmarshaller<Scte20
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("convert608To708", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte20SourceSettings.setConvert608To708(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("source608ChannelNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte20SourceSettings.setSource608ChannelNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

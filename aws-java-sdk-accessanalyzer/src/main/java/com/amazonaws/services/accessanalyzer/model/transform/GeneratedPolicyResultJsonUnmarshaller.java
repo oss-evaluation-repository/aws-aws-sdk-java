@@ -43,20 +43,30 @@ public class GeneratedPolicyResultJsonUnmarshaller implements Unmarshaller<Gener
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("properties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generatedPolicyResult.setProperties(GeneratedPolicyPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("generatedPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generatedPolicyResult.setGeneratedPolicies(new ListUnmarshaller<GeneratedPolicy>(GeneratedPolicyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

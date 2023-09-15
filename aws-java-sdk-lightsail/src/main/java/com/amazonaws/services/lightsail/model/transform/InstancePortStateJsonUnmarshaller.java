@@ -43,44 +43,59 @@ public class InstancePortStateJsonUnmarshaller implements Unmarshaller<InstanceP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fromPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortState.setFromPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("toPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortState.setToPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortState.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortState.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cidrs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortState.setCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ipv6Cidrs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortState.setIpv6Cidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("cidrListAliases", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortState.setCidrListAliases(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

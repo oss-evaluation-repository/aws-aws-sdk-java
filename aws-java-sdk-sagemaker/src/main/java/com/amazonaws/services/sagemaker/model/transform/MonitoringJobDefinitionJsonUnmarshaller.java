@@ -43,49 +43,66 @@ public class MonitoringJobDefinitionJsonUnmarshaller implements Unmarshaller<Mon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BaselineConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringJobDefinition.setBaselineConfig(MonitoringBaselineConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MonitoringInputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringJobDefinition.setMonitoringInputs(new ListUnmarshaller<MonitoringInput>(MonitoringInputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MonitoringOutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringJobDefinition.setMonitoringOutputConfig(MonitoringOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MonitoringResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringJobDefinition.setMonitoringResources(MonitoringResourcesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MonitoringAppSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringJobDefinition.setMonitoringAppSpecification(MonitoringAppSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StoppingCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringJobDefinition.setStoppingCondition(MonitoringStoppingConditionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringJobDefinition.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("NetworkConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringJobDefinition.setNetworkConfig(NetworkConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringJobDefinition.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

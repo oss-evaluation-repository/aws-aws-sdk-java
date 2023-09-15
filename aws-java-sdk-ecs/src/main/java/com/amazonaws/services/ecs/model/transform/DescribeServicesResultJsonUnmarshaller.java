@@ -43,22 +43,32 @@ public class DescribeServicesResultJsonUnmarshaller implements Unmarshaller<Desc
             return describeServicesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("services", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeServicesResult.setServices(new ListUnmarshaller<Service>(ServiceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeServicesResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

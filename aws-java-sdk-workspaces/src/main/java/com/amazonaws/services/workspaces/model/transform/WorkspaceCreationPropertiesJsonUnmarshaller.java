@@ -43,34 +43,48 @@ public class WorkspaceCreationPropertiesJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EnableWorkDocs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceCreationProperties.setEnableWorkDocs(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableInternetAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceCreationProperties.setEnableInternetAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultOu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceCreationProperties.setDefaultOu(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomSecurityGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceCreationProperties.setCustomSecurityGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserEnabledAsLocalAdministrator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceCreationProperties.setUserEnabledAsLocalAdministrator(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableMaintenanceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceCreationProperties.setEnableMaintenanceMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

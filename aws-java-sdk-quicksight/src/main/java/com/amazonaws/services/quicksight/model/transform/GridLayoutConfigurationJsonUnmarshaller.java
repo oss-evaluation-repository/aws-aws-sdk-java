@@ -43,20 +43,30 @@ public class GridLayoutConfigurationJsonUnmarshaller implements Unmarshaller<Gri
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Elements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gridLayoutConfiguration.setElements(new ListUnmarshaller<GridLayoutElement>(GridLayoutElementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CanvasSizeOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gridLayoutConfiguration.setCanvasSizeOptions(GridLayoutCanvasSizeOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

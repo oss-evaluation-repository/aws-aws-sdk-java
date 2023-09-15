@@ -43,24 +43,35 @@ public class ServiceSyncBlockerSummaryJsonUnmarshaller implements Unmarshaller<S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("latestBlockers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSyncBlockerSummary.setLatestBlockers(new ListUnmarshaller<SyncBlocker>(SyncBlockerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("serviceInstanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSyncBlockerSummary.setServiceInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serviceSyncBlockerSummary.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

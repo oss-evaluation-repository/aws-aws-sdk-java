@@ -43,22 +43,33 @@ public class CodeContentJsonUnmarshaller implements Unmarshaller<CodeContent, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TextContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeContent.setTextContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ZipFileContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeContent.setZipFileContent(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("S3ContentLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeContent.setS3ContentLocation(S3ContentLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,59 +43,78 @@ public class LambdaExecutionParametersJsonUnmarshaller implements Unmarshaller<L
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setEventSources(new ListUnmarshaller<LambdaEventSource>(LambdaEventSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("maxQueueSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setMaxQueueSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxInstancesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setMaxInstancesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxIdleTimeInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setMaxIdleTimeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("timeoutInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("statusTimeoutInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setStatusTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pinned", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setPinned(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("inputPayloadEncodingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setInputPayloadEncodingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("execArgs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setExecArgs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("environmentVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setEnvironmentVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("linuxProcessParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaExecutionParameters.setLinuxProcessParams(LambdaLinuxProcessParamsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

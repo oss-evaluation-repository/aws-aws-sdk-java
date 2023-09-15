@@ -43,50 +43,65 @@ public class AdvancedFieldSelectorJsonUnmarshaller implements Unmarshaller<Advan
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Field", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     advancedFieldSelector.setField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Equals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     advancedFieldSelector.setEquals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StartsWith", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     advancedFieldSelector.setStartsWith(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EndsWith", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     advancedFieldSelector.setEndsWith(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotEquals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     advancedFieldSelector.setNotEquals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotStartsWith", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     advancedFieldSelector.setNotStartsWith(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NotEndsWith", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     advancedFieldSelector.setNotEndsWith(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

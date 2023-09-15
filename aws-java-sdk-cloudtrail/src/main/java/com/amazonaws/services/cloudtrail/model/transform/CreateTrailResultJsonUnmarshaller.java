@@ -43,62 +43,83 @@ public class CreateTrailResultJsonUnmarshaller implements Unmarshaller<CreateTra
             return createTrailResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3KeyPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setS3KeyPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnsTopicName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setSnsTopicName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnsTopicARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setSnsTopicARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeGlobalServiceEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setIncludeGlobalServiceEvents(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IsMultiRegionTrail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setIsMultiRegionTrail(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TrailARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setTrailARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogFileValidationEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setLogFileValidationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLogsLogGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setCloudWatchLogsLogGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLogsRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setCloudWatchLogsRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsOrganizationTrail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createTrailResult.setIsOrganizationTrail(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

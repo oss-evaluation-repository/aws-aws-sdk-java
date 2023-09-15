@@ -43,38 +43,53 @@ public class VpcPeeringConnectionJsonUnmarshaller implements Unmarshaller<VpcPee
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FleetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringConnection.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringConnection.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpV4CidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringConnection.setIpV4CidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcPeeringConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringConnection.setVpcPeeringConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringConnection.setStatus(VpcPeeringConnectionStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PeerVpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringConnection.setPeerVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameLiftVpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vpcPeeringConnection.setGameLiftVpcId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

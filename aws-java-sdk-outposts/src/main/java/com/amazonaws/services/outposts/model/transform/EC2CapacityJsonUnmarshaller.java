@@ -43,22 +43,33 @@ public class EC2CapacityJsonUnmarshaller implements Unmarshaller<EC2Capacity, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Family", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2Capacity.setFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2Capacity.setMaxSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Quantity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2Capacity.setQuantity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

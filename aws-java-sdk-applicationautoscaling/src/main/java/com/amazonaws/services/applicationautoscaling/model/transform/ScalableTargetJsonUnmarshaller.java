@@ -43,46 +43,63 @@ public class ScalableTargetJsonUnmarshaller implements Unmarshaller<ScalableTarg
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalableTarget.setServiceNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalableTarget.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalableDimension", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalableTarget.setScalableDimension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalableTarget.setMinCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalableTarget.setMaxCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalableTarget.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalableTarget.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SuspendedState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalableTarget.setSuspendedState(SuspendedStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ScalableTargetARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scalableTarget.setScalableTargetARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

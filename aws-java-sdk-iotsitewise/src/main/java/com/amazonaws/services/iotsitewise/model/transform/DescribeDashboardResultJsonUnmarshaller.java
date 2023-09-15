@@ -43,42 +43,58 @@ public class DescribeDashboardResultJsonUnmarshaller implements Unmarshaller<Des
             return describeDashboardResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dashboardId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardResult.setDashboardId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dashboardArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardResult.setDashboardArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dashboardName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardResult.setDashboardName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("projectId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardResult.setProjectId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dashboardDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardResult.setDashboardDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dashboardDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardResult.setDashboardDefinition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dashboardCreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardResult.setDashboardCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dashboardLastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDashboardResult.setDashboardLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,67 @@ public class EventSubscriptionJsonUnmarshaller implements Unmarshaller<EventSubs
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CustomerAwsId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventSubscription.setCustomerAwsId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustSubscriptionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventSubscription.setCustSubscriptionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnsTopicArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventSubscription.setSnsTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventSubscription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionCreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventSubscription.setSubscriptionCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventSubscription.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceIdsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventSubscription.setSourceIdsList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EventCategoriesList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventSubscription.setEventCategoriesList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventSubscription.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

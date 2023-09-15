@@ -43,43 +43,55 @@ public class UpdateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<Up
             return updateIdentityPoolResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityPoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIdentityPoolResult.setIdentityPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityPoolName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIdentityPoolResult.setIdentityPoolName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowUnauthenticatedIdentities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIdentityPoolResult.setAllowUnauthenticatedIdentities(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowClassicFlow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIdentityPoolResult.setAllowClassicFlow(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedLoginProviders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIdentityPoolResult.setSupportedLoginProviders(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("DeveloperProviderName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIdentityPoolResult.setDeveloperProviderName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpenIdConnectProviderARNs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIdentityPoolResult.setOpenIdConnectProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CognitoIdentityProviders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIdentityPoolResult.setCognitoIdentityProviders(new ListUnmarshaller<CognitoIdentityProvider>(CognitoIdentityProviderJsonUnmarshaller
                             .getInstance())
@@ -87,15 +99,21 @@ public class UpdateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<Up
                     .unmarshall(context));
                 }
                 if (context.testExpression("SamlProviderARNs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIdentityPoolResult.setSamlProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IdentityPoolTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateIdentityPoolResult.setIdentityPoolTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

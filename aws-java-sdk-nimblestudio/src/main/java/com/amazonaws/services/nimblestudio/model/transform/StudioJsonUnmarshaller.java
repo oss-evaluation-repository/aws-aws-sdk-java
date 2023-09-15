@@ -43,75 +43,99 @@ public class StudioJsonUnmarshaller implements Unmarshaller<Studio, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adminRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setAdminRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("displayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("homeRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setHomeRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ssoClientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setSsoClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("studioEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setStudioEncryptionConfiguration(StudioEncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("studioId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setStudioId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("studioName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setStudioName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("studioUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setStudioUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("userRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     studio.setUserRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

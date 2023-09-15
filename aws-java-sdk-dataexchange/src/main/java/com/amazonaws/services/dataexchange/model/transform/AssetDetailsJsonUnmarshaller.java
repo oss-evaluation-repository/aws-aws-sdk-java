@@ -43,30 +43,43 @@ public class AssetDetailsJsonUnmarshaller implements Unmarshaller<AssetDetails, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3SnapshotAsset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetDetails.setS3SnapshotAsset(S3SnapshotAssetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RedshiftDataShareAsset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetDetails.setRedshiftDataShareAsset(RedshiftDataShareAssetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ApiGatewayApiAsset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetDetails.setApiGatewayApiAsset(ApiGatewayApiAssetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3DataAccessAsset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetDetails.setS3DataAccessAsset(S3DataAccessAssetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LakeFormationDataPermissionAsset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assetDetails.setLakeFormationDataPermissionAsset(LakeFormationDataPermissionAssetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

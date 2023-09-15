@@ -43,62 +43,81 @@ public class DatasetJsonUnmarshaller implements Unmarshaller<Dataset, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setActions(new ListUnmarshaller<DatasetAction>(DatasetActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("triggers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setTriggers(new ListUnmarshaller<DatasetTrigger>(DatasetTriggerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("contentDeliveryRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setContentDeliveryRules(new ListUnmarshaller<DatasetContentDeliveryRule>(DatasetContentDeliveryRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("retentionPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setRetentionPeriod(RetentionPeriodJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("versioningConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setVersioningConfiguration(VersioningConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lateDataRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataset.setLateDataRules(new ListUnmarshaller<LateDataRule>(LateDataRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

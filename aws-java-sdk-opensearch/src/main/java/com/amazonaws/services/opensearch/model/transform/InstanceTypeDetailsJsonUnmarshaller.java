@@ -43,46 +43,62 @@ public class InstanceTypeDetailsJsonUnmarshaller implements Unmarshaller<Instanc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeDetails.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeDetails.setEncryptionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CognitoEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeDetails.setCognitoEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AppLogsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeDetails.setAppLogsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AdvancedSecurityEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeDetails.setAdvancedSecurityEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeDetails.setWarmEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeDetails.setInstanceRole(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceTypeDetails.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

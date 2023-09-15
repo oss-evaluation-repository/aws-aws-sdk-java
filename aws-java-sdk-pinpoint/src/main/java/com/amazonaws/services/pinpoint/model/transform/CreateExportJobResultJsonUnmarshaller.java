@@ -43,9 +43,13 @@ public class CreateExportJobResultJsonUnmarshaller implements Unmarshaller<Creat
             return createExportJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             createExportJobResult.setExportJobResponse(ExportJobResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

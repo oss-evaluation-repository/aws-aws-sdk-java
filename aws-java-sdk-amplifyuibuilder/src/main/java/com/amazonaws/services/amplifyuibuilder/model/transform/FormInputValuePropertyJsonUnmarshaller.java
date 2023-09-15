@@ -43,24 +43,35 @@ public class FormInputValuePropertyJsonUnmarshaller implements Unmarshaller<Form
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formInputValueProperty.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bindingProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formInputValueProperty.setBindingProperties(FormInputValuePropertyBindingPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("concat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     formInputValueProperty.setConcat(new ListUnmarshaller<FormInputValueProperty>(FormInputValuePropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

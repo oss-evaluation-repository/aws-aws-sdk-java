@@ -43,52 +43,70 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppPackageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setAppPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setAppTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppVersionCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setAppVersionCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("ClientSdkVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setClientSdkVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setEventType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Metrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setMetrics(new MapUnmarshaller<String, Double>(context.getUnmarshaller(String.class), context.getUnmarshaller(Double.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("SdkName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setSdkName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Session", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setSession(SessionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     event.setTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

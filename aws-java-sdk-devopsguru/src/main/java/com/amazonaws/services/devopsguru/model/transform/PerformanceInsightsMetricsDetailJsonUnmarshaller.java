@@ -43,24 +43,32 @@ public class PerformanceInsightsMetricsDetailJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     performanceInsightsMetricsDetail.setMetricDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     performanceInsightsMetricsDetail.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricQuery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     performanceInsightsMetricsDetail.setMetricQuery(PerformanceInsightsMetricQueryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReferenceData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     performanceInsightsMetricsDetail.setReferenceData(new ListUnmarshaller<PerformanceInsightsReferenceData>(
                             PerformanceInsightsReferenceDataJsonUnmarshaller.getInstance())
@@ -68,6 +76,7 @@ public class PerformanceInsightsMetricsDetailJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatsAtAnomaly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     performanceInsightsMetricsDetail.setStatsAtAnomaly(new ListUnmarshaller<PerformanceInsightsStat>(PerformanceInsightsStatJsonUnmarshaller
                             .getInstance())
@@ -75,11 +84,16 @@ public class PerformanceInsightsMetricsDetailJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatsAtBaseline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     performanceInsightsMetricsDetail.setStatsAtBaseline(new ListUnmarshaller<PerformanceInsightsStat>(PerformanceInsightsStatJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class HealthCheckPolicyJsonUnmarshaller implements Unmarshaller<HealthChe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("healthyThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckPolicy.setHealthyThreshold(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("intervalMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckPolicy.setIntervalMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckPolicy.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckPolicy.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckPolicy.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeoutMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckPolicy.setTimeoutMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("unhealthyThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthCheckPolicy.setUnhealthyThreshold(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

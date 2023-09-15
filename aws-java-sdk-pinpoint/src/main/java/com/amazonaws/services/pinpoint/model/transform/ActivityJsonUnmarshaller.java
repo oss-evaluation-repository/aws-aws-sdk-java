@@ -43,54 +43,73 @@ public class ActivityJsonUnmarshaller implements Unmarshaller<Activity, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CUSTOM", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setCUSTOM(CustomMessageActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConditionalSplit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setConditionalSplit(ConditionalSplitActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EMAIL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setEMAIL(EmailMessageActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Holdout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setHoldout(HoldoutActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MultiCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setMultiCondition(MultiConditionalSplitActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PUSH", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setPUSH(PushMessageActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RandomSplit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setRandomSplit(RandomSplitActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SMS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setSMS(SMSMessageActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Wait", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setWait(WaitActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ContactCenter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setContactCenter(ContactCenterActivityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

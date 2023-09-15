@@ -43,38 +43,53 @@ public class MonitoringAlertSummaryJsonUnmarshaller implements Unmarshaller<Moni
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitoringAlertName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertSummary.setMonitoringAlertName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AlertStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertSummary.setAlertStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatapointsToAlert", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertSummary.setDatapointsToAlert(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertSummary.setEvaluationPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitoringAlertSummary.setActions(MonitoringAlertActionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

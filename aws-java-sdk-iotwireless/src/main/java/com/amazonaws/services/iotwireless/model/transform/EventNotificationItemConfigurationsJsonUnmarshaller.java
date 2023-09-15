@@ -43,33 +43,46 @@ public class EventNotificationItemConfigurationsJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceRegistrationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventNotificationItemConfigurations.setDeviceRegistrationState(DeviceRegistrationStateEventConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("Proximity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventNotificationItemConfigurations.setProximity(ProximityEventConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Join", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventNotificationItemConfigurations.setJoin(JoinEventConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConnectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventNotificationItemConfigurations.setConnectionStatus(ConnectionStatusEventConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("MessageDeliveryStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventNotificationItemConfigurations.setMessageDeliveryStatus(MessageDeliveryStatusEventConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

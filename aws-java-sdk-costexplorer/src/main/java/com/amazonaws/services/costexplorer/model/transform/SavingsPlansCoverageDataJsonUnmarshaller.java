@@ -43,26 +43,38 @@ public class SavingsPlansCoverageDataJsonUnmarshaller implements Unmarshaller<Sa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SpendCoveredBySavingsPlans", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansCoverageData.setSpendCoveredBySavingsPlans(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OnDemandCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansCoverageData.setOnDemandCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansCoverageData.setTotalCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CoveragePercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansCoverageData.setCoveragePercentage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

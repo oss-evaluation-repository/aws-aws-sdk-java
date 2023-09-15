@@ -43,70 +43,93 @@ public class EmailChannelResponseJsonUnmarshaller implements Unmarshaller<EmailC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setConfigurationSet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("FromAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setFromAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HasCredential", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setHasCredential(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Identity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setIdentity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsArchived", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setIsArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setLastModifiedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessagesPerSecond", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setMessagesPerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailChannelResponse.setVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

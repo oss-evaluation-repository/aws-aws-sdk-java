@@ -43,40 +43,55 @@ public class StartImportResultJsonUnmarshaller implements Unmarshaller<StartImpo
             return startImportResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startImportResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startImportResult.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergeStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startImportResult.setMergeStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startImportResult.setImportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startImportResult.setImportStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startImportResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startImportResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

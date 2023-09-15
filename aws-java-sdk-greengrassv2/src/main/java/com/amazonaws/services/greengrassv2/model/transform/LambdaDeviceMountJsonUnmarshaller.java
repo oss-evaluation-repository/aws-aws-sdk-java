@@ -43,22 +43,33 @@ public class LambdaDeviceMountJsonUnmarshaller implements Unmarshaller<LambdaDev
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDeviceMount.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("permission", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDeviceMount.setPermission(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("addGroupOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaDeviceMount.setAddGroupOwner(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

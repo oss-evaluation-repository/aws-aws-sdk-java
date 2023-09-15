@@ -43,22 +43,33 @@ public class SetDefaultSenderIdResultJsonUnmarshaller implements Unmarshaller<Se
             return setDefaultSenderIdResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigurationSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setDefaultSenderIdResult.setConfigurationSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setDefaultSenderIdResult.setConfigurationSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SenderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     setDefaultSenderIdResult.setSenderId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

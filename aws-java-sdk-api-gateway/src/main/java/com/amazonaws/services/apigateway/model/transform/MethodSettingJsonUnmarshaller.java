@@ -43,50 +43,68 @@ public class MethodSettingJsonUnmarshaller implements Unmarshaller<MethodSetting
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("metricsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSetting.setMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("loggingLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSetting.setLoggingLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataTraceEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSetting.setDataTraceEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("throttlingBurstLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSetting.setThrottlingBurstLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("throttlingRateLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSetting.setThrottlingRateLimit(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("cachingEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSetting.setCachingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheTtlInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSetting.setCacheTtlInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheDataEncrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSetting.setCacheDataEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("requireAuthorizationForCacheControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSetting.setRequireAuthorizationForCacheControl(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("unauthorizedCacheControlHeaderStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     methodSetting.setUnauthorizedCacheControlHeaderStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

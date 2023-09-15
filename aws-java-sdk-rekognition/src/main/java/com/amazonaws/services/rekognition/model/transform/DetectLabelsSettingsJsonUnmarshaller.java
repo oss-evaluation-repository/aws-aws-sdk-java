@@ -43,18 +43,28 @@ public class DetectLabelsSettingsJsonUnmarshaller implements Unmarshaller<Detect
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GeneralLabels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsSettings.setGeneralLabels(GeneralLabelsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ImageProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectLabelsSettings.setImageProperties(DetectLabelsImagePropertiesSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

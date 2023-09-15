@@ -43,25 +43,36 @@ public class AutoTuneOptionsJsonUnmarshaller implements Unmarshaller<AutoTuneOpt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DesiredState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoTuneOptions.setDesiredState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RollbackOnDisable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoTuneOptions.setRollbackOnDisable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaintenanceSchedules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoTuneOptions.setMaintenanceSchedules(new ListUnmarshaller<AutoTuneMaintenanceSchedule>(AutoTuneMaintenanceScheduleJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

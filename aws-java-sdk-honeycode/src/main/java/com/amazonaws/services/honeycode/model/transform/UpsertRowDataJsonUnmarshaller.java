@@ -43,23 +43,34 @@ public class UpsertRowDataJsonUnmarshaller implements Unmarshaller<UpsertRowData
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("batchItemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upsertRowData.setBatchItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upsertRowData.setFilter(FilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cellsToUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     upsertRowData.setCellsToUpdate(new MapUnmarshaller<String, CellInput>(context.getUnmarshaller(String.class), CellInputJsonUnmarshaller
                             .getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

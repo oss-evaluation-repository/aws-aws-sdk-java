@@ -43,105 +43,135 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
             return describeNotebookInstanceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NotebookInstanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setNotebookInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotebookInstanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setNotebookInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotebookInstanceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setNotebookInstanceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotebookInstanceLifecycleConfigName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setNotebookInstanceLifecycleConfigName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectInternetAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setDirectInternetAccess(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setVolumeSizeInGB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AcceleratorTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setAcceleratorTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DefaultCodeRepository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setDefaultCodeRepository(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalCodeRepositories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setAdditionalCodeRepositories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RootAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setRootAccess(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlatformIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setPlatformIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceMetadataServiceConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeNotebookInstanceResult.setInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

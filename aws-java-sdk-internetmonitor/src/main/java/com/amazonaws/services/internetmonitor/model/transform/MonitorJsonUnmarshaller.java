@@ -43,26 +43,38 @@ public class MonitorJsonUnmarshaller implements Unmarshaller<Monitor, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitor.setMonitorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitor.setMonitorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitor.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProcessingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     monitor.setProcessingStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

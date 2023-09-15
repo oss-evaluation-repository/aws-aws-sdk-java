@@ -43,56 +43,75 @@ public class FirewallPolicyResponseJsonUnmarshaller implements Unmarshaller<Fire
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FirewallPolicyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setFirewallPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallPolicyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setFirewallPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallPolicyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setFirewallPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallPolicyStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setFirewallPolicyStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConsumedStatelessRuleCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setConsumedStatelessRuleCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConsumedStatefulRuleCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setConsumedStatefulRuleCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfAssociations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setNumberOfAssociations(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     firewallPolicyResponse.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

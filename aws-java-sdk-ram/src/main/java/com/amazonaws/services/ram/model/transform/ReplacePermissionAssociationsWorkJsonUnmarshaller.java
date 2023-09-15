@@ -43,46 +43,63 @@ public class ReplacePermissionAssociationsWorkJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replacePermissionAssociationsWork.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fromPermissionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replacePermissionAssociationsWork.setFromPermissionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fromPermissionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replacePermissionAssociationsWork.setFromPermissionVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("toPermissionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replacePermissionAssociationsWork.setToPermissionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("toPermissionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replacePermissionAssociationsWork.setToPermissionVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replacePermissionAssociationsWork.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replacePermissionAssociationsWork.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replacePermissionAssociationsWork.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replacePermissionAssociationsWork.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

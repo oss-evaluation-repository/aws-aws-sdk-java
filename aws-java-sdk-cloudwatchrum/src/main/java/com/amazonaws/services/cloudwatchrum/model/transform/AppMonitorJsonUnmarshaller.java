@@ -43,51 +43,69 @@ public class AppMonitorJsonUnmarshaller implements Unmarshaller<AppMonitor, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppMonitorConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitor.setAppMonitorConfiguration(AppMonitorConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitor.setCreated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitor.setCustomEvents(CustomEventsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitor.setDataStorage(DataStorageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Domain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitor.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitor.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitor.setLastModified(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitor.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitor.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appMonitor.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

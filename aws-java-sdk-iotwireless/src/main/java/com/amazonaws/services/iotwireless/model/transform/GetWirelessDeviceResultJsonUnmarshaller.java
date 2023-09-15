@@ -43,54 +43,73 @@ public class GetWirelessDeviceResultJsonUnmarshaller implements Unmarshaller<Get
             return getWirelessDeviceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setDestinationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThingName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setThingName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThingArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setThingArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoRaWAN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setLoRaWAN(LoRaWANDeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Sidewalk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setSidewalk(SidewalkDeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Positioning", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessDeviceResult.setPositioning(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,46 +43,63 @@ public class RdsConfigurationJsonUnmarshaller implements Unmarshaller<RdsConfigu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EngineEdition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsConfiguration.setEngineEdition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsConfiguration.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceVcpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsConfiguration.setInstanceVcpu(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceMemory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsConfiguration.setInstanceMemory(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsConfiguration.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsConfiguration.setStorageSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageIops", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsConfiguration.setStorageIops(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsConfiguration.setDeploymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsConfiguration.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

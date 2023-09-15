@@ -43,18 +43,28 @@ public class CodeDestinationJsonUnmarshaller implements Unmarshaller<CodeDestina
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("codeCommit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeDestination.setCodeCommit(CodeCommitCodeDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("gitHub", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeDestination.setGitHub(GitHubCodeDestinationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

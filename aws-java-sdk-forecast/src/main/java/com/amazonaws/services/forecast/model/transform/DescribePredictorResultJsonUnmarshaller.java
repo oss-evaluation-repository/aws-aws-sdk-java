@@ -43,113 +43,145 @@ public class DescribePredictorResultJsonUnmarshaller implements Unmarshaller<Des
             return describePredictorResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PredictorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setPredictorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PredictorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setPredictorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlgorithmArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setAlgorithmArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLAlgorithmArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setAutoMLAlgorithmArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ForecastHorizon", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setForecastHorizon(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ForecastTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setForecastTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PerformAutoML", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setPerformAutoML(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLOverrideStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setAutoMLOverrideStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PerformHPO", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setPerformHPO(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TrainingParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setTrainingParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setEvaluationParameters(EvaluationParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HPOConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setHPOConfig(HyperParameterTuningJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setInputDataConfig(InputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FeaturizationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setFeaturizationConfig(FeaturizationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setEncryptionConfig(EncryptionConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PredictorExecutionDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setPredictorExecutionDetails(PredictorExecutionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("IsAutoPredictor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setIsAutoPredictor(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetImportJobArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setDatasetImportJobArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OptimizationMetric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describePredictorResult.setOptimizationMetric(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

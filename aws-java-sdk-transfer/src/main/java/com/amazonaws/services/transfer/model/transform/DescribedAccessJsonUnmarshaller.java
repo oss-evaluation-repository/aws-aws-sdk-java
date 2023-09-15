@@ -43,40 +43,55 @@ public class DescribedAccessJsonUnmarshaller implements Unmarshaller<DescribedAc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HomeDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAccess.setHomeDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HomeDirectoryMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAccess.setHomeDirectoryMappings(new ListUnmarshaller<HomeDirectoryMapEntry>(HomeDirectoryMapEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HomeDirectoryType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAccess.setHomeDirectoryType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Policy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAccess.setPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PosixProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAccess.setPosixProfile(PosixProfileJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAccess.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedAccess.setExternalId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

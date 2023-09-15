@@ -43,76 +43,98 @@ public class FlowJsonUnmarshaller implements Unmarshaller<Flow, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("availabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("egressIp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setEgressIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entitlements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setEntitlements(new ListUnmarshaller<Entitlement>(EntitlementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("flowArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setFlowArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStreams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setMediaStreams(new ListUnmarshaller<MediaStream>(MediaStreamJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setSource(SourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceFailoverConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setSourceFailoverConfig(FailoverConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcInterfaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setVpcInterfaces(new ListUnmarshaller<VpcInterface>(VpcInterfaceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("maintenance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flow.setMaintenance(MaintenanceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

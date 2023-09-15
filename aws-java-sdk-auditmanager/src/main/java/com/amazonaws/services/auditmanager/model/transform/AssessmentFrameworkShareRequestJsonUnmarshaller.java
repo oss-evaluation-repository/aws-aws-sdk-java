@@ -43,70 +43,93 @@ public class AssessmentFrameworkShareRequestJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("frameworkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setFrameworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("frameworkName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setFrameworkName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("frameworkDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setFrameworkDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setSourceAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setDestinationAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setDestinationRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expirationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setExpirationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("standardControlsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setStandardControlsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("customControlsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setCustomControlsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("complianceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentFrameworkShareRequest.setComplianceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

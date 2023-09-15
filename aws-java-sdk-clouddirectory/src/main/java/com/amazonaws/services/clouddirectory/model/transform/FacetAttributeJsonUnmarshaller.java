@@ -43,26 +43,38 @@ public class FacetAttributeJsonUnmarshaller implements Unmarshaller<FacetAttribu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     facetAttribute.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeDefinition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     facetAttribute.setAttributeDefinition(FacetAttributeDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AttributeReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     facetAttribute.setAttributeReference(FacetAttributeReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RequiredBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     facetAttribute.setRequiredBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

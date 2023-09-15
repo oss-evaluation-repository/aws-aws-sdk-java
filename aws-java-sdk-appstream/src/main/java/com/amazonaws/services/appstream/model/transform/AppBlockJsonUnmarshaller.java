@@ -43,56 +43,75 @@ public class AppBlockJsonUnmarshaller implements Unmarshaller<AppBlock, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceS3Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setSourceS3Location(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SetupScriptDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setSetupScriptDetails(ScriptDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PostSetupScriptDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setPostSetupScriptDetails(ScriptDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PackagingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setPackagingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppBlockErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appBlock.setAppBlockErrors(new ListUnmarshaller<ErrorDetails>(ErrorDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

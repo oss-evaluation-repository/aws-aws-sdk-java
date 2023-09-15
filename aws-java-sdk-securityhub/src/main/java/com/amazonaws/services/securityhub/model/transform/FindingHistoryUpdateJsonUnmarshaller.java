@@ -43,22 +43,33 @@ public class FindingHistoryUpdateJsonUnmarshaller implements Unmarshaller<Findin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UpdatedField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingHistoryUpdate.setUpdatedField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OldValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingHistoryUpdate.setOldValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NewValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingHistoryUpdate.setNewValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class ConsumptionConfigurationJsonUnmarshaller implements Unmarshaller<Co
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RenewType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumptionConfiguration.setRenewType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionalConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumptionConfiguration.setProvisionalConfiguration(ProvisionalConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BorrowConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     consumptionConfiguration.setBorrowConfiguration(BorrowConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

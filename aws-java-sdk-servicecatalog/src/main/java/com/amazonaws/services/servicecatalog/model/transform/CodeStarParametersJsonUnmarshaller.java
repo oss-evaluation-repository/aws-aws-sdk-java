@@ -43,26 +43,38 @@ public class CodeStarParametersJsonUnmarshaller implements Unmarshaller<CodeStar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConnectionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeStarParameters.setConnectionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Repository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeStarParameters.setRepository(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Branch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeStarParameters.setBranch(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ArtifactPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeStarParameters.setArtifactPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

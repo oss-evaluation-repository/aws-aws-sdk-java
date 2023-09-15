@@ -43,26 +43,38 @@ public class StaticKeyProviderJsonUnmarshaller implements Unmarshaller<StaticKey
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("keyFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticKeyProvider.setKeyFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("keyFormatVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticKeyProvider.setKeyFormatVersions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("staticKeyValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticKeyProvider.setStaticKeyValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     staticKeyProvider.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

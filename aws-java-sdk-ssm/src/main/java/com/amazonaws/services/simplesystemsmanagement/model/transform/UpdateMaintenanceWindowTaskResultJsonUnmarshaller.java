@@ -43,74 +43,97 @@ public class UpdateMaintenanceWindowTaskResultJsonUnmarshaller implements Unmars
             return updateMaintenanceWindowTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WindowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setWindowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WindowTaskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setWindowTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TaskArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setServiceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setTaskParameters(new MapUnmarshaller<String, MaintenanceWindowTaskParameterValueExpression>(context
                             .getUnmarshaller(String.class), MaintenanceWindowTaskParameterValueExpressionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("TaskInvocationParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setTaskInvocationParameters(MaintenanceWindowTaskInvocationParametersJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxConcurrency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setMaxConcurrency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setMaxErrors(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoggingInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setLoggingInfo(LoggingInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CutoffBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setCutoffBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlarmConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTaskResult.setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

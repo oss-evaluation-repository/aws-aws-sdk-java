@@ -43,48 +43,65 @@ public class LogGroupJsonUnmarshaller implements Unmarshaller<LogGroup, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logGroup.setLogGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logGroup.setCreationTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("retentionInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logGroup.setRetentionInDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("metricFilterCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logGroup.setMetricFilterCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logGroup.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storedBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logGroup.setStoredBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logGroup.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataProtectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logGroup.setDataProtectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inheritedProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logGroup.setInheritedProperties(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

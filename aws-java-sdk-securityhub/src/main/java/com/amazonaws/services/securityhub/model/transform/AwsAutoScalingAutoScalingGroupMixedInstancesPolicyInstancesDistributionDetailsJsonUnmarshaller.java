@@ -44,40 +44,54 @@ public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistribu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OnDemandAllocationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails.setOnDemandAllocationStrategy(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
                 if (context.testExpression("OnDemandBaseCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails.setOnDemandBaseCapacity(context.getUnmarshaller(
                             Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OnDemandPercentageAboveBaseCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails.setOnDemandPercentageAboveBaseCapacity(context
                             .getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SpotAllocationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails.setSpotAllocationStrategy(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
                 if (context.testExpression("SpotInstancePools", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails.setSpotInstancePools(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SpotMaxPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails.setSpotMaxPrice(context.getUnmarshaller(String.class)
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

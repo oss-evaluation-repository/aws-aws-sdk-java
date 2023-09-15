@@ -43,48 +43,64 @@ public class UpdatePipeSourceParametersJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ActiveMQBrokerParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceParameters.setActiveMQBrokerParameters(UpdatePipeSourceActiveMQBrokerParametersJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("DynamoDBStreamParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceParameters.setDynamoDBStreamParameters(UpdatePipeSourceDynamoDBStreamParametersJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("FilterCriteria", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceParameters.setFilterCriteria(FilterCriteriaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisStreamParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceParameters.setKinesisStreamParameters(UpdatePipeSourceKinesisStreamParametersJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ManagedStreamingKafkaParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceParameters.setManagedStreamingKafkaParameters(UpdatePipeSourceManagedStreamingKafkaParametersJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("RabbitMQBrokerParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceParameters.setRabbitMQBrokerParameters(UpdatePipeSourceRabbitMQBrokerParametersJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("SelfManagedKafkaParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceParameters.setSelfManagedKafkaParameters(UpdatePipeSourceSelfManagedKafkaParametersJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("SqsQueueParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updatePipeSourceParameters.setSqsQueueParameters(UpdatePipeSourceSqsQueueParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

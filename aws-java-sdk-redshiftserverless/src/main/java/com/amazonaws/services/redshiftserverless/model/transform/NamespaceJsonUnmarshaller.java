@@ -43,58 +43,77 @@ public class NamespaceJsonUnmarshaller implements Unmarshaller<Namespace, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adminUsername", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setAdminUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setCreationDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("dbName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setDbName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultIamRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setDefaultIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iamRoles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setIamRoles(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logExports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setLogExports(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("namespaceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setNamespaceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setNamespaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setNamespaceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespace.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

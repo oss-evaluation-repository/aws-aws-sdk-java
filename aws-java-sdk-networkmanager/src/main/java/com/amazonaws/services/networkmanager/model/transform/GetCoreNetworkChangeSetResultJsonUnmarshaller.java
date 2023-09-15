@@ -43,12 +43,17 @@ public class GetCoreNetworkChangeSetResultJsonUnmarshaller implements Unmarshall
             return getCoreNetworkChangeSetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CoreNetworkChanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCoreNetworkChangeSetResult
                             .setCoreNetworkChanges(new ListUnmarshaller<CoreNetworkChange>(CoreNetworkChangeJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class GetCoreNetworkChangeSetResultJsonUnmarshaller implements Unmarshall
                             .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCoreNetworkChangeSetResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

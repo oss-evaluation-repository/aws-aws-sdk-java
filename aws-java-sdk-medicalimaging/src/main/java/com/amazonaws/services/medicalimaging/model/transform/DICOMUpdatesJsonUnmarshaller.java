@@ -43,18 +43,28 @@ public class DICOMUpdatesJsonUnmarshaller implements Unmarshaller<DICOMUpdates, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("removableAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMUpdates.setRemovableAttributes(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("updatableAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dICOMUpdates.setUpdatableAttributes(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

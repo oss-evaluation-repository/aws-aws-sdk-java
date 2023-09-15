@@ -43,24 +43,35 @@ public class SearchFacesResultJsonUnmarshaller implements Unmarshaller<SearchFac
             return searchFacesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SearchedFaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchFacesResult.setSearchedFaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FaceMatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchFacesResult.setFaceMatches(new ListUnmarshaller<FaceMatch>(FaceMatchJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FaceModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchFacesResult.setFaceModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

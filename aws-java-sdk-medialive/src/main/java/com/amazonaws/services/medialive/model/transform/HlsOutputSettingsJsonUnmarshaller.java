@@ -43,26 +43,38 @@ public class HlsOutputSettingsJsonUnmarshaller implements Unmarshaller<HlsOutput
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("h265PackagingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsOutputSettings.setH265PackagingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hlsSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsOutputSettings.setHlsSettings(HlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nameModifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsOutputSettings.setNameModifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentModifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsOutputSettings.setSegmentModifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

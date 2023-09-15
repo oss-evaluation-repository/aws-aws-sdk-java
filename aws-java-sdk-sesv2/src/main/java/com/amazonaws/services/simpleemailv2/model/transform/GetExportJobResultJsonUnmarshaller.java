@@ -43,46 +43,63 @@ public class GetExportJobResultJsonUnmarshaller implements Unmarshaller<GetExpor
             return getExportJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExportJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportSourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExportJobResult.setExportSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExportJobResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExportJobResult.setExportDestination(ExportDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExportDataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExportJobResult.setExportDataSource(ExportDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExportJobResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExportJobResult.setCompletedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExportJobResult.setFailureInfo(FailureInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Statistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getExportJobResult.setStatistics(ExportStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

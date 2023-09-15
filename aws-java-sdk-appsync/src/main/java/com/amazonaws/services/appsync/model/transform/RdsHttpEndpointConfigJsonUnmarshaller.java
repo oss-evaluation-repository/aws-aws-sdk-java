@@ -43,30 +43,43 @@ public class RdsHttpEndpointConfigJsonUnmarshaller implements Unmarshaller<RdsHt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("awsRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsHttpEndpointConfig.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dbClusterIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsHttpEndpointConfig.setDbClusterIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("databaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsHttpEndpointConfig.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("schema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsHttpEndpointConfig.setSchema(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsSecretStoreArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsHttpEndpointConfig.setAwsSecretStoreArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

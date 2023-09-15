@@ -43,26 +43,38 @@ public class DeliveryStreamEncryptionConfigurationJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KeyARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamEncryptionConfiguration.setKeyARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamEncryptionConfiguration.setKeyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamEncryptionConfiguration.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deliveryStreamEncryptionConfiguration.setFailureDescription(FailureDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

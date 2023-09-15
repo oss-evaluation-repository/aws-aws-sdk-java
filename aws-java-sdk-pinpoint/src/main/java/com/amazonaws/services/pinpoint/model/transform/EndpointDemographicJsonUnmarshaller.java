@@ -43,42 +43,58 @@ public class EndpointDemographicJsonUnmarshaller implements Unmarshaller<Endpoin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointDemographic.setAppVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Locale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointDemographic.setLocale(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Make", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointDemographic.setMake(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointDemographic.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointDemographic.setModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointDemographic.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlatformVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointDemographic.setPlatformVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     endpointDemographic.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

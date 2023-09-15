@@ -43,54 +43,73 @@ public class EnvironmentAccountConnectionJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codebuildRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setCodebuildRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setComponentRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setEnvironmentAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setLastModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("managementAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setManagementAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requestedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setRequestedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     environmentAccountConnection.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

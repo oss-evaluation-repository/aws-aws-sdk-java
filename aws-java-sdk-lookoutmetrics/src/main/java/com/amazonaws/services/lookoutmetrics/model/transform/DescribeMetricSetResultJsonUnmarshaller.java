@@ -43,73 +43,95 @@ public class DescribeMetricSetResultJsonUnmarshaller implements Unmarshaller<Des
             return describeMetricSetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setMetricSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnomalyDetectorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setAnomalyDetectorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setMetricSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricSetDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setMetricSetDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Offset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setMetricList(new ListUnmarshaller<Metric>(MetricJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TimestampColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setTimestampColumn(TimestampColumnJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DimensionList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setDimensionList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MetricSetFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setMetricSetFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setMetricSource(MetricSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DimensionFilterList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMetricSetResult.setDimensionFilterList(new ListUnmarshaller<MetricSetDimensionFilter>(MetricSetDimensionFilterJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

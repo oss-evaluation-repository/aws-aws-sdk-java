@@ -43,26 +43,37 @@ public class ListObjectParentsResultJsonUnmarshaller implements Unmarshaller<Lis
             return listObjectParentsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Parents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listObjectParentsResult.setParents(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listObjectParentsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParentLinks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listObjectParentsResult.setParentLinks(new ListUnmarshaller<ObjectIdentifierAndLinkNameTuple>(
                             ObjectIdentifierAndLinkNameTupleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

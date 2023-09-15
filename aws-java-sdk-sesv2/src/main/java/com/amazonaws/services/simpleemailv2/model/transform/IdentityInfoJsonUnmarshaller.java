@@ -43,26 +43,38 @@ public class IdentityInfoJsonUnmarshaller implements Unmarshaller<IdentityInfo, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityInfo.setIdentityType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityInfo.setIdentityName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SendingEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityInfo.setSendingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("VerificationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     identityInfo.setVerificationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class ListEndpointConfigsResultJsonUnmarshaller implements Unmarshaller<L
             return listEndpointConfigsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndpointConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEndpointConfigsResult.setEndpointConfigs(new ListUnmarshaller<EndpointConfigSummary>(EndpointConfigSummaryJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListEndpointConfigsResultJsonUnmarshaller implements Unmarshaller<L
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listEndpointConfigsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

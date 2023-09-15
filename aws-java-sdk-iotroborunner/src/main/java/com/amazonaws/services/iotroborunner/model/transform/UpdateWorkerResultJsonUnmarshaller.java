@@ -43,50 +43,68 @@ public class UpdateWorkerResultJsonUnmarshaller implements Unmarshaller<UpdateWo
             return updateWorkerResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkerResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkerResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fleet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkerResult.setFleet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkerResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkerResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("additionalTransientProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkerResult.setAdditionalTransientProperties(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("additionalFixedProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkerResult.setAdditionalFixedProperties(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("orientation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkerResult.setOrientation(OrientationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vendorProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkerResult.setVendorProperties(VendorPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("position", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateWorkerResult.setPosition(PositionCoordinatesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,50 @@ public class AwsIamInstanceProfileJsonUnmarshaller implements Unmarshaller<AwsIa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfile.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfile.setCreateDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfile.setInstanceProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfile.setInstanceProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfile.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Roles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsIamInstanceProfile.setRoles(new ListUnmarshaller<AwsIamInstanceProfileRole>(AwsIamInstanceProfileRoleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,60 +43,79 @@ public class ClarifyInferenceConfigJsonUnmarshaller implements Unmarshaller<Clar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FeaturesAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setFeaturesAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setContentTemplate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxRecordCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setMaxRecordCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxPayloadInMB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setMaxPayloadInMB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ProbabilityIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setProbabilityIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setLabelIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ProbabilityAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setProbabilityAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setLabelAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelHeaders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setLabelHeaders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FeatureHeaders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setFeatureHeaders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FeatureTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyInferenceConfig.setFeatureTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

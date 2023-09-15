@@ -43,26 +43,38 @@ public class ConfigStreamDeliveryInfoJsonUnmarshaller implements Unmarshaller<Co
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lastStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configStreamDeliveryInfo.setLastStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configStreamDeliveryInfo.setLastErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configStreamDeliveryInfo.setLastErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatusChangeTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configStreamDeliveryInfo.setLastStatusChangeTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class ParquetSerDeJsonUnmarshaller implements Unmarshaller<ParquetSerDe, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BlockSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parquetSerDe.setBlockSizeBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PageSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parquetSerDe.setPageSizeBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Compression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parquetSerDe.setCompression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableDictionaryCompression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parquetSerDe.setEnableDictionaryCompression(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxPaddingBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parquetSerDe.setMaxPaddingBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WriterVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parquetSerDe.setWriterVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

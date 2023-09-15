@@ -43,26 +43,38 @@ public class InAppMessageButtonJsonUnmarshaller implements Unmarshaller<InAppMes
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Android", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageButton.setAndroid(OverrideButtonConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageButton.setDefaultConfig(DefaultButtonConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IOS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageButton.setIOS(OverrideButtonConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Web", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageButton.setWeb(OverrideButtonConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

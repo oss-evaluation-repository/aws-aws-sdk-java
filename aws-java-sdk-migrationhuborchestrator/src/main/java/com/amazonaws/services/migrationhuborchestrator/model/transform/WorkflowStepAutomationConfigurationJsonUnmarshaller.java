@@ -43,30 +43,43 @@ public class WorkflowStepAutomationConfigurationJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("scriptLocationS3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepAutomationConfiguration.setScriptLocationS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scriptLocationS3Key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepAutomationConfiguration.setScriptLocationS3Key(PlatformScriptKeyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepAutomationConfiguration.setCommand(PlatformCommandJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("runEnvironment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepAutomationConfiguration.setRunEnvironment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowStepAutomationConfiguration.setTargetType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class CallbackStepMetadataJsonUnmarshaller implements Unmarshaller<Callba
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CallbackToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callbackStepMetadata.setCallbackToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SqsQueueUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callbackStepMetadata.setSqsQueueUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callbackStepMetadata.setOutputParameters(new ListUnmarshaller<OutputParameter>(OutputParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

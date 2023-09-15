@@ -43,42 +43,56 @@ public class DescribedSecurityPolicyJsonUnmarshaller implements Unmarshaller<Des
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Fips", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedSecurityPolicy.setFips(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityPolicyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedSecurityPolicy.setSecurityPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshCiphers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedSecurityPolicy.setSshCiphers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SshKexs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedSecurityPolicy.setSshKexs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SshMacs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedSecurityPolicy.setSshMacs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TlsCiphers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedSecurityPolicy.setTlsCiphers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

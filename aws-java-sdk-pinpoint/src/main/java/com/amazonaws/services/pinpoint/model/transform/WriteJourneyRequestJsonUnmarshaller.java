@@ -43,89 +43,116 @@ public class WriteJourneyRequestJsonUnmarshaller implements Unmarshaller<WriteJo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Activities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setActivities(new MapUnmarshaller<String, Activity>(context.getUnmarshaller(String.class), ActivityJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Limits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setLimits(JourneyLimitsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LocalTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setLocalTime(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuietTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setQuietTime(QuietTimeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RefreshFrequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setRefreshFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setSchedule(JourneyScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartActivity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setStartActivity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartCondition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setStartCondition(StartConditionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WaitForQuietTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setWaitForQuietTime(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RefreshOnSegmentUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setRefreshOnSegmentUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("JourneyChannelSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setJourneyChannelSettings(JourneyChannelSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SendingSchedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setSendingSchedule(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OpenHours", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setOpenHours(OpenHoursJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ClosedDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setClosedDays(ClosedDaysJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimezoneEstimationMethods", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeJourneyRequest.setTimezoneEstimationMethods(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

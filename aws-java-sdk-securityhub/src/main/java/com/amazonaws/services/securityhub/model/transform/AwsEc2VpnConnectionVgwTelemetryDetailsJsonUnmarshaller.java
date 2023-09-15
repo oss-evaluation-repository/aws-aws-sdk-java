@@ -43,34 +43,48 @@ public class AwsEc2VpnConnectionVgwTelemetryDetailsJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AcceptedRouteCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionVgwTelemetryDetails.setAcceptedRouteCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionVgwTelemetryDetails.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastStatusChange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionVgwTelemetryDetails.setLastStatusChange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutsideIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionVgwTelemetryDetails.setOutsideIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionVgwTelemetryDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionVgwTelemetryDetails.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

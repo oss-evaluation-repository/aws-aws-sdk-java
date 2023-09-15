@@ -43,12 +43,17 @@ public class ListOfferingTransactionsResultJsonUnmarshaller implements Unmarshal
             return listOfferingTransactionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("offeringTransactions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listOfferingTransactionsResult.setOfferingTransactions(new ListUnmarshaller<OfferingTransaction>(OfferingTransactionJsonUnmarshaller
                             .getInstance())
@@ -56,8 +61,13 @@ public class ListOfferingTransactionsResultJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listOfferingTransactionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

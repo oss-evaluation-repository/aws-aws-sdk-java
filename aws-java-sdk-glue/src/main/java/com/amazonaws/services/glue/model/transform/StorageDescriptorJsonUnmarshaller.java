@@ -43,75 +43,97 @@ public class StorageDescriptorJsonUnmarshaller implements Unmarshaller<StorageDe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Columns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setColumns(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalLocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setAdditionalLocations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InputFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setInputFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setOutputFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Compressed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setCompressed(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfBuckets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setNumberOfBuckets(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SerdeInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setSerdeInfo(SerDeInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BucketColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setBucketColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SortColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setSortColumns(new ListUnmarshaller<Order>(OrderJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("SkewedInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setSkewedInfo(SkewedInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StoredAsSubDirectories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setStoredAsSubDirectories(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     storageDescriptor.setSchemaReference(SchemaReferenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

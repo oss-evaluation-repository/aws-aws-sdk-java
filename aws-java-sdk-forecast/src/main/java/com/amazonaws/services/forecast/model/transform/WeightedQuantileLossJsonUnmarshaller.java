@@ -43,18 +43,28 @@ public class WeightedQuantileLossJsonUnmarshaller implements Unmarshaller<Weight
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Quantile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     weightedQuantileLoss.setQuantile(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("LossValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     weightedQuantileLoss.setLossValue(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

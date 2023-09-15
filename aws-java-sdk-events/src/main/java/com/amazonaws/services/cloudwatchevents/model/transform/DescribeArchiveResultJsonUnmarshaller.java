@@ -43,54 +43,73 @@ public class DescribeArchiveResultJsonUnmarshaller implements Unmarshaller<Descr
             return describeArchiveResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ArchiveArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setArchiveArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ArchiveName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setArchiveName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventSourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setEventSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventPattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setEventPattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetentionDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EventCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setEventCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeArchiveResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

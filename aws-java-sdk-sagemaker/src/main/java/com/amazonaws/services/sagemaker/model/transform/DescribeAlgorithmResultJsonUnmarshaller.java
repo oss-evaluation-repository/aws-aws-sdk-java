@@ -43,54 +43,73 @@ public class DescribeAlgorithmResultJsonUnmarshaller implements Unmarshaller<Des
             return describeAlgorithmResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AlgorithmName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setAlgorithmName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlgorithmArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setAlgorithmArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlgorithmDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setAlgorithmDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setTrainingSpecification(TrainingSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InferenceSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setInferenceSpecification(InferenceSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ValidationSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setValidationSpecification(AlgorithmValidationSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AlgorithmStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setAlgorithmStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlgorithmStatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setAlgorithmStatusDetails(AlgorithmStatusDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProductId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertifyForMarketplace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAlgorithmResult.setCertifyForMarketplace(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

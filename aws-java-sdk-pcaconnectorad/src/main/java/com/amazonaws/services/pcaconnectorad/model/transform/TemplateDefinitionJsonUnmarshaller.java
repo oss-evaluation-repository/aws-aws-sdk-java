@@ -43,22 +43,33 @@ public class TemplateDefinitionJsonUnmarshaller implements Unmarshaller<Template
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TemplateV2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateDefinition.setTemplateV2(TemplateV2JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TemplateV3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateDefinition.setTemplateV3(TemplateV3JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TemplateV4", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateDefinition.setTemplateV4(TemplateV4JsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

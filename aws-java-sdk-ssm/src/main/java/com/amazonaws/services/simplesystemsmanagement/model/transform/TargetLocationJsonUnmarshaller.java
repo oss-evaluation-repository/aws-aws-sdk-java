@@ -43,38 +43,52 @@ public class TargetLocationJsonUnmarshaller implements Unmarshaller<TargetLocati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Accounts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetLocation.setAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Regions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetLocation.setRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TargetLocationMaxConcurrency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetLocation.setTargetLocationMaxConcurrency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetLocationMaxErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetLocation.setTargetLocationMaxErrors(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetLocation.setExecutionRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetLocationAlarmConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetLocation.setTargetLocationAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

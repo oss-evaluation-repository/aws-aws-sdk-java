@@ -43,38 +43,53 @@ public class AthenaSourceConfigJsonUnmarshaller implements Unmarshaller<AthenaSo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaSourceConfig.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaSourceConfig.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataCatalog", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaSourceConfig.setDataCatalog(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaSourceConfig.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaSourceConfig.setWorkGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3ResultsPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaSourceConfig.setS3ResultsPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackTestConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaSourceConfig.setBackTestConfiguration(BackTestConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

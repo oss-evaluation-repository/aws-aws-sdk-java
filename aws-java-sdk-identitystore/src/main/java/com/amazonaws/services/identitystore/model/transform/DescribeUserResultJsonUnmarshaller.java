@@ -43,82 +43,106 @@ public class DescribeUserResultJsonUnmarshaller implements Unmarshaller<Describe
             return describeUserResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setExternalIds(new ListUnmarshaller<ExternalId>(ExternalIdJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setName(NameJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NickName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setNickName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProfileUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setProfileUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Emails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setEmails(new ListUnmarshaller<Email>(EmailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Addresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setAddresses(new ListUnmarshaller<Address>(AddressJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumbers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setPhoneNumbers(new ListUnmarshaller<PhoneNumber>(PhoneNumberJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setUserType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PreferredLanguage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setPreferredLanguage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Locale", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setLocale(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityStoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeUserResult.setIdentityStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

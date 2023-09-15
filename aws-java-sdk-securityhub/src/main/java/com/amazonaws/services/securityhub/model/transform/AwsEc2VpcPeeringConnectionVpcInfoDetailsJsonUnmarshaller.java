@@ -44,16 +44,22 @@ public class AwsEc2VpcPeeringConnectionVpcInfoDetailsJsonUnmarshaller implements
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CidrBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcPeeringConnectionVpcInfoDetails.setCidrBlock(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CidrBlockSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcPeeringConnectionVpcInfoDetails.setCidrBlockSet(new ListUnmarshaller<VpcInfoCidrBlockSetDetails>(
                             VpcInfoCidrBlockSetDetailsJsonUnmarshaller.getInstance())
@@ -61,6 +67,7 @@ public class AwsEc2VpcPeeringConnectionVpcInfoDetailsJsonUnmarshaller implements
                     .unmarshall(context));
                 }
                 if (context.testExpression("Ipv6CidrBlockSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcPeeringConnectionVpcInfoDetails.setIpv6CidrBlockSet(new ListUnmarshaller<VpcInfoIpv6CidrBlockSetDetails>(
                             VpcInfoIpv6CidrBlockSetDetailsJsonUnmarshaller.getInstance())
@@ -68,20 +75,28 @@ public class AwsEc2VpcPeeringConnectionVpcInfoDetailsJsonUnmarshaller implements
                     .unmarshall(context));
                 }
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcPeeringConnectionVpcInfoDetails.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PeeringOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcPeeringConnectionVpcInfoDetails.setPeeringOptions(VpcInfoPeeringOptionsDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcPeeringConnectionVpcInfoDetails.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpcPeeringConnectionVpcInfoDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

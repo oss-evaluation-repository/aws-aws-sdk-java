@@ -43,34 +43,48 @@ public class CmafEncryptionSettingsJsonUnmarshaller implements Unmarshaller<Cmaf
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("constantInitializationVector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafEncryptionSettings.setConstantInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafEncryptionSettings.setEncryptionMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("initializationVectorInManifest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafEncryptionSettings.setInitializationVectorInManifest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("spekeKeyProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafEncryptionSettings.setSpekeKeyProvider(SpekeKeyProviderCmafJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("staticKeyProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafEncryptionSettings.setStaticKeyProvider(StaticKeyProviderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cmafEncryptionSettings.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

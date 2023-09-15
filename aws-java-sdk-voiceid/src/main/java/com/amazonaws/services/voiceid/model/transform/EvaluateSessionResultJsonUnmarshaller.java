@@ -43,34 +43,48 @@ public class EvaluateSessionResultJsonUnmarshaller implements Unmarshaller<Evalu
             return evaluateSessionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AuthenticationResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateSessionResult.setAuthenticationResult(AuthenticationResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DomainId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateSessionResult.setDomainId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FraudDetectionResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateSessionResult.setFraudDetectionResult(FraudDetectionResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateSessionResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateSessionResult.setSessionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluateSessionResult.setStreamingStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

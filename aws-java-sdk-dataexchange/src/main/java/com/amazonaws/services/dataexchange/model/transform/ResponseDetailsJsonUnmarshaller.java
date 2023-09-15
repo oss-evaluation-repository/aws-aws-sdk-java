@@ -43,50 +43,67 @@ public class ResponseDetailsJsonUnmarshaller implements Unmarshaller<ResponseDet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExportAssetToSignedUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseDetails.setExportAssetToSignedUrl(ExportAssetToSignedUrlResponseDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExportAssetsToS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseDetails.setExportAssetsToS3(ExportAssetsToS3ResponseDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExportRevisionsToS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseDetails.setExportRevisionsToS3(ExportRevisionsToS3ResponseDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ImportAssetFromSignedUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseDetails.setImportAssetFromSignedUrl(ImportAssetFromSignedUrlResponseDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ImportAssetsFromS3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseDetails.setImportAssetsFromS3(ImportAssetsFromS3ResponseDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ImportAssetsFromRedshiftDataShares", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseDetails.setImportAssetsFromRedshiftDataShares(ImportAssetsFromRedshiftDataSharesResponseDetailsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ImportAssetFromApiGatewayApi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseDetails.setImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiResponseDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("CreateS3DataAccessFromS3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseDetails.setCreateS3DataAccessFromS3Bucket(CreateS3DataAccessFromS3BucketResponseDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ImportAssetsFromLakeFormationTagPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseDetails.setImportAssetsFromLakeFormationTagPolicy(ImportAssetsFromLakeFormationTagPolicyResponseDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

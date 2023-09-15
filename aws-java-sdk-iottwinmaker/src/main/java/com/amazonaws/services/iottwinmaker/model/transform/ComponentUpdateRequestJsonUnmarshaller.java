@@ -43,32 +43,45 @@ public class ComponentUpdateRequestJsonUnmarshaller implements Unmarshaller<Comp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("updateType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentUpdateRequest.setUpdateType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentUpdateRequest.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentUpdateRequest.setComponentTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("propertyUpdates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentUpdateRequest.setPropertyUpdates(new MapUnmarshaller<String, PropertyRequest>(context.getUnmarshaller(String.class),
                             PropertyRequestJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("propertyGroupUpdates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentUpdateRequest.setPropertyGroupUpdates(new MapUnmarshaller<String, ComponentPropertyGroupRequest>(context
                             .getUnmarshaller(String.class), ComponentPropertyGroupRequestJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

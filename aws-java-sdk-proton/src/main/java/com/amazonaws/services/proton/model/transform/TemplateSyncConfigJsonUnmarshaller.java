@@ -43,34 +43,48 @@ public class TemplateSyncConfigJsonUnmarshaller implements Unmarshaller<Template
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("branch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSyncConfig.setBranch(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSyncConfig.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSyncConfig.setRepositoryProvider(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subdirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSyncConfig.setSubdirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSyncConfig.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateSyncConfig.setTemplateType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

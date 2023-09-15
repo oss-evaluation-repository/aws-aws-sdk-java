@@ -43,26 +43,38 @@ public class TruckDimensionsJsonUnmarshaller implements Unmarshaller<TruckDimens
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Height", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     truckDimensions.setHeight(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Length", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     truckDimensions.setLength(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     truckDimensions.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Width", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     truckDimensions.setWidth(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

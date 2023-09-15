@@ -43,12 +43,17 @@ public class CloudWatchMetricsDataSummaryJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TimestampMetricValuePairList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchMetricsDataSummary.setTimestampMetricValuePairList(new ListUnmarshaller<TimestampMetricValuePair>(
                             TimestampMetricValuePairJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class CloudWatchMetricsDataSummaryJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchMetricsDataSummary.setStatusCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

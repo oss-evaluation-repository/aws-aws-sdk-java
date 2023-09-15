@@ -43,42 +43,58 @@ public class AuthenticationResultJsonUnmarshaller implements Unmarshaller<Authen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AudioAggregationEndedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResult.setAudioAggregationEndedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AudioAggregationStartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResult.setAudioAggregationStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationResultId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResult.setAuthenticationResultId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResult.setConfiguration(AuthenticationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomerSpeakerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResult.setCustomerSpeakerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Decision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResult.setDecision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GeneratedSpeakerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResult.setGeneratedSpeakerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authenticationResult.setScore(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class ListComponentTypesFilterJsonUnmarshaller implements Unmarshaller<Li
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("extendsFrom", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listComponentTypesFilter.setExtendsFrom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listComponentTypesFilter.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isAbstract", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listComponentTypesFilter.setIsAbstract(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

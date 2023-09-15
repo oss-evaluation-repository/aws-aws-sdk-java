@@ -44,79 +44,104 @@ public class SavingsPlansPurchaseRecommendationDetailJsonUnmarshaller implements
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SavingsPlansDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setSavingsPlansDetails(SavingsPlansDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpfrontCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setUpfrontCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedROI", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setEstimatedROI(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedSPCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setEstimatedSPCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedOnDemandCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setEstimatedOnDemandCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedOnDemandCostWithCurrentCommitment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setEstimatedOnDemandCostWithCurrentCommitment(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("EstimatedSavingsAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setEstimatedSavingsAmount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedSavingsPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setEstimatedSavingsPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HourlyCommitmentToPurchase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setHourlyCommitmentToPurchase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedAverageUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setEstimatedAverageUtilization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedMonthlySavingsAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setEstimatedMonthlySavingsAmount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentMinimumHourlyOnDemandSpend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setCurrentMinimumHourlyOnDemandSpend(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentMaximumHourlyOnDemandSpend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setCurrentMaximumHourlyOnDemandSpend(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentAverageHourlyOnDemandSpend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setCurrentAverageHourlyOnDemandSpend(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationDetailId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setRecommendationDetailId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

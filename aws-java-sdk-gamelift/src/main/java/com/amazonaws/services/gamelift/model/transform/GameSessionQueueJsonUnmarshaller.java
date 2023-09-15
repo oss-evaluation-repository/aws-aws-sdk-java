@@ -43,30 +43,39 @@ public class GameSessionQueueJsonUnmarshaller implements Unmarshaller<GameSessio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionQueue.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameSessionQueueArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionQueue.setGameSessionQueueArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeoutInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionQueue.setTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PlayerLatencyPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionQueue.setPlayerLatencyPolicies(new ListUnmarshaller<PlayerLatencyPolicy>(PlayerLatencyPolicyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionQueue.setDestinations(new ListUnmarshaller<GameSessionQueueDestination>(GameSessionQueueDestinationJsonUnmarshaller
                             .getInstance())
@@ -74,20 +83,28 @@ public class GameSessionQueueJsonUnmarshaller implements Unmarshaller<GameSessio
                     .unmarshall(context));
                 }
                 if (context.testExpression("FilterConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionQueue.setFilterConfiguration(FilterConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PriorityConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionQueue.setPriorityConfiguration(PriorityConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomEventData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionQueue.setCustomEventData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationTarget", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     gameSessionQueue.setNotificationTarget(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

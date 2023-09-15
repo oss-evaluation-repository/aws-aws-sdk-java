@@ -43,32 +43,45 @@ public class RouteResponseJsonUnmarshaller implements Unmarshaller<RouteResponse
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("modelSelectionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeResponse.setModelSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("responseModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeResponse.setResponseModels(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("responseParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeResponse.setResponseParameters(new MapUnmarshaller<String, ParameterConstraints>(context.getUnmarshaller(String.class),
                             ParameterConstraintsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("routeResponseId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeResponse.setRouteResponseId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeResponseKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeResponse.setRouteResponseKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

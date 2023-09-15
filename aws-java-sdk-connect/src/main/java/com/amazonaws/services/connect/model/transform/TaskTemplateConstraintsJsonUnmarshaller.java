@@ -43,28 +43,39 @@ public class TaskTemplateConstraintsJsonUnmarshaller implements Unmarshaller<Tas
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RequiredFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskTemplateConstraints.setRequiredFields(new ListUnmarshaller<RequiredFieldInfo>(RequiredFieldInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReadOnlyFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskTemplateConstraints.setReadOnlyFields(new ListUnmarshaller<ReadOnlyFieldInfo>(ReadOnlyFieldInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InvisibleFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskTemplateConstraints.setInvisibleFields(new ListUnmarshaller<InvisibleFieldInfo>(InvisibleFieldInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

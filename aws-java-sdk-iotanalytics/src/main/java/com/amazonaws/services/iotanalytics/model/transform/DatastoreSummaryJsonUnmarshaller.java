@@ -43,42 +43,58 @@ public class DatastoreSummaryJsonUnmarshaller implements Unmarshaller<DatastoreS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("datastoreName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreSummary.setDatastoreName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datastoreStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreSummary.setDatastoreStorage(DatastoreStorageSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreSummary.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastMessageArrivalTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreSummary.setLastMessageArrivalTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("fileFormatType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreSummary.setFileFormatType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datastorePartitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreSummary.setDatastorePartitions(DatastorePartitionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

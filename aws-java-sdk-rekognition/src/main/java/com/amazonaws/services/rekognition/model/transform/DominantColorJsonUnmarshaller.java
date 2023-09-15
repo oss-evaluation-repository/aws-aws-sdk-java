@@ -43,38 +43,53 @@ public class DominantColorJsonUnmarshaller implements Unmarshaller<DominantColor
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Red", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dominantColor.setRed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Blue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dominantColor.setBlue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Green", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dominantColor.setGreen(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("HexCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dominantColor.setHexCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CSSColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dominantColor.setCSSColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SimplifiedColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dominantColor.setSimplifiedColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PixelPercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dominantColor.setPixelPercent(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

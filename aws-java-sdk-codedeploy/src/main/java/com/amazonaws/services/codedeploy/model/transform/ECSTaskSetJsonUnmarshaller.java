@@ -43,42 +43,58 @@ public class ECSTaskSetJsonUnmarshaller implements Unmarshaller<ECSTaskSet, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("identifer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSTaskSet.setIdentifer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("desiredCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSTaskSet.setDesiredCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSTaskSet.setPendingCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("runningCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSTaskSet.setRunningCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSTaskSet.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trafficWeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSTaskSet.setTrafficWeight(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("targetGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSTaskSet.setTargetGroup(TargetGroupInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("taskSetLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSTaskSet.setTaskSetLabel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

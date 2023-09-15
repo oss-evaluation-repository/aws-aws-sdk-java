@@ -43,62 +43,83 @@ public class CollectorResponseJsonUnmarshaller implements Unmarshaller<Collector
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CollectorReferencedId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setCollectorReferencedId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CollectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setCollectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CollectorVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setCollectorVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setVersionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setServiceAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CollectorHealthCheck", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setCollectorHealthCheck(CollectorHealthCheckJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastDataReceived", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setLastDataReceived(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegisteredDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setRegisteredDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setCreatedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InventoryData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     collectorResponse.setInventoryData(InventoryDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

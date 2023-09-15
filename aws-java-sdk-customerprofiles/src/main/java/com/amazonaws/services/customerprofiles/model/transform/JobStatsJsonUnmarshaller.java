@@ -43,22 +43,33 @@ public class JobStatsJsonUnmarshaller implements Unmarshaller<JobStats, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NumberOfProfilesReviewed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobStats.setNumberOfProfilesReviewed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfMatchesFound", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobStats.setNumberOfMatchesFound(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfMergesDone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobStats.setNumberOfMergesDone(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

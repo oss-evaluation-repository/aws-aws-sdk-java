@@ -43,30 +43,42 @@ public class DebugHookConfigJsonUnmarshaller implements Unmarshaller<DebugHookCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocalPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     debugHookConfig.setLocalPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3OutputPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     debugHookConfig.setS3OutputPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HookParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     debugHookConfig.setHookParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("CollectionConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     debugHookConfig.setCollectionConfigurations(new ListUnmarshaller<CollectionConfiguration>(CollectionConfigurationJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

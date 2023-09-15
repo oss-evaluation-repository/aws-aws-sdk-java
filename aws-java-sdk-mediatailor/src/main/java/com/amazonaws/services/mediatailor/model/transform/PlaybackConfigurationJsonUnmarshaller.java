@@ -44,89 +44,116 @@ public class PlaybackConfigurationJsonUnmarshaller implements Unmarshaller<Playb
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AdDecisionServerUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setAdDecisionServerUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailSuppression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setAvailSuppression(AvailSuppressionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Bumper", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setBumper(BumperJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CdnConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setCdnConfiguration(CdnConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationAliases", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setConfigurationAliases(new MapUnmarshaller<String, java.util.Map<String, String>>(context
                             .getUnmarshaller(String.class), new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class))).unmarshall(context));
                 }
                 if (context.testExpression("DashConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setDashConfiguration(DashConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HlsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setHlsConfiguration(HlsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LivePreRollConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setLivePreRollConfiguration(LivePreRollConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LogConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setLogConfiguration(LogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ManifestProcessingRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setManifestProcessingRules(ManifestProcessingRulesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PersonalizationThresholdSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setPersonalizationThresholdSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PlaybackConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setPlaybackConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlaybackEndpointPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setPlaybackEndpointPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionInitializationEndpointPrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setSessionInitializationEndpointPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SlateAdUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setSlateAdUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("TranscodeProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setTranscodeProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VideoContentSourceUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playbackConfiguration.setVideoContentSourceUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

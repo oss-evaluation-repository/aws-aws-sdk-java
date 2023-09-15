@@ -43,34 +43,48 @@ public class NamespaceInfoV2JsonUnmarshaller implements Unmarshaller<NamespaceIn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespaceInfoV2.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespaceInfoV2.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CapacityRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespaceInfoV2.setCapacityRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespaceInfoV2.setCreationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityStore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespaceInfoV2.setIdentityStore(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NamespaceError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     namespaceInfoV2.setNamespaceError(NamespaceErrorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

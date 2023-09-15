@@ -43,38 +43,52 @@ public class RepositoryCatalogDataInputJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogDataInput.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("architectures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogDataInput.setArchitectures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("operatingSystems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogDataInput.setOperatingSystems(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("logoImageBlob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogDataInput.setLogoImageBlob(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("aboutText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogDataInput.setAboutText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usageText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repositoryCatalogDataInput.setUsageText(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

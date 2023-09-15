@@ -43,46 +43,63 @@ public class UserTurnResultJsonUnmarshaller implements Unmarshaller<UserTurnResu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("input", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnResult.setInput(UserTurnInputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("expectedOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnResult.setExpectedOutput(UserTurnOutputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("actualOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnResult.setActualOutput(UserTurnOutputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("errorDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnResult.setErrorDetails(ExecutionErrorDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("endToEndResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnResult.setEndToEndResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("intentMatchResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnResult.setIntentMatchResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotMatchResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnResult.setSlotMatchResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("speechTranscriptionResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnResult.setSpeechTranscriptionResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("conversationLevelResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userTurnResult.setConversationLevelResult(ConversationLevelResultDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

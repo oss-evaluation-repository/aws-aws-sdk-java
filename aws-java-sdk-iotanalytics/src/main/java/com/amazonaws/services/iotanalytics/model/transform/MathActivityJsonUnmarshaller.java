@@ -43,26 +43,38 @@ public class MathActivityJsonUnmarshaller implements Unmarshaller<MathActivity, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mathActivity.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mathActivity.setAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("math", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mathActivity.setMath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("next", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mathActivity.setNext(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,21 +43,31 @@ public class GetMobileDeviceAccessEffectResultJsonUnmarshaller implements Unmars
             return getMobileDeviceAccessEffectResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Effect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMobileDeviceAccessEffectResult.setEffect(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchedRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMobileDeviceAccessEffectResult.setMatchedRules(new ListUnmarshaller<MobileDeviceAccessMatchedRule>(
                             MobileDeviceAccessMatchedRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

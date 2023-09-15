@@ -43,74 +43,97 @@ public class BlockJsonUnmarshaller implements Unmarshaller<Block, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BlockType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setBlockType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Confidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("Text", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TextType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setTextType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RowIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setRowIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setColumnIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RowSpan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setRowSpan(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ColumnSpan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setColumnSpan(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Geometry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setGeometry(GeometryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Relationships", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setRelationships(new ListUnmarshaller<Relationship>(RelationshipJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EntityTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setEntityTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SelectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setSelectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Page", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setPage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Query", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     block.setQuery(QueryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

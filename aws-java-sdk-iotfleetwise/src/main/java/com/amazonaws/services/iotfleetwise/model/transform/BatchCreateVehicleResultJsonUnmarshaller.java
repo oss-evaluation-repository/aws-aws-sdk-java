@@ -43,12 +43,17 @@ public class BatchCreateVehicleResultJsonUnmarshaller implements Unmarshaller<Ba
             return batchCreateVehicleResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("vehicles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchCreateVehicleResult.setVehicles(new ListUnmarshaller<CreateVehicleResponseItem>(CreateVehicleResponseItemJsonUnmarshaller
                             .getInstance())
@@ -56,10 +61,15 @@ public class BatchCreateVehicleResultJsonUnmarshaller implements Unmarshaller<Ba
                     .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchCreateVehicleResult.setErrors(new ListUnmarshaller<CreateVehicleError>(CreateVehicleErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

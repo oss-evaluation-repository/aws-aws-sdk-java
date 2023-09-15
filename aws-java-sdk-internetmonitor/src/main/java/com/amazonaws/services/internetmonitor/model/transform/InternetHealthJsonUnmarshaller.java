@@ -43,18 +43,28 @@ public class InternetHealthJsonUnmarshaller implements Unmarshaller<InternetHeal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Availability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     internetHealth.setAvailability(AvailabilityMeasurementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Performance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     internetHealth.setPerformance(PerformanceMeasurementJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

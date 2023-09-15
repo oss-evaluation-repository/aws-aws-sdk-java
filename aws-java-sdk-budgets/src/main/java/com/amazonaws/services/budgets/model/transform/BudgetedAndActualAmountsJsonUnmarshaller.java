@@ -43,22 +43,33 @@ public class BudgetedAndActualAmountsJsonUnmarshaller implements Unmarshaller<Bu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BudgetedAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budgetedAndActualAmounts.setBudgetedAmount(SpendJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ActualAmount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budgetedAndActualAmounts.setActualAmount(SpendJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimePeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     budgetedAndActualAmounts.setTimePeriod(TimePeriodJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

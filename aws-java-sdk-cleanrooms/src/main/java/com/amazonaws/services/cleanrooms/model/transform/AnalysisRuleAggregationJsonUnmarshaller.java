@@ -43,51 +43,66 @@ public class AnalysisRuleAggregationJsonUnmarshaller implements Unmarshaller<Ana
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("aggregateColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisRuleAggregation.setAggregateColumns(new ListUnmarshaller<AggregateColumn>(AggregateColumnJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("joinColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisRuleAggregation.setJoinColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("joinRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisRuleAggregation.setJoinRequired(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("allowedJoinOperators", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisRuleAggregation.setAllowedJoinOperators(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("dimensionColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisRuleAggregation.setDimensionColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("scalarFunctions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisRuleAggregation.setScalarFunctions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("outputConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analysisRuleAggregation.setOutputConstraints(new ListUnmarshaller<AggregationConstraint>(AggregationConstraintJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

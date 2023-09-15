@@ -43,26 +43,38 @@ public class FileSystemAssociationSummaryJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FileSystemAssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationSummary.setFileSystemAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemAssociationARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationSummary.setFileSystemAssociationARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemAssociationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationSummary.setFileSystemAssociationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationSummary.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

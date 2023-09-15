@@ -43,44 +43,60 @@ public class VcenterClientJsonUnmarshaller implements Unmarshaller<VcenterClient
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vcenterClient.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datacenterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vcenterClient.setDatacenterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vcenterClient.setHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastSeenDatetime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vcenterClient.setLastSeenDatetime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceServerTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vcenterClient.setSourceServerTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vcenterClient.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("vcenterClientID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vcenterClient.setVcenterClientID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vcenterUUID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     vcenterClient.setVcenterUUID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

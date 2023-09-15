@@ -43,36 +43,50 @@ public class UpdateMaintenanceWindowTargetResultJsonUnmarshaller implements Unma
             return updateMaintenanceWindowTargetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WindowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTargetResult.setWindowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WindowTargetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTargetResult.setWindowTargetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTargetResult.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OwnerInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTargetResult.setOwnerInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTargetResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateMaintenanceWindowTargetResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

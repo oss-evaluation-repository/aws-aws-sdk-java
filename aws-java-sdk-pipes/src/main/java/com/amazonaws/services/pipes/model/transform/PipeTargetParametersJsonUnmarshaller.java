@@ -43,61 +43,81 @@ public class PipeTargetParametersJsonUnmarshaller implements Unmarshaller<PipeTa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BatchJobParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setBatchJobParameters(PipeTargetBatchJobParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLogsParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setCloudWatchLogsParameters(PipeTargetCloudWatchLogsParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EcsTaskParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setEcsTaskParameters(PipeTargetEcsTaskParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EventBridgeEventBusParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setEventBridgeEventBusParameters(PipeTargetEventBridgeEventBusParametersJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("HttpParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setHttpParameters(PipeTargetHttpParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setInputTemplate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KinesisStreamParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setKinesisStreamParameters(PipeTargetKinesisStreamParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LambdaFunctionParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setLambdaFunctionParameters(PipeTargetLambdaFunctionParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RedshiftDataParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setRedshiftDataParameters(PipeTargetRedshiftDataParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SageMakerPipelineParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters
                             .setSageMakerPipelineParameters(PipeTargetSageMakerPipelineParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SqsQueueParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setSqsQueueParameters(PipeTargetSqsQueueParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StepFunctionStateMachineParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeTargetParameters.setStepFunctionStateMachineParameters(PipeTargetStateMachineParametersJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

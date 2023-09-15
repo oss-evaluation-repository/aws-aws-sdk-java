@@ -43,38 +43,53 @@ public class RecommendationJobInferenceBenchmarkJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Metrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setMetrics(RecommendationMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EndpointConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setEndpointConfiguration(EndpointOutputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setModelConfiguration(ModelConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setEndpointMetrics(InferenceMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InvocationEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setInvocationEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InvocationStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setInvocationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

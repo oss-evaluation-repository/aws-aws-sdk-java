@@ -43,38 +43,53 @@ public class CustomerAgentInfoJsonUnmarshaller implements Unmarshaller<CustomerA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeAgents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentInfo.setActiveAgents(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("healthyAgents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentInfo.setHealthyAgents(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("blackListedAgents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentInfo.setBlackListedAgents(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shutdownAgents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentInfo.setShutdownAgents(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("unhealthyAgents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentInfo.setUnhealthyAgents(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalAgents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentInfo.setTotalAgents(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("unknownAgents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentInfo.setUnknownAgents(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

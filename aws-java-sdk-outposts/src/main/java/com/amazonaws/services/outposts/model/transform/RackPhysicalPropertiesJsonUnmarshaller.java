@@ -43,46 +43,63 @@ public class RackPhysicalPropertiesJsonUnmarshaller implements Unmarshaller<Rack
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PowerDrawKva", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rackPhysicalProperties.setPowerDrawKva(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PowerPhase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rackPhysicalProperties.setPowerPhase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PowerConnector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rackPhysicalProperties.setPowerConnector(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PowerFeedDrop", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rackPhysicalProperties.setPowerFeedDrop(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UplinkGbps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rackPhysicalProperties.setUplinkGbps(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UplinkCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rackPhysicalProperties.setUplinkCount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FiberOpticCableType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rackPhysicalProperties.setFiberOpticCableType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpticalStandard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rackPhysicalProperties.setOpticalStandard(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaximumSupportedWeightLbs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rackPhysicalProperties.setMaximumSupportedWeightLbs(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

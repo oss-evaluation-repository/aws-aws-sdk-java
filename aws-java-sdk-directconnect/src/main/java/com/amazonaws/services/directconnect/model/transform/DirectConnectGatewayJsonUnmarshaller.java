@@ -43,34 +43,48 @@ public class DirectConnectGatewayJsonUnmarshaller implements Unmarshaller<Direct
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("directConnectGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGateway.setDirectConnectGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("directConnectGatewayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGateway.setDirectConnectGatewayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("amazonSideAsn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGateway.setAmazonSideAsn(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ownerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGateway.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("directConnectGatewayState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGateway.setDirectConnectGatewayState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateChangeError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGateway.setStateChangeError(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

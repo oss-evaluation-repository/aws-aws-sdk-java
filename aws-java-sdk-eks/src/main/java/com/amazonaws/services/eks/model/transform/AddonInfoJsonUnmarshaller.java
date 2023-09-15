@@ -43,36 +43,50 @@ public class AddonInfoJsonUnmarshaller implements Unmarshaller<AddonInfo, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("addonName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addonInfo.setAddonName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addonInfo.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("addonVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addonInfo.setAddonVersions(new ListUnmarshaller<AddonVersionInfo>(AddonVersionInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("publisher", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addonInfo.setPublisher(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addonInfo.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("marketplaceInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addonInfo.setMarketplaceInformation(MarketplaceInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

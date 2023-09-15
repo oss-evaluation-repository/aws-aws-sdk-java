@@ -43,196 +43,246 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setProductArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setProductName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompanyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setCompanyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GeneratorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setGeneratorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AwsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Types", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FirstObservedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setFirstObservedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastObservedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setLastObservedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setUpdatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setSeverity(SeverityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Confidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setConfidence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Criticality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setCriticality(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Remediation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setRemediation(RemediationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SourceUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setSourceUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setProductFields(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("UserDefinedFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setUserDefinedFields(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Malware", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setMalware(new ListUnmarshaller<Malware>(MalwareJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Network", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setNetwork(NetworkJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NetworkPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setNetworkPath(new ListUnmarshaller<NetworkPathComponent>(NetworkPathComponentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Process", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setProcess(ProcessDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Threats", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setThreats(new ListUnmarshaller<Threat>(ThreatJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ThreatIntelIndicators", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setThreatIntelIndicators(new ListUnmarshaller<ThreatIntelIndicator>(ThreatIntelIndicatorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Resources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Compliance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setCompliance(ComplianceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VerificationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setVerificationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkflowState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setWorkflowState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Workflow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setWorkflow(WorkflowJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RecordState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setRecordState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RelatedFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setRelatedFindings(new ListUnmarshaller<RelatedFinding>(RelatedFindingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Note", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setNote(NoteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Vulnerabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setVulnerabilities(new ListUnmarshaller<Vulnerability>(VulnerabilityJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PatchSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setPatchSummary(PatchSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setAction(ActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FindingProviderFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setFindingProviderFields(FindingProviderFieldsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Sample", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setSample(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("GeneratorDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsSecurityFinding.setGeneratorDetails(GeneratorDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

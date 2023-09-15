@@ -43,28 +43,39 @@ public class JobResourceJsonUnmarshaller implements Unmarshaller<JobResource, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Resources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobResource.setS3Resources(new ListUnmarshaller<S3Resource>(S3ResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LambdaResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobResource.setLambdaResources(new ListUnmarshaller<LambdaResource>(LambdaResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Ec2AmiResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobResource.setEc2AmiResources(new ListUnmarshaller<Ec2AmiResource>(Ec2AmiResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

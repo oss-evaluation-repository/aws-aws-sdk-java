@@ -43,24 +43,35 @@ public class CloudRemovalConfigInputJsonUnmarshaller implements Unmarshaller<Clo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AlgorithmName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudRemovalConfigInput.setAlgorithmName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InterpolationValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudRemovalConfigInput.setInterpolationValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetBands", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudRemovalConfigInput.setTargetBands(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

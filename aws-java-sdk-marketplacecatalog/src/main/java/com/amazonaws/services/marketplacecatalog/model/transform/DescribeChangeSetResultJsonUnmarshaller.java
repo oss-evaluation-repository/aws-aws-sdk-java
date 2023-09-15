@@ -43,48 +43,65 @@ public class DescribeChangeSetResultJsonUnmarshaller implements Unmarshaller<Des
             return describeChangeSetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChangeSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeChangeSetResult.setChangeSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChangeSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeChangeSetResult.setChangeSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChangeSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeChangeSetResult.setChangeSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeChangeSetResult.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeChangeSetResult.setEndTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeChangeSetResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeChangeSetResult.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeChangeSetResult.setFailureDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChangeSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeChangeSetResult.setChangeSet(new ListUnmarshaller<ChangeSummary>(ChangeSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

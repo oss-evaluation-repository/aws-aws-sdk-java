@@ -43,30 +43,43 @@ public class SupportedEndpointTypeJsonUnmarshaller implements Unmarshaller<Suppo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EngineName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedEndpointType.setEngineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportsCDC", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedEndpointType.setSupportsCDC(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedEndpointType.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceEngineMinimumVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedEndpointType.setReplicationInstanceEngineMinimumVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     supportedEndpointType.setEngineDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

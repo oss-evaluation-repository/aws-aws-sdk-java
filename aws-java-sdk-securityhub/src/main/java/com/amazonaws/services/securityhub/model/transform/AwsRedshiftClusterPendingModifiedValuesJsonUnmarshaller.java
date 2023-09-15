@@ -43,54 +43,73 @@ public class AwsRedshiftClusterPendingModifiedValuesJsonUnmarshaller implements 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutomatedSnapshotRetentionPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setAutomatedSnapshotRetentionPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setClusterIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setClusterType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setClusterVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setEncryptionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnhancedVpcRouting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setEnhancedVpcRouting(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MaintenanceTrackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setMaintenanceTrackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterUserPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setMasterUserPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setNodeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setNumberOfNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PubliclyAccessible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRedshiftClusterPendingModifiedValues.setPubliclyAccessible(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

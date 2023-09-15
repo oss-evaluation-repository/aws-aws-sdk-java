@@ -43,22 +43,33 @@ public class SlotValueSelectionSettingJsonUnmarshaller implements Unmarshaller<S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resolutionStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotValueSelectionSetting.setResolutionStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("regexFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotValueSelectionSetting.setRegexFilter(SlotValueRegexFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("advancedRecognitionSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotValueSelectionSetting.setAdvancedRecognitionSetting(AdvancedRecognitionSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

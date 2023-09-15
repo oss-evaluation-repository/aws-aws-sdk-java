@@ -43,48 +43,65 @@ public class HumanLoopConfigJsonUnmarshaller implements Unmarshaller<HumanLoopCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkteamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setWorkteamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HumanTaskUiArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setHumanTaskUiArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setTaskTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setTaskDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setTaskCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskAvailabilityLifetimeInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setTaskAvailabilityLifetimeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskTimeLimitInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setTaskTimeLimitInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskKeywords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setTaskKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PublicWorkforceTaskPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     humanLoopConfig.setPublicWorkforceTaskPrice(PublicWorkforceTaskPriceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

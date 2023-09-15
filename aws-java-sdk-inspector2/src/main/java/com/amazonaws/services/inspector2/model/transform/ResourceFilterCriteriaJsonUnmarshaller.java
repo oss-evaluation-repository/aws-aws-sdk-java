@@ -43,58 +43,74 @@ public class ResourceFilterCriteriaJsonUnmarshaller implements Unmarshaller<Reso
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceFilterCriteria.setAccountId(new ListUnmarshaller<ResourceStringFilter>(ResourceStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ec2InstanceTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceFilterCriteria.setEc2InstanceTags(new ListUnmarshaller<ResourceMapFilter>(ResourceMapFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ecrImageTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceFilterCriteria.setEcrImageTags(new ListUnmarshaller<ResourceStringFilter>(ResourceStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ecrRepositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceFilterCriteria.setEcrRepositoryName(new ListUnmarshaller<ResourceStringFilter>(ResourceStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceFilterCriteria.setLambdaFunctionName(new ListUnmarshaller<ResourceStringFilter>(ResourceStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceFilterCriteria.setLambdaFunctionTags(new ListUnmarshaller<ResourceMapFilter>(ResourceMapFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceFilterCriteria.setResourceId(new ListUnmarshaller<ResourceStringFilter>(ResourceStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceFilterCriteria.setResourceType(new ListUnmarshaller<ResourceStringFilter>(ResourceStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

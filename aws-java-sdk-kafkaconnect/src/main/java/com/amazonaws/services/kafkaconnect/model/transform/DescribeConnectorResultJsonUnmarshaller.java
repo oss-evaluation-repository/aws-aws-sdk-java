@@ -43,83 +43,108 @@ public class DescribeConnectorResultJsonUnmarshaller implements Unmarshaller<Des
             return describeConnectorResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("capacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setCapacity(CapacityDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("connectorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setConnectorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setConnectorConfiguration(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("connectorDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setConnectorDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setConnectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setConnectorState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("currentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setCurrentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kafkaCluster", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setKafkaCluster(KafkaClusterDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kafkaClusterClientAuthentication", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setKafkaClusterClientAuthentication(KafkaClusterClientAuthenticationDescriptionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("kafkaClusterEncryptionInTransit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setKafkaClusterEncryptionInTransit(KafkaClusterEncryptionInTransitDescriptionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("kafkaConnectVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setKafkaConnectVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logDelivery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setLogDelivery(LogDeliveryDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("plugins", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setPlugins(new ListUnmarshaller<PluginDescription>(PluginDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("serviceExecutionRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setServiceExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setStateDescription(StateDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("workerConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeConnectorResult.setWorkerConfiguration(WorkerConfigurationDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

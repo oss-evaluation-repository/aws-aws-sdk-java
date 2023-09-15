@@ -43,26 +43,38 @@ public class CodeVulnerabilitiesFilePathJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndLine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeVulnerabilitiesFilePath.setEndLine(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeVulnerabilitiesFilePath.setFileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeVulnerabilitiesFilePath.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartLine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeVulnerabilitiesFilePath.setStartLine(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,52 +43,70 @@ public class ParameterJsonUnmarshaller implements Unmarshaller<Parameter, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setParameterType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setParameterValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeTypeSpecificValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setNodeTypeSpecificValues(new ListUnmarshaller<NodeTypeSpecificValue>(NodeTypeSpecificValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setAllowedValues(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsModifiable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setIsModifiable(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChangeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameter.setChangeType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

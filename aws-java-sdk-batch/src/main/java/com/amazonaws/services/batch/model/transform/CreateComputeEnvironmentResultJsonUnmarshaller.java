@@ -43,18 +43,28 @@ public class CreateComputeEnvironmentResultJsonUnmarshaller implements Unmarshal
             return createComputeEnvironmentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("computeEnvironmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComputeEnvironmentResult.setComputeEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("computeEnvironmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createComputeEnvironmentResult.setComputeEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

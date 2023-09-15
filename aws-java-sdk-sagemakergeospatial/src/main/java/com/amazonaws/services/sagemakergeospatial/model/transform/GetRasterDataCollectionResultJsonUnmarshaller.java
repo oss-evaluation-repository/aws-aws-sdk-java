@@ -43,47 +43,63 @@ public class GetRasterDataCollectionResultJsonUnmarshaller implements Unmarshall
             return getRasterDataCollectionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRasterDataCollectionResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRasterDataCollectionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DescriptionPageUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRasterDataCollectionResult.setDescriptionPageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageSourceBands", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRasterDataCollectionResult.setImageSourceBands(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRasterDataCollectionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRasterDataCollectionResult.setSupportedFilters(new ListUnmarshaller<Filter>(FilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRasterDataCollectionResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRasterDataCollectionResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

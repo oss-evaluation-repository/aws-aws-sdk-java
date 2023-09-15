@@ -43,32 +43,45 @@ public class MigrationTaskJsonUnmarshaller implements Unmarshaller<MigrationTask
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProgressUpdateStream", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationTask.setProgressUpdateStream(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MigrationTaskName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationTask.setMigrationTaskName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Task", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationTask.setTask(TaskJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UpdateDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationTask.setUpdateDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceAttributeList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationTask.setResourceAttributeList(new ListUnmarshaller<ResourceAttribute>(ResourceAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

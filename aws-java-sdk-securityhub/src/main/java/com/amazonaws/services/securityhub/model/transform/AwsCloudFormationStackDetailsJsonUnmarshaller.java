@@ -43,49 +43,62 @@ public class AwsCloudFormationStackDetailsJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Capabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisableRollback", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setDisableRollback(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DriftInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setDriftInformation(AwsCloudFormationStackDriftInformationDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("EnableTerminationProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setEnableTerminationProtection(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setLastUpdatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setNotificationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Outputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setOutputs(new ListUnmarshaller<AwsCloudFormationStackOutputsDetails>(
                             AwsCloudFormationStackOutputsDetailsJsonUnmarshaller.getInstance())
@@ -93,28 +106,38 @@ public class AwsCloudFormationStackDetailsJsonUnmarshaller implements Unmarshall
                     .unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setStackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setStackStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackStatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setStackStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeoutInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFormationStackDetails.setTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

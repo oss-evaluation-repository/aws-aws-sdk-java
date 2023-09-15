@@ -43,34 +43,48 @@ public class ConfiguredTableAnalysisRuleJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("configuredTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAnalysisRule.setConfiguredTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configuredTableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAnalysisRule.setConfiguredTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAnalysisRule.setPolicy(ConfiguredTableAnalysisRulePolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAnalysisRule.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAnalysisRule.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAnalysisRule.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

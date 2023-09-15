@@ -45,12 +45,17 @@ public class ListIAMPolicyAssignmentsForUserResultJsonUnmarshaller implements Un
             return listIAMPolicyAssignmentsForUserResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ActiveAssignments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIAMPolicyAssignmentsForUserResult.setActiveAssignments(new ListUnmarshaller<ActiveIAMPolicyAssignment>(
                             ActiveIAMPolicyAssignmentJsonUnmarshaller.getInstance())
@@ -58,12 +63,18 @@ public class ListIAMPolicyAssignmentsForUserResultJsonUnmarshaller implements Un
                     .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIAMPolicyAssignmentsForUserResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listIAMPolicyAssignmentsForUserResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

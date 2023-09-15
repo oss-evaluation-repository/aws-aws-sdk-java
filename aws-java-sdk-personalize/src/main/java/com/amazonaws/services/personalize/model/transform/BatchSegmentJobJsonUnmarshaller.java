@@ -43,58 +43,78 @@ public class BatchSegmentJobJsonUnmarshaller implements Unmarshaller<BatchSegmen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("batchSegmentJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setBatchSegmentJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setFilterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("solutionVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setSolutionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setNumResults(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("jobInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setJobInput(BatchSegmentJobInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setJobOutput(BatchSegmentJobOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchSegmentJob.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

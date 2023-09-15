@@ -43,113 +43,145 @@ public class WorkspaceDescriptionJsonUnmarshaller implements Unmarshaller<Worksp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountAccessType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setAccountAccessType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authentication", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setAuthentication(AuthenticationSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setDataSources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("freeTrialConsumed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setFreeTrialConsumed(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("freeTrialExpiration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setFreeTrialExpiration(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("grafanaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setGrafanaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("licenseExpiration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setLicenseExpiration(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("licenseType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setLicenseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("modified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkAccessControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setNetworkAccessControl(NetworkAccessConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("notificationDestinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setNotificationDestinations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("organizationRoleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setOrganizationRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("organizationalUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setOrganizationalUnits(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("permissionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setPermissionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stackSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setStackSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("vpcConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setVpcConfiguration(VpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("workspaceRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceDescription.setWorkspaceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

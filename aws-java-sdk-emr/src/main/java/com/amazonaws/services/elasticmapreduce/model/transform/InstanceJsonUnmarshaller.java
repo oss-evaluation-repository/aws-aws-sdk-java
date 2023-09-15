@@ -43,60 +43,80 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setEc2InstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicDnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setPublicDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setPublicIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateDnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setPrivateDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setPrivateIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setStatus(InstanceStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InstanceGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setInstanceGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceFleetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setInstanceFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Market", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setMarket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsVolumes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instance.setEbsVolumes(new ListUnmarshaller<EbsVolume>(EbsVolumeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

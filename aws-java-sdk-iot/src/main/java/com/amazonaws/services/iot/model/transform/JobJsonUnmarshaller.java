@@ -43,117 +43,150 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setTargetSelection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("forceCanceled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setForceCanceled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("reasonCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setReasonCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("presignedUrlConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setPresignedUrlConfig(PresignedUrlConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobExecutionsRolloutConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setJobExecutionsRolloutConfig(JobExecutionsRolloutConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("abortConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setAbortConfig(AbortConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("jobProcessDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setJobProcessDetails(JobProcessDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeoutConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setTimeoutConfig(TimeoutConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("namespaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setNamespaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobTemplateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setJobTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobExecutionsRetryConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setJobExecutionsRetryConfig(JobExecutionsRetryConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("documentParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setDocumentParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("isConcurrent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setIsConcurrent(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("schedulingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setSchedulingConfig(SchedulingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scheduledJobRollouts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setScheduledJobRollouts(new ListUnmarshaller<ScheduledJobRollout>(ScheduledJobRolloutJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("destinationPackageVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setDestinationPackageVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

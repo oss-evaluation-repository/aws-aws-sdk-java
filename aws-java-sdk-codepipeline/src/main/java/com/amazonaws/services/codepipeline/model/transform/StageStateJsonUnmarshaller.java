@@ -43,32 +43,45 @@ public class StageStateJsonUnmarshaller implements Unmarshaller<StageState, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("stageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageState.setStageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inboundExecution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageState.setInboundExecution(StageExecutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inboundTransitionState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageState.setInboundTransitionState(TransitionStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("actionStates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageState.setActionStates(new ListUnmarshaller<ActionState>(ActionStateJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("latestExecution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stageState.setLatestExecution(StageExecutionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

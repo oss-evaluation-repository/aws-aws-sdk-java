@@ -43,22 +43,32 @@ public class AlgorithmStatusDetailsJsonUnmarshaller implements Unmarshaller<Algo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ValidationStatuses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithmStatusDetails.setValidationStatuses(new ListUnmarshaller<AlgorithmStatusItem>(AlgorithmStatusItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ImageScanStatuses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     algorithmStatusDetails.setImageScanStatuses(new ListUnmarshaller<AlgorithmStatusItem>(AlgorithmStatusItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

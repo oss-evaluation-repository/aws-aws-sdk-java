@@ -43,55 +43,74 @@ public class SettingEntryJsonUnmarshaller implements Unmarshaller<SettingEntry, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setAllowedValues(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AppliedValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setAppliedValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestedValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setRequestedValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setRequestStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestDetailedStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setRequestDetailedStatus(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("RequestStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setRequestStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastRequestedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setLastRequestedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     settingEntry.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

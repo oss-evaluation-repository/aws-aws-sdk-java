@@ -43,42 +43,58 @@ public class UpdateImageSetMetadataResultJsonUnmarshaller implements Unmarshalle
             return updateImageSetMetadataResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("datastoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateImageSetMetadataResult.setDatastoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateImageSetMetadataResult.setImageSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latestVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateImageSetMetadataResult.setLatestVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSetState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateImageSetMetadataResult.setImageSetState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageSetWorkflowStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateImageSetMetadataResult.setImageSetWorkflowStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateImageSetMetadataResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateImageSetMetadataResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateImageSetMetadataResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

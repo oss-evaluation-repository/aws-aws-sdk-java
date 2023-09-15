@@ -43,18 +43,28 @@ public class RetryCriteriaJsonUnmarshaller implements Unmarshaller<RetryCriteria
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("failureType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     retryCriteria.setFailureType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     retryCriteria.setNumberOfRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

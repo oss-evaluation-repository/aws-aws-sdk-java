@@ -43,24 +43,35 @@ public class ChildShardJsonUnmarshaller implements Unmarshaller<ChildShard, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ShardId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     childShard.setShardId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParentShards", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     childShard.setParentShards(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("HashKeyRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     childShard.setHashKeyRange(HashKeyRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

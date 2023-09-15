@@ -43,26 +43,38 @@ public class AccountAssignmentJsonUnmarshaller implements Unmarshaller<AccountAs
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignment.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PermissionSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignment.setPermissionSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrincipalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignment.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrincipalType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssignment.setPrincipalType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

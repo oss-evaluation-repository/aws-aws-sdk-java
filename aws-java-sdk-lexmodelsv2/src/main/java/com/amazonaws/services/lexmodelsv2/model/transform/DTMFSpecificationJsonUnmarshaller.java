@@ -43,26 +43,38 @@ public class DTMFSpecificationJsonUnmarshaller implements Unmarshaller<DTMFSpeci
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("maxLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dTMFSpecification.setMaxLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("endTimeoutMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dTMFSpecification.setEndTimeoutMs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("deletionCharacter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dTMFSpecification.setDeletionCharacter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endCharacter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dTMFSpecification.setEndCharacter(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

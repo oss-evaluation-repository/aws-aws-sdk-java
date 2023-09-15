@@ -43,50 +43,66 @@ public class SearchPlaceIndexForSuggestionsSummaryJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BiasPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPlaceIndexForSuggestionsSummary.setBiasPosition(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPlaceIndexForSuggestionsSummary.setDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FilterBBox", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPlaceIndexForSuggestionsSummary.setFilterBBox(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FilterCategories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPlaceIndexForSuggestionsSummary.setFilterCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FilterCountries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPlaceIndexForSuggestionsSummary.setFilterCountries(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Language", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPlaceIndexForSuggestionsSummary.setLanguage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPlaceIndexForSuggestionsSummary.setMaxResults(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Text", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     searchPlaceIndexForSuggestionsSummary.setText(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

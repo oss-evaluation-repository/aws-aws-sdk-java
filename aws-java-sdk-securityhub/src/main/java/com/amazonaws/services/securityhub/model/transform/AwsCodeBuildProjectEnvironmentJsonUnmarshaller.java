@@ -43,16 +43,22 @@ public class AwsCodeBuildProjectEnvironmentJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Certificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectEnvironment.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectEnvironment.setEnvironmentVariables(new ListUnmarshaller<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>(
                             AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsJsonUnmarshaller.getInstance())
@@ -60,21 +66,29 @@ public class AwsCodeBuildProjectEnvironmentJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("PrivilegedMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectEnvironment.setPrivilegedMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ImagePullCredentialsType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectEnvironment.setImagePullCredentialsType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistryCredential", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectEnvironment.setRegistryCredential(AwsCodeBuildProjectEnvironmentRegistryCredentialJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectEnvironment.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

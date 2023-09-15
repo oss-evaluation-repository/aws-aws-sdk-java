@@ -43,51 +43,69 @@ public class WorkGroupConfigurationJsonUnmarshaller implements Unmarshaller<Work
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResultConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfiguration.setResultConfiguration(ResultConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EnforceWorkGroupConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfiguration.setEnforceWorkGroupConfiguration(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PublishCloudWatchMetricsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfiguration.setPublishCloudWatchMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("BytesScannedCutoffPerQuery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfiguration.setBytesScannedCutoffPerQuery(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("RequesterPaysEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfiguration.setRequesterPaysEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfiguration.setEngineVersion(EngineVersionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdditionalConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfiguration.setAdditionalConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfiguration.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomerContentEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfiguration.setCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("EnableMinimumEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workGroupConfiguration.setEnableMinimumEncryptionConfiguration(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

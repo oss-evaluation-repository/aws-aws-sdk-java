@@ -43,15 +43,24 @@ public class AssociationConfigJsonUnmarshaller implements Unmarshaller<Associati
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RequestBody", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationConfig.setRequestBody(new MapUnmarshaller<String, RequestBodyAssociatedResourceTypeConfig>(
                             context.getUnmarshaller(String.class), RequestBodyAssociatedResourceTypeConfigJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,56 @@ public class CorsJsonUnmarshaller implements Unmarshaller<Cors, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("allowCredentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cors.setAllowCredentials(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("allowHeaders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cors.setAllowHeaders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("allowMethods", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cors.setAllowMethods(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("allowOrigins", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cors.setAllowOrigins(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("exposeHeaders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cors.setExposeHeaders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("maxAge", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cors.setMaxAge(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

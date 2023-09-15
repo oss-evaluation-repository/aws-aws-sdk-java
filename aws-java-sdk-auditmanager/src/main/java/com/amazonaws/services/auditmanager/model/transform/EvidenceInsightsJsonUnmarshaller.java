@@ -43,22 +43,33 @@ public class EvidenceInsightsJsonUnmarshaller implements Unmarshaller<EvidenceIn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("noncompliantEvidenceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidenceInsights.setNoncompliantEvidenceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("compliantEvidenceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidenceInsights.setCompliantEvidenceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("inconclusiveEvidenceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evidenceInsights.setInconclusiveEvidenceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

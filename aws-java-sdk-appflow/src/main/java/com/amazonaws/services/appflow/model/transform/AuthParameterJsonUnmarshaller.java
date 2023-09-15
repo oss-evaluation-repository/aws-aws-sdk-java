@@ -43,36 +43,50 @@ public class AuthParameterJsonUnmarshaller implements Unmarshaller<AuthParameter
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authParameter.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authParameter.setIsRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authParameter.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authParameter.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isSensitiveField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authParameter.setIsSensitiveField(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorSuppliedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     authParameter.setConnectorSuppliedValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

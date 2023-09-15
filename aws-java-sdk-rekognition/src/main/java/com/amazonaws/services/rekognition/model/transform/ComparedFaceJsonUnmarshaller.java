@@ -43,42 +43,57 @@ public class ComparedFaceJsonUnmarshaller implements Unmarshaller<ComparedFace, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BoundingBox", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comparedFace.setBoundingBox(BoundingBoxJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Confidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comparedFace.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("Landmarks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comparedFace.setLandmarks(new ListUnmarshaller<Landmark>(LandmarkJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Pose", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comparedFace.setPose(PoseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Quality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comparedFace.setQuality(ImageQualityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Emotions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comparedFace.setEmotions(new ListUnmarshaller<Emotion>(EmotionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Smile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     comparedFace.setSmile(SmileJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

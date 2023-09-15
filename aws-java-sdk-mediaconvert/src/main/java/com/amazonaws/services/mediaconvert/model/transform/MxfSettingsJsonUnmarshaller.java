@@ -43,22 +43,33 @@ public class MxfSettingsJsonUnmarshaller implements Unmarshaller<MxfSettings, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("afdSignaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mxfSettings.setAfdSignaling(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("profile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mxfSettings.setProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("xavcProfileSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mxfSettings.setXavcProfileSettings(MxfXavcProfileSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

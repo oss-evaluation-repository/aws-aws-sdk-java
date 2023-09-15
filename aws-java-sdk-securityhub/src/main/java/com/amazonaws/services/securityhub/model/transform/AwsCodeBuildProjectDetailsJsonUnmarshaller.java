@@ -43,16 +43,22 @@ public class AwsCodeBuildProjectDetailsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EncryptionKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectDetails.setEncryptionKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Artifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectDetails.setArtifacts(new ListUnmarshaller<AwsCodeBuildProjectArtifactsDetails>(
                             AwsCodeBuildProjectArtifactsDetailsJsonUnmarshaller.getInstance())
@@ -60,35 +66,46 @@ public class AwsCodeBuildProjectDetailsJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectDetails.setEnvironment(AwsCodeBuildProjectEnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectDetails.setSource(AwsCodeBuildProjectSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectDetails.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogsConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectDetails.setLogsConfig(AwsCodeBuildProjectLogsConfigDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectDetails.setVpcConfig(AwsCodeBuildProjectVpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SecondaryArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectDetails.setSecondaryArtifacts(new ListUnmarshaller<AwsCodeBuildProjectArtifactsDetails>(
                             AwsCodeBuildProjectArtifactsDetailsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

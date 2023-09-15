@@ -43,22 +43,33 @@ public class TopicNumericRangeFilterJsonUnmarshaller implements Unmarshaller<Top
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Inclusive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicNumericRangeFilter.setInclusive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Constant", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicNumericRangeFilter.setConstant(TopicRangeFilterConstantJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Aggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicNumericRangeFilter.setAggregation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

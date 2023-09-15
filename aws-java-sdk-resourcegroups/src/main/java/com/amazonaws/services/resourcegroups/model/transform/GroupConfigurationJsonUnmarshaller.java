@@ -43,18 +43,24 @@ public class GroupConfigurationJsonUnmarshaller implements Unmarshaller<GroupCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupConfiguration.setConfiguration(new ListUnmarshaller<GroupConfigurationItem>(GroupConfigurationItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ProposedConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupConfiguration.setProposedConfiguration(new ListUnmarshaller<GroupConfigurationItem>(GroupConfigurationItemJsonUnmarshaller
                             .getInstance())
@@ -62,12 +68,18 @@ public class GroupConfigurationJsonUnmarshaller implements Unmarshaller<GroupCon
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupConfiguration.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     groupConfiguration.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

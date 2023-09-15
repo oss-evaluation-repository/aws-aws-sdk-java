@@ -43,46 +43,63 @@ public class TreatmentResourceJsonUnmarshaller implements Unmarshaller<Treatment
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CustomDeliveryConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentResource.setCustomDeliveryConfiguration(CustomDeliveryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentResource.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessageConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentResource.setMessageConfiguration(MessageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentResource.setSchedule(ScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SizePercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentResource.setSizePercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentResource.setState(CampaignStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentResource.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TreatmentDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentResource.setTreatmentDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TreatmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     treatmentResource.setTreatmentName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

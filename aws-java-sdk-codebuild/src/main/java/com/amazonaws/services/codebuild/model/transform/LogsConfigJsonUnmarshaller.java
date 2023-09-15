@@ -43,18 +43,28 @@ public class LogsConfigJsonUnmarshaller implements Unmarshaller<LogsConfig, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cloudWatchLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logsConfig.setCloudWatchLogs(CloudWatchLogsConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3Logs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logsConfig.setS3Logs(S3LogsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class TrainingMetricsV2JsonUnmarshaller implements Unmarshaller<TrainingM
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ofi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingMetricsV2.setOfi(OFITrainingMetricsValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tfi", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingMetricsV2.setTfi(TFITrainingMetricsValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ati", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trainingMetricsV2.setAti(ATITrainingMetricsValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

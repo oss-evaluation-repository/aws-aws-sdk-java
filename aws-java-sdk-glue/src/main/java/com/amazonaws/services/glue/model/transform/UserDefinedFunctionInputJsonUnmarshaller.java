@@ -43,32 +43,45 @@ public class UserDefinedFunctionInputJsonUnmarshaller implements Unmarshaller<Us
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FunctionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunctionInput.setFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClassName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunctionInput.setClassName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunctionInput.setOwnerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunctionInput.setOwnerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceUris", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userDefinedFunctionInput.setResourceUris(new ListUnmarshaller<ResourceUri>(ResourceUriJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

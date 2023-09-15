@@ -43,66 +43,84 @@ public class SecretListEntryJsonUnmarshaller implements Unmarshaller<SecretListE
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RotationEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setRotationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RotationLambdaARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setRotationLambdaARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RotationRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setRotationRules(RotationRulesTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastRotatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setLastRotatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastChangedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setLastChangedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastAccessedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setLastAccessedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeletedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setDeletedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NextRotationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setNextRotationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SecretVersionsToStages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setSecretVersionsToStages(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -110,16 +128,23 @@ public class SecretListEntryJsonUnmarshaller implements Unmarshaller<SecretListE
                     ).unmarshall(context));
                 }
                 if (context.testExpression("OwningService", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setOwningService(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PrimaryRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     secretListEntry.setPrimaryRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

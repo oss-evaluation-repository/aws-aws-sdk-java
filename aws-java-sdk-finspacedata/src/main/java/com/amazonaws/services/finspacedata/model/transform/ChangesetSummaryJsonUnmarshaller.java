@@ -43,64 +43,85 @@ public class ChangesetSummaryJsonUnmarshaller implements Unmarshaller<ChangesetS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("changesetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setChangesetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("changesetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setChangesetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setDatasetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("changeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setChangeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setSourceParams(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("formatParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setFormatParams(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setCreateTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setErrorInfo(ChangesetErrorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activeUntilTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setActiveUntilTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("activeFromTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setActiveFromTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("updatesChangesetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setUpdatesChangesetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedByChangesetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changesetSummary.setUpdatedByChangesetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,74 +43,98 @@ public class FieldInputConfigJsonUnmarshaller implements Unmarshaller<FieldInput
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("required", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("readOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setReadOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("placeholder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setPlaceholder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("descriptiveText", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setDescriptiveText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultChecked", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setDefaultChecked(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultCountryCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setDefaultCountryCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("valueMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setValueMappings(ValueMappingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setMinValue(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("maxValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setMaxValue(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("step", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setStep(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isArray", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setIsArray(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("fileUploaderConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldInputConfig.setFileUploaderConfig(FileUploaderFieldConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

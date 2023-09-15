@@ -43,28 +43,40 @@ public class SourceJsonUnmarshaller implements Unmarshaller<Source, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     source.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     source.setSourceIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     source.setSourceDetails(new ListUnmarshaller<SourceDetail>(SourceDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CustomPolicyDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     source.setCustomPolicyDetails(CustomPolicyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

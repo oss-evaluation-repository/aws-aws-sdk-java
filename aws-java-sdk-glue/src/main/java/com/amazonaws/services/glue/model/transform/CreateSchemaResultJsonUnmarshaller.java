@@ -43,68 +43,90 @@ public class CreateSchemaResultJsonUnmarshaller implements Unmarshaller<CreateSc
             return createSchemaResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegistryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setRegistryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistryArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setRegistryArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setSchemaName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setSchemaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Compatibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setCompatibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaCheckpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setSchemaCheckpoint(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestSchemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setLatestSchemaVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NextSchemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setNextSchemaVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setSchemaStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult
                             .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("SchemaVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setSchemaVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaVersionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSchemaResult.setSchemaVersionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

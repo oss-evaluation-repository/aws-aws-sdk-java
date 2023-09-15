@@ -43,44 +43,60 @@ public class ProjectEnvironmentJsonUnmarshaller implements Unmarshaller<ProjectE
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectEnvironment.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("image", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectEnvironment.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("computeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectEnvironment.setComputeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectEnvironment.setEnvironmentVariables(new ListUnmarshaller<EnvironmentVariable>(EnvironmentVariableJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("privilegedMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectEnvironment.setPrivilegedMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("certificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectEnvironment.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("registryCredential", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectEnvironment.setRegistryCredential(RegistryCredentialJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("imagePullCredentialsType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectEnvironment.setImagePullCredentialsType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

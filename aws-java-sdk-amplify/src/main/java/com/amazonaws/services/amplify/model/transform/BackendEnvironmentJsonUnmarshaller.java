@@ -43,34 +43,48 @@ public class BackendEnvironmentJsonUnmarshaller implements Unmarshaller<BackendE
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("backendEnvironmentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendEnvironment.setBackendEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendEnvironment.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stackName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendEnvironment.setStackName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendEnvironment.setDeploymentArtifacts(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendEnvironment.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendEnvironment.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

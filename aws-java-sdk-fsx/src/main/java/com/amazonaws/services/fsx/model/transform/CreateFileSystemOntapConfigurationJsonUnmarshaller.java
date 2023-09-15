@@ -43,52 +43,70 @@ public class CreateFileSystemOntapConfigurationJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutomaticBackupRetentionDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemOntapConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DailyAutomaticBackupStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemOntapConfiguration.setDailyAutomaticBackupStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemOntapConfiguration.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointIpAddressRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemOntapConfiguration.setEndpointIpAddressRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FsxAdminPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemOntapConfiguration.setFsxAdminPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiskIopsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemOntapConfiguration.setDiskIopsConfiguration(DiskIopsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PreferredSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemOntapConfiguration.setPreferredSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RouteTableIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemOntapConfiguration.setRouteTableIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ThroughputCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemOntapConfiguration.setThroughputCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemOntapConfiguration.setWeeklyMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

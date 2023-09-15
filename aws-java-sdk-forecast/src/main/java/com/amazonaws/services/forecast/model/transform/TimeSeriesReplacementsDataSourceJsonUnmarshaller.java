@@ -43,26 +43,38 @@ public class TimeSeriesReplacementsDataSourceJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Config", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesReplacementsDataSource.setS3Config(S3ConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Schema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesReplacementsDataSource.setSchema(SchemaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesReplacementsDataSource.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimestampFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesReplacementsDataSource.setTimestampFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

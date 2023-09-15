@@ -43,16 +43,22 @@ public class InstanceRecommendationOptionJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("instanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendationOption.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("projectedUtilizationMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendationOption.setProjectedUtilizationMetrics(new ListUnmarshaller<UtilizationMetric>(UtilizationMetricJsonUnmarshaller
                             .getInstance())
@@ -60,30 +66,40 @@ public class InstanceRecommendationOptionJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("platformDifferences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendationOption.setPlatformDifferences(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("performanceRisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendationOption.setPerformanceRisk(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("rank", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendationOption.setRank(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("savingsOpportunity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendationOption.setSavingsOpportunity(SavingsOpportunityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("migrationEffort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendationOption.setMigrationEffort(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceGpuInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendationOption.setInstanceGpuInfo(GpuInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class UpdateServiceIntegrationConfigJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OpsCenter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateServiceIntegrationConfig.setOpsCenter(OpsCenterIntegrationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LogsAnomalyDetection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateServiceIntegrationConfig.setLogsAnomalyDetection(LogsAnomalyDetectionIntegrationConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("KMSServerSideEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateServiceIntegrationConfig.setKMSServerSideEncryption(KMSServerSideEncryptionIntegrationConfigJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

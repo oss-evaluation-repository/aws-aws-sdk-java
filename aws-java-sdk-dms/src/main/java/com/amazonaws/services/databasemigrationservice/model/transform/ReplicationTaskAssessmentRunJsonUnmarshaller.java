@@ -43,59 +43,79 @@ public class ReplicationTaskAssessmentRunJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplicationTaskAssessmentRunArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setReplicationTaskAssessmentRunArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationTaskArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setReplicationTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationTaskAssessmentRunCreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setReplicationTaskAssessmentRunCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp")
                             .unmarshall(context));
                 }
                 if (context.testExpression("AssessmentProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setAssessmentProgress(ReplicationTaskAssessmentRunProgressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastFailureMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setLastFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setServiceAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultLocationBucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setResultLocationBucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultLocationFolder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setResultLocationFolder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultEncryptionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setResultEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultKmsKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setResultKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssessmentRunName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationTaskAssessmentRun.setAssessmentRunName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

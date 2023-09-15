@@ -43,38 +43,53 @@ public class CardGenerationAttributesJsonUnmarshaller implements Unmarshaller<Ca
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AmexCardSecurityCodeVersion1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cardGenerationAttributes.setAmexCardSecurityCodeVersion1(AmexCardSecurityCodeVersion1JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AmexCardSecurityCodeVersion2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cardGenerationAttributes.setAmexCardSecurityCodeVersion2(AmexCardSecurityCodeVersion2JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CardHolderVerificationValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cardGenerationAttributes.setCardHolderVerificationValue(CardHolderVerificationValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CardVerificationValue1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cardGenerationAttributes.setCardVerificationValue1(CardVerificationValue1JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CardVerificationValue2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cardGenerationAttributes.setCardVerificationValue2(CardVerificationValue2JsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DynamicCardVerificationCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cardGenerationAttributes.setDynamicCardVerificationCode(DynamicCardVerificationCodeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DynamicCardVerificationValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cardGenerationAttributes.setDynamicCardVerificationValue(DynamicCardVerificationValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

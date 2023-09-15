@@ -43,30 +43,42 @@ public class UserContextJsonUnmarshaller implements Unmarshaller<UserContext, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Token", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userContext.setToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userContext.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Groups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userContext.setGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataSourceGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userContext.setDataSourceGroups(new ListUnmarshaller<DataSourceGroup>(DataSourceGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class AggregationSortConfigurationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationSortConfiguration.setColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SortDirection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationSortConfiguration.setSortDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AggregationFunction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aggregationSortConfiguration.setAggregationFunction(AggregationFunctionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

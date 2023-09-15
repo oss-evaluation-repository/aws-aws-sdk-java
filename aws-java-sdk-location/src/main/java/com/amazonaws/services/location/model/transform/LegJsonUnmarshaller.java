@@ -43,40 +43,54 @@ public class LegJsonUnmarshaller implements Unmarshaller<Leg, JsonUnmarshallerCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Distance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     leg.setDistance(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("DurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     leg.setDurationSeconds(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("EndPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     leg.setEndPosition(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Geometry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     leg.setGeometry(LegGeometryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     leg.setStartPosition(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Steps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     leg.setSteps(new ListUnmarshaller<Step>(StepJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

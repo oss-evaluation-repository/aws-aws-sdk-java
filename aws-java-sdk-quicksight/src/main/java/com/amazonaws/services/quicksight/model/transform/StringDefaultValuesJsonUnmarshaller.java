@@ -43,20 +43,30 @@ public class StringDefaultValuesJsonUnmarshaller implements Unmarshaller<StringD
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DynamicValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stringDefaultValues.setDynamicValue(DynamicDefaultValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StaticValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stringDefaultValues.setStaticValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

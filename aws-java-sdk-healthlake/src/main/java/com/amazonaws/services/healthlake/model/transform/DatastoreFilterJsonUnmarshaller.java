@@ -43,26 +43,38 @@ public class DatastoreFilterJsonUnmarshaller implements Unmarshaller<DatastoreFi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatastoreName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreFilter.setDatastoreName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatastoreStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreFilter.setDatastoreStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreFilter.setCreatedBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datastoreFilter.setCreatedAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

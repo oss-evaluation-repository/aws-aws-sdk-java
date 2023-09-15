@@ -43,56 +43,75 @@ public class CurrentInstanceJsonUnmarshaller implements Unmarshaller<CurrentInst
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setTags(new ListUnmarshaller<TagValues>(TagValuesJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setResourceDetails(ResourceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceUtilization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setResourceUtilization(ResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReservationCoveredHoursInLookbackPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setReservationCoveredHoursInLookbackPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SavingsPlansCoveredHoursInLookbackPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setSavingsPlansCoveredHoursInLookbackPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OnDemandHoursInLookbackPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setOnDemandHoursInLookbackPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalRunningHoursInLookbackPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setTotalRunningHoursInLookbackPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonthlyCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setMonthlyCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     currentInstance.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

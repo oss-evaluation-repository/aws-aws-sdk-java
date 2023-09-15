@@ -43,22 +43,33 @@ public class KendraConfigurationJsonUnmarshaller implements Unmarshaller<KendraC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("kendraIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kendraConfiguration.setKendraIndex(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queryFilterString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kendraConfiguration.setQueryFilterString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kendraConfiguration.setRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

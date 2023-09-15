@@ -43,54 +43,73 @@ public class InputDeviceUhdSettingsJsonUnmarshaller implements Unmarshaller<Inpu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setActiveInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configuredInput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setConfiguredInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setDeviceState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setFramerate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("height", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setHeight(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setMaxBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("scanType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setScanType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("width", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setWidth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("latencyMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setLatencyMs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("codec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaconnectSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputDeviceUhdSettings.setMediaconnectSettings(InputDeviceMediaConnectSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

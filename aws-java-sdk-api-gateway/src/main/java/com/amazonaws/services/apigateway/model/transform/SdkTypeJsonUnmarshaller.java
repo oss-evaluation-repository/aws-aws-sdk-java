@@ -43,28 +43,40 @@ public class SdkTypeJsonUnmarshaller implements Unmarshaller<SdkType, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sdkType.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("friendlyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sdkType.setFriendlyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sdkType.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sdkType.setConfigurationProperties(new ListUnmarshaller<SdkConfigurationProperty>(SdkConfigurationPropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -171,7 +171,7 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Creates an ML model for data inference.
+     * Creates a machine learning model for data inference.
      * </p>
      * <p>
      * A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for
@@ -195,7 +195,7 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Creates an ML model for data inference.
+     * Creates a machine learning model for data inference.
      * </p>
      * <p>
      * A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for
@@ -221,6 +221,39 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<CreateModelResult> createModelAsync(CreateModelRequest createModelRequest,
             com.amazonaws.handlers.AsyncHandler<CreateModelRequest, CreateModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a retraining scheduler on the specified model.
+     * </p>
+     * 
+     * @param createRetrainingSchedulerRequest
+     * @return A Java Future containing the result of the CreateRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.CreateRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRetrainingSchedulerResult> createRetrainingSchedulerAsync(
+            CreateRetrainingSchedulerRequest createRetrainingSchedulerRequest);
+
+    /**
+     * <p>
+     * Creates a retraining scheduler on the specified model.
+     * </p>
+     * 
+     * @param createRetrainingSchedulerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.CreateRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRetrainingSchedulerResult> createRetrainingSchedulerAsync(
+            CreateRetrainingSchedulerRequest createRetrainingSchedulerRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRetrainingSchedulerRequest, CreateRetrainingSchedulerResult> asyncHandler);
 
     /**
      * <p>
@@ -261,7 +294,7 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Deletes an inference scheduler that has been set up. Already processed output results are not affected.
+     * Deletes an inference scheduler that has been set up. Prior inference results will not be deleted.
      * </p>
      * 
      * @param deleteInferenceSchedulerRequest
@@ -274,7 +307,7 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Deletes an inference scheduler that has been set up. Already processed output results are not affected.
+     * Deletes an inference scheduler that has been set up. Prior inference results will not be deleted.
      * </p>
      * 
      * @param deleteInferenceSchedulerRequest
@@ -354,8 +387,8 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Deletes an ML model currently available for Amazon Lookout for Equipment. This will prevent it from being used
-     * with an inference scheduler, even one that is already set up.
+     * Deletes a machine learning model currently available for Amazon Lookout for Equipment. This will prevent it from
+     * being used with an inference scheduler, even one that is already set up.
      * </p>
      * 
      * @param deleteModelRequest
@@ -368,8 +401,8 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Deletes an ML model currently available for Amazon Lookout for Equipment. This will prevent it from being used
-     * with an inference scheduler, even one that is already set up.
+     * Deletes a machine learning model currently available for Amazon Lookout for Equipment. This will prevent it from
+     * being used with an inference scheduler, even one that is already set up.
      * </p>
      * 
      * @param deleteModelRequest
@@ -415,6 +448,39 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a retraining scheduler from a model. The retraining scheduler must be in the <code>STOPPED</code> status.
+     * </p>
+     * 
+     * @param deleteRetrainingSchedulerRequest
+     * @return A Java Future containing the result of the DeleteRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.DeleteRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRetrainingSchedulerResult> deleteRetrainingSchedulerAsync(
+            DeleteRetrainingSchedulerRequest deleteRetrainingSchedulerRequest);
+
+    /**
+     * <p>
+     * Deletes a retraining scheduler from a model. The retraining scheduler must be in the <code>STOPPED</code> status.
+     * </p>
+     * 
+     * @param deleteRetrainingSchedulerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.DeleteRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRetrainingSchedulerResult> deleteRetrainingSchedulerAsync(
+            DeleteRetrainingSchedulerRequest deleteRetrainingSchedulerRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRetrainingSchedulerRequest, DeleteRetrainingSchedulerResult> asyncHandler);
 
     /**
      * <p>
@@ -579,8 +645,8 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Provides a JSON containing the overall information about a specific ML model, including model name and ARN,
-     * dataset, training and evaluation information, status, and so on.
+     * Provides a JSON containing the overall information about a specific machine learning model, including model name
+     * and ARN, dataset, training and evaluation information, status, and so on.
      * </p>
      * 
      * @param describeModelRequest
@@ -593,8 +659,8 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
-     * Provides a JSON containing the overall information about a specific ML model, including model name and ARN,
-     * dataset, training and evaluation information, status, and so on.
+     * Provides a JSON containing the overall information about a specific machine learning model, including model name
+     * and ARN, dataset, training and evaluation information, status, and so on.
      * </p>
      * 
      * @param describeModelRequest
@@ -671,6 +737,41 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest describeResourcePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeResourcePolicyRequest, DescribeResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a description of the retraining scheduler, including information such as the model name and retraining
+     * parameters.
+     * </p>
+     * 
+     * @param describeRetrainingSchedulerRequest
+     * @return A Java Future containing the result of the DescribeRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.DescribeRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRetrainingSchedulerResult> describeRetrainingSchedulerAsync(
+            DescribeRetrainingSchedulerRequest describeRetrainingSchedulerRequest);
+
+    /**
+     * <p>
+     * Provides a description of the retraining scheduler, including information such as the model name and retraining
+     * parameters.
+     * </p>
+     * 
+     * @param describeRetrainingSchedulerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.DescribeRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRetrainingSchedulerResult> describeRetrainingSchedulerAsync(
+            DescribeRetrainingSchedulerRequest describeRetrainingSchedulerRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRetrainingSchedulerRequest, DescribeRetrainingSchedulerResult> asyncHandler);
 
     /**
      * <p>
@@ -1021,6 +1122,37 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Lists all retraining schedulers in your account, filtering by model name prefix and status.
+     * </p>
+     * 
+     * @param listRetrainingSchedulersRequest
+     * @return A Java Future containing the result of the ListRetrainingSchedulers operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.ListRetrainingSchedulers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRetrainingSchedulersResult> listRetrainingSchedulersAsync(ListRetrainingSchedulersRequest listRetrainingSchedulersRequest);
+
+    /**
+     * <p>
+     * Lists all retraining schedulers in your account, filtering by model name prefix and status.
+     * </p>
+     * 
+     * @param listRetrainingSchedulersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRetrainingSchedulers operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.ListRetrainingSchedulers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRetrainingSchedulersResult> listRetrainingSchedulersAsync(ListRetrainingSchedulersRequest listRetrainingSchedulersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRetrainingSchedulersRequest, ListRetrainingSchedulersResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists statistics about the data collected for each of the sensors that have been successfully ingested in the
      * particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job.
      * </p>
@@ -1178,6 +1310,37 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Starts a retraining scheduler.
+     * </p>
+     * 
+     * @param startRetrainingSchedulerRequest
+     * @return A Java Future containing the result of the StartRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.StartRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartRetrainingSchedulerResult> startRetrainingSchedulerAsync(StartRetrainingSchedulerRequest startRetrainingSchedulerRequest);
+
+    /**
+     * <p>
+     * Starts a retraining scheduler.
+     * </p>
+     * 
+     * @param startRetrainingSchedulerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.StartRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartRetrainingSchedulerResult> startRetrainingSchedulerAsync(StartRetrainingSchedulerRequest startRetrainingSchedulerRequest,
+            com.amazonaws.handlers.AsyncHandler<StartRetrainingSchedulerRequest, StartRetrainingSchedulerResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops an inference scheduler.
      * </p>
      * 
@@ -1206,6 +1369,37 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<StopInferenceSchedulerResult> stopInferenceSchedulerAsync(StopInferenceSchedulerRequest stopInferenceSchedulerRequest,
             com.amazonaws.handlers.AsyncHandler<StopInferenceSchedulerRequest, StopInferenceSchedulerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a retraining scheduler.
+     * </p>
+     * 
+     * @param stopRetrainingSchedulerRequest
+     * @return A Java Future containing the result of the StopRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.StopRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopRetrainingSchedulerResult> stopRetrainingSchedulerAsync(StopRetrainingSchedulerRequest stopRetrainingSchedulerRequest);
+
+    /**
+     * <p>
+     * Stops a retraining scheduler.
+     * </p>
+     * 
+     * @param stopRetrainingSchedulerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.StopRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopRetrainingSchedulerResult> stopRetrainingSchedulerAsync(StopRetrainingSchedulerRequest stopRetrainingSchedulerRequest,
+            com.amazonaws.handlers.AsyncHandler<StopRetrainingSchedulerRequest, StopRetrainingSchedulerResult> asyncHandler);
 
     /**
      * <p>
@@ -1367,5 +1561,69 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<UpdateLabelGroupResult> updateLabelGroupAsync(UpdateLabelGroupRequest updateLabelGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateLabelGroupRequest, UpdateLabelGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a model in the account.
+     * </p>
+     * 
+     * @param updateModelRequest
+     * @return A Java Future containing the result of the UpdateModel operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.UpdateModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateModelResult> updateModelAsync(UpdateModelRequest updateModelRequest);
+
+    /**
+     * <p>
+     * Updates a model in the account.
+     * </p>
+     * 
+     * @param updateModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateModel operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.UpdateModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateModelResult> updateModelAsync(UpdateModelRequest updateModelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateModelRequest, UpdateModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a retraining scheduler.
+     * </p>
+     * 
+     * @param updateRetrainingSchedulerRequest
+     * @return A Java Future containing the result of the UpdateRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.UpdateRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRetrainingSchedulerResult> updateRetrainingSchedulerAsync(
+            UpdateRetrainingSchedulerRequest updateRetrainingSchedulerRequest);
+
+    /**
+     * <p>
+     * Updates a retraining scheduler.
+     * </p>
+     * 
+     * @param updateRetrainingSchedulerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRetrainingScheduler operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.UpdateRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRetrainingSchedulerResult> updateRetrainingSchedulerAsync(
+            UpdateRetrainingSchedulerRequest updateRetrainingSchedulerRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRetrainingSchedulerRequest, UpdateRetrainingSchedulerResult> asyncHandler);
 
 }

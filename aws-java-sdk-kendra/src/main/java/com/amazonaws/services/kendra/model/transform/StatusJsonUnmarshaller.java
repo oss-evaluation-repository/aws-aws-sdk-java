@@ -43,26 +43,38 @@ public class StatusJsonUnmarshaller implements Unmarshaller<Status, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     status.setDocumentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     status.setDocumentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     status.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     status.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

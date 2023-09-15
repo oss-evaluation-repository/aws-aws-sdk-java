@@ -43,23 +43,34 @@ public class RouteAnalysisCompletionJsonUnmarshaller implements Unmarshaller<Rou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResultCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysisCompletion.setResultCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReasonCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysisCompletion.setReasonCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReasonContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routeAnalysisCompletion.setReasonContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

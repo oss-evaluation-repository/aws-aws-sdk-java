@@ -43,37 +43,48 @@ public class CreateSourceLocationResultJsonUnmarshaller implements Unmarshaller<
             return createSourceLocationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSourceLocationResult.setAccessConfiguration(AccessConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSourceLocationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSourceLocationResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DefaultSegmentDeliveryConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSourceLocationResult.setDefaultSegmentDeliveryConfiguration(DefaultSegmentDeliveryConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("HttpConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSourceLocationResult.setHttpConfiguration(HttpConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSourceLocationResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SegmentDeliveryConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSourceLocationResult.setSegmentDeliveryConfigurations(new ListUnmarshaller<SegmentDeliveryConfiguration>(
                             SegmentDeliveryConfigurationJsonUnmarshaller.getInstance())
@@ -81,13 +92,19 @@ public class CreateSourceLocationResultJsonUnmarshaller implements Unmarshaller<
                     .unmarshall(context));
                 }
                 if (context.testExpression("SourceLocationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSourceLocationResult.setSourceLocationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createSourceLocationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

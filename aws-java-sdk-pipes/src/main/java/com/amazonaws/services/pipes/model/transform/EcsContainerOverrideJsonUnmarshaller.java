@@ -43,51 +43,67 @@ public class EcsContainerOverrideJsonUnmarshaller implements Unmarshaller<EcsCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsContainerOverride.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsContainerOverride.setCpu(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsContainerOverride.setEnvironment(new ListUnmarshaller<EcsEnvironmentVariable>(EcsEnvironmentVariableJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsContainerOverride.setEnvironmentFiles(new ListUnmarshaller<EcsEnvironmentFile>(EcsEnvironmentFileJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsContainerOverride.setMemory(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MemoryReservation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsContainerOverride.setMemoryReservation(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsContainerOverride.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceRequirements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ecsContainerOverride.setResourceRequirements(new ListUnmarshaller<EcsResourceRequirement>(EcsResourceRequirementJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

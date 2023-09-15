@@ -43,46 +43,63 @@ public class RdsDbInstanceJsonUnmarshaller implements Unmarshaller<RdsDbInstance
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RdsDbInstanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstance.setRdsDbInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbInstanceIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstance.setDbInstanceIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstance.setDbUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstance.setDbPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstance.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Address", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstance.setAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstance.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstance.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MissingOnRds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rdsDbInstance.setMissingOnRds(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

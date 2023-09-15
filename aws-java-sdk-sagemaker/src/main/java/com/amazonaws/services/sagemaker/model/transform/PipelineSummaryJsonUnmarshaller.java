@@ -43,42 +43,58 @@ public class PipelineSummaryJsonUnmarshaller implements Unmarshaller<PipelineSum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PipelineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineSummary.setPipelineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineSummary.setPipelineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineDisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineSummary.setPipelineDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PipelineDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineSummary.setPipelineDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineSummary.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastExecutionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineSummary.setLastExecutionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,78 +43,103 @@ public class Eac3AtmosSettingsJsonUnmarshaller implements Unmarshaller<Eac3Atmos
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("bitstreamMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setBitstreamMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setCodingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dialogueIntelligence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setDialogueIntelligence(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("downmixControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setDownmixControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dynamicRangeCompressionLine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setDynamicRangeCompressionLine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dynamicRangeCompressionRf", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setDynamicRangeCompressionRf(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dynamicRangeControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setDynamicRangeControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loRoCenterMixLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setLoRoCenterMixLevel(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("loRoSurroundMixLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setLoRoSurroundMixLevel(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ltRtCenterMixLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setLtRtCenterMixLevel(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ltRtSurroundMixLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setLtRtSurroundMixLevel(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("meteringMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setMeteringMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sampleRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setSampleRate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("speechThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setSpeechThreshold(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("stereoDownmix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setStereoDownmix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("surroundExMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eac3AtmosSettings.setSurroundExMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

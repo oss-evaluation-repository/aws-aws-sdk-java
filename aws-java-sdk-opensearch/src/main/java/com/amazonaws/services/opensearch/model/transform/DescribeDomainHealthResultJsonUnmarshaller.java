@@ -43,64 +43,85 @@ public class DescribeDomainHealthResultJsonUnmarshaller implements Unmarshaller<
             return describeDomainHealthResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setDomainState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZoneCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setAvailabilityZoneCount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ActiveAvailabilityZoneCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setActiveAvailabilityZoneCount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StandByAvailabilityZoneCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setStandByAvailabilityZoneCount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataNodeCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setDataNodeCount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMaster", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setDedicatedMaster(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterEligibleNodeCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setMasterEligibleNodeCount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WarmNodeCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setWarmNodeCount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterNode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setMasterNode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterHealth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setClusterHealth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalShards", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setTotalShards(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalUnAssignedShards", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setTotalUnAssignedShards(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDomainHealthResult.setEnvironmentInformation(new ListUnmarshaller<EnvironmentInfo>(EnvironmentInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

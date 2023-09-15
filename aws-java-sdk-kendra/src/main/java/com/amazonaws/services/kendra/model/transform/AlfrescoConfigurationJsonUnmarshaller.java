@@ -43,42 +43,54 @@ public class AlfrescoConfigurationJsonUnmarshaller implements Unmarshaller<Alfre
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SiteUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setSiteUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SiteId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setSiteId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SslCertificateS3Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setSslCertificateS3Path(S3PathJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CrawlSystemFolders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setCrawlSystemFolders(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlComments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setCrawlComments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EntityFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setEntityFilter(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DocumentLibraryFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setDocumentLibraryFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(
                             DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance())
@@ -86,6 +98,7 @@ public class AlfrescoConfigurationJsonUnmarshaller implements Unmarshaller<Alfre
                     .unmarshall(context));
                 }
                 if (context.testExpression("BlogFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setBlogFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(
                             DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance())
@@ -93,6 +106,7 @@ public class AlfrescoConfigurationJsonUnmarshaller implements Unmarshaller<Alfre
                     .unmarshall(context));
                 }
                 if (context.testExpression("WikiFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setWikiFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(
                             DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance())
@@ -100,20 +114,27 @@ public class AlfrescoConfigurationJsonUnmarshaller implements Unmarshaller<Alfre
                     .unmarshall(context));
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     alfrescoConfiguration.setVpcConfiguration(DataSourceVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

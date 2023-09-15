@@ -43,26 +43,38 @@ public class OrganizationAffectedEntitiesErrorItemJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("awsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationAffectedEntitiesErrorItem.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationAffectedEntitiesErrorItem.setEventArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationAffectedEntitiesErrorItem.setErrorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     organizationAffectedEntitiesErrorItem.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

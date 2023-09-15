@@ -43,18 +43,28 @@ public class CancelQuantumTaskResultJsonUnmarshaller implements Unmarshaller<Can
             return cancelQuantumTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cancellationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cancelQuantumTaskResult.setCancellationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("quantumTaskArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cancelQuantumTaskResult.setQuantumTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

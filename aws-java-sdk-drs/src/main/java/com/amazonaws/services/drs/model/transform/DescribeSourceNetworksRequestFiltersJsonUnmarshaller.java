@@ -43,24 +43,35 @@ public class DescribeSourceNetworksRequestFiltersJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("originAccountID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSourceNetworksRequestFilters.setOriginAccountID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("originRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSourceNetworksRequestFilters.setOriginRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceNetworkIDs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeSourceNetworksRequestFilters.setSourceNetworkIDs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

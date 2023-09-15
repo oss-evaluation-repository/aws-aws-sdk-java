@@ -43,26 +43,38 @@ public class OpenTunnelResultJsonUnmarshaller implements Unmarshaller<OpenTunnel
             return openTunnelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tunnelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openTunnelResult.setTunnelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tunnelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openTunnelResult.setTunnelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceAccessToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openTunnelResult.setSourceAccessToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationAccessToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openTunnelResult.setDestinationAccessToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

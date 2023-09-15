@@ -43,12 +43,17 @@ public class NetworkFirewallPolicyDescriptionJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StatelessRuleGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallPolicyDescription.setStatelessRuleGroups(new ListUnmarshaller<StatelessRuleGroup>(StatelessRuleGroupJsonUnmarshaller
                             .getInstance())
@@ -56,24 +61,28 @@ public class NetworkFirewallPolicyDescriptionJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatelessDefaultActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallPolicyDescription.setStatelessDefaultActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatelessFragmentDefaultActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallPolicyDescription.setStatelessFragmentDefaultActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatelessCustomActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallPolicyDescription.setStatelessCustomActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatefulRuleGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallPolicyDescription.setStatefulRuleGroups(new ListUnmarshaller<StatefulRuleGroup>(StatefulRuleGroupJsonUnmarshaller
                             .getInstance())
@@ -81,14 +90,20 @@ public class NetworkFirewallPolicyDescriptionJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatefulDefaultActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallPolicyDescription.setStatefulDefaultActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("StatefulEngineOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkFirewallPolicyDescription.setStatefulEngineOptions(StatefulEngineOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

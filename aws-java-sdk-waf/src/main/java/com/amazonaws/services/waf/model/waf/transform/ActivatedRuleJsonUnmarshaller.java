@@ -43,36 +43,50 @@ public class ActivatedRuleJsonUnmarshaller implements Unmarshaller<ActivatedRule
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activatedRule.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activatedRule.setRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activatedRule.setAction(WafActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OverrideAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activatedRule.setOverrideAction(WafOverrideActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activatedRule.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExcludedRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activatedRule.setExcludedRules(new ListUnmarshaller<ExcludedRule>(ExcludedRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,50 @@ public class DestinationFieldPropertiesJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("isCreatable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationFieldProperties.setIsCreatable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isNullable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationFieldProperties.setIsNullable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isUpsertable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationFieldProperties.setIsUpsertable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isUpdatable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationFieldProperties.setIsUpdatable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isDefaultedOnCreate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationFieldProperties.setIsDefaultedOnCreate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("supportedWriteOperations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     destinationFieldProperties.setSupportedWriteOperations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

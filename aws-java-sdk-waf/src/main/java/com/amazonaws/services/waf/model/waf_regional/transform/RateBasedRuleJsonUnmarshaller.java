@@ -43,36 +43,50 @@ public class RateBasedRuleJsonUnmarshaller implements Unmarshaller<RateBasedRule
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RuleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedRule.setRuleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedRule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedRule.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchPredicates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedRule.setMatchPredicates(new ListUnmarshaller<Predicate>(PredicateJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RateKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedRule.setRateKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RateLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rateBasedRule.setRateLimit(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

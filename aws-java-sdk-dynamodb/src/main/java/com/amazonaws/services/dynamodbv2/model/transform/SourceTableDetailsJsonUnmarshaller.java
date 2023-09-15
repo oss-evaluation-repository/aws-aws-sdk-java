@@ -43,48 +43,65 @@ public class SourceTableDetailsJsonUnmarshaller implements Unmarshaller<SourceTa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableDetails.setTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableDetails.setTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableDetails.setTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableDetails.setTableSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableDetails.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TableCreationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableDetails.setTableCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableDetails.setProvisionedThroughput(ProvisionedThroughputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ItemCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableDetails.setItemCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("BillingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceTableDetails.setBillingMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

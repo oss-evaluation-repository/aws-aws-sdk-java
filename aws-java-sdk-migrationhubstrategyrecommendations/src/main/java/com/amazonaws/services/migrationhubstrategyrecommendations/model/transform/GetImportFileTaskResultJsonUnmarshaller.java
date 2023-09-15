@@ -43,54 +43,73 @@ public class GetImportFileTaskResultJsonUnmarshaller implements Unmarshaller<Get
             return getImportFileTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("completionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setImportName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputS3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setInputS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputS3Key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setInputS3Key(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfRecordsFailed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setNumberOfRecordsFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfRecordsSuccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setNumberOfRecordsSuccess(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReportS3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setStatusReportS3Bucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReportS3Key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getImportFileTaskResult.setStatusReportS3Key(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

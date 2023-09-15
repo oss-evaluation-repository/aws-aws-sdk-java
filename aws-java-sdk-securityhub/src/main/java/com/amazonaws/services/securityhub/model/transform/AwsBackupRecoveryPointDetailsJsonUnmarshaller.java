@@ -43,87 +43,114 @@ public class AwsBackupRecoveryPointDetailsJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setBackupSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupVaultArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupVaultName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setBackupVaultName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CalculatedLifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setCalculatedLifecycle(AwsBackupRecoveryPointCalculatedLifecycleDetailsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("CompletionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setCompletionDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setCreatedBy(AwsBackupRecoveryPointCreatedByDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setEncryptionKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsEncrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setIsEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LastRestoreTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setLastRestoreTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Lifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setLifecycle(AwsBackupRecoveryPointLifecycleDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RecoveryPointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setRecoveryPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceBackupVaultArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setSourceBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsBackupRecoveryPointDetails.setStorageClass(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

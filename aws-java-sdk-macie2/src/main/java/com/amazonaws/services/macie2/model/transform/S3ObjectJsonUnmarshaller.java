@@ -43,60 +43,80 @@ public class S3ObjectJsonUnmarshaller implements Unmarshaller<S3Object, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bucketArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setBucketArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eTag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setETag(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("extension", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setExtension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setLastModified(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("publicAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setPublicAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("serverSideEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setServerSideEncryption(ServerSideEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("size", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("storageClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setStorageClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setTags(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("versionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3Object.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

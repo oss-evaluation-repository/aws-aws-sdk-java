@@ -43,26 +43,38 @@ public class AsyncInferenceOutputConfigJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     asyncInferenceOutputConfig.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3OutputPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     asyncInferenceOutputConfig.setS3OutputPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     asyncInferenceOutputConfig.setNotificationConfig(AsyncInferenceNotificationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3FailurePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     asyncInferenceOutputConfig.setS3FailurePath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

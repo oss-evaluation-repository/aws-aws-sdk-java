@@ -43,78 +43,103 @@ public class DomainConfigJsonUnmarshaller implements Unmarshaller<DomainConfig, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setEngineVersion(VersionStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ClusterConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setClusterConfig(ClusterConfigStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EBSOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setEBSOptions(EBSOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AccessPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setAccessPolicies(AccessPoliciesStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SnapshotOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setSnapshotOptions(SnapshotOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VPCOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setVPCOptions(VPCDerivedInfoStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CognitoOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setCognitoOptions(CognitoOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EncryptionAtRestOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setEncryptionAtRestOptions(EncryptionAtRestOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NodeToNodeEncryptionOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdvancedOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setAdvancedOptions(AdvancedOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LogPublishingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setLogPublishingOptions(LogPublishingOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DomainEndpointOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setDomainEndpointOptions(DomainEndpointOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdvancedSecurityOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setAdvancedSecurityOptions(AdvancedSecurityOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoTuneOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setAutoTuneOptions(AutoTuneOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChangeProgressDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setChangeProgressDetails(ChangeProgressDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OffPeakWindowOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setOffPeakWindowOptions(OffPeakWindowOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SoftwareUpdateOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainConfig.setSoftwareUpdateOptions(SoftwareUpdateOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

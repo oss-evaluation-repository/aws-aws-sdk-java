@@ -43,38 +43,53 @@ public class TransformJobSummaryJsonUnmarshaller implements Unmarshaller<Transfo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TransformJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobSummary.setTransformJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransformJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobSummary.setTransformJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TransformEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobSummary.setTransformEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TransformJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobSummary.setTransformJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transformJobSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,64 +43,82 @@ public class FiltersJsonUnmarshaller implements Unmarshaller<Filters, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TextLocales", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filters.setTextLocales(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ContentCategories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filters.setContentCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filters.setResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Labels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filters.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Principals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filters.setPrincipals(new ListUnmarshaller<SearchPrincipalType>(SearchPrincipalTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AncestorIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filters.setAncestorIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SearchCollectionTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filters.setSearchCollectionTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SizeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filters.setSizeRange(LongRangeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filters.setCreatedRange(DateRangeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModifiedRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filters.setModifiedRange(DateRangeTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

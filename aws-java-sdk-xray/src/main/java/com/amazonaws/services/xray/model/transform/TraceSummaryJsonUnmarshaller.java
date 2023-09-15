@@ -43,48 +43,62 @@ public class TraceSummaryJsonUnmarshaller implements Unmarshaller<TraceSummary, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setDuration(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ResponseTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setResponseTime(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("HasFault", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setHasFault(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HasError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setHasError(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HasThrottle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setHasThrottle(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IsPartial", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setIsPartial(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Http", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setHttp(HttpJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Annotations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setAnnotations(new MapUnmarshaller<String, java.util.List<ValueWithServiceIds>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<ValueWithServiceIds>(ValueWithServiceIdsJsonUnmarshaller.getInstance())
@@ -92,64 +106,79 @@ public class TraceSummaryJsonUnmarshaller implements Unmarshaller<TraceSummary, 
                     ).unmarshall(context));
                 }
                 if (context.testExpression("Users", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setUsers(new ListUnmarshaller<TraceUser>(TraceUserJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ServiceIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setServiceIds(new ListUnmarshaller<ServiceId>(ServiceIdJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceARNs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setResourceARNs(new ListUnmarshaller<ResourceARNDetail>(ResourceARNDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InstanceIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setInstanceIds(new ListUnmarshaller<InstanceIdDetail>(InstanceIdDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setAvailabilityZones(new ListUnmarshaller<AvailabilityZoneDetail>(AvailabilityZoneDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("EntryPoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setEntryPoint(ServiceIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FaultRootCauses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setFaultRootCauses(new ListUnmarshaller<FaultRootCause>(FaultRootCauseJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ErrorRootCauses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setErrorRootCauses(new ListUnmarshaller<ErrorRootCause>(ErrorRootCauseJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResponseTimeRootCauses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setResponseTimeRootCauses(new ListUnmarshaller<ResponseTimeRootCause>(ResponseTimeRootCauseJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Revision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setRevision(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MatchedEventTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     traceSummary.setMatchedEventTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

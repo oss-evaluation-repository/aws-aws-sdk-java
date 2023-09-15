@@ -43,26 +43,38 @@ public class CdmaNmrObjJsonUnmarshaller implements Unmarshaller<CdmaNmrObj, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PnOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaNmrObj.setPnOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CdmaChannel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaNmrObj.setCdmaChannel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PilotPower", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaNmrObj.setPilotPower(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("BaseStationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cdmaNmrObj.setBaseStationId(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

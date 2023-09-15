@@ -43,18 +43,28 @@ public class UrlsJsonUnmarshaller implements Unmarshaller<Urls, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SeedUrlConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     urls.setSeedUrlConfiguration(SeedUrlConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SiteMapsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     urls.setSiteMapsConfiguration(SiteMapsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

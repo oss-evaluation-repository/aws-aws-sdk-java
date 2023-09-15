@@ -43,50 +43,68 @@ public class RelativeDatesFilterJsonUnmarshaller implements Unmarshaller<Relativ
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeDatesFilter.setFilterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeDatesFilter.setColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AnchorDateConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeDatesFilter.setAnchorDateConfiguration(AnchorDateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MinimumGranularity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeDatesFilter.setMinimumGranularity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeGranularity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeDatesFilter.setTimeGranularity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RelativeDateType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeDatesFilter.setRelativeDateType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RelativeDateValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeDatesFilter.setRelativeDateValue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeDatesFilter.setParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NullOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeDatesFilter.setNullOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExcludePeriodConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relativeDatesFilter.setExcludePeriodConfiguration(ExcludePeriodConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

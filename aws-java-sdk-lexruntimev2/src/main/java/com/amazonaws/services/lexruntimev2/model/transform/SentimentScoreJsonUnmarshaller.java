@@ -43,26 +43,38 @@ public class SentimentScoreJsonUnmarshaller implements Unmarshaller<SentimentSco
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("positive", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentScore.setPositive(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("negative", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentScore.setNegative(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("neutral", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentScore.setNeutral(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("mixed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentScore.setMixed(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

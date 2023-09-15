@@ -43,26 +43,38 @@ public class AccountAssociationsListElementJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssociationsListElement.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BillingGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssociationsListElement.setBillingGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssociationsListElement.setAccountName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accountAssociationsListElement.setAccountEmail(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

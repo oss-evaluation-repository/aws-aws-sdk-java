@@ -43,22 +43,32 @@ public class BatchGetCodeSnippetResultJsonUnmarshaller implements Unmarshaller<B
             return batchGetCodeSnippetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("codeSnippetResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetCodeSnippetResult.setCodeSnippetResults(new ListUnmarshaller<CodeSnippetResult>(CodeSnippetResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetCodeSnippetResult.setErrors(new ListUnmarshaller<CodeSnippetError>(CodeSnippetErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

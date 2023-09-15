@@ -43,66 +43,88 @@ public class PipelineExecutionStepMetadataJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrainingJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setTrainingJob(TrainingJobStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProcessingJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setProcessingJob(ProcessingJobStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TransformJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setTransformJob(TransformJobStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TuningJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setTuningJob(TuningJobStepMetaDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setModel(ModelStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RegisterModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setRegisterModel(RegisterModelStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Condition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setCondition(ConditionStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Callback", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setCallback(CallbackStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Lambda", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setLambda(LambdaStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("QualityCheck", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setQualityCheck(QualityCheckStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ClarifyCheck", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setClarifyCheck(ClarifyCheckStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EMR", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setEMR(EMRStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Fail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setFail(FailStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJob", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineExecutionStepMetadata.setAutoMLJob(AutoMLJobStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

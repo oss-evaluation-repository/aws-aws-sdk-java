@@ -43,26 +43,38 @@ public class UserAccessTaskItemJsonUnmarshaller implements Unmarshaller<UserAcce
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("app", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userAccessTaskItem.setApp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tenantId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userAccessTaskItem.setTenantId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userAccessTaskItem.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userAccessTaskItem.setError(TaskErrorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

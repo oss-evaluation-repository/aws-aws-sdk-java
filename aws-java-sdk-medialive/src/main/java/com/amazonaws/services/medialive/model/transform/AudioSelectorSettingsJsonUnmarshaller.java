@@ -43,26 +43,38 @@ public class AudioSelectorSettingsJsonUnmarshaller implements Unmarshaller<Audio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioHlsRenditionSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelectorSettings.setAudioHlsRenditionSelection(AudioHlsRenditionSelectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("audioLanguageSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelectorSettings.setAudioLanguageSelection(AudioLanguageSelectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("audioPidSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelectorSettings.setAudioPidSelection(AudioPidSelectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("audioTrackSelection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioSelectorSettings.setAudioTrackSelection(AudioTrackSelectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

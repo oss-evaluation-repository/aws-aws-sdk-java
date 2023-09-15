@@ -43,34 +43,48 @@ public class PasswordPolicyTypeJsonUnmarshaller implements Unmarshaller<Password
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MinimumLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     passwordPolicyType.setMinimumLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireUppercase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     passwordPolicyType.setRequireUppercase(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireLowercase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     passwordPolicyType.setRequireLowercase(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireNumbers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     passwordPolicyType.setRequireNumbers(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireSymbols", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     passwordPolicyType.setRequireSymbols(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TemporaryPasswordValidityDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     passwordPolicyType.setTemporaryPasswordValidityDays(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

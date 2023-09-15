@@ -43,46 +43,62 @@ public class OrderJsonUnmarshaller implements Unmarshaller<Order, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("acknowledgmentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     order.setAcknowledgmentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     order.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("networkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     order.setNetworkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkSiteArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     order.setNetworkSiteArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("orderArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     order.setOrderArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("orderedResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     order.setOrderedResources(new ListUnmarshaller<OrderedResourceDefinition>(OrderedResourceDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("shippingAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     order.setShippingAddress(AddressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("trackingInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     order.setTrackingInformation(new ListUnmarshaller<TrackingInformation>(TrackingInformationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

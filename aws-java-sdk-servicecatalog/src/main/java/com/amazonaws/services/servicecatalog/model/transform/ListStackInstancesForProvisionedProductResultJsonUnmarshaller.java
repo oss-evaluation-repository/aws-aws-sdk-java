@@ -44,12 +44,17 @@ public class ListStackInstancesForProvisionedProductResultJsonUnmarshaller imple
             return listStackInstancesForProvisionedProductResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackInstances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listStackInstancesForProvisionedProductResult.setStackInstances(new ListUnmarshaller<StackInstance>(StackInstanceJsonUnmarshaller
                             .getInstance())
@@ -57,8 +62,13 @@ public class ListStackInstancesForProvisionedProductResultJsonUnmarshaller imple
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listStackInstancesForProvisionedProductResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

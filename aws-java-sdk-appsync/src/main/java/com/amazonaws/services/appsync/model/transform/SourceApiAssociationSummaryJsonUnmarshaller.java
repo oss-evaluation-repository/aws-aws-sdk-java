@@ -43,38 +43,53 @@ public class SourceApiAssociationSummaryJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("associationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociationSummary.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociationSummary.setAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceApiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociationSummary.setSourceApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceApiArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociationSummary.setSourceApiArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergedApiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociationSummary.setMergedApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergedApiArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociationSummary.setMergedApiArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceApiAssociationSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

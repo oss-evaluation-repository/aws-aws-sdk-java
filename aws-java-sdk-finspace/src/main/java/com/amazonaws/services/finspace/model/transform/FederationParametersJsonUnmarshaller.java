@@ -43,35 +43,49 @@ public class FederationParametersJsonUnmarshaller implements Unmarshaller<Federa
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("samlMetadataDocument", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     federationParameters.setSamlMetadataDocument(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("samlMetadataURL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     federationParameters.setSamlMetadataURL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationCallBackURL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     federationParameters.setApplicationCallBackURL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("federationURN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     federationParameters.setFederationURN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("federationProviderName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     federationParameters.setFederationProviderName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attributeMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     federationParameters.setAttributeMap(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

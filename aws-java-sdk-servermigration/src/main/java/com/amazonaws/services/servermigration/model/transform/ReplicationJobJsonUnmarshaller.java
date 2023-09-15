@@ -43,84 +43,110 @@ public class ReplicationJobJsonUnmarshaller implements Unmarshaller<ReplicationJ
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("replicationJobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setReplicationJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serverId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setServerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serverType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setServerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vmServer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setVmServer(VmServerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("seedReplicationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setSeedReplicationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("frequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setFrequency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("runOnce", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setRunOnce(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("nextReplicationRunStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setNextReplicationRunStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("licenseType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setLicenseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latestAmiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setLatestAmiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfRecentAmisToKeep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setNumberOfRecentAmisToKeep(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("kmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("replicationRunList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationJob.setReplicationRunList(new ListUnmarshaller<ReplicationRun>(ReplicationRunJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

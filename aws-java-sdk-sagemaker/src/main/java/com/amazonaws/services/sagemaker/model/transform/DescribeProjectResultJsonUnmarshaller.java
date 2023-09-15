@@ -43,56 +43,75 @@ public class DescribeProjectResultJsonUnmarshaller implements Unmarshaller<Descr
             return describeProjectResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProjectArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProjectName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProjectId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProjectDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceCatalogProvisioningDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ServiceCatalogProvisionedProductDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setServiceCatalogProvisionedProductDetails(ServiceCatalogProvisionedProductDetailsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("ProjectStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setProjectStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setCreatedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeProjectResult.setLastModifiedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

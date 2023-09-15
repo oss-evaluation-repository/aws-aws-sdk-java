@@ -43,9 +43,13 @@ public class GetJourneyDateRangeKpiResultJsonUnmarshaller implements Unmarshalle
             return getJourneyDateRangeKpiResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getJourneyDateRangeKpiResult.setJourneyDateRangeKpiResponse(JourneyDateRangeKpiResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -43,30 +43,43 @@ public class DescribeAssetPropertyResultJsonUnmarshaller implements Unmarshaller
             return describeAssetPropertyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetPropertyResult.setAssetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetPropertyResult.setAssetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetModelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetPropertyResult.setAssetModelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetProperty", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetPropertyResult.setAssetProperty(PropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("compositeModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAssetPropertyResult.setCompositeModel(CompositeModelPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

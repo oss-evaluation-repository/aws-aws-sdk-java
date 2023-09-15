@@ -43,34 +43,48 @@ public class LastCrawlInfoJsonUnmarshaller implements Unmarshaller<LastCrawlInfo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lastCrawlInfo.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lastCrawlInfo.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogGroup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lastCrawlInfo.setLogGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogStream", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lastCrawlInfo.setLogStream(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessagePrefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lastCrawlInfo.setMessagePrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lastCrawlInfo.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

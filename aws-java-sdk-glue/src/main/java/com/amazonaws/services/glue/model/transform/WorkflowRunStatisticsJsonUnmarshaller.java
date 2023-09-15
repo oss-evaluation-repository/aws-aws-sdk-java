@@ -43,42 +43,58 @@ public class WorkflowRunStatisticsJsonUnmarshaller implements Unmarshaller<Workf
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TotalActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowRunStatistics.setTotalActions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeoutActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowRunStatistics.setTimeoutActions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FailedActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowRunStatistics.setFailedActions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StoppedActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowRunStatistics.setStoppedActions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SucceededActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowRunStatistics.setSucceededActions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RunningActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowRunStatistics.setRunningActions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ErroredActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowRunStatistics.setErroredActions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WaitingActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowRunStatistics.setWaitingActions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

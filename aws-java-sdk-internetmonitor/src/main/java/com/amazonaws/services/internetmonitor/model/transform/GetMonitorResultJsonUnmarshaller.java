@@ -43,65 +43,86 @@ public class GetMonitorResultJsonUnmarshaller implements Unmarshaller<GetMonitor
             return getMonitorResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setMonitorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MonitorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setMonitorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Resources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ProcessingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setProcessingStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProcessingStatusInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setProcessingStatusInfo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("MaxCityNetworksToMonitor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setMaxCityNetworksToMonitor(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InternetMeasurementsLogDelivery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setInternetMeasurementsLogDelivery(InternetMeasurementsLogDeliveryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TrafficPercentageToMonitor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setTrafficPercentageToMonitor(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthEventsConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getMonitorResult.setHealthEventsConfig(HealthEventsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

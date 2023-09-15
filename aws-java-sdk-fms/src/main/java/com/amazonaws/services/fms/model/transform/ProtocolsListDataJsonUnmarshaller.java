@@ -43,43 +43,58 @@ public class ProtocolsListDataJsonUnmarshaller implements Unmarshaller<Protocols
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ListId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolsListData.setListId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ListName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolsListData.setListName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ListUpdateToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolsListData.setListUpdateToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolsListData.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolsListData.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProtocolsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolsListData.setProtocolsList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PreviousProtocolsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     protocolsListData.setPreviousProtocolsList(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     ).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

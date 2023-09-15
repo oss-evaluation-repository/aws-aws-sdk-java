@@ -43,76 +43,100 @@ public class CodeReviewJsonUnmarshaller implements Unmarshaller<CodeReview, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeReviewArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setCodeReviewArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RepositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProviderType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setProviderType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimeStamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setCreatedTimeStamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTimeStamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setLastUpdatedTimeStamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PullRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setPullRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceCodeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setSourceCodeType(SourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssociationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Metrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setMetrics(MetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AnalysisTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setAnalysisTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ConfigFileState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codeReview.setConfigFileState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

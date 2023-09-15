@@ -43,18 +43,28 @@ public class DeleteStorageVirtualMachineResultJsonUnmarshaller implements Unmars
             return deleteStorageVirtualMachineResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorageVirtualMachineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteStorageVirtualMachineResult.setStorageVirtualMachineId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Lifecycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteStorageVirtualMachineResult.setLifecycle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

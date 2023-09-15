@@ -43,71 +43,92 @@ public class ScheduleActionSettingsJsonUnmarshaller implements Unmarshaller<Sche
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("hlsId3SegmentTaggingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setHlsId3SegmentTaggingSettings(HlsId3SegmentTaggingScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("hlsTimedMetadataSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings
                             .setHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputPrepareSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setInputPrepareSettings(InputPrepareScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputSwitchSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setInputSwitchSettings(InputSwitchScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("motionGraphicsImageActivateSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setMotionGraphicsImageActivateSettings(MotionGraphicsActivateScheduleActionSettingsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("motionGraphicsImageDeactivateSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setMotionGraphicsImageDeactivateSettings(MotionGraphicsDeactivateScheduleActionSettingsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pauseStateSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setPauseStateSettings(PauseStateScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scte35InputSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setScte35InputSettings(Scte35InputScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scte35ReturnToNetworkSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setScte35ReturnToNetworkSettings(Scte35ReturnToNetworkScheduleActionSettingsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("scte35SpliceInsertSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setScte35SpliceInsertSettings(Scte35SpliceInsertScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("scte35TimeSignalSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings
                             .setScte35TimeSignalSettings(Scte35TimeSignalScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("staticImageActivateSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setStaticImageActivateSettings(StaticImageActivateScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("staticImageDeactivateSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduleActionSettings.setStaticImageDeactivateSettings(StaticImageDeactivateScheduleActionSettingsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

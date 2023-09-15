@@ -43,62 +43,81 @@ public class InsightJsonUnmarshaller implements Unmarshaller<Insight, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InsightId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setInsightId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InsightType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setInsightType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Context", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setContext(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportingInsights", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setSupportingInsights(new ListUnmarshaller<Insight>(InsightJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Recommendations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setRecommendations(new ListUnmarshaller<Recommendation>(RecommendationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("InsightData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setInsightData(new ListUnmarshaller<Data>(DataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("BaselineData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     insight.setBaselineData(new ListUnmarshaller<Data>(DataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

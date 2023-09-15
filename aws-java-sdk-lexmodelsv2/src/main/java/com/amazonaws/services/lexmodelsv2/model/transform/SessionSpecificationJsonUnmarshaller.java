@@ -43,64 +43,85 @@ public class SessionSpecificationJsonUnmarshaller implements Unmarshaller<Sessio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botAliasId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setBotAliasId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("localeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setLocaleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("channel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setChannel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("conversationStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setConversationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("conversationEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setConversationEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("conversationDurationSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setConversationDurationSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("conversationEndState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setConversationEndState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfTurns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setNumberOfTurns(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("invokedIntentSamples", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setInvokedIntentSamples(new ListUnmarshaller<InvokedIntentSample>(InvokedIntentSampleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("originatingRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionSpecification.setOriginatingRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

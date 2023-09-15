@@ -43,32 +43,42 @@ public class ReservationPurchaseRecommendationJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountScope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendation.setAccountScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LookbackPeriodInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendation.setLookbackPeriodInDays(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TermInYears", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendation.setTermInYears(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaymentOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendation.setPaymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendation.setServiceSpecification(ServiceSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RecommendationDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendation.setRecommendationDetails(new ListUnmarshaller<ReservationPurchaseRecommendationDetail>(
                             ReservationPurchaseRecommendationDetailJsonUnmarshaller.getInstance())
@@ -76,9 +86,14 @@ public class ReservationPurchaseRecommendationJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("RecommendationSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservationPurchaseRecommendation.setRecommendationSummary(ReservationPurchaseRecommendationSummaryJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

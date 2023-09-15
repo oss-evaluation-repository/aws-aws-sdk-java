@@ -43,38 +43,53 @@ public class PackageFilterJsonUnmarshaller implements Unmarshaller<PackageFilter
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("architecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageFilter.setArchitecture(StringFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("epoch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageFilter.setEpoch(NumberFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageFilter.setName(StringFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("release", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageFilter.setRelease(StringFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceLambdaLayerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageFilter.setSourceLambdaLayerArn(StringFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceLayerHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageFilter.setSourceLayerHash(StringFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     packageFilter.setVersion(StringFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

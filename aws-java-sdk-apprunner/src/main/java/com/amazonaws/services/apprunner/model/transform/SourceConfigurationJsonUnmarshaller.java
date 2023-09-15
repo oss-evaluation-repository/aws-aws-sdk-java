@@ -43,26 +43,38 @@ public class SourceConfigurationJsonUnmarshaller implements Unmarshaller<SourceC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CodeRepository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceConfiguration.setCodeRepository(CodeRepositoryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ImageRepository", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceConfiguration.setImageRepository(ImageRepositoryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoDeploymentsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceConfiguration.setAutoDeploymentsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sourceConfiguration.setAuthenticationConfiguration(AuthenticationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

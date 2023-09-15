@@ -43,26 +43,38 @@ public class NetworkStatusJsonUnmarshaller implements Unmarshaller<NetworkStatus
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ethernet0Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkStatus.setEthernet0Status(EthernetStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Ethernet1Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkStatus.setEthernet1Status(EthernetStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkStatus.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NtpStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkStatus.setNtpStatus(NtpStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

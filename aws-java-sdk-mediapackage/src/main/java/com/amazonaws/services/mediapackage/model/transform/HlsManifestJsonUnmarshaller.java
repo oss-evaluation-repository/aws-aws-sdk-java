@@ -43,52 +43,70 @@ public class HlsManifestJsonUnmarshaller implements Unmarshaller<HlsManifest, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adMarkers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsManifest.setAdMarkers(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsManifest.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("includeIframeOnlyStream", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsManifest.setIncludeIframeOnlyStream(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("manifestName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsManifest.setManifestName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("playlistType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsManifest.setPlaylistType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("playlistWindowSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsManifest.setPlaylistWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("programDateTimeIntervalSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsManifest.setProgramDateTimeIntervalSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsManifest.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("adTriggers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsManifest.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("adsOnDeliveryRestrictions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsManifest.setAdsOnDeliveryRestrictions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

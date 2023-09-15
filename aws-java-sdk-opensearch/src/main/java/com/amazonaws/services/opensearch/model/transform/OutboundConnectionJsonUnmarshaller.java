@@ -43,38 +43,53 @@ public class OutboundConnectionJsonUnmarshaller implements Unmarshaller<Outbound
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocalDomainInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundConnection.setLocalDomainInfo(DomainInformationContainerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RemoteDomainInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundConnection.setRemoteDomainInfo(DomainInformationContainerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundConnection.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionAlias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundConnection.setConnectionAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundConnection.setConnectionStatus(OutboundConnectionStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ConnectionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundConnection.setConnectionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundConnection.setConnectionProperties(ConnectionPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

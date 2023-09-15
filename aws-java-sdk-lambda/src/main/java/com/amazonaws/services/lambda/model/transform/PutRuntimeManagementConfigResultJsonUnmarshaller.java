@@ -43,22 +43,33 @@ public class PutRuntimeManagementConfigResultJsonUnmarshaller implements Unmarsh
             return putRuntimeManagementConfigResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UpdateRuntimeOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRuntimeManagementConfigResult.setUpdateRuntimeOn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FunctionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRuntimeManagementConfigResult.setFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuntimeVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRuntimeManagementConfigResult.setRuntimeVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

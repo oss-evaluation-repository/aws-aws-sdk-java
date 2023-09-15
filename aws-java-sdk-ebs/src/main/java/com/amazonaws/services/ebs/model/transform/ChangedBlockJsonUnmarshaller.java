@@ -43,22 +43,33 @@ public class ChangedBlockJsonUnmarshaller implements Unmarshaller<ChangedBlock, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BlockIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changedBlock.setBlockIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FirstBlockToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changedBlock.setFirstBlockToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecondBlockToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     changedBlock.setSecondBlockToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

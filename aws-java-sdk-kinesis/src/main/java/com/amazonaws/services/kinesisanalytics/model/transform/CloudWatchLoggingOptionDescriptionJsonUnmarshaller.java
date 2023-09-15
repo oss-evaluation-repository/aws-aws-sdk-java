@@ -43,22 +43,33 @@ public class CloudWatchLoggingOptionDescriptionJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CloudWatchLoggingOptionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLoggingOptionDescription.setCloudWatchLoggingOptionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogStreamARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLoggingOptionDescription.setLogStreamARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cloudWatchLoggingOptionDescription.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,81 +43,106 @@ public class UpdateStageResultJsonUnmarshaller implements Unmarshaller<UpdateSta
             return updateStageResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientCertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setClientCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setStageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setCacheClusterEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setCacheClusterSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setCacheClusterStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("methodSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setMethodSettings(new MapUnmarshaller<String, MethodSetting>(context.getUnmarshaller(String.class),
                             MethodSettingJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("variables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("documentationVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setDocumentationVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessLogSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setAccessLogSettings(AccessLogSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("canarySettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setCanarySettings(CanarySettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tracingEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setTracingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("webAclArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setWebAclArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateStageResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

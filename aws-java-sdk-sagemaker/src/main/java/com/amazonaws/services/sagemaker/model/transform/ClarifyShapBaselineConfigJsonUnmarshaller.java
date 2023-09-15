@@ -43,22 +43,33 @@ public class ClarifyShapBaselineConfigJsonUnmarshaller implements Unmarshaller<C
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MimeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyShapBaselineConfig.setMimeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShapBaseline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyShapBaselineConfig.setShapBaseline(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShapBaselineUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clarifyShapBaselineConfig.setShapBaselineUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

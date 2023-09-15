@@ -44,23 +44,34 @@ public class StartSavingsPlansPurchaseRecommendationGenerationResultJsonUnmarsha
             return startSavingsPlansPurchaseRecommendationGenerationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RecommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSavingsPlansPurchaseRecommendationGenerationResult.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenerationStartedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSavingsPlansPurchaseRecommendationGenerationResult.setGenerationStartedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedCompletionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSavingsPlansPurchaseRecommendationGenerationResult.setEstimatedCompletionTime(context.getUnmarshaller(String.class)
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

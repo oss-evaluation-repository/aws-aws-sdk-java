@@ -43,24 +43,35 @@ public class ListPipelinesResultJsonUnmarshaller implements Unmarshaller<ListPip
             return listPipelinesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineIdList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPipelinesResult.setPipelineIdList(new ListUnmarshaller<PipelineIdName>(PipelineIdNameJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("marker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPipelinesResult.setMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hasMoreResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPipelinesResult.setHasMoreResults(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

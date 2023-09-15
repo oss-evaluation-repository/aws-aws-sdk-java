@@ -51,24 +51,22 @@ import com.amazonaws.services.entityresolution.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Welcome to the <i>AWS Entity Resolution API Reference</i>.
+ * Welcome to the <i>Entity Resolution API Reference</i>.
  * </p>
  * <p>
- * AWS Entity Resolution is an AWS service that provides pre-configured entity resolution capabilities that enable
- * developers and analysts at advertising and marketing companies to build an accurate and complete view of their
+ * Entity Resolution is an Amazon Web Services service that provides pre-configured entity resolution capabilities that
+ * enable developers and analysts at advertising and marketing companies to build an accurate and complete view of their
  * consumers.
  * </p>
  * <p>
- * With AWS Entity Resolution, you have the ability to match source records containing consumer identifiers, such as
- * name, email address, and phone number. This holds true even when these records have incomplete or conflicting
- * identifiers. For example, AWS Entity Resolution can effectively match a source record from a customer relationship
- * management (CRM) system, which includes account information like first name, last name, postal address, phone number,
- * and email address, with a source record from a marketing system containing campaign information, such as username and
- * email address.
+ * With Entity Resolution, you can match source records containing consumer identifiers, such as name, email address,
+ * and phone number. This is true even when these records have incomplete or conflicting identifiers. For example,
+ * Entity Resolution can effectively match a source record from a customer relationship management (CRM) system with a
+ * source record from a marketing system containing campaign information.
  * </p>
  * <p>
- * To learn more about AWS Entity Resolution concepts, procedures, and best practices, see the <a
- * href="https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html">AWS Entity Resolution User
+ * To learn more about Entity Resolution concepts, procedures, and best practices, see the <a
+ * href="https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html">Entity Resolution User
  * Guide</a>.
  * </p>
  */
@@ -176,20 +174,19 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ExceedsLimitException
-     *         The request was rejected because it attempted to create resources beyond the current AWS Entity
-     *         Resolution account limits. The error message describes the limit exceeded.
-     *         <code>HTTP Status Code: 402</code>
+     *         The request was rejected because it attempted to create resources beyond the current Entity Resolution
+     *         account limits. The error message describes the limit exceeded. <code>HTTP Status Code: 402</code>
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource. Example:
      *         Workflow already exists, Schema already exists, Workflow is currently running, etc.
      *         <code>HTTP Status Code: 400</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.CreateMatchingWorkflow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateMatchingWorkflow"
@@ -252,20 +249,19 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ExceedsLimitException
-     *         The request was rejected because it attempted to create resources beyond the current AWS Entity
-     *         Resolution account limits. The error message describes the limit exceeded.
-     *         <code>HTTP Status Code: 402</code>
+     *         The request was rejected because it attempted to create resources beyond the current Entity Resolution
+     *         account limits. The error message describes the limit exceeded. <code>HTTP Status Code: 402</code>
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource. Example:
      *         Workflow already exists, Schema already exists, Workflow is currently running, etc.
      *         <code>HTTP Status Code: 400</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.CreateSchemaMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateSchemaMapping"
@@ -326,12 +322,12 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.DeleteMatchingWorkflow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteMatchingWorkflow"
@@ -394,7 +390,7 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
@@ -403,7 +399,7 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      *         Workflow already exists, Schema already exists, Workflow is currently running, etc.
      *         <code>HTTP Status Code: 400</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.DeleteSchemaMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteSchemaMapping"
@@ -463,14 +459,14 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws ResourceNotFoundException
      *         The resource could not be found. <code>HTTP Status Code: 404</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.GetMatchId
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchId" target="_top">AWS
@@ -530,14 +526,14 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws ResourceNotFoundException
      *         The resource could not be found. <code>HTTP Status Code: 404</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.GetMatchingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingJob"
@@ -597,14 +593,14 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws ResourceNotFoundException
      *         The resource could not be found. <code>HTTP Status Code: 404</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.GetMatchingWorkflow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingWorkflow"
@@ -664,14 +660,14 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws ResourceNotFoundException
      *         The resource could not be found. <code>HTTP Status Code: 404</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.GetSchemaMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetSchemaMapping"
@@ -731,14 +727,14 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws ResourceNotFoundException
      *         The resource could not be found. <code>HTTP Status Code: 404</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.ListMatchingJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingJobs"
@@ -790,7 +786,8 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Returns a list of all the <code>MatchingWorkflows</code> that have been created for an AWS account.
+     * Returns a list of all the <code>MatchingWorkflows</code> that have been created for an Amazon Web Services
+     * account.
      * </p>
      * 
      * @param listMatchingWorkflowsRequest
@@ -798,12 +795,12 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.ListMatchingWorkflows
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingWorkflows"
@@ -856,7 +853,7 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Returns a list of all the <code>SchemaMappings</code> that have been created for an AWS account.
+     * Returns a list of all the <code>SchemaMappings</code> that have been created for an Amazon Web Services account.
      * </p>
      * 
      * @param listSchemaMappingsRequest
@@ -864,12 +861,12 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.ListSchemaMappings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListSchemaMappings"
@@ -921,19 +918,19 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Displays the tags associated with an AWS Entity Resolution resource. In Entity Resolution,
-     * <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.
+     * Displays the tags associated with an Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>
+     * , and <code>MatchingWorkflow</code> can be tagged.
      * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws ResourceNotFoundException
      *         The resource could not be found. <code>HTTP Status Code: 404</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListTagsForResource"
@@ -994,22 +991,21 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws ResourceNotFoundException
      *         The resource could not be found. <code>HTTP Status Code: 404</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ExceedsLimitException
-     *         The request was rejected because it attempted to create resources beyond the current AWS Entity
-     *         Resolution account limits. The error message describes the limit exceeded.
-     *         <code>HTTP Status Code: 402</code>
+     *         The request was rejected because it attempted to create resources beyond the current Entity Resolution
+     *         account limits. The error message describes the limit exceeded. <code>HTTP Status Code: 402</code>
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource. Example:
      *         Workflow already exists, Schema already exists, Workflow is currently running, etc.
      *         <code>HTTP Status Code: 400</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.StartMatchingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartMatchingJob"
@@ -1061,25 +1057,25 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Assigns one or more tags (key-value pairs) to the specified AWS Entity Resolution resource. Tags can help you
+     * Assigns one or more tags (key-value pairs) to the specified Entity Resolution resource. Tags can help you
      * organize and categorize your resources. You can also use them to scope user permissions by granting a user
      * permission to access or change only resources with certain tag values. In Entity Resolution,
-     * <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged. Tags don't have any semantic meaning
-     * to AWS and are interpreted strictly as strings of characters. You can use the <code>TagResource</code> action
-     * with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags
-     * associated with the resource. If you specify a tag key that is already associated with the resource, the new tag
-     * value that you specify replaces the previous value for that tag.
+     * <code>SchemaMapping</code> and <code>MatchingWorkflow</code> can be tagged. Tags don't have any semantic meaning
+     * to Amazon Web Services and are interpreted strictly as strings of characters. You can use the
+     * <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key, this tag is
+     * appended to the list of tags associated with the resource. If you specify a tag key that is already associated
+     * with the resource, the new tag value that you specify replaces the previous value for that tag.
      * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws ResourceNotFoundException
      *         The resource could not be found. <code>HTTP Status Code: 404</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/TagResource" target="_top">AWS
@@ -1131,14 +1127,14 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Removes one or more tags from the specified AWS Entity Resolution resource. In Entity Resolution,
+     * Removes one or more tags from the specified Entity Resolution resource. In Entity Resolution,
      * <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.
      * </p>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws ResourceNotFoundException
      *         The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -1202,14 +1198,14 @@ public class AWSEntityResolutionClient extends AmazonWebServiceClient implements
      * @throws ThrottlingException
      *         The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+     *         This exception occurs when there is an internal failure in the Entity Resolution service.
      *         <code>HTTP Status Code: 500</code>
      * @throws ResourceNotFoundException
      *         The resource could not be found. <code>HTTP Status Code: 404</code>
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code>
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by AWS Entity Resolution.
+     *         The input fails to satisfy the constraints specified by Entity Resolution.
      *         <code>HTTP Status Code: 400</code>
      * @sample AWSEntityResolution.UpdateMatchingWorkflow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateMatchingWorkflow"

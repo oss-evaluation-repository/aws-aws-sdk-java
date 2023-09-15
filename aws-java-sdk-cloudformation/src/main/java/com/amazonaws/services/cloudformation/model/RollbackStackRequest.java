@@ -46,11 +46,11 @@ public class RollbackStackRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String clientRequestToken;
     /**
      * <p>
-     * This deletion policy deletes newly created resources, but retains existing resources, when a stack operation is
-     * rolled back. This ensures new, empty, and unused resources are deleted, while critical resources and their data
-     * are retained. <code>RetainExceptOnCreate</code> can be specified for any resource that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      */
     private Boolean retainExceptOnCreate;
@@ -183,20 +183,18 @@ public class RollbackStackRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This deletion policy deletes newly created resources, but retains existing resources, when a stack operation is
-     * rolled back. This ensures new, empty, and unused resources are deleted, while critical resources and their data
-     * are retained. <code>RetainExceptOnCreate</code> can be specified for any resource that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param retainExceptOnCreate
-     *        This deletion policy deletes newly created resources, but retains existing resources, when a stack
-     *        operation is rolled back. This ensures new, empty, and unused resources are deleted, while critical
-     *        resources and their data are retained. <code>RetainExceptOnCreate</code> can be specified for any resource
-     *        that supports the <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     *        DeletionPolicy</a> attribute.
+     *        When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *        includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *        <p>
+     *        Default: <code>false</code>
      */
 
     public void setRetainExceptOnCreate(Boolean retainExceptOnCreate) {
@@ -205,19 +203,17 @@ public class RollbackStackRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This deletion policy deletes newly created resources, but retains existing resources, when a stack operation is
-     * rolled back. This ensures new, empty, and unused resources are deleted, while critical resources and their data
-     * are retained. <code>RetainExceptOnCreate</code> can be specified for any resource that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return This deletion policy deletes newly created resources, but retains existing resources, when a stack
-     *         operation is rolled back. This ensures new, empty, and unused resources are deleted, while critical
-     *         resources and their data are retained. <code>RetainExceptOnCreate</code> can be specified for any
-     *         resource that supports the <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     *         DeletionPolicy</a> attribute.
+     * @return When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *         includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean getRetainExceptOnCreate() {
@@ -226,20 +222,18 @@ public class RollbackStackRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This deletion policy deletes newly created resources, but retains existing resources, when a stack operation is
-     * rolled back. This ensures new, empty, and unused resources are deleted, while critical resources and their data
-     * are retained. <code>RetainExceptOnCreate</code> can be specified for any resource that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param retainExceptOnCreate
-     *        This deletion policy deletes newly created resources, but retains existing resources, when a stack
-     *        operation is rolled back. This ensures new, empty, and unused resources are deleted, while critical
-     *        resources and their data are retained. <code>RetainExceptOnCreate</code> can be specified for any resource
-     *        that supports the <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     *        DeletionPolicy</a> attribute.
+     *        When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *        includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *        <p>
+     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,19 +244,17 @@ public class RollbackStackRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This deletion policy deletes newly created resources, but retains existing resources, when a stack operation is
-     * rolled back. This ensures new, empty, and unused resources are deleted, while critical resources and their data
-     * are retained. <code>RetainExceptOnCreate</code> can be specified for any resource that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return This deletion policy deletes newly created resources, but retains existing resources, when a stack
-     *         operation is rolled back. This ensures new, empty, and unused resources are deleted, while critical
-     *         resources and their data are retained. <code>RetainExceptOnCreate</code> can be specified for any
-     *         resource that supports the <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     *         DeletionPolicy</a> attribute.
+     * @return When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *         includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean isRetainExceptOnCreate() {

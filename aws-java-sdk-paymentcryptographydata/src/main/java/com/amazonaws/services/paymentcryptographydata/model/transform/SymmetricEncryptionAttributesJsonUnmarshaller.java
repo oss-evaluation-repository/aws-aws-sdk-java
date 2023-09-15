@@ -43,22 +43,33 @@ public class SymmetricEncryptionAttributesJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InitializationVector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     symmetricEncryptionAttributes.setInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Mode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     symmetricEncryptionAttributes.setMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaddingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     symmetricEncryptionAttributes.setPaddingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

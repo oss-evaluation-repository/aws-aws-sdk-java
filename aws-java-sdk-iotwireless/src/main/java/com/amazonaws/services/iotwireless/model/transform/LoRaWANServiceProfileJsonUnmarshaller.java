@@ -43,30 +43,43 @@ public class LoRaWANServiceProfileJsonUnmarshaller implements Unmarshaller<LoRaW
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AddGwMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANServiceProfile.setAddGwMetadata(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DrMin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANServiceProfile.setDrMin(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DrMax", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANServiceProfile.setDrMax(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PrAllowed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANServiceProfile.setPrAllowed(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RaAllowed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANServiceProfile.setRaAllowed(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

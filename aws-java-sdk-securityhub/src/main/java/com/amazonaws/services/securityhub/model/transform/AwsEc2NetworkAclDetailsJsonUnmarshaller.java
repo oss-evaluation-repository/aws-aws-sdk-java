@@ -43,28 +43,37 @@ public class AwsEc2NetworkAclDetailsJsonUnmarshaller implements Unmarshaller<Aws
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IsDefault", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclDetails.setIsDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkAclId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclDetails.setNetworkAclId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclDetails.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Associations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclDetails.setAssociations(new ListUnmarshaller<AwsEc2NetworkAclAssociation>(AwsEc2NetworkAclAssociationJsonUnmarshaller
                             .getInstance())
@@ -72,10 +81,15 @@ public class AwsEc2NetworkAclDetailsJsonUnmarshaller implements Unmarshaller<Aws
                     .unmarshall(context));
                 }
                 if (context.testExpression("Entries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2NetworkAclDetails.setEntries(new ListUnmarshaller<AwsEc2NetworkAclEntry>(AwsEc2NetworkAclEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

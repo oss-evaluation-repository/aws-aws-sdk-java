@@ -43,50 +43,68 @@ public class PipelineActivityJsonUnmarshaller implements Unmarshaller<PipelineAc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineActivity.setChannel(ChannelActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambda", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineActivity.setLambda(LambdaActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("datastore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineActivity.setDatastore(DatastoreActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("addAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineActivity.setAddAttributes(AddAttributesActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("removeAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineActivity.setRemoveAttributes(RemoveAttributesActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("selectAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineActivity.setSelectAttributes(SelectAttributesActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("filter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineActivity.setFilter(FilterActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("math", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineActivity.setMath(MathActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("deviceRegistryEnrich", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineActivity.setDeviceRegistryEnrich(DeviceRegistryEnrichActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("deviceShadowEnrich", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineActivity.setDeviceShadowEnrich(DeviceShadowEnrichActivityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

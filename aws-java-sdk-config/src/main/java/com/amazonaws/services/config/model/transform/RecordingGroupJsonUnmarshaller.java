@@ -43,32 +43,45 @@ public class RecordingGroupJsonUnmarshaller implements Unmarshaller<RecordingGro
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("allSupported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordingGroup.setAllSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("includeGlobalResourceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordingGroup.setIncludeGlobalResourceTypes(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordingGroup.setResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("exclusionByResourceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordingGroup.setExclusionByResourceTypes(ExclusionByResourceTypesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("recordingStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recordingGroup.setRecordingStrategy(RecordingStrategyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

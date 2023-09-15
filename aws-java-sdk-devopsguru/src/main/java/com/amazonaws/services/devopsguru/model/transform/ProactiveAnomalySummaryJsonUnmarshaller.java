@@ -43,68 +43,90 @@ public class ProactiveAnomalySummaryJsonUnmarshaller implements Unmarshaller<Pro
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AnomalyTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setAnomalyTimeRange(AnomalyTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AnomalyReportedTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setAnomalyReportedTimeRange(AnomalyReportedTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PredictionTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setPredictionTimeRange(PredictionTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SourceDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setSourceDetails(AnomalySourceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssociatedInsightId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setAssociatedInsightId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceCollection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Limit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setLimit(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setSourceMetadata(AnomalySourceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AnomalyResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setAnomalyResources(new ListUnmarshaller<AnomalyResource>(AnomalyResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     proactiveAnomalySummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

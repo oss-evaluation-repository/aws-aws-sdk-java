@@ -44,34 +44,48 @@ public class RuleGroupSourceStatefulRulesHeaderDetailsJsonUnmarshaller implement
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatefulRulesHeaderDetails.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatefulRulesHeaderDetails.setDestinationPort(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Direction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatefulRulesHeaderDetails.setDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatefulRulesHeaderDetails.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatefulRulesHeaderDetails.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourcePort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatefulRulesHeaderDetails.setSourcePort(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

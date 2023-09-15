@@ -43,26 +43,38 @@ public class EMRStepMetadataJsonUnmarshaller implements Unmarshaller<EMRStepMeta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClusterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eMRStepMetadata.setClusterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StepId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eMRStepMetadata.setStepId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StepName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eMRStepMetadata.setStepName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogFilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eMRStepMetadata.setLogFilePath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,68 @@ public class AvcIntraSettingsJsonUnmarshaller implements Unmarshaller<AvcIntraSe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("avcIntraClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     avcIntraSettings.setAvcIntraClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("avcIntraUhdSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     avcIntraSettings.setAvcIntraUhdSettings(AvcIntraUhdSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("framerateControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     avcIntraSettings.setFramerateControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateConversionAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     avcIntraSettings.setFramerateConversionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     avcIntraSettings.setFramerateDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     avcIntraSettings.setFramerateNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("interlaceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     avcIntraSettings.setInterlaceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     avcIntraSettings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slowPal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     avcIntraSettings.setSlowPal(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("telecine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     avcIntraSettings.setTelecine(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

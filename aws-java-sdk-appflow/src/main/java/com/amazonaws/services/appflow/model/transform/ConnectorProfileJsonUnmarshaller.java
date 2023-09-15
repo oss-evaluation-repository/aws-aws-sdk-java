@@ -43,51 +43,69 @@ public class ConnectorProfileJsonUnmarshaller implements Unmarshaller<ConnectorP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectorProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorProfile.setConnectorProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorProfile.setConnectorProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorProfile.setConnectorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorProfile.setConnectorLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorProfile.setConnectionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("credentialsArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorProfile.setCredentialsArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectorProfileProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorProfile.setConnectorProfileProperties(ConnectorProfilePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorProfile.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorProfile.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("privateConnectionProvisioningState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectorProfile
                             .setPrivateConnectionProvisioningState(PrivateConnectionProvisioningStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class ProblemJsonUnmarshaller implements Unmarshaller<Problem, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("run", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setRun(ProblemDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("job", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setJob(ProblemDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("suite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setSuite(ProblemDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("test", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setTest(ProblemDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("device", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setDevice(DeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("result", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     problem.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

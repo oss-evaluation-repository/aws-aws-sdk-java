@@ -43,38 +43,53 @@ public class NodeInstanceJsonUnmarshaller implements Unmarshaller<NodeInstance, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CurrentStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInstance.setCurrentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInstance.setNodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInstance.setNodeInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInstance.setNodeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInstance.setPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackagePatchVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInstance.setPackagePatchVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeInstance.setPackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

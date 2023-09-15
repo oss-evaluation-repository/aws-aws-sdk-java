@@ -43,22 +43,33 @@ public class CustomArtifactConfigurationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ArtifactType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customArtifactConfiguration.setArtifactType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3ContentLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customArtifactConfiguration.setS3ContentLocation(S3ContentLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MavenReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customArtifactConfiguration.setMavenReference(MavenReferenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

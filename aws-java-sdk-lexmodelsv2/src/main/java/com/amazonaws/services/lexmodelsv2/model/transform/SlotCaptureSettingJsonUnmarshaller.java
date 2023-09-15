@@ -43,42 +43,58 @@ public class SlotCaptureSettingJsonUnmarshaller implements Unmarshaller<SlotCapt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("captureResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotCaptureSetting.setCaptureResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("captureNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotCaptureSetting.setCaptureNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("captureConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotCaptureSetting.setCaptureConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotCaptureSetting.setFailureResponse(ResponseSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureNextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotCaptureSetting.setFailureNextStep(DialogStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureConditional", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotCaptureSetting.setFailureConditional(ConditionalSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("codeHook", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotCaptureSetting.setCodeHook(DialogCodeHookInvocationSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("elicitationCodeHook", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     slotCaptureSetting.setElicitationCodeHook(ElicitationCodeHookInvocationSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,56 +43,75 @@ public class ReservedNodeJsonUnmarshaller implements Unmarshaller<ReservedNode, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReservationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setReservationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReservedNodesOfferingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setReservedNodesOfferingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setNodeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FixedPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setFixedPrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setNodeCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OfferingType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setOfferingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecurringCharges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setRecurringCharges(new ListUnmarshaller<RecurringCharge>(RecurringChargeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedNode.setARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

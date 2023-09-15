@@ -43,38 +43,53 @@ public class StatementJsonUnmarshaller implements Unmarshaller<Statement, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Code", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Output", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setOutput(StatementOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Progress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setProgress(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setStartedOn(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     statement.setCompletedOn(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

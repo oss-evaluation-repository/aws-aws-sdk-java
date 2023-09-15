@@ -43,40 +43,55 @@ public class EbsVolumeScanDetailsJsonUnmarshaller implements Unmarshaller<EbsVol
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("scanId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsVolumeScanDetails.setScanId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanStartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsVolumeScanDetails.setScanStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("scanCompletedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsVolumeScanDetails.setScanCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("triggerFindingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsVolumeScanDetails.setTriggerFindingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsVolumeScanDetails.setSources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("scanDetections", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsVolumeScanDetails.setScanDetections(ScanDetectionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scanType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ebsVolumeScanDetails.setScanType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,32 +44,42 @@ public class AssociationVersionInfoJsonUnmarshaller implements Unmarshaller<Asso
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setAssociationVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -77,60 +87,73 @@ public class AssociationVersionInfoJsonUnmarshaller implements Unmarshaller<Asso
                     ).unmarshall(context));
                 }
                 if (context.testExpression("Targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setOutputLocation(InstanceAssociationOutputLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssociationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setAssociationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setMaxErrors(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxConcurrency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setMaxConcurrency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComplianceSeverity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setComplianceSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SyncCompliance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setSyncCompliance(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplyOnlyAtCronInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setApplyOnlyAtCronInterval(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CalendarNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setCalendarNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TargetLocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setTargetLocations(new ListUnmarshaller<TargetLocation>(TargetLocationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ScheduleOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setScheduleOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetMaps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationVersionInfo.setTargetMaps(new ListUnmarshaller<java.util.Map<String, java.util.List<String>>>(
                             new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class), new ListUnmarshaller<String>(context
@@ -139,6 +162,10 @@ public class AssociationVersionInfoJsonUnmarshaller implements Unmarshaller<Asso
                             ))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

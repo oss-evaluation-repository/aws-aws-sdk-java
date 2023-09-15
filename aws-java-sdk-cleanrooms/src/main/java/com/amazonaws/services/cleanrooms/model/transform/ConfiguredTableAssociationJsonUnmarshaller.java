@@ -43,54 +43,73 @@ public class ConfiguredTableAssociationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configuredTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setConfiguredTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configuredTableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setConfiguredTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("membershipId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setMembershipId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("membershipArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setMembershipArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configuredTableAssociation.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

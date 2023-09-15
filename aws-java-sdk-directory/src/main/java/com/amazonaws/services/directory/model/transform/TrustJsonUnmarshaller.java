@@ -43,54 +43,73 @@ public class TrustJsonUnmarshaller implements Unmarshaller<Trust, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setTrustId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RemoteDomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setRemoteDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setTrustType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustDirection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setTrustDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setTrustState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setCreatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StateLastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setStateLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrustStateReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setTrustStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectiveAuth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trust.setSelectiveAuth(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

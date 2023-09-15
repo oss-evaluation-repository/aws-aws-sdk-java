@@ -43,26 +43,38 @@ public class ImportedSidewalkDeviceJsonUnmarshaller implements Unmarshaller<Impo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SidewalkManufacturingSn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importedSidewalkDevice.setSidewalkManufacturingSn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OnboardingStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importedSidewalkDevice.setOnboardingStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OnboardingStatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importedSidewalkDevice.setOnboardingStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importedSidewalkDevice.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

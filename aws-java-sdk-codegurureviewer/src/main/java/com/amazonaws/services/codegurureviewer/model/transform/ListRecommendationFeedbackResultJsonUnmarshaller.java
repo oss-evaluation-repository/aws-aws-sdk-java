@@ -43,12 +43,17 @@ public class ListRecommendationFeedbackResultJsonUnmarshaller implements Unmarsh
             return listRecommendationFeedbackResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RecommendationFeedbackSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecommendationFeedbackResult.setRecommendationFeedbackSummaries(new ListUnmarshaller<RecommendationFeedbackSummary>(
                             RecommendationFeedbackSummaryJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListRecommendationFeedbackResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listRecommendationFeedbackResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

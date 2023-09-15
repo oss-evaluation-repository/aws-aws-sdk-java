@@ -43,20 +43,30 @@ public class StartTextDetectionFiltersJsonUnmarshaller implements Unmarshaller<S
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WordFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startTextDetectionFilters.setWordFilter(DetectionFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RegionsOfInterest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startTextDetectionFilters.setRegionsOfInterest(new ListUnmarshaller<RegionOfInterest>(RegionOfInterestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

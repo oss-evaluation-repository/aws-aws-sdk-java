@@ -43,58 +43,78 @@ public class ProductionVariantJsonUnmarshaller implements Unmarshaller<Productio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VariantName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setVariantName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitialInstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setInitialInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitialVariantWeight", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setInitialVariantWeight(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("AcceleratorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setAcceleratorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CoreDumpConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setCoreDumpConfig(ProductionVariantCoreDumpConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServerlessConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setServerlessConfig(ProductionVariantServerlessConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInGB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setVolumeSizeInGB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelDataDownloadTimeoutInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setModelDataDownloadTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ContainerStartupHealthCheckTimeoutInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setContainerStartupHealthCheckTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableSSMAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productionVariant.setEnableSSMAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

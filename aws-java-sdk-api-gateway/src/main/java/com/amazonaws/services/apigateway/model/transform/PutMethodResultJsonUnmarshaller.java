@@ -43,59 +43,78 @@ public class PutMethodResultJsonUnmarshaller implements Unmarshaller<PutMethodRe
             return putMethodResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("httpMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setHttpMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setAuthorizationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setAuthorizerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setApiKeyRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("requestValidatorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setRequestValidatorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setOperationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requestParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setRequestParameters(new MapUnmarshaller<String, Boolean>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Boolean.class)).unmarshall(context));
                 }
                 if (context.testExpression("requestModels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setRequestModels(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("methodResponses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setMethodResponses(new MapUnmarshaller<String, MethodResponse>(context.getUnmarshaller(String.class),
                             MethodResponseJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("methodIntegration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setMethodIntegration(IntegrationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("authorizationScopes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putMethodResult.setAuthorizationScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

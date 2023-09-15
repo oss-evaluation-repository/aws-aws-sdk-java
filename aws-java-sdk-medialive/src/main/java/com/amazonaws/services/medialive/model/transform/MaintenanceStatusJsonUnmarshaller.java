@@ -43,26 +43,38 @@ public class MaintenanceStatusJsonUnmarshaller implements Unmarshaller<Maintenan
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("maintenanceDay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceStatus.setMaintenanceDay(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maintenanceDeadline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceStatus.setMaintenanceDeadline(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maintenanceScheduledDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceStatus.setMaintenanceScheduledDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maintenanceStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maintenanceStatus.setMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

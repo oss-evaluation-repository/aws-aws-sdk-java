@@ -44,28 +44,37 @@ public class InventoryItemJsonUnmarshaller implements Unmarshaller<InventoryItem
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryItem.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryItem.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CaptureTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryItem.setCaptureTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryItem.setContentHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryItem.setContent(new ListUnmarshaller<java.util.Map<String, String>>(new MapUnmarshaller<String, String>(context
                             .getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
@@ -73,9 +82,14 @@ public class InventoryItemJsonUnmarshaller implements Unmarshaller<InventoryItem
                     .unmarshall(context));
                 }
                 if (context.testExpression("Context", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryItem.setContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

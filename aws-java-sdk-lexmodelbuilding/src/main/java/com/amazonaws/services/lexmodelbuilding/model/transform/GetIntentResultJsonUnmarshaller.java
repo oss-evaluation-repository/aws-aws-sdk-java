@@ -43,90 +43,116 @@ public class GetIntentResultJsonUnmarshaller implements Unmarshaller<GetIntentRe
             return getIntentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setSlots(new ListUnmarshaller<Slot>(SlotJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sampleUtterances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("confirmationPrompt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setConfirmationPrompt(PromptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rejectionStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setRejectionStatement(StatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("followUpPrompt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setFollowUpPrompt(FollowUpPromptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("conclusionStatement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setConclusionStatement(StatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("dialogCodeHook", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setDialogCodeHook(CodeHookJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fulfillmentActivity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setFulfillmentActivity(FulfillmentActivityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("parentIntentSignature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setParentIntentSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("checksum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("kendraConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setKendraConfiguration(KendraConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setInputContexts(new ListUnmarshaller<InputContext>(InputContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("outputContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntentResult.setOutputContexts(new ListUnmarshaller<OutputContext>(OutputContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

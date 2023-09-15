@@ -43,121 +43,156 @@ public class DomainStatusJsonUnmarshaller implements Unmarshaller<DomainStatus, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setDomainId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setCreated(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Deleted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setDeleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Endpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Endpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setEndpoints(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Processing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UpgradeProcessing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setUpgradeProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setClusterConfig(ClusterConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EBSOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setEBSOptions(EBSOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AccessPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setAccessPolicies(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setSnapshotOptions(SnapshotOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VPCOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setVPCOptions(VPCDerivedInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CognitoOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setCognitoOptions(CognitoOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EncryptionAtRestOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setEncryptionAtRestOptions(EncryptionAtRestOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NodeToNodeEncryptionOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdvancedOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setAdvancedOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("LogPublishingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setLogPublishingOptions(new MapUnmarshaller<String, LogPublishingOption>(context.getUnmarshaller(String.class),
                             LogPublishingOptionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ServiceSoftwareOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setServiceSoftwareOptions(ServiceSoftwareOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DomainEndpointOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setDomainEndpointOptions(DomainEndpointOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdvancedSecurityOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setAdvancedSecurityOptions(AdvancedSecurityOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoTuneOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setAutoTuneOptions(AutoTuneOptionsOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChangeProgressDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setChangeProgressDetails(ChangeProgressDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OffPeakWindowOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setOffPeakWindowOptions(OffPeakWindowOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SoftwareUpdateOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainStatus.setSoftwareUpdateOptions(SoftwareUpdateOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

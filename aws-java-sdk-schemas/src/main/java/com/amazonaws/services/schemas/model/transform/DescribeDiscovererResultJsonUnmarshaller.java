@@ -43,39 +43,54 @@ public class DescribeDiscovererResultJsonUnmarshaller implements Unmarshaller<De
             return describeDiscovererResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscovererResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiscovererArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscovererResult.setDiscovererArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiscovererId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscovererResult.setDiscovererId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscovererResult.setSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscovererResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CrossAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscovererResult.setCrossAccount(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDiscovererResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

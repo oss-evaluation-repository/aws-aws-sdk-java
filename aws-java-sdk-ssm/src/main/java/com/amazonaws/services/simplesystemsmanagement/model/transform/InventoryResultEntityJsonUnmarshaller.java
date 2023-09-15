@@ -43,19 +43,29 @@ public class InventoryResultEntityJsonUnmarshaller implements Unmarshaller<Inven
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryResultEntity.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Data", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inventoryResultEntity.setData(new MapUnmarshaller<String, InventoryResultItem>(context.getUnmarshaller(String.class),
                             InventoryResultItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,36 +43,50 @@ public class LoRaWANDeviceMetadataJsonUnmarshaller implements Unmarshaller<LoRaW
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DevEui", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceMetadata.setDevEui(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceMetadata.setFPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceMetadata.setDataRate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Frequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceMetadata.setFrequency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceMetadata.setTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Gateways", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceMetadata.setGateways(new ListUnmarshaller<LoRaWANGatewayMetadata>(LoRaWANGatewayMetadataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

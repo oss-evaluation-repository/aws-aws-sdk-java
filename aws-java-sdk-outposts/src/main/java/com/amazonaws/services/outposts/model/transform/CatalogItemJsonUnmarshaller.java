@@ -43,44 +43,59 @@ public class CatalogItemJsonUnmarshaller implements Unmarshaller<CatalogItem, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CatalogItemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogItem.setCatalogItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ItemStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogItem.setItemStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EC2Capacities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogItem.setEC2Capacities(new ListUnmarshaller<EC2Capacity>(EC2CapacityJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PowerKva", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogItem.setPowerKva(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("WeightLbs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogItem.setWeightLbs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedUplinkGbps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogItem.setSupportedUplinkGbps(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportedStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     catalogItem.setSupportedStorage(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,67 @@ public class ProductJsonUnmarshaller implements Unmarshaller<Product, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProductArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     product.setProductArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     product.setProductName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompanyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     product.setCompanyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     product.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Categories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     product.setCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IntegrationTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     product.setIntegrationTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MarketplaceUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     product.setMarketplaceUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ActivationUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     product.setActivationUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductSubscriptionResourcePolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     product.setProductSubscriptionResourcePolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

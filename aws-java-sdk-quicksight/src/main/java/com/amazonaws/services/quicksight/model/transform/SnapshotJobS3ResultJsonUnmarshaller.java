@@ -43,24 +43,35 @@ public class SnapshotJobS3ResultJsonUnmarshaller implements Unmarshaller<Snapsho
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3DestinationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotJobS3Result.setS3DestinationConfiguration(SnapshotS3DestinationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotJobS3Result.setS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     snapshotJobS3Result.setErrorInfo(new ListUnmarshaller<SnapshotJobResultErrorInfo>(SnapshotJobResultErrorInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,88 +43,115 @@ public class LoRaWANDeviceProfileJsonUnmarshaller implements Unmarshaller<LoRaWA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SupportsClassB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setSupportsClassB(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ClassBTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setClassBTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PingSlotPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setPingSlotPeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PingSlotDr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setPingSlotDr(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PingSlotFreq", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setPingSlotFreq(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportsClassC", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setSupportsClassC(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ClassCTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setClassCTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MacVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setMacVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegParamsRevision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setRegParamsRevision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RxDelay1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setRxDelay1(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RxDrOffset1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setRxDrOffset1(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RxDataRate2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setRxDataRate2(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RxFreq2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setRxFreq2(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FactoryPresetFreqsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setFactoryPresetFreqsList(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MaxEirp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setMaxEirp(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxDutyCycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setMaxDutyCycle(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RfRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setRfRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportsJoin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setSupportsJoin(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Supports32BitFCnt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loRaWANDeviceProfile.setSupports32BitFCnt(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

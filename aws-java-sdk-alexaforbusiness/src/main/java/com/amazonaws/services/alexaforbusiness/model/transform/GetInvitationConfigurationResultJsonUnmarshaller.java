@@ -43,24 +43,35 @@ public class GetInvitationConfigurationResultJsonUnmarshaller implements Unmarsh
             return getInvitationConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OrganizationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getInvitationConfigurationResult.setOrganizationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getInvitationConfigurationResult.setContactEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateSkillIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getInvitationConfigurationResult.setPrivateSkillIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class BatchGetAssetPropertyAggregatesResultJsonUnmarshaller implements Un
             return batchGetAssetPropertyAggregatesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("errorEntries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesResult.setErrorEntries(new ListUnmarshaller<BatchGetAssetPropertyAggregatesErrorEntry>(
                             BatchGetAssetPropertyAggregatesErrorEntryJsonUnmarshaller.getInstance())
@@ -56,6 +61,7 @@ public class BatchGetAssetPropertyAggregatesResultJsonUnmarshaller implements Un
                     .unmarshall(context));
                 }
                 if (context.testExpression("successEntries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesResult.setSuccessEntries(new ListUnmarshaller<BatchGetAssetPropertyAggregatesSuccessEntry>(
                             BatchGetAssetPropertyAggregatesSuccessEntryJsonUnmarshaller.getInstance())
@@ -63,6 +69,7 @@ public class BatchGetAssetPropertyAggregatesResultJsonUnmarshaller implements Un
                     .unmarshall(context));
                 }
                 if (context.testExpression("skippedEntries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesResult.setSkippedEntries(new ListUnmarshaller<BatchGetAssetPropertyAggregatesSkippedEntry>(
                             BatchGetAssetPropertyAggregatesSkippedEntryJsonUnmarshaller.getInstance())
@@ -70,8 +77,13 @@ public class BatchGetAssetPropertyAggregatesResultJsonUnmarshaller implements Un
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchGetAssetPropertyAggregatesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

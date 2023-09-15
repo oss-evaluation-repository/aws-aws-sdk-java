@@ -43,42 +43,58 @@ public class GetDataSetDetailsResultJsonUnmarshaller implements Unmarshaller<Get
             return getDataSetDetailsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("blocksize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSetDetailsResult.setBlocksize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSetDetailsResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSetDetailsResult.setDataSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataSetOrg", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSetDetailsResult.setDataSetOrg(DatasetDetailOrgAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastReferencedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSetDetailsResult.setLastReferencedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSetDetailsResult.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSetDetailsResult.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recordLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDataSetDetailsResult.setRecordLength(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

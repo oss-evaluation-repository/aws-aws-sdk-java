@@ -43,22 +43,33 @@ public class WorkerLogDeliveryJsonUnmarshaller implements Unmarshaller<WorkerLog
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cloudWatchLogs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workerLogDelivery.setCloudWatchLogs(CloudWatchLogsLogDeliveryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("firehose", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workerLogDelivery.setFirehose(FirehoseLogDeliveryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workerLogDelivery.setS3(S3LogDeliveryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

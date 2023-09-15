@@ -43,37 +43,51 @@ public class PipelineDeclarationJsonUnmarshaller implements Unmarshaller<Pipelin
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDeclaration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDeclaration.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("artifactStore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDeclaration.setArtifactStore(ArtifactStoreJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("artifactStores", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDeclaration.setArtifactStores(new MapUnmarshaller<String, ArtifactStore>(context.getUnmarshaller(String.class),
                             ArtifactStoreJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("stages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDeclaration.setStages(new ListUnmarshaller<StageDeclaration>(StageDeclarationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDeclaration.setVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

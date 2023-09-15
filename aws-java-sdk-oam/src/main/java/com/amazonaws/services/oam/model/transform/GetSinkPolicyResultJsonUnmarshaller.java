@@ -43,22 +43,33 @@ public class GetSinkPolicyResultJsonUnmarshaller implements Unmarshaller<GetSink
             return getSinkPolicyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SinkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSinkPolicyResult.setSinkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SinkId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSinkPolicyResult.setSinkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Policy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSinkPolicyResult.setPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

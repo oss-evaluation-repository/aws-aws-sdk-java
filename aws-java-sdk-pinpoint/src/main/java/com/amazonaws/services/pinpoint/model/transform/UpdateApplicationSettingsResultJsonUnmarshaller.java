@@ -43,9 +43,13 @@ public class UpdateApplicationSettingsResultJsonUnmarshaller implements Unmarsha
             return updateApplicationSettingsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateApplicationSettingsResult.setApplicationSettingsResource(ApplicationSettingsResourceJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

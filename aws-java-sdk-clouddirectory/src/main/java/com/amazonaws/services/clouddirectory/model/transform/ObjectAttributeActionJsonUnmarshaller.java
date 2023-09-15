@@ -43,18 +43,28 @@ public class ObjectAttributeActionJsonUnmarshaller implements Unmarshaller<Objec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ObjectAttributeActionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     objectAttributeAction.setObjectAttributeActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ObjectAttributeUpdateValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     objectAttributeAction.setObjectAttributeUpdateValue(TypedAttributeValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

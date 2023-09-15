@@ -43,34 +43,48 @@ public class LexiconAttributesJsonUnmarshaller implements Unmarshaller<LexiconAt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Alphabet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexiconAttributes.setAlphabet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexiconAttributes.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexiconAttributes.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LexiconArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexiconAttributes.setLexiconArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LexemesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexiconAttributes.setLexemesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexiconAttributes.setSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

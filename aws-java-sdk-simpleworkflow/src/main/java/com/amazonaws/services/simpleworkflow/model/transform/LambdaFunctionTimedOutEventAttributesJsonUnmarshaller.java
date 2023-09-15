@@ -43,22 +43,33 @@ public class LambdaFunctionTimedOutEventAttributesJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("scheduledEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionTimedOutEventAttributes.setScheduledEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("startedEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionTimedOutEventAttributes.setStartedEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("timeoutType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaFunctionTimedOutEventAttributes.setTimeoutType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

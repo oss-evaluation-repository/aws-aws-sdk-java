@@ -43,34 +43,48 @@ public class DeploymentConfigInfoJsonUnmarshaller implements Unmarshaller<Deploy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentConfigId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentConfigInfo.setDeploymentConfigId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentConfigName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentConfigInfo.setDeploymentConfigName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minimumHealthyHosts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentConfigInfo.setMinimumHealthyHosts(MinimumHealthyHostsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentConfigInfo.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("computePlatform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentConfigInfo.setComputePlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trafficRoutingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deploymentConfigInfo.setTrafficRoutingConfig(TrafficRoutingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

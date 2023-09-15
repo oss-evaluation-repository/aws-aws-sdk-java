@@ -43,21 +43,31 @@ public class DescribeCreateCaseOptionsResultJsonUnmarshaller implements Unmarsha
             return describeCreateCaseOptionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("languageAvailability", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCreateCaseOptionsResult.setLanguageAvailability(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("communicationTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeCreateCaseOptionsResult.setCommunicationTypes(new ListUnmarshaller<CommunicationTypeOptions>(
                             CommunicationTypeOptionsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

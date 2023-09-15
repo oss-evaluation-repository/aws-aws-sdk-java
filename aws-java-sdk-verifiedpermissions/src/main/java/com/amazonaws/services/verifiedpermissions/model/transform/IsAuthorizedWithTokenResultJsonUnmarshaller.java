@@ -43,16 +43,22 @@ public class IsAuthorizedWithTokenResultJsonUnmarshaller implements Unmarshaller
             return isAuthorizedWithTokenResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("decision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     isAuthorizedWithTokenResult.setDecision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("determiningPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     isAuthorizedWithTokenResult.setDeterminingPolicies(new ListUnmarshaller<DeterminingPolicyItem>(DeterminingPolicyItemJsonUnmarshaller
                             .getInstance())
@@ -60,10 +66,15 @@ public class IsAuthorizedWithTokenResultJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     isAuthorizedWithTokenResult.setErrors(new ListUnmarshaller<EvaluationErrorItem>(EvaluationErrorItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

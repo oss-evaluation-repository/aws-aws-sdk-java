@@ -43,70 +43,91 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("availBlanking", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setAvailBlanking(AvailBlankingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("availConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setAvailConfiguration(AvailConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("blackoutSlate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setBlackoutSlate(BlackoutSlateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("captionDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setCaptionDescriptions(new ListUnmarshaller<CaptionDescription>(CaptionDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("featureActivations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setFeatureActivations(FeatureActivationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("globalConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setGlobalConfiguration(GlobalConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("motionGraphicsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setMotionGraphicsConfiguration(MotionGraphicsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nielsenConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setNielsenConfiguration(NielsenConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("outputGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("timecodeConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setTimecodeConfig(TimecodeConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("videoDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setVideoDescriptions(new ListUnmarshaller<VideoDescription>(VideoDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("thumbnailConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encoderSettings.setThumbnailConfiguration(ThumbnailConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

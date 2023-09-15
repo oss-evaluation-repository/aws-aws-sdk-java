@@ -43,24 +43,35 @@ public class ChartAxisLabelOptionsJsonUnmarshaller implements Unmarshaller<Chart
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Visibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     chartAxisLabelOptions.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SortIconVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     chartAxisLabelOptions.setSortIconVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AxisLabelOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     chartAxisLabelOptions.setAxisLabelOptions(new ListUnmarshaller<AxisLabelOptions>(AxisLabelOptionsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

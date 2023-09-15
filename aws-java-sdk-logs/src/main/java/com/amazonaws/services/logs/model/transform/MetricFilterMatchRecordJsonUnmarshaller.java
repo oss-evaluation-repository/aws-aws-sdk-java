@@ -43,23 +43,34 @@ public class MetricFilterMatchRecordJsonUnmarshaller implements Unmarshaller<Met
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricFilterMatchRecord.setEventNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("eventMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricFilterMatchRecord.setEventMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("extractedValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     metricFilterMatchRecord.setExtractedValues(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

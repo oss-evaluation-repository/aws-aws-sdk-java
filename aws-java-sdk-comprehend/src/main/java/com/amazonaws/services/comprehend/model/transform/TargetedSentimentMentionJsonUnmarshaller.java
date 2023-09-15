@@ -43,38 +43,53 @@ public class TargetedSentimentMentionJsonUnmarshaller implements Unmarshaller<Ta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetedSentimentMention.setScore(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetedSentimentMention.setGroupScore(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("Text", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetedSentimentMention.setText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetedSentimentMention.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MentionSentiment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetedSentimentMention.setMentionSentiment(MentionSentimentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BeginOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetedSentimentMention.setBeginOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetedSentimentMention.setEndOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

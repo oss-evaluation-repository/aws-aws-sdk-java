@@ -44,34 +44,46 @@ public class ZeppelinApplicationConfigurationDescriptionJsonUnmarshaller impleme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MonitoringConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zeppelinApplicationConfigurationDescription
                             .setMonitoringConfigurationDescription(ZeppelinMonitoringConfigurationDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CatalogConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zeppelinApplicationConfigurationDescription.setCatalogConfigurationDescription(CatalogConfigurationDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeployAsApplicationConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zeppelinApplicationConfigurationDescription
                             .setDeployAsApplicationConfigurationDescription(DeployAsApplicationConfigurationDescriptionJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
                 if (context.testExpression("CustomArtifactsConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     zeppelinApplicationConfigurationDescription
                             .setCustomArtifactsConfigurationDescription(new ListUnmarshaller<CustomArtifactConfigurationDescription>(
                                     CustomArtifactConfigurationDescriptionJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

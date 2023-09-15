@@ -43,26 +43,38 @@ public class ArtifactsConfigurationJsonUnmarshaller implements Unmarshaller<Arti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Audio", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConfiguration.setAudio(AudioArtifactsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Video", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConfiguration.setVideo(VideoArtifactsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Content", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConfiguration.setContent(ContentArtifactsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CompositedVideo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     artifactsConfiguration.setCompositedVideo(CompositedVideoArtifactsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class SimpleEmailJsonUnmarshaller implements Unmarshaller<SimpleEmail, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HtmlPart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simpleEmail.setHtmlPart(SimpleEmailPartJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Subject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simpleEmail.setSubject(SimpleEmailPartJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TextPart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     simpleEmail.setTextPart(SimpleEmailPartJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

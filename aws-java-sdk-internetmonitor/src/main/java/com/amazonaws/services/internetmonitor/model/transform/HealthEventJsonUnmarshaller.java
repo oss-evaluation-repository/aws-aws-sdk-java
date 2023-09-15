@@ -43,56 +43,75 @@ public class HealthEventJsonUnmarshaller implements Unmarshaller<HealthEvent, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setEventArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setStartedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("EndedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setEndedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ImpactedLocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setImpactedLocations(new ListUnmarshaller<ImpactedLocation>(ImpactedLocationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PercentOfTotalTrafficImpacted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setPercentOfTotalTrafficImpacted(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ImpactType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setImpactType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthScoreThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     healthEvent.setHealthScoreThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

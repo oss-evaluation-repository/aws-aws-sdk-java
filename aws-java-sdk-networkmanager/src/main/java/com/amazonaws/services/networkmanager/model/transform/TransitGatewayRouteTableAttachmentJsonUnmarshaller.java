@@ -43,22 +43,33 @@ public class TransitGatewayRouteTableAttachmentJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attachment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transitGatewayRouteTableAttachment.setAttachment(AttachmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PeeringId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transitGatewayRouteTableAttachment.setPeeringId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransitGatewayRouteTableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transitGatewayRouteTableAttachment.setTransitGatewayRouteTableArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

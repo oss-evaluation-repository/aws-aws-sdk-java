@@ -43,28 +43,37 @@ public class UpdateUsageResultJsonUnmarshaller implements Unmarshaller<UpdateUsa
             return updateUsageResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("usagePlanId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateUsageResult.setUsagePlanId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateUsageResult.setStartDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateUsageResult.setEndDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("position", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateUsageResult.setPosition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("values", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateUsageResult.setItems(new MapUnmarshaller<String, java.util.List<java.util.List<Long>>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<java.util.List<Long>>(new ListUnmarshaller<Long>(context.getUnmarshaller(Long.class))
@@ -72,6 +81,10 @@ public class UpdateUsageResultJsonUnmarshaller implements Unmarshaller<UpdateUsa
                             )
 
                     ).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

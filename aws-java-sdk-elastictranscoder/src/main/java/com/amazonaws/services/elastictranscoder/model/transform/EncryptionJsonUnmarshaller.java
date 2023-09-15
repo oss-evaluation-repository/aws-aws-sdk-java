@@ -43,26 +43,38 @@ public class EncryptionJsonUnmarshaller implements Unmarshaller<Encryption, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Mode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryption.setMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryption.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyMd5", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryption.setKeyMd5(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitializationVector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryption.setInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

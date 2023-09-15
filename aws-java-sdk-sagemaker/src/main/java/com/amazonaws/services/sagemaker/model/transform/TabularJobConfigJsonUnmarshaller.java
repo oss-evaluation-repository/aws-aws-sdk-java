@@ -43,42 +43,58 @@ public class TabularJobConfigJsonUnmarshaller implements Unmarshaller<TabularJob
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CandidateGenerationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tabularJobConfig.setCandidateGenerationConfig(CandidateGenerationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CompletionCriteria", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tabularJobConfig.setCompletionCriteria(AutoMLJobCompletionCriteriaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FeatureSpecificationS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tabularJobConfig.setFeatureSpecificationS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Mode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tabularJobConfig.setMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenerateCandidateDefinitionsOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tabularJobConfig.setGenerateCandidateDefinitionsOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ProblemType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tabularJobConfig.setProblemType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetAttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tabularJobConfig.setTargetAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SampleWeightAttributeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tabularJobConfig.setSampleWeightAttributeName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

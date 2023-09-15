@@ -43,26 +43,38 @@ public class ClassifierJsonUnmarshaller implements Unmarshaller<Classifier, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GrokClassifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifier.setGrokClassifier(GrokClassifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("XMLClassifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifier.setXMLClassifier(XMLClassifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JsonClassifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifier.setJsonClassifier(JsonClassifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CsvClassifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifier.setCsvClassifier(CsvClassifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

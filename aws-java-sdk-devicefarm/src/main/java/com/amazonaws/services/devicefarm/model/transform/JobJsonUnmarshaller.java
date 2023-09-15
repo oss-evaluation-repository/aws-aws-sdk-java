@@ -43,70 +43,93 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("result", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("started", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setStarted(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setStopped(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setCounters(CountersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("device", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setDevice(DeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("instanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setDeviceMinutes(DeviceMinutesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("videoEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setVideoEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("videoCapture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     job.setVideoCapture(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

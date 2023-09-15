@@ -43,46 +43,63 @@ public class TaskExecutionResultDetailJsonUnmarshaller implements Unmarshaller<T
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PrepareDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskExecutionResultDetail.setPrepareDuration(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("PrepareStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskExecutionResultDetail.setPrepareStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskExecutionResultDetail.setTotalDuration(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TransferDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskExecutionResultDetail.setTransferDuration(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TransferStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskExecutionResultDetail.setTransferStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VerifyDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskExecutionResultDetail.setVerifyDuration(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("VerifyStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskExecutionResultDetail.setVerifyStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskExecutionResultDetail.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskExecutionResultDetail.setErrorDetail(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

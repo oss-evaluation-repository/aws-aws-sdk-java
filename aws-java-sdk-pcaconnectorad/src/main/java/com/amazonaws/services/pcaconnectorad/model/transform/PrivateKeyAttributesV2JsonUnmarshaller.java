@@ -43,24 +43,35 @@ public class PrivateKeyAttributesV2JsonUnmarshaller implements Unmarshaller<Priv
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CryptoProviders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyAttributesV2.setCryptoProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("KeySpec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyAttributesV2.setKeySpec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinimalKeyLength", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     privateKeyAttributesV2.setMinimalKeyLength(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

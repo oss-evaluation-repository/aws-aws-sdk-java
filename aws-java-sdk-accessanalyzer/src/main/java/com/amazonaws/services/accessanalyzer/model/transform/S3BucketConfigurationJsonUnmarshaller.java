@@ -43,16 +43,22 @@ public class S3BucketConfigurationJsonUnmarshaller implements Unmarshaller<S3Buc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bucketPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketConfiguration.setBucketPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketAclGrants", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketConfiguration.setBucketAclGrants(new ListUnmarshaller<S3BucketAclGrantConfiguration>(S3BucketAclGrantConfigurationJsonUnmarshaller
                             .getInstance())
@@ -60,13 +66,19 @@ public class S3BucketConfigurationJsonUnmarshaller implements Unmarshaller<S3Buc
                     .unmarshall(context));
                 }
                 if (context.testExpression("bucketPublicAccessBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketConfiguration.setBucketPublicAccessBlock(S3PublicAccessBlockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("accessPoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3BucketConfiguration.setAccessPoints(new MapUnmarshaller<String, S3AccessPointConfiguration>(context.getUnmarshaller(String.class),
                             S3AccessPointConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

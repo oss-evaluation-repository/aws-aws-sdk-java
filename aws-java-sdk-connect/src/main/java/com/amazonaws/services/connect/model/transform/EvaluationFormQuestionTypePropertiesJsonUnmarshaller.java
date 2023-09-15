@@ -43,19 +43,29 @@ public class EvaluationFormQuestionTypePropertiesJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Numeric", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormQuestionTypeProperties.setNumeric(EvaluationFormNumericQuestionPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SingleSelect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     evaluationFormQuestionTypeProperties.setSingleSelect(EvaluationFormSingleSelectQuestionPropertiesJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

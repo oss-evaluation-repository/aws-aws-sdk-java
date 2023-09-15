@@ -43,55 +43,73 @@ public class TLSInspectionConfigurationResponseJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TLSInspectionConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tLSInspectionConfigurationResponse.setTLSInspectionConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TLSInspectionConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tLSInspectionConfigurationResponse.setTLSInspectionConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TLSInspectionConfigurationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tLSInspectionConfigurationResponse.setTLSInspectionConfigurationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TLSInspectionConfigurationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tLSInspectionConfigurationResponse.setTLSInspectionConfigurationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tLSInspectionConfigurationResponse.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tLSInspectionConfigurationResponse.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tLSInspectionConfigurationResponse.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NumberOfAssociations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tLSInspectionConfigurationResponse.setNumberOfAssociations(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tLSInspectionConfigurationResponse.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Certificates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tLSInspectionConfigurationResponse.setCertificates(new ListUnmarshaller<TlsCertificateData>(TlsCertificateDataJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

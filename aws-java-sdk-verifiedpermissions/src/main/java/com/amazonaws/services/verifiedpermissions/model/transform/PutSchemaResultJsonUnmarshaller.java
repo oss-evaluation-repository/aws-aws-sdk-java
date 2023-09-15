@@ -43,28 +43,40 @@ public class PutSchemaResultJsonUnmarshaller implements Unmarshaller<PutSchemaRe
             return putSchemaResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyStoreId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSchemaResult.setPolicyStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSchemaResult.setNamespaces(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSchemaResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSchemaResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

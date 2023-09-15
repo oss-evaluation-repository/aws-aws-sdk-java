@@ -43,29 +43,41 @@ public class ListResolverQueryLogConfigsResultJsonUnmarshaller implements Unmars
             return listResolverQueryLogConfigsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResolverQueryLogConfigsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResolverQueryLogConfigsResult.setTotalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalFilteredCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResolverQueryLogConfigsResult.setTotalFilteredCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ResolverQueryLogConfigs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listResolverQueryLogConfigsResult.setResolverQueryLogConfigs(new ListUnmarshaller<ResolverQueryLogConfig>(
                             ResolverQueryLogConfigJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

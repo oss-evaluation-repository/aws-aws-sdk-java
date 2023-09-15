@@ -43,17 +43,23 @@ public class GetApplicationComponentDetailsResultJsonUnmarshaller implements Unm
             return getApplicationComponentDetailsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationComponentDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationComponentDetailsResult.setApplicationComponentDetail(ApplicationComponentDetailJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("associatedApplications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationComponentDetailsResult.setAssociatedApplications(new ListUnmarshaller<AssociatedApplication>(
                             AssociatedApplicationJsonUnmarshaller.getInstance())
@@ -61,14 +67,20 @@ public class GetApplicationComponentDetailsResultJsonUnmarshaller implements Unm
                     .unmarshall(context));
                 }
                 if (context.testExpression("associatedServerIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationComponentDetailsResult.setAssociatedServerIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("moreApplicationResource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApplicationComponentDetailsResult.setMoreApplicationResource(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

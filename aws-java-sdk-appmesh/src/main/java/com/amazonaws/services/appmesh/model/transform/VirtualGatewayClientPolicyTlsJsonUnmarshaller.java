@@ -43,28 +43,40 @@ public class VirtualGatewayClientPolicyTlsJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("certificate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayClientPolicyTls.setCertificate(VirtualGatewayClientTlsCertificateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("enforce", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayClientPolicyTls.setEnforce(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayClientPolicyTls.setPorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("validation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayClientPolicyTls.setValidation(VirtualGatewayTlsValidationContextJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

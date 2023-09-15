@@ -44,35 +44,49 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributesJsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signalExternalWorkflowExecutionInitiatedEventAttributes.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("runId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signalExternalWorkflowExecutionInitiatedEventAttributes.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("signalName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signalExternalWorkflowExecutionInitiatedEventAttributes.setSignalName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signalExternalWorkflowExecutionInitiatedEventAttributes.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("decisionTaskCompletedEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signalExternalWorkflowExecutionInitiatedEventAttributes.setDecisionTaskCompletedEventId(context.getUnmarshaller(Long.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("control", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signalExternalWorkflowExecutionInitiatedEventAttributes.setControl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

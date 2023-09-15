@@ -43,44 +43,57 @@ public class InstanceFleetJsonUnmarshaller implements Unmarshaller<InstanceFleet
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setStatus(InstanceFleetStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InstanceFleetType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setInstanceFleetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetOnDemandCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setTargetOnDemandCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetSpotCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setTargetSpotCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedOnDemandCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setProvisionedOnDemandCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedSpotCapacity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setProvisionedSpotCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceTypeSpecifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setInstanceTypeSpecifications(new ListUnmarshaller<InstanceTypeSpecification>(InstanceTypeSpecificationJsonUnmarshaller
                             .getInstance())
@@ -88,12 +101,18 @@ public class InstanceFleetJsonUnmarshaller implements Unmarshaller<InstanceFleet
                     .unmarshall(context));
                 }
                 if (context.testExpression("LaunchSpecifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setLaunchSpecifications(InstanceFleetProvisioningSpecificationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResizeSpecifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceFleet.setResizeSpecifications(InstanceFleetResizingSpecificationsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,56 +43,75 @@ public class GetHealthEventResultJsonUnmarshaller implements Unmarshaller<GetHea
             return getHealthEventResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setEventArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setStartedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("EndedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setEndedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("ImpactedLocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setImpactedLocations(new ListUnmarshaller<ImpactedLocation>(ImpactedLocationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PercentOfTotalTrafficImpacted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setPercentOfTotalTrafficImpacted(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ImpactType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setImpactType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HealthScoreThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getHealthEventResult.setHealthScoreThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

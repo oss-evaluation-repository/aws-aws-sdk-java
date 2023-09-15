@@ -43,30 +43,43 @@ public class NodeCountsJsonUnmarshaller implements Unmarshaller<NodeCounts, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("totalNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeCounts.setTotalNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalBranches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeCounts.setTotalBranches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalSensors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeCounts.setTotalSensors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeCounts.setTotalAttributes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalActuators", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeCounts.setTotalActuators(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

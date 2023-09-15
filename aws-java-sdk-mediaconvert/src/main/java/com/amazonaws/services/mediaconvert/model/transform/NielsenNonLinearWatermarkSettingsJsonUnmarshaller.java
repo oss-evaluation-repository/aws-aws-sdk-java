@@ -43,54 +43,73 @@ public class NielsenNonLinearWatermarkSettingsJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeWatermarkProcess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setActiveWatermarkProcess(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("adiFilename", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setAdiFilename(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setAssetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setAssetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cbetSourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setCbetSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("episodeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setEpisodeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadataDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setMetadataDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setSourceId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceWatermarkStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setSourceWatermarkStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ticServerUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setTicServerUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uniqueTicPerAudioTrack", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nielsenNonLinearWatermarkSettings.setUniqueTicPerAudioTrack(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

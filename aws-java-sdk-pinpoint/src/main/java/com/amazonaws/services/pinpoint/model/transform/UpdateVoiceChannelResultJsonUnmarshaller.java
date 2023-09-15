@@ -43,9 +43,13 @@ public class UpdateVoiceChannelResultJsonUnmarshaller implements Unmarshaller<Up
             return updateVoiceChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateVoiceChannelResult.setVoiceChannelResponse(VoiceChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

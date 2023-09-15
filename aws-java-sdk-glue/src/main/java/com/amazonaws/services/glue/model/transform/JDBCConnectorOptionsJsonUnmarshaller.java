@@ -43,45 +43,61 @@ public class JDBCConnectorOptionsJsonUnmarshaller implements Unmarshaller<JDBCCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilterPredicate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorOptions.setFilterPredicate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartitionColumn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorOptions.setPartitionColumn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LowerBound", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorOptions.setLowerBound(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("UpperBound", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorOptions.setUpperBound(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumPartitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorOptions.setNumPartitions(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("JobBookmarkKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorOptions.setJobBookmarkKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("JobBookmarkKeysSortOrder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorOptions.setJobBookmarkKeysSortOrder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataTypeMapping", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jDBCConnectorOptions.setDataTypeMapping(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

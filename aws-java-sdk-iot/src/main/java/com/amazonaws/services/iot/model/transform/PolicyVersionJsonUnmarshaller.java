@@ -43,22 +43,33 @@ public class PolicyVersionJsonUnmarshaller implements Unmarshaller<PolicyVersion
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("versionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyVersion.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isDefaultVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyVersion.setIsDefaultVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("createDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     policyVersion.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

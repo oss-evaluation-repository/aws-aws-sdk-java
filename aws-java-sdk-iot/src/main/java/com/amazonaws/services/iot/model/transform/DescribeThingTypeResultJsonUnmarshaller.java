@@ -43,30 +43,43 @@ public class DescribeThingTypeResultJsonUnmarshaller implements Unmarshaller<Des
             return describeThingTypeResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("thingTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingTypeResult.setThingTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingTypeResult.setThingTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingTypeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingTypeResult.setThingTypeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingTypeProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingTypeResult.setThingTypeProperties(ThingTypePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("thingTypeMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeThingTypeResult.setThingTypeMetadata(ThingTypeMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

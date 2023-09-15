@@ -43,34 +43,48 @@ public class JobExecutionSummaryJsonUnmarshaller implements Unmarshaller<JobExec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecutionSummary.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queuedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecutionSummary.setQueuedAt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecutionSummary.setStartedAt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecutionSummary.setLastUpdatedAt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("versionNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecutionSummary.setVersionNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("executionNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobExecutionSummary.setExecutionNumber(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -44,33 +44,46 @@ public class AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsJson
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BlockDurationMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails.setBlockDurationMinutes(context.getUnmarshaller(Integer.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("InstanceInterruptionBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails.setInstanceInterruptionBehavior(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("MaxPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails.setMaxPrice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SpotInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails.setSpotInstanceType(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("ValidUntil", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails.setValidUntil(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

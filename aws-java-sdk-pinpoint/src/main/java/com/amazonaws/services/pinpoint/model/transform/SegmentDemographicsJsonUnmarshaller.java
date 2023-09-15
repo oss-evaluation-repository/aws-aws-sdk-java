@@ -43,34 +43,48 @@ public class SegmentDemographicsJsonUnmarshaller implements Unmarshaller<Segment
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AppVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDemographics.setAppVersion(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Channel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDemographics.setChannel(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeviceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDemographics.setDeviceType(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Make", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDemographics.setMake(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDemographics.setModel(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     segmentDemographics.setPlatform(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

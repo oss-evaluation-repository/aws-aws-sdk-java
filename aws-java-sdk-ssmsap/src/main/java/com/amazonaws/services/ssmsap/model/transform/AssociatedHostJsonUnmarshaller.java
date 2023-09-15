@@ -43,22 +43,33 @@ public class AssociatedHostJsonUnmarshaller implements Unmarshaller<AssociatedHo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Hostname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associatedHost.setHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associatedHost.setEc2InstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OsVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associatedHost.setOsVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

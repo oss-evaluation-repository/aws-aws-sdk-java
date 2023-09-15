@@ -43,54 +43,72 @@ public class StreamConfigurationJsonUnmarshaller implements Unmarshaller<StreamC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("automaticTerminationMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamConfiguration.setAutomaticTerminationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clipboardMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamConfiguration.setClipboardMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ec2InstanceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamConfiguration.setEc2InstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("maxSessionLengthInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamConfiguration.setMaxSessionLengthInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxStoppedSessionLengthInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamConfiguration.setMaxStoppedSessionLengthInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("sessionBackup", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamConfiguration.setSessionBackup(StreamConfigurationSessionBackupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sessionPersistenceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamConfiguration.setSessionPersistenceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sessionStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamConfiguration.setSessionStorage(StreamConfigurationSessionStorageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("streamingImageIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamConfiguration.setStreamingImageIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("volumeConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     streamConfiguration.setVolumeConfiguration(VolumeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class SubDomainJsonUnmarshaller implements Unmarshaller<SubDomain, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("subDomainSetting", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subDomain.setSubDomainSetting(SubDomainSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("verified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subDomain.setVerified(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("dnsRecord", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subDomain.setDnsRecord(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

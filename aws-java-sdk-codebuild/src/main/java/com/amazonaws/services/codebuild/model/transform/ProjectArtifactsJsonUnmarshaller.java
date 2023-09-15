@@ -43,50 +43,68 @@ public class ProjectArtifactsJsonUnmarshaller implements Unmarshaller<ProjectArt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectArtifacts.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectArtifacts.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectArtifacts.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespaceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectArtifacts.setNamespaceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectArtifacts.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("packaging", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectArtifacts.setPackaging(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("overrideArtifactName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectArtifacts.setOverrideArtifactName(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionDisabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectArtifacts.setEncryptionDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("artifactIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectArtifacts.setArtifactIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bucketOwnerAccess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectArtifacts.setBucketOwnerAccess(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

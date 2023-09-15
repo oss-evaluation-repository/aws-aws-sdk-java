@@ -43,47 +43,64 @@ public class AssistantDataJsonUnmarshaller implements Unmarshaller<AssistantData
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assistantArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantData.setAssistantArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assistantId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantData.setAssistantId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantData.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("integrationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantData.setIntegrationConfiguration(AssistantIntegrationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantData.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serverSideEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantData.setServerSideEncryptionConfiguration(ServerSideEncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantData.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantData.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assistantData.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,30 @@ public class CustomRoutingListenerJsonUnmarshaller implements Unmarshaller<Custo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ListenerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingListener.setListenerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PortRanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customRoutingListener.setPortRanges(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

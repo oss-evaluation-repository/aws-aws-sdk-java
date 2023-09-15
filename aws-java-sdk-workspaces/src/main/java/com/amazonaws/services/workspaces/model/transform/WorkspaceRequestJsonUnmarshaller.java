@@ -43,44 +43,60 @@ public class WorkspaceRequestJsonUnmarshaller implements Unmarshaller<WorkspaceR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceRequest.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceRequest.setUserName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BundleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceRequest.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeEncryptionKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceRequest.setVolumeEncryptionKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserVolumeEncryptionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceRequest.setUserVolumeEncryptionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RootVolumeEncryptionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceRequest.setRootVolumeEncryptionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkspaceProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceRequest.setWorkspaceProperties(WorkspacePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceRequest.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

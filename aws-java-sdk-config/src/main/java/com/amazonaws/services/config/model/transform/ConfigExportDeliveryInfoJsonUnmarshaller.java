@@ -43,34 +43,48 @@ public class ConfigExportDeliveryInfoJsonUnmarshaller implements Unmarshaller<Co
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lastStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configExportDeliveryInfo.setLastStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configExportDeliveryInfo.setLastErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configExportDeliveryInfo.setLastErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastAttemptTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configExportDeliveryInfo.setLastAttemptTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastSuccessfulTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configExportDeliveryInfo.setLastSuccessfulTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("nextDeliveryTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configExportDeliveryInfo.setNextDeliveryTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

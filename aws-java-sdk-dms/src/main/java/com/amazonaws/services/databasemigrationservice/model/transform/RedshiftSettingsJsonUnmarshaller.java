@@ -43,134 +43,173 @@ public class RedshiftSettingsJsonUnmarshaller implements Unmarshaller<RedshiftSe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AcceptAnyDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setAcceptAnyDate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AfterConnectScript", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setAfterConnectScript(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BucketFolder", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setBucketFolder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CaseSensitiveNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setCaseSensitiveNames(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CompUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setCompUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setConnectionTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DateFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setDateFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmptyAsNull", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setEmptyAsNull(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExplicitIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setExplicitIds(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("FileTransferUploadStreams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setFileTransferUploadStreams(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LoadTimeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setLoadTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxFileSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setMaxFileSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RemoveQuotes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setRemoveQuotes(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplaceInvalidChars", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setReplaceInvalidChars(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplaceChars", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setReplaceChars(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setServiceAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerSideEncryptionKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setServerSideEncryptionKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setTimeFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrimBlanks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setTrimBlanks(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TruncateColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setTruncateColumns(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WriteBufferSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setWriteBufferSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setSecretsManagerAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerSecretId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MapBooleanAsBoolean", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     redshiftSettings.setMapBooleanAsBoolean(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

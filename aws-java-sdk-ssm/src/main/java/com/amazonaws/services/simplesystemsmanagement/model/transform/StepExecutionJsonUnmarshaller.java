@@ -43,53 +43,68 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StepName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setStepName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setTimeoutSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("OnFailure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setOnFailure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxAttempts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setMaxAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setExecutionStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutionEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setExecutionEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StepStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setStepStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResponseCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setResponseCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setInputs(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Outputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setOutputs(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -97,22 +112,27 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
                     ).unmarshall(context));
                 }
                 if (context.testExpression("Response", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setResponse(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setFailureDetails(FailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StepExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setStepExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OverriddenParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setOverriddenParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -120,38 +140,49 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
                     ).unmarshall(context));
                 }
                 if (context.testExpression("IsEnd", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setIsEnd(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NextStep", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setNextStep(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsCritical", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setIsCritical(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidNextSteps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setValidNextSteps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TargetLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setTargetLocation(TargetLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TriggeredAlarms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stepExecution.setTriggeredAlarms(new ListUnmarshaller<AlarmStateInformation>(AlarmStateInformationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

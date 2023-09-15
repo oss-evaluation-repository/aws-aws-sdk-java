@@ -43,22 +43,33 @@ public class FilesLimitJsonUnmarshaller implements Unmarshaller<FilesLimit, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MaxFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filesLimit.setMaxFiles(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OrderedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filesLimit.setOrderedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Order", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filesLimit.setOrder(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -45,7 +45,7 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
     private String inferenceSchedulerNameBeginsWith;
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler to be listed.
+     * The name of the machine learning model used by the inference scheduler to be listed.
      * </p>
      */
     private String modelName;
@@ -178,11 +178,11 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler to be listed.
+     * The name of the machine learning model used by the inference scheduler to be listed.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model used by the inference scheduler to be listed.
+     *        The name of the machine learning model used by the inference scheduler to be listed.
      */
 
     public void setModelName(String modelName) {
@@ -191,10 +191,10 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler to be listed.
+     * The name of the machine learning model used by the inference scheduler to be listed.
      * </p>
      * 
-     * @return The name of the ML model used by the inference scheduler to be listed.
+     * @return The name of the machine learning model used by the inference scheduler to be listed.
      */
 
     public String getModelName() {
@@ -203,11 +203,11 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler to be listed.
+     * The name of the machine learning model used by the inference scheduler to be listed.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model used by the inference scheduler to be listed.
+     *        The name of the machine learning model used by the inference scheduler to be listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,35 +43,48 @@ public class GetSessionResultJsonUnmarshaller implements Unmarshaller<GetSession
             return getSessionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("recentIntentSummaryView", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setRecentIntentSummaryView(new ListUnmarshaller<IntentSummary>(IntentSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sessionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setSessionAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("sessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dialogAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setDialogAction(DialogActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activeContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSessionResult.setActiveContexts(new ListUnmarshaller<ActiveContext>(ActiveContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

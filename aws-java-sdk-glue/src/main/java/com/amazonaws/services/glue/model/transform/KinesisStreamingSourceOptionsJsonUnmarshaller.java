@@ -43,94 +43,123 @@ public class KinesisStreamingSourceOptionsJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndpointUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setEndpointUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Classification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setClassification(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Delimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartingPosition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setStartingPosition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxFetchTimeInMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setMaxFetchTimeInMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxFetchRecordsPerShard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setMaxFetchRecordsPerShard(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxRecordPerRead", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setMaxRecordPerRead(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AddIdleTimeBetweenReads", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setAddIdleTimeBetweenReads(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IdleTimeBetweenReadsInMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setIdleTimeBetweenReadsInMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DescribeShardInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setDescribeShardInterval(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setNumRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RetryIntervalMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setRetryIntervalMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxRetryIntervalMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setMaxRetryIntervalMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AvoidEmptyBatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setAvoidEmptyBatches(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleSessionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setRoleSessionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AddRecordTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setAddRecordTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmitConsumerLagMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setEmitConsumerLagMetrics(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartingTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisStreamingSourceOptions.setStartingTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

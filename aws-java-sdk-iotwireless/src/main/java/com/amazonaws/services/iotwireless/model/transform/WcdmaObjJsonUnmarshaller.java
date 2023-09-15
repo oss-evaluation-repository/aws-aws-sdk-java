@@ -43,44 +43,60 @@ public class WcdmaObjJsonUnmarshaller implements Unmarshaller<WcdmaObj, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Mcc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wcdmaObj.setMcc(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Mnc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wcdmaObj.setMnc(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Lac", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wcdmaObj.setLac(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("UtranCid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wcdmaObj.setUtranCid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WcdmaLocalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wcdmaObj.setWcdmaLocalId(WcdmaLocalIdJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Rscp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wcdmaObj.setRscp(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PathLoss", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wcdmaObj.setPathLoss(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WcdmaNmr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     wcdmaObj.setWcdmaNmr(new ListUnmarshaller<WcdmaNmrObj>(WcdmaNmrObjJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

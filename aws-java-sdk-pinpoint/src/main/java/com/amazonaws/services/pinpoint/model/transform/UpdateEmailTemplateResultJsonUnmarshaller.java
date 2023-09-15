@@ -43,9 +43,13 @@ public class UpdateEmailTemplateResultJsonUnmarshaller implements Unmarshaller<U
             return updateEmailTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateEmailTemplateResult.setMessageBody(MessageBodyJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

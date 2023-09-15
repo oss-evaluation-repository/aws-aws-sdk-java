@@ -43,22 +43,33 @@ public class VersionInfoJsonUnmarshaller implements Unmarshaller<VersionInfo, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     versionInfo.setAgentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     versionInfo.setAgentHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dockerVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     versionInfo.setDockerVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

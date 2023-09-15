@@ -43,22 +43,33 @@ public class DescribeIndexResultJsonUnmarshaller implements Unmarshaller<Describ
             return describeIndexResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("indexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeIndexResult.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("indexStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeIndexResult.setIndexStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("schema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeIndexResult.setSchema(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

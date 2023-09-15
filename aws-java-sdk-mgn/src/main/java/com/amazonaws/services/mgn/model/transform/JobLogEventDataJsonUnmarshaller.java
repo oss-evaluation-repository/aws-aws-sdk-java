@@ -43,26 +43,38 @@ public class JobLogEventDataJsonUnmarshaller implements Unmarshaller<JobLogEvent
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("conversionServerID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobLogEventData.setConversionServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rawError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobLogEventData.setRawError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobLogEventData.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetInstanceID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobLogEventData.setTargetInstanceID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

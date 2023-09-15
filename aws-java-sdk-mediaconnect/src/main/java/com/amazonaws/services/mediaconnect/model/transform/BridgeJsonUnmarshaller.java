@@ -43,56 +43,74 @@ public class BridgeJsonUnmarshaller implements Unmarshaller<Bridge, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bridgeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridge.setBridgeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bridgeMessages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridge.setBridgeMessages(new ListUnmarshaller<MessageDetail>(MessageDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("bridgeState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridge.setBridgeState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("egressGatewayBridge", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridge.setEgressGatewayBridge(EgressGatewayBridgeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ingressGatewayBridge", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridge.setIngressGatewayBridge(IngressGatewayBridgeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridge.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridge.setOutputs(new ListUnmarshaller<BridgeOutput>(BridgeOutputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("placementArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridge.setPlacementArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceFailoverConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridge.setSourceFailoverConfig(FailoverConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     bridge.setSources(new ListUnmarshaller<BridgeSource>(BridgeSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

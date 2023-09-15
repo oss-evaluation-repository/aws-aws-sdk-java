@@ -43,22 +43,33 @@ public class GreengrassOutputDetailsJsonUnmarshaller implements Unmarshaller<Gre
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComponentVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassOutputDetails.setComponentVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComponentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassOutputDetails.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComponentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     greengrassOutputDetails.setComponentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

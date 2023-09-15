@@ -43,44 +43,60 @@ public class AwsStepFunctionStateMachineDetailsJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsStepFunctionStateMachineDetails.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoggingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsStepFunctionStateMachineDetails.setLoggingConfiguration(AwsStepFunctionStateMachineLoggingConfigurationDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsStepFunctionStateMachineDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsStepFunctionStateMachineDetails.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateMachineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsStepFunctionStateMachineDetails.setStateMachineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsStepFunctionStateMachineDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TracingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsStepFunctionStateMachineDetails.setTracingConfiguration(AwsStepFunctionStateMachineTracingConfigurationDetailsJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsStepFunctionStateMachineDetails.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

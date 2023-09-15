@@ -43,44 +43,59 @@ public class BrokerNodeGroupInfoJsonUnmarshaller implements Unmarshaller<BrokerN
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("brokerAZDistribution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeGroupInfo.setBrokerAZDistribution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientSubnets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeGroupInfo.setClientSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeGroupInfo.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeGroupInfo.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("storageInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeGroupInfo.setStorageInfo(StorageInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("connectivityInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeGroupInfo.setConnectivityInfo(ConnectivityInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("zoneIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeGroupInfo.setZoneIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

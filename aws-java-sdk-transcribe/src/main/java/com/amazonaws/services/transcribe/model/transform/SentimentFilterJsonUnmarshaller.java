@@ -43,32 +43,45 @@ public class SentimentFilterJsonUnmarshaller implements Unmarshaller<SentimentFi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Sentiments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentFilter.setSentiments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AbsoluteTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentFilter.setAbsoluteTimeRange(AbsoluteTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RelativeTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentFilter.setRelativeTimeRange(RelativeTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ParticipantRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentFilter.setParticipantRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Negate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sentimentFilter.setNegate(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

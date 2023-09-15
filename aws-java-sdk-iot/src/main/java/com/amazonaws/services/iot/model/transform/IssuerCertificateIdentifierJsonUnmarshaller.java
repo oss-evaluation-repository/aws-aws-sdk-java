@@ -43,22 +43,33 @@ public class IssuerCertificateIdentifierJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("issuerCertificateSubject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     issuerCertificateIdentifier.setIssuerCertificateSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("issuerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     issuerCertificateIdentifier.setIssuerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("issuerCertificateSerialNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     issuerCertificateIdentifier.setIssuerCertificateSerialNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class InputUpdateJsonUnmarshaller implements Unmarshaller<InputUpdate, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InputId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputUpdate.setInputId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NamePrefixUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputUpdate.setNamePrefixUpdate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputProcessingConfigurationUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputUpdate.setInputProcessingConfigurationUpdate(InputProcessingConfigurationUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisStreamsInputUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputUpdate.setKinesisStreamsInputUpdate(KinesisStreamsInputUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisFirehoseInputUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputUpdate.setKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputSchemaUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputUpdate.setInputSchemaUpdate(InputSchemaUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InputParallelismUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputUpdate.setInputParallelismUpdate(InputParallelismUpdateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,28 +43,40 @@ public class ThreatDetectedByNameJsonUnmarshaller implements Unmarshaller<Threat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("itemCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     threatDetectedByName.setItemCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("uniqueThreatNameCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     threatDetectedByName.setUniqueThreatNameCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shortened", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     threatDetectedByName.setShortened(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("threatNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     threatDetectedByName.setThreatNames(new ListUnmarshaller<ScanThreatName>(ScanThreatNameJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

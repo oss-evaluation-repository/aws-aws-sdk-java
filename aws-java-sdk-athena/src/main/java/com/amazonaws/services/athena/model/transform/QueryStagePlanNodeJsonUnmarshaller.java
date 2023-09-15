@@ -43,30 +43,42 @@ public class QueryStagePlanNodeJsonUnmarshaller implements Unmarshaller<QuerySta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStagePlanNode.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Identifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStagePlanNode.setIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Children", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStagePlanNode.setChildren(new ListUnmarshaller<QueryStagePlanNode>(QueryStagePlanNodeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RemoteSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryStagePlanNode.setRemoteSources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

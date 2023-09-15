@@ -43,26 +43,38 @@ public class GeospatialCoordinateBoundsJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("North", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialCoordinateBounds.setNorth(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("South", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialCoordinateBounds.setSouth(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("West", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialCoordinateBounds.setWest(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("East", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialCoordinateBounds.setEast(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

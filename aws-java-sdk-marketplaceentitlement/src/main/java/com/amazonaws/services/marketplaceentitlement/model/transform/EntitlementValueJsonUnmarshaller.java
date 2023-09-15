@@ -43,26 +43,38 @@ public class EntitlementValueJsonUnmarshaller implements Unmarshaller<Entitlemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IntegerValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entitlementValue.setIntegerValue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DoubleValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entitlementValue.setDoubleValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("BooleanValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entitlementValue.setBooleanValue(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("StringValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     entitlementValue.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

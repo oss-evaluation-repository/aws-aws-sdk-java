@@ -44,46 +44,63 @@ public class ImportAssetFromApiGatewayApiRequestDetailsJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApiDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importAssetFromApiGatewayApiRequestDetails.setApiDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importAssetFromApiGatewayApiRequestDetails.setApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importAssetFromApiGatewayApiRequestDetails.setApiKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importAssetFromApiGatewayApiRequestDetails.setApiName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApiSpecificationMd5Hash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importAssetFromApiGatewayApiRequestDetails.setApiSpecificationMd5Hash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importAssetFromApiGatewayApiRequestDetails.setDataSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProtocolType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importAssetFromApiGatewayApiRequestDetails.setProtocolType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RevisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importAssetFromApiGatewayApiRequestDetails.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Stage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importAssetFromApiGatewayApiRequestDetails.setStage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

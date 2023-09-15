@@ -43,48 +43,61 @@ public class InstanceRecommendationJsonUnmarshaller implements Unmarshaller<Inst
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("instanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("currentInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setCurrentInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("finding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setFinding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("findingReasonCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setFindingReasonCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("utilizationMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setUtilizationMetrics(new ListUnmarshaller<UtilizationMetric>(UtilizationMetricJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lookBackPeriodInDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setLookBackPeriodInDays(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendationOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setRecommendationOptions(new ListUnmarshaller<InstanceRecommendationOption>(
                             InstanceRecommendationOptionJsonUnmarshaller.getInstance())
@@ -92,6 +105,7 @@ public class InstanceRecommendationJsonUnmarshaller implements Unmarshaller<Inst
                     .unmarshall(context));
                 }
                 if (context.testExpression("recommendationSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setRecommendationSources(new ListUnmarshaller<RecommendationSource>(RecommendationSourceJsonUnmarshaller
                             .getInstance())
@@ -99,45 +113,58 @@ public class InstanceRecommendationJsonUnmarshaller implements Unmarshaller<Inst
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastRefreshTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setLastRefreshTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("currentPerformanceRisk", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setCurrentPerformanceRisk(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("effectiveRecommendationPreferences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("inferredWorkloadTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setInferredWorkloadTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("instanceState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setInstanceState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("externalMetricStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setExternalMetricStatus(ExternalMetricStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("currentInstanceGpuInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setCurrentInstanceGpuInfo(GpuInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("idle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceRecommendation.setIdle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

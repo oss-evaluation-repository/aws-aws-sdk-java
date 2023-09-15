@@ -43,12 +43,17 @@ public class BatchUpdateFindingsResultJsonUnmarshaller implements Unmarshaller<B
             return batchUpdateFindingsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProcessedFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchUpdateFindingsResult.setProcessedFindings(new ListUnmarshaller<AwsSecurityFindingIdentifier>(
                             AwsSecurityFindingIdentifierJsonUnmarshaller.getInstance())
@@ -56,11 +61,16 @@ public class BatchUpdateFindingsResultJsonUnmarshaller implements Unmarshaller<B
                     .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedFindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchUpdateFindingsResult.setUnprocessedFindings(new ListUnmarshaller<BatchUpdateFindingsUnprocessedFinding>(
                             BatchUpdateFindingsUnprocessedFindingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

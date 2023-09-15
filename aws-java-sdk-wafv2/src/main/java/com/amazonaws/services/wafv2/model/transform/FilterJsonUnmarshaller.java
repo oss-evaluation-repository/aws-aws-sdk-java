@@ -43,24 +43,35 @@ public class FilterJsonUnmarshaller implements Unmarshaller<Filter, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Behavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Requirement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setRequirement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Conditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setConditions(new ListUnmarshaller<Condition>(ConditionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

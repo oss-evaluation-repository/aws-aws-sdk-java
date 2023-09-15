@@ -43,9 +43,13 @@ public class DeleteVirtualRouterResultJsonUnmarshaller implements Unmarshaller<D
             return deleteVirtualRouterResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteVirtualRouterResult.setVirtualRouter(VirtualRouterDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -43,24 +43,35 @@ public class AssessmentTemplateFilterJsonUnmarshaller implements Unmarshaller<As
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("namePattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentTemplateFilter.setNamePattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("durationRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentTemplateFilter.setDurationRange(DurationRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentTemplateFilter.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

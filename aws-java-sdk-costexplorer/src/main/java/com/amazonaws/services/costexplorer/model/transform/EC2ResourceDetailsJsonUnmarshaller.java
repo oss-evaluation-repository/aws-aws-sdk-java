@@ -43,46 +43,63 @@ public class EC2ResourceDetailsJsonUnmarshaller implements Unmarshaller<EC2Resou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HourlyOnDemandRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceDetails.setHourlyOnDemandRate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceDetails.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceDetails.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceDetails.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Sku", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceDetails.setSku(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceDetails.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkPerformance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceDetails.setNetworkPerformance(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Storage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceDetails.setStorage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Vcpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2ResourceDetails.setVcpu(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,28 +43,40 @@ public class AwsWafWebAclDetailsJsonUnmarshaller implements Unmarshaller<AwsWafW
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafWebAclDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafWebAclDetails.setDefaultAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafWebAclDetails.setRules(new ListUnmarshaller<AwsWafWebAclRule>(AwsWafWebAclRuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("WebAclId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsWafWebAclDetails.setWebAclId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

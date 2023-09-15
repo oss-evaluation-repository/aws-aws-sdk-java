@@ -43,9 +43,13 @@ public class DeleteCampaignResultJsonUnmarshaller implements Unmarshaller<Delete
             return deleteCampaignResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteCampaignResult.setCampaignResponse(CampaignResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

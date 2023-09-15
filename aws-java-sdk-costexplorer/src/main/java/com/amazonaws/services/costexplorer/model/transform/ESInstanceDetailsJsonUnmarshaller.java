@@ -43,30 +43,43 @@ public class ESInstanceDetailsJsonUnmarshaller implements Unmarshaller<ESInstanc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eSInstanceDetails.setInstanceClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eSInstanceDetails.setInstanceSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eSInstanceDetails.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentGeneration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eSInstanceDetails.setCurrentGeneration(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeFlexEligible", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eSInstanceDetails.setSizeFlexEligible(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

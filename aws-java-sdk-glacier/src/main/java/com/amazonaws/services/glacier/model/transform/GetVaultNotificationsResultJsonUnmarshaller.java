@@ -43,9 +43,13 @@ public class GetVaultNotificationsResultJsonUnmarshaller implements Unmarshaller
             return getVaultNotificationsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getVaultNotificationsResult.setVaultNotificationConfig(VaultNotificationConfigJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

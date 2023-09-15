@@ -43,42 +43,57 @@ public class HttpGatewayRouteMatchJsonUnmarshaller implements Unmarshaller<HttpG
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("headers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpGatewayRouteMatch.setHeaders(new ListUnmarshaller<HttpGatewayRouteHeader>(HttpGatewayRouteHeaderJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("hostname", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpGatewayRouteMatch.setHostname(GatewayRouteHostnameMatchJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("method", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpGatewayRouteMatch.setMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpGatewayRouteMatch.setPath(HttpPathMatchJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpGatewayRouteMatch.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("prefix", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpGatewayRouteMatch.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("queryParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     httpGatewayRouteMatch.setQueryParameters(new ListUnmarshaller<HttpQueryParameter>(HttpQueryParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

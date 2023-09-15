@@ -43,18 +43,28 @@ public class GetAssignmentResultJsonUnmarshaller implements Unmarshaller<GetAssi
             return getAssignmentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Assignment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAssignmentResult.setAssignment(AssignmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HIT", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getAssignmentResult.setHIT(HITJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

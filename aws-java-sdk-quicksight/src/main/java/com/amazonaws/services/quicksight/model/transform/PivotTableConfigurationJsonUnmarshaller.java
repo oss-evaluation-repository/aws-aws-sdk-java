@@ -43,34 +43,48 @@ public class PivotTableConfigurationJsonUnmarshaller implements Unmarshaller<Piv
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableConfiguration.setFieldWells(PivotTableFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SortConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableConfiguration.setSortConfiguration(PivotTableSortConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TableOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableConfiguration.setTableOptions(PivotTableOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TotalOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableConfiguration.setTotalOptions(PivotTableTotalOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FieldOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableConfiguration.setFieldOptions(PivotTableFieldOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PaginatedReportOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pivotTableConfiguration.setPaginatedReportOptions(PivotTablePaginatedReportOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -48,22 +48,33 @@ public class InvalidNetworkSettingsExceptionUnmarshaller extends EnhancedJsonErr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InvalidSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     invalidNetworkSettingsException.setInvalidSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InvalidSecurityGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     invalidNetworkSettingsException.setInvalidSecurityGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InvalidRouteTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     invalidNetworkSettingsException.setInvalidRouteTableId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

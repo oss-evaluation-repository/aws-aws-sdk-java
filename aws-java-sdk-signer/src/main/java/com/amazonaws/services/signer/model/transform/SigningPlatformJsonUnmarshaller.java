@@ -43,46 +43,63 @@ public class SigningPlatformJsonUnmarshaller implements Unmarshaller<SigningPlat
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("platformId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signingPlatform.setPlatformId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("displayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signingPlatform.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("partner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signingPlatform.setPartner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signingPlatform.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("category", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signingPlatform.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("signingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signingPlatform.setSigningConfiguration(SigningConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("signingImageFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signingPlatform.setSigningImageFormat(SigningImageFormatJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("maxSizeInMB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signingPlatform.setMaxSizeInMB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("revocationSupported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     signingPlatform.setRevocationSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

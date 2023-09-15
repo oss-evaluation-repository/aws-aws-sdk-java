@@ -43,28 +43,40 @@ public class PillarDifferenceJsonUnmarshaller implements Unmarshaller<PillarDiff
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PillarId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pillarDifference.setPillarId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PillarName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pillarDifference.setPillarName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DifferenceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pillarDifference.setDifferenceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QuestionDifferences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pillarDifference.setQuestionDifferences(new ListUnmarshaller<QuestionDifference>(QuestionDifferenceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,56 +43,75 @@ public class DataQualityResultJsonUnmarshaller implements Unmarshaller<DataQuali
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResultId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setResultId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setScore(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setDataSource(DataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RulesetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setRulesetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationContext", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setEvaluationContext(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setStartedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setJobRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RulesetEvaluationRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setRulesetEvaluationRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityResult.setRuleResults(new ListUnmarshaller<DataQualityRuleResult>(DataQualityRuleResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

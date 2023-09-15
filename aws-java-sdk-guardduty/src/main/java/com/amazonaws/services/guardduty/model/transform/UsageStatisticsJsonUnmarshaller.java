@@ -43,40 +43,53 @@ public class UsageStatisticsJsonUnmarshaller implements Unmarshaller<UsageStatis
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sumByAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageStatistics.setSumByAccount(new ListUnmarshaller<UsageAccountResult>(UsageAccountResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sumByDataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageStatistics.setSumByDataSource(new ListUnmarshaller<UsageDataSourceResult>(UsageDataSourceResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sumByResource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageStatistics.setSumByResource(new ListUnmarshaller<UsageResourceResult>(UsageResourceResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("topResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageStatistics.setTopResources(new ListUnmarshaller<UsageResourceResult>(UsageResourceResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sumByFeature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageStatistics.setSumByFeature(new ListUnmarshaller<UsageFeatureResult>(UsageFeatureResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

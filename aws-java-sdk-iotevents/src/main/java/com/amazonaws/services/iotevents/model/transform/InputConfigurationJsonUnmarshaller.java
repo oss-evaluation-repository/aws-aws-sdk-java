@@ -43,34 +43,48 @@ public class InputConfigurationJsonUnmarshaller implements Unmarshaller<InputCon
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("inputName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputConfiguration.setInputName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputConfiguration.setInputDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputConfiguration.setInputArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputConfiguration.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputConfiguration.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inputConfiguration.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

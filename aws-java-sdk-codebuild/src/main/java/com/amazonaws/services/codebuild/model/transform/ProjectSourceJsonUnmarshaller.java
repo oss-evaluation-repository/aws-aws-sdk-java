@@ -43,50 +43,68 @@ public class ProjectSourceJsonUnmarshaller implements Unmarshaller<ProjectSource
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSource.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSource.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gitCloneDepth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSource.setGitCloneDepth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gitSubmodulesConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSource.setGitSubmodulesConfig(GitSubmodulesConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("buildspec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSource.setBuildspec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("auth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSource.setAuth(SourceAuthJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("reportBuildStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSource.setReportBuildStatus(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("buildStatusConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSource.setBuildStatusConfig(BuildStatusConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("insecureSsl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSource.setInsecureSsl(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     projectSource.setSourceIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

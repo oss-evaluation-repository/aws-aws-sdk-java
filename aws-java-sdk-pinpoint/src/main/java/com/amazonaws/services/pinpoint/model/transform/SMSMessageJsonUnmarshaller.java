@@ -43,36 +43,47 @@ public class SMSMessageJsonUnmarshaller implements Unmarshaller<SMSMessage, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Body", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sMSMessage.setBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Keyword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sMSMessage.setKeyword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sMSMessage.setMediaUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sMSMessage.setMessageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginationNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sMSMessage.setOriginationNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SenderId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sMSMessage.setSenderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Substitutions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sMSMessage.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -80,12 +91,18 @@ public class SMSMessageJsonUnmarshaller implements Unmarshaller<SMSMessage, Json
                     ).unmarshall(context));
                 }
                 if (context.testExpression("EntityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sMSMessage.setEntityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sMSMessage.setTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

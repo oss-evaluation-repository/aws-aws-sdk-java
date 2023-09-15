@@ -43,46 +43,63 @@ public class RegionDescriptionJsonUnmarshaller implements Unmarshaller<RegionDes
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     regionDescription.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     regionDescription.setRegionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     regionDescription.setRegionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     regionDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     regionDescription.setVpcSettings(DirectoryVpcSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DesiredNumberOfDomainControllers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     regionDescription.setDesiredNumberOfDomainControllers(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LaunchTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     regionDescription.setLaunchTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StatusLastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     regionDescription.setStatusLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     regionDescription.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -45,40 +45,55 @@ public class DescribeAnalysisDefinitionResultJsonUnmarshaller implements Unmarsh
             return describeAnalysisDefinitionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AnalysisId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAnalysisDefinitionResult.setAnalysisId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAnalysisDefinitionResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAnalysisDefinitionResult.setErrors(new ListUnmarshaller<AnalysisError>(AnalysisErrorJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ResourceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAnalysisDefinitionResult.setResourceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThemeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAnalysisDefinitionResult.setThemeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Definition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAnalysisDefinitionResult.setDefinition(AnalysisDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAnalysisDefinitionResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

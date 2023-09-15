@@ -43,26 +43,38 @@ public class AutoMLProblemTypeConfigJsonUnmarshaller implements Unmarshaller<Aut
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ImageClassificationJobConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLProblemTypeConfig.setImageClassificationJobConfig(ImageClassificationJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TextClassificationJobConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLProblemTypeConfig.setTextClassificationJobConfig(TextClassificationJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TabularJobConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLProblemTypeConfig.setTabularJobConfig(TabularJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeSeriesForecastingJobConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     autoMLProblemTypeConfig.setTimeSeriesForecastingJobConfig(TimeSeriesForecastingJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

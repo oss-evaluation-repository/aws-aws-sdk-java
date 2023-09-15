@@ -43,38 +43,53 @@ public class WriteTreatmentResourceJsonUnmarshaller implements Unmarshaller<Writ
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CustomDeliveryConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeTreatmentResource.setCustomDeliveryConfiguration(CustomDeliveryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MessageConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeTreatmentResource.setMessageConfiguration(MessageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeTreatmentResource.setSchedule(ScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SizePercent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeTreatmentResource.setSizePercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeTreatmentResource.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TreatmentDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeTreatmentResource.setTreatmentDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TreatmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     writeTreatmentResource.setTreatmentName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

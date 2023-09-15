@@ -43,42 +43,58 @@ public class InAppMessageCampaignJsonUnmarshaller implements Unmarshaller<InAppM
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CampaignId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageCampaign.setCampaignId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DailyCap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageCampaign.setDailyCap(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InAppMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageCampaign.setInAppMessage(InAppMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageCampaign.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageCampaign.setSchedule(InAppCampaignScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SessionCap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageCampaign.setSessionCap(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalCap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageCampaign.setTotalCap(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TreatmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     inAppMessageCampaign.setTreatmentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

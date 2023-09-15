@@ -43,63 +43,84 @@ public class MarkAsArchivedResultJsonUnmarshaller implements Unmarshaller<MarkAs
             return markAsArchivedResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setApplicationID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataReplicationInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setDataReplicationInfo(DataReplicationInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fqdnForActionFramework", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setFqdnForActionFramework(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isArchived", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setIsArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("launchedInstance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setLaunchedInstance(LaunchedInstanceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lifeCycle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setLifeCycle(LifeCycleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("replicationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setReplicationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setSourceProperties(SourcePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setSourceServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("userProvidedID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setUserProvidedID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vcenterClientID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     markAsArchivedResult.setVcenterClientID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,49 +43,66 @@ public class DescribeTestSetDiscrepancyReportResultJsonUnmarshaller implements U
             return describeTestSetDiscrepancyReportResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("testSetDiscrepancyReportId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTestSetDiscrepancyReportResult.setTestSetDiscrepancyReportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTestSetDiscrepancyReportResult.setTestSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTestSetDiscrepancyReportResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTestSetDiscrepancyReportResult.setTarget(TestSetDiscrepancyReportResourceTargetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("testSetDiscrepancyReportStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTestSetDiscrepancyReportResult.setTestSetDiscrepancyReportStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDataTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTestSetDiscrepancyReportResult.setLastUpdatedDataTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("testSetDiscrepancyTopErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTestSetDiscrepancyReportResult.setTestSetDiscrepancyTopErrors(TestSetDiscrepancyErrorsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("testSetDiscrepancyRawOutputUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTestSetDiscrepancyReportResult.setTestSetDiscrepancyRawOutputUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReasons", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTestSetDiscrepancyReportResult.setFailureReasons(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

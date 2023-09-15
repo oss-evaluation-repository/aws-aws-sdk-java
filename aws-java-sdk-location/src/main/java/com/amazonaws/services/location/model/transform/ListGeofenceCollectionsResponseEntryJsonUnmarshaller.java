@@ -43,34 +43,48 @@ public class ListGeofenceCollectionsResponseEntryJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CollectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listGeofenceCollectionsResponseEntry.setCollectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listGeofenceCollectionsResponseEntry.setCreateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listGeofenceCollectionsResponseEntry.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PricingPlan", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listGeofenceCollectionsResponseEntry.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PricingPlanDataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listGeofenceCollectionsResponseEntry.setPricingPlanDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listGeofenceCollectionsResponseEntry.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

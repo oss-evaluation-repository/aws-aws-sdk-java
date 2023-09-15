@@ -43,18 +43,24 @@ public class AnalyticsIntentResultJsonUnmarshaller implements Unmarshaller<Analy
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("binKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analyticsIntentResult.setBinKeys(new ListUnmarshaller<AnalyticsBinKey>(AnalyticsBinKeyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("groupByKeys", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analyticsIntentResult.setGroupByKeys(new ListUnmarshaller<AnalyticsIntentGroupByKey>(AnalyticsIntentGroupByKeyJsonUnmarshaller
                             .getInstance())
@@ -62,11 +68,16 @@ public class AnalyticsIntentResultJsonUnmarshaller implements Unmarshaller<Analy
                     .unmarshall(context));
                 }
                 if (context.testExpression("metricsResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     analyticsIntentResult.setMetricsResults(new ListUnmarshaller<AnalyticsIntentMetricResult>(AnalyticsIntentMetricResultJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,35 +43,49 @@ public class CreateBotVersionResultJsonUnmarshaller implements Unmarshaller<Crea
             return createBotVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("botId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotVersionResult.setBotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotVersionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotVersionResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersionLocaleSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotVersionResult.setBotVersionLocaleSpecification(new MapUnmarshaller<String, BotVersionLocaleDetails>(context
                             .getUnmarshaller(String.class), BotVersionLocaleDetailsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("botStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotVersionResult.setBotStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBotVersionResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

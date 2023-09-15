@@ -43,26 +43,38 @@ public class TaskRunFilterCriteriaJsonUnmarshaller implements Unmarshaller<TaskR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TaskRunType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRunFilterCriteria.setTaskRunType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRunFilterCriteria.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartedBefore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRunFilterCriteria.setStartedBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartedAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskRunFilterCriteria.setStartedAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

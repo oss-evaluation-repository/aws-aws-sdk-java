@@ -43,22 +43,33 @@ public class DataQualityBaselineConfigJsonUnmarshaller implements Unmarshaller<D
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BaseliningJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityBaselineConfig.setBaseliningJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConstraintsResource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityBaselineConfig.setConstraintsResource(MonitoringConstraintsResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StatisticsResource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityBaselineConfig.setStatisticsResource(MonitoringStatisticsResourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

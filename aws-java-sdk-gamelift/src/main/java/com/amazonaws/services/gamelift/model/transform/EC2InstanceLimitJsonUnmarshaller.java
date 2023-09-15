@@ -43,26 +43,38 @@ public class EC2InstanceLimitJsonUnmarshaller implements Unmarshaller<EC2Instanc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EC2InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceLimit.setEC2InstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentInstances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceLimit.setCurrentInstances(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceLimit.setInstanceLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eC2InstanceLimit.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

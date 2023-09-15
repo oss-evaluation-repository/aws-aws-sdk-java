@@ -43,28 +43,40 @@ public class ThumbnailConfigurationJsonUnmarshaller implements Unmarshaller<Thum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("recordingMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnailConfiguration.setRecordingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnailConfiguration.setResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnailConfiguration.setStorage(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("targetIntervalSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     thumbnailConfiguration.setTargetIntervalSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

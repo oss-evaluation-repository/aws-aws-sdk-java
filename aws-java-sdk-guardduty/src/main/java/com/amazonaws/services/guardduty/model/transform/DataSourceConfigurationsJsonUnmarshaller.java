@@ -43,22 +43,33 @@ public class DataSourceConfigurationsJsonUnmarshaller implements Unmarshaller<Da
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("s3Logs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfigurations.setS3Logs(S3LogsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kubernetes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfigurations.setKubernetes(KubernetesConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("malwareProtection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceConfigurations.setMalwareProtection(MalwareProtectionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,50 +43,67 @@ public class VersionJsonUnmarshaller implements Unmarshaller<Version, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     version.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     version.setCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parameterDefinitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     version.setParameterDefinitions(new ListUnmarshaller<ParameterDefinition>(ParameterDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("requiredCapabilities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     version.setRequiredCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("resourcesSupported", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     version.setResourcesSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("semanticVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     version.setSemanticVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceCodeArchiveUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     version.setSourceCodeArchiveUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceCodeUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     version.setSourceCodeUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     version.setTemplateUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

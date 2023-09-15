@@ -43,26 +43,38 @@ public class AttemptDetailJsonUnmarshaller implements Unmarshaller<AttemptDetail
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("container", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attemptDetail.setContainer(AttemptContainerDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attemptDetail.setStartedAt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("stoppedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attemptDetail.setStoppedAt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     attemptDetail.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

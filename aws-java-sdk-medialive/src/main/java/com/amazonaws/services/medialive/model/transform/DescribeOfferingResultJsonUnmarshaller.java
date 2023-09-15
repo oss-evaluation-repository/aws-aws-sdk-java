@@ -43,54 +43,73 @@ public class DescribeOfferingResultJsonUnmarshaller implements Unmarshaller<Desc
             return describeOfferingResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("currencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("durationUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setDurationUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fixedPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setFixedPrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("offeringDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setOfferingDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offeringId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setOfferingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offeringType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setOfferingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceSpecification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setResourceSpecification(ReservationResourceSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("usagePrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeOfferingResult.setUsagePrice(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

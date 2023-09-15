@@ -43,22 +43,33 @@ public class Fmp4HlsSettingsJsonUnmarshaller implements Unmarshaller<Fmp4HlsSett
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioRenditionSets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fmp4HlsSettings.setAudioRenditionSets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nielsenId3Behavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fmp4HlsSettings.setNielsenId3Behavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timedMetadataBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fmp4HlsSettings.setTimedMetadataBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

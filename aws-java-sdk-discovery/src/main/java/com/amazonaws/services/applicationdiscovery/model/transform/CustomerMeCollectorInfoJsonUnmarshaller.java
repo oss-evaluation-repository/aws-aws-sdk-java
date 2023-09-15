@@ -43,38 +43,53 @@ public class CustomerMeCollectorInfoJsonUnmarshaller implements Unmarshaller<Cus
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeMeCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerMeCollectorInfo.setActiveMeCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("healthyMeCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerMeCollectorInfo.setHealthyMeCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("denyListedMeCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerMeCollectorInfo.setDenyListedMeCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shutdownMeCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerMeCollectorInfo.setShutdownMeCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("unhealthyMeCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerMeCollectorInfo.setUnhealthyMeCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalMeCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerMeCollectorInfo.setTotalMeCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("unknownMeCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerMeCollectorInfo.setUnknownMeCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

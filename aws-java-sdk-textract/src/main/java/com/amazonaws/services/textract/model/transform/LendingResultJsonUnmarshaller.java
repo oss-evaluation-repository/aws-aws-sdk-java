@@ -43,24 +43,35 @@ public class LendingResultJsonUnmarshaller implements Unmarshaller<LendingResult
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Page", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lendingResult.setPage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PageClassification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lendingResult.setPageClassification(PageClassificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Extractions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lendingResult.setExtractions(new ListUnmarshaller<Extraction>(ExtractionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

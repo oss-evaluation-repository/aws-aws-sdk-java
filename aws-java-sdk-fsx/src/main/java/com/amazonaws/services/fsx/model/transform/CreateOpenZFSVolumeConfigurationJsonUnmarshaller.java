@@ -43,56 +43,74 @@ public class CreateOpenZFSVolumeConfigurationJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ParentVolumeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOpenZFSVolumeConfiguration.setParentVolumeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageCapacityReservationGiB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOpenZFSVolumeConfiguration.setStorageCapacityReservationGiB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageCapacityQuotaGiB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOpenZFSVolumeConfiguration.setStorageCapacityQuotaGiB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RecordSizeKiB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOpenZFSVolumeConfiguration.setRecordSizeKiB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DataCompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOpenZFSVolumeConfiguration.setDataCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyTagsToSnapshots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOpenZFSVolumeConfiguration.setCopyTagsToSnapshots(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginSnapshot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOpenZFSVolumeConfiguration.setOriginSnapshot(CreateOpenZFSOriginSnapshotConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ReadOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOpenZFSVolumeConfiguration.setReadOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NfsExports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOpenZFSVolumeConfiguration.setNfsExports(new ListUnmarshaller<OpenZFSNfsExport>(OpenZFSNfsExportJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserAndGroupQuotas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createOpenZFSVolumeConfiguration.setUserAndGroupQuotas(new ListUnmarshaller<OpenZFSUserOrGroupQuota>(
                             OpenZFSUserOrGroupQuotaJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

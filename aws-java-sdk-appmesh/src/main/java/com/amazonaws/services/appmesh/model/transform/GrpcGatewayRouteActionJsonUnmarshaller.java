@@ -43,18 +43,28 @@ public class GrpcGatewayRouteActionJsonUnmarshaller implements Unmarshaller<Grpc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("rewrite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grpcGatewayRouteAction.setRewrite(GrpcGatewayRouteRewriteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     grpcGatewayRouteAction.setTarget(GatewayRouteTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

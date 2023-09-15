@@ -43,58 +43,78 @@ public class WorkspaceBundleJsonUnmarshaller implements Unmarshaller<WorkspaceBu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BundleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RootStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setRootStorage(RootStorageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UserStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setUserStorage(UserStorageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ComputeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setComputeType(ComputeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BundleType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspaceBundle.setBundleType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

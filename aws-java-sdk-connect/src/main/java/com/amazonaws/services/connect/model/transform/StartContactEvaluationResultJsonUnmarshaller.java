@@ -43,18 +43,28 @@ public class StartContactEvaluationResultJsonUnmarshaller implements Unmarshalle
             return startContactEvaluationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EvaluationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startContactEvaluationResult.setEvaluationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startContactEvaluationResult.setEvaluationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

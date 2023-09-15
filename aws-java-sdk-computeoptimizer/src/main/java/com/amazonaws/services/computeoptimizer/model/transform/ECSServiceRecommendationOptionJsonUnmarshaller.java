@@ -43,24 +43,32 @@ public class ECSServiceRecommendationOptionJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("memory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendationOption.setMemory(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendationOption.setCpu(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("savingsOpportunity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendationOption.setSavingsOpportunity(SavingsOpportunityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("projectedUtilizationMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendationOption.setProjectedUtilizationMetrics(new ListUnmarshaller<ECSServiceProjectedUtilizationMetric>(
                             ECSServiceProjectedUtilizationMetricJsonUnmarshaller.getInstance())
@@ -68,11 +76,16 @@ public class ECSServiceRecommendationOptionJsonUnmarshaller implements Unmarshal
                     .unmarshall(context));
                 }
                 if (context.testExpression("containerRecommendations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eCSServiceRecommendationOption.setContainerRecommendations(new ListUnmarshaller<ContainerRecommendation>(
                             ContainerRecommendationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

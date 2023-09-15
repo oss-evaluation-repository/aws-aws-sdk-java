@@ -43,34 +43,44 @@ public class UpdateOpenZFSVolumeConfigurationJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorageCapacityReservationGiB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateOpenZFSVolumeConfiguration.setStorageCapacityReservationGiB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageCapacityQuotaGiB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateOpenZFSVolumeConfiguration.setStorageCapacityQuotaGiB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RecordSizeKiB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateOpenZFSVolumeConfiguration.setRecordSizeKiB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DataCompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateOpenZFSVolumeConfiguration.setDataCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NfsExports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateOpenZFSVolumeConfiguration.setNfsExports(new ListUnmarshaller<OpenZFSNfsExport>(OpenZFSNfsExportJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserAndGroupQuotas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateOpenZFSVolumeConfiguration.setUserAndGroupQuotas(new ListUnmarshaller<OpenZFSUserOrGroupQuota>(
                             OpenZFSUserOrGroupQuotaJsonUnmarshaller.getInstance())
@@ -78,8 +88,13 @@ public class UpdateOpenZFSVolumeConfigurationJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReadOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateOpenZFSVolumeConfiguration.setReadOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

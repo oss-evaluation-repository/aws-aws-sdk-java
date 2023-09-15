@@ -43,58 +43,78 @@ public class PlayerSessionJsonUnmarshaller implements Unmarshaller<PlayerSession
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PlayerSessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setPlayerSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlayerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setPlayerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameSessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setGameSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TerminationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setTerminationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PlayerData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     playerSession.setPlayerData(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

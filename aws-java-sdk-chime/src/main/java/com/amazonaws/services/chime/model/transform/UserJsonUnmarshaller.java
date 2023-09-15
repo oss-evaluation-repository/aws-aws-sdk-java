@@ -43,62 +43,83 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrimaryEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setPrimaryEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrimaryProvisionedNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setPrimaryProvisionedNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setLicenseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setUserType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserRegistrationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setUserRegistrationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserInvitationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setUserInvitationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegisteredOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setRegisteredOn(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("InvitedOn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setInvitedOn(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("AlexaForBusinessMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setAlexaForBusinessMetadata(AlexaForBusinessMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PersonalPIN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     user.setPersonalPIN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

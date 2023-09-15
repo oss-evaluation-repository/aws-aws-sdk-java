@@ -43,28 +43,40 @@ public class WorkspacesIpGroupJsonUnmarshaller implements Unmarshaller<Workspace
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("groupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspacesIpGroup.setGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("groupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspacesIpGroup.setGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("groupDesc", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspacesIpGroup.setGroupDesc(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workspacesIpGroup.setUserRules(new ListUnmarshaller<IpRuleItem>(IpRuleItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

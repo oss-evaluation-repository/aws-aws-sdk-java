@@ -44,20 +44,27 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -65,68 +72,83 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                     ).unmarshall(context));
                 }
                 if (context.testExpression("AutomationTargetParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setAutomationTargetParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Targets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setOutputLocation(InstanceAssociationOutputLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssociationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setAssociationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxErrors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setMaxErrors(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxConcurrency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setMaxConcurrency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComplianceSeverity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setComplianceSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SyncCompliance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setSyncCompliance(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplyOnlyAtCronInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setApplyOnlyAtCronInterval(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CalendarNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setCalendarNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TargetLocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setTargetLocations(new ListUnmarshaller<TargetLocation>(TargetLocationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ScheduleOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setScheduleOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetMaps", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setTargetMaps(new ListUnmarshaller<java.util.Map<String, java.util.List<String>>>(
                             new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class), new ListUnmarshaller<String>(context
@@ -137,8 +159,13 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                     .unmarshall(context));
                 }
                 if (context.testExpression("AlarmConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createAssociationBatchRequestEntry.setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

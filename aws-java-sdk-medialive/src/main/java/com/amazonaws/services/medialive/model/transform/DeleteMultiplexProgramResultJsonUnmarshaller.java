@@ -43,25 +43,33 @@ public class DeleteMultiplexProgramResultJsonUnmarshaller implements Unmarshalle
             return deleteMultiplexProgramResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteMultiplexProgramResult.setChannelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("multiplexProgramSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteMultiplexProgramResult.setMultiplexProgramSettings(MultiplexProgramSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("packetIdentifiersMap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteMultiplexProgramResult
                             .setPacketIdentifiersMap(MultiplexProgramPacketIdentifiersMapJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pipelineDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteMultiplexProgramResult.setPipelineDetails(new ListUnmarshaller<MultiplexProgramPipelineDetail>(
                             MultiplexProgramPipelineDetailJsonUnmarshaller.getInstance())
@@ -69,8 +77,13 @@ public class DeleteMultiplexProgramResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("programName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteMultiplexProgramResult.setProgramName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

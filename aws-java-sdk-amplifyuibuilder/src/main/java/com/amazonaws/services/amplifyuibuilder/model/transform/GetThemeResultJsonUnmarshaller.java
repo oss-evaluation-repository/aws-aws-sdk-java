@@ -43,9 +43,13 @@ public class GetThemeResultJsonUnmarshaller implements Unmarshaller<GetThemeResu
             return getThemeResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             getThemeResult.setTheme(ThemeJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

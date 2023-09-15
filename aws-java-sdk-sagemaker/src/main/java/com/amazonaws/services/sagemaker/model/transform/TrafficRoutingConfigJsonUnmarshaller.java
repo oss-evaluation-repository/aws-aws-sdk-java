@@ -43,26 +43,38 @@ public class TrafficRoutingConfigJsonUnmarshaller implements Unmarshaller<Traffi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trafficRoutingConfig.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WaitIntervalInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trafficRoutingConfig.setWaitIntervalInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CanarySize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trafficRoutingConfig.setCanarySize(CapacitySizeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LinearStepSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     trafficRoutingConfig.setLinearStepSize(CapacitySizeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

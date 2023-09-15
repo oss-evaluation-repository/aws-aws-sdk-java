@@ -43,30 +43,43 @@ public class CapacityJsonUnmarshaller implements Unmarshaller<Capacity, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("available", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacity.setAvailable(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacity.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("total", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacity.setTotal(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("unit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacity.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("used", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     capacity.setUsed(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

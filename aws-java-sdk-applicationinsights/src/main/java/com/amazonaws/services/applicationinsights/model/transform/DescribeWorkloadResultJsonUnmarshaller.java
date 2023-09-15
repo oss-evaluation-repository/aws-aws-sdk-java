@@ -43,22 +43,33 @@ public class DescribeWorkloadResultJsonUnmarshaller implements Unmarshaller<Desc
             return describeWorkloadResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkloadId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorkloadResult.setWorkloadId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadRemarks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorkloadResult.setWorkloadRemarks(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkloadConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeWorkloadResult.setWorkloadConfiguration(WorkloadConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

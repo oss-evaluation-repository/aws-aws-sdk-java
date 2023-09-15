@@ -43,41 +43,56 @@ public class CallAnalyticsJobSettingsJsonUnmarshaller implements Unmarshaller<Ca
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VocabularyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJobSettings.setVocabularyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyFilterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJobSettings.setVocabularyFilterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VocabularyFilterMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJobSettings.setVocabularyFilterMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LanguageModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJobSettings.setLanguageModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentRedaction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJobSettings.setContentRedaction(ContentRedactionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LanguageOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJobSettings.setLanguageOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("LanguageIdSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     callAnalyticsJobSettings.setLanguageIdSettings(new MapUnmarshaller<String, LanguageIdSettings>(context.getUnmarshaller(String.class),
                             LanguageIdSettingsJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

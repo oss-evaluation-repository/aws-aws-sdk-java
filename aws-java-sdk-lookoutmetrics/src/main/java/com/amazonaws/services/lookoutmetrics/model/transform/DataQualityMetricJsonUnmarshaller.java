@@ -43,26 +43,38 @@ public class DataQualityMetricJsonUnmarshaller implements Unmarshaller<DataQuali
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MetricType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityMetric.setMetricType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityMetric.setMetricDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RelatedColumnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityMetric.setRelatedColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataQualityMetric.setMetricValue(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

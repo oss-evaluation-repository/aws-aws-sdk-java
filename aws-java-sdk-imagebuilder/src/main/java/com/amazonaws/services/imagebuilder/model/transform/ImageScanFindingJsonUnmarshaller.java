@@ -43,66 +43,88 @@ public class ImageScanFindingJsonUnmarshaller implements Unmarshaller<ImageScanF
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("awsAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageBuildVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setImageBuildVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imagePipelineArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setImagePipelineArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remediation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setRemediation(RemediationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("firstObservedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setFirstObservedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("inspectorScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setInspectorScore(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("inspectorScoreDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setInspectorScoreDetails(InspectorScoreDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("packageVulnerabilityDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setPackageVulnerabilityDetails(PackageVulnerabilityDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fixAvailable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     imageScanFinding.setFixAvailable(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

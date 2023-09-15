@@ -43,21 +43,31 @@ public class BatchDeleteConnectionResultJsonUnmarshaller implements Unmarshaller
             return batchDeleteConnectionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Succeeded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteConnectionResult.setSucceeded(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteConnectionResult.setErrors(new MapUnmarshaller<String, ErrorDetail>(context.getUnmarshaller(String.class),
                             ErrorDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

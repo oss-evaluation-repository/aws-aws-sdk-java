@@ -43,34 +43,48 @@ public class NetworkBindingJsonUnmarshaller implements Unmarshaller<NetworkBindi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bindIP", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkBinding.setBindIP(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkBinding.setContainerPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hostPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkBinding.setHostPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkBinding.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerPortRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkBinding.setContainerPortRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostPortRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkBinding.setHostPortRange(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,56 +43,75 @@ public class DescribeForecastResultJsonUnmarshaller implements Unmarshaller<Desc
             return describeForecastResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ForecastArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setForecastArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ForecastName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setForecastName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ForecastTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setForecastTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PredictorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setPredictorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setDatasetGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TimeSeriesSelector", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeForecastResult.setTimeSeriesSelector(TimeSeriesSelectorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,79 +43,103 @@ public class GetApiResultJsonUnmarshaller implements Unmarshaller<GetApiResult, 
             return getApiResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("apiEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setApiEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiGatewayManaged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("apiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setApiId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiKeySelectionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setApiKeySelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("corsConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setCorsConfiguration(CorsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("disableSchemaValidation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setDisableSchemaValidation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("disableExecuteApiEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setDisableExecuteApiEndpoint(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("importInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setImportInfo(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protocolType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setProtocolType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeSelectionExpression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setRouteSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("warnings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getApiResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

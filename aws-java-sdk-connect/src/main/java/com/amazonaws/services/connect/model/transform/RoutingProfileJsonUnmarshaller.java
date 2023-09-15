@@ -43,57 +43,76 @@ public class RoutingProfileJsonUnmarshaller implements Unmarshaller<RoutingProfi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoutingProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setRoutingProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoutingProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setRoutingProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaConcurrencies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setMediaConcurrencies(new ListUnmarshaller<MediaConcurrency>(MediaConcurrencyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("DefaultOutboundQueueId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setDefaultOutboundQueueId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("NumberOfAssociatedQueues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setNumberOfAssociatedQueues(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfAssociatedUsers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setNumberOfAssociatedUsers(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AgentAvailabilityTimer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     routingProfile.setAgentAvailabilityTimer(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

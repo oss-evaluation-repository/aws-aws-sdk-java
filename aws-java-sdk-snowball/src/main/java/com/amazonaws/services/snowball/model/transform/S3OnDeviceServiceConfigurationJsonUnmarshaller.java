@@ -43,26 +43,38 @@ public class S3OnDeviceServiceConfigurationJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorageLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3OnDeviceServiceConfiguration.setStorageLimit(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageUnit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3OnDeviceServiceConfiguration.setStorageUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3OnDeviceServiceConfiguration.setServiceSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FaultTolerance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3OnDeviceServiceConfiguration.setFaultTolerance(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

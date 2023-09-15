@@ -43,40 +43,55 @@ public class PutSolNetworkPackageContentResultJsonUnmarshaller implements Unmars
             return putSolNetworkPackageContentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSolNetworkPackageContentResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSolNetworkPackageContentResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSolNetworkPackageContentResult.setMetadata(PutSolNetworkPackageContentMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nsdId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSolNetworkPackageContentResult.setNsdId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSolNetworkPackageContentResult.setNsdName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSolNetworkPackageContentResult.setNsdVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfPkgIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSolNetworkPackageContentResult.setVnfPkgIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

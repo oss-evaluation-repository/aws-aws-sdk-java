@@ -43,22 +43,33 @@ public class CustomModelTrainingParametersJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sourceS3DirectoryPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customModelTrainingParameters.setSourceS3DirectoryPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trainingEntryPointScript", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customModelTrainingParameters.setTrainingEntryPointScript(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transformEntryPointScript", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customModelTrainingParameters.setTransformEntryPointScript(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

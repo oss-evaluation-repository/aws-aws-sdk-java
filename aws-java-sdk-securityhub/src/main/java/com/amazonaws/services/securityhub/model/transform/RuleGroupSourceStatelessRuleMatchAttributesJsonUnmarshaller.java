@@ -44,12 +44,17 @@ public class RuleGroupSourceStatelessRuleMatchAttributesJsonUnmarshaller impleme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DestinationPorts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatelessRuleMatchAttributes
                             .setDestinationPorts(new ListUnmarshaller<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>(
@@ -58,6 +63,7 @@ public class RuleGroupSourceStatelessRuleMatchAttributesJsonUnmarshaller impleme
                             .unmarshall(context));
                 }
                 if (context.testExpression("Destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatelessRuleMatchAttributes.setDestinations(new ListUnmarshaller<RuleGroupSourceStatelessRuleMatchAttributesDestinations>(
                             RuleGroupSourceStatelessRuleMatchAttributesDestinationsJsonUnmarshaller.getInstance())
@@ -65,12 +71,14 @@ public class RuleGroupSourceStatelessRuleMatchAttributesJsonUnmarshaller impleme
                     .unmarshall(context));
                 }
                 if (context.testExpression("Protocols", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatelessRuleMatchAttributes.setProtocols(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SourcePorts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatelessRuleMatchAttributes.setSourcePorts(new ListUnmarshaller<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>(
                             RuleGroupSourceStatelessRuleMatchAttributesSourcePortsJsonUnmarshaller.getInstance())
@@ -78,6 +86,7 @@ public class RuleGroupSourceStatelessRuleMatchAttributesJsonUnmarshaller impleme
                     .unmarshall(context));
                 }
                 if (context.testExpression("Sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatelessRuleMatchAttributes.setSources(new ListUnmarshaller<RuleGroupSourceStatelessRuleMatchAttributesSources>(
                             RuleGroupSourceStatelessRuleMatchAttributesSourcesJsonUnmarshaller.getInstance())
@@ -85,11 +94,16 @@ public class RuleGroupSourceStatelessRuleMatchAttributesJsonUnmarshaller impleme
                     .unmarshall(context));
                 }
                 if (context.testExpression("TcpFlags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ruleGroupSourceStatelessRuleMatchAttributes.setTcpFlags(new ListUnmarshaller<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>(
                             RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

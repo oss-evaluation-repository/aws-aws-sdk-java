@@ -43,56 +43,72 @@ public class FindingFilterJsonUnmarshaller implements Unmarshaller<FindingFilter
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingFilter.setAgentIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingFilter.setAutoScalingGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ruleNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingFilter.setRuleNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("severities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingFilter.setSeverities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingFilter.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingFilter.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("userAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingFilter.setUserAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("creationTimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     findingFilter.setCreationTimeRange(TimestampRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

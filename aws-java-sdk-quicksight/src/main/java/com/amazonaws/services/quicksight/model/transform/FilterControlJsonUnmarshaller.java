@@ -43,38 +43,53 @@ public class FilterControlJsonUnmarshaller implements Unmarshaller<FilterControl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DateTimePicker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterControl.setDateTimePicker(FilterDateTimePickerControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("List", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterControl.setList(FilterListControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Dropdown", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterControl.setDropdown(FilterDropDownControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TextField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterControl.setTextField(FilterTextFieldControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TextArea", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterControl.setTextArea(FilterTextAreaControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Slider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterControl.setSlider(FilterSliderControlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RelativeDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filterControl.setRelativeDateTime(FilterRelativeDateTimeControlJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

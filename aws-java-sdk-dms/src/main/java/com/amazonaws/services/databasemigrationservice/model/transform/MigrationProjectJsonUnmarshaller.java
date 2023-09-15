@@ -43,24 +43,32 @@ public class MigrationProjectJsonUnmarshaller implements Unmarshaller<MigrationP
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MigrationProjectName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationProject.setMigrationProjectName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MigrationProjectArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationProject.setMigrationProjectArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MigrationProjectCreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationProject.setMigrationProjectCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("SourceDataProviderDescriptors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationProject.setSourceDataProviderDescriptors(new ListUnmarshaller<DataProviderDescriptor>(DataProviderDescriptorJsonUnmarshaller
                             .getInstance())
@@ -68,6 +76,7 @@ public class MigrationProjectJsonUnmarshaller implements Unmarshaller<MigrationP
                     .unmarshall(context));
                 }
                 if (context.testExpression("TargetDataProviderDescriptors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationProject.setTargetDataProviderDescriptors(new ListUnmarshaller<DataProviderDescriptor>(DataProviderDescriptorJsonUnmarshaller
                             .getInstance())
@@ -75,24 +84,33 @@ public class MigrationProjectJsonUnmarshaller implements Unmarshaller<MigrationP
                     .unmarshall(context));
                 }
                 if (context.testExpression("InstanceProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationProject.setInstanceProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceProfileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationProject.setInstanceProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransformationRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationProject.setTransformationRules(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationProject.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SchemaConversionApplicationAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     migrationProject.setSchemaConversionApplicationAttributes(SCApplicationAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

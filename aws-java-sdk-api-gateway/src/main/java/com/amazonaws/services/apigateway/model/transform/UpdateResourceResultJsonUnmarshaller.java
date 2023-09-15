@@ -43,31 +43,44 @@ public class UpdateResourceResultJsonUnmarshaller implements Unmarshaller<Update
             return updateResourceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateResourceResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateResourceResult.setParentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pathPart", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateResourceResult.setPathPart(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateResourceResult.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceMethods", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateResourceResult.setResourceMethods(new MapUnmarshaller<String, Method>(context.getUnmarshaller(String.class), MethodJsonUnmarshaller
                             .getInstance()).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

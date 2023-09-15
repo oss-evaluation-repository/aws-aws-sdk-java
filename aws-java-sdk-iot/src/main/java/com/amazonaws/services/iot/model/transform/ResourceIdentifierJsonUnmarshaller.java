@@ -43,50 +43,68 @@ public class ResourceIdentifierJsonUnmarshaller implements Unmarshaller<Resource
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deviceCertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceIdentifier.setDeviceCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("caCertificateId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceIdentifier.setCaCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cognitoIdentityPoolId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceIdentifier.setCognitoIdentityPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceIdentifier.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyVersionIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceIdentifier.setPolicyVersionIdentifier(PolicyVersionIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("account", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceIdentifier.setAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("iamRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceIdentifier.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleAliasArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceIdentifier.setRoleAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("issuerCertificateIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceIdentifier.setIssuerCertificateIdentifier(IssuerCertificateIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("deviceCertificateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceIdentifier.setDeviceCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class TargetTrackingMetricJsonUnmarshaller implements Unmarshaller<Target
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Dimensions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetTrackingMetric.setDimensions(new ListUnmarshaller<TargetTrackingMetricDimension>(TargetTrackingMetricDimensionJsonUnmarshaller
                             .getInstance())
@@ -56,12 +61,18 @@ public class TargetTrackingMetricJsonUnmarshaller implements Unmarshaller<Target
                     .unmarshall(context));
                 }
                 if (context.testExpression("MetricName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetTrackingMetric.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     targetTrackingMetric.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

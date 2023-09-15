@@ -43,38 +43,53 @@ public class HlsAkamaiSettingsJsonUnmarshaller implements Unmarshaller<HlsAkamai
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectionRetryInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsAkamaiSettings.setConnectionRetryInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("filecacheDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsAkamaiSettings.setFilecacheDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("httpTransferMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsAkamaiSettings.setHttpTransferMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsAkamaiSettings.setNumRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("restartDelay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsAkamaiSettings.setRestartDelay(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("salt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsAkamaiSettings.setSalt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("token", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsAkamaiSettings.setToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

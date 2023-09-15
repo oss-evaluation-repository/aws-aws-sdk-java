@@ -43,50 +43,68 @@ public class ComputationJsonUnmarshaller implements Unmarshaller<Computation, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TopBottomRanked", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computation.setTopBottomRanked(TopBottomRankedComputationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TopBottomMovers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computation.setTopBottomMovers(TopBottomMoversComputationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TotalAggregation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computation.setTotalAggregation(TotalAggregationComputationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaximumMinimum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computation.setMaximumMinimum(MaximumMinimumComputationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MetricComparison", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computation.setMetricComparison(MetricComparisonComputationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PeriodOverPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computation.setPeriodOverPeriod(PeriodOverPeriodComputationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PeriodToDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computation.setPeriodToDate(PeriodToDateComputationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GrowthRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computation.setGrowthRate(GrowthRateComputationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UniqueValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computation.setUniqueValues(UniqueValuesComputationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Forecast", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     computation.setForecast(ForecastComputationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,59 +43,78 @@ public class PutSlotTypeResultJsonUnmarshaller implements Unmarshaller<PutSlotTy
             return putSlotTypeResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enumerationValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult.setEnumerationValues(new ListUnmarshaller<EnumerationValue>(EnumerationValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("checksum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult.setChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("valueSelectionStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult.setValueSelectionStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult.setCreateVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("parentSlotTypeSignature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult.setParentSlotTypeSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotTypeConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putSlotTypeResult
                             .setSlotTypeConfigurations(new ListUnmarshaller<SlotTypeConfiguration>(SlotTypeConfigurationJsonUnmarshaller.getInstance())
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

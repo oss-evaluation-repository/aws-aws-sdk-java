@@ -43,9 +43,13 @@ public class UpdateFormResultJsonUnmarshaller implements Unmarshaller<UpdateForm
             return updateFormResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateFormResult.setEntity(FormJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

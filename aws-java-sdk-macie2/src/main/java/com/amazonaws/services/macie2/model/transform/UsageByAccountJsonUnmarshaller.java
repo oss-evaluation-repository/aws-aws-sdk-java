@@ -43,26 +43,38 @@ public class UsageByAccountJsonUnmarshaller implements Unmarshaller<UsageByAccou
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("currency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageByAccount.setCurrency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("estimatedCost", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageByAccount.setEstimatedCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageByAccount.setServiceLimit(ServiceLimitJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     usageByAccount.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

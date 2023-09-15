@@ -43,12 +43,17 @@ public class GetReservationUtilizationResultJsonUnmarshaller implements Unmarsha
             return getReservationUtilizationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UtilizationsByTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReservationUtilizationResult.setUtilizationsByTime(new ListUnmarshaller<UtilizationByTime>(UtilizationByTimeJsonUnmarshaller
                             .getInstance())
@@ -56,12 +61,18 @@ public class GetReservationUtilizationResultJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("Total", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReservationUtilizationResult.setTotal(ReservationAggregatesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getReservationUtilizationResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class GetRelationalDatabaseLogEventsResultJsonUnmarshaller implements Unm
             return getRelationalDatabaseLogEventsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceLogEvents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRelationalDatabaseLogEventsResult.setResourceLogEvents(new ListUnmarshaller<LogEvent>(LogEventJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextBackwardToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRelationalDatabaseLogEventsResult.setNextBackwardToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nextForwardToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRelationalDatabaseLogEventsResult.setNextForwardToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class DescribeHumanLoopResultJsonUnmarshaller implements Unmarshaller<Des
             return describeHumanLoopResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHumanLoopResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHumanLoopResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHumanLoopResult.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HumanLoopStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHumanLoopResult.setHumanLoopStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HumanLoopName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHumanLoopResult.setHumanLoopName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HumanLoopArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHumanLoopResult.setHumanLoopArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FlowDefinitionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHumanLoopResult.setFlowDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HumanLoopOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHumanLoopResult.setHumanLoopOutput(HumanLoopOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

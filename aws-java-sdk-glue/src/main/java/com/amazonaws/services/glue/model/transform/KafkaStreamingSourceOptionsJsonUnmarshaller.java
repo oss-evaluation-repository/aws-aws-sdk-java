@@ -43,86 +43,113 @@ public class KafkaStreamingSourceOptionsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BootstrapServers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setBootstrapServers(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityProtocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setSecurityProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setConnectionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setTopicName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Assign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setAssign(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscribePattern", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setSubscribePattern(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Classification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setClassification(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Delimiter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartingOffsets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setStartingOffsets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndingOffsets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setEndingOffsets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PollTimeoutMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setPollTimeoutMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setNumRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RetryIntervalMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setRetryIntervalMs(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxOffsetsPerTrigger", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setMaxOffsetsPerTrigger(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("MinPartitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setMinPartitions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeHeaders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setIncludeHeaders(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AddRecordTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setAddRecordTimestamp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmitConsumerLagMetrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setEmitConsumerLagMetrics(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartingTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kafkaStreamingSourceOptions.setStartingTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

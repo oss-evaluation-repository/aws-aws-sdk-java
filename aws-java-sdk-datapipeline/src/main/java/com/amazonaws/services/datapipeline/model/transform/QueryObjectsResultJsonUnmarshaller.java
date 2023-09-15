@@ -43,24 +43,35 @@ public class QueryObjectsResultJsonUnmarshaller implements Unmarshaller<QueryObj
             return queryObjectsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ids", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryObjectsResult.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("marker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryObjectsResult.setMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hasMoreResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryObjectsResult.setHasMoreResults(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

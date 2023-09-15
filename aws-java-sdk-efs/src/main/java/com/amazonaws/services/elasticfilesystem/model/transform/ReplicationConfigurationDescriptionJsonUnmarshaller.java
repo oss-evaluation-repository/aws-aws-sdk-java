@@ -43,36 +43,50 @@ public class ReplicationConfigurationDescriptionJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceFileSystemId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationDescription.setSourceFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceFileSystemRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationDescription.setSourceFileSystemRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceFileSystemArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationDescription.setSourceFileSystemArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginalSourceFileSystemArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationDescription.setOriginalSourceFileSystemArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationDescription.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Destinations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     replicationConfigurationDescription.setDestinations(new ListUnmarshaller<Destination>(DestinationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

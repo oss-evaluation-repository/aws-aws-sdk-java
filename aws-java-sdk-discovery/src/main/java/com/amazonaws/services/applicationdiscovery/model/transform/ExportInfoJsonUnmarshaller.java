@@ -43,42 +43,58 @@ public class ExportInfoJsonUnmarshaller implements Unmarshaller<ExportInfo, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("exportId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportInfo.setExportId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("exportStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportInfo.setExportStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportInfo.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationsDownloadUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportInfo.setConfigurationsDownloadUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("exportRequestTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportInfo.setExportRequestTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("isTruncated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportInfo.setIsTruncated(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("requestedStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportInfo.setRequestedStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("requestedEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportInfo.setRequestedEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

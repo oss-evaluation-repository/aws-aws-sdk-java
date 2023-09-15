@@ -43,56 +43,74 @@ public class InstancePortInfoJsonUnmarshaller implements Unmarshaller<InstancePo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fromPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortInfo.setFromPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("toPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortInfo.setToPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortInfo.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessFrom", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortInfo.setAccessFrom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortInfo.setAccessType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("commonName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortInfo.setCommonName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessDirection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortInfo.setAccessDirection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cidrs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortInfo.setCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ipv6Cidrs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortInfo.setIpv6Cidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("cidrListAliases", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instancePortInfo.setCidrListAliases(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

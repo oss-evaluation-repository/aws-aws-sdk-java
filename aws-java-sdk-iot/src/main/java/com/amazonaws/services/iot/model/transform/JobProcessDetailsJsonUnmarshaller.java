@@ -43,48 +43,65 @@ public class JobProcessDetailsJsonUnmarshaller implements Unmarshaller<JobProces
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("processingTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobProcessDetails.setProcessingTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("numberOfCanceledThings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobProcessDetails.setNumberOfCanceledThings(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfSucceededThings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobProcessDetails.setNumberOfSucceededThings(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfFailedThings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobProcessDetails.setNumberOfFailedThings(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfRejectedThings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobProcessDetails.setNumberOfRejectedThings(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfQueuedThings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobProcessDetails.setNumberOfQueuedThings(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfInProgressThings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobProcessDetails.setNumberOfInProgressThings(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfRemovedThings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobProcessDetails.setNumberOfRemovedThings(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfTimedOutThings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jobProcessDetails.setNumberOfTimedOutThings(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

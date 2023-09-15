@@ -44,61 +44,78 @@ public class DescribeInferenceRecommendationsJobResultJsonUnmarshaller implement
             return describeInferenceRecommendationsJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setJobDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setInputConfig(RecommendationJobInputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StoppingConditions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setStoppingConditions(RecommendationJobStoppingConditionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("InferenceRecommendations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setInferenceRecommendations(new ListUnmarshaller<InferenceRecommendation>(
                             InferenceRecommendationJsonUnmarshaller.getInstance())
@@ -106,11 +123,16 @@ public class DescribeInferenceRecommendationsJobResultJsonUnmarshaller implement
                     .unmarshall(context));
                 }
                 if (context.testExpression("EndpointPerformances", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeInferenceRecommendationsJobResult.setEndpointPerformances(new ListUnmarshaller<EndpointPerformance>(
                             EndpointPerformanceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

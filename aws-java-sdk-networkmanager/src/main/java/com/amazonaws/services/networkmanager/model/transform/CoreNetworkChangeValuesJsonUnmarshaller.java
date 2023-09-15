@@ -43,44 +43,59 @@ public class CoreNetworkChangeValuesJsonUnmarshaller implements Unmarshaller<Cor
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SegmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeValues.setSegmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgeLocations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeValues.setEdgeLocations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Asn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeValues.setAsn(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Cidr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeValues.setCidr(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DestinationIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeValues.setDestinationIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InsideCidrBlocks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeValues.setInsideCidrBlocks(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SharedSegments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeValues.setSharedSegments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

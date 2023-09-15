@@ -43,46 +43,63 @@ public class NumericRangeFilterJsonUnmarshaller implements Unmarshaller<NumericR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericRangeFilter.setFilterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericRangeFilter.setColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IncludeMinimum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericRangeFilter.setIncludeMinimum(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeMaximum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericRangeFilter.setIncludeMaximum(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RangeMinimum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericRangeFilter.setRangeMinimum(NumericRangeFilterValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RangeMaximum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericRangeFilter.setRangeMaximum(NumericRangeFilterValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SelectAllOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericRangeFilter.setSelectAllOptions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AggregationFunction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericRangeFilter.setAggregationFunction(AggregationFunctionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NullOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     numericRangeFilter.setNullOption(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,35 @@ public class EncryptionConfigurationJsonUnmarshaller implements Unmarshaller<Enc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Encryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryptionConfiguration.setS3Encryption(new ListUnmarshaller<S3Encryption>(S3EncryptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryptionConfiguration.setCloudWatchEncryption(CloudWatchEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("JobBookmarksEncryption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryptionConfiguration.setJobBookmarksEncryption(JobBookmarksEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,37 @@ public class GetBuiltinIntentResultJsonUnmarshaller implements Unmarshaller<GetB
             return getBuiltinIntentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("signature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBuiltinIntentResult.setSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportedLocales", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBuiltinIntentResult.setSupportedLocales(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("slots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBuiltinIntentResult.setSlots(new ListUnmarshaller<BuiltinIntentSlot>(BuiltinIntentSlotJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

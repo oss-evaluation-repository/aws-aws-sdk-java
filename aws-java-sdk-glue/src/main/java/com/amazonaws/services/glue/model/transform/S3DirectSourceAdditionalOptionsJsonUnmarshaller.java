@@ -43,26 +43,38 @@ public class S3DirectSourceAdditionalOptionsJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BoundedSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DirectSourceAdditionalOptions.setBoundedSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("BoundedFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DirectSourceAdditionalOptions.setBoundedFiles(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableSamplePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DirectSourceAdditionalOptions.setEnableSamplePath(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SamplePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     s3DirectSourceAdditionalOptions.setSamplePath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

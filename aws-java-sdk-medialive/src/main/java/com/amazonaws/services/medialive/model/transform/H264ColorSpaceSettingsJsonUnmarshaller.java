@@ -43,22 +43,33 @@ public class H264ColorSpaceSettingsJsonUnmarshaller implements Unmarshaller<H264
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("colorSpacePassthroughSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264ColorSpaceSettings.setColorSpacePassthroughSettings(ColorSpacePassthroughSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rec601Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264ColorSpaceSettings.setRec601Settings(Rec601SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rec709Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264ColorSpaceSettings.setRec709Settings(Rec709SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

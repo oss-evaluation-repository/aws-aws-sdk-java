@@ -43,22 +43,33 @@ public class DataItemJsonUnmarshaller implements Unmarshaller<DataItem, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("overrideFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataItem.setOverrideFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rawValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataItem.setRawValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("formattedValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataItem.setFormattedValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

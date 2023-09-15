@@ -43,46 +43,63 @@ public class AwsCodeBuildProjectArtifactsDetailsJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ArtifactIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectArtifactsDetails.setArtifactIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionDisabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectArtifactsDetails.setEncryptionDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectArtifactsDetails.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectArtifactsDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NamespaceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectArtifactsDetails.setNamespaceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OverrideArtifactName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectArtifactsDetails.setOverrideArtifactName(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Packaging", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectArtifactsDetails.setPackaging(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Path", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectArtifactsDetails.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCodeBuildProjectArtifactsDetails.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

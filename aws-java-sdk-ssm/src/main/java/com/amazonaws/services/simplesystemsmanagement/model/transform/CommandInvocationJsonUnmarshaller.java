@@ -43,76 +43,100 @@ public class CommandInvocationJsonUnmarshaller implements Unmarshaller<CommandIn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CommandId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setCommandId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setDocumentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setRequestedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setStatusDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TraceOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setTraceOutput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StandardOutputUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setStandardOutputUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StandardErrorUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setStandardErrorUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CommandPlugins", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setCommandPlugins(new ListUnmarshaller<CommandPlugin>(CommandPluginJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setNotificationConfig(NotificationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchOutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commandInvocation.setCloudWatchOutputConfig(CloudWatchOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

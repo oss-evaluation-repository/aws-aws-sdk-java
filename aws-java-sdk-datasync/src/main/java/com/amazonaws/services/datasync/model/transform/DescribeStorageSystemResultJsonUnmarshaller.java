@@ -43,52 +43,70 @@ public class DescribeStorageSystemResultJsonUnmarshaller implements Unmarshaller
             return describeStorageSystemResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorageSystemArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageSystemResult.setStorageSystemArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageSystemResult.setServerConfiguration(DiscoveryServerConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SystemType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageSystemResult.setSystemType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgentArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageSystemResult.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageSystemResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageSystemResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectivityStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageSystemResult.setConnectivityStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLogGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageSystemResult.setCloudWatchLogGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageSystemResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStorageSystemResult.setSecretsManagerArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

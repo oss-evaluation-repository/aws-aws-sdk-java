@@ -43,86 +43,113 @@ public class TransactionJsonUnmarshaller implements Unmarshaller<Transaction, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("network", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setNetwork(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("blockHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setBlockHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transactionHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setTransactionHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("blockNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setBlockNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transactionTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setTransactionTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("transactionIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setTransactionIndex(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("numberOfTransactions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setNumberOfTransactions(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("to", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setTo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("from", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setFrom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contractAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setContractAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gasUsed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setGasUsed(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cumulativeGasUsed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setCumulativeGasUsed(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("effectiveGasPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setEffectiveGasPrice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("signatureV", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setSignatureV(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("signatureR", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setSignatureR(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("signatureS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setSignatureS(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transactionFee", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setTransactionFee(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transactionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transaction.setTransactionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

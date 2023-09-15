@@ -43,46 +43,62 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("captionDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setCaptionDescriptions(new ListUnmarshaller<CaptionDescription>(CaptionDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("containerSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setContainerSettings(ContainerSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("extension", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setExtension(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nameModifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setNameModifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setOutputSettings(OutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("preset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setPreset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("videoDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     output.setVideoDescription(VideoDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

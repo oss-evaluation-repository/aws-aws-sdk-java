@@ -43,37 +43,50 @@ public class ConfluenceSpaceConfigurationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CrawlPersonalSpaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     confluenceSpaceConfiguration.setCrawlPersonalSpaces(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CrawlArchivedSpaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     confluenceSpaceConfiguration.setCrawlArchivedSpaces(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IncludeSpaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     confluenceSpaceConfiguration.setIncludeSpaces(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeSpaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     confluenceSpaceConfiguration.setExcludeSpaces(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SpaceFieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     confluenceSpaceConfiguration.setSpaceFieldMappings(new ListUnmarshaller<ConfluenceSpaceToIndexFieldMapping>(
                             ConfluenceSpaceToIndexFieldMappingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

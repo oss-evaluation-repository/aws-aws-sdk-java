@@ -43,9 +43,13 @@ public class UpdateThemeResultJsonUnmarshaller implements Unmarshaller<UpdateThe
             return updateThemeResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateThemeResult.setEntity(ThemeJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

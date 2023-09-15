@@ -43,54 +43,73 @@ public class ProductViewSummaryJsonUnmarshaller implements Unmarshaller<ProductV
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShortDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setShortDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Distributor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setDistributor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HasDefaultPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setHasDefaultPath(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setSupportEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setSupportDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     productViewSummary.setSupportUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

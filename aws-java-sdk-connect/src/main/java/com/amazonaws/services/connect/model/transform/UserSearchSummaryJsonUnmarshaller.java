@@ -43,53 +43,71 @@ public class UserSearchSummaryJsonUnmarshaller implements Unmarshaller<UserSearc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSearchSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryUserId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSearchSummary.setDirectoryUserId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HierarchyGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSearchSummary.setHierarchyGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSearchSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSearchSummary.setIdentityInfo(UserIdentityInfoLiteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PhoneConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSearchSummary.setPhoneConfig(UserPhoneConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoutingProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSearchSummary.setRoutingProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityProfileIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSearchSummary.setSecurityProfileIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSearchSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     userSearchSummary.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

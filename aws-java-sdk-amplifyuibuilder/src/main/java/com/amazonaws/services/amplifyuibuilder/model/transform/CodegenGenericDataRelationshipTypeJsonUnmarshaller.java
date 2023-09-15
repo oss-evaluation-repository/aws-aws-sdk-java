@@ -43,50 +43,67 @@ public class CodegenGenericDataRelationshipTypeJsonUnmarshaller implements Unmar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataRelationshipType.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("relatedModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataRelationshipType.setRelatedModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("relatedModelFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataRelationshipType.setRelatedModelFields(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("canUnlinkAssociatedModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataRelationshipType.setCanUnlinkAssociatedModel(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("relatedJoinFieldName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataRelationshipType.setRelatedJoinFieldName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("relatedJoinTableName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataRelationshipType.setRelatedJoinTableName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("belongsToFieldOnRelatedModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataRelationshipType.setBelongsToFieldOnRelatedModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associatedFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataRelationshipType.setAssociatedFields(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("isHasManyIndex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenGenericDataRelationshipType.setIsHasManyIndex(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

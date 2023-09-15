@@ -43,60 +43,80 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessKeyDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setAccessKeyDetails(AccessKeyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("s3BucketDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setS3BucketDetails(new ListUnmarshaller<S3BucketDetail>(S3BucketDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("instanceDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setInstanceDetails(InstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("eksClusterDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setEksClusterDetails(EksClusterDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kubernetesDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setKubernetesDetails(KubernetesDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ebsVolumeDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setEbsVolumeDetails(EbsVolumeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ecsClusterDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setEcsClusterDetails(EcsClusterDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("containerDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setContainerDetails(ContainerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rdsDbInstanceDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setRdsDbInstanceDetails(RdsDbInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rdsDbUserDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setRdsDbUserDetails(RdsDbUserDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambdaDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setLambdaDetails(LambdaDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

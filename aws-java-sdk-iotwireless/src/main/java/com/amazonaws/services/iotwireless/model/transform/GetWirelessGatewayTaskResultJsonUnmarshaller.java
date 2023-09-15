@@ -43,30 +43,43 @@ public class GetWirelessGatewayTaskResultJsonUnmarshaller implements Unmarshalle
             return getWirelessGatewayTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WirelessGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayTaskResult.setWirelessGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WirelessGatewayTaskDefinitionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayTaskResult.setWirelessGatewayTaskDefinitionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUplinkReceivedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayTaskResult.setLastUplinkReceivedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TaskCreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayTaskResult.setTaskCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getWirelessGatewayTaskResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,43 @@ public class ElasticInferenceAcceleratorJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("acceleratorHealth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticInferenceAccelerator.setAcceleratorHealth(ElasticInferenceAcceleratorHealthJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("acceleratorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticInferenceAccelerator.setAcceleratorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("acceleratorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticInferenceAccelerator.setAcceleratorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("availabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticInferenceAccelerator.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attachedResource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     elasticInferenceAccelerator.setAttachedResource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

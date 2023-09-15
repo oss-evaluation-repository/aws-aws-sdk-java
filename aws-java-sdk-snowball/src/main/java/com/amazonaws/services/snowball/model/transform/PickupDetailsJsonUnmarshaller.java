@@ -43,38 +43,53 @@ public class PickupDetailsJsonUnmarshaller implements Unmarshaller<PickupDetails
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pickupDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pickupDetails.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Email", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pickupDetails.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentificationNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pickupDetails.setIdentificationNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentificationExpirationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pickupDetails.setIdentificationExpirationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IdentificationIssuingOrg", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pickupDetails.setIdentificationIssuingOrg(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DevicePickupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pickupDetails.setDevicePickupId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,45 +43,61 @@ public class CreateBackendAuthUserPoolConfigJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("forgotPassword", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackendAuthUserPoolConfig.setForgotPassword(CreateBackendAuthForgotPasswordConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mfa", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackendAuthUserPoolConfig.setMfa(CreateBackendAuthMFAConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("oAuth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackendAuthUserPoolConfig.setOAuth(CreateBackendAuthOAuthConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("passwordPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackendAuthUserPoolConfig.setPasswordPolicy(CreateBackendAuthPasswordPolicyConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("requiredSignUpAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackendAuthUserPoolConfig.setRequiredSignUpAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("signInMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackendAuthUserPoolConfig.setSignInMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userPoolName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackendAuthUserPoolConfig.setUserPoolName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("verificationMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBackendAuthUserPoolConfig.setVerificationMessage(CreateBackendAuthVerificationMessageConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

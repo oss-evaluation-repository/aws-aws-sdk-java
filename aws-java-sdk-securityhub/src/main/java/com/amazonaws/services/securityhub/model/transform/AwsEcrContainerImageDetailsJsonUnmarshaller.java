@@ -43,36 +43,50 @@ public class AwsEcrContainerImageDetailsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RegistryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerImageDetails.setRegistryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RepositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerImageDetails.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Architecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerImageDetails.setArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageDigest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerImageDetails.setImageDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerImageDetails.setImageTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ImagePublishedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEcrContainerImageDetails.setImagePublishedAt(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

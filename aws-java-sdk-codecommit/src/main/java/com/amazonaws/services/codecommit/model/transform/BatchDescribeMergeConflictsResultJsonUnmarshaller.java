@@ -43,22 +43,29 @@ public class BatchDescribeMergeConflictsResultJsonUnmarshaller implements Unmars
             return batchDescribeMergeConflictsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("conflicts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeMergeConflictsResult.setConflicts(new ListUnmarshaller<Conflict>(ConflictJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeMergeConflictsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeMergeConflictsResult.setErrors(new ListUnmarshaller<BatchDescribeMergeConflictsError>(
                             BatchDescribeMergeConflictsErrorJsonUnmarshaller.getInstance())
@@ -66,16 +73,23 @@ public class BatchDescribeMergeConflictsResultJsonUnmarshaller implements Unmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("destinationCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeMergeConflictsResult.setDestinationCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeMergeConflictsResult.setSourceCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("baseCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDescribeMergeConflictsResult.setBaseCommitId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

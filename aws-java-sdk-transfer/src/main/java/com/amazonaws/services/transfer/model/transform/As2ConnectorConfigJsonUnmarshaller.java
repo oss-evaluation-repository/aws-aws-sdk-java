@@ -43,46 +43,63 @@ public class As2ConnectorConfigJsonUnmarshaller implements Unmarshaller<As2Conne
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LocalProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     as2ConnectorConfig.setLocalProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartnerProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     as2ConnectorConfig.setPartnerProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MessageSubject", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     as2ConnectorConfig.setMessageSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Compression", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     as2ConnectorConfig.setCompression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     as2ConnectorConfig.setEncryptionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SigningAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     as2ConnectorConfig.setSigningAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MdnSigningAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     as2ConnectorConfig.setMdnSigningAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MdnResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     as2ConnectorConfig.setMdnResponse(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BasicAuthSecretId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     as2ConnectorConfig.setBasicAuthSecretId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,58 +43,78 @@ public class InstanceAssociationStatusInfoJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setAssociationVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DetailedStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setDetailedStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setExecutionSummary(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setOutputUrl(InstanceAssociationOutputUrlJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AssociationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceAssociationStatusInfo.setAssociationName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,30 @@ public class CreateBucketAccessKeyResultJsonUnmarshaller implements Unmarshaller
             return createBucketAccessKeyResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBucketAccessKeyResult.setAccessKey(AccessKeyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("operations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBucketAccessKeyResult.setOperations(new ListUnmarshaller<Operation>(OperationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

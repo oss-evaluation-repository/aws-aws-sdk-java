@@ -43,21 +43,31 @@ public class GetResourcePoliciesResultJsonUnmarshaller implements Unmarshaller<G
             return getResourcePoliciesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourcePoliciesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Policies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourcePoliciesResult.setPolicies(new ListUnmarshaller<GetResourcePoliciesResponseEntry>(
                             GetResourcePoliciesResponseEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

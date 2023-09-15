@@ -43,38 +43,53 @@ public class JwtTokenTypeConfigurationJsonUnmarshaller implements Unmarshaller<J
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KeyLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jwtTokenTypeConfiguration.setKeyLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("URL", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jwtTokenTypeConfiguration.setURL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretManagerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jwtTokenTypeConfiguration.setSecretManagerArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserNameAttributeField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jwtTokenTypeConfiguration.setUserNameAttributeField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GroupAttributeField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jwtTokenTypeConfiguration.setGroupAttributeField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Issuer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jwtTokenTypeConfiguration.setIssuer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClaimRegex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     jwtTokenTypeConfiguration.setClaimRegex(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

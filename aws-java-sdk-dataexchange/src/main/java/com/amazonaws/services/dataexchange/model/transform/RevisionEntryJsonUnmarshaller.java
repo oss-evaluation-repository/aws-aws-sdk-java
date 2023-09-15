@@ -43,54 +43,73 @@ public class RevisionEntryJsonUnmarshaller implements Unmarshaller<RevisionEntry
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Comment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("DataSetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setDataSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Finalized", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setFinalized(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("RevocationComment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setRevocationComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Revoked", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setRevoked(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RevokedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     revisionEntry.setRevokedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

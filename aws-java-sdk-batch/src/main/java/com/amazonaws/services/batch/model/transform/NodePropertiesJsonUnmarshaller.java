@@ -43,24 +43,35 @@ public class NodePropertiesJsonUnmarshaller implements Unmarshaller<NodeProperti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("numNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeProperties.setNumNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("mainNode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeProperties.setMainNode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("nodeRangeProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     nodeProperties.setNodeRangeProperties(new ListUnmarshaller<NodeRangeProperty>(NodeRangePropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

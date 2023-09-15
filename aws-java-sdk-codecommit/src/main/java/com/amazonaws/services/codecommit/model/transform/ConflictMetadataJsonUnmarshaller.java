@@ -43,50 +43,68 @@ public class ConflictMetadataJsonUnmarshaller implements Unmarshaller<ConflictMe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictMetadata.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fileSizes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictMetadata.setFileSizes(FileSizesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fileModes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictMetadata.setFileModes(FileModesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("objectTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictMetadata.setObjectTypes(ObjectTypesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("numberOfConflicts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictMetadata.setNumberOfConflicts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("isBinaryFile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictMetadata.setIsBinaryFile(IsBinaryFileJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("contentConflict", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictMetadata.setContentConflict(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("fileModeConflict", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictMetadata.setFileModeConflict(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("objectTypeConflict", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictMetadata.setObjectTypeConflict(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("mergeOperations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     conflictMetadata.setMergeOperations(MergeOperationsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

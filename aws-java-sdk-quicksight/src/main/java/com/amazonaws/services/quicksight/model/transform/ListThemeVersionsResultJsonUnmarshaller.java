@@ -45,12 +45,17 @@ public class ListThemeVersionsResultJsonUnmarshaller implements Unmarshaller<Lis
             return listThemeVersionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ThemeVersionSummaryList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listThemeVersionsResult.setThemeVersionSummaryList(new ListUnmarshaller<ThemeVersionSummary>(ThemeVersionSummaryJsonUnmarshaller
                             .getInstance())
@@ -58,12 +63,18 @@ public class ListThemeVersionsResultJsonUnmarshaller implements Unmarshaller<Lis
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listThemeVersionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listThemeVersionsResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

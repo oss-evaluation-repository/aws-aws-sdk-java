@@ -43,70 +43,93 @@ public class DescribeEdgePackagingJobResultJsonUnmarshaller implements Unmarshal
             return describeEdgePackagingJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EdgePackagingJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setEdgePackagingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgePackagingJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setEdgePackagingJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompilationJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setCompilationJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setOutputConfig(EdgeOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setResourceKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgePackagingJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setEdgePackagingJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgePackagingJobStatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setEdgePackagingJobStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModelArtifact", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setModelArtifact(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelSignature", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setModelSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PresetDeploymentOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEdgePackagingJobResult.setPresetDeploymentOutput(EdgePresetDeploymentOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

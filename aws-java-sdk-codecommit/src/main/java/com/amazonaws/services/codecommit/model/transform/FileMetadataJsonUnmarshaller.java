@@ -43,22 +43,33 @@ public class FileMetadataJsonUnmarshaller implements Unmarshaller<FileMetadata, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("absolutePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileMetadata.setAbsolutePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("blobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileMetadata.setBlobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fileMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileMetadata.setFileMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

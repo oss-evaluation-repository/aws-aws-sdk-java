@@ -43,42 +43,58 @@ public class EdgePackagingJobSummaryJsonUnmarshaller implements Unmarshaller<Edg
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EdgePackagingJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgePackagingJobSummary.setEdgePackagingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgePackagingJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgePackagingJobSummary.setEdgePackagingJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EdgePackagingJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgePackagingJobSummary.setEdgePackagingJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompilationJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgePackagingJobSummary.setCompilationJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgePackagingJobSummary.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgePackagingJobSummary.setModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgePackagingJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgePackagingJobSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,98 +43,128 @@ public class RemoteAccessSessionJsonUnmarshaller implements Unmarshaller<RemoteA
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("result", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("started", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setStarted(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setStopped(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("device", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setDevice(DeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("instanceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remoteDebugEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setRemoteDebugEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("remoteRecordEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setRemoteRecordEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("remoteRecordAppArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setRemoteRecordAppArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setHostAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("billingMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setBillingMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setDeviceMinutes(DeviceMinutesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("endpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deviceUdid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setDeviceUdid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("interactionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setInteractionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("skipAppResign", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setSkipAppResign(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("vpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     remoteAccessSession.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

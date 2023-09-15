@@ -43,30 +43,43 @@ public class CreatePortalResultJsonUnmarshaller implements Unmarshaller<CreatePo
             return createPortalResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("portalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPortalResult.setPortalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPortalResult.setPortalArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalStartUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPortalResult.setPortalStartUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("portalStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPortalResult.setPortalStatus(PortalStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ssoApplicationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createPortalResult.setSsoApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

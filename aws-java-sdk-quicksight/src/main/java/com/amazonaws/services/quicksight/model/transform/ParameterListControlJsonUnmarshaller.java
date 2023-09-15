@@ -43,38 +43,53 @@ public class ParameterListControlJsonUnmarshaller implements Unmarshaller<Parame
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ParameterControlId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterListControl.setParameterControlId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterListControl.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterListControl.setSourceParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterListControl.setDisplayOptions(ListControlDisplayOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterListControl.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectableValues", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterListControl.setSelectableValues(ParameterSelectableValuesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CascadingControlConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     parameterListControl.setCascadingControlConfiguration(CascadingControlConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

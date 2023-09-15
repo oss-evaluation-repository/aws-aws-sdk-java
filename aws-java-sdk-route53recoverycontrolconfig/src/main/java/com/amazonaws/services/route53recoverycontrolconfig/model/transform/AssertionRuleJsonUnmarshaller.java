@@ -43,40 +43,55 @@ public class AssertionRuleJsonUnmarshaller implements Unmarshaller<AssertionRule
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssertedControls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionRule.setAssertedControls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ControlPanelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionRule.setControlPanelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionRule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionRule.setRuleConfig(RuleConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SafetyRuleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionRule.setSafetyRuleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionRule.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WaitPeriodMs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assertionRule.setWaitPeriodMs(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

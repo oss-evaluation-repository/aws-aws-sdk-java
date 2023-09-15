@@ -43,30 +43,43 @@ public class PortfolioShareDetailJsonUnmarshaller implements Unmarshaller<Portfo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PrincipalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portfolioShareDetail.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portfolioShareDetail.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Accepted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portfolioShareDetail.setAccepted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ShareTagOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portfolioShareDetail.setShareTagOptions(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SharePrincipals", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     portfolioShareDetail.setSharePrincipals(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

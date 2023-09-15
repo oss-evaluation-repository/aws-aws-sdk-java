@@ -43,26 +43,38 @@ public class PullRequestCreatedEventMetadataJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestCreatedEventMetadata.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestCreatedEventMetadata.setSourceCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestCreatedEventMetadata.setDestinationCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mergeBase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestCreatedEventMetadata.setMergeBase(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

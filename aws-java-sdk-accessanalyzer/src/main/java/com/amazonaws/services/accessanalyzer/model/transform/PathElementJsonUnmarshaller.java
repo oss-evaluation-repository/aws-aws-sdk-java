@@ -43,26 +43,38 @@ public class PathElementJsonUnmarshaller implements Unmarshaller<PathElement, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("index", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pathElement.setIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("key", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pathElement.setKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("substring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pathElement.setSubstring(SubstringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pathElement.setValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

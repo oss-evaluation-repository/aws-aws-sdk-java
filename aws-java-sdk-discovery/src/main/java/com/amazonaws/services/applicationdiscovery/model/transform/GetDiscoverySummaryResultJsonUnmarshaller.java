@@ -43,42 +43,58 @@ public class GetDiscoverySummaryResultJsonUnmarshaller implements Unmarshaller<G
             return getDiscoverySummaryResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("servers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDiscoverySummaryResult.setServers(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("applications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDiscoverySummaryResult.setApplications(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("serversMappedToApplications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDiscoverySummaryResult.setServersMappedToApplications(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("serversMappedtoTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDiscoverySummaryResult.setServersMappedtoTags(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("agentSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDiscoverySummaryResult.setAgentSummary(CustomerAgentInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("connectorSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDiscoverySummaryResult.setConnectorSummary(CustomerConnectorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("meCollectorSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDiscoverySummaryResult.setMeCollectorSummary(CustomerMeCollectorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("agentlessCollectorSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDiscoverySummaryResult.setAgentlessCollectorSummary(CustomerAgentlessCollectorInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

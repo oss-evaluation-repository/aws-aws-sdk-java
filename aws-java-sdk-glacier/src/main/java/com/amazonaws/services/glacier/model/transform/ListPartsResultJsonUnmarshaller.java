@@ -43,40 +43,55 @@ public class ListPartsResultJsonUnmarshaller implements Unmarshaller<ListPartsRe
             return listPartsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MultipartUploadId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPartsResult.setMultipartUploadId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VaultARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPartsResult.setVaultARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ArchiveDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPartsResult.setArchiveDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartSizeInBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPartsResult.setPartSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPartsResult.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPartsResult.setParts(new ListUnmarshaller<PartListElement>(PartListElementJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPartsResult.setMarker(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

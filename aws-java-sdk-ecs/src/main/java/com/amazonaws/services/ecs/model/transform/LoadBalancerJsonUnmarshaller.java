@@ -43,26 +43,38 @@ public class LoadBalancerJsonUnmarshaller implements Unmarshaller<LoadBalancer, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("targetGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setTargetGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loadBalancerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setLoadBalancerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setContainerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerPort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setContainerPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

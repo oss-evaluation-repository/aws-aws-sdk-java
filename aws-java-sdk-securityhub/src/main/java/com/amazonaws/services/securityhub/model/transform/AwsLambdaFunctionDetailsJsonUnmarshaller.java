@@ -43,94 +43,122 @@ public class AwsLambdaFunctionDetailsJsonUnmarshaller implements Unmarshaller<Aw
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Code", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setCode(AwsLambdaFunctionCodeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CodeSha256", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setCodeSha256(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeadLetterConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setDeadLetterConfig(AwsLambdaFunctionDeadLetterConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setEnvironment(AwsLambdaFunctionEnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FunctionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Handler", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setHandler(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setLastModified(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Layers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setLayers(new ListUnmarshaller<AwsLambdaFunctionLayer>(AwsLambdaFunctionLayerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MasterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setMasterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MemorySize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setMemorySize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RevisionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Runtime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setRuntime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TracingConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setTracingConfig(AwsLambdaFunctionTracingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setVpcConfig(AwsLambdaFunctionVpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Architectures", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setArchitectures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PackageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsLambdaFunctionDetails.setPackageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

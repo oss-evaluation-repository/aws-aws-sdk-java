@@ -43,31 +43,44 @@ public class ContainerServiceDeploymentJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceDeployment.setVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceDeployment.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceDeployment.setContainers(new MapUnmarshaller<String, Container>(context.getUnmarshaller(String.class),
                             ContainerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("publicEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceDeployment.setPublicEndpoint(ContainerServiceEndpointJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     containerServiceDeployment.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

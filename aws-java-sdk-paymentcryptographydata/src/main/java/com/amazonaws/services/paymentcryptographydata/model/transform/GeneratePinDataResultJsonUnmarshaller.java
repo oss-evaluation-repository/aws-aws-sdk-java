@@ -43,34 +43,48 @@ public class GeneratePinDataResultJsonUnmarshaller implements Unmarshaller<Gener
             return generatePinDataResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EncryptedPinBlock", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generatePinDataResult.setEncryptedPinBlock(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generatePinDataResult.setEncryptionKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionKeyCheckValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generatePinDataResult.setEncryptionKeyCheckValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenerationKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generatePinDataResult.setGenerationKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenerationKeyCheckValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generatePinDataResult.setGenerationKeyCheckValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PinData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     generatePinDataResult.setPinData(PinDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,99 +43,129 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setStackId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("ServiceRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setServiceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultInstanceProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setDefaultInstanceProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultOs", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setDefaultOs(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HostnameTheme", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setHostnameTheme(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultAvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setDefaultAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultSubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setDefaultSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomJson", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setCustomJson(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationManager", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setConfigurationManager(StackConfigurationManagerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChefConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setChefConfiguration(ChefConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UseCustomCookbooks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setUseCustomCookbooks(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UseOpsworksSecurityGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setUseOpsworksSecurityGroups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomCookbooksSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setCustomCookbooksSource(SourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultSshKeyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setDefaultSshKeyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultRootDeviceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setDefaultRootDeviceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AgentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stack.setAgentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

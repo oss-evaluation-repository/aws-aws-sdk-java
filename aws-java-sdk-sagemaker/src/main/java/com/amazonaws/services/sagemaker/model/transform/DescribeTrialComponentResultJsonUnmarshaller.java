@@ -43,75 +43,95 @@ public class DescribeTrialComponentResultJsonUnmarshaller implements Unmarshalle
             return describeTrialComponentResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrialComponentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setTrialComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrialComponentArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setTrialComponentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setSource(TrialComponentSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setStatus(TrialComponentStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setCreatedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setLastModifiedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setParameters(new MapUnmarshaller<String, TrialComponentParameterValue>(context.getUnmarshaller(String.class),
                             TrialComponentParameterValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("InputArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setInputArtifacts(new MapUnmarshaller<String, TrialComponentArtifact>(context.getUnmarshaller(String.class),
                             TrialComponentArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("OutputArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setOutputArtifacts(new MapUnmarshaller<String, TrialComponentArtifact>(context.getUnmarshaller(String.class),
                             TrialComponentArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("MetadataProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Metrics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setMetrics(new ListUnmarshaller<TrialComponentMetricSummary>(TrialComponentMetricSummaryJsonUnmarshaller
                             .getInstance())
@@ -119,14 +139,20 @@ public class DescribeTrialComponentResultJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("LineageGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setLineageGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeTrialComponentResult.setSources(new ListUnmarshaller<TrialComponentSource>(TrialComponentSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

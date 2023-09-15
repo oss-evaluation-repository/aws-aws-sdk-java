@@ -43,18 +43,28 @@ public class AccuracyJsonUnmarshaller implements Unmarshaller<Accuracy, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HorizontalAccuracy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accuracy.setHorizontalAccuracy(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("VerticalAccuracy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accuracy.setVerticalAccuracy(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

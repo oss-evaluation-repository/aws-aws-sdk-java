@@ -43,30 +43,42 @@ public class GetRecordsResultJsonUnmarshaller implements Unmarshaller<GetRecords
             return getRecordsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Records", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRecordsResult.setRecords(new ListUnmarshaller<Record>(RecordJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextShardIterator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRecordsResult.setNextShardIterator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MillisBehindLatest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRecordsResult.setMillisBehindLatest(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ChildShards", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getRecordsResult.setChildShards(new ListUnmarshaller<ChildShard>(ChildShardJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

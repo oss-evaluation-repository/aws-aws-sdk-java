@@ -43,34 +43,48 @@ public class TopicRefreshScheduleJsonUnmarshaller implements Unmarshaller<TopicR
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IsEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRefreshSchedule.setIsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("BasedOnSpiceSchedule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRefreshSchedule.setBasedOnSpiceSchedule(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("StartingAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRefreshSchedule.setStartingAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRefreshSchedule.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RepeatAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRefreshSchedule.setRepeatAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicScheduleType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topicRefreshSchedule.setTopicScheduleType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

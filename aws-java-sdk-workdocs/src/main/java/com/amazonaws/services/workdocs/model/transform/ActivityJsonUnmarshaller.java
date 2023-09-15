@@ -43,46 +43,63 @@ public class ActivityJsonUnmarshaller implements Unmarshaller<Activity, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeStamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setTimeStamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IsIndirectActivity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setIsIndirectActivity(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setOrganizationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Initiator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setInitiator(UserMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Participants", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setParticipants(ParticipantsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResourceMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setResourceMetadata(ResourceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OriginalParent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setOriginalParent(ResourceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CommentMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     activity.setCommentMetadata(CommentMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

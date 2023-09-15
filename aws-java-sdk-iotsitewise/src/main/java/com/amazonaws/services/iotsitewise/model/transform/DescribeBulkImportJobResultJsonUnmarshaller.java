@@ -43,48 +43,65 @@ public class DescribeBulkImportJobResultJsonUnmarshaller implements Unmarshaller
             return describeBulkImportJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBulkImportJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBulkImportJobResult.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBulkImportJobResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBulkImportJobResult.setJobRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("files", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBulkImportJobResult.setFiles(new ListUnmarshaller<File>(FileJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("errorReportLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBulkImportJobResult.setErrorReportLocation(ErrorReportLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBulkImportJobResult.setJobConfiguration(JobConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("jobCreationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBulkImportJobResult.setJobCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("jobLastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBulkImportJobResult.setJobLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

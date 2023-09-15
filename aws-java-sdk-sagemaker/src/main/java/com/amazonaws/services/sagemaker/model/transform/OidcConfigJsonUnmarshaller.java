@@ -43,42 +43,58 @@ public class OidcConfigJsonUnmarshaller implements Unmarshaller<OidcConfig, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfig.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientSecret", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfig.setClientSecret(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Issuer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfig.setIssuer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthorizationEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfig.setAuthorizationEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TokenEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfig.setTokenEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserInfoEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfig.setUserInfoEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogoutEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfig.setLogoutEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("JwksUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     oidcConfig.setJwksUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

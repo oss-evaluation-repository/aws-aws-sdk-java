@@ -43,68 +43,85 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setConfiguration(ClusterConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("registeredContainerInstancesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setRegisteredContainerInstancesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("runningTasksCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setRunningTasksCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingTasksCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setPendingTasksCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("activeServicesCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setActiveServicesCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("statistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setStatistics(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setSettings(new ListUnmarshaller<ClusterSetting>(ClusterSettingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("capacityProviders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setCapacityProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("defaultCapacityProviderStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setDefaultCapacityProviderStrategy(new ListUnmarshaller<CapacityProviderStrategyItem>(CapacityProviderStrategyItemJsonUnmarshaller
                             .getInstance())
@@ -112,18 +129,25 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     .unmarshall(context));
                 }
                 if (context.testExpression("attachments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setAttachments(new ListUnmarshaller<Attachment>(AttachmentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("attachmentsStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setAttachmentsStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceConnectDefaults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     cluster.setServiceConnectDefaults(ClusterServiceConnectDefaultsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

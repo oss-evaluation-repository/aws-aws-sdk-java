@@ -43,44 +43,60 @@ public class CommentsForPullRequestJsonUnmarshaller implements Unmarshaller<Comm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pullRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commentsForPullRequest.setPullRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commentsForPullRequest.setRepositoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("beforeCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commentsForPullRequest.setBeforeCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("afterCommitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commentsForPullRequest.setAfterCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("beforeBlobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commentsForPullRequest.setBeforeBlobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("afterBlobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commentsForPullRequest.setAfterBlobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commentsForPullRequest.setLocation(LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("comments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     commentsForPullRequest.setComments(new ListUnmarshaller<Comment>(CommentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

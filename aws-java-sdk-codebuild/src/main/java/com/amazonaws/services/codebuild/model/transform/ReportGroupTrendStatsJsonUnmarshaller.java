@@ -43,22 +43,33 @@ public class ReportGroupTrendStatsJsonUnmarshaller implements Unmarshaller<Repor
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("average", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGroupTrendStats.setAverage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("max", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGroupTrendStats.setMax(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("min", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportGroupTrendStats.setMin(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

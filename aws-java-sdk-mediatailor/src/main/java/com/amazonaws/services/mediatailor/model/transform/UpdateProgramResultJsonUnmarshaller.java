@@ -43,56 +43,75 @@ public class UpdateProgramResultJsonUnmarshaller implements Unmarshaller<UpdateP
             return updateProgramResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AdBreaks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setAdBreaks(new ListUnmarshaller<AdBreak>(AdBreakJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChannelName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClipRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setClipRange(ClipRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DurationMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setDurationMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LiveSourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setLiveSourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProgramName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setProgramName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduledStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setScheduledStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SourceLocationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setSourceLocationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VodSourceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateProgramResult.setVodSourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

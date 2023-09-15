@@ -43,42 +43,58 @@ public class DescribeMitigationActionResultJsonUnmarshaller implements Unmarshal
             return describeMitigationActionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMitigationActionResult.setActionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMitigationActionResult.setActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMitigationActionResult.setActionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMitigationActionResult.setActionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMitigationActionResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionParams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMitigationActionResult.setActionParams(MitigationActionParamsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMitigationActionResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeMitigationActionResult.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

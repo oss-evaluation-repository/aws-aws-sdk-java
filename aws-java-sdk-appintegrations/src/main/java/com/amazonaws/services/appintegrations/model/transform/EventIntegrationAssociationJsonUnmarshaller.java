@@ -43,35 +43,49 @@ public class EventIntegrationAssociationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventIntegrationAssociationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventIntegrationAssociation.setEventIntegrationAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventIntegrationAssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventIntegrationAssociation.setEventIntegrationAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventIntegrationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventIntegrationAssociation.setEventIntegrationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventIntegrationAssociation.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventBridgeRuleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventIntegrationAssociation.setEventBridgeRuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClientAssociationMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     eventIntegrationAssociation.setClientAssociationMetadata(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

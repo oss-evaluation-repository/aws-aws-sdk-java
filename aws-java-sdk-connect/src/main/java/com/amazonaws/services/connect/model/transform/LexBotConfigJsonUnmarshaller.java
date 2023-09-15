@@ -43,18 +43,28 @@ public class LexBotConfigJsonUnmarshaller implements Unmarshaller<LexBotConfig, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LexBot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexBotConfig.setLexBot(LexBotJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LexV2Bot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexBotConfig.setLexV2Bot(LexV2BotJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

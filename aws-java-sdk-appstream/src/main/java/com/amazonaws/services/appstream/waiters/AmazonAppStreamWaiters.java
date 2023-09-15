@@ -50,7 +50,7 @@ public class AmazonAppStreamWaiters {
     public Waiter<DescribeFleetsRequest> fleetStarted() {
 
         return new WaiterBuilder<DescribeFleetsRequest, DescribeFleetsResult>().withSdkFunction(new DescribeFleetsFunction(client))
-                .withAcceptors(new FleetStarted.IsRUNNINGMatcher(), new FleetStarted.IsSTOPPINGMatcher(), new FleetStarted.IsSTOPPEDMatcher())
+                .withAcceptors(new FleetStarted.IsACTIVEMatcher(), new FleetStarted.IsPENDING_DEACTIVATEMatcher(), new FleetStarted.IsINACTIVEMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }
@@ -63,7 +63,7 @@ public class AmazonAppStreamWaiters {
     public Waiter<DescribeFleetsRequest> fleetStopped() {
 
         return new WaiterBuilder<DescribeFleetsRequest, DescribeFleetsResult>().withSdkFunction(new DescribeFleetsFunction(client))
-                .withAcceptors(new FleetStopped.IsSTOPPEDMatcher(), new FleetStopped.IsSTARTINGMatcher(), new FleetStopped.IsRUNNINGMatcher())
+                .withAcceptors(new FleetStopped.IsINACTIVEMatcher(), new FleetStopped.IsPENDING_ACTIVATEMatcher(), new FleetStopped.IsACTIVEMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }

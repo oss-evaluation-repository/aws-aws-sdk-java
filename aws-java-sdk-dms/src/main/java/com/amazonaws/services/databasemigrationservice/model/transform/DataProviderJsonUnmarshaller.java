@@ -43,34 +43,48 @@ public class DataProviderJsonUnmarshaller implements Unmarshaller<DataProvider, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataProviderName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProvider.setDataProviderName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataProviderArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProvider.setDataProviderArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataProviderCreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProvider.setDataProviderCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProvider.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProvider.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataProvider.setSettings(DataProviderSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,67 +43,88 @@ public class AwsS3BucketDetailsJsonUnmarshaller implements Unmarshaller<AwsS3Buc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setOwnerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setOwnerAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerSideEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setServerSideEncryptionConfiguration(AwsS3BucketServerSideEncryptionConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("BucketLifecycleConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setBucketLifecycleConfiguration(AwsS3BucketBucketLifecycleConfigurationDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("PublicAccessBlockConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails
                             .setPublicAccessBlockConfiguration(AwsS3AccountPublicAccessBlockDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AccessControlList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setAccessControlList(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BucketLoggingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setBucketLoggingConfiguration(AwsS3BucketLoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BucketWebsiteConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setBucketWebsiteConfiguration(AwsS3BucketWebsiteConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BucketNotificationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setBucketNotificationConfiguration(AwsS3BucketNotificationConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("BucketVersioningConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setBucketVersioningConfiguration(AwsS3BucketBucketVersioningConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("ObjectLockConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsS3BucketDetails.setObjectLockConfiguration(AwsS3BucketObjectLockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

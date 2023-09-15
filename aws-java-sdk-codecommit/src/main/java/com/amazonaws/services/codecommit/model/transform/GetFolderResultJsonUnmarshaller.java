@@ -43,46 +43,61 @@ public class GetFolderResultJsonUnmarshaller implements Unmarshaller<GetFolderRe
             return getFolderResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("commitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFolderResult.setCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("folderPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFolderResult.setFolderPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("treeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFolderResult.setTreeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subFolders", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFolderResult.setSubFolders(new ListUnmarshaller<Folder>(FolderJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("files", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFolderResult.setFiles(new ListUnmarshaller<File>(FileJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("symbolicLinks", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFolderResult.setSymbolicLinks(new ListUnmarshaller<SymbolicLink>(SymbolicLinkJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("subModules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getFolderResult.setSubModules(new ListUnmarshaller<SubModule>(SubModuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class ExecutorsSummaryJsonUnmarshaller implements Unmarshaller<ExecutorsS
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExecutorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executorsSummary.setExecutorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executorsSummary.setExecutorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executorsSummary.setStartDateTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TerminationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executorsSummary.setTerminationDateTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutorState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executorsSummary.setExecutorState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutorSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executorsSummary.setExecutorSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

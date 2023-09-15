@@ -43,74 +43,93 @@ public class LoadBalancerJsonUnmarshaller implements Unmarshaller<LoadBalancer, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("supportCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setSupportCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setLocation(ResourceLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("dnsName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("publicPorts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setPublicPorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("healthCheckPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setHealthCheckPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instancePort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setInstancePort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceHealthSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setInstanceHealthSummary(new ListUnmarshaller<InstanceHealthSummary>(InstanceHealthSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tlsCertificateSummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setTlsCertificateSummaries(new ListUnmarshaller<LoadBalancerTlsCertificateSummary>(
                             LoadBalancerTlsCertificateSummaryJsonUnmarshaller.getInstance())
@@ -118,21 +137,29 @@ public class LoadBalancerJsonUnmarshaller implements Unmarshaller<LoadBalancer, 
                     .unmarshall(context));
                 }
                 if (context.testExpression("configurationOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setConfigurationOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("ipAddressType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("httpsRedirectionEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setHttpsRedirectionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("tlsPolicyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loadBalancer.setTlsPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

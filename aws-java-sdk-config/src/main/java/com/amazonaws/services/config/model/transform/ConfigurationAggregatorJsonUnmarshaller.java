@@ -43,20 +43,27 @@ public class ConfigurationAggregatorJsonUnmarshaller implements Unmarshaller<Con
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigurationAggregatorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationAggregator.setConfigurationAggregatorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationAggregatorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationAggregator.setConfigurationAggregatorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountAggregationSources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationAggregator.setAccountAggregationSources(new ListUnmarshaller<AccountAggregationSource>(
                             AccountAggregationSourceJsonUnmarshaller.getInstance())
@@ -64,20 +71,28 @@ public class ConfigurationAggregatorJsonUnmarshaller implements Unmarshaller<Con
                     .unmarshall(context));
                 }
                 if (context.testExpression("OrganizationAggregationSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationAggregator.setOrganizationAggregationSource(OrganizationAggregationSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationAggregator.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationAggregator.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     configurationAggregator.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

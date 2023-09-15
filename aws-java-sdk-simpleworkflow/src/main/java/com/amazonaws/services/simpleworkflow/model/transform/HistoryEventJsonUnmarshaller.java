@@ -43,282 +43,347 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setEventTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("eventType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setEventType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutionStartedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setWorkflowExecutionStartedEventAttributes(WorkflowExecutionStartedEventAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("workflowExecutionCompletedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setWorkflowExecutionCompletedEventAttributes(WorkflowExecutionCompletedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("completeWorkflowExecutionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setCompleteWorkflowExecutionFailedEventAttributes(CompleteWorkflowExecutionFailedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setWorkflowExecutionFailedEventAttributes(WorkflowExecutionFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("failWorkflowExecutionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setFailWorkflowExecutionFailedEventAttributes(FailWorkflowExecutionFailedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutionTimedOutEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setWorkflowExecutionTimedOutEventAttributes(WorkflowExecutionTimedOutEventAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("workflowExecutionCanceledEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setWorkflowExecutionCanceledEventAttributes(WorkflowExecutionCanceledEventAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("cancelWorkflowExecutionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setCancelWorkflowExecutionFailedEventAttributes(CancelWorkflowExecutionFailedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutionContinuedAsNewEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setWorkflowExecutionContinuedAsNewEventAttributes(WorkflowExecutionContinuedAsNewEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("continueAsNewWorkflowExecutionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setContinueAsNewWorkflowExecutionFailedEventAttributes(ContinueAsNewWorkflowExecutionFailedEventAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutionTerminatedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setWorkflowExecutionTerminatedEventAttributes(WorkflowExecutionTerminatedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutionCancelRequestedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setWorkflowExecutionCancelRequestedEventAttributes(WorkflowExecutionCancelRequestedEventAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("decisionTaskScheduledEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent
                             .setDecisionTaskScheduledEventAttributes(DecisionTaskScheduledEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("decisionTaskStartedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setDecisionTaskStartedEventAttributes(DecisionTaskStartedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("decisionTaskCompletedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent
                             .setDecisionTaskCompletedEventAttributes(DecisionTaskCompletedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("decisionTaskTimedOutEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setDecisionTaskTimedOutEventAttributes(DecisionTaskTimedOutEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityTaskScheduledEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent
                             .setActivityTaskScheduledEventAttributes(ActivityTaskScheduledEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityTaskStartedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setActivityTaskStartedEventAttributes(ActivityTaskStartedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityTaskCompletedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent
                             .setActivityTaskCompletedEventAttributes(ActivityTaskCompletedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityTaskFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setActivityTaskFailedEventAttributes(ActivityTaskFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityTaskTimedOutEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setActivityTaskTimedOutEventAttributes(ActivityTaskTimedOutEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityTaskCanceledEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setActivityTaskCanceledEventAttributes(ActivityTaskCanceledEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activityTaskCancelRequestedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setActivityTaskCancelRequestedEventAttributes(ActivityTaskCancelRequestedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutionSignaledEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setWorkflowExecutionSignaledEventAttributes(WorkflowExecutionSignaledEventAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("markerRecordedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setMarkerRecordedEventAttributes(MarkerRecordedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("recordMarkerFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setRecordMarkerFailedEventAttributes(RecordMarkerFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timerStartedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setTimerStartedEventAttributes(TimerStartedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timerFiredEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setTimerFiredEventAttributes(TimerFiredEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timerCanceledEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setTimerCanceledEventAttributes(TimerCanceledEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startChildWorkflowExecutionInitiatedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setStartChildWorkflowExecutionInitiatedEventAttributes(StartChildWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("childWorkflowExecutionStartedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setChildWorkflowExecutionStartedEventAttributes(ChildWorkflowExecutionStartedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("childWorkflowExecutionCompletedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setChildWorkflowExecutionCompletedEventAttributes(ChildWorkflowExecutionCompletedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("childWorkflowExecutionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setChildWorkflowExecutionFailedEventAttributes(ChildWorkflowExecutionFailedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("childWorkflowExecutionTimedOutEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setChildWorkflowExecutionTimedOutEventAttributes(ChildWorkflowExecutionTimedOutEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("childWorkflowExecutionCanceledEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setChildWorkflowExecutionCanceledEventAttributes(ChildWorkflowExecutionCanceledEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("childWorkflowExecutionTerminatedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setChildWorkflowExecutionTerminatedEventAttributes(ChildWorkflowExecutionTerminatedEventAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("signalExternalWorkflowExecutionInitiatedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent
                             .setSignalExternalWorkflowExecutionInitiatedEventAttributes(SignalExternalWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("externalWorkflowExecutionSignaledEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setExternalWorkflowExecutionSignaledEventAttributes(ExternalWorkflowExecutionSignaledEventAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("signalExternalWorkflowExecutionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setSignalExternalWorkflowExecutionFailedEventAttributes(SignalExternalWorkflowExecutionFailedEventAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("externalWorkflowExecutionCancelRequestedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent
                             .setExternalWorkflowExecutionCancelRequestedEventAttributes(ExternalWorkflowExecutionCancelRequestedEventAttributesJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("requestCancelExternalWorkflowExecutionInitiatedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent
                             .setRequestCancelExternalWorkflowExecutionInitiatedEventAttributes(RequestCancelExternalWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("requestCancelExternalWorkflowExecutionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent
                             .setRequestCancelExternalWorkflowExecutionFailedEventAttributes(RequestCancelExternalWorkflowExecutionFailedEventAttributesJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scheduleActivityTaskFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setScheduleActivityTaskFailedEventAttributes(ScheduleActivityTaskFailedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("requestCancelActivityTaskFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setRequestCancelActivityTaskFailedEventAttributes(RequestCancelActivityTaskFailedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("startTimerFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setStartTimerFailedEventAttributes(StartTimerFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("cancelTimerFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setCancelTimerFailedEventAttributes(CancelTimerFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startChildWorkflowExecutionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setStartChildWorkflowExecutionFailedEventAttributes(StartChildWorkflowExecutionFailedEventAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionScheduledEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setLambdaFunctionScheduledEventAttributes(LambdaFunctionScheduledEventAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("lambdaFunctionStartedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent
                             .setLambdaFunctionStartedEventAttributes(LambdaFunctionStartedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionCompletedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setLambdaFunctionCompletedEventAttributes(LambdaFunctionCompletedEventAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("lambdaFunctionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setLambdaFunctionFailedEventAttributes(LambdaFunctionFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionTimedOutEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setLambdaFunctionTimedOutEventAttributes(LambdaFunctionTimedOutEventAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("scheduleLambdaFunctionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setScheduleLambdaFunctionFailedEventAttributes(ScheduleLambdaFunctionFailedEventAttributesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("startLambdaFunctionFailedEventAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     historyEvent.setStartLambdaFunctionFailedEventAttributes(StartLambdaFunctionFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class BatchListObjectAttributesJsonUnmarshaller implements Unmarshaller<B
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ObjectReference", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchListObjectAttributes.setObjectReference(ObjectReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchListObjectAttributes.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchListObjectAttributes.setMaxResults(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FacetFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchListObjectAttributes.setFacetFilter(SchemaFacetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,51 +43,68 @@ public class FileSystemAssociationInfoJsonUnmarshaller implements Unmarshaller<F
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FileSystemAssociationARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationInfo.setFileSystemAssociationARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocationARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationInfo.setLocationARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemAssociationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationInfo.setFileSystemAssociationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuditDestinationARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationInfo.setAuditDestinationARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationInfo.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CacheAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationInfo.setCacheAttributes(CacheAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EndpointNetworkConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationInfo.setEndpointNetworkConfiguration(EndpointNetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FileSystemAssociationStatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fileSystemAssociationInfo.setFileSystemAssociationStatusDetails(new ListUnmarshaller<FileSystemAssociationStatusDetail>(
                             FileSystemAssociationStatusDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

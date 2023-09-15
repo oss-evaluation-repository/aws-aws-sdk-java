@@ -43,60 +43,79 @@ public class GetDetectorVersionResultJsonUnmarshaller implements Unmarshaller<Ge
             return getDetectorVersionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("detectorId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setDetectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("detectorVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setDetectorVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("externalModelEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setExternalModelEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("modelVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setModelVersions(new ListUnmarshaller<ModelVersion>(ModelVersionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setLastUpdatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ruleExecutionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setRuleExecutionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getDetectorVersionResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

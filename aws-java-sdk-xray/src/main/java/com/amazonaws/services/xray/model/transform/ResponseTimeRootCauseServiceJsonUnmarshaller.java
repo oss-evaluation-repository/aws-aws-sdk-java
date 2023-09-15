@@ -43,30 +43,39 @@ public class ResponseTimeRootCauseServiceJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseTimeRootCauseService.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Names", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseTimeRootCauseService.setNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseTimeRootCauseService.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseTimeRootCauseService.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EntityPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseTimeRootCauseService.setEntityPath(new ListUnmarshaller<ResponseTimeRootCauseEntity>(ResponseTimeRootCauseEntityJsonUnmarshaller
                             .getInstance())
@@ -74,8 +83,13 @@ public class ResponseTimeRootCauseServiceJsonUnmarshaller implements Unmarshalle
                     .unmarshall(context));
                 }
                 if (context.testExpression("Inferred", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseTimeRootCauseService.setInferred(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

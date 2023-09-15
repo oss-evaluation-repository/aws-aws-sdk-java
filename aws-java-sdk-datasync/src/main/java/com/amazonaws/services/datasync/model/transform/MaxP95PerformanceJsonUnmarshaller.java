@@ -43,54 +43,73 @@ public class MaxP95PerformanceJsonUnmarshaller implements Unmarshaller<MaxP95Per
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IopsRead", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setIopsRead(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("IopsWrite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setIopsWrite(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("IopsOther", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setIopsOther(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("IopsTotal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setIopsTotal(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ThroughputRead", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setThroughputRead(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ThroughputWrite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setThroughputWrite(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ThroughputOther", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setThroughputOther(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("ThroughputTotal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setThroughputTotal(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("LatencyRead", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setLatencyRead(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("LatencyWrite", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setLatencyWrite(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("LatencyOther", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     maxP95Performance.setLatencyOther(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

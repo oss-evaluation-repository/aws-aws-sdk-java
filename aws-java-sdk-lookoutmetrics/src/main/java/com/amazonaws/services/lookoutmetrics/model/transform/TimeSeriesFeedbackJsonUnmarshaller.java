@@ -43,18 +43,28 @@ public class TimeSeriesFeedbackJsonUnmarshaller implements Unmarshaller<TimeSeri
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TimeSeriesId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesFeedback.setTimeSeriesId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsAnomaly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesFeedback.setIsAnomaly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

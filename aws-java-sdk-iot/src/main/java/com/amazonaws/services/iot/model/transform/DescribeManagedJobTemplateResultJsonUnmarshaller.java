@@ -43,34 +43,44 @@ public class DescribeManagedJobTemplateResultJsonUnmarshaller implements Unmarsh
             return describeManagedJobTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("templateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedJobTemplateResult.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedJobTemplateResult.setTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedJobTemplateResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedJobTemplateResult.setTemplateVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedJobTemplateResult.setEnvironments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("documentParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedJobTemplateResult.setDocumentParameters(new ListUnmarshaller<DocumentParameter>(DocumentParameterJsonUnmarshaller
                             .getInstance())
@@ -78,8 +88,13 @@ public class DescribeManagedJobTemplateResultJsonUnmarshaller implements Unmarsh
                     .unmarshall(context));
                 }
                 if (context.testExpression("document", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeManagedJobTemplateResult.setDocument(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

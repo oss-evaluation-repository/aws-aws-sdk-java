@@ -44,12 +44,17 @@ public class LaunchProfileInitializationActiveDirectoryJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("computerAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitializationActiveDirectory.setComputerAttributes(new ListUnmarshaller<ActiveDirectoryComputerAttribute>(
                             ActiveDirectoryComputerAttributeJsonUnmarshaller.getInstance())
@@ -57,31 +62,41 @@ public class LaunchProfileInitializationActiveDirectoryJsonUnmarshaller implemen
                     .unmarshall(context));
                 }
                 if (context.testExpression("directoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitializationActiveDirectory.setDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("directoryName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitializationActiveDirectory.setDirectoryName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dnsIpAddresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitializationActiveDirectory.setDnsIpAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("organizationalUnitDistinguishedName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitializationActiveDirectory
                             .setOrganizationalUnitDistinguishedName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("studioComponentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitializationActiveDirectory.setStudioComponentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("studioComponentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitializationActiveDirectory.setStudioComponentName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

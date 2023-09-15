@@ -43,94 +43,122 @@ public class RuntimeContextJsonUnmarshaller implements Unmarshaller<RuntimeConte
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("modifyingProcess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setModifyingProcess(ProcessDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("modifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("scriptPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setScriptPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("libraryPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setLibraryPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ldPreloadValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setLdPreloadValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("socketPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setSocketPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("runcBinaryPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setRuncBinaryPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("releaseAgentPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setReleaseAgentPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mountSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setMountSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mountTarget", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setMountTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fileSystemType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setFileSystemType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("flags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setFlags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("moduleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setModuleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("moduleFilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setModuleFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("moduleSha256", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setModuleSha256(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("shellHistoryFilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setShellHistoryFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetProcess", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setTargetProcess(ProcessDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("addressFamily", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setAddressFamily(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ianaProtocolNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setIanaProtocolNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("memoryRegions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     runtimeContext.setMemoryRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

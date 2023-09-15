@@ -43,42 +43,58 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Catalog", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setCatalog(CatalogResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Database", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setDatabase(DatabaseResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Table", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setTable(TableResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TableWithColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setTableWithColumns(TableWithColumnsResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setDataLocation(DataLocationResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataCellsFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setDataCellsFilter(DataCellsFilterResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LFTag", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setLFTag(LFTagKeyResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LFTagPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resource.setLFTagPolicy(LFTagPolicyResourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

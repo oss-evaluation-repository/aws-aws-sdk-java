@@ -43,54 +43,73 @@ public class PipelineJsonUnmarshaller implements Unmarshaller<Pipeline, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputBucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setInputBucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputBucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setOutputBucket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AwsKmsKeyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setAwsKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Notifications", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setNotifications(NotificationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ContentConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setContentConfig(PipelineOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ThumbnailConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipeline.setThumbnailConfig(PipelineOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

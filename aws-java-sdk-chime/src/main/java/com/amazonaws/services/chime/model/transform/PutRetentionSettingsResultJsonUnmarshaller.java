@@ -43,18 +43,28 @@ public class PutRetentionSettingsResultJsonUnmarshaller implements Unmarshaller<
             return putRetentionSettingsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RetentionSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRetentionSettingsResult.setRetentionSettings(RetentionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InitiateDeletionTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     putRetentionSettingsResult.setInitiateDeletionTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

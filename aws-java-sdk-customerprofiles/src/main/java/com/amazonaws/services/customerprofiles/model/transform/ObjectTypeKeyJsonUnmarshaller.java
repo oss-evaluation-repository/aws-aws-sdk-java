@@ -43,22 +43,32 @@ public class ObjectTypeKeyJsonUnmarshaller implements Unmarshaller<ObjectTypeKey
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StandardIdentifiers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     objectTypeKey.setStandardIdentifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FieldNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     objectTypeKey.setFieldNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

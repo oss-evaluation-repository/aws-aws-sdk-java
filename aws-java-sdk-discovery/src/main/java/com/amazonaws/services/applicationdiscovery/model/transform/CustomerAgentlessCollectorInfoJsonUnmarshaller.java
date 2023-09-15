@@ -43,38 +43,53 @@ public class CustomerAgentlessCollectorInfoJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeAgentlessCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentlessCollectorInfo.setActiveAgentlessCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("healthyAgentlessCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentlessCollectorInfo.setHealthyAgentlessCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("denyListedAgentlessCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentlessCollectorInfo.setDenyListedAgentlessCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("shutdownAgentlessCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentlessCollectorInfo.setShutdownAgentlessCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("unhealthyAgentlessCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentlessCollectorInfo.setUnhealthyAgentlessCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalAgentlessCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentlessCollectorInfo.setTotalAgentlessCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("unknownAgentlessCollectors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     customerAgentlessCollectorInfo.setUnknownAgentlessCollectors(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

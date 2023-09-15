@@ -43,91 +43,118 @@ public class AwsRdsDbClusterSnapshotDetailsJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SnapshotCreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setSnapshotCreateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllocatedStorage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setAllocatedStorage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setClusterCreateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterUsername", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setMasterUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LicenseModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setLicenseModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setSnapshotType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PercentProgress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setPercentProgress(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("StorageEncrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setStorageEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbClusterIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setDbClusterIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbClusterSnapshotIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setDbClusterSnapshotIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamDatabaseAuthenticationEnabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setIamDatabaseAuthenticationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DbClusterSnapshotAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setDbClusterSnapshotAttributes(new ListUnmarshaller<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>(
                             AwsRdsDbClusterSnapshotDbClusterSnapshotAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

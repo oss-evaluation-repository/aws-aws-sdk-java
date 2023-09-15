@@ -43,42 +43,58 @@ public class FieldStatsJsonUnmarshaller implements Unmarshaller<FieldStats, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("min", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldStats.setMin(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("max", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldStats.setMax(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("count", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldStats.setCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("missing", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldStats.setMissing(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("sum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldStats.setSum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("sumOfSquares", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldStats.setSumOfSquares(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("mean", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldStats.setMean(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stddev", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     fieldStats.setStddev(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

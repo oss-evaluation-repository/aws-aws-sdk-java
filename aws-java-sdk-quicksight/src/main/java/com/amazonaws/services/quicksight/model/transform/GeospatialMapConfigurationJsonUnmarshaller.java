@@ -43,38 +43,53 @@ public class GeospatialMapConfigurationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FieldWells", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialMapConfiguration.setFieldWells(GeospatialMapFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Legend", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialMapConfiguration.setLegend(LegendOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tooltip", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialMapConfiguration.setTooltip(TooltipOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("WindowOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialMapConfiguration.setWindowOptions(GeospatialWindowOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MapStyleOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialMapConfiguration.setMapStyleOptions(GeospatialMapStyleOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PointStyleOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialMapConfiguration.setPointStyleOptions(GeospatialPointStyleOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisualPalette", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     geospatialMapConfiguration.setVisualPalette(VisualPaletteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

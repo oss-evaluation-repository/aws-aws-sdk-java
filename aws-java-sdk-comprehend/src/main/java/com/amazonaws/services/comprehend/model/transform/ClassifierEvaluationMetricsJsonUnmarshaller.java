@@ -43,42 +43,58 @@ public class ClassifierEvaluationMetricsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Accuracy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifierEvaluationMetrics.setAccuracy(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Precision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifierEvaluationMetrics.setPrecision(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Recall", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifierEvaluationMetrics.setRecall(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("F1Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifierEvaluationMetrics.setF1Score(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MicroPrecision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifierEvaluationMetrics.setMicroPrecision(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MicroRecall", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifierEvaluationMetrics.setMicroRecall(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MicroF1Score", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifierEvaluationMetrics.setMicroF1Score(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("HammingLoss", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classifierEvaluationMetrics.setHammingLoss(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

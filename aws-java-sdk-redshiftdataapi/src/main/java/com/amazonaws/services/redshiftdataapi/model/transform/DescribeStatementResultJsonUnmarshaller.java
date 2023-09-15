@@ -43,90 +43,117 @@ public class DescribeStatementResultJsonUnmarshaller implements Unmarshaller<Des
             return describeStatementResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClusterIdentifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setClusterIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Database", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setDatabase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbUser", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setDbUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setDuration(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Error", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HasResultSet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setHasResultSet(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QueryParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setQueryParameters(new ListUnmarshaller<SqlParameter>(SqlParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("QueryString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RedshiftPid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setRedshiftPid(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("RedshiftQueryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setRedshiftQueryId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultRows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setResultRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setResultSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubStatements", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setSubStatements(new ListUnmarshaller<SubStatementData>(SubStatementDataJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("WorkgroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeStatementResult.setWorkgroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

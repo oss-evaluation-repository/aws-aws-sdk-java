@@ -43,78 +43,102 @@ public class PlaceJsonUnmarshaller implements Unmarshaller<Place, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AddressNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setAddressNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Categories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Country", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Geometry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setGeometry(PlaceGeometryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Interpolated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setInterpolated(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Municipality", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setMunicipality(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Neighborhood", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setNeighborhood(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PostalCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setPostalCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Street", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setStreet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setSubRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupplementalCategories", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setSupplementalCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("TimeZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setTimeZone(TimeZoneJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UnitNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setUnitNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UnitType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     place.setUnitType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

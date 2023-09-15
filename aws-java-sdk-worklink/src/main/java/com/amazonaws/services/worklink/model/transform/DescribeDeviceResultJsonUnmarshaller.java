@@ -43,46 +43,63 @@ public class DescribeDeviceResultJsonUnmarshaller implements Unmarshaller<Descri
             return describeDeviceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Manufacturer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setManufacturer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperatingSystem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperatingSystemVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setOperatingSystemVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PatchLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setPatchLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirstAccessedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setFirstAccessedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastAccessedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setLastAccessedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDeviceResult.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,65 +43,85 @@ public class GetCustomDataIdentifierResultJsonUnmarshaller implements Unmarshall
             return getCustomDataIdentifierResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("deleted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setDeleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ignoreWords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setIgnoreWords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("keywords", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("maximumMatchDistance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setMaximumMatchDistance(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("regex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setRegex(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("severityLevels", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setSeverityLevels(new ListUnmarshaller<SeverityLevel>(SeverityLevelJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getCustomDataIdentifierResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

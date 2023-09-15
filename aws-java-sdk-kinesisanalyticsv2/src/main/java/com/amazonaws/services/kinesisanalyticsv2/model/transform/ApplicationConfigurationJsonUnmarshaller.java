@@ -43,42 +43,57 @@ public class ApplicationConfigurationJsonUnmarshaller implements Unmarshaller<Ap
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SqlApplicationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfiguration.setSqlApplicationConfiguration(SqlApplicationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FlinkApplicationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfiguration.setFlinkApplicationConfiguration(FlinkApplicationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EnvironmentProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfiguration.setEnvironmentProperties(EnvironmentPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ApplicationCodeConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfiguration.setApplicationCodeConfiguration(ApplicationCodeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ApplicationSnapshotConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfiguration.setApplicationSnapshotConfiguration(ApplicationSnapshotConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("VpcConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfiguration.setVpcConfigurations(new ListUnmarshaller<VpcConfiguration>(VpcConfigurationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ZeppelinApplicationConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     applicationConfiguration.setZeppelinApplicationConfiguration(ZeppelinApplicationConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

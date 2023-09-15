@@ -43,28 +43,37 @@ public class DescribeGatewayResultJsonUnmarshaller implements Unmarshaller<Descr
             return describeGatewayResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("gatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayResult.setGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gatewayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayResult.setGatewayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gatewayArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayResult.setGatewayArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("gatewayPlatform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayResult.setGatewayPlatform(GatewayPlatformJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("gatewayCapabilitySummaries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayResult.setGatewayCapabilitySummaries(new ListUnmarshaller<GatewayCapabilitySummary>(GatewayCapabilitySummaryJsonUnmarshaller
                             .getInstance())
@@ -72,12 +81,18 @@ public class DescribeGatewayResultJsonUnmarshaller implements Unmarshaller<Descr
                     .unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeGatewayResult.setLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

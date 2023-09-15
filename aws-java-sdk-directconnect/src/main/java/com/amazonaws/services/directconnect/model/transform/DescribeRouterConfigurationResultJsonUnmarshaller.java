@@ -43,26 +43,38 @@ public class DescribeRouterConfigurationResultJsonUnmarshaller implements Unmars
             return describeRouterConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("customerRouterConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRouterConfigurationResult.setCustomerRouterConfig(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("router", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRouterConfigurationResult.setRouter(RouterTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("virtualInterfaceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRouterConfigurationResult.setVirtualInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualInterfaceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeRouterConfigurationResult.setVirtualInterfaceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

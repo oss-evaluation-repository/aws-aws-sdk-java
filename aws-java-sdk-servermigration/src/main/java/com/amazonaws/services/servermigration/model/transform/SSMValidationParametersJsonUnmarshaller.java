@@ -43,34 +43,48 @@ public class SSMValidationParametersJsonUnmarshaller implements Unmarshaller<SSM
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("source", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sSMValidationParameters.setSource(SourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("instanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sSMValidationParameters.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scriptType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sSMValidationParameters.setScriptType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("command", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sSMValidationParameters.setCommand(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionTimeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sSMValidationParameters.setExecutionTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("outputS3BucketName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sSMValidationParameters.setOutputS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,42 +43,58 @@ public class ResultConfigurationUpdatesJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OutputLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfigurationUpdates.setOutputLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RemoveOutputLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfigurationUpdates.setRemoveOutputLocation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfigurationUpdates.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RemoveEncryptionConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfigurationUpdates.setRemoveEncryptionConfiguration(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpectedBucketOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfigurationUpdates.setExpectedBucketOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RemoveExpectedBucketOwner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfigurationUpdates.setRemoveExpectedBucketOwner(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AclConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfigurationUpdates.setAclConfiguration(AclConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RemoveAclConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resultConfigurationUpdates.setRemoveAclConfiguration(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

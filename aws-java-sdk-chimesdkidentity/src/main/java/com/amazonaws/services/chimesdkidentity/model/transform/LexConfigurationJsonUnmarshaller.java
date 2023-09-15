@@ -43,30 +43,43 @@ public class LexConfigurationJsonUnmarshaller implements Unmarshaller<LexConfigu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RespondsTo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexConfiguration.setRespondsTo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InvokedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexConfiguration.setInvokedBy(InvokedByJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LexBotAliasArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexConfiguration.setLexBotAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LocaleId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexConfiguration.setLocaleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WelcomeIntent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lexConfiguration.setWelcomeIntent(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

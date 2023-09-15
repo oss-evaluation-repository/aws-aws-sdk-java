@@ -43,130 +43,168 @@ public class H265SettingsJsonUnmarshaller implements Unmarshaller<H265Settings, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("afdSignaling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setAfdSignaling(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("alternativeTransferFunction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setAlternativeTransferFunction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("bufSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setBufSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("colorMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setColorMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("colorSpaceSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setColorSpaceSettings(H265ColorSpaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("filterSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setFilterSettings(H265FilterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fixedAfd", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setFixedAfd(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("flickerAq", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setFlickerAq(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setFramerateDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setFramerateNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopClosedCadence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setGopClosedCadence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setGopSize(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("gopSizeUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setGopSizeUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("level", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lookAheadRateControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setLookAheadRateControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maxBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setMaxBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minIInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setMinIInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setParDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setParNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("profile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("qvbrQualityLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setQvbrQualityLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("rateControlMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setRateControlMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setScanType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sceneChangeDetect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setSceneChangeDetect(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slices", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setSlices(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("tier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setTier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timecodeInsertion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setTimecodeInsertion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timecodeBurninSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h265Settings.setTimecodeBurninSettings(TimecodeBurninSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

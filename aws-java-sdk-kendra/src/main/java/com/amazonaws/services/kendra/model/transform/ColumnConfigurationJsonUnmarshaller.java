@@ -43,24 +43,32 @@ public class ColumnConfigurationJsonUnmarshaller implements Unmarshaller<ColumnC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentIdColumnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnConfiguration.setDocumentIdColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentDataColumnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnConfiguration.setDocumentDataColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentTitleColumnName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnConfiguration.setDocumentTitleColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FieldMappings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance())
@@ -68,10 +76,15 @@ public class ColumnConfigurationJsonUnmarshaller implements Unmarshaller<ColumnC
                     .unmarshall(context));
                 }
                 if (context.testExpression("ChangeDetectingColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     columnConfiguration.setChangeDetectingColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

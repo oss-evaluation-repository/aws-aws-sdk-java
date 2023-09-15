@@ -43,54 +43,73 @@ public class SoftwarePackageJsonUnmarshaller implements Unmarshaller<SoftwarePac
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Epoch", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setEpoch(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Release", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setRelease(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Architecture", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PackageManager", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setPackageManager(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FixedInVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setFixedInVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Remediation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setRemediation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceLayerHash", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setSourceLayerHash(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceLayerArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     softwarePackage.setSourceLayerArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class ListProvisioningArtifactsResultJsonUnmarshaller implements Unmarsha
             return listProvisioningArtifactsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProvisioningArtifactDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listProvisioningArtifactsResult.setProvisioningArtifactDetails(new ListUnmarshaller<ProvisioningArtifactDetail>(
                             ProvisioningArtifactDetailJsonUnmarshaller.getInstance())
@@ -56,8 +61,13 @@ public class ListProvisioningArtifactsResultJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listProvisioningArtifactsResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

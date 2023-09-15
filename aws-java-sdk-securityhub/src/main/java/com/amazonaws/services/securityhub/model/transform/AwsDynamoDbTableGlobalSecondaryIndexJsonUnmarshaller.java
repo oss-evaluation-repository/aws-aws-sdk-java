@@ -43,36 +43,47 @@ public class AwsDynamoDbTableGlobalSecondaryIndexJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Backfilling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableGlobalSecondaryIndex.setBackfilling(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableGlobalSecondaryIndex.setIndexArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableGlobalSecondaryIndex.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexSizeBytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableGlobalSecondaryIndex.setIndexSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableGlobalSecondaryIndex.setIndexStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ItemCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableGlobalSecondaryIndex.setItemCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableGlobalSecondaryIndex.setKeySchema(new ListUnmarshaller<AwsDynamoDbTableKeySchema>(AwsDynamoDbTableKeySchemaJsonUnmarshaller
                             .getInstance())
@@ -80,13 +91,19 @@ public class AwsDynamoDbTableGlobalSecondaryIndexJsonUnmarshaller implements Unm
                     .unmarshall(context));
                 }
                 if (context.testExpression("Projection", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableGlobalSecondaryIndex.setProjection(AwsDynamoDbTableProjectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsDynamoDbTableGlobalSecondaryIndex.setProvisionedThroughput(AwsDynamoDbTableProvisionedThroughputJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

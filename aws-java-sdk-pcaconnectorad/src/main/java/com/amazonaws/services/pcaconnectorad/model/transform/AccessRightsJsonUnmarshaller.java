@@ -43,18 +43,28 @@ public class AccessRightsJsonUnmarshaller implements Unmarshaller<AccessRights, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutoEnroll", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessRights.setAutoEnroll(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enroll", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     accessRights.setEnroll(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

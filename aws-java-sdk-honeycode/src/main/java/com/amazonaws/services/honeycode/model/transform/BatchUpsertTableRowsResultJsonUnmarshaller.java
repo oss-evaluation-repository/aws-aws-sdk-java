@@ -43,25 +43,36 @@ public class BatchUpsertTableRowsResultJsonUnmarshaller implements Unmarshaller<
             return batchUpsertTableRowsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("rows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchUpsertTableRowsResult.setRows(new MapUnmarshaller<String, UpsertRowsResult>(context.getUnmarshaller(String.class),
                             UpsertRowsResultJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("workbookCursor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchUpsertTableRowsResult.setWorkbookCursor(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("failedBatchItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchUpsertTableRowsResult.setFailedBatchItems(new ListUnmarshaller<FailedBatchItem>(FailedBatchItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

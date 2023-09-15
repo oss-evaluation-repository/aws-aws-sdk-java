@@ -43,62 +43,82 @@ public class DataViewSummaryJsonUnmarshaller implements Unmarshaller<DataViewSum
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataViewId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setDataViewId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataViewArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setDataViewArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setDatasetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("asOfTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setAsOfTimestamp(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("partitionColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setPartitionColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sortColumns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setSortColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setErrorInfo(DataViewErrorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("destinationTypeProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setDestinationTypeProperties(DataViewDestinationTypeParamsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("autoUpdate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setAutoUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setCreateTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataViewSummary.setLastModifiedTime(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

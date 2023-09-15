@@ -43,81 +43,106 @@ public class OriginEndpointJsonUnmarshaller implements Unmarshaller<OriginEndpoi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setAuthorization(AuthorizationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("channelId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setChannelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cmafPackage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setCmafPackage(CmafPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dashPackage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setDashPackage(DashPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hlsPackage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setHlsPackage(HlsPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("manifestName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setManifestName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mssPackage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setMssPackage(MssPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("origination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setOrigination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startoverWindowSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setStartoverWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("timeDelaySeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setTimeDelaySeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("whitelist", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     originEndpoint.setWhitelist(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,9 +43,13 @@ public class DescribeRouteResultJsonUnmarshaller implements Unmarshaller<Describ
             return describeRouteResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             describeRouteResult.setRoute(RouteDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

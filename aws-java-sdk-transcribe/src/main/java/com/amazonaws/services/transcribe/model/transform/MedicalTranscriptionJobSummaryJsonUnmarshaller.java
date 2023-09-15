@@ -43,54 +43,73 @@ public class MedicalTranscriptionJobSummaryJsonUnmarshaller implements Unmarshal
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MedicalTranscriptionJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setMedicalTranscriptionJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TranscriptionJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setTranscriptionJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputLocationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setOutputLocationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Specialty", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setSpecialty(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContentIdentificationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setContentIdentificationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     medicalTranscriptionJobSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

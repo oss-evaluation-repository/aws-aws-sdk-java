@@ -43,34 +43,48 @@ public class RelationalDatabaseBlueprintJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("blueprintId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBlueprint.setBlueprintId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBlueprint.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBlueprint.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engineDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBlueprint.setEngineDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("engineVersionDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBlueprint.setEngineVersionDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isEngineDefault", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     relationalDatabaseBlueprint.setIsEngineDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

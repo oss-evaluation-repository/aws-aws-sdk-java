@@ -43,26 +43,38 @@ public class ExecuteBudgetActionResultJsonUnmarshaller implements Unmarshaller<E
             return executeBudgetActionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executeBudgetActionResult.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BudgetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executeBudgetActionResult.setBudgetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ActionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executeBudgetActionResult.setActionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     executeBudgetActionResult.setExecutionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

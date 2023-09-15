@@ -43,82 +43,107 @@ public class MatchmakingConfigurationJsonUnmarshaller implements Unmarshaller<Ma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameSessionQueueArns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setGameSessionQueueArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RequestTimeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setRequestTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AcceptanceTimeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setAcceptanceTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AcceptanceRequired", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setAcceptanceRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleSetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setRuleSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleSetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setRuleSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationTarget", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setNotificationTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalPlayerCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setAdditionalPlayerCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomEventData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setCustomEventData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("GameProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("GameSessionData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setGameSessionData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackfillMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setBackfillMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FlexMatchMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingConfiguration.setFlexMatchMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

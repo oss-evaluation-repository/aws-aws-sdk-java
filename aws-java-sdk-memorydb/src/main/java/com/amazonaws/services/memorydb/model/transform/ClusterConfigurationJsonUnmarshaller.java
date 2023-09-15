@@ -43,68 +43,90 @@ public class ClusterConfigurationJsonUnmarshaller implements Unmarshaller<Cluste
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NodeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setNodeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaintenanceWindow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setMaintenanceWindow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Port", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setParameterGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setSubnetGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotRetentionLimit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setSnapshotRetentionLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotWindow", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setSnapshotWindow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumShards", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setNumShards(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Shards", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterConfiguration.setShards(new ListUnmarshaller<ShardDetail>(ShardDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

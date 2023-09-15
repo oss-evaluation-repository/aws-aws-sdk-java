@@ -43,44 +43,60 @@ public class SubscriptionJsonUnmarshaller implements Unmarshaller<Subscription, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscription.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscription.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TimeCommitmentInSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscription.setTimeCommitmentInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoRenew", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscription.setAutoRenew(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Limits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscription.setLimits(new ListUnmarshaller<Limit>(LimitJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ProactiveEngagementStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscription.setProactiveEngagementStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionLimits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscription.setSubscriptionLimits(SubscriptionLimitsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subscription.setSubscriptionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

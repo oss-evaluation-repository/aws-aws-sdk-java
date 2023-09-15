@@ -43,22 +43,32 @@ public class BatchDeleteBuildsResultJsonUnmarshaller implements Unmarshaller<Bat
             return batchDeleteBuildsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("buildsDeleted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteBuildsResult.setBuildsDeleted(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("buildsNotDeleted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchDeleteBuildsResult.setBuildsNotDeleted(new ListUnmarshaller<BuildNotDeleted>(BuildNotDeletedJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

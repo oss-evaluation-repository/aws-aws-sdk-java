@@ -43,9 +43,13 @@ public class DeleteVoiceTemplateResultJsonUnmarshaller implements Unmarshaller<D
             return deleteVoiceTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteVoiceTemplateResult.setMessageBody(MessageBodyJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -43,21 +43,31 @@ public class DescribeAttackStatisticsResultJsonUnmarshaller implements Unmarshal
             return describeAttackStatisticsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TimeRange", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAttackStatisticsResult.setTimeRange(TimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataItems", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAttackStatisticsResult.setDataItems(new ListUnmarshaller<AttackStatisticsDataItem>(AttackStatisticsDataItemJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

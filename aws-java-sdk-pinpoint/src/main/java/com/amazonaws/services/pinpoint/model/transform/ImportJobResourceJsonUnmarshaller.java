@@ -43,42 +43,58 @@ public class ImportJobResourceJsonUnmarshaller implements Unmarshaller<ImportJob
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DefineSegment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importJobResource.setDefineSegment(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importJobResource.setExternalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importJobResource.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegisterEndpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importJobResource.setRegisterEndpoints(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importJobResource.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importJobResource.setS3Url(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importJobResource.setSegmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     importJobResource.setSegmentName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

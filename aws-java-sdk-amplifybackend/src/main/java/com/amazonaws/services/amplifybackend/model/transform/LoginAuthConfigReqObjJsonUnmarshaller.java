@@ -43,26 +43,38 @@ public class LoginAuthConfigReqObjJsonUnmarshaller implements Unmarshaller<Login
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("aws_cognito_identity_pool_id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loginAuthConfigReqObj.setAwsCognitoIdentityPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("aws_cognito_region", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loginAuthConfigReqObj.setAwsCognitoRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("aws_user_pools_id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loginAuthConfigReqObj.setAwsUserPoolsId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("aws_user_pools_web_client_id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     loginAuthConfigReqObj.setAwsUserPoolsWebClientId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

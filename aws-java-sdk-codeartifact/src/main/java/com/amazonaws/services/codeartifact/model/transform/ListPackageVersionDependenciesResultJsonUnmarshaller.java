@@ -43,41 +43,56 @@ public class ListPackageVersionDependenciesResultJsonUnmarshaller implements Unm
             return listPackageVersionDependenciesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionDependenciesResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionDependenciesResult.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("package", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionDependenciesResult.setPackage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionDependenciesResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionRevision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionDependenciesResult.setVersionRevision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionDependenciesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dependencies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listPackageVersionDependenciesResult.setDependencies(new ListUnmarshaller<PackageDependency>(PackageDependencyJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

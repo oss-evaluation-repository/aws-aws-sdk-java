@@ -43,54 +43,73 @@ public class Scte35SegmentationDescriptorJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deliveryRestrictions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setDeliveryRestrictions(Scte35DeliveryRestrictionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("segmentNum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setSegmentNum(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentationCancelIndicator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setSegmentationCancelIndicator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentationDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setSegmentationDuration(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentationEventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setSegmentationEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentationTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setSegmentationTypeId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentationUpid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setSegmentationUpid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentationUpidType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setSegmentationUpidType(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentsExpected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setSegmentsExpected(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("subSegmentNum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setSubSegmentNum(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("subSegmentsExpected", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scte35SegmentationDescriptor.setSubSegmentsExpected(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

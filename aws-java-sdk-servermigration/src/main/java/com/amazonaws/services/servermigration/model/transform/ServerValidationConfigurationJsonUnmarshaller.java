@@ -43,31 +43,44 @@ public class ServerValidationConfigurationJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("server", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverValidationConfiguration.setServer(ServerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("validationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverValidationConfiguration.setValidationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverValidationConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serverValidationStrategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverValidationConfiguration.setServerValidationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userDataValidationParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     serverValidationConfiguration.setUserDataValidationParameters(UserDataValidationParametersJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

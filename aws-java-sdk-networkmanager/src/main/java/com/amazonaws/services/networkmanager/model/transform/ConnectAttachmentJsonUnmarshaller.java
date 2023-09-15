@@ -43,22 +43,33 @@ public class ConnectAttachmentJsonUnmarshaller implements Unmarshaller<ConnectAt
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attachment", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectAttachment.setAttachment(AttachmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TransportAttachmentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectAttachment.setTransportAttachmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Options", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     connectAttachment.setOptions(ConnectAttachmentOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

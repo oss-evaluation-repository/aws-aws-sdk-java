@@ -43,43 +43,55 @@ public class LaunchProfileInitializationJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeDirectory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitialization
                             .setActiveDirectory(LaunchProfileInitializationActiveDirectoryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ec2SecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitialization.setEc2SecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("launchProfileId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitialization.setLaunchProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchProfileProtocolVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitialization.setLaunchProfileProtocolVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchPurpose", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitialization.setLaunchPurpose(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitialization.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitialization.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("systemInitializationScripts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitialization.setSystemInitializationScripts(new ListUnmarshaller<LaunchProfileInitializationScript>(
                             LaunchProfileInitializationScriptJsonUnmarshaller.getInstance())
@@ -87,11 +99,16 @@ public class LaunchProfileInitializationJsonUnmarshaller implements Unmarshaller
                     .unmarshall(context));
                 }
                 if (context.testExpression("userInitializationScripts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     launchProfileInitialization.setUserInitializationScripts(new ListUnmarshaller<LaunchProfileInitializationScript>(
                             LaunchProfileInitializationScriptJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

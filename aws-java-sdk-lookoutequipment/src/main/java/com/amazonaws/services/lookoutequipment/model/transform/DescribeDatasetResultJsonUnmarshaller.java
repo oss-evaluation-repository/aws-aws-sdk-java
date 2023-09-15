@@ -43,67 +43,89 @@ public class DescribeDatasetResultJsonUnmarshaller implements Unmarshaller<Descr
             return describeDatasetResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatasetName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setDatasetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Schema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setSchema(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(
                             context));
                 }
                 if (context.testExpression("ServerSideKmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setServerSideKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IngestionInputConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setIngestionInputConfiguration(IngestionInputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DataQualitySummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setDataQualitySummary(DataQualitySummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IngestedFilesSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setIngestedFilesSummary(IngestedFilesSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setDataStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setDataEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SourceDatasetArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeDatasetResult.setSourceDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

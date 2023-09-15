@@ -43,64 +43,85 @@ public class ReservedElasticsearchInstanceJsonUnmarshaller implements Unmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReservationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setReservationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReservedElasticsearchInstanceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setReservedElasticsearchInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReservedElasticsearchInstanceOfferingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setReservedElasticsearchInstanceOfferingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ElasticsearchInstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setElasticsearchInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FixedPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setFixedPrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("UsagePrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setUsagePrice(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrencyCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setCurrencyCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ElasticsearchInstanceCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setElasticsearchInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaymentOption", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setPaymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecurringCharges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reservedElasticsearchInstance.setRecurringCharges(new ListUnmarshaller<RecurringCharge>(RecurringChargeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

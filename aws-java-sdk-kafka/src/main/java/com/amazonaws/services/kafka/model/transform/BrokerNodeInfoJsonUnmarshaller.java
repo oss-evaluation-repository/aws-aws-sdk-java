@@ -43,36 +43,50 @@ public class BrokerNodeInfoJsonUnmarshaller implements Unmarshaller<BrokerNodeIn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attachedENIId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeInfo.setAttachedENIId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("brokerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeInfo.setBrokerId(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("clientSubnet", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeInfo.setClientSubnet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientVpcIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeInfo.setClientVpcIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("currentBrokerSoftwareInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeInfo.setCurrentBrokerSoftwareInfo(BrokerSoftwareInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("endpoints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     brokerNodeInfo.setEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

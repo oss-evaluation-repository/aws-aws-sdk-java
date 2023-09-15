@@ -44,16 +44,22 @@ public class ListAvailableManagedRuleGroupVersionsResultJsonUnmarshaller impleme
             return listAvailableManagedRuleGroupVersionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextMarker", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAvailableManagedRuleGroupVersionsResult.setNextMarker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Versions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAvailableManagedRuleGroupVersionsResult.setVersions(new ListUnmarshaller<ManagedRuleGroupVersion>(
                             ManagedRuleGroupVersionJsonUnmarshaller.getInstance())
@@ -61,8 +67,13 @@ public class ListAvailableManagedRuleGroupVersionsResultJsonUnmarshaller impleme
                     .unmarshall(context));
                 }
                 if (context.testExpression("CurrentDefaultVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listAvailableManagedRuleGroupVersionsResult.setCurrentDefaultVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

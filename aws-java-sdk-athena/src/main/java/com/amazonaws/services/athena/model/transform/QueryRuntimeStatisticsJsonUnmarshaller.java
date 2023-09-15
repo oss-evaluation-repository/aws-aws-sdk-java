@@ -43,22 +43,33 @@ public class QueryRuntimeStatisticsJsonUnmarshaller implements Unmarshaller<Quer
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Timeline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryRuntimeStatistics.setTimeline(QueryRuntimeStatisticsTimelineJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Rows", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryRuntimeStatistics.setRows(QueryRuntimeStatisticsRowsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OutputStage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     queryRuntimeStatistics.setOutputStage(QueryStageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

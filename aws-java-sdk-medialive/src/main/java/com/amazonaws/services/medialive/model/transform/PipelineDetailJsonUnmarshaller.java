@@ -43,30 +43,43 @@ public class PipelineDetailJsonUnmarshaller implements Unmarshaller<PipelineDeta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeInputAttachmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDetail.setActiveInputAttachmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("activeInputSwitchActionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDetail.setActiveInputSwitchActionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("activeMotionGraphicsActionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDetail.setActiveMotionGraphicsActionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("activeMotionGraphicsUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDetail.setActiveMotionGraphicsUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pipelineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pipelineDetail.setPipelineId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

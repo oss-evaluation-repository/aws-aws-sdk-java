@@ -43,26 +43,38 @@ public class ComponentStateJsonUnmarshaller implements Unmarshaller<ComponentSta
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("serviceInstanceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentState.setServiceInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentState.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceSpec", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentState.setServiceSpec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("templateFile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentState.setTemplateFile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

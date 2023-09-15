@@ -44,12 +44,17 @@ public class KinesisVideoStreamSourceRuntimeConfigurationJsonUnmarshaller implem
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Streams", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisVideoStreamSourceRuntimeConfiguration.setStreams(new ListUnmarshaller<StreamConfiguration>(StreamConfigurationJsonUnmarshaller
                             .getInstance())
@@ -57,12 +62,18 @@ public class KinesisVideoStreamSourceRuntimeConfigurationJsonUnmarshaller implem
                     .unmarshall(context));
                 }
                 if (context.testExpression("MediaEncoding", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisVideoStreamSourceRuntimeConfiguration.setMediaEncoding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MediaSampleRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     kinesisVideoStreamSourceRuntimeConfiguration.setMediaSampleRate(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,12 +43,17 @@ public class DescribeBrokerInstanceOptionsResultJsonUnmarshaller implements Unma
             return describeBrokerInstanceOptionsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("brokerInstanceOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBrokerInstanceOptionsResult.setBrokerInstanceOptions(new ListUnmarshaller<BrokerInstanceOption>(
                             BrokerInstanceOptionJsonUnmarshaller.getInstance())
@@ -56,12 +61,18 @@ public class DescribeBrokerInstanceOptionsResultJsonUnmarshaller implements Unma
                     .unmarshall(context));
                 }
                 if (context.testExpression("maxResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBrokerInstanceOptionsResult.setMaxResults(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeBrokerInstanceOptionsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,58 +43,78 @@ public class ContactInformationJsonUnmarshaller implements Unmarshaller<ContactI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AddressLine1", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setAddressLine1(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AddressLine2", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setAddressLine2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AddressLine3", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setAddressLine3(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("City", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setCity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompanyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setCompanyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CountryCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setCountryCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DistrictOrCounty", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setDistrictOrCounty(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FullName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setFullName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PostalCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setPostalCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StateOrRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setStateOrRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WebsiteUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     contactInformation.setWebsiteUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

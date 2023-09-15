@@ -43,21 +43,31 @@ public class AnomalyDetectorDataQualityMetricJsonUnmarshaller implements Unmarsh
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyDetectorDataQualityMetric.setStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("MetricSetDataQualityMetricList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomalyDetectorDataQualityMetric.setMetricSetDataQualityMetricList(new ListUnmarshaller<MetricSetDataQualityMetric>(
                             MetricSetDataQualityMetricJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

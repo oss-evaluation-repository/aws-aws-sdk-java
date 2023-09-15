@@ -43,24 +43,35 @@ public class EnrollmentJobFraudDetectionConfigJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FraudDetectionAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enrollmentJobFraudDetectionConfig.setFraudDetectionAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RiskThreshold", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enrollmentJobFraudDetectionConfig.setRiskThreshold(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("WatchlistIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     enrollmentJobFraudDetectionConfig.setWatchlistIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

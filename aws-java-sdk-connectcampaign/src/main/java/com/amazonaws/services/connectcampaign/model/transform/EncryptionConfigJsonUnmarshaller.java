@@ -43,22 +43,33 @@ public class EncryptionConfigJsonUnmarshaller implements Unmarshaller<Encryption
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("enabled", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryptionConfig.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryptionConfig.setEncryptionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("keyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     encryptionConfig.setKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

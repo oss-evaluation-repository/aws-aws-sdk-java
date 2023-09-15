@@ -43,26 +43,38 @@ public class MultiplexSettingsJsonUnmarshaller implements Unmarshaller<Multiplex
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("maximumVideoBufferDelayMilliseconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexSettings.setMaximumVideoBufferDelayMilliseconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("transportStreamBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexSettings.setTransportStreamBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("transportStreamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexSettings.setTransportStreamId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("transportStreamReservedBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexSettings.setTransportStreamReservedBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

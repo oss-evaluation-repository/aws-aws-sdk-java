@@ -43,30 +43,42 @@ public class ComponentDataConfigurationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentDataConfiguration.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sort", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentDataConfiguration.setSort(new ListUnmarshaller<SortProperty>(SortPropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("predicate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentDataConfiguration.setPredicate(PredicateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("identifiers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentDataConfiguration.setIdentifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

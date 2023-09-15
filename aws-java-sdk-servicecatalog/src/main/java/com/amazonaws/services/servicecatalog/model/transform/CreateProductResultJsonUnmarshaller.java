@@ -43,24 +43,35 @@ public class CreateProductResultJsonUnmarshaller implements Unmarshaller<CreateP
             return createProductResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProductViewDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createProductResult.setProductViewDetail(ProductViewDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProvisioningArtifactDetail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createProductResult.setProvisioningArtifactDetail(ProvisioningArtifactDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createProductResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

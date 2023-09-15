@@ -43,26 +43,38 @@ public class RepositoryJsonUnmarshaller implements Unmarshaller<Repository, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CodeCommit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repository.setCodeCommit(CodeCommitRepositoryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Bitbucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repository.setBitbucket(ThirdPartySourceRepositoryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GitHubEnterpriseServer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repository.setGitHubEnterpriseServer(ThirdPartySourceRepositoryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3Bucket", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     repository.setS3Bucket(S3RepositoryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

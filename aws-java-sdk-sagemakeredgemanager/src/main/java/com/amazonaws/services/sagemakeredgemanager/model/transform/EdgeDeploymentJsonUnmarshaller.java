@@ -43,28 +43,40 @@ public class EdgeDeploymentJsonUnmarshaller implements Unmarshaller<EdgeDeployme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeploymentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeployment.setDeploymentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeployment.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureHandlingPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeployment.setFailureHandlingPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Definitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     edgeDeployment.setDefinitions(new ListUnmarshaller<Definition>(DefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

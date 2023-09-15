@@ -43,40 +43,55 @@ public class TimelineEventJsonUnmarshaller implements Unmarshaller<TimelineEvent
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timelineEvent.setEventData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timelineEvent.setEventId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventReferences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timelineEvent.setEventReferences(new ListUnmarshaller<EventReference>(EventReferenceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("eventTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timelineEvent.setEventTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("eventType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timelineEvent.setEventType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventUpdatedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timelineEvent.setEventUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("incidentRecordArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timelineEvent.setIncidentRecordArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

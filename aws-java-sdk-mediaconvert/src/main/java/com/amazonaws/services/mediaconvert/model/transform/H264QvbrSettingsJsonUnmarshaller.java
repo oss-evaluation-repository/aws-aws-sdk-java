@@ -43,22 +43,33 @@ public class H264QvbrSettingsJsonUnmarshaller implements Unmarshaller<H264QvbrSe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("maxAverageBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264QvbrSettings.setMaxAverageBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("qvbrQualityLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264QvbrSettings.setQvbrQualityLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("qvbrQualityLevelFineTune", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     h264QvbrSettings.setQvbrQualityLevelFineTune(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

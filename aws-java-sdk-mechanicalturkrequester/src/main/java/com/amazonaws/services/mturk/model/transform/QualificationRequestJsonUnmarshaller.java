@@ -43,34 +43,48 @@ public class QualificationRequestJsonUnmarshaller implements Unmarshaller<Qualif
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QualificationRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequest.setQualificationRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("QualificationTypeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequest.setQualificationTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequest.setWorkerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Test", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequest.setTest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Answer", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequest.setAnswer(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualificationRequest.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class ReportOverridesJsonUnmarshaller implements Unmarshaller<ReportOverr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Transferred", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportOverrides.setTransferred(ReportOverrideJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Verified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportOverrides.setVerified(ReportOverrideJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Deleted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportOverrides.setDeleted(ReportOverrideJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Skipped", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     reportOverrides.setSkipped(ReportOverrideJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

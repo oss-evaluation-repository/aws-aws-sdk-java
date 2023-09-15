@@ -43,14 +43,23 @@ public class GetUserDefinedFunctionResultJsonUnmarshaller implements Unmarshalle
             return getUserDefinedFunctionResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserDefinedFunction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getUserDefinedFunctionResult.setUserDefinedFunction(UserDefinedFunctionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

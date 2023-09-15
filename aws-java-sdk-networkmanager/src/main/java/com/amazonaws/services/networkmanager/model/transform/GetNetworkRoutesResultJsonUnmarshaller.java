@@ -43,32 +43,45 @@ public class GetNetworkRoutesResultJsonUnmarshaller implements Unmarshaller<GetN
             return getNetworkRoutesResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RouteTableArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkRoutesResult.setRouteTableArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CoreNetworkSegmentEdge", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkRoutesResult.setCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RouteTableType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkRoutesResult.setRouteTableType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RouteTableTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkRoutesResult.setRouteTableTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NetworkRoutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getNetworkRoutesResult.setNetworkRoutes(new ListUnmarshaller<NetworkRoute>(NetworkRouteJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

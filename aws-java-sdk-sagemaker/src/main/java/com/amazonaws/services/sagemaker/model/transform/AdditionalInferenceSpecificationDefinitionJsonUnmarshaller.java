@@ -44,20 +44,27 @@ public class AdditionalInferenceSpecificationDefinitionJsonUnmarshaller implemen
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     additionalInferenceSpecificationDefinition.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     additionalInferenceSpecificationDefinition.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Containers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     additionalInferenceSpecificationDefinition.setContainers(new ListUnmarshaller<ModelPackageContainerDefinition>(
                             ModelPackageContainerDefinitionJsonUnmarshaller.getInstance())
@@ -65,6 +72,7 @@ public class AdditionalInferenceSpecificationDefinitionJsonUnmarshaller implemen
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportedTransformInstanceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     additionalInferenceSpecificationDefinition.setSupportedTransformInstanceTypes(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -72,6 +80,7 @@ public class AdditionalInferenceSpecificationDefinitionJsonUnmarshaller implemen
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportedRealtimeInferenceInstanceTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     additionalInferenceSpecificationDefinition.setSupportedRealtimeInferenceInstanceTypes(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -79,17 +88,23 @@ public class AdditionalInferenceSpecificationDefinitionJsonUnmarshaller implemen
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportedContentTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     additionalInferenceSpecificationDefinition.setSupportedContentTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("SupportedResponseMIMETypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     additionalInferenceSpecificationDefinition
                             .setSupportedResponseMIMETypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

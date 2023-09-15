@@ -43,38 +43,52 @@ public class RequestInspectionACFPJsonUnmarshaller implements Unmarshaller<Reque
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PayloadType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestInspectionACFP.setPayloadType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UsernameField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestInspectionACFP.setUsernameField(UsernameFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PasswordField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestInspectionACFP.setPasswordField(PasswordFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EmailField", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestInspectionACFP.setEmailField(EmailFieldJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumberFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestInspectionACFP.setPhoneNumberFields(new ListUnmarshaller<PhoneNumberField>(PhoneNumberFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AddressFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     requestInspectionACFP.setAddressFields(new ListUnmarshaller<AddressField>(AddressFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

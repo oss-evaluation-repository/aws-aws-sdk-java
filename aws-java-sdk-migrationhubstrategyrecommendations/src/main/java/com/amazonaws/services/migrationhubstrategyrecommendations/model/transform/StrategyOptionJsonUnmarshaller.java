@@ -43,26 +43,38 @@ public class StrategyOptionJsonUnmarshaller implements Unmarshaller<StrategyOpti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("isPreferred", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     strategyOption.setIsPreferred(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("strategy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     strategyOption.setStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     strategyOption.setTargetDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("toolName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     strategyOption.setToolName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

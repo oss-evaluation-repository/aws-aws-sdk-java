@@ -43,38 +43,53 @@ public class VolumeConfigurationJsonUnmarshaller implements Unmarshaller<VolumeC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("volumeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setVolumeSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeBaselineIOPS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setVolumeBaselineIOPS(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeBurstIOPS", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setVolumeBurstIOPS(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeBaselineThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setVolumeBaselineThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("volumeBurstThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setVolumeBurstThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("rootVolume", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     volumeConfiguration.setRootVolume(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

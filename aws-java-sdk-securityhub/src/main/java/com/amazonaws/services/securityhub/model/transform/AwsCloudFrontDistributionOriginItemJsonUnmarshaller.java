@@ -43,32 +43,45 @@ public class AwsCloudFrontDistributionOriginItemJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginItem.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OriginPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginItem.setOriginPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3OriginConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginItem.setS3OriginConfig(AwsCloudFrontDistributionOriginS3OriginConfigJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("CustomOriginConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsCloudFrontDistributionOriginItem.setCustomOriginConfig(AwsCloudFrontDistributionOriginCustomOriginConfigJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

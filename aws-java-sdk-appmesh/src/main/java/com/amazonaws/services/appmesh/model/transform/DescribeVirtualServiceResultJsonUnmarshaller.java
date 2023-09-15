@@ -43,9 +43,13 @@ public class DescribeVirtualServiceResultJsonUnmarshaller implements Unmarshalle
             return describeVirtualServiceResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             describeVirtualServiceResult.setVirtualService(VirtualServiceDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

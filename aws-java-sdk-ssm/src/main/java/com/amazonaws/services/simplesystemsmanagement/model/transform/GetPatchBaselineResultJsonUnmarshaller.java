@@ -43,78 +43,101 @@ public class GetPatchBaselineResultJsonUnmarshaller implements Unmarshaller<GetP
             return getPatchBaselineResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BaselineId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setBaselineId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperatingSystem", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GlobalFilters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setGlobalFilters(PatchFilterGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ApprovalRules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setApprovalRules(PatchRuleGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ApprovedPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setApprovedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ApprovedPatchesComplianceLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setApprovedPatchesComplianceLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApprovedPatchesEnableNonSecurity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setApprovedPatchesEnableNonSecurity(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RejectedPatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setRejectedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("RejectedPatchesAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setRejectedPatchesAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PatchGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setPatchGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Sources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getPatchBaselineResult.setSources(new ListUnmarshaller<PatchSource>(PatchSourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

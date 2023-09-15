@@ -43,42 +43,58 @@ public class IngestionJsonUnmarshaller implements Unmarshaller<Ingestion, JsonUn
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestion.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appBundleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestion.setAppBundleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("app", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestion.setApp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tenantId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestion.setTenantId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestion.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestion.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestion.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ingestionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestion.setIngestionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

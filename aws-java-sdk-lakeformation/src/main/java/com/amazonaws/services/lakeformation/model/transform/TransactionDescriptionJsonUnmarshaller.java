@@ -43,26 +43,38 @@ public class TransactionDescriptionJsonUnmarshaller implements Unmarshaller<Tran
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TransactionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionDescription.setTransactionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransactionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionDescription.setTransactionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TransactionStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionDescription.setTransactionStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TransactionEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     transactionDescription.setTransactionEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

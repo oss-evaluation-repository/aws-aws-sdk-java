@@ -43,30 +43,43 @@ public class DataSourceSyncJobMetricsJsonUnmarshaller implements Unmarshaller<Da
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentsAdded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceSyncJobMetrics.setDocumentsAdded(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentsModified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceSyncJobMetrics.setDocumentsModified(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentsDeleted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceSyncJobMetrics.setDocumentsDeleted(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentsFailed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceSyncJobMetrics.setDocumentsFailed(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentsScanned", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataSourceSyncJobMetrics.setDocumentsScanned(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

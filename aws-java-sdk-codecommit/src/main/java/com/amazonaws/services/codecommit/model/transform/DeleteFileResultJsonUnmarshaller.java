@@ -43,26 +43,38 @@ public class DeleteFileResultJsonUnmarshaller implements Unmarshaller<DeleteFile
             return deleteFileResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("commitId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteFileResult.setCommitId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("blobId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteFileResult.setBlobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("treeId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteFileResult.setTreeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     deleteFileResult.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

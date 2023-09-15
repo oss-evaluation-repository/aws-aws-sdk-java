@@ -43,24 +43,32 @@ public class TopBottomFilterJsonUnmarshaller implements Unmarshaller<TopBottomFi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilterId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomFilter.setFilterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomFilter.setColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Limit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomFilter.setLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AggregationSortConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomFilter.setAggregationSortConfigurations(new ListUnmarshaller<AggregationSortConfiguration>(
                             AggregationSortConfigurationJsonUnmarshaller.getInstance())
@@ -68,12 +76,18 @@ public class TopBottomFilterJsonUnmarshaller implements Unmarshaller<TopBottomFi
                     .unmarshall(context));
                 }
                 if (context.testExpression("TimeGranularity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomFilter.setTimeGranularity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ParameterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     topBottomFilter.setParameterName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

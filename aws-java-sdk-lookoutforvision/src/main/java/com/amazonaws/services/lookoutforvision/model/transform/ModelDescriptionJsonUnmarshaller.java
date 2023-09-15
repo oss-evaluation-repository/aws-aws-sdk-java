@@ -43,66 +43,88 @@ public class ModelDescriptionJsonUnmarshaller implements Unmarshaller<ModelDescr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Performance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setPerformance(ModelPerformanceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OutputConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setOutputConfig(OutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EvaluationManifest", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setEvaluationManifest(OutputS3ObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EvaluationResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setEvaluationResult(OutputS3ObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EvaluationEndTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setEvaluationEndTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinInferenceUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setMinInferenceUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxInferenceUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelDescription.setMaxInferenceUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

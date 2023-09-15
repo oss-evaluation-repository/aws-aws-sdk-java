@@ -43,50 +43,68 @@ public class ListSolFunctionPackageInfoJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionPackageInfo.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionPackageInfo.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionPackageInfo.setMetadata(ListSolFunctionPackageMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("onboardingState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionPackageInfo.setOnboardingState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationalState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionPackageInfo.setOperationalState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("usageState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionPackageInfo.setUsageState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfProductName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionPackageInfo.setVnfProductName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfProvider", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionPackageInfo.setVnfProvider(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfdId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionPackageInfo.setVnfdId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfdVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolFunctionPackageInfo.setVnfdVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

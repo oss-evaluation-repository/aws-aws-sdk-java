@@ -43,20 +43,27 @@ public class FeaturedResultsItemJsonUnmarshaller implements Unmarshaller<Feature
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featuredResultsItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featuredResultsItem.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featuredResultsItem.setAdditionalAttributes(new ListUnmarshaller<AdditionalResultAttribute>(AdditionalResultAttributeJsonUnmarshaller
                             .getInstance())
@@ -64,30 +71,40 @@ public class FeaturedResultsItemJsonUnmarshaller implements Unmarshaller<Feature
                     .unmarshall(context));
                 }
                 if (context.testExpression("DocumentId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featuredResultsItem.setDocumentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentTitle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featuredResultsItem.setDocumentTitle(TextWithHighlightsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DocumentExcerpt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featuredResultsItem.setDocumentExcerpt(TextWithHighlightsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DocumentURI", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featuredResultsItem.setDocumentURI(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featuredResultsItem.setDocumentAttributes(new ListUnmarshaller<DocumentAttribute>(DocumentAttributeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("FeedbackToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     featuredResultsItem.setFeedbackToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

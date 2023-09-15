@@ -44,28 +44,40 @@ public class AddApplicationInputProcessingConfigurationResultJsonUnmarshaller im
             return addApplicationInputProcessingConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addApplicationInputProcessingConfigurationResult.setApplicationARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApplicationVersionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addApplicationInputProcessingConfigurationResult.setApplicationVersionId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("InputId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addApplicationInputProcessingConfigurationResult.setInputId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputProcessingConfigurationDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     addApplicationInputProcessingConfigurationResult
                             .setInputProcessingConfigurationDescription(InputProcessingConfigurationDescriptionJsonUnmarshaller.getInstance().unmarshall(
                                     context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

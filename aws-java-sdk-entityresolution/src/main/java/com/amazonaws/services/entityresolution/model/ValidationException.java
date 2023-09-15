@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP Status Code: 400</code>
+ * The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP Status Code: 400</code>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -43,32 +43,45 @@ public class DnsRuleGroupPriorityConflictViolationJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ViolationTarget", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnsRuleGroupPriorityConflictViolation.setViolationTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ViolationTargetDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnsRuleGroupPriorityConflictViolation.setViolationTargetDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConflictingPriority", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnsRuleGroupPriorityConflictViolation.setConflictingPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ConflictingPolicyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnsRuleGroupPriorityConflictViolation.setConflictingPolicyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UnavailablePriorities", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dnsRuleGroupPriorityConflictViolation.setUnavailablePriorities(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

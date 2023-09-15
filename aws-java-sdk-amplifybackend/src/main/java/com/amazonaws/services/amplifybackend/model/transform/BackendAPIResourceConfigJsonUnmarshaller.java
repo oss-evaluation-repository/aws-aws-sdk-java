@@ -43,36 +43,50 @@ public class BackendAPIResourceConfigJsonUnmarshaller implements Unmarshaller<Ba
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("additionalAuthTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIResourceConfig.setAdditionalAuthTypes(new ListUnmarshaller<BackendAPIAuthType>(BackendAPIAuthTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("apiName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIResourceConfig.setApiName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("conflictResolution", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIResourceConfig.setConflictResolution(BackendAPIConflictResolutionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("defaultAuthType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIResourceConfig.setDefaultAuthType(BackendAPIAuthTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("service", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIResourceConfig.setService(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("transformSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backendAPIResourceConfig.setTransformSchema(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

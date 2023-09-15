@@ -43,42 +43,58 @@ public class DescribedExecutionJsonUnmarshaller implements Unmarshaller<Describe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedExecution.setExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitialFileLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedExecution.setInitialFileLocation(FileLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedExecution.setServiceMetadata(ServiceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedExecution.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoggingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedExecution.setLoggingConfiguration(LoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PosixProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedExecution.setPosixProfile(PosixProfileJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedExecution.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Results", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describedExecution.setResults(ExecutionResultsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

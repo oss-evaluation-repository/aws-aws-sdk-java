@@ -43,30 +43,43 @@ public class HlsMediaStoreSettingsJsonUnmarshaller implements Unmarshaller<HlsMe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectionRetryInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsMediaStoreSettings.setConnectionRetryInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("filecacheDuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsMediaStoreSettings.setFilecacheDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStoreStorageClass", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsMediaStoreSettings.setMediaStoreStorageClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("numRetries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsMediaStoreSettings.setNumRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("restartDelay", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hlsMediaStoreSettings.setRestartDelay(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

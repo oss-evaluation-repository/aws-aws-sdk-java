@@ -43,50 +43,68 @@ public class ClusterOperationV2JsonUnmarshaller implements Unmarshaller<ClusterO
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2.setClusterType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2.setEndTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("errorInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2.setErrorInfo(ErrorInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("operationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2.setOperationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2.setOperationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("operationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2.setOperationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("provisioned", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2.setProvisioned(ClusterOperationV2ProvisionedJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serverless", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clusterOperationV2.setServerless(ClusterOperationV2ServerlessJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

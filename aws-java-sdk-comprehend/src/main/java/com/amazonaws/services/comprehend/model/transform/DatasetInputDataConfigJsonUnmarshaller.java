@@ -43,12 +43,17 @@ public class DatasetInputDataConfigJsonUnmarshaller implements Unmarshaller<Data
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AugmentedManifests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetInputDataConfig.setAugmentedManifests(new ListUnmarshaller<DatasetAugmentedManifestsListItem>(
                             DatasetAugmentedManifestsListItemJsonUnmarshaller.getInstance())
@@ -56,18 +61,25 @@ public class DatasetInputDataConfigJsonUnmarshaller implements Unmarshaller<Data
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetInputDataConfig.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentClassifierInputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetInputDataConfig.setDocumentClassifierInputDataConfig(DatasetDocumentClassifierInputDataConfigJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("EntityRecognizerInputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetInputDataConfig.setEntityRecognizerInputDataConfig(DatasetEntityRecognizerInputDataConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

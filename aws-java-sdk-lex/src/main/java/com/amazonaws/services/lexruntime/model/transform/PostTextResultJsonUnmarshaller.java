@@ -43,72 +43,94 @@ public class PostTextResultJsonUnmarshaller implements Unmarshaller<PostTextResu
             return postTextResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("intentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setIntentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nluIntentConfidence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setNluIntentConfidence(IntentConfidenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("alternativeIntents", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setAlternativeIntents(new ListUnmarshaller<PredictedIntent>(PredictedIntentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("slots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setSlots(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("sessionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setSessionAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sentimentResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setSentimentResponse(SentimentResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("messageFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setMessageFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dialogState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setDialogState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slotToElicit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setSlotToElicit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("responseCard", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setResponseCard(ResponseCardJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sessionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("botVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("activeContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     postTextResult.setActiveContexts(new ListUnmarshaller<ActiveContext>(ActiveContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

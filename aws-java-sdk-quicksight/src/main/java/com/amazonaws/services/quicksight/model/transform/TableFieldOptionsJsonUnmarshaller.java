@@ -43,26 +43,37 @@ public class TableFieldOptionsJsonUnmarshaller implements Unmarshaller<TableFiel
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SelectedFieldOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableFieldOptions.setSelectedFieldOptions(new ListUnmarshaller<TableFieldOption>(TableFieldOptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Order", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableFieldOptions.setOrder(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PinnedFieldOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tableFieldOptions.setPinnedFieldOptions(TablePinnedFieldOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

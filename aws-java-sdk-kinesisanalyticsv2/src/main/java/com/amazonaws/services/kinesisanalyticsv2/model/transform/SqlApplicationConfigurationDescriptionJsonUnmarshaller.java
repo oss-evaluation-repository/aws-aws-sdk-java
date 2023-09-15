@@ -43,12 +43,17 @@ public class SqlApplicationConfigurationDescriptionJsonUnmarshaller implements U
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InputDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sqlApplicationConfigurationDescription.setInputDescriptions(new ListUnmarshaller<InputDescription>(InputDescriptionJsonUnmarshaller
                             .getInstance())
@@ -56,6 +61,7 @@ public class SqlApplicationConfigurationDescriptionJsonUnmarshaller implements U
                     .unmarshall(context));
                 }
                 if (context.testExpression("OutputDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sqlApplicationConfigurationDescription.setOutputDescriptions(new ListUnmarshaller<OutputDescription>(OutputDescriptionJsonUnmarshaller
                             .getInstance())
@@ -63,11 +69,16 @@ public class SqlApplicationConfigurationDescriptionJsonUnmarshaller implements U
                     .unmarshall(context));
                 }
                 if (context.testExpression("ReferenceDataSourceDescriptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sqlApplicationConfigurationDescription.setReferenceDataSourceDescriptions(new ListUnmarshaller<ReferenceDataSourceDescription>(
                             ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

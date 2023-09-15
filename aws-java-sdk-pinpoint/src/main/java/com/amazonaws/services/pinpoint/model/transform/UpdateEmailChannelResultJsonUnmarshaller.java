@@ -43,9 +43,13 @@ public class UpdateEmailChannelResultJsonUnmarshaller implements Unmarshaller<Up
             return updateEmailChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateEmailChannelResult.setEmailChannelResponse(EmailChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

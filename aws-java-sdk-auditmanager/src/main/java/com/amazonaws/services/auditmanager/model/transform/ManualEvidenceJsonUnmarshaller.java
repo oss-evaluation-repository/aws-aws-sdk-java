@@ -43,22 +43,33 @@ public class ManualEvidenceJsonUnmarshaller implements Unmarshaller<ManualEviden
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("s3ResourcePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     manualEvidence.setS3ResourcePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("textResponse", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     manualEvidence.setTextResponse(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("evidenceFileName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     manualEvidence.setEvidenceFileName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

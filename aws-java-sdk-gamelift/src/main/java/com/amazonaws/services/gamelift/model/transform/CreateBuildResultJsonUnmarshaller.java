@@ -43,22 +43,33 @@ public class CreateBuildResultJsonUnmarshaller implements Unmarshaller<CreateBui
             return createBuildResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Build", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBuildResult.setBuild(BuildJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UploadCredentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBuildResult.setUploadCredentials(CredentialsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StorageLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createBuildResult.setStorageLocation(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

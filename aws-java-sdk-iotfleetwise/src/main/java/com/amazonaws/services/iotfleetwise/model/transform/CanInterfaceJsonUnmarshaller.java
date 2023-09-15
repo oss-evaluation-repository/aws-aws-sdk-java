@@ -43,22 +43,33 @@ public class CanInterfaceJsonUnmarshaller implements Unmarshaller<CanInterface, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canInterface.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protocolName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canInterface.setProtocolName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("protocolVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     canInterface.setProtocolVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

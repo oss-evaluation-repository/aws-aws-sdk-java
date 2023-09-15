@@ -43,38 +43,53 @@ public class CrossRegionCopyRuleJsonUnmarshaller implements Unmarshaller<CrossRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crossRegionCopyRule.setTargetRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Target", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crossRegionCopyRule.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encrypted", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crossRegionCopyRule.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("CmkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crossRegionCopyRule.setCmkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyTags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crossRegionCopyRule.setCopyTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RetainRule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crossRegionCopyRule.setRetainRule(CrossRegionCopyRetainRuleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DeprecateRule", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     crossRegionCopyRule.setDeprecateRule(CrossRegionCopyDeprecateRuleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

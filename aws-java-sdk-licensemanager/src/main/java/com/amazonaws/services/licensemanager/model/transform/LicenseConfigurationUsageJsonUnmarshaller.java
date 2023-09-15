@@ -43,34 +43,48 @@ public class LicenseConfigurationUsageJsonUnmarshaller implements Unmarshaller<L
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseConfigurationUsage.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseConfigurationUsage.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseConfigurationUsage.setResourceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceOwnerId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseConfigurationUsage.setResourceOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AssociationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseConfigurationUsage.setAssociationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ConsumedLicenses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     licenseConfigurationUsage.setConsumedLicenses(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

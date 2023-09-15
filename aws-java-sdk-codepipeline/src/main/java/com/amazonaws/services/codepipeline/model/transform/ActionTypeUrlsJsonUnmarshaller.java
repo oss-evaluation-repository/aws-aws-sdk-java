@@ -43,26 +43,38 @@ public class ActionTypeUrlsJsonUnmarshaller implements Unmarshaller<ActionTypeUr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("configurationUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeUrls.setConfigurationUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entityUrlTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeUrls.setEntityUrlTemplate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionUrlTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeUrls.setExecutionUrlTemplate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionUrlTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     actionTypeUrls.setRevisionUrlTemplate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

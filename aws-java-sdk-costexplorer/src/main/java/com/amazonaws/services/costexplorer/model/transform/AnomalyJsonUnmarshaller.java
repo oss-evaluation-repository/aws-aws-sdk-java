@@ -43,48 +43,65 @@ public class AnomalyJsonUnmarshaller implements Unmarshaller<Anomaly, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AnomalyId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomaly.setAnomalyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnomalyStartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomaly.setAnomalyStartDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AnomalyEndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomaly.setAnomalyEndDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DimensionValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomaly.setDimensionValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RootCauses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomaly.setRootCauses(new ListUnmarshaller<RootCause>(RootCauseJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AnomalyScore", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomaly.setAnomalyScore(AnomalyScoreJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Impact", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomaly.setImpact(ImpactJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MonitorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomaly.setMonitorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Feedback", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     anomaly.setFeedback(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

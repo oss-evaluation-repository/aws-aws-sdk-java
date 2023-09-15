@@ -43,22 +43,33 @@ public class VirtualGatewayListenerTlsCertificateJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("acm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayListenerTlsCertificate.setAcm(VirtualGatewayListenerTlsAcmCertificateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("file", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayListenerTlsCertificate.setFile(VirtualGatewayListenerTlsFileCertificateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     virtualGatewayListenerTlsCertificate.setSds(VirtualGatewayListenerTlsSdsCertificateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class NoiseReducerJsonUnmarshaller implements Unmarshaller<NoiseReducer, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     noiseReducer.setFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     noiseReducer.setFilterSettings(NoiseReducerFilterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("spatialFilterSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     noiseReducer.setSpatialFilterSettings(NoiseReducerSpatialFilterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("temporalFilterSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     noiseReducer.setTemporalFilterSettings(NoiseReducerTemporalFilterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

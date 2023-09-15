@@ -43,27 +43,39 @@ public class AdminInitiateAuthResultJsonUnmarshaller implements Unmarshaller<Adm
             return adminInitiateAuthResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChallengeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminInitiateAuthResult.setChallengeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Session", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminInitiateAuthResult.setSession(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ChallengeParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminInitiateAuthResult.setChallengeParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     adminInitiateAuthResult.setAuthenticationResult(AuthenticationResultTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

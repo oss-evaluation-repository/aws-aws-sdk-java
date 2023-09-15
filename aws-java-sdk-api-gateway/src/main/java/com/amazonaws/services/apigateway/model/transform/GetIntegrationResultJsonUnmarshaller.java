@@ -43,75 +43,98 @@ public class GetIntegrationResultJsonUnmarshaller implements Unmarshaller<GetInt
             return getIntegrationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("httpMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setHttpMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("credentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setCredentials(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requestParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setRequestParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("requestTemplates", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setRequestTemplates(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("passthroughBehavior", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setPassthroughBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contentHandling", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setContentHandling(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeoutInMillis", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setTimeoutInMillis(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheNamespace", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setCacheNamespace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheKeyParameters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setCacheKeyParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("integrationResponses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setIntegrationResponses(new MapUnmarshaller<String, IntegrationResponse>(context.getUnmarshaller(String.class),
                             IntegrationResponseJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("tlsConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getIntegrationResult.setTlsConfig(TlsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

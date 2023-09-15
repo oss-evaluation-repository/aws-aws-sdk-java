@@ -43,62 +43,79 @@ public class DescribeAutoMLJobResultJsonUnmarshaller implements Unmarshaller<Des
             return describeAutoMLJobResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AutoMLJobName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setAutoMLJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setAutoMLJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setInputDataConfig(new ListUnmarshaller<AutoMLChannel>(AutoMLChannelJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setOutputDataConfig(AutoMLOutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobObjective", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setAutoMLJobObjective(AutoMLJobObjectiveJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProblemType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setProblemType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setAutoMLJobConfig(AutoMLJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartialFailureReasons", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setPartialFailureReasons(new ListUnmarshaller<AutoMLPartialFailureReason>(
                             AutoMLPartialFailureReasonJsonUnmarshaller.getInstance())
@@ -106,36 +123,48 @@ public class DescribeAutoMLJobResultJsonUnmarshaller implements Unmarshaller<Des
                     .unmarshall(context));
                 }
                 if (context.testExpression("BestCandidate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setBestCandidate(AutoMLCandidateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setAutoMLJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobSecondaryStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setAutoMLJobSecondaryStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GenerateCandidateDefinitionsOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setGenerateCandidateDefinitionsOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMLJobArtifacts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setAutoMLJobArtifacts(AutoMLJobArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResolvedAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setResolvedAttributes(ResolvedAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelDeployConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setModelDeployConfig(ModelDeployConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ModelDeployResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeAutoMLJobResult.setModelDeployResult(ModelDeployResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

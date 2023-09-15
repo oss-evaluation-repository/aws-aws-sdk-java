@@ -43,47 +43,64 @@ public class DirectMessageConfigurationJsonUnmarshaller implements Unmarshaller<
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ADMMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directMessageConfiguration.setADMMessage(ADMMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("APNSMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directMessageConfiguration.setAPNSMessage(APNSMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BaiduMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directMessageConfiguration.setBaiduMessage(BaiduMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directMessageConfiguration.setDefaultMessage(DefaultMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultPushNotificationMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directMessageConfiguration.setDefaultPushNotificationMessage(DefaultPushNotificationMessageJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("EmailMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directMessageConfiguration.setEmailMessage(EmailMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GCMMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directMessageConfiguration.setGCMMessage(GCMMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SMSMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directMessageConfiguration.setSMSMessage(SMSMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VoiceMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directMessageConfiguration.setVoiceMessage(VoiceMessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

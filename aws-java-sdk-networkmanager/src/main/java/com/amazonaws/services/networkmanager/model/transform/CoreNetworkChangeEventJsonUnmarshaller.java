@@ -43,34 +43,48 @@ public class CoreNetworkChangeEventJsonUnmarshaller implements Unmarshaller<Core
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeEvent.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeEvent.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentifierPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeEvent.setIdentifierPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeEvent.setEventTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeEvent.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Values", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coreNetworkChangeEvent.setValues(CoreNetworkChangeEventValuesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

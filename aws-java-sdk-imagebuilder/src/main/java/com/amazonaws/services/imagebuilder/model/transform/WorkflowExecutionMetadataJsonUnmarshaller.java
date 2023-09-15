@@ -43,54 +43,73 @@ public class WorkflowExecutionMetadataJsonUnmarshaller implements Unmarshaller<W
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowBuildVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setWorkflowBuildVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("workflowExecutionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setWorkflowExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("totalStepCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setTotalStepCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalStepsSucceeded", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setTotalStepsSucceeded(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalStepsFailed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setTotalStepsFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("totalStepsSkipped", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setTotalStepsSkipped(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     workflowExecutionMetadata.setEndTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class ProvisionedJsonUnmarshaller implements Unmarshaller<Provisioned, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("brokerNodeGroupInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setBrokerNodeGroupInfo(BrokerNodeGroupInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("currentBrokerSoftwareInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setCurrentBrokerSoftwareInfo(BrokerSoftwareInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("clientAuthentication", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setClientAuthentication(ClientAuthenticationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("encryptionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setEncryptionInfo(EncryptionInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("enhancedMonitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setEnhancedMonitoring(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("openMonitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setOpenMonitoring(OpenMonitoringInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("loggingInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setLoggingInfo(LoggingInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("numberOfBrokerNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setNumberOfBrokerNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("zookeeperConnectString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setZookeeperConnectString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("zookeeperConnectStringTls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setZookeeperConnectStringTls(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storageMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     provisioned.setStorageMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

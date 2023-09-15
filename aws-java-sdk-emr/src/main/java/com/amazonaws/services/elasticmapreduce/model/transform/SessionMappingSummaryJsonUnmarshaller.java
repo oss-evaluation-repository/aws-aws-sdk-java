@@ -43,34 +43,48 @@ public class SessionMappingSummaryJsonUnmarshaller implements Unmarshaller<Sessi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StudioId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingSummary.setStudioId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingSummary.setIdentityId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingSummary.setIdentityName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingSummary.setIdentityType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionPolicyArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingSummary.setSessionPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionMappingSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

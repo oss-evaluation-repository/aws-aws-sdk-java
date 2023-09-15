@@ -43,50 +43,68 @@ public class QualityCheckStepMetadataJsonUnmarshaller implements Unmarshaller<Qu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CheckType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualityCheckStepMetadata.setCheckType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BaselineUsedForDriftCheckStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualityCheckStepMetadata.setBaselineUsedForDriftCheckStatistics(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BaselineUsedForDriftCheckConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualityCheckStepMetadata.setBaselineUsedForDriftCheckConstraints(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CalculatedBaselineStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualityCheckStepMetadata.setCalculatedBaselineStatistics(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CalculatedBaselineConstraints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualityCheckStepMetadata.setCalculatedBaselineConstraints(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ModelPackageGroupName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualityCheckStepMetadata.setModelPackageGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ViolationReport", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualityCheckStepMetadata.setViolationReport(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CheckJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualityCheckStepMetadata.setCheckJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SkipCheck", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualityCheckStepMetadata.setSkipCheck(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RegisterNewBaseline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     qualityCheckStepMetadata.setRegisterNewBaseline(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

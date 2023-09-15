@@ -43,30 +43,43 @@ public class TaskStatisticsForAuditCheckJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("totalFindingsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatisticsForAuditCheck.setTotalFindingsCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("failedFindingsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatisticsForAuditCheck.setFailedFindingsCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("succeededFindingsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatisticsForAuditCheck.setSucceededFindingsCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("skippedFindingsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatisticsForAuditCheck.setSkippedFindingsCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("canceledFindingsCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     taskStatisticsForAuditCheck.setCanceledFindingsCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

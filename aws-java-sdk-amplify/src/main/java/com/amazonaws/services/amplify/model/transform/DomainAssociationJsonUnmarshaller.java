@@ -43,50 +43,67 @@ public class DomainAssociationJsonUnmarshaller implements Unmarshaller<DomainAss
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("domainAssociationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainAssociation.setDomainAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainAssociation.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("enableAutoSubDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainAssociation.setEnableAutoSubDomain(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("autoSubDomainCreationPatterns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainAssociation.setAutoSubDomainCreationPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("autoSubDomainIAMRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainAssociation.setAutoSubDomainIAMRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("domainStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainAssociation.setDomainStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainAssociation.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateVerificationDNSRecord", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainAssociation.setCertificateVerificationDNSRecord(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subDomains", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     domainAssociation.setSubDomains(new ListUnmarshaller<SubDomain>(SubDomainJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

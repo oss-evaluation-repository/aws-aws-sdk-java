@@ -43,52 +43,70 @@ public class DataLabelOptionsJsonUnmarshaller implements Unmarshaller<DataLabelO
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Visibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelOptions.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CategoryLabelVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelOptions.setCategoryLabelVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MeasureLabelVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelOptions.setMeasureLabelVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataLabelTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelOptions.setDataLabelTypes(new ListUnmarshaller<DataLabelType>(DataLabelTypeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("Position", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelOptions.setPosition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelContent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelOptions.setLabelContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LabelFontConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelOptions.setLabelFontConfiguration(FontConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LabelColor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelOptions.setLabelColor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Overlap", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelOptions.setOverlap(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalsVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dataLabelOptions.setTotalsVisibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

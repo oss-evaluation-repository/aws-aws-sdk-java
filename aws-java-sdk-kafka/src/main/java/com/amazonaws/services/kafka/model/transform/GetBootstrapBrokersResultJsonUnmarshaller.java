@@ -43,50 +43,68 @@ public class GetBootstrapBrokersResultJsonUnmarshaller implements Unmarshaller<G
             return getBootstrapBrokersResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bootstrapBrokerString", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBootstrapBrokersResult.setBootstrapBrokerString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bootstrapBrokerStringTls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBootstrapBrokersResult.setBootstrapBrokerStringTls(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bootstrapBrokerStringSaslScram", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBootstrapBrokersResult.setBootstrapBrokerStringSaslScram(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bootstrapBrokerStringSaslIam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBootstrapBrokersResult.setBootstrapBrokerStringSaslIam(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bootstrapBrokerStringPublicTls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBootstrapBrokersResult.setBootstrapBrokerStringPublicTls(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bootstrapBrokerStringPublicSaslScram", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBootstrapBrokersResult.setBootstrapBrokerStringPublicSaslScram(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bootstrapBrokerStringPublicSaslIam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBootstrapBrokersResult.setBootstrapBrokerStringPublicSaslIam(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bootstrapBrokerStringVpcConnectivityTls", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBootstrapBrokersResult.setBootstrapBrokerStringVpcConnectivityTls(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bootstrapBrokerStringVpcConnectivitySaslScram", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBootstrapBrokersResult.setBootstrapBrokerStringVpcConnectivitySaslScram(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bootstrapBrokerStringVpcConnectivitySaslIam", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBootstrapBrokersResult.setBootstrapBrokerStringVpcConnectivitySaslIam(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

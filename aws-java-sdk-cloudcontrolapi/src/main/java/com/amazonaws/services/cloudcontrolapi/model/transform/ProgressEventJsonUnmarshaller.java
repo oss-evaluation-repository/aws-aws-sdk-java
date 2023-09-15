@@ -43,50 +43,68 @@ public class ProgressEventJsonUnmarshaller implements Unmarshaller<ProgressEvent
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     progressEvent.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Identifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     progressEvent.setIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     progressEvent.setRequestToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Operation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     progressEvent.setOperation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OperationStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     progressEvent.setOperationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     progressEvent.setEventTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceModel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     progressEvent.setResourceModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     progressEvent.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     progressEvent.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetryAfter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     progressEvent.setRetryAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

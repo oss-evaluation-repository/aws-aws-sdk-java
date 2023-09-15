@@ -43,58 +43,77 @@ public class PullRequestEventJsonUnmarshaller implements Unmarshaller<PullReques
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pullRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setPullRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setEventDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("pullRequestEventType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setPullRequestEventType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("actorArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setActorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pullRequestCreatedEventMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setPullRequestCreatedEventMetadata(PullRequestCreatedEventMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pullRequestStatusChangedEventMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setPullRequestStatusChangedEventMetadata(PullRequestStatusChangedEventMetadataJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("pullRequestSourceReferenceUpdatedEventMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setPullRequestSourceReferenceUpdatedEventMetadata(PullRequestSourceReferenceUpdatedEventMetadataJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pullRequestMergedStateChangedEventMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setPullRequestMergedStateChangedEventMetadata(PullRequestMergedStateChangedEventMetadataJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
                 if (context.testExpression("approvalRuleEventMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setApprovalRuleEventMetadata(ApprovalRuleEventMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("approvalStateChangedEventMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setApprovalStateChangedEventMetadata(ApprovalStateChangedEventMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("approvalRuleOverriddenEventMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pullRequestEvent.setApprovalRuleOverriddenEventMetadata(ApprovalRuleOverriddenEventMetadataJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

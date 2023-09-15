@@ -43,56 +43,75 @@ public class AuditFindingJsonUnmarshaller implements Unmarshaller<AuditFinding, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("findingId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setFindingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("checkName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setCheckName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setTaskStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("findingTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setFindingTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nonCompliantResource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setNonCompliantResource(NonCompliantResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("relatedResources", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setRelatedResources(new ListUnmarshaller<RelatedResource>(RelatedResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("reasonForNonCompliance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setReasonForNonCompliance(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reasonForNonComplianceCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setReasonForNonComplianceCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isSuppressed", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     auditFinding.setIsSuppressed(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

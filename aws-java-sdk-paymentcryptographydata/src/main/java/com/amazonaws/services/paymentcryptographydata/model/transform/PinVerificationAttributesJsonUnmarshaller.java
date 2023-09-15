@@ -43,18 +43,28 @@ public class PinVerificationAttributesJsonUnmarshaller implements Unmarshaller<P
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ibm3624Pin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pinVerificationAttributes.setIbm3624Pin(Ibm3624PinVerificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VisaPin", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pinVerificationAttributes.setVisaPin(VisaPinVerificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

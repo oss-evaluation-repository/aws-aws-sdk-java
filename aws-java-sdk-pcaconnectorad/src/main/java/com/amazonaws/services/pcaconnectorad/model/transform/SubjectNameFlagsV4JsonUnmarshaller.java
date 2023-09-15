@@ -43,50 +43,68 @@ public class SubjectNameFlagsV4JsonUnmarshaller implements Unmarshaller<SubjectN
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RequireCommonName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectNameFlagsV4.setRequireCommonName(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireDirectoryPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectNameFlagsV4.setRequireDirectoryPath(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireDnsAsCn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectNameFlagsV4.setRequireDnsAsCn(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RequireEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectNameFlagsV4.setRequireEmail(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SanRequireDirectoryGuid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectNameFlagsV4.setSanRequireDirectoryGuid(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SanRequireDns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectNameFlagsV4.setSanRequireDns(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SanRequireDomainDns", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectNameFlagsV4.setSanRequireDomainDns(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SanRequireEmail", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectNameFlagsV4.setSanRequireEmail(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SanRequireSpn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectNameFlagsV4.setSanRequireSpn(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SanRequireUpn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     subjectNameFlagsV4.setSanRequireUpn(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

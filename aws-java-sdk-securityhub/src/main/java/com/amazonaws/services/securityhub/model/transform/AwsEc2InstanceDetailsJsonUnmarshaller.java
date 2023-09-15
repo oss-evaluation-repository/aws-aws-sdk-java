@@ -43,52 +43,66 @@ public class AwsEc2InstanceDetailsJsonUnmarshaller implements Unmarshaller<AwsEc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImageId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpV4Addresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setIpV4Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("IpV6Addresses", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setIpV6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("KeyName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setKeyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamInstanceProfileArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setIamInstanceProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LaunchedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setLaunchedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaces", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setNetworkInterfaces(new ListUnmarshaller<AwsEc2InstanceNetworkInterfacesDetails>(
                             AwsEc2InstanceNetworkInterfacesDetailsJsonUnmarshaller.getInstance())
@@ -96,16 +110,23 @@ public class AwsEc2InstanceDetailsJsonUnmarshaller implements Unmarshaller<AwsEc
                     .unmarshall(context));
                 }
                 if (context.testExpression("VirtualizationType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setVirtualizationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetadataOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setMetadataOptions(AwsEc2InstanceMetadataOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Monitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2InstanceDetails.setMonitoring(AwsEc2InstanceMonitoringDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

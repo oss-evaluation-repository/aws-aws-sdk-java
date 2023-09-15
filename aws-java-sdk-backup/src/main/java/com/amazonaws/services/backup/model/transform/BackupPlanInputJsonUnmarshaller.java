@@ -43,26 +43,37 @@ public class BackupPlanInputJsonUnmarshaller implements Unmarshaller<BackupPlanI
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupPlanName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlanInput.setBackupPlanName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Rules", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlanInput.setRules(new ListUnmarshaller<BackupRuleInput>(BackupRuleInputJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("AdvancedBackupSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     backupPlanInput.setAdvancedBackupSettings(new ListUnmarshaller<AdvancedBackupSetting>(AdvancedBackupSettingJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

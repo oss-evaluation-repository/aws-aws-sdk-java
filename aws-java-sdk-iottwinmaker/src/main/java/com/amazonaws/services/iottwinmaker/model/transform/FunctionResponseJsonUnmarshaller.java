@@ -43,28 +43,40 @@ public class FunctionResponseJsonUnmarshaller implements Unmarshaller<FunctionRe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("requiredProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionResponse.setRequiredProperties(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("scope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionResponse.setScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("implementedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionResponse.setImplementedBy(DataConnectorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("isInherited", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     functionResponse.setIsInherited(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

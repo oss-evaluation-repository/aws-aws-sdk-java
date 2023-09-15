@@ -43,12 +43,17 @@ public class GetSamplingTargetsResultJsonUnmarshaller implements Unmarshaller<Ge
             return getSamplingTargetsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SamplingTargetDocuments", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSamplingTargetsResult.setSamplingTargetDocuments(new ListUnmarshaller<SamplingTargetDocument>(SamplingTargetDocumentJsonUnmarshaller
                             .getInstance())
@@ -56,15 +61,21 @@ public class GetSamplingTargetsResultJsonUnmarshaller implements Unmarshaller<Ge
                     .unmarshall(context));
                 }
                 if (context.testExpression("LastRuleModification", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSamplingTargetsResult.setLastRuleModification(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getSamplingTargetsResult.setUnprocessedStatistics(new ListUnmarshaller<UnprocessedStatistics>(UnprocessedStatisticsJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

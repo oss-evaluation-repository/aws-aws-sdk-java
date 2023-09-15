@@ -43,22 +43,33 @@ public class BoxPlotOptionsJsonUnmarshaller implements Unmarshaller<BoxPlotOptio
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StyleOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxPlotOptions.setStyleOptions(BoxPlotStyleOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("OutlierVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxPlotOptions.setOutlierVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllDataPointsVisibility", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     boxPlotOptions.setAllDataPointsVisibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

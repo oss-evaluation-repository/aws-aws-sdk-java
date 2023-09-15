@@ -43,14 +43,23 @@ public class StopReplicationTaskResultJsonUnmarshaller implements Unmarshaller<S
             return stopReplicationTaskResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplicationTask", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     stopReplicationTaskResult.setReplicationTask(ReplicationTaskJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodeSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setCodeSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("SigningProfileVersionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setSigningProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SigningJobArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     layer.setSigningJobArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

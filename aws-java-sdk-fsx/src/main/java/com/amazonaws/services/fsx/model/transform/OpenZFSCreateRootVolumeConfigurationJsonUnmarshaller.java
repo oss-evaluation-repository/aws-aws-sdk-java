@@ -43,26 +43,34 @@ public class OpenZFSCreateRootVolumeConfigurationJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RecordSizeKiB", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSCreateRootVolumeConfiguration.setRecordSizeKiB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DataCompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSCreateRootVolumeConfiguration.setDataCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NfsExports", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSCreateRootVolumeConfiguration.setNfsExports(new ListUnmarshaller<OpenZFSNfsExport>(OpenZFSNfsExportJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("UserAndGroupQuotas", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSCreateRootVolumeConfiguration.setUserAndGroupQuotas(new ListUnmarshaller<OpenZFSUserOrGroupQuota>(
                             OpenZFSUserOrGroupQuotaJsonUnmarshaller.getInstance())
@@ -70,12 +78,18 @@ public class OpenZFSCreateRootVolumeConfigurationJsonUnmarshaller implements Unm
                     .unmarshall(context));
                 }
                 if (context.testExpression("CopyTagsToSnapshots", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSCreateRootVolumeConfiguration.setCopyTagsToSnapshots(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ReadOnly", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     openZFSCreateRootVolumeConfiguration.setReadOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

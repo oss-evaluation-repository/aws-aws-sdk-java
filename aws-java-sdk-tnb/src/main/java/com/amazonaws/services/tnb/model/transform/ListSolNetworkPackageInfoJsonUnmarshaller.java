@@ -43,60 +43,80 @@ public class ListSolNetworkPackageInfoJsonUnmarshaller implements Unmarshaller<L
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setMetadata(ListSolNetworkPackageMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nsdDesigner", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setNsdDesigner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setNsdId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdInvariantId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setNsdInvariantId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setNsdName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdOnboardingState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setNsdOnboardingState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdOperationalState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setNsdOperationalState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdUsageState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setNsdUsageState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nsdVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setNsdVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vnfPkgIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     listSolNetworkPackageInfo.setVnfPkgIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

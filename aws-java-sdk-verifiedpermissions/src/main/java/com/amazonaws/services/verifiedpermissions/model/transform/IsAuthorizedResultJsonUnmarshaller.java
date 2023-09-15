@@ -43,26 +43,37 @@ public class IsAuthorizedResultJsonUnmarshaller implements Unmarshaller<IsAuthor
             return isAuthorizedResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("decision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     isAuthorizedResult.setDecision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("determiningPolicies", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     isAuthorizedResult.setDeterminingPolicies(new ListUnmarshaller<DeterminingPolicyItem>(DeterminingPolicyItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     isAuthorizedResult.setErrors(new ListUnmarshaller<EvaluationErrorItem>(EvaluationErrorItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

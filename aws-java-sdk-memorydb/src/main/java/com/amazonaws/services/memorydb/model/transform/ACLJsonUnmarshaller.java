@@ -43,42 +43,57 @@ public class ACLJsonUnmarshaller implements Unmarshaller<ACL, JsonUnmarshallerCo
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aCL.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aCL.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserNames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aCL.setUserNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("MinimumEngineVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aCL.setMinimumEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PendingChanges", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aCL.setPendingChanges(ACLPendingChangesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Clusters", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aCL.setClusters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     aCL.setARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

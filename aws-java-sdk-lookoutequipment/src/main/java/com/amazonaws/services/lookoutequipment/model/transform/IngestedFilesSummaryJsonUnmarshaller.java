@@ -43,24 +43,35 @@ public class IngestedFilesSummaryJsonUnmarshaller implements Unmarshaller<Ingest
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TotalNumberOfFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestedFilesSummary.setTotalNumberOfFiles(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IngestedNumberOfFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestedFilesSummary.setIngestedNumberOfFiles(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DiscardedFiles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ingestedFilesSummary.setDiscardedFiles(new ListUnmarshaller<S3Object>(S3ObjectJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,67 +43,89 @@ public class CreateFileSystemLustreConfigurationJsonUnmarshaller implements Unma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setWeeklyMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImportPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setImportPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExportPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setExportPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ImportedFileChunkSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setImportedFileChunkSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoImportPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setAutoImportPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PerUnitStorageThroughput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setPerUnitStorageThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DailyAutomaticBackupStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setDailyAutomaticBackupStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutomaticBackupRetentionDays", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyTagsToBackups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DriveCacheType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setDriveCacheType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataCompressionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setDataCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setLogConfiguration(LustreLogCreateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RootSquashConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     createFileSystemLustreConfiguration.setRootSquashConfiguration(LustreRootSquashConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

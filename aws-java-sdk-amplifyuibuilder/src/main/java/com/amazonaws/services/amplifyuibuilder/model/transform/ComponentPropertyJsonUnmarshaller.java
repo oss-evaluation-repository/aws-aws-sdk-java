@@ -43,73 +43,96 @@ public class ComponentPropertyJsonUnmarshaller implements Unmarshaller<Component
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("value", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bindingProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setBindingProperties(ComponentPropertyBindingPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("collectionBindingProperties", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setCollectionBindingProperties(ComponentPropertyBindingPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bindings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setBindings(new MapUnmarshaller<String, FormBindingElement>(context.getUnmarshaller(String.class),
                             FormBindingElementJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("event", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setEvent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setUserAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("concat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setConcat(new ListUnmarshaller<ComponentProperty>(ComponentPropertyJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("condition", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setCondition(ComponentConditionPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configured", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setConfigured(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importedValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setImportedValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("property", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     componentProperty.setProperty(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

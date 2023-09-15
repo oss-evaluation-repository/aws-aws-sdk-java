@@ -43,12 +43,17 @@ public class TemplateVersionDefinitionJsonUnmarshaller implements Unmarshaller<T
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSetConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersionDefinition.setDataSetConfigurations(new ListUnmarshaller<DataSetConfiguration>(DataSetConfigurationJsonUnmarshaller
                             .getInstance())
@@ -56,18 +61,21 @@ public class TemplateVersionDefinitionJsonUnmarshaller implements Unmarshaller<T
                     .unmarshall(context));
                 }
                 if (context.testExpression("Sheets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersionDefinition.setSheets(new ListUnmarshaller<SheetDefinition>(SheetDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("CalculatedFields", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersionDefinition.setCalculatedFields(new ListUnmarshaller<CalculatedField>(CalculatedFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ParameterDeclarations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersionDefinition.setParameterDeclarations(new ListUnmarshaller<ParameterDeclaration>(ParameterDeclarationJsonUnmarshaller
                             .getInstance())
@@ -75,12 +83,14 @@ public class TemplateVersionDefinitionJsonUnmarshaller implements Unmarshaller<T
                     .unmarshall(context));
                 }
                 if (context.testExpression("FilterGroups", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersionDefinition.setFilterGroups(new ListUnmarshaller<FilterGroup>(FilterGroupJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("ColumnConfigurations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersionDefinition.setColumnConfigurations(new ListUnmarshaller<ColumnConfiguration>(ColumnConfigurationJsonUnmarshaller
                             .getInstance())
@@ -88,8 +98,13 @@ public class TemplateVersionDefinitionJsonUnmarshaller implements Unmarshaller<T
                     .unmarshall(context));
                 }
                 if (context.testExpression("AnalysisDefaults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     templateVersionDefinition.setAnalysisDefaults(AnalysisDefaultsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

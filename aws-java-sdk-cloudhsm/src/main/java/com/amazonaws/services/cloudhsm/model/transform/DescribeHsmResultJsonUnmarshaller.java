@@ -43,96 +43,125 @@ public class DescribeHsmResultJsonUnmarshaller implements Unmarshaller<DescribeH
             return describeHsmResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HsmArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setHsmArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setStatusDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EniId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setEniId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EniIp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setEniIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setSubscriptionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionStartDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setSubscriptionStartDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubscriptionEndDate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setSubscriptionEndDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRoleArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SerialNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setSerialNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VendorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setVendorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HsmType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setHsmType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SoftwareVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setSoftwareVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshPublicKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setSshPublicKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshKeyLastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setSshKeyLastUpdated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerCertUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setServerCertUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerCertLastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setServerCertLastUpdated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Partitions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeHsmResult.setPartitions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

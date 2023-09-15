@@ -43,31 +43,44 @@ public class OutboundCrossClusterSearchConnectionJsonUnmarshaller implements Unm
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SourceDomainInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundCrossClusterSearchConnection.setSourceDomainInfo(DomainInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DestinationDomainInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundCrossClusterSearchConnection.setDestinationDomainInfo(DomainInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CrossClusterSearchConnectionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundCrossClusterSearchConnection.setCrossClusterSearchConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionAlias", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundCrossClusterSearchConnection.setConnectionAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConnectionStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     outboundCrossClusterSearchConnection.setConnectionStatus(OutboundCrossClusterSearchConnectionStatusJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,26 +43,38 @@ public class SpacingJsonUnmarshaller implements Unmarshaller<Spacing, JsonUnmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Top", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     spacing.setTop(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Bottom", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     spacing.setBottom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Left", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     spacing.setLeft(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Right", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     spacing.setRight(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,30 +43,43 @@ public class ModelInputConfigurationJsonUnmarshaller implements Unmarshaller<Mod
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventTypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelInputConfiguration.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("format", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelInputConfiguration.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("useEventVariables", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelInputConfiguration.setUseEventVariables(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("jsonInputTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelInputConfiguration.setJsonInputTemplate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("csvInputTemplate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     modelInputConfiguration.setCsvInputTemplate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,54 +43,73 @@ public class AudioDescriptionJsonUnmarshaller implements Unmarshaller<AudioDescr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioNormalizationSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setAudioNormalizationSettings(AudioNormalizationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("audioSelectorName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setAudioSelectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setAudioType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioTypeControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setAudioTypeControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("audioWatermarkingSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setAudioWatermarkingSettings(AudioWatermarkSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("codecSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setCodecSettings(AudioCodecSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("languageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("languageCodeControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setLanguageCodeControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("remixSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setRemixSettings(RemixSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("streamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioDescription.setStreamName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

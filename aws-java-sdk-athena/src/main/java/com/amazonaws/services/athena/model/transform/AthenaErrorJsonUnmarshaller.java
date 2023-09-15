@@ -43,26 +43,38 @@ public class AthenaErrorJsonUnmarshaller implements Unmarshaller<AthenaError, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ErrorCategory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaError.setErrorCategory(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaError.setErrorType(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Retryable", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaError.setRetryable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     athenaError.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

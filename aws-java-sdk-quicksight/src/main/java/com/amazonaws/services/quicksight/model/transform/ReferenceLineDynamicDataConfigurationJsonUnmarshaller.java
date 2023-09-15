@@ -43,22 +43,33 @@ public class ReferenceLineDynamicDataConfigurationJsonUnmarshaller implements Un
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Column", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLineDynamicDataConfiguration.setColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MeasureAggregationFunction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLineDynamicDataConfiguration.setMeasureAggregationFunction(AggregationFunctionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Calculation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     referenceLineDynamicDataConfiguration.setCalculation(NumericalAggregationFunctionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

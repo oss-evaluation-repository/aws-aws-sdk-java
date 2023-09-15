@@ -43,18 +43,28 @@ public class LogsJsonUnmarshaller implements Unmarshaller<Logs, JsonUnmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audit", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logs.setAudit(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("general", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     logs.setGeneral(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

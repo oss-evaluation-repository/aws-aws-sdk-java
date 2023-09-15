@@ -43,26 +43,38 @@ public class ProcessingOutputJsonUnmarshaller implements Unmarshaller<Processing
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OutputName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingOutput.setOutputName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Output", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingOutput.setS3Output(ProcessingS3OutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FeatureStoreOutput", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingOutput.setFeatureStoreOutput(ProcessingFeatureStoreOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AppManaged", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processingOutput.setAppManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

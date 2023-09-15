@@ -43,36 +43,50 @@ public class HTTPRequestJsonUnmarshaller implements Unmarshaller<HTTPRequest, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClientIP", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hTTPRequest.setClientIP(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Country", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hTTPRequest.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("URI", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hTTPRequest.setURI(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Method", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hTTPRequest.setMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HTTPVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hTTPRequest.setHTTPVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Headers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     hTTPRequest.setHeaders(new ListUnmarshaller<HTTPHeader>(HTTPHeaderJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

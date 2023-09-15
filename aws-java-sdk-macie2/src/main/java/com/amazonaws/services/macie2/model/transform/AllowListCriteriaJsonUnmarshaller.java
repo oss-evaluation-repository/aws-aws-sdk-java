@@ -43,18 +43,28 @@ public class AllowListCriteriaJsonUnmarshaller implements Unmarshaller<AllowList
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("regex", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     allowListCriteria.setRegex(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3WordsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     allowListCriteria.setS3WordsList(S3WordsListJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

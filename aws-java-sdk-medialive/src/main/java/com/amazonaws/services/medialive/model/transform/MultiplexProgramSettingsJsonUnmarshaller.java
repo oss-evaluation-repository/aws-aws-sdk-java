@@ -43,26 +43,38 @@ public class MultiplexProgramSettingsJsonUnmarshaller implements Unmarshaller<Mu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("preferredChannelPipeline", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramSettings.setPreferredChannelPipeline(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("programNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramSettings.setProgramNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceDescriptor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramSettings.setServiceDescriptor(MultiplexProgramServiceDescriptorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("videoSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     multiplexProgramSettings.setVideoSettings(MultiplexVideoSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,43 +43,59 @@ public class PropertyDefinitionRequestJsonUnmarshaller implements Unmarshaller<P
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dataType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionRequest.setDataType(DataTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("isRequiredInEntity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionRequest.setIsRequiredInEntity(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isExternalId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionRequest.setIsExternalId(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isStoredExternally", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionRequest.setIsStoredExternally(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isTimeSeries", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionRequest.setIsTimeSeries(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionRequest.setDefaultValue(DataValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionRequest.setConfiguration(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("displayName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     propertyDefinitionRequest.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

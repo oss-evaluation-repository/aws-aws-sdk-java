@@ -43,18 +43,28 @@ public class GetBlockResultJsonUnmarshaller implements Unmarshaller<GetBlockResu
             return getBlockResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Block", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBlockResult.setBlock(ValueHolderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Proof", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getBlockResult.setProof(ValueHolderJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

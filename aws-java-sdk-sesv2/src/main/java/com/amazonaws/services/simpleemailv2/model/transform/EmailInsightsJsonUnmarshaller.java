@@ -43,24 +43,35 @@ public class EmailInsightsJsonUnmarshaller implements Unmarshaller<EmailInsights
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Destination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailInsights.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Isp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailInsights.setIsp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Events", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     emailInsights.setEvents(new ListUnmarshaller<InsightsEvent>(InsightsEventJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

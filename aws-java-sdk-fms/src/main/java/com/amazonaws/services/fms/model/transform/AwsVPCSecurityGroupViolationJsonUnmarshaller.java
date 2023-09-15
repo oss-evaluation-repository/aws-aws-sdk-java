@@ -43,31 +43,43 @@ public class AwsVPCSecurityGroupViolationJsonUnmarshaller implements Unmarshalle
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ViolationTarget", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsVPCSecurityGroupViolation.setViolationTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ViolationTargetDescription", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsVPCSecurityGroupViolation.setViolationTargetDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartialMatches", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsVPCSecurityGroupViolation.setPartialMatches(new ListUnmarshaller<PartialMatch>(PartialMatchJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PossibleSecurityGroupRemediationActions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsVPCSecurityGroupViolation.setPossibleSecurityGroupRemediationActions(new ListUnmarshaller<SecurityGroupRemediationAction>(
                             SecurityGroupRemediationActionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,24 +43,32 @@ public class DescribeEndpointResultJsonUnmarshaller implements Unmarshaller<Desc
             return describeEndpointResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndpointName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setEndpointName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setEndpointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointConfigName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setEndpointConfigName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProductionVariants", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setProductionVariants(new ListUnmarshaller<ProductionVariantSummary>(ProductionVariantSummaryJsonUnmarshaller
                             .getInstance())
@@ -68,47 +76,61 @@ public class DescribeEndpointResultJsonUnmarshaller implements Unmarshaller<Desc
                     .unmarshall(context));
                 }
                 if (context.testExpression("DataCaptureConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setDataCaptureConfig(DataCaptureConfigSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EndpointStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setEndpointStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastDeploymentConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setLastDeploymentConfig(DeploymentConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AsyncInferenceConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setAsyncInferenceConfig(AsyncInferenceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PendingDeploymentSummary", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setPendingDeploymentSummary(PendingDeploymentSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExplainerConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setExplainerConfig(ExplainerConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ShadowProductionVariants", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeEndpointResult.setShadowProductionVariants(new ListUnmarshaller<ProductionVariantSummary>(ProductionVariantSummaryJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

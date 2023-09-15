@@ -43,26 +43,38 @@ public class IpAddressUpdateJsonUnmarshaller implements Unmarshaller<IpAddressUp
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IpId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipAddressUpdate.setIpId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipAddressUpdate.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ip", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipAddressUpdate.setIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ipv6", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ipAddressUpdate.setIpv6(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

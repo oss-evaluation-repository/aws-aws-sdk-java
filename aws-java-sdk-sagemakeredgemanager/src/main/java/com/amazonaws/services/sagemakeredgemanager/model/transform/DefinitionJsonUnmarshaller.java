@@ -43,26 +43,38 @@ public class DefinitionJsonUnmarshaller implements Unmarshaller<Definition, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ModelHandle", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     definition.setModelHandle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Url", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     definition.setS3Url(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Checksum", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     definition.setChecksum(ChecksumJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     definition.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

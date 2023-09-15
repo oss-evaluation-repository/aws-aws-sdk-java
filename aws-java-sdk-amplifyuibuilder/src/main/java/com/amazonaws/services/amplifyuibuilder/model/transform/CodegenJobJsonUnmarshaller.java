@@ -43,63 +43,84 @@ public class CodegenJobJsonUnmarshaller implements Unmarshaller<CodegenJob, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("appId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("environmentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("renderConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setRenderConfig(CodegenJobRenderConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("genericDataSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setGenericDataSchema(CodegenJobGenericDataSchemaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("autoGenerateForms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setAutoGenerateForms(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("features", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setFeatures(CodegenFeatureFlagsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("asset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setAsset(CodegenJobAssetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("modifiedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     codegenJob.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

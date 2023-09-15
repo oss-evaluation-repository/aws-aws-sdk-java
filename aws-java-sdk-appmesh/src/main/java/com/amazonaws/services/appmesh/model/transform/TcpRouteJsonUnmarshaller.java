@@ -43,22 +43,33 @@ public class TcpRouteJsonUnmarshaller implements Unmarshaller<TcpRoute, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("action", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tcpRoute.setAction(TcpRouteActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("match", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tcpRoute.setMatch(TcpRouteMatchJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("timeout", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     tcpRoute.setTimeout(TcpTimeoutJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,22 +43,33 @@ public class ResourceErrorJsonUnmarshaller implements Unmarshaller<ResourceError
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logicalResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceError.setLogicalResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("physicalResourceId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceError.setPhysicalResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     resourceError.setReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

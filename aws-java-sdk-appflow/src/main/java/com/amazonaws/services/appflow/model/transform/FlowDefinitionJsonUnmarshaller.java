@@ -43,71 +43,94 @@ public class FlowDefinitionJsonUnmarshaller implements Unmarshaller<FlowDefiniti
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("flowArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setFlowArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("flowName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setFlowName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("flowStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setFlowStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceConnectorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setSourceConnectorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceConnectorLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setSourceConnectorLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationConnectorType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setDestinationConnectorType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationConnectorLabel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setDestinationConnectorLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("triggerType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setTriggerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedBy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setLastUpdatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("lastRunExecutionDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     flowDefinition.setLastRunExecutionDetails(ExecutionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

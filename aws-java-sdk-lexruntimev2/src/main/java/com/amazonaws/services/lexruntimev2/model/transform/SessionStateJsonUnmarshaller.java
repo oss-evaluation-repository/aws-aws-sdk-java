@@ -43,37 +43,51 @@ public class SessionStateJsonUnmarshaller implements Unmarshaller<SessionState, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dialogAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionState.setDialogAction(DialogActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("intent", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionState.setIntent(IntentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("activeContexts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionState.setActiveContexts(new ListUnmarshaller<ActiveContext>(ActiveContextJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sessionAttributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionState.setSessionAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("originatingRequestId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionState.setOriginatingRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("runtimeHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sessionState.setRuntimeHints(RuntimeHintsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

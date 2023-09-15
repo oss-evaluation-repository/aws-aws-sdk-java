@@ -43,66 +43,88 @@ public class DescribeExplainabilityResultJsonUnmarshaller implements Unmarshalle
             return describeExplainabilityResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExplainabilityArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setExplainabilityArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExplainabilityName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setExplainabilityName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExplainabilityConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setExplainabilityConfig(ExplainabilityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EnableVisualization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setEnableVisualization(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setDataSource(DataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Schema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setSchema(SchemaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setStartDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setEndDateTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModificationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     describeExplainabilityResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

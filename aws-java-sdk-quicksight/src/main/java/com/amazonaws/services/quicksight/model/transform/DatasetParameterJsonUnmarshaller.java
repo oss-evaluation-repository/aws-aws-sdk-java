@@ -43,26 +43,38 @@ public class DatasetParameterJsonUnmarshaller implements Unmarshaller<DatasetPar
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StringDatasetParameter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetParameter.setStringDatasetParameter(StringDatasetParameterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DecimalDatasetParameter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetParameter.setDecimalDatasetParameter(DecimalDatasetParameterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("IntegerDatasetParameter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetParameter.setIntegerDatasetParameter(IntegerDatasetParameterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DateTimeDatasetParameter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     datasetParameter.setDateTimeDatasetParameter(DateTimeDatasetParameterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

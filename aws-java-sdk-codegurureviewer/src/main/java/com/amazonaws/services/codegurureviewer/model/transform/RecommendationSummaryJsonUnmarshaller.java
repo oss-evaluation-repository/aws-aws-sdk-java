@@ -43,42 +43,58 @@ public class RecommendationSummaryJsonUnmarshaller implements Unmarshaller<Recom
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FilePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setFilePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartLine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setStartLine(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EndLine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setEndLine(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RecommendationCategory", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setRecommendationCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleMetadata", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setRuleMetadata(RuleMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Severity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recommendationSummary.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

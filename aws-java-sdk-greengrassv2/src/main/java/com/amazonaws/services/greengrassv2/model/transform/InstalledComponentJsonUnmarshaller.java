@@ -43,48 +43,65 @@ public class InstalledComponentJsonUnmarshaller implements Unmarshaller<Installe
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("componentName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     installedComponent.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("componentVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     installedComponent.setComponentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lifecycleState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     installedComponent.setLifecycleState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lifecycleStateDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     installedComponent.setLifecycleStateDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isRoot", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     installedComponent.setIsRoot(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatusChangeTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     installedComponent.setLastStatusChangeTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastReportedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     installedComponent.setLastReportedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastInstallationSource", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     installedComponent.setLastInstallationSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lifecycleStatusCodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     installedComponent.setLifecycleStatusCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

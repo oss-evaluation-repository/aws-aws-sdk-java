@@ -43,46 +43,63 @@ public class SharedDirectoryJsonUnmarshaller implements Unmarshaller<SharedDirec
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OwnerAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharedDirectory.setOwnerAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OwnerDirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharedDirectory.setOwnerDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShareMethod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharedDirectory.setShareMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedAccountId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharedDirectory.setSharedAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedDirectoryId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharedDirectory.setSharedDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShareStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharedDirectory.setShareStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShareNotes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharedDirectory.setShareNotes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharedDirectory.setCreatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     sharedDirectory.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,52 +43,70 @@ public class TestCaseRunJsonUnmarshaller implements Unmarshaller<TestCaseRun, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("testCaseRunId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCaseRun.setTestCaseRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testCaseDefinitionId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCaseRun.setTestCaseDefinitionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testCaseDefinitionName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCaseRun.setTestCaseDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCaseRun.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCaseRun.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCaseRun.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("logUrl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCaseRun.setLogUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("warnings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCaseRun.setWarnings(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failure", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCaseRun.setFailure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("testScenarios", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     testCaseRun.setTestScenarios(new ListUnmarshaller<TestCaseScenario>(TestCaseScenarioJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

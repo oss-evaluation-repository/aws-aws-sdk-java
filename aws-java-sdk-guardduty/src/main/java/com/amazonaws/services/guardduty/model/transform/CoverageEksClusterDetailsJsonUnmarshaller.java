@@ -43,30 +43,43 @@ public class CoverageEksClusterDetailsJsonUnmarshaller implements Unmarshaller<C
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageEksClusterDetails.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("coveredNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageEksClusterDetails.setCoveredNodes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("compatibleNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageEksClusterDetails.setCompatibleNodes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("addonDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageEksClusterDetails.setAddonDetails(AddonDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("managementType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     coverageEksClusterDetails.setManagementType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

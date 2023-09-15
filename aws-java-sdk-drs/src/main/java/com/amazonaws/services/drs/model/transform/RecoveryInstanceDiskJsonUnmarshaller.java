@@ -43,22 +43,33 @@ public class RecoveryInstanceDiskJsonUnmarshaller implements Unmarshaller<Recove
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bytes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceDisk.setBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ebsVolumeID", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceDisk.setEbsVolumeID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("internalDeviceName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     recoveryInstanceDisk.setInternalDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

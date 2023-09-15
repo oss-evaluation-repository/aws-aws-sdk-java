@@ -43,38 +43,53 @@ public class FilterJsonUnmarshaller implements Unmarshaller<Filter, JsonUnmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CategoryFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setCategoryFilter(CategoryFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NumericRangeFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setNumericRangeFilter(NumericRangeFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NumericEqualityFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setNumericEqualityFilter(NumericEqualityFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeEqualityFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setTimeEqualityFilter(TimeEqualityFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TimeRangeFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setTimeRangeFilter(TimeRangeFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RelativeDatesFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setRelativeDatesFilter(RelativeDatesFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TopBottomFilter", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     filter.setTopBottomFilter(TopBottomFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

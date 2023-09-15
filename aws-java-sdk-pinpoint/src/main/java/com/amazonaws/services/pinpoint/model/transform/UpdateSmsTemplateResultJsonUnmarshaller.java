@@ -43,9 +43,13 @@ public class UpdateSmsTemplateResultJsonUnmarshaller implements Unmarshaller<Upd
             return updateSmsTemplateResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             updateSmsTemplateResult.setMessageBody(MessageBodyJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

@@ -44,62 +44,82 @@ public class AmazonopensearchserviceDestinationUpdateJsonUnmarshaller implements
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setRoleARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainARN", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setDomainARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterEndpoint", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setClusterEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TypeName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexRotationPeriod", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setIndexRotationPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BufferingHints", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setBufferingHints(AmazonopensearchserviceBufferingHintsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("RetryOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setRetryOptions(AmazonopensearchserviceRetryOptionsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("S3Update", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setS3Update(S3DestinationUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
                 if (context.testExpression("DocumentIdOptions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     amazonopensearchserviceDestinationUpdate.setDocumentIdOptions(DocumentIdOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

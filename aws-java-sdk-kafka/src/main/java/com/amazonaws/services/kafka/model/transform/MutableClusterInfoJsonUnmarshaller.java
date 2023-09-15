@@ -43,60 +43,80 @@ public class MutableClusterInfoJsonUnmarshaller implements Unmarshaller<MutableC
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("brokerEBSVolumeInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setBrokerEBSVolumeInfo(new ListUnmarshaller<BrokerEBSVolumeInfo>(BrokerEBSVolumeInfoJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("configurationInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setConfigurationInfo(ConfigurationInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("numberOfBrokerNodes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setNumberOfBrokerNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("enhancedMonitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setEnhancedMonitoring(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("openMonitoring", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setOpenMonitoring(OpenMonitoringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("kafkaVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setKafkaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loggingInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setLoggingInfo(LoggingInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientAuthentication", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setClientAuthentication(ClientAuthenticationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("encryptionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setEncryptionInfo(EncryptionInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("connectivityInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setConnectivityInfo(ConnectivityInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("storageMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mutableClusterInfo.setStorageMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

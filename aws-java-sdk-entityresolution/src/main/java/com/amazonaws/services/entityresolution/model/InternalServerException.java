@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception occurs when there is an internal failure in the AWS Entity Resolution service.
+ * This exception occurs when there is an internal failure in the Entity Resolution service.
  * <code>HTTP Status Code: 500</code>
  * </p>
  */

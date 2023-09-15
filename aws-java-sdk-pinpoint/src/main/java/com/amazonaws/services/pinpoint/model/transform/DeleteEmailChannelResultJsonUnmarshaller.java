@@ -43,9 +43,13 @@ public class DeleteEmailChannelResultJsonUnmarshaller implements Unmarshaller<De
             return deleteEmailChannelResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             deleteEmailChannelResult.setEmailChannelResponse(EmailChannelResponseJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

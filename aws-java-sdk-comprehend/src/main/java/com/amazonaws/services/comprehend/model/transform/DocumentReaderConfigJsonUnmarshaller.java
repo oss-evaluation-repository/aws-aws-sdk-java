@@ -43,24 +43,35 @@ public class DocumentReaderConfigJsonUnmarshaller implements Unmarshaller<Docume
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DocumentReadAction", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentReaderConfig.setDocumentReadAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentReadMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentReaderConfig.setDocumentReadMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeatureTypes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     documentReaderConfig.setFeatureTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

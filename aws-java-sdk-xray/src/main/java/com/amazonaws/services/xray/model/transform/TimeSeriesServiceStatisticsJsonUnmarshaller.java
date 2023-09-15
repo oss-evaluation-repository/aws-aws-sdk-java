@@ -43,32 +43,45 @@ public class TimeSeriesServiceStatisticsJsonUnmarshaller implements Unmarshaller
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Timestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesServiceStatistics.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EdgeSummaryStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesServiceStatistics.setEdgeSummaryStatistics(EdgeStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceSummaryStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesServiceStatistics.setServiceSummaryStatistics(ServiceStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ServiceForecastStatistics", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesServiceStatistics.setServiceForecastStatistics(ForecastStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ResponseTimeHistogram", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     timeSeriesServiceStatistics.setResponseTimeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

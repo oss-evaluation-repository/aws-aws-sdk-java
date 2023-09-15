@@ -43,9 +43,13 @@ public class CreateGatewayRouteResultJsonUnmarshaller implements Unmarshaller<Cr
             return createGatewayRouteResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
+
+            knownMember = false;
 
             createGatewayRouteResult.setGatewayRoute(GatewayRouteDataJsonUnmarshaller.getInstance().unmarshall(context));
             token = context.nextToken();

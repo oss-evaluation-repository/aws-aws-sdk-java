@@ -12,9 +12,13 @@
         return null;
     </#if>
     }
+    
+    boolean knownMember;
 
     while (true) {
         if (token == null) break;
+        
+        knownMember = false;
 
         <#-- When the payload is explicitly set to a member the entire payload is the serialized
         content of that member-->
@@ -28,6 +32,10 @@
                 <#list shape.unboundMembers as payloadMember>
                     <@MemberUnmarshallerInvocationMacro.content shape.variable.variableName payloadMember packageName/>
                 </#list>
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

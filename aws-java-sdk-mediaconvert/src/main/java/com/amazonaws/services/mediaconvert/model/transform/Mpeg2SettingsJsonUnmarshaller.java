@@ -43,142 +43,183 @@ public class Mpeg2SettingsJsonUnmarshaller implements Unmarshaller<Mpeg2Settings
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("codecLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setCodecLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("codecProfile", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setCodecProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dynamicSubGop", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setDynamicSubGop(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setFramerateControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateConversionAlgorithm", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setFramerateConversionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setFramerateDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("framerateNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setFramerateNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopClosedCadence", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setGopClosedCadence(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("gopSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setGopSize(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("gopSizeUnits", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setGopSizeUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hrdBufferFinalFillPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setHrdBufferFinalFillPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hrdBufferInitialFillPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setHrdBufferInitialFillPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hrdBufferSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setHrdBufferSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("interlaceMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setInterlaceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("intraDcPrecision", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setIntraDcPrecision(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maxBitrate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setMaxBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minIInterval", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setMinIInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("numberBFramesBetweenReferenceFrames", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setNumberBFramesBetweenReferenceFrames(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parControl", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setParControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parDenominator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setParDenominator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("parNumerator", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setParNumerator(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("qualityTuningLevel", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setQualityTuningLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rateControlMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setRateControlMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanTypeConversionMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setScanTypeConversionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sceneChangeDetect", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setSceneChangeDetect(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("slowPal", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setSlowPal(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("softness", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setSoftness(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("spatialAdaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setSpatialAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("syntax", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setSyntax(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("telecine", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setTelecine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("temporalAdaptiveQuantization", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mpeg2Settings.setTemporalAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

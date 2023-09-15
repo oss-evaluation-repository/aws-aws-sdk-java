@@ -43,20 +43,30 @@ public class LambdaResourceJsonUnmarshaller implements Unmarshaller<LambdaResour
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LambdaArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaResource.setLambdaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventTriggers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     lambdaResource.setEventTriggers(new ListUnmarshaller<EventTriggerDefinition>(EventTriggerDefinitionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

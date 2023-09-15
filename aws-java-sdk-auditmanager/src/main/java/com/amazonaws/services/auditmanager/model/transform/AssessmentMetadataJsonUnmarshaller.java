@@ -43,58 +43,77 @@ public class AssessmentMetadataJsonUnmarshaller implements Unmarshaller<Assessme
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("complianceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setComplianceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentReportsDestination", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setAssessmentReportsDestination(AssessmentReportsDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scope", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setScope(ScopeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("roles", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setRoles(new ListUnmarshaller<Role>(RoleJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("delegations", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setDelegations(new ListUnmarshaller<Delegation>(DelegationJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     assessmentMetadata.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

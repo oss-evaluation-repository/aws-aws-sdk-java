@@ -43,80 +43,105 @@ public class NetworkResourceJsonUnmarshaller implements Unmarshaller<NetworkReso
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setAttributes(new ListUnmarshaller<NameValuePair>(NameValuePairJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("commitmentInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setCommitmentInformation(CommitmentInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("health", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setHealth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("model", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setNetworkArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkResourceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setNetworkResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkSiteArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setNetworkSiteArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("orderArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setOrderArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("position", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setPosition(PositionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("returnInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setReturnInformation(ReturnInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serialNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setSerialNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vendor", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     networkResource.setVendor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

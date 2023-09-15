@@ -43,43 +43,58 @@ public class AppsListDataJsonUnmarshaller implements Unmarshaller<AppsListData, 
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ListId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListData.setListId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ListName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListData.setListName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ListUpdateToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListData.setListUpdateToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListData.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListData.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AppsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListData.setAppsList(new ListUnmarshaller<App>(AppJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("PreviousAppsList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     appsListData.setPreviousAppsList(new MapUnmarshaller<String, java.util.List<App>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<App>(AppJsonUnmarshaller.getInstance())
 
                     ).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

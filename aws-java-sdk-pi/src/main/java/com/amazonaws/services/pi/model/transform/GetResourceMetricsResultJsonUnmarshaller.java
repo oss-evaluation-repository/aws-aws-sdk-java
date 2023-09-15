@@ -43,32 +43,45 @@ public class GetResourceMetricsResultJsonUnmarshaller implements Unmarshaller<Ge
             return getResourceMetricsResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AlignedStartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceMetricsResult.setAlignedStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AlignedEndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceMetricsResult.setAlignedEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Identifier", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceMetricsResult.setIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricList", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceMetricsResult.setMetricList(new ListUnmarshaller<MetricKeyDataPoints>(MetricKeyDataPointsJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     getResourceMetricsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,20 +43,30 @@ public class DetectorModelDefinitionJsonUnmarshaller implements Unmarshaller<Det
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("states", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelDefinition.setStates(new ListUnmarshaller<State>(StateJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("initialStateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     detectorModelDefinition.setInitialStateName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

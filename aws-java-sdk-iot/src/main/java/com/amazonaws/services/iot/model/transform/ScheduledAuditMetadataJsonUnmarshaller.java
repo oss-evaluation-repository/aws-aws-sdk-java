@@ -43,30 +43,43 @@ public class ScheduledAuditMetadataJsonUnmarshaller implements Unmarshaller<Sche
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("scheduledAuditName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAuditMetadata.setScheduledAuditName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scheduledAuditArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAuditMetadata.setScheduledAuditArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("frequency", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAuditMetadata.setFrequency(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dayOfMonth", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAuditMetadata.setDayOfMonth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dayOfWeek", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     scheduledAuditMetadata.setDayOfWeek(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

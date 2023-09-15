@@ -43,56 +43,75 @@ public class MatchmakingTicketJsonUnmarshaller implements Unmarshaller<Matchmaki
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TicketId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setTicketId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigurationArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Players", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setPlayers(new ListUnmarshaller<Player>(PlayerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("GameSessionConnectionInfo", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setGameSessionConnectionInfo(GameSessionConnectionInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("EstimatedWaitTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     matchmakingTicket.setEstimatedWaitTime(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,34 +43,48 @@ public class AssociationSetDetailsJsonUnmarshaller implements Unmarshaller<Assoc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AssociationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSetDetails.setAssociationState(AssociationStateDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSetDetails.setGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Main", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSetDetails.setMain(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RouteTableAssociationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSetDetails.setRouteTableAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RouteTableId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSetDetails.setRouteTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     associationSetDetails.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

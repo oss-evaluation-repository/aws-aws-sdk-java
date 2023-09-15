@@ -43,36 +43,47 @@ public class DirectConnectGatewayAssociationJsonUnmarshaller implements Unmarsha
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("directConnectGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociation.setDirectConnectGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("directConnectGatewayOwnerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociation.setDirectConnectGatewayOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associationState", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociation.setAssociationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateChangeError", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociation.setStateChangeError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("associatedGateway", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociation.setAssociatedGateway(AssociatedGatewayJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("associationId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociation.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("allowedPrefixesToDirectConnectGateway", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociation.setAllowedPrefixesToDirectConnectGateway(new ListUnmarshaller<RouteFilterPrefix>(
                             RouteFilterPrefixJsonUnmarshaller.getInstance())
@@ -80,16 +91,23 @@ public class DirectConnectGatewayAssociationJsonUnmarshaller implements Unmarsha
                     .unmarshall(context));
                 }
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociation.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualGatewayRegion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociation.setVirtualGatewayRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualGatewayOwnerAccount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     directConnectGatewayAssociation.setVirtualGatewayOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

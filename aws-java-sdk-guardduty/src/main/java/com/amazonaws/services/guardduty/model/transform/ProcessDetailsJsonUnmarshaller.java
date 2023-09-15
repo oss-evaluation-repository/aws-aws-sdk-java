@@ -43,64 +43,85 @@ public class ProcessDetailsJsonUnmarshaller implements Unmarshaller<ProcessDetai
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executablePath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setExecutablePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executableSha256", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setExecutableSha256(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("namespacePid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setNamespacePid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pwd", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setPwd(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setPid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("uuid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setUuid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("parentUuid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setParentUuid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("user", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setUserId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("euid", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setEuid(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("lineage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     processDetails.setLineage(new ListUnmarshaller<LineageObject>(LineageObjectJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

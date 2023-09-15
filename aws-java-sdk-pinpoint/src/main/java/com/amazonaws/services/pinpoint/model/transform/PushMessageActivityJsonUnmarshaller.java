@@ -43,26 +43,38 @@ public class PushMessageActivityJsonUnmarshaller implements Unmarshaller<PushMes
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MessageConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushMessageActivity.setMessageConfig(JourneyPushMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NextActivity", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushMessageActivity.setNextActivity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushMessageActivity.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     pushMessageActivity.setTemplateVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

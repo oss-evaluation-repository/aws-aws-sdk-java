@@ -44,26 +44,34 @@ public class AwsEc2VpnConnectionOptionsTunnelOptionsDetailsJsonUnmarshaller impl
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DpdTimeoutSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setDpdTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IkeVersions", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setIkeVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("OutsideIpAddress", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setOutsideIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Phase1DhGroupNumbers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails
                             .setPhase1DhGroupNumbers(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
@@ -71,6 +79,7 @@ public class AwsEc2VpnConnectionOptionsTunnelOptionsDetailsJsonUnmarshaller impl
                             .unmarshall(context));
                 }
                 if (context.testExpression("Phase1EncryptionAlgorithms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setPhase1EncryptionAlgorithms(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -78,6 +87,7 @@ public class AwsEc2VpnConnectionOptionsTunnelOptionsDetailsJsonUnmarshaller impl
                     .unmarshall(context));
                 }
                 if (context.testExpression("Phase1IntegrityAlgorithms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setPhase1IntegrityAlgorithms(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -85,10 +95,12 @@ public class AwsEc2VpnConnectionOptionsTunnelOptionsDetailsJsonUnmarshaller impl
                     .unmarshall(context));
                 }
                 if (context.testExpression("Phase1LifetimeSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setPhase1LifetimeSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Phase2DhGroupNumbers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails
                             .setPhase2DhGroupNumbers(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
@@ -96,6 +108,7 @@ public class AwsEc2VpnConnectionOptionsTunnelOptionsDetailsJsonUnmarshaller impl
                             .unmarshall(context));
                 }
                 if (context.testExpression("Phase2EncryptionAlgorithms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setPhase2EncryptionAlgorithms(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -103,6 +116,7 @@ public class AwsEc2VpnConnectionOptionsTunnelOptionsDetailsJsonUnmarshaller impl
                     .unmarshall(context));
                 }
                 if (context.testExpression("Phase2IntegrityAlgorithms", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setPhase2IntegrityAlgorithms(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))
@@ -110,28 +124,38 @@ public class AwsEc2VpnConnectionOptionsTunnelOptionsDetailsJsonUnmarshaller impl
                     .unmarshall(context));
                 }
                 if (context.testExpression("Phase2LifetimeSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setPhase2LifetimeSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PreSharedKey", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setPreSharedKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RekeyFuzzPercentage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setRekeyFuzzPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RekeyMarginTimeSeconds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setRekeyMarginTimeSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplayWindowSize", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setReplayWindowSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TunnelInsideCidr", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     awsEc2VpnConnectionOptionsTunnelOptionsDetails.setTunnelInsideCidr(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

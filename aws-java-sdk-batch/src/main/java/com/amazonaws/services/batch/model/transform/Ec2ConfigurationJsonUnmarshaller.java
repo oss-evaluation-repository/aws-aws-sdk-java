@@ -43,22 +43,33 @@ public class Ec2ConfigurationJsonUnmarshaller implements Unmarshaller<Ec2Configu
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2Configuration.setImageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageIdOverride", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2Configuration.setImageIdOverride(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageKubernetesVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ec2Configuration.setImageKubernetesVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

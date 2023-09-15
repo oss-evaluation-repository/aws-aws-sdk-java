@@ -43,22 +43,33 @@ public class UpdateLoggingConfigurationResultJsonUnmarshaller implements Unmarsh
             return updateLoggingConfigurationResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FirewallArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLoggingConfigurationResult.setFirewallArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirewallName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLoggingConfigurationResult.setFirewallName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LoggingConfiguration", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     updateLoggingConfigurationResult.setLoggingConfiguration(LoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

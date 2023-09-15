@@ -43,26 +43,38 @@ public class ResponseInspectionJsonUnmarshaller implements Unmarshaller<Response
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StatusCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseInspection.setStatusCode(ResponseInspectionStatusCodeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Header", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseInspection.setHeader(ResponseInspectionHeaderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BodyContains", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseInspection.setBodyContains(ResponseInspectionBodyContainsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Json", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     responseInspection.setJson(ResponseInspectionJsonJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,28 +43,40 @@ public class DisassociateCustomDomainResultJsonUnmarshaller implements Unmarshal
             return disassociateCustomDomainResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DNSTarget", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disassociateCustomDomainResult.setDNSTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disassociateCustomDomainResult.setServiceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomDomain", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disassociateCustomDomainResult.setCustomDomain(CustomDomainJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VpcDNSTargets", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     disassociateCustomDomainResult.setVpcDNSTargets(new ListUnmarshaller<VpcDNSTarget>(VpcDNSTargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

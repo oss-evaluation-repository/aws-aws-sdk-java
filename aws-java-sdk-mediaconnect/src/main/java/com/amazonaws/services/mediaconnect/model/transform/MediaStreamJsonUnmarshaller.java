@@ -43,42 +43,58 @@ public class MediaStreamJsonUnmarshaller implements Unmarshaller<MediaStream, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attributes", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStream.setAttributes(MediaStreamAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("clockRate", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStream.setClockRate(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStream.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fmt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStream.setFmt(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStreamId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStream.setMediaStreamId(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStreamName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStream.setMediaStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("mediaStreamType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStream.setMediaStreamType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("videoFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     mediaStream.setVideoFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,18 +43,28 @@ public class ExportErrorDetailsJsonUnmarshaller implements Unmarshaller<ExportEr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExportResults", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportErrorDetails.setExportResults(ExportErrorDetailsOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ExportSourceImages", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     exportErrorDetails.setExportSourceImages(ExportErrorDetailsOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

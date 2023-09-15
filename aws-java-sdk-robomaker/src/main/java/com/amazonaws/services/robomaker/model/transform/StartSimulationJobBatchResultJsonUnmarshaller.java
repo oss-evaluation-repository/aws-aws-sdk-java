@@ -43,40 +43,52 @@ public class StartSimulationJobBatchResultJsonUnmarshaller implements Unmarshall
             return startSimulationJobBatchResult;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("clientRequestToken", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setClientRequestToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("batchPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setBatchPolicy(BatchPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("failureCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("failedRequests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setFailedRequests(new ListUnmarshaller<FailedCreateSimulationJobRequest>(
                             FailedCreateSimulationJobRequestJsonUnmarshaller.getInstance())
@@ -84,6 +96,7 @@ public class StartSimulationJobBatchResultJsonUnmarshaller implements Unmarshall
                     .unmarshall(context));
                 }
                 if (context.testExpression("pendingRequests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setPendingRequests(new ListUnmarshaller<SimulationJobRequest>(SimulationJobRequestJsonUnmarshaller
                             .getInstance())
@@ -91,6 +104,7 @@ public class StartSimulationJobBatchResultJsonUnmarshaller implements Unmarshall
                     .unmarshall(context));
                 }
                 if (context.testExpression("createdRequests", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setCreatedRequests(new ListUnmarshaller<SimulationJobSummary>(SimulationJobSummaryJsonUnmarshaller
                             .getInstance())
@@ -98,9 +112,14 @@ public class StartSimulationJobBatchResultJsonUnmarshaller implements Unmarshall
                     .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     startSimulationJobBatchResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

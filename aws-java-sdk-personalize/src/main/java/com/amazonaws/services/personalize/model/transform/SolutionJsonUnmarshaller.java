@@ -43,62 +43,83 @@ public class SolutionJsonUnmarshaller implements Unmarshaller<Solution, JsonUnma
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("solutionArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setSolutionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("performHPO", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setPerformHPO(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("performAutoML", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setPerformAutoML(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("recipeArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setRecipeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("datasetGroupArn", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setDatasetGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setEventType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("solutionConfig", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setSolutionConfig(SolutionConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("autoMLResult", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setAutoMLResult(AutoMLResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("latestSolutionVersion", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     solution.setLatestSolutionVersion(SolutionVersionSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

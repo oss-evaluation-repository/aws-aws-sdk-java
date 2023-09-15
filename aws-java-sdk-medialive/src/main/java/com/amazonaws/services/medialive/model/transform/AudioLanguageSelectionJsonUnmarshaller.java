@@ -43,18 +43,28 @@ public class AudioLanguageSelectionJsonUnmarshaller implements Unmarshaller<Audi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("languageCode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioLanguageSelection.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("languageSelectionPolicy", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     audioLanguageSelection.setLanguageSelectionPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

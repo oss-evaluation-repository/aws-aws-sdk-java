@@ -43,54 +43,73 @@ public class BatchTransformInputJsonUnmarshaller implements Unmarshaller<BatchTr
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataCapturedDestinationS3Uri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setDataCapturedDestinationS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetFormat", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setDatasetFormat(MonitoringDatasetFormatJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LocalPath", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setLocalPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3InputMode", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setS3InputMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DataDistributionType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setS3DataDistributionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FeaturesAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setFeaturesAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InferenceAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setInferenceAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProbabilityAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setProbabilityAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ProbabilityThresholdAttribute", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setProbabilityThresholdAttribute(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTimeOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setStartTimeOffset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndTimeOffset", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     batchTransformInput.setEndTimeOffset(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

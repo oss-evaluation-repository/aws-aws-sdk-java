@@ -43,26 +43,38 @@ public class VideoCodecSettingsJsonUnmarshaller implements Unmarshaller<VideoCod
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("frameCaptureSettings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setFrameCaptureSettings(FrameCaptureSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("h264Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setH264Settings(H264SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("h265Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setH265Settings(H265SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mpeg2Settings", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     videoCodecSettings.setMpeg2Settings(Mpeg2SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,38 +43,53 @@ public class VoiceToneAnalysisTaskJsonUnmarshaller implements Unmarshaller<Voice
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VoiceToneAnalysisTaskId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceToneAnalysisTask.setVoiceToneAnalysisTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VoiceToneAnalysisTaskStatus", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceToneAnalysisTask.setVoiceToneAnalysisTaskStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CallDetails", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceToneAnalysisTask.setCallDetails(CallDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceToneAnalysisTask.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceToneAnalysisTask.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("StartedTimestamp", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceToneAnalysisTask.setStartedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     voiceToneAnalysisTask.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

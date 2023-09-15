@@ -43,70 +43,93 @@ public class InstanceGroupDetailJsonUnmarshaller implements Unmarshaller<Instanc
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceGroupId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setInstanceGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Market", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setMarket(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setInstanceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BidPrice", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setBidPrice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceRequestCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setInstanceRequestCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceRunningCount", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setInstanceRunningCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastStateChangeReason", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setLastStateChangeReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setStartDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReadyDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setReadyDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setEndDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CustomAmiId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     instanceGroupDetail.setCustomAmiId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

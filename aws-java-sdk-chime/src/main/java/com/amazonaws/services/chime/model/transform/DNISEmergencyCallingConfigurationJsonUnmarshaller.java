@@ -43,22 +43,33 @@ public class DNISEmergencyCallingConfigurationJsonUnmarshaller implements Unmars
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EmergencyPhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dNISEmergencyCallingConfiguration.setEmergencyPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TestPhoneNumber", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dNISEmergencyCallingConfiguration.setTestPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CallingCountry", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     dNISEmergencyCallingConfiguration.setCallingCountry(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

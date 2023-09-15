@@ -43,36 +43,50 @@ public class ClassificationResultJsonUnmarshaller implements Unmarshaller<Classi
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("additionalOccurrences", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setAdditionalOccurrences(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("customDataIdentifiers", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setCustomDataIdentifiers(CustomDataIdentifiersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mimeType", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setMimeType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sensitiveData", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setSensitiveData(new ListUnmarshaller<SensitiveDataItem>(SensitiveDataItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("sizeClassified", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setSizeClassified(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     classificationResult.setStatus(ClassificationResultStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

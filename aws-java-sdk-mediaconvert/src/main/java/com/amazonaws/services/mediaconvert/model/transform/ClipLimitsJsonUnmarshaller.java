@@ -43,26 +43,38 @@ public class ClipLimitsJsonUnmarshaller implements Unmarshaller<ClipLimits, Json
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("maximumRGBTolerance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clipLimits.setMaximumRGBTolerance(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maximumYUV", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clipLimits.setMaximumYUV(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minimumRGBTolerance", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clipLimits.setMinimumRGBTolerance(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("minimumYUV", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     clipLimits.setMinimumYUV(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

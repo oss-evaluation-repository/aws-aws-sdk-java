@@ -43,52 +43,70 @@ public class LdapServerMetadataOutputJsonUnmarshaller implements Unmarshaller<Ld
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("hosts", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataOutput.setHosts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
                 if (context.testExpression("roleBase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataOutput.setRoleBase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataOutput.setRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleSearchMatching", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataOutput.setRoleSearchMatching(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleSearchSubtree", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataOutput.setRoleSearchSubtree(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("serviceAccountUsername", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataOutput.setServiceAccountUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userBase", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataOutput.setUserBase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userRoleName", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataOutput.setUserRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userSearchMatching", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataOutput.setUserSearchMatching(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userSearchSubtree", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     ldapServerMetadataOutput.setUserSearchSubtree(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

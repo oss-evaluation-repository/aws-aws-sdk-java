@@ -43,56 +43,75 @@ public class RDSDataSpecJsonUnmarshaller implements Unmarshaller<RDSDataSpec, Js
             return null;
         }
 
+        boolean knownMember;
+
         while (true) {
             if (token == null)
                 break;
 
+            knownMember = false;
+
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatabaseInformation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setDatabaseInformation(RDSDatabaseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SelectSqlQuery", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setSelectSqlQuery(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseCredentials", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setDatabaseCredentials(RDSDatabaseCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("S3StagingLocation", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setS3StagingLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRearrangement", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setDataRearrangement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchema", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setDataSchema(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchemaUri", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setDataSchemaUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setResourceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                    knownMember = true;
                     context.nextToken();
                     rDSDataSpec.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (token == FIELD_NAME && !knownMember) {
+                    context.nextToken();
+                    com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
